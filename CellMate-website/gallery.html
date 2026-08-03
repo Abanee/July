@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CellMate — Visual Gallery & Showcase</title>
+<meta name="description" content="Explore CellMate's visual gallery. 24 high-resolution showcases covering screen repairs, cleanroom workshop tools, luxury mobile accessories, micro-soldering, and customer handovers.">
+
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+<!-- Bootstrap 5.3 -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<!-- Tailwind (utility helpers only) -->
+<script src="https://cdn.tailwindcss.com"></script>
+<script> tailwind.config = { corePlugins: { preflight: false } }; </script>
+
+<!-- Bootstrap Icons -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+
+<!-- Custom Styles -->
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- GRAIN OVERLAY -->
+<div class="grain-overlay" aria-hidden="true"></div>
+
+<!-- ===================== NAVBAR ===================== -->
+<header class="cm-nav" id="cmNav">
+  <div class="cm-nav__inner">
+    <a href="index.html" class="cm-logo">
+      <span class="cm-logo__mark"><i class="bi bi-cpu-fill"></i></span>
+      <span class="cm-logo__text">Cell<span>Mate</span></span>
+    </a>
+
+    <nav class="cm-menu" id="cmMenu" aria-label="Primary">
+      <a href="index.html"       class="cm-menu__link">Home</a>
+      <a href="home2.html"       class="cm-menu__link">Home 2</a>
+      <a href="repairs.html"     class="cm-menu__link">Repairs</a>
+      <a href="accessories.html" class="cm-menu__link">Accessories</a>
+      <a href="gallery.html"     class="cm-menu__link active">Gallery</a>
+      <a href="index.html#trust" class="cm-menu__link">Reviews</a>
+    </nav>
+
+    <div class="cm-nav__actions">
+      <button class="cm-rtl-toggle" id="rtlToggle" aria-label="Toggle RTL mode" title="Toggle RTL / LTR mode">RTL</button>
+      <button class="cm-theme-btn" id="themeBtn" aria-label="Switch between light and dark mode">
+        <i class="bi bi-sun-fill"></i>
+        <i class="bi bi-moon-stars-fill"></i>
+      </button>
+      <a href="login.html" class="cm-btn cm-btn--primary d-none d-lg-inline-flex">
+        <span>Login</span>
+        <i class="bi bi-box-arrow-in-right"></i>
+      </a>
+      <button class="cm-burger" id="cmBurger" aria-label="Open menu" aria-expanded="false" aria-controls="cmMenu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- ====================================================
+       HERO SECTION — GALLERY INTRODUCTION
+  ===================================================== -->
+  <section class="gal-hero-simple">
+    <div class="cm-container text-center" style="max-width: 800px;">
+      <div class="cm-hero-badge mx-auto">
+        <i class="bi bi-images"></i>
+        <span>VISUAL REPAIR SHOWROOM</span>
+      </div>
+      <h1 class="cm-hero-headline text-center">
+        Explore Our Work,<br>
+        <span class="cm-hero-blue-text">Frame by Frame.</span>
+      </h1>
+      <p class="cm-hero-desc mx-auto text-center" style="max-width: 620px;">
+        Filter through 24 high-resolution captures showcasing our cleanroom laboratory, micro-soldering precision, flawless OLED restorations, lifestyle accessories, and happy customer handovers.
+      </p>
+    </div>
+  </section>
+
+  <!-- ====================================================
+       FILTER-BASED 4x6 GALLERY SECTION (24 IMAGES TOTAL)
+  ===================================================== -->
+  <section class="cm-section" style="padding-top: 20px;" id="portfolio-gallery">
+    <div class="cm-container">
+
+      <!-- Category Filter Bar -->
+      <div class="gal-filter-bar" id="galFilterBar">
+        <button type="button" class="gal-filter-btn active" data-filter="all">All Photos (24)</button>
+        <button type="button" class="gal-filter-btn" data-filter="screen">Screen Repairs</button>
+        <button type="button" class="gal-filter-btn" data-filter="workshop">Workshop &amp; Lab</button>
+        <button type="button" class="gal-filter-btn" data-filter="accessories">Accessories</button>
+        <button type="button" class="gal-filter-btn" data-filter="water">Water Recovery</button>
+        <button type="button" class="gal-filter-btn" data-filter="customer">Customer Handovers</button>
+      </div>
+
+      <!-- 4 Columns x 6 Rows = 24 Images Grid -->
+      <div class="gal-grid-4x6" id="galGrid">
+
+        <!-- Image 1 (Screen) -->
+        <div class="gal-card-item" data-category="screen">
+          <div class="gal-card-media">
+            <span class="gal-card-badge">Screen Repair</span>
+            <img src="https://images.unsplash.com/photo-1601784551446-20c9e07cdbdb?auto=format&fit=crop&w=700&q=80" alt="iPhone 15 Pro cracked glass diagnosis" loading="lazy">
+            <div class="gal-card-overlay">
+              <h4>Cracked Screen Diagnosis</h4>
+              <p>Evaluating touch matrix digitiser damage prior to OLED replacement.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Image 2 (Workshop) -->
+        <div class="gal-card-item" data-category="workshop">
+          <div class="gal-card-media">
+            <span class="gal-card-badge">Workshop</span>
+            <img src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=700&q=80" alt="40x optical microscope micro-soldering station" loading="lazy">
+            <div class="gal-card-overlay">
+              <h4>40x Optical Microscope</h4>
+              <p>Micro-soldering logic board SMD power IC components with 0.1mm accuracy.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Image 3 (Accessories) -->
+        <div class="gal-card-item" data-category="accessories">
+          <div class="gal-card-media">
+            <span class="gal-card-badge">Accessories</span>
+            <img src="https://images.unsplash.com/photo-1601593346740-925612772716?auto=format&fit=crop&w=700&q=80" alt="Magnetic clear case lineup" loading="lazy">
+            <div class="gal-card-overlay">
+              <h4>Magnetic Clear Shell</h4>
+              <p>N52 MagSafe compatible polycarbonate armor cases.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Image 4 (Water) -->
+        <div class="gal-card-item" data-category="water">
+          <div class="gal-card-media">
+            <span class="gal-card-badge">Water Recovery</span>
+            <img src="https://images.unsplash.com/photo-1563201515-adbe35c669c5?auto=format&fit=crop&w=700&q=80" alt="Liquid damaged motherboard ultrasonic bath" loading="lazy">
+            <div class="gal-card-overlay">
+              <h4>Ultrasonic Decontamination</h4>
+              <p>Removing chemical salt deposits from submerged logic boards.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Image 5 (Customer) -->
+        <div class="gal-card-item" data-category="customer">
+          <div class="gal-card-media">
+            <span class="gal-card-badge">Customer Handover</span>
+            <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=700&q=80" alt="Happy customer receiving restored iPhone" loading="lazy">
+            <div class="gal-card-overlay">
+              <h4>25-Min Screen Handover</h4>
+              <p>Customer collecting fully calibrated iPhone 15 Pro.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Image 6 (Screen) -->
+        <div class="gal-card-item" data-category="screen">
+          <div class="gal-card-media">
+            <span class="gal-card-badge">Screen Repair</span>
+            <img src="https://images.unsplash.com/photo-1592286927505-1def25115481?auto=format&fit=crop&w=700&q=80" alt="Repaired Samsung Galaxy S24 Ultra display" loading="lazy">
+            <div class="gal-card-overlay">
+              <h4>Galaxy S24 Ultra Restoration</h4>
+              <p>Quad-curve Dynamic AMOLED 2X panel calibrated &amp; sealed.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Image 7 (Workshop) -->
+        <div class="gal-card-item" data-category="workshop">
+          <div class="gal-card-media">
+            <span class="gal-card-badge">Workshop</span>
+            <img src="https://images.unsplash.com/photo-1581092335397-9583fe92d232?auto=format&fit=crop&w=700&q=80" alt="Calibrated precision screwdriver set" loading="lazy">
+            <div class="gal-card-overlay">
+              <h4>Calibrated Tooling Set</h4>
+              <p>Torx 3D ceramic drivers and magnetic ESD storage trays.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Image 8 (Accessories) -->
+        <div class="gal-card-item" data-category="accessories">
+          <div class="gal-card-media">
+            <span class="gal-card-badge">Accessories</span>
+            <img src="https://images.unsplash.com/photo-1609091839311-d5365f9ff1c5?auto=format&fit=crop&w=700&q=80" alt="65W GaN Fast Chargers" loading="lazy">
+            <div class="gal-card-overlay">
+              <h4>65W 3-Port GaN Chargers</h4>
+              <p>UL-certified gallium nitride chargers with smart PD thermal control.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Image 9 (Screen) -->
+        <div class="gal-card-item" data-category="screen">
+          <div class="gal-card-media">
+            <span class="gal-card-badge">Screen Repair</span>
+            <img src="https://images.unsplash.com/photo-1585771724684-38269d6639fd?auto=format&fit=crop&w=700&q=80" alt="Laser removal of shattered back glass" loading="lazy">
+            <div class="gal-card-overlay">
+              <h4>Laser Back Glass Removal</h4>
+              <p>Cold-laser beam separating broken rear glass cleanly.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Image 10 (Workshop) -->
+        <div class="gal-card-item" data-category="workshop">
+          <div class="gal-card-media">
+            <span class="gal-card-badge">Workshop</span>
+            <img src="https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?auto=format&fit=crop&w=700&q=80" alt="Digital oscilloscope diagnostic station" loading="lazy">
+            <div class="gal-card-overlay">
+              <h4>Signal Oscilloscope Testing</h4>
+              <p>Tracking motherboard DC voltage rails and short circuit traces.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Image 11 (Accessories) -->
+        <div class="gal-card-item" data-category="accessories">
+          <div class="gal-card-media">
+            <span class="gal-card-badge">Accessories</span>
+            <img src="https://images.unsplash.com/photo-1615526675576-b0c3e1a13a2c?auto=format&fit=crop&w=700&q=80" alt="3-in-1 wireless charging dock" loading="lazy">
+            <div class="gal-card-overlay">
+              <h4>3-in-1 Qi2 Charging Hub</h4>
+              <p>Simultaneous 15W wireless power for phone, watch &amp; earbuds.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Image 12 (Water) -->
+        <div class="gal-card-item" data-category="water">
+          <div class="gal-card-media">
+            <span class="gal-card-badge">Water Recovery</span>
+            <img src="https://images.unsplash.com/photo-1592750475338-74b7b21085ab?auto=format&fit=crop&w=700&q=80" alt="Drying logic board under infrared thermal light" loading="lazy">
+            <div class="gal-card-overlay">
+              <h4>Infrared Board Baking</h4>
+              <p>Controlled thermal drying chamber restoring liquid-damaged circuits.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Image 13 (Customer) -->
+        <div class="gal-card-item" data-category="customer">
+          <div class="gal-card-media">
+            <span class="gal-card-badge">Customer Handover</span>
+            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=700&q=80" alt="Customer receiving recovered data phone" loading="lazy">
+            <div class="gal-card-overlay">
+              <h4>Water Damage Data Recovery</h4>
+              <p>Customer verified 100% photo library &amp; file preservation.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Image 14 (Screen) -->
+        <div class="gal-card-item" data-category="screen">
+          <div class="gal-card-media">
+            <span class="gal-card-badge">Screen Repair</span>
+            <img src="https://images.unsplash.com/photo-1512446733611-9099a758e595?auto=format&fit=crop&w=700&q=80" alt="Google Pixel 9 Pro screen replacement" loading="lazy">
+            <div class="gal-card-overlay">
+              <h4>Google Pixel 9 Pro Screen</h4>
+              <p>Precision calibration of under-display optical fingerprint reader.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Image 15 (Workshop) -->
+        <div class="gal-card-item" data-category="workshop">
+          <div class="gal-card-media">
+            <span class="gal-card-badge">Workshop</span>
+            <img src="https://images.unsplash.com/photo-1585771724684-38269d6639fd?auto=format&fit=crop&w=700&q=80" alt="Laminar dust-free flow bench for screen fitting" loading="lazy">
+            <div class="gal-card-overlay">
+              <h4>Dust-Free Flow Cabinet</h4>
+              <p>HEPA-filtered cleanroom air preventing dust under tempered glass.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Image 16 (Accessories) -->
+        <div class="gal-card-item" data-category="accessories">
+          <div class="gal-card-media">
+            <span class="gal-card-badge">Accessories</span>
+            <img src="https://images.unsplash.com/photo-1572536147248-ac59a8abfa4b?auto=format&fit=crop&w=700&q=80" alt="Active Noise Cancelling Earbuds" loading="lazy">
+            <div class="gal-card-overlay">
+              <h4>40dB Hybrid ANC Earbuds</h4>
+              <p>Hi-Res spatial audio wireless earbuds with 40hr playtime.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Image 17 (Water) -->
+        <div class="gal-card-item" data-category="water">
+          <div class="gal-card-media">
+            <span class="gal-card-badge">Water Recovery</span>
+            <img src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=700&q=80" alt="Micro-soldering jumper wires on liquid damaged board" loading="lazy">
+            <div class="gal-card-overlay">
+              <h4>Trace Jumper Micro-Soldering</h4>
+              <p>Bypassing corroded copper traces with 0.02mm insulated copper wire.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Image 18 (Customer) -->
+        <div class="gal-card-item" data-category="customer">
+          <div class="gal-card-media">
+            <span class="gal-card-badge">Customer Handover</span>
+            <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=700&q=80" alt="Customer receiving battery replacement phone" loading="lazy">
+            <div class="gal-card-overlay">
+              <h4>OEM Battery Swap Handover</h4>
+              <p>Demonstrating 100% battery capacity &amp; fast charge rates.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Image 19 (Screen) -->
+        <div class="gal-card-item" data-category="screen">
+          <div class="gal-card-media">
+            <span class="gal-card-badge">Screen Repair</span>
+            <img src="https://images.unsplash.com/photo-1592750475338-74b7b21085ab?auto=format&fit=crop&w=700&q=80" alt="OnePlus 12 Curved screen repair" loading="lazy">
+            <div class="gal-card-overlay">
+              <h4>OnePlus 12 Curved Display</h4>
+              <p>LOCA optical adhesive bonding for seamless curved glass repair.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Image 20 (Workshop) -->
+        <div class="gal-card-item" data-category="workshop">
+          <div class="gal-card-media">
+            <span class="gal-card-badge">Workshop</span>
+            <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=700&q=80" alt="Genuine OEM spare parts storage inventory" loading="lazy">
+            <div class="gal-card-overlay">
+              <h4>Genuine OEM Parts Inventory</h4>
+              <p>Organized anti-static storage of factory displays, batteries &amp; ICs.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Image 21 (Accessories) -->
+        <div class="gal-card-item" data-category="accessories">
+          <div class="gal-card-media">
+            <span class="gal-card-badge">Accessories</span>
+            <img src="https://images.unsplash.com/photo-1512446733611-9099a758e595?auto=format&fit=crop&w=700&q=80" alt="Magnetic Car Dashboard Mount" loading="lazy">
+            <div class="gal-card-overlay">
+              <h4>360° Magnetic Car Mount</h4>
+              <p>Heavy-duty dashboard holder with fast wireless charging.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Image 22 (Water) -->
+        <div class="gal-card-item" data-category="water">
+          <div class="gal-card-media">
+            <span class="gal-card-badge">Water Recovery</span>
+            <img src="https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?auto=format&fit=crop&w=700&q=80" alt="Corrosion testing using multimeter" loading="lazy">
+            <div class="gal-card-overlay">
+              <h4>Multimeter Resistance Audit</h4>
+              <p>Testing short-to-ground resistance across battery line capacitors.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Image 23 (Customer) -->
+        <div class="gal-card-item" data-category="customer">
+          <div class="gal-card-media">
+            <span class="gal-card-badge">Customer Handover</span>
+            <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=700&q=80" alt="Customer receiving laser back glass repair" loading="lazy">
+            <div class="gal-card-overlay">
+              <h4>Laser Back Glass Handover</h4>
+              <p>Customer reviewing flawless rear glass restoration.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Image 24 (Accessories) -->
+        <div class="gal-card-item" data-category="accessories">
+          <div class="gal-card-media">
+            <span class="gal-card-badge">Accessories</span>
+            <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=700&q=80" alt="Premium Smartwatch Leather & Sport Bands" loading="lazy">
+            <div class="gal-card-overlay">
+              <h4>Smartwatch Strap Collection</h4>
+              <p>Genuine leather, titanium mesh, and breathable sport bands.</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ====================================================
+       VISIT STORE CTA SECTION
+  ===================================================== -->
+  <section class="cm-section" style="padding-top: 40px;">
+    <div class="cm-container">
+      <div class="gal-cta-card" data-reveal>
+        <div class="gal-cta-bg" aria-hidden="true"></div>
+        <div class="row align-items-center g-4">
+          <div class="col-lg-8">
+            <h2 class="text-white text-3xl md:text-4xl font-extrabold mb-3">Ready to Experience Professional Repair Quality?</h2>
+            <p class="text-slate-200 text-base mb-0">Visit our store today for a free 15-minute diagnostic test, or book your repair online for express service.</p>
+          </div>
+          <div class="col-lg-4 text-lg-end">
+            <a href="repairs.html#book" class="cm-btn cm-btn--white cm-btn--lg">
+              <span>Book Your Repair</span>
+              <i class="bi bi-arrow-right"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ===================== FOOTER ===================== -->
+<footer class="cm-footer">
+  <div class="cm-container">
+    <div class="cm-footer__grid">
+
+      <div class="cm-footer__brand">
+        <a href="index.html" class="cm-logo cm-logo--footer">
+          <span class="cm-logo__mark"><i class="bi bi-cpu-fill"></i></span>
+          <span class="cm-logo__text">Cell<span>Mate</span></span>
+        </a>
+        <p>Premium mobile phone repairs &amp; accessories. Quality-tested products, certified technicians, genuine spare parts.</p>
+        <div class="cm-social">
+          <a href="#" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+          <a href="#" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+          <a href="#" aria-label="Twitter X"><i class="bi bi-twitter-x"></i></a>
+          <a href="#" aria-label="YouTube"><i class="bi bi-youtube"></i></a>
+        </div>
+      </div>
+
+      <div class="cm-footer__col">
+        <h4>Navigation</h4>
+        <a href="index.html">Home</a>
+        <a href="home2.html">Home 2</a>
+        <a href="repairs.html">Repairs</a>
+        <a href="accessories.html">Accessories</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="index.html#trust">Reviews</a>
+      </div>
+
+      <div class="cm-footer__col">
+        <h4>Repair Services</h4>
+        <a href="repairs.html#solutions">Screen Replacement</a>
+        <a href="repairs.html#solutions">Battery Replacement</a>
+        <a href="repairs.html#solutions">Charging Port</a>
+        <a href="repairs.html#solutions">Water Damage</a>
+        <a href="repairs.html#solutions">Motherboard Repair</a>
+      </div>
+
+      <div class="cm-footer__col">
+        <h4>Workshop Hours</h4>
+        <p>Mon – Sat: 9am – 8pm</p>
+        <p>Sunday: 10am – 5pm</p>
+        <p class="cm-eyebrow cm-eyebrow--static mt-2" style="font-size:11px;">
+          <span class="cm-dot-pulse"></span> WORKSHOP OPEN NOW
+        </p>
+      </div>
+
+      <div class="cm-footer__col">
+        <h4>Newsletter</h4>
+        <p>Get accessory deals and repair tips direct to your inbox.</p>
+        <form class="cm-newsletter" id="newsletterForm">
+          <input type="email" placeholder="Your email..." required aria-label="Email address">
+          <button type="submit" aria-label="Subscribe"><i class="bi bi-arrow-right"></i></button>
+        </form>
+      </div>
+
+    </div>
+
+    <div class="cm-footer__bottom">
+      <span>&copy; 2026 CellMate Mobile Services Inc. All rights reserved.</span>
+      <span>Premium Accessories &amp; Authorized Repair Center.</span>
+    </div>
+  </div>
+</footer>
+
+<button class="cm-to-top" id="toTop" aria-label="Back to top">
+  <i class="bi bi-arrow-up"></i>
+</button>
+
+<!-- Scripts -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="script.js"></script>
+</body>
+</html>

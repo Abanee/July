@@ -420,4 +420,82 @@
     }, { passive: true });
   }
 
+  /* ---------------------------------------------------------------------
+     Gallery Page (gallery.html) Before/After Comparison Sliders
+  --------------------------------------------------------------------- */
+  var baSliders = document.querySelectorAll('[data-ba-slider]');
+  baSliders.forEach(function (slider) {
+    var beforeImg = slider.querySelector('.gal-ba-img--before');
+    var divider = slider.querySelector('.gal-ba-divider');
+
+    if (!beforeImg || !divider) return;
+
+    var active = false;
+
+    function move(x) {
+      var rect = slider.getBoundingClientRect();
+      var offsetX = x - rect.left;
+      var pct = Math.max(5, Math.min(95, (offsetX / rect.width) * 100));
+
+      beforeImg.style.width = pct + '%';
+      divider.style.left = pct + '%';
+    }
+
+    slider.addEventListener('mousedown', function (e) {
+      active = true;
+      move(e.clientX);
+    });
+
+    window.addEventListener('mousemove', function (e) {
+      if (!active) return;
+      move(e.clientX);
+    });
+
+    window.addEventListener('mouseup', function () {
+      active = false;
+    });
+
+    slider.addEventListener('touchstart', function (e) {
+      if (e.touches.length) move(e.touches[0].clientX);
+    }, { passive: true });
+
+    slider.addEventListener('touchmove', function (e) {
+      if (e.touches.length) move(e.touches[0].clientX);
+    }, { passive: true });
+  });
+
+  /* ---------------------------------------------------------------------
+     4x6 Filter-Based Gallery Interaction
+  --------------------------------------------------------------------- */
+  var filterBtns = document.querySelectorAll('.gal-filter-btn');
+  var galItems = document.querySelectorAll('.gal-card-item');
+
+  if (filterBtns.length && galItems.length) {
+    filterBtns.forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        var filter = btn.getAttribute('data-filter');
+
+        filterBtns.forEach(function (b) { b.classList.remove('active'); });
+        btn.classList.add('active');
+
+        galItems.forEach(function (item) {
+          var cat = item.getAttribute('data-category');
+          if (filter === 'all' || cat === filter) {
+            item.style.display = 'block';
+            setTimeout(function () {
+              item.style.opacity = '1';
+              item.style.transform = 'scale(1)';
+            }, 50);
+          } else {
+            item.style.opacity = '0';
+            item.style.transform = 'scale(0.95)';
+            setTimeout(function () {
+              if (item.style.opacity === '0') item.style.display = 'none';
+            }, 300);
+          }
+        });
+      });
+    });
+  }
+
 })();
