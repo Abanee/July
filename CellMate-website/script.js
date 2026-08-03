@@ -1,16 +1,16 @@
 /* ==========================================================================
    CellMate — script.js
    Theme toggle, nav behaviour, scroll reveals, counters,
-   phone crack-to-fixed wipe, testimonial slider, forms
+   phone crack-to-fixed wipe, testimonial slider, forms, RTL & Auth helpers
    ========================================================================== */
 (function () {
   'use strict';
 
-  /* ---------------------------------------------------------------------
-     Theme toggle (light / dark)
-  --------------------------------------------------------------------- */
   var root = document.documentElement;
-  var themeToggle = document.getElementById('themeToggle') || document.getElementById('themeBtn') || document.querySelector('.cm-theme-btn');
+
+  /* ---------------------------------------------------------------------
+     Theme Toggle (light / dark)
+  --------------------------------------------------------------------- */
   var STORAGE_KEY = 'cellmate-theme';
 
   function applyTheme(theme) {
@@ -69,7 +69,6 @@
     });
   });
 
-
   /* ---------------------------------------------------------------------
      RTL Mode Toggle (LTR / RTL)
   --------------------------------------------------------------------- */
@@ -103,19 +102,19 @@
 
   initRTL();
 
-
   /* ---------------------------------------------------------------------
      Navbar: solid on scroll + active link highlight
   --------------------------------------------------------------------- */
   var nav = document.getElementById('cmNav');
-  var sections = document.querySelectorAll('main section[id], main .cm-hero');
   var navLinks = document.querySelectorAll('.cm-menu__link');
 
   function onScroll() {
-    if (window.scrollY > 24) {
-      nav.classList.add('is-scrolled');
-    } else {
-      nav.classList.remove('is-scrolled');
+    if (nav) {
+      if (window.scrollY > 24) {
+        nav.classList.add('is-scrolled');
+      } else {
+        nav.classList.remove('is-scrolled');
+      }
     }
 
     var toTop = document.getElementById('toTop');
@@ -129,7 +128,8 @@
       if (!entry.isIntersecting) return;
       var id = entry.target.id;
       navLinks.forEach(function (link) {
-        var isActive = link.getAttribute('href') === '#' + id || (id === 'top' && link.getAttribute('href') === '#top');
+        var href = link.getAttribute('href') || '';
+        var isActive = href === '#' + id || (id === 'top' && (href === '#top' || href === 'index.html'));
         link.classList.toggle('active', isActive);
       });
     });
@@ -164,16 +164,18 @@
      Scroll reveal (fade + rise)
   --------------------------------------------------------------------- */
   var revealTargets = document.querySelectorAll('[data-reveal]');
-  var revealObserver = new IntersectionObserver(function (entries) {
-    entries.forEach(function (entry) {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('is-visible');
-        revealObserver.unobserve(entry.target);
-      }
-    });
-  }, { threshold: 0.15 });
+  if (revealTargets.length) {
+    var revealObserver = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.15 });
 
-  revealTargets.forEach(function (el) { revealObserver.observe(el); });
+    revealTargets.forEach(function (el) { revealObserver.observe(el); });
+  }
 
   /* ---------------------------------------------------------------------
      Phone hero: crack -> fixed wipe, triggered once in view
@@ -190,10 +192,8 @@
     }, { threshold: 0.4 });
     phoneObserver.observe(phone);
 
-    // Replay the wipe on click/tap for a bit of delight
     phone.addEventListener('click', function () {
       phone.classList.remove('is-fixed');
-      // force reflow so the transition restarts
       void phone.offsetWidth;
       setTimeout(function () { phone.classList.add('is-fixed'); }, 120);
     });
@@ -203,77 +203,80 @@
      Animated counters (stats + trust numbers)
   --------------------------------------------------------------------- */
   var counters = document.querySelectorAll('[data-count]');
+  if (counters.length) {
+    function animateCounter(el) {
+      var target = parseInt(el.getAttribute('data-count'), 10) || 0;
+      var suffix = el.getAttribute('data-suffix') || '';
+      var duration = 1600;
+      var start = null;
 
-  function animateCounter(el) {
-    var target = parseInt(el.getAttribute('data-count'), 10) || 0;
-    var suffix = el.getAttribute('data-suffix') || '';
-    var duration = 1600;
-    var start = null;
-
-    function step(timestamp) {
-      if (!start) start = timestamp;
-      var progress = Math.min((timestamp - start) / duration, 1);
-      var eased = 1 - Math.pow(1 - progress, 3); // ease-out cubic
-      var value = Math.floor(eased * target);
-      el.textContent = value.toLocaleString('en-IN') + suffix;
-      if (progress < 1) {
-        window.requestAnimationFrame(step);
-      } else {
-        el.textContent = target.toLocaleString('en-IN') + suffix;
+      function step(timestamp) {
+        if (!start) start = timestamp;
+        var progress = Math.min((timestamp - start) / duration, 1);
+        var eased = 1 - Math.pow(1 - progress, 3);
+        var value = Math.floor(eased * target);
+        el.textContent = value.toLocaleString('en-IN') + suffix;
+        if (progress < 1) {
+          window.requestAnimationFrame(step);
+        } else {
+          el.textContent = target.toLocaleString('en-IN') + suffix;
+        }
       }
+      window.requestAnimationFrame(step);
     }
-    window.requestAnimationFrame(step);
+
+    var counterObserver = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          animateCounter(entry.target);
+          counterObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.5 });
+
+    counters.forEach(function (el) { counterObserver.observe(el); });
   }
-
-  var counterObserver = new IntersectionObserver(function (entries) {
-    entries.forEach(function (entry) {
-      if (entry.isIntersecting) {
-        animateCounter(entry.target);
-        counterObserver.unobserve(entry.target);
-      }
-    });
-  }, { threshold: 0.5 });
-
-  counters.forEach(function (el) { counterObserver.observe(el); });
 
   /* ---------------------------------------------------------------------
      Testimonial slider
   --------------------------------------------------------------------- */
   var slider = document.getElementById('testimonialSlider');
-  if (slider) {
+  var dotsWrap = document.getElementById('testimonialDots');
+  if (slider && dotsWrap) {
     var slides = slider.querySelectorAll('.cm-testimonial');
-    var dotsWrap = document.getElementById('testimonialDots');
     var current = 0;
     var timer = null;
 
-    slides.forEach(function (_, i) {
-      var dot = document.createElement('button');
-      dot.type = 'button';
-      dot.setAttribute('aria-label', 'Show testimonial ' + (i + 1));
-      if (i === 0) dot.classList.add('is-active');
-      dot.addEventListener('click', function () { goTo(i); resetTimer(); });
-      dotsWrap.appendChild(dot);
-    });
-    var dots = dotsWrap.querySelectorAll('button');
+    if (slides.length) {
+      slides.forEach(function (_, i) {
+        var dot = document.createElement('button');
+        dot.type = 'button';
+        dot.setAttribute('aria-label', 'Show testimonial ' + (i + 1));
+        if (i === 0) dot.classList.add('is-active');
+        dot.addEventListener('click', function () { goTo(i); resetTimer(); });
+        dotsWrap.appendChild(dot);
+      });
+      var dots = dotsWrap.querySelectorAll('button');
 
-    function goTo(index) {
-      slides[current].classList.remove('cm-testimonial--active');
-      dots[current].classList.remove('is-active');
-      current = (index + slides.length) % slides.length;
-      slides[current].classList.add('cm-testimonial--active');
-      dots[current].classList.add('is-active');
+      function goTo(index) {
+        slides[current].classList.remove('cm-testimonial--active');
+        if (dots[current]) dots[current].classList.remove('is-active');
+        current = (index + slides.length) % slides.length;
+        slides[current].classList.add('cm-testimonial--active');
+        if (dots[current]) dots[current].classList.add('is-active');
+      }
+
+      function resetTimer() {
+        if (timer) clearInterval(timer);
+        timer = setInterval(function () { goTo(current + 1); }, 5500);
+      }
+
+      resetTimer();
     }
-
-    function resetTimer() {
-      if (timer) clearInterval(timer);
-      timer = setInterval(function () { goTo(current + 1); }, 5500);
-    }
-
-    resetTimer();
   }
 
   /* ---------------------------------------------------------------------
-     Booking form (front-end only — no backend wired up)
+     Booking form (front-end only)
   --------------------------------------------------------------------- */
   var bookingForm = document.getElementById('bookingForm');
   var formStatus = document.getElementById('formStatus');
@@ -285,8 +288,9 @@
         bookingForm.reportValidity();
         return;
       }
-      var name = document.getElementById('fName').value.trim();
-      formStatus.textContent = 'Thanks, ' + name + '. A technician will confirm your slot shortly.';
+      var nameEl = document.getElementById('fName');
+      var name = nameEl ? nameEl.value.trim() : 'Customer';
+      if (formStatus) formStatus.textContent = 'Thanks, ' + name + '. A technician will confirm your slot shortly.';
       bookingForm.reset();
     });
   }
@@ -316,7 +320,6 @@
   /* ---------------------------------------------------------------------
      Repair Services Page (repairs.html) Interactive Features
   --------------------------------------------------------------------- */
-  // Diagnostic Filter Tabs
   var diagBtns = document.querySelectorAll('.rep-diag-btn');
   var diagCards = document.querySelectorAll('.rep-diag-card');
 
@@ -342,13 +345,12 @@
     });
   }
 
-  // Pre-fill booking form when clicking "Book This Repair" button
   var bookTriggers = document.querySelectorAll('[data-repair-target]');
   var repairSelect = document.getElementById('repSelectType');
 
   if (bookTriggers.length && repairSelect) {
     bookTriggers.forEach(function (trigger) {
-      trigger.addEventListener('click', function (e) {
+      trigger.addEventListener('click', function () {
         var targetType = trigger.getAttribute('data-repair-target');
         if (targetType) {
           repairSelect.value = targetType;
@@ -357,7 +359,6 @@
     });
   }
 
-  // Repair Booking Form handling
   var repBookingForm = document.getElementById('repBookingForm');
   var repFormStatus = document.getElementById('repFormStatus');
 
@@ -377,5 +378,46 @@
     });
   }
 
-})();
+  /* ---------------------------------------------------------------------
+     Interactive Hero Before/After Phone Split Slider
+  --------------------------------------------------------------------- */
+  var comparePhone = document.querySelector('.cm-compare-phone');
+  var crackedHalf = document.querySelector('.cm-compare-half--cracked');
+  var divider = document.querySelector('.cm-compare-divider');
 
+  if (comparePhone && crackedHalf && divider) {
+    var isDragging = false;
+
+    function setSliderPosition(x) {
+      var rect = comparePhone.getBoundingClientRect();
+      var offsetX = x - rect.left;
+      var percentage = Math.max(5, Math.min(95, (offsetX / rect.width) * 100));
+
+      crackedHalf.style.width = percentage + '%';
+      divider.style.left = percentage + '%';
+    }
+
+    comparePhone.addEventListener('mousedown', function (e) {
+      isDragging = true;
+      setSliderPosition(e.clientX);
+    });
+
+    window.addEventListener('mousemove', function (e) {
+      if (!isDragging) return;
+      setSliderPosition(e.clientX);
+    });
+
+    window.addEventListener('mouseup', function () {
+      isDragging = false;
+    });
+
+    comparePhone.addEventListener('touchstart', function (e) {
+      if (e.touches.length) setSliderPosition(e.touches[0].clientX);
+    }, { passive: true });
+
+    comparePhone.addEventListener('touchmove', function (e) {
+      if (e.touches.length) setSliderPosition(e.touches[0].clientX);
+    }, { passive: true });
+  }
+
+})();
