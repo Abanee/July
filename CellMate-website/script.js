@@ -248,4 +248,69 @@
     });
   }
 
+  /* ---------------------------------------------------------------------
+     Repair Services Page (repairs.html) Interactive Features
+  --------------------------------------------------------------------- */
+  // Diagnostic Filter Tabs
+  var diagBtns = document.querySelectorAll('.rep-diag-btn');
+  var diagCards = document.querySelectorAll('.rep-diag-card');
+
+  if (diagBtns.length && diagCards.length) {
+    diagBtns.forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        var category = btn.getAttribute('data-diag-category');
+        
+        diagBtns.forEach(function (b) { b.classList.remove('active'); });
+        btn.classList.add('active');
+
+        diagCards.forEach(function (card) {
+          var cardCat = card.getAttribute('data-diag-cat');
+          if (category === 'all' || cardCat === category) {
+            card.style.display = 'flex';
+            card.style.opacity = '1';
+            card.style.transform = 'translateY(0)';
+          } else {
+            card.style.display = 'none';
+          }
+        });
+      });
+    });
+  }
+
+  // Pre-fill booking form when clicking "Book This Repair" button
+  var bookTriggers = document.querySelectorAll('[data-repair-target]');
+  var repairSelect = document.getElementById('repSelectType');
+
+  if (bookTriggers.length && repairSelect) {
+    bookTriggers.forEach(function (trigger) {
+      trigger.addEventListener('click', function (e) {
+        var targetType = trigger.getAttribute('data-repair-target');
+        if (targetType) {
+          repairSelect.value = targetType;
+        }
+      });
+    });
+  }
+
+  // Repair Booking Form handling
+  var repBookingForm = document.getElementById('repBookingForm');
+  var repFormStatus = document.getElementById('repFormStatus');
+
+  if (repBookingForm && repFormStatus) {
+    repBookingForm.addEventListener('submit', function (e) {
+      e.preventDefault();
+      if (!repBookingForm.checkValidity()) {
+        repBookingForm.reportValidity();
+        return;
+      }
+      var name = document.getElementById('repName') ? document.getElementById('repName').value.trim() : 'Customer';
+      var ticketId = 'CM-' + Math.floor(100000 + Math.random() * 900000);
+      
+      repFormStatus.style.color = 'var(--success)';
+      repFormStatus.innerHTML = '<i class="bi bi-check-circle-fill"></i> Thank you, <strong>' + name + '</strong>! Your repair booking is confirmed (Ticket: <strong>' + ticketId + '</strong>). Our senior technician will contact you shortly.';
+      repBookingForm.reset();
+    });
+  }
+
 })();
+

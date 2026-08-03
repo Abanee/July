@@ -112,17 +112,7 @@ input,select{ font-family:inherit; }
 }
 
 .scanline{
-  position:fixed; left:0; right:0; top:0; height:2px; z-index:9998; pointer-events:none;
-  background:linear-gradient(90deg, transparent, var(--primary) 20%, var(--secondary) 50%, var(--accent) 80%, transparent);
-  opacity:var(--scan-opacity);
-  animation:scan-move 5.5s linear infinite;
-  box-shadow:0 0 12px rgba(var(--primary-rgb),.6);
-}
-@keyframes scan-move{
-  0%{ top:0%; opacity:0; }
-  5%{ opacity:var(--scan-opacity); }
-  95%{ opacity:var(--scan-opacity); }
-  100%{ top:100%; opacity:0; }
+  display: none !important;
 }
 
 /* ==========================================================================
@@ -1121,3 +1111,309 @@ html[data-theme="dark"] .cm-phone{ border-color:#3f3f46; }
   .h2-final-cta h2{ font-size:26px; }
   .h2-final-cta p{ font-size:14.5px; }
 }
+
+/* ==========================================================================
+   REPAIR SERVICES PAGE (repairs.html) — Dedicated 2026 UI Styling
+   ========================================================================== */
+
+/* Hero */
+.rep-hero { position: relative; padding: 160px 0 90px; overflow: hidden; }
+.rep-hero__mesh {
+  position: absolute; inset: -10%; z-index: 0; pointer-events: none;
+  background: 
+    radial-gradient(circle at 20% 25%, rgba(var(--primary-rgb),.28), transparent 45%),
+    radial-gradient(circle at 80% 20%, rgba(var(--secondary-rgb),.24), transparent 42%),
+    radial-gradient(circle at 50% 80%, rgba(var(--accent-rgb),.20), transparent 48%);
+  filter: blur(70px);
+  animation: mesh-pulse 14s ease-in-out infinite alternate;
+}
+@keyframes mesh-pulse {
+  0% { transform: scale(1) translate(0, 0); }
+  100% { transform: scale(1.08) translate(-1%, 2%); }
+}
+
+.rep-hero__grid { position: relative; z-index: 1; display: grid; grid-template-columns: 1fr 1fr; gap: 50px; align-items: center; }
+.rep-hero__title { font-size: clamp(34px, 4.4vw, 56px); line-height: 1.1; margin-bottom: 20px; }
+.rep-hero__desc { font-size: 17.5px; line-height: 1.6; color: var(--text-soft); margin-bottom: 30px; }
+
+.rep-trust-badges { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 28px; }
+.rep-trust-pill {
+  display: inline-flex; align-items: center; gap: 8px; padding: 8px 14px; border-radius: 999px;
+  background: var(--card); border: 1px solid var(--border); font-size: 13px; font-weight: 600; color: var(--text);
+  box-shadow: var(--card-shadow); transition: transform .25s ease, border-color .25s ease;
+}
+.rep-trust-pill:hover { transform: translateY(-2px); border-color: var(--primary); }
+.rep-trust-pill i { color: var(--primary); font-size: 15px; }
+
+.rep-hero__visual { position: relative; width: 100%; }
+.rep-hero__card-frame {
+  position: relative; border-radius: 28px; overflow: hidden; aspect-ratio: 4/3.2;
+  box-shadow: var(--card-shadow-hover); border: 1px solid var(--glass-border);
+}
+.rep-hero__card-frame img { width: 100%; height: 100%; object-fit: cover; }
+.rep-float-badge {
+  position: absolute; z-index: 3; padding: 12px 18px; border-radius: 16px;
+  background: var(--glass-bg); border: 1px solid var(--glass-border); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px);
+  box-shadow: var(--card-shadow); display: flex; align-items: center; gap: 12px;
+  animation: rep-float 5s ease-in-out infinite;
+}
+@keyframes rep-float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-12px); } }
+.rep-float-badge--tl { top: -20px; left: -16px; animation-delay: 0s; }
+.rep-float-badge--tr { top: 15%; right: -20px; animation-delay: 1.5s; }
+.rep-float-badge--bl { bottom: 15%; left: -20px; animation-delay: 3s; }
+.rep-float-badge--br { bottom: -18px; right: 10px; animation-delay: 2s; }
+.rep-float-icon {
+  width: 38px; height: 38px; border-radius: 10px; display: flex; align-items: center; justify-content: center;
+  background: linear-gradient(135deg, var(--primary), var(--secondary)); color: #fff; font-size: 16px;
+}
+.rep-float-info strong { display: block; font-size: 13.5px; font-weight: 700; color: var(--text); }
+.rep-float-info span { font-size: 11.5px; color: var(--text-faint); }
+
+/* Section 2 — Complete Repair Solutions */
+.rep-solutions-grid { display: flex; flex-direction: column; gap: 32px; }
+.rep-solution-card {
+  background: var(--card); border: 1px solid var(--border); border-radius: 24px; overflow: hidden;
+  box-shadow: var(--card-shadow); display: grid; grid-template-columns: 1fr 1.15fr; gap: 0;
+  transition: transform .35s ease, box-shadow .35s ease, border-color .35s ease;
+}
+.rep-solution-card:hover { transform: translateY(-4px); box-shadow: var(--card-shadow-hover); border-color: rgba(var(--primary-rgb),.4); }
+.rep-solution-card--alt { grid-template-columns: 1.15fr 1fr; }
+.rep-solution-card--alt .rep-solution-card__media { order: 2; }
+.rep-solution-card--alt .rep-solution-card__content { order: 1; }
+
+.rep-solution-card__media { position: relative; width: 100%; min-height: 280px; overflow: hidden; }
+.rep-solution-card__media img { width: 100%; height: 100%; object-fit: cover; transition: transform .6s ease; }
+.rep-solution-card:hover .rep-solution-card__media img { transform: scale(1.06); }
+.rep-solution-card__badge {
+  position: absolute; top: 16px; left: 16px; z-index: 2;
+  background: rgba(0,0,0,.65); color: #fff; backdrop-filter: blur(8px);
+  padding: 6px 14px; border-radius: 999px; font-size: 12px; font-family: var(--font-mono); font-weight: 600;
+  display: inline-flex; align-items: center; gap: 6px;
+}
+.rep-solution-card__badge i { color: var(--secondary); }
+
+.rep-solution-card__content { padding: 36px 40px; display: flex; flex-direction: column; justify-content: center; }
+.rep-solution-card__head { display: flex; align-items: center; justify-content: space-between; gap: 16px; margin-bottom: 12px; }
+.rep-solution-card__title { font-size: clamp(22px, 2.2vw, 28px); font-weight: 700; color: var(--text); }
+.rep-solution-card__diff {
+  padding: 4px 10px; border-radius: 999px; font-size: 11px; font-weight: 700; font-family: var(--font-mono);
+  background: rgba(var(--primary-rgb),.1); color: var(--primary); border: 1px solid rgba(var(--primary-rgb),.2);
+}
+
+.rep-solution-card__desc { font-size: 15px; color: var(--text-soft); margin-bottom: 20px; line-height: 1.6; }
+.rep-symptoms-list { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 24px; }
+.rep-symptom-tag {
+  font-size: 12px; padding: 4px 11px; border-radius: 8px;
+  background: var(--bg); border: 1px solid var(--border); color: var(--text-soft); font-weight: 500;
+}
+.rep-solution-card__meta {
+  display: flex; align-items: center; gap: 24px; padding-top: 18px; border-top: 1px solid var(--border); margin-top: auto;
+}
+.rep-meta-item { display: flex; align-items: center; gap: 8px; font-size: 13.5px; color: var(--text-soft); }
+.rep-meta-item i { color: var(--primary); font-size: 16px; }
+.rep-meta-item strong { color: var(--text); font-weight: 600; }
+
+/* Section 3 — Phone Problems We Fix */
+.rep-diag-filter { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; margin-bottom: 40px; }
+.rep-diag-btn {
+  padding: 10px 20px; border-radius: 999px; border: 1px solid var(--border);
+  background: var(--card); color: var(--text-soft); font-size: 14px; font-weight: 600;
+  transition: all .25s ease; box-shadow: var(--card-shadow); cursor: pointer;
+}
+.rep-diag-btn:hover, .rep-diag-btn.active {
+  background: linear-gradient(135deg, var(--primary), var(--secondary)); color: #fff; border-color: transparent;
+  box-shadow: 0 8px 20px -6px rgba(var(--primary-rgb),.5); transform: translateY(-2px);
+}
+
+.rep-diag-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+.rep-diag-card {
+  background: var(--card); border: 1px solid var(--border); border-radius: 20px; padding: 28px;
+  box-shadow: var(--card-shadow); display: flex; flex-direction: column;
+  transition: transform .3s ease, box-shadow .3s ease, border-color .3s ease;
+}
+.rep-diag-card:hover { transform: translateY(-6px); box-shadow: var(--card-shadow-hover); border-color: rgba(var(--primary-rgb),.35); }
+.rep-diag-icon {
+  width: 48px; height: 48px; border-radius: 14px; display: flex; align-items: center; justify-content: center;
+  background: rgba(var(--primary-rgb),.1); color: var(--primary); font-size: 22px; margin-bottom: 18px;
+}
+.rep-diag-card h3 { font-size: 19px; margin-bottom: 10px; color: var(--text); }
+.rep-diag-symptoms { font-size: 13.5px; color: var(--accent); font-weight: 600; margin-bottom: 12px; display: flex; align-items: center; gap: 6px; }
+.rep-diag-cause { font-size: 14px; color: var(--text-soft); margin-bottom: 20px; flex-grow: 1; line-height: 1.5; }
+.rep-diag-foot {
+  padding-top: 16px; border-top: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between;
+}
+.rep-diag-time { font-size: 12.5px; color: var(--text-faint); font-family: var(--font-mono); }
+.rep-diag-time strong { color: var(--text); font-weight: 600; }
+
+/* Section 4 — Professional Repair Workflow */
+.rep-flow-container { position: relative; padding: 20px 0; }
+.rep-flow-grid { display: grid; grid-template-columns: repeat(7, 1fr); gap: 14px; position: relative; z-index: 1; }
+.rep-flow-line {
+  position: absolute; top: 68px; left: 4%; right: 4%; height: 3px; z-index: 0;
+  background: linear-gradient(90deg, var(--primary), var(--secondary), var(--accent));
+  border-radius: 3px; opacity: .4;
+}
+
+.rep-flow-step {
+  background: var(--card); border: 1px solid var(--border); border-radius: 18px; padding: 20px 14px; text-align: center;
+  box-shadow: var(--card-shadow); transition: transform .3s ease, border-color .3s ease; display: flex; flex-direction: column; align-items: center;
+}
+.rep-flow-step:hover { transform: translateY(-6px); border-color: var(--primary); box-shadow: var(--card-shadow-hover); }
+.rep-flow-num {
+  width: 36px; height: 36px; border-radius: 50%; display: flex; align-items: center; justify-content: center;
+  background: linear-gradient(135deg, var(--primary), var(--secondary)); color: #fff; font-family: var(--font-mono);
+  font-weight: 700; font-size: 14px; margin-bottom: 14px; box-shadow: 0 4px 12px -3px rgba(var(--primary-rgb),.5);
+}
+.rep-flow-icon { font-size: 22px; color: var(--primary); margin-bottom: 10px; }
+.rep-flow-step h3 { font-size: 14.5px; font-weight: 700; margin-bottom: 6px; color: var(--text); }
+.rep-flow-step p { font-size: 12px; color: var(--text-soft); margin-bottom: 12px; line-height: 1.45; }
+.rep-flow-duration {
+  font-size: 10.5px; font-family: var(--font-mono); padding: 3px 8px; border-radius: 999px;
+  background: rgba(var(--primary-rgb),.08); color: var(--primary); border: 1px solid rgba(var(--primary-rgb),.15); margin-top: auto;
+}
+
+/* Section 5 — Genuine Parts & Warranty */
+.rep-parts-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 24px; align-items: center; }
+.rep-parts-card {
+  background: var(--card); border: 1px solid var(--border); border-radius: 24px; padding: 32px;
+  box-shadow: var(--card-shadow); position: relative; overflow: hidden;
+}
+.rep-parts-card--genuine { border-color: rgba(34,197,94,.4); }
+.rep-parts-card--genuine::before {
+  content:''; position:absolute; top:0; left:0; right:0; height:4px;
+  background:linear-gradient(90deg, var(--success), var(--secondary));
+}
+.rep-parts-card--cheap { border-color: rgba(249,115,22,.4); }
+.rep-parts-card--cheap::before {
+  content:''; position:absolute; top:0; left:0; right:0; height:4px;
+  background:linear-gradient(90deg, var(--accent), #ef4444);
+}
+
+.rep-parts-card__badge {
+  display: inline-flex; align-items: center; gap: 6px; padding: 6px 14px; border-radius: 999px;
+  font-size: 12px; font-weight: 700; font-family: var(--font-mono); margin-bottom: 16px;
+}
+.rep-parts-card--genuine .rep-parts-card__badge { background: rgba(34,197,94,.12); color: var(--success); }
+.rep-parts-card--cheap .rep-parts-card__badge { background: rgba(249,115,22,.12); color: var(--accent); }
+
+.rep-parts-card h3 { font-size: 22px; margin-bottom: 12px; color: var(--text); }
+.rep-parts-card p { font-size: 14px; color: var(--text-soft); margin-bottom: 24px; }
+.rep-parts-list { display: flex; flex-direction: column; gap: 14px; }
+.rep-parts-list li { display: flex; align-items: flex-start; gap: 10px; font-size: 13.5px; color: var(--text-soft); }
+.rep-parts-card--genuine .rep-parts-list i { color: var(--success); font-size: 16px; margin-top: 2px; }
+.rep-parts-card--cheap .rep-parts-list i { color: var(--accent); font-size: 16px; margin-top: 2px; }
+
+.rep-parts-exploded {
+  position: relative; text-align: center; padding: 20px;
+}
+.rep-parts-exploded__frame {
+  position: relative; width: 100%; max-width: 320px; margin: 0 auto; aspect-ratio: 3/4; border-radius: 24px; overflow: hidden;
+  box-shadow: var(--card-shadow-hover); border: 1px solid var(--glass-border);
+}
+.rep-parts-exploded__frame img { width: 100%; height: 100%; object-fit: cover; }
+.rep-exploded-hotspot {
+  position: absolute; z-index: 2; padding: 6px 12px; border-radius: 999px;
+  background: var(--glass-bg); border: 1px solid var(--glass-border); backdrop-filter: blur(10px);
+  font-size: 11px; font-weight: 700; color: var(--text); box-shadow: var(--card-shadow);
+}
+.rep-exploded-hotspot--1 { top: 15%; left: 5%; }
+.rep-exploded-hotspot--2 { top: 40%; right: 5%; }
+.rep-exploded-hotspot--3 { bottom: 20%; left: 8%; }
+
+/* Section 6 — Bento Grid */
+.rep-bento-grid {
+  display: grid; grid-template-columns: repeat(4, 1fr); grid-auto-rows: 210px; gap: 20px;
+}
+.rep-bento-card {
+  background: var(--card); border: 1px solid var(--border); border-radius: 22px; padding: 28px;
+  box-shadow: var(--card-shadow); display: flex; flex-direction: column; justify-content: flex-end;
+  position: relative; overflow: hidden; transition: transform .3s ease, box-shadow .3s ease, border-color .3s ease;
+}
+.rep-bento-card:hover { transform: translateY(-4px); box-shadow: var(--card-shadow-hover); border-color: rgba(var(--primary-rgb),.35); }
+.rep-bento-icon {
+  width: 44px; height: 44px; border-radius: 12px; display: flex; align-items: center; justify-content: center;
+  background: rgba(var(--primary-rgb),.1); color: var(--primary); font-size: 20px; margin-bottom: auto;
+}
+.rep-bento-card h3 { font-size: 18px; margin-bottom: 8px; color: var(--text); font-weight: 700; }
+.rep-bento-card p { font-size: 13.5px; color: var(--text-soft); line-height: 1.5; }
+.rep-bento-card--lg { grid-column: span 2; grid-row: span 2; justify-content: flex-end; }
+.rep-bento-card--lg .rep-bento-icon { width: 56px; height: 56px; font-size: 26px; }
+.rep-bento-card--lg h3 { font-size: 24px; margin-bottom: 12px; }
+.rep-bento-card--lg p { font-size: 15px; }
+.rep-bento-card--wide { grid-column: span 2; }
+
+/* Section 7 — Book Your Repair */
+.rep-booking-wrap {
+  background: var(--card); border: 1px solid var(--border); border-radius: 28px; padding: 48px;
+  box-shadow: var(--card-shadow-hover); position: relative; overflow: hidden;
+}
+.rep-booking-grid { display: grid; grid-template-columns: 1.1fr .9fr; gap: 48px; align-items: start; }
+.rep-booking-form { display: flex; flex-direction: column; gap: 18px; }
+.rep-form-group { display: flex; flex-direction: column; gap: 7px; }
+.rep-form-group label { font-size: 13px; font-weight: 600; color: var(--text); }
+.rep-form-group input, .rep-form-group select, .rep-form-group textarea {
+  padding: 13px 16px; border-radius: 12px; border: 1px solid var(--border);
+  background: var(--bg); color: var(--text); font-size: 14.5px; transition: border-color .2s ease, box-shadow .2s ease;
+}
+.rep-form-group input:focus, .rep-form-group select:focus, .rep-form-group textarea:focus {
+  outline: none; border-color: var(--primary); box-shadow: 0 0 0 3px rgba(var(--primary-rgb),.15);
+}
+.rep-form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+
+.rep-location-box {
+  background: var(--bg); border: 1px solid var(--border); border-radius: 22px; padding: 32px; display: flex; flex-direction: column; gap: 20px;
+}
+.rep-location-item { display: flex; align-items: flex-start; gap: 14px; }
+.rep-location-item i { font-size: 20px; color: var(--primary); margin-top: 3px; }
+.rep-location-item strong { display: block; font-size: 15px; color: var(--text); margin-bottom: 2px; }
+.rep-location-item span { font-size: 13.5px; color: var(--text-soft); }
+
+/* Responsive adjustments for 1024, 820, 760, and 360 */
+
+/* Laptops / iPad Pro 1024px */
+@media (max-width: 1024px) {
+  .rep-hero__grid { grid-template-columns: 1fr; gap: 40px; }
+  .rep-hero__title { font-size: clamp(30px, 5vw, 44px); }
+  .rep-float-badge { display: none; }
+  .rep-parts-grid { grid-template-columns: 1fr; gap: 24px; }
+  .rep-parts-exploded { order: -1; margin-bottom: 10px; }
+  .rep-bento-grid { grid-template-columns: repeat(2, 1fr); grid-auto-rows: 200px; }
+  .rep-bento-card--lg { grid-column: span 2; grid-row: span 1; }
+  .rep-bento-card--wide { grid-column: span 2; }
+  .rep-flow-grid { grid-template-columns: repeat(4, 1fr); row-gap: 20px; }
+  .rep-flow-line { display: none; }
+}
+
+/* Tablet Portrait 820px & 760px */
+@media (max-width: 820px) {
+  .rep-solution-card, .rep-solution-card--alt { grid-template-columns: 1fr; }
+  .rep-solution-card--alt .rep-solution-card__media { order: 0; }
+  .rep-solution-card--alt .rep-solution-card__content { order: 0; }
+  .rep-solution-card__content { padding: 28px; }
+  .rep-diag-grid { grid-template-columns: 1fr 1fr; }
+  .rep-flow-grid { grid-template-columns: repeat(2, 1fr); }
+  .rep-booking-grid { grid-template-columns: 1fr; gap: 32px; }
+  .rep-booking-wrap { padding: 28px; }
+}
+
+/* Mobile Small 576px & 360px */
+@media (max-width: 576px) {
+  .rep-hero { padding-top: 130px; padding-bottom: 60px; }
+  .rep-diag-grid { grid-template-columns: 1fr; }
+  .rep-flow-grid { grid-template-columns: 1fr; }
+  .rep-form-row { grid-template-columns: 1fr; }
+  .rep-bento-grid { grid-template-columns: 1fr; grid-auto-rows: auto; }
+  .rep-bento-card, .rep-bento-card--lg, .rep-bento-card--wide { grid-column: span 1; grid-row: span 1; min-height: 160px; }
+  .rep-diag-filter { gap: 6px; }
+  .rep-diag-btn { padding: 8px 14px; font-size: 12.5px; }
+}
+
+@media (max-width: 390px) {
+  .rep-hero__title { font-size: 28px; }
+  .rep-hero__desc { font-size: 14.5px; }
+  .rep-solution-card__content { padding: 20px; }
+  .rep-solution-card__title { font-size: 20px; }
+  .rep-meta-item { font-size: 12px; }
+  .rep-booking-wrap { padding: 18px; }
+}
+

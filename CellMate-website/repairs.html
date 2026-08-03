@@ -1,0 +1,991 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CellMate — Complete Smartphone Repair & Diagnostic Services</title>
+<meta name="description" content="Certified mobile repair services by CellMate. Screen replacement, battery calibration, micro-soldering, water damage restoration, and genuine OEM spare parts with same-day turnaround and a 12-month warranty.">
+
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+<!-- Bootstrap 5.3 -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<!-- Tailwind (utility helpers only) -->
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = { corePlugins: { preflight: false } };
+</script>
+
+<!-- Icons -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ===================== NOISE / GRAIN OVERLAY ===================== -->
+<div class="grain-overlay" aria-hidden="true"></div>
+
+<!-- ===================== NAVBAR ===================== -->
+<header class="cm-nav" id="cmNav">
+  <div class="cm-nav__inner">
+    <a href="index.html" class="cm-logo">
+      <span class="cm-logo__mark">
+        <i class="bi bi-cpu-fill"></i>
+      </span>
+      <span class="cm-logo__text">Cell<span>Mate</span></span>
+    </a>
+
+    <nav class="cm-menu" id="cmMenu" aria-label="Primary">
+      <a href="index.html" class="cm-menu__link">Home</a>
+      <a href="repairs.html" class="cm-menu__link active">Repair Services</a>
+      <a href="home2.html" class="cm-menu__link">Inside Workshop</a>
+      <a href="index.html#accessories" class="cm-menu__link">Accessories</a>
+      <a href="index.html#trust" class="cm-menu__link">Reviews</a>
+      <a href="#book" class="cm-menu__link">Book Repair</a>
+    </nav>
+
+    <div class="cm-nav__actions">
+      <button class="cm-theme-toggle" id="themeToggle" aria-label="Switch between light and dark mode" aria-pressed="false">
+        <i class="bi bi-sun-fill cm-theme-toggle__sun"></i>
+        <i class="bi bi-moon-stars-fill cm-theme-toggle__moon"></i>
+        <span class="cm-theme-toggle__ball"></span>
+      </button>
+      <a href="#book" class="cm-btn cm-btn--primary d-none d-lg-inline-flex">
+        <span>Book Repair</span>
+        <i class="bi bi-arrow-up-right"></i>
+      </a>
+      <button class="cm-burger" id="cmBurger" aria-label="Open menu" aria-expanded="false" aria-controls="cmMenu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- ===================== SECTION 1 — PREMIUM HERO ===================== -->
+  <section class="rep-hero" id="hero">
+    <div class="rep-hero__mesh" aria-hidden="true"></div>
+    <div class="cm-container">
+      <div class="rep-hero__grid">
+        
+        <!-- Hero Left Content -->
+        <div class="rep-hero__content" data-reveal>
+          <div class="cm-eyebrow">
+            <span class="cm-dot-pulse"></span>
+            AUTHORIZED REPAIR LAB — SAME-DAY TURNAROUND
+          </div>
+
+          <h1 class="rep-hero__title">
+            Engineered Smartphone Repairs.<br>
+            <span class="cm-highlight">Genuine Parts</span>, Zero Risk.
+          </h1>
+
+          <p class="rep-hero__desc">
+            We restore Apple, Samsung, Google, and flagship devices to factory precision. Every repair is performed inside ESD-safe cleanroom environments by IPC-certified technicians, utilizing micro-soldering thermal diagnostics and genuine OEM components.
+          </p>
+
+          <div class="cm-hero__cta">
+            <a href="#book" class="cm-btn cm-btn--primary cm-btn--lg">
+              <span>Book Your Repair</span>
+              <i class="bi bi-arrow-up-right"></i>
+            </a>
+            <a href="tel:+18005550199" class="cm-btn cm-btn--ghost cm-btn--lg">
+              <i class="bi bi-telephone-fill"></i>
+              <span>Call Senior Technician</span>
+            </a>
+          </div>
+
+          <!-- Trust Badges -->
+          <div class="rep-trust-badges">
+            <div class="rep-trust-pill">
+              <i class="bi bi-patch-check-fill"></i>
+              <span>100% Genuine OEM Parts</span>
+            </div>
+            <div class="rep-trust-pill">
+              <i class="bi bi-clock-history"></i>
+              <span>30–60 Minute Express Service</span>
+            </div>
+            <div class="rep-trust-pill">
+              <i class="bi bi-shield-lock-fill"></i>
+              <span>IPC Master Technicians</span>
+            </div>
+            <div class="rep-trust-pill">
+              <i class="bi bi-award-fill"></i>
+              <span>12-Month Guarantee</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Hero Right Visual -->
+        <div class="rep-hero__visual" data-reveal>
+          <div class="rep-hero__card-frame">
+            <img src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=1200&q=80" alt="Master technician repairing smartphone motherboard under high precision optical microscope" loading="eager">
+          </div>
+
+          <!-- Floating Glass Cards -->
+          <div class="rep-float-badge rep-float-badge--tl">
+            <div class="rep-float-icon"><i class="bi bi-display"></i></div>
+            <div class="rep-float-info">
+              <strong>Super Retina OLED Replacement</strong>
+              <span>Color Calibrated & TrueTone OK</span>
+            </div>
+          </div>
+
+          <div class="rep-float-badge rep-float-badge--tr">
+            <div class="rep-float-icon"><i class="bi bi-battery-charging"></i></div>
+            <div class="rep-float-info">
+              <strong>Battery Calibrated 100%</strong>
+              <span>Zero Heat Bugs · 0 Cycles</span>
+            </div>
+          </div>
+
+          <div class="rep-float-badge rep-float-badge--bl">
+            <div class="rep-float-icon"><i class="bi bi-usb-c-fill"></i></div>
+            <div class="rep-float-info">
+              <strong>Charging Port Resoldered</strong>
+              <span>Fast-Charge & Sync Tested</span>
+            </div>
+          </div>
+
+          <div class="rep-float-badge rep-float-badge--br">
+            <div class="rep-float-icon"><i class="bi bi-lightning-charge-fill"></i></div>
+            <div class="rep-float-info">
+              <strong>38 Min Avg. Repair Time</strong>
+              <span>Walk-ins Welcome Today</span>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== SECTION 2 — COMPLETE REPAIR SOLUTIONS ===================== -->
+  <section class="cm-section cm-section--tinted" id="solutions">
+    <div class="cm-container">
+      <div class="cm-section__head" data-reveal>
+        <div class="cm-eyebrow">
+          <i class="bi bi-tools"></i> EXPERT REPAIR CATALOG
+        </div>
+        <h2 class="cm-section__title">Complete Smartphone Repair Solutions</h2>
+        <p class="cm-section__desc">
+          From cracked front glass assemblies to intricate logic board micro-soldering, our workshop handles complex smartphone failures with factory-grade precision.
+        </p>
+      </div>
+
+      <div class="rep-solutions-grid">
+
+        <!-- Card 1: Screen Replacement -->
+        <article class="rep-solution-card" data-reveal>
+          <div class="rep-solution-card__media">
+            <span class="rep-solution-card__badge"><i class="bi bi-speedometer2"></i> Level 1 Fast Repair</span>
+            <img src="https://images.unsplash.com/photo-1591799264318-7e6ef8ddb7ea?auto=format&fit=crop&w=1000&q=80" alt="Replacing cracked smartphone OLED display module" loading="lazy">
+          </div>
+          <div class="rep-solution-card__content">
+            <div class="rep-solution-card__head">
+              <h3 class="rep-solution-card__title">Screen & OLED Replacement</h3>
+              <span class="rep-solution-card__diff">Level 1</span>
+            </div>
+            <p class="rep-solution-card__desc">
+              We replace shattered, flickering, or unresponsive displays with original-spec Super Retina and Dynamic AMOLED panels. TrueTone programming, 120Hz ProMotion response, and optical touch layer calibration are fully preserved.
+            </p>
+            <div class="rep-symptoms-list">
+              <span class="rep-symptom-tag">Cracked Glass</span>
+              <span class="rep-symptom-tag">Black Lines / Bleeding</span>
+              <span class="rep-symptom-tag">Ghost Touch</span>
+              <span class="rep-symptom-tag">No Display Output</span>
+            </div>
+            <div class="rep-solution-card__meta">
+              <div class="rep-meta-item"><i class="bi bi-clock-history"></i> <strong>30–45 Mins</strong></div>
+              <div class="rep-meta-item"><i class="bi bi-shield-check"></i> <strong>12 Months Warranty</strong></div>
+              <a href="#book" class="cm-btn cm-btn--primary ms-auto" data-repair-target="Screen Replacement">
+                <span>Book This Repair</span>
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Card 2: Battery Replacement (Alternate Layout) -->
+        <article class="rep-solution-card rep-solution-card--alt" data-reveal>
+          <div class="rep-solution-card__media">
+            <span class="rep-solution-card__badge"><i class="bi bi-battery-full"></i> Original OEM Battery</span>
+            <img src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?auto=format&fit=crop&w=1000&q=80" alt="New high capacity OEM smartphone battery cell installation" loading="lazy">
+          </div>
+          <div class="rep-solution-card__content">
+            <div class="rep-solution-card__head">
+              <h3 class="rep-solution-card__title">OEM Battery Calibration & Swap</h3>
+              <span class="rep-solution-card__diff">Level 1</span>
+            </div>
+            <p class="rep-solution-card__desc">
+              Revitalize device performance and eliminate unexpected shutdowns. We install brand-new high-density lithium polymer cells with zero charge cycles, transferring original battery BMS flex cables to maintain native battery health telemetry.
+            </p>
+            <div class="rep-symptoms-list">
+              <span class="rep-symptom-tag">Rapid Drain</span>
+              <span class="rep-symptom-tag">Overheating</span>
+              <span class="rep-symptom-tag">Swollen Battery Back</span>
+              <span class="rep-symptom-tag">Stuck at 1%</span>
+            </div>
+            <div class="rep-solution-card__meta">
+              <div class="rep-meta-item"><i class="bi bi-clock-history"></i> <strong>20–30 Mins</strong></div>
+              <div class="rep-meta-item"><i class="bi bi-shield-check"></i> <strong>12 Months Warranty</strong></div>
+              <a href="#book" class="cm-btn cm-btn--primary ms-auto" data-repair-target="Battery Replacement">
+                <span>Book This Repair</span>
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Card 3: Charging Port Repair -->
+        <article class="rep-solution-card" data-reveal>
+          <div class="rep-solution-card__media">
+            <span class="rep-solution-card__badge"><i class="bi bi-lightning"></i> USB-C & Lightning Port</span>
+            <img src="https://images.unsplash.com/photo-1588872657578-7efd1f1555ed?auto=format&fit=crop&w=1000&q=80" alt="Repairing loose or damaged USB-C charging connector on smartphone" loading="lazy">
+          </div>
+          <div class="rep-solution-card__content">
+            <div class="rep-solution-card__head">
+              <h3 class="rep-solution-card__title">Charging Port & Flex Cable Repair</h3>
+              <span class="rep-solution-card__diff">Level 2</span>
+            </div>
+            <p class="rep-solution-card__desc">
+              Loose cable connections, burnt pins, or corroded charging ports prevent power intake and OTG data transfers. We perform ultrasonic port debris extraction or replace the entire lower dock assembly to restore fast charging.
+            </p>
+            <div class="rep-symptoms-list">
+              <span class="rep-symptom-tag">Loose Charger Cable</span>
+              <span class="rep-symptom-tag">Slow Power Intake</span>
+              <span class="rep-symptom-tag">No USB Data Sync</span>
+              <span class="rep-symptom-tag">Liquid Warning Error</span>
+            </div>
+            <div class="rep-solution-card__meta">
+              <div class="rep-meta-item"><i class="bi bi-clock-history"></i> <strong>30–45 Mins</strong></div>
+              <div class="rep-meta-item"><i class="bi bi-shield-check"></i> <strong>12 Months Warranty</strong></div>
+              <a href="#book" class="cm-btn cm-btn--primary ms-auto" data-repair-target="Charging Port Repair">
+                <span>Book This Repair</span>
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Card 4: Camera Repair (Alternate Layout) -->
+        <article class="rep-solution-card rep-solution-card--alt" data-reveal>
+          <div class="rep-solution-card__media">
+            <span class="rep-solution-card__badge"><i class="bi bi-camera"></i> Optical Lens & Sensor</span>
+            <img src="https://images.unsplash.com/photo-1512499617640-c74ae3a79d37?auto=format&fit=crop&w=1000&q=80" alt="Repairing smartphone multi-camera lens module and optical image stabilizer" loading="lazy">
+          </div>
+          <div class="rep-solution-card__content">
+            <div class="rep-solution-card__head">
+              <h3 class="rep-solution-card__title">Camera & Optical Stabilization Repair</h3>
+              <span class="rep-solution-card__diff">Level 2</span>
+            </div>
+            <p class="rep-solution-card__desc">
+              Blurry photos, vibrating lens elements, or black camera viewfinders ruin your photography experience. We replace damaged camera modules, recalibrate optical image stabilization (OIS) motors, and replace cracked sapphire lens glass.
+            </p>
+            <div class="rep-symptoms-list">
+              <span class="rep-symptom-tag">Vibrating Camera</span>
+              <span class="rep-symptom-tag">Cracked Sapphire Glass</span>
+              <span class="rep-symptom-tag">Focus Failure</span>
+              <span class="rep-symptom-tag">Black Camera Screen</span>
+            </div>
+            <div class="rep-solution-card__meta">
+              <div class="rep-meta-item"><i class="bi bi-clock-history"></i> <strong>40–60 Mins</strong></div>
+              <div class="rep-meta-item"><i class="bi bi-shield-check"></i> <strong>12 Months Warranty</strong></div>
+              <a href="#book" class="cm-btn cm-btn--primary ms-auto" data-repair-target="Camera Repair">
+                <span>Book This Repair</span>
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Card 5: Speaker & Microphone Repair -->
+        <article class="rep-solution-card" data-reveal>
+          <div class="rep-solution-card__media">
+            <span class="rep-solution-card__badge"><i class="bi bi-volume-up"></i> Acoustic Audio Clean & Replace</span>
+            <img src="https://images.unsplash.com/photo-1546435770-a3e426bf472b?auto=format&fit=crop&w=1000&q=80" alt="Repairing mobile phone ear speaker and noise cancellation microphone mesh" loading="lazy">
+          </div>
+          <div class="rep-solution-card__content">
+            <div class="rep-solution-card__head">
+              <h3 class="rep-solution-card__title">Speaker & Microphone Acoustic Repair</h3>
+              <span class="rep-solution-card__diff">Level 2</span>
+            </div>
+            <p class="rep-solution-card__desc">
+              Distorted audio during calls, low earpiece volume, or muffling callers can stem from blocked acoustic mesh filters or blown loudspeaker drivers. We deep-clean mesh membranes and fit genuine acoustic speakers.
+            </p>
+            <div class="rep-symptoms-list">
+              <span class="rep-symptom-tag">Low Call Volume</span>
+              <span class="rep-symptom-tag">Cracking Loudspeaker</span>
+              <span class="rep-symptom-tag">Caller Can't Hear You</span>
+              <span class="rep-symptom-tag">No Media Sound</span>
+            </div>
+            <div class="rep-solution-card__meta">
+              <div class="rep-meta-item"><i class="bi bi-clock-history"></i> <strong>30 Mins</strong></div>
+              <div class="rep-meta-item"><i class="bi bi-shield-check"></i> <strong>12 Months Warranty</strong></div>
+              <a href="#book" class="cm-btn cm-btn--primary ms-auto" data-repair-target="Speaker & Microphone Repair">
+                <span>Book This Repair</span>
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Card 6: Water Damage Repair (Alternate Layout) -->
+        <article class="rep-solution-card rep-solution-card--alt" data-reveal>
+          <div class="rep-solution-card__media">
+            <span class="rep-solution-card__badge"><i class="bi bi-droplet"></i> Ultrasonic De-corrosion</span>
+            <img src="https://images.unsplash.com/photo-1563770660941-20978e870e26?auto=format&fit=crop&w=1000&q=80" alt="Water damaged smartphone logic board under chemical ultrasonic bath treatment" loading="lazy">
+          </div>
+          <div class="rep-solution-card__content">
+            <div class="rep-solution-card__head">
+              <h3 class="rep-solution-card__title">Liquid Intrusion & Ultrasonic Recovery</h3>
+              <span class="rep-solution-card__diff">Level 3</span>
+            </div>
+            <p class="rep-solution-card__desc">
+              Accidental submergence causes rapid copper oxidation and short circuits on the logic board. We strip down the phone, bathe board components in pure isopropyl chemical ultrasonic tanks, re-solder corroded traces, and preserve your data.
+            </p>
+            <div class="rep-symptoms-list">
+              <span class="rep-symptom-tag">Submerged Device</span>
+              <span class="rep-symptom-tag">Corrosion on Board</span>
+              <span class="rep-symptom-tag">Short Circuit Hotspots</span>
+              <span class="rep-symptom-tag">Data Recovery Need</span>
+            </div>
+            <div class="rep-solution-card__meta">
+              <div class="rep-meta-item"><i class="bi bi-clock-history"></i> <strong>2–4 Hours</strong></div>
+              <div class="rep-meta-item"><i class="bi bi-shield-check"></i> <strong>90-Day Protection</strong></div>
+              <a href="#book" class="cm-btn cm-btn--primary ms-auto" data-repair-target="Water Damage Repair">
+                <span>Book This Repair</span>
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Card 7: Motherboard Repair -->
+        <article class="rep-solution-card" data-reveal>
+          <div class="rep-solution-card__media">
+            <span class="rep-solution-card__badge"><i class="bi bi-cpu"></i> Advanced Micro-Soldering</span>
+            <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1000&q=80" alt="Micro-soldering smartphone logic board chips and power IC under microscope" loading="lazy">
+          </div>
+          <div class="rep-solution-card__content">
+            <div class="rep-solution-card__head">
+              <h3 class="rep-solution-card__title">Logic Board & Micro-Soldering</h3>
+              <span class="rep-solution-card__diff">Level 4 Master</span>
+            </div>
+            <p class="rep-solution-card__desc">
+              When other shops say "replace the motherboard", our master technicians fix the board itself. We diagnose dead power management ICs (PMIC), shorted capacitors, baseband signal chips, and damaged FPC connectors under 45x magnification.
+            </p>
+            <div class="rep-symptoms-list">
+              <span class="rep-symptom-tag">No Power / Dead Board</span>
+              <span class="rep-symptom-tag">No Service / Baseband Fault</span>
+              <span class="rep-symptom-tag">PMIC Chip Short</span>
+              <span class="rep-symptom-tag">FPC Connector Damage</span>
+            </div>
+            <div class="rep-solution-card__meta">
+              <div class="rep-meta-item"><i class="bi bi-clock-history"></i> <strong>Same Day / 24 hrs</strong></div>
+              <div class="rep-meta-item"><i class="bi bi-shield-check"></i> <strong>6 Months Guarantee</strong></div>
+              <a href="#book" class="cm-btn cm-btn--primary ms-auto" data-repair-target="Motherboard Repair">
+                <span>Book This Repair</span>
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Card 8: Software Troubleshooting (Alternate Layout) -->
+        <article class="rep-solution-card rep-solution-card--alt" data-reveal>
+          <div class="rep-solution-card__media">
+            <span class="rep-solution-card__badge"><i class="bi bi-code-square"></i> OS Reflash & Boot Recovery</span>
+            <img src="https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=1000&q=80" alt="Reflashing smartphone firmware and resolving boot loop errors" loading="lazy">
+          </div>
+          <div class="rep-solution-card__content">
+            <div class="rep-solution-card__head">
+              <h3 class="rep-solution-card__title">Firmware & System OS Diagnostics</h3>
+              <span class="rep-solution-card__diff">Software Specialist</span>
+            </div>
+            <p class="rep-solution-card__desc">
+              Devices frozen on apple logos, stuck in recovery mode, experiencing boot loops, or corrupted storage partitions are restored without data loss whenever possible. We reload official firmware and eliminate system malware.
+            </p>
+            <div class="rep-symptoms-list">
+              <span class="rep-symptom-tag">Boot Loop</span>
+              <span class="rep-symptom-tag">Stuck on Logo</span>
+              <span class="rep-symptom-tag">Storage Crash</span>
+              <span class="rep-symptom-tag">System Update Freeze</span>
+            </div>
+            <div class="rep-solution-card__meta">
+              <div class="rep-meta-item"><i class="bi bi-clock-history"></i> <strong>20–40 Mins</strong></div>
+              <div class="rep-meta-item"><i class="bi bi-shield-check"></i> <strong>Guaranteed Fix</strong></div>
+              <a href="#book" class="cm-btn cm-btn--primary ms-auto" data-repair-target="Software Troubleshooting">
+                <span>Book This Repair</span>
+              </a>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== SECTION 3 — PHONE PROBLEMS WE FIX ===================== -->
+  <section class="cm-section" id="problems">
+    <div class="cm-container">
+      <div class="cm-section__head text-center mx-auto" data-reveal style="max-width:720px;">
+        <div class="cm-eyebrow">
+          <i class="bi bi-search"></i> INTERACTIVE DIAGNOSTIC HUB
+        </div>
+        <h2 class="cm-section__title">Identified Your Issue? We Have The Exact Fix.</h2>
+        <p class="cm-section__desc">
+          Not sure which repair service you need? Filter common smartphone symptoms below to discover the root cause and recommended repair path.
+        </p>
+      </div>
+
+      <!-- Diagnostic Category Buttons -->
+      <div class="rep-diag-filter" data-reveal>
+        <button class="rep-diag-btn active" data-diag-category="all">All Issues</button>
+        <button class="rep-diag-btn" data-diag-category="display">Display & Touch</button>
+        <button class="rep-diag-btn" data-diag-category="battery">Battery & Power</button>
+        <button class="rep-diag-btn" data-diag-category="charging">Charging Port</button>
+        <button class="rep-diag-btn" data-diag-category="camera">Camera & Vision</button>
+        <button class="rep-diag-btn" data-diag-category="audio">Audio & Speaker</button>
+        <button class="rep-diag-btn" data-diag-category="liquid">Water Damage</button>
+        <button class="rep-diag-btn" data-diag-category="software">Software Crash</button>
+      </div>
+
+      <!-- Diagnostic Cards Grid -->
+      <div class="rep-diag-grid">
+
+        <div class="rep-diag-card" data-diag-cat="display" data-reveal>
+          <div class="rep-diag-icon"><i class="bi bi-tablet-landscape"></i></div>
+          <h3>Screen Unresponsive or Glitching</h3>
+          <div class="rep-diag-symptoms"><i class="bi bi-exclamation-triangle-fill"></i> Touch screen ignores taps / ghost touches</div>
+          <p class="rep-diag-cause">Damaged digitizer flex connection or cracked inner capacitive layer caused by impact.</p>
+          <div class="rep-diag-foot">
+            <span class="rep-diag-time">Fix Time: <strong>35 Mins</strong></span>
+            <a href="#book" class="cm-link-arrow" data-repair-target="Screen Replacement">Diagnose <i class="bi bi-arrow-right"></i></a>
+          </div>
+        </div>
+
+        <div class="rep-diag-card" data-diag-cat="battery" data-reveal>
+          <div class="rep-diag-icon"><i class="bi bi-battery-charging"></i></div>
+          <h3>Phone Drains Rapidly or Shuts Down at 30%</h3>
+          <div class="rep-diag-symptoms"><i class="bi bi-exclamation-triangle-fill"></i> Battery percentage jumps erratically</div>
+          <p class="rep-diag-cause">High internal resistance in aging lithium cell causing voltage sag under load.</p>
+          <div class="rep-diag-foot">
+            <span class="rep-diag-time">Fix Time: <strong>25 Mins</strong></span>
+            <a href="#book" class="cm-link-arrow" data-repair-target="Battery Replacement">Diagnose <i class="bi bi-arrow-right"></i></a>
+          </div>
+        </div>
+
+        <div class="rep-diag-card" data-diag-cat="charging" data-reveal>
+          <div class="rep-diag-icon"><i class="bi bi-plug"></i></div>
+          <h3>Cable Wiggles or Won't Stay Plugged In</h3>
+          <div class="rep-diag-symptoms"><i class="bi bi-exclamation-triangle-fill"></i> Phone only charges when angled specifically</div>
+          <p class="rep-diag-cause">Compacted pocket lint or bent spring pins inside USB-C / Lightning port connector.</p>
+          <div class="rep-diag-foot">
+            <span class="rep-diag-time">Fix Time: <strong>30 Mins</strong></span>
+            <a href="#book" class="cm-link-arrow" data-repair-target="Charging Port Repair">Diagnose <i class="bi bi-arrow-right"></i></a>
+          </div>
+        </div>
+
+        <div class="rep-diag-card" data-diag-cat="camera" data-reveal>
+          <div class="rep-diag-icon"><i class="bi bi-camera-reels"></i></div>
+          <h3>Camera Lens Shakes & Makes Buzzing Sound</h3>
+          <div class="rep-diag-symptoms"><i class="bi bi-exclamation-triangle-fill"></i> Blurry photos & buzzing optical sensor</div>
+          <p class="rep-diag-cause">Broken Optical Image Stabilization (OIS) voice coil motor from motorcycle vibration or dropped impact.</p>
+          <div class="rep-diag-foot">
+            <span class="rep-diag-time">Fix Time: <strong>40 Mins</strong></span>
+            <a href="#book" class="cm-link-arrow" data-repair-target="Camera Repair">Diagnose <i class="bi bi-arrow-right"></i></a>
+          </div>
+        </div>
+
+        <div class="rep-diag-card" data-diag-cat="audio" data-reveal>
+          <div class="rep-diag-icon"><i class="bi bi-mic"></i></div>
+          <h3>Callers Say Your Voice Sounds Muffled</h3>
+          <div class="rep-diag-symptoms"><i class="bi bi-exclamation-triangle-fill"></i> Low audio intake during phone calls</div>
+          <p class="rep-diag-cause">Clogged mic mesh port or damaged primary voice microphone IC flex cable.</p>
+          <div class="rep-diag-foot">
+            <span class="rep-diag-time">Fix Time: <strong>30 Mins</strong></span>
+            <a href="#book" class="cm-link-arrow" data-repair-target="Speaker & Microphone Repair">Diagnose <i class="bi bi-arrow-right"></i></a>
+          </div>
+        </div>
+
+        <div class="rep-diag-card" data-diag-cat="liquid" data-reveal>
+          <div class="rep-diag-icon"><i class="bi bi-droplet-half"></i></div>
+          <h3>Phone Fell in Water & Won't Turn On</h3>
+          <div class="rep-diag-symptoms"><i class="bi bi-exclamation-triangle-fill"></i> Black screen, warm body, no response</div>
+          <p class="rep-diag-cause">Liquid bridging capacitor voltage lines on logic board causing emergency thermal shutdown.</p>
+          <div class="rep-diag-foot">
+            <span class="rep-diag-time">Fix Time: <strong>2 Hours</strong></span>
+            <a href="#book" class="cm-link-arrow" data-repair-target="Water Damage Repair">Diagnose <i class="bi bi-arrow-right"></i></a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== SECTION 4 — PROFESSIONAL REPAIR WORKFLOW ===================== -->
+  <section class="cm-section cm-section--tinted" id="workflow">
+    <div class="cm-container">
+      <div class="cm-section__head" data-reveal>
+        <div class="cm-eyebrow">
+          <i class="bi bi-diagram-3-fill"></i> STEP-BY-STEP PROCESS
+        </div>
+        <h2 class="cm-section__title">Our 7-Step Precision Repair Workflow</h2>
+        <p class="cm-section__desc">
+          We treat your mobile device like a high-precision medical instrument. Every single repair follows a strict, repeatable quality protocol from arrival to final collection.
+        </p>
+      </div>
+
+      <div class="rep-flow-container" data-reveal>
+        <div class="rep-flow-line" aria-hidden="true"></div>
+
+        <div class="rep-flow-grid">
+
+          <!-- Step 1 -->
+          <div class="rep-flow-step">
+            <div class="rep-flow-num">1</div>
+            <i class="bi bi-clipboard2-check-fill rep-flow-icon"></i>
+            <h3>Device Inspection</h3>
+            <p>Initial physical check, intake logging & IMEI registration.</p>
+            <span class="rep-flow-duration">5 Mins</span>
+          </div>
+
+          <!-- Step 2 -->
+          <div class="rep-flow-step">
+            <div class="rep-flow-num">2</div>
+            <i class="bi bi-cpu-fill rep-flow-icon"></i>
+            <h3>Advanced Diagnosis</h3>
+            <p>Multimeter voltage scan & infrared thermal imaging check.</p>
+            <span class="rep-flow-duration">10 Mins</span>
+          </div>
+
+          <!-- Step 3 -->
+          <div class="rep-flow-step">
+            <div class="rep-flow-num">3</div>
+            <i class="bi bi-receipt-cutoff rep-flow-icon"></i>
+            <h3>Cost Approval</h3>
+            <p>Flat transparent estimate sent for customer sign-off.</p>
+            <span class="rep-flow-duration">Instant</span>
+          </div>
+
+          <!-- Step 4 -->
+          <div class="rep-flow-step">
+            <div class="rep-flow-num">4</div>
+            <i class="bi bi-tools rep-flow-icon"></i>
+            <h3>Master Repair</h3>
+            <p>Cleanroom ESD disassembly & genuine component installation.</p>
+            <span class="rep-flow-duration">20–45 Mins</span>
+          </div>
+
+          <!-- Step 5 -->
+          <div class="rep-flow-step">
+            <div class="rep-flow-num">5</div>
+            <i class="bi bi-shield-check rep-flow-icon"></i>
+            <h3>Quality Testing</h3>
+            <p>50-point automated hardware diagnostics & sensor checks.</p>
+            <span class="rep-flow-duration">10 Mins</span>
+          </div>
+
+          <!-- Step 6 -->
+          <div class="rep-flow-step">
+            <div class="rep-flow-num">6</div>
+            <i class="bi bi-stars rep-flow-icon"></i>
+            <h3>Sanitization</h3>
+            <p>Ultrasonic screen cleaning & anti-bacterial UV polish.</p>
+            <span class="rep-flow-duration">5 Mins</span>
+          </div>
+
+          <!-- Step 7 -->
+          <div class="rep-flow-step">
+            <div class="rep-flow-num">7</div>
+            <i class="bi bi-box-seam-fill rep-flow-icon"></i>
+            <h3>Ready Collection</h3>
+            <p>SMS alert, warranty certificate & device handoff.</p>
+            <span class="rep-flow-duration">Handoff</span>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== SECTION 5 — GENUINE PARTS & WARRANTY ===================== -->
+  <section class="cm-section" id="parts">
+    <div class="cm-container">
+      <div class="cm-section__head text-center mx-auto" data-reveal style="max-width:720px;">
+        <div class="cm-eyebrow">
+          <i class="bi bi-patch-check"></i> QUALITY COMPONENT ASSURANCE
+        </div>
+        <h2 class="cm-section__title">Genuine OEM Parts vs. Cheap Knockoffs</h2>
+        <p class="cm-section__desc">
+          Why cheap repair shops end up costing you double. See how our factory-grade replacement components safeguard your device's motherboard, battery life, and resale value.
+        </p>
+      </div>
+
+      <div class="rep-parts-grid">
+
+        <!-- Left: Genuine Parts -->
+        <div class="rep-parts-card rep-parts-card--genuine" data-reveal>
+          <span class="rep-parts-card__badge"><i class="bi bi-shield-fill-check"></i> CELLMATE STANDARD</span>
+          <h3>Original OEM Spare Parts</h3>
+          <p>Sourced directly from original component manufacturer supply chains for flawless compatibility.</p>
+
+          <ul class="rep-parts-list">
+            <li><i class="bi bi-check-circle-fill"></i> <strong>Factory Color & Brightness:</strong> Full NTSC/DCI-P3 color gamuts & 1200+ nits peak output.</li>
+            <li><i class="bi bi-check-circle-fill"></i> <strong>Zero Heat Bugs:</strong> Power draw matches stock specifications without draining logic board power lines.</li>
+            <li><i class="bi bi-check-circle-fill"></i> <strong>TrueTone & Biometrics OK:</strong> Preserves Face ID, Touch ID, and optical proximity sensors.</li>
+            <li><i class="bi bi-check-circle-fill"></i> <strong>12-Month Guarantee:</strong> Complete peace of mind backing every repair against defects.</li>
+            <li><i class="bi bi-check-circle-fill"></i> <strong>Long Lifespan:</strong> Tested for 50,000+ touch hours and 1,000+ battery charge cycles.</li>
+          </ul>
+        </div>
+
+        <!-- Center: Exploded View Image -->
+        <div class="rep-parts-exploded" data-reveal>
+          <div class="rep-parts-exploded__frame">
+            <img src="https://images.unsplash.com/photo-1591799264318-7e6ef8ddb7ea?auto=format&fit=crop&w=800&q=80" alt="Exploded high tech smartphone hardware components stack" loading="lazy">
+            <span class="rep-exploded-hotspot rep-exploded-hotspot--1">OEM OLED Stack</span>
+            <span class="rep-exploded-hotspot rep-exploded-hotspot--2">Micro Logic Board</span>
+            <span class="rep-exploded-hotspot rep-exploded-hotspot--3">Calibrated OEM Cell</span>
+          </div>
+        </div>
+
+        <!-- Right: Cheap Replacement Parts -->
+        <div class="rep-parts-card rep-parts-card--cheap" data-reveal>
+          <span class="rep-parts-card__badge"><i class="bi bi-exclamation-triangle-fill"></i> DANGER OF CHEAP REPAIRS</span>
+          <h3>Low-Grade Aftermarket Knockoffs</h3>
+          <p>Commonly installed by budget third-party shops to maximize short-term profit margins.</p>
+
+          <ul class="rep-parts-list">
+            <li><i class="bi bi-x-circle-fill"></i> <strong>Dim & Washed Out:</strong> Poor color accuracy, low contrast, and visible backlight bleed.</li>
+            <li><i class="bi bi-x-circle-fill"></i> <strong>Severe Overheating:</strong> High internal resistance causes thermal throttling and motherboard strain.</li>
+            <li><i class="bi bi-x-circle-fill"></i> <strong>Disabled Features:</strong> Disables TrueTone, breaks automatic brightness, and invalidates biometrics.</li>
+            <li><i class="bi bi-x-circle-fill"></i> <strong>No Warranty Protection:</strong> Zero accountability when the screen fails weeks later.</li>
+            <li><i class="bi bi-x-circle-fill"></i> <strong>Fragile Construction:</strong> Weak glass shatters from minor bumps within days.</li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== SECTION 6 — WHY OUR REPAIRS STAND OUT ===================== -->
+  <section class="cm-section cm-section--tinted" id="why-us">
+    <div class="cm-container">
+      <div class="cm-section__head" data-reveal>
+        <div class="cm-eyebrow">
+          <i class="bi bi-award-fill"></i> THE CELLMATE ADVANTAGE
+        </div>
+        <h2 class="cm-section__title">Why Our Repairs Stand Out Above The Rest</h2>
+        <p class="cm-section__desc">
+          We combine cutting-edge laboratory diagnostics with unyielding transparency to deliver an authorized-level repair experience.
+        </p>
+      </div>
+
+      <!-- Bento Grid Layout -->
+      <div class="rep-bento-grid" data-reveal>
+
+        <!-- Bento 1 (Large 2x2) -->
+        <div class="rep-bento-card rep-bento-card--lg">
+          <div class="rep-bento-icon"><i class="bi bi-award-fill"></i></div>
+          <h3>IPC-Certified Master Technicians</h3>
+          <p>
+            Our repair specialists undergo rigorous IPC-A-610 micro-soldering certification and Apple/Samsung authorized lab training. We don't employ untrained novices — every technician opening your device has over 6+ years of micro-electronic experience.
+          </p>
+        </div>
+
+        <!-- Bento 2 -->
+        <div class="rep-bento-card">
+          <div class="rep-bento-icon"><i class="bi bi-thermometer-high"></i></div>
+          <h3>Infrared Thermal Imaging</h3>
+          <p>Pinpoint logic board micro-shorts within seconds using FLIR thermal cameras.</p>
+        </div>
+
+        <!-- Bento 3 -->
+        <div class="rep-bento-card">
+          <div class="rep-bento-icon"><i class="bi bi-lightning-charge-fill"></i></div>
+          <h3>30–60 Min Turnaround</h3>
+          <p>85% of repair tickets are completed while you enjoy coffee in our lounge.</p>
+        </div>
+
+        <!-- Bento 4 (Wide 2-col) -->
+        <div class="rep-bento-card rep-bento-card--wide">
+          <div class="rep-bento-icon"><i class="bi bi-currency-dollar"></i></div>
+          <h3>100% Transparent Flat Pricing</h3>
+          <p>
+            No diagnostic surprise fees or hidden labor charges. What we quote during intake is exactly what you pay upon collection.
+          </p>
+        </div>
+
+        <!-- Bento 5 -->
+        <div class="rep-bento-card">
+          <div class="rep-bento-icon"><i class="bi bi-shield-check"></i></div>
+          <h3>12-Month Warranty</h3>
+          <p>Hassle-free replacement guarantee covering both parts & technician labor.</p>
+        </div>
+
+        <!-- Bento 6 -->
+        <div class="rep-bento-card">
+          <div class="rep-bento-icon"><i class="bi bi-check-all"></i></div>
+          <h3>50-Point Quality Test</h3>
+          <p>Every sensor, speaker, antenna & camera is rigorously verified post-repair.</p>
+        </div>
+
+        <!-- Bento 7 -->
+        <div class="rep-bento-card">
+          <div class="rep-bento-icon"><i class="bi bi-search-heart"></i></div>
+          <h3>Free Device Inspection</h3>
+          <p>Zero cost diagnostic evaluation — if you choose not to repair, you pay nothing.</p>
+        </div>
+
+        <!-- Bento 8 -->
+        <div class="rep-bento-card">
+          <div class="rep-bento-icon"><i class="bi bi-lock-fill"></i></div>
+          <h3>ISO Data Privacy</h3>
+          <p>Strict non-disclosure protocols protect your personal photos, messages & banking data.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== SECTION 7 — BOOK YOUR REPAIR ===================== -->
+  <section class="cm-section" id="book">
+    <div class="cm-container">
+      <div class="rep-booking-wrap" data-reveal>
+        <div class="rep-booking-grid">
+
+          <!-- Left: Booking Form -->
+          <div>
+            <div class="cm-eyebrow mb-3">
+              <i class="bi bi-calendar-check-fill"></i> INSTANT REPAIR BOOKING
+            </div>
+            <h2 class="cm-section__title mb-3">Let's Bring Your Phone Back to Life.</h2>
+            <p class="cm-section__desc mb-4">
+              Whether your device has a cracked screen, weak battery, charging port issue, water damage, or software failure, our master technicians are ready to restore it. Book below to secure express priority queueing!
+            </p>
+
+            <form class="rep-booking-form" id="repBookingForm">
+              <div class="rep-form-row">
+                <div class="rep-form-group">
+                  <label for="repName">Full Name *</label>
+                  <input type="text" id="repName" placeholder="e.g. Alex Morgan" required>
+                </div>
+                <div class="rep-form-group">
+                  <label for="repPhone">Phone Number *</label>
+                  <input type="tel" id="repPhone" placeholder="e.g. +1 (555) 019-2834" required>
+                </div>
+              </div>
+
+              <div class="rep-form-row">
+                <div class="rep-form-group">
+                  <label for="repEmail">Email Address *</label>
+                  <input type="email" id="repEmail" placeholder="e.g. alex@example.com" required>
+                </div>
+                <div class="rep-form-group">
+                  <label for="repBrand">Phone Brand *</label>
+                  <select id="repBrand" required>
+                    <option value="" disabled selected>Select Brand</option>
+                    <option value="Apple">Apple iPhone</option>
+                    <option value="Samsung">Samsung Galaxy</option>
+                    <option value="Google">Google Pixel</option>
+                    <option value="OnePlus">OnePlus</option>
+                    <option value="Xiaomi">Xiaomi / Redmi</option>
+                    <option value="Other">Other Device</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="rep-form-row">
+                <div class="rep-form-group">
+                  <label for="repModel">Exact Model *</label>
+                  <input type="text" id="repModel" placeholder="e.g. iPhone 15 Pro Max / Galaxy S24 Ultra" required>
+                </div>
+                <div class="rep-form-group">
+                  <label for="repSelectType">Primary Repair Needed *</label>
+                  <select id="repSelectType" required>
+                    <option value="" disabled selected>Select Repair Service</option>
+                    <option value="Screen Replacement">Screen Replacement</option>
+                    <option value="Battery Replacement">Battery Replacement</option>
+                    <option value="Charging Port Repair">Charging Port Repair</option>
+                    <option value="Camera Repair">Camera Repair</option>
+                    <option value="Speaker & Microphone Repair">Speaker & Microphone Repair</option>
+                    <option value="Water Damage Repair">Water Damage Repair</option>
+                    <option value="Motherboard Repair">Motherboard Micro-soldering</option>
+                    <option value="Software Troubleshooting">Software Troubleshooting</option>
+                    <option value="Face ID / Fingerprint Repair">Face ID / Biometric Repair</option>
+                    <option value="Back Glass Replacement">Back Glass Laser Replacement</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="rep-form-group">
+                <label for="repProblem">Describe The Issue</label>
+                <textarea id="repProblem" rows="3" placeholder="Describe symptoms (e.g. phone dropped in water, screen flickering, won't hold charge)..."></textarea>
+              </div>
+
+              <div class="rep-form-row">
+                <div class="rep-form-group">
+                  <label for="repDate">Preferred Appointment Date</label>
+                  <input type="date" id="repDate">
+                </div>
+                <div class="rep-form-group d-flex align-items-center justify-content-start pt-4">
+                  <label class="d-flex align-items-center gap-2 cursor-pointer mb-0 text-sm">
+                    <input type="checkbox" id="repExpress" class="accent-blue-600 w-4 h-4">
+                    <span><strong>Express 30-Min Queue</strong> (Free priority handoff)</span>
+                  </label>
+                </div>
+              </div>
+
+              <div class="d-flex flex-wrap gap-3 mt-2">
+                <button type="submit" class="cm-btn cm-btn--primary cm-btn--lg">
+                  <span>Confirm & Book Repair</span>
+                  <i class="bi bi-arrow-right"></i>
+                </button>
+
+                <a href="https://wa.me/15550192834?text=Hi%20CellMate!%20I%20need%20a%20repair%20quote." target="_blank" rel="noopener" class="cm-btn cm-btn--ghost cm-btn--lg" style="color:#22c55e; border-color:rgba(34,197,94,.4);">
+                  <i class="bi bi-whatsapp"></i>
+                  <span>WhatsApp Quote</span>
+                </a>
+              </div>
+
+              <div class="cm-form__status" id="repFormStatus"></div>
+            </form>
+          </div>
+
+          <!-- Right: Location & Workshop Hours -->
+          <div>
+            <div class="rep-location-box">
+              <div class="d-flex align-items-center gap-3">
+                <div class="cm-logo__mark"><i class="bi bi-geo-alt-fill"></i></div>
+                <div>
+                  <h4 class="mb-0 text-lg font-bold">Main Service Center</h4>
+                  <span class="text-sm text-slate-400">CellMate Flagship Workshop</span>
+                </div>
+              </div>
+
+              <div class="rep-location-item">
+                <i class="bi bi-geo-alt-fill"></i>
+                <div>
+                  <strong>Address & Directions</strong>
+                  <span>458 Tech Plaza, 2nd Floor, Innovation District</span>
+                </div>
+              </div>
+
+              <div class="rep-location-item">
+                <i class="bi bi-clock-fill"></i>
+                <div>
+                  <strong>Business Hours</strong>
+                  <span>Mon – Sat: 09:00 AM – 08:00 PM</span><br>
+                  <span>Sunday: 10:00 AM – 05:00 PM (Emergency Desk)</span>
+                </div>
+              </div>
+
+              <div class="rep-location-item">
+                <i class="bi bi-telephone-inbound-fill"></i>
+                <div>
+                  <strong>Direct Technician Hotline</strong>
+                  <span>+1 (800) 555-0199 / +1 (555) 019-2834</span>
+                </div>
+              </div>
+
+              <div class="rep-location-item">
+                <i class="bi bi-shield-check"></i>
+                <div>
+                  <strong>Walk-In Diagnostic Policy</strong>
+                  <span>No appointment required for quick 15-minute diagnostic checks. Walk-ins are always welcomed!</span>
+                </div>
+              </div>
+
+              <div class="pt-2">
+                <a href="https://maps.google.com" target="_blank" rel="noopener" class="cm-btn cm-btn--ghost w-100 justify-content-center">
+                  <i class="bi bi-map-fill"></i>
+                  <span>Open Location in Google Maps</span>
+                </a>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ===================== FOOTER ===================== -->
+<footer class="cm-footer">
+  <div class="cm-container">
+    <div class="cm-footer__grid">
+      
+      <div class="cm-footer__brand">
+        <a href="index.html" class="cm-logo cm-logo--footer">
+          <span class="cm-logo__mark"><i class="bi bi-cpu-fill"></i></span>
+          <span class="cm-logo__text">Cell<span>Mate</span></span>
+        </a>
+        <p>
+          Premium mobile phone repair & accessory shop. Certified technicians, genuine spare parts, and transparent service.
+        </p>
+        <div class="cm-social">
+          <a href="#" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+          <a href="#" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+          <a href="#" aria-label="Twitter X"><i class="bi bi-twitter-x"></i></a>
+          <a href="#" aria-label="YouTube"><i class="bi bi-youtube"></i></a>
+        </div>
+      </div>
+
+      <div class="cm-footer__col">
+        <h4>Navigation</h4>
+        <a href="index.html">Home</a>
+        <a href="repairs.html">Repair Services</a>
+        <a href="home2.html">Inside Workshop</a>
+        <a href="index.html#accessories">Accessories</a>
+        <a href="index.html#trust">Reviews</a>
+      </div>
+
+      <div class="cm-footer__col">
+        <h4>Repair Services</h4>
+        <a href="repairs.html#solutions">Screen Replacement</a>
+        <a href="repairs.html#solutions">Battery Swap</a>
+        <a href="repairs.html#solutions">Charging Port</a>
+        <a href="repairs.html#solutions">Water Damage</a>
+        <a href="repairs.html#solutions">Motherboard Soldering</a>
+      </div>
+
+      <div class="cm-footer__col">
+        <h4>Workshop Hours</h4>
+        <p>Mon – Sat: 9am – 8pm</p>
+        <p>Sunday: 10am – 5pm</p>
+        <p class="cm-eyebrow cm-eyebrow--static mt-2" style="font-size:11px;">
+          <span class="cm-dot-pulse"></span> WORKSHOP OPEN NOW
+        </p>
+      </div>
+
+      <div class="cm-footer__col">
+        <h4>Newsletter</h4>
+        <p>Get maintenance tips & exclusive repair discounts.</p>
+        <form class="cm-newsletter" id="newsletterForm">
+          <input type="email" placeholder="Your email..." required aria-label="Email address">
+          <button type="submit" aria-label="Subscribe"><i class="bi bi-arrow-right"></i></button>
+        </form>
+      </div>
+
+    </div>
+
+    <div class="cm-footer__bottom">
+      <span>&copy; 2026 CellMate Mobile Services Inc. All rights reserved.</span>
+      <span>Designed with Precision for Authorized Smartphone Care.</span>
+    </div>
+  </div>
+</footer>
+
+<!-- Back to top button -->
+<button class="cm-to-top" id="toTop" aria-label="Back to top">
+  <i class="bi bi-arrow-up"></i>
+</button>
+
+<!-- Scripts -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
