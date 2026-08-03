@@ -1,0 +1,657 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CellMate — Inside the Workshop | Expert Mobile Repair</title>
+<meta name="description" content="Go behind the counter at CellMate — certified technicians, genuine parts, advanced diagnostic tools and a transparent repair process for your smartphone.">
+
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+<!-- Bootstrap 5.3 -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<!-- Tailwind (utility helpers only) -->
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = { corePlugins: { preflight: false } };
+</script>
+
+<!-- Icons -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ===================== NOISE / GRAIN OVERLAY ===================== -->
+<div class="grain-overlay" aria-hidden="true"></div>
+
+<!-- ===================== NAVBAR ===================== -->
+<header class="cm-nav" id="cmNav">
+  <div class="cm-nav__inner">
+    <a href="index.html" class="cm-logo">
+      <span class="cm-logo__mark">
+        <i class="bi bi-cpu-fill"></i>
+      </span>
+      <span class="cm-logo__text">Cell<span>Mate</span></span>
+    </a>
+
+    <nav class="cm-menu" id="cmMenu" aria-label="Primary">
+      <a href="index.html" class="cm-menu__link">Home</a>
+      <a href="#lab" class="cm-menu__link active">Lab</a>
+      <a href="#journey" class="cm-menu__link">Process</a>
+      <a href="#parts" class="cm-menu__link">Parts</a>
+      <a href="#dashboard" class="cm-menu__link">Timings</a>
+      <a href="#team" class="cm-menu__link">Team</a>
+    </nav>
+
+    <div class="cm-nav__actions">
+      <button class="cm-theme-toggle" id="themeToggle" aria-label="Switch between light and dark mode" aria-pressed="false">
+        <i class="bi bi-sun-fill cm-theme-toggle__sun"></i>
+        <i class="bi bi-moon-stars-fill cm-theme-toggle__moon"></i>
+        <span class="cm-theme-toggle__ball"></span>
+      </button>
+      <a href="index.html#contact" class="cm-btn cm-btn--primary d-none d-lg-inline-flex">
+        <span>Book Repair</span>
+        <i class="bi bi-arrow-up-right"></i>
+      </a>
+      <button class="cm-burger" id="cmBurger" aria-label="Open menu" aria-expanded="false" aria-controls="cmMenu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main id="top2">
+
+  <!-- ===================== SECTION 1 — IMMERSIVE HERO ===================== -->
+  <section class="h2-hero">
+    <div class="h2-hero__bg" aria-hidden="true">
+      <div class="h2-mesh"></div>
+      <div class="h2-particles">
+        <span class="h2-particle"></span>
+        <span class="h2-particle"></span>
+        <span class="h2-particle"></span>
+        <span class="h2-particle"></span>
+        <span class="h2-particle"></span>
+        <span class="h2-particle"></span>
+      </div>
+    </div>
+
+    <div class="cm-container h2-hero__grid">
+      <div class="h2-hero__content" data-reveal>
+        <p class="cm-eyebrow">
+          <span class="cm-dot-pulse"></span>
+          INSIDE THE WORKSHOP
+        </p>
+
+        <h1 class="h2-hero__title">
+          Real expertise, <span class="cm-highlight">not guesswork</span>.
+        </h1>
+
+        <p class="h2-hero__desc">
+          Every device that reaches our bench is handled by a certified
+          technician using calibrated tools and genuine parts. This is the
+          process, the people, and the precision behind every repair we sign off on.
+        </p>
+
+        <div class="h2-hero__trust">
+          <span class="h2-chip"><i class="bi bi-patch-check-fill"></i> Certified Technicians</span>
+          <span class="h2-chip"><i class="bi bi-box-seam"></i> Genuine Parts Only</span>
+          <span class="h2-chip"><i class="bi bi-shield-check"></i> 3-Month Warranty</span>
+        </div>
+
+        <div class="cm-hero__cta">
+          <a href="#team" class="cm-btn cm-btn--primary cm-btn--lg">
+            <span>Meet Our Experts</span>
+            <i class="bi bi-arrow-up-right"></i>
+          </a>
+          <a href="index.html#contact" class="cm-btn cm-btn--ghost cm-btn--lg">
+            <span>Book Repair</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="h2-hero__visual" data-reveal>
+        <div class="h2-hero__frame">
+          <img src="https://images.unsplash.com/photo-1581092160607-ee22731cb50f?q=80&w=1000&auto=format&fit=crop" alt="Certified technician repairing a premium smartphone under studio lighting" loading="lazy">
+        </div>
+
+        <div class="cm-float-card h2-float-card--a">
+          <i class="bi bi-tools"></i>
+          <div>
+            <strong>24</strong>
+            <span>Today's Repairs</span>
+          </div>
+        </div>
+
+        <div class="cm-float-card h2-float-card--b">
+          <i class="bi bi-stopwatch"></i>
+          <div>
+            <strong>38 min</strong>
+            <span>Average Repair Time</span>
+          </div>
+        </div>
+
+        <div class="cm-float-card h2-float-card--c">
+          <i class="bi bi-patch-check-fill"></i>
+          <div>
+            <strong>Level 3</strong>
+            <span>Certified Technician</span>
+          </div>
+        </div>
+
+        <div class="cm-float-card h2-float-card--d">
+          <i class="bi bi-shield-check"></i>
+          <div>
+            <strong>3 Months</strong>
+            <span>Warranty Included</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== SECTION 2 — INSIDE OUR REPAIR LAB ===================== -->
+  <section class="cm-section cm-section--tinted" id="lab">
+    <div class="cm-container">
+      <div class="cm-section__head" data-reveal>
+        <p class="cm-eyebrow cm-eyebrow--static">BEHIND THE COUNTER</p>
+        <h2 class="cm-section__title">Step inside our repair lab.</h2>
+        <p class="cm-section__desc">
+          No back-room guesswork. Every station in our workshop is built
+          around precision, cleanliness and repeatable results.
+        </p>
+      </div>
+
+      <div class="h2-lab-grid" data-reveal>
+
+        <article class="h2-lab-item h2-lab-item--a">
+          <span class="h2-lab-tag">STATION 01</span>
+          <img src="https://images.unsplash.com/photo-1581091012184-7f42c66df6a1?q=80&w=1200&auto=format&fit=crop" alt="Advanced diagnostic equipment used to test smartphone faults" loading="lazy">
+          <div class="h2-lab-overlay">
+            <h3>Advanced Diagnostic Equipment</h3>
+            <p>Board-level testers pinpoint faults in minutes, not hours.</p>
+            <a href="#dashboard" class="cm-link-arrow">Learn more <i class="bi bi-arrow-right"></i></a>
+          </div>
+        </article>
+
+        <article class="h2-lab-item h2-lab-item--b">
+          <span class="h2-lab-tag">STATION 02</span>
+          <img src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?q=80&w=800&auto=format&fit=crop" alt="Technician using a microscope station for micro-soldering" loading="lazy">
+          <div class="h2-lab-overlay">
+            <h3>Microscope Station</h3>
+            <p>Micro-soldering on components smaller than a grain of rice.</p>
+            <a href="#team" class="cm-link-arrow">Learn more <i class="bi bi-arrow-right"></i></a>
+          </div>
+        </article>
+
+        <article class="h2-lab-item h2-lab-item--c">
+          <span class="h2-lab-tag">STATION 03</span>
+          <img src="https://images.unsplash.com/photo-1581092918484-8313ade24d1f?q=80&w=800&auto=format&fit=crop" alt="Organised repair bench with tools laid out for smartphone repair" loading="lazy">
+          <div class="h2-lab-overlay">
+            <h3>Repair Bench</h3>
+            <p>Anti-static, fully tooled benches — one device at a time.</p>
+            <a href="#journey" class="cm-link-arrow">Learn more <i class="bi bi-arrow-right"></i></a>
+          </div>
+        </article>
+
+        <article class="h2-lab-item h2-lab-item--d">
+          <span class="h2-lab-tag">STATION 04</span>
+          <img src="https://images.unsplash.com/photo-1517420704952-d9f39e95b43e?q=80&w=800&auto=format&fit=crop" alt="Quality testing area for repaired smartphones" loading="lazy">
+          <div class="h2-lab-overlay">
+            <h3>Testing Area</h3>
+            <p>A 12-point quality check before any device leaves the bench.</p>
+            <a href="#dashboard" class="cm-link-arrow">Learn more <i class="bi bi-arrow-right"></i></a>
+          </div>
+        </article>
+
+        <article class="h2-lab-item h2-lab-item--e">
+          <span class="h2-lab-tag">STATION 05</span>
+          <img src="https://images.unsplash.com/photo-1581092335878-2d9ff86ca2bf?q=80&w=1200&auto=format&fit=crop" alt="Ultrasonic cleaning station for water damaged phones" loading="lazy">
+          <div class="h2-lab-overlay">
+            <h3>Cleaning Station</h3>
+            <p>Ultrasonic cleaning removes corrosion after water exposure.</p>
+            <a href="index.html#services" class="cm-link-arrow">Learn more <i class="bi bi-arrow-right"></i></a>
+          </div>
+        </article>
+
+        <article class="h2-lab-item h2-lab-item--f">
+          <span class="h2-lab-tag">STATION 06</span>
+          <img src="https://images.unsplash.com/photo-1585298723682-7115561c51b7?q=80&w=1200&auto=format&fit=crop" alt="Display shelf of premium mobile accessories" loading="lazy">
+          <div class="h2-lab-overlay">
+            <h3>Accessories Display</h3>
+            <p>Cases, chargers and cables, checked before they hit the shelf.</p>
+            <a href="index.html#accessories" class="cm-link-arrow">Learn more <i class="bi bi-arrow-right"></i></a>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== SECTION 3 — COMPLETE REPAIR JOURNEY ===================== -->
+  <section class="cm-section" id="journey">
+    <div class="cm-container">
+      <div class="cm-section__head" data-reveal>
+        <p class="cm-eyebrow cm-eyebrow--static">FULL TRANSPARENCY</p>
+        <h2 class="cm-section__title">The complete repair journey.</h2>
+        <p class="cm-section__desc">
+          From the moment your device arrives to the moment it's back in
+          your hands — here's exactly what happens at every step.
+        </p>
+      </div>
+
+      <div class="h2-journey" data-reveal>
+        <div class="h2-journey__line"></div>
+
+        <div class="h2-journey__step h2-journey__step--left">
+          <span class="h2-journey__num">01</span>
+          <i class="bi bi-box-arrow-in-down"></i>
+          <h3>Receive Device</h3>
+          <p>Your phone is logged, photographed and tagged at intake.</p>
+          <span class="h2-journey__time"><i class="bi bi-clock"></i> ~5 minutes</span>
+        </div>
+
+        <div class="h2-journey__step h2-journey__step--right">
+          <span class="h2-journey__num">02</span>
+          <i class="bi bi-eye"></i>
+          <h3>Inspection</h3>
+          <p>A visual and physical check for external and internal damage.</p>
+          <span class="h2-journey__time"><i class="bi bi-clock"></i> ~10 minutes</span>
+        </div>
+
+        <div class="h2-journey__step h2-journey__step--left">
+          <span class="h2-journey__num">03</span>
+          <i class="bi bi-search"></i>
+          <h3>Diagnosis</h3>
+          <p>Diagnostic equipment isolates the exact fault, free of charge.</p>
+          <span class="h2-journey__time"><i class="bi bi-clock"></i> ~15 minutes</span>
+        </div>
+
+        <div class="h2-journey__step h2-journey__step--right">
+          <span class="h2-journey__num">04</span>
+          <i class="bi bi-clipboard-check"></i>
+          <h3>Customer Approval</h3>
+          <p>We call with a fixed quote — nothing proceeds without your OK.</p>
+          <span class="h2-journey__time"><i class="bi bi-clock"></i> Your call</span>
+        </div>
+
+        <div class="h2-journey__step h2-journey__step--left">
+          <span class="h2-journey__num">05</span>
+          <i class="bi bi-tools"></i>
+          <h3>Repair Process</h3>
+          <p>Certified technicians carry out the fix with genuine parts.</p>
+          <span class="h2-journey__time"><i class="bi bi-clock"></i> 25–60 minutes</span>
+        </div>
+
+        <div class="h2-journey__step h2-journey__step--right">
+          <span class="h2-journey__num">06</span>
+          <i class="bi bi-clipboard-data"></i>
+          <h3>Final Testing</h3>
+          <p>A full 12-point quality check confirms everything works.</p>
+          <span class="h2-journey__time"><i class="bi bi-clock"></i> ~10 minutes</span>
+        </div>
+
+        <div class="h2-journey__step h2-journey__step--left">
+          <span class="h2-journey__num">07</span>
+          <i class="bi bi-bag-check"></i>
+          <h3>Ready For Pickup</h3>
+          <p>Collect your device with an itemised bill and warranty card.</p>
+          <span class="h2-journey__time"><i class="bi bi-clock"></i> Same day</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== SECTION 4 — GENUINE PARTS COMPARISON ===================== -->
+  <section class="cm-section cm-section--tinted" id="parts">
+    <div class="cm-container">
+      <div class="cm-section__head" data-reveal>
+        <p class="cm-eyebrow cm-eyebrow--static">WHY PARTS MATTER</p>
+        <h2 class="cm-section__title">Genuine parts vs. the cheap alternative.</h2>
+        <p class="cm-section__desc">
+          The part behind your screen or battery decides how long the repair
+          actually lasts. Here's the difference it makes.
+        </p>
+      </div>
+
+      <div class="h2-compare" data-reveal>
+
+        <div class="h2-compare__col h2-compare__col--good">
+          <span class="h2-compare__badge"><i class="bi bi-patch-check-fill"></i> ORIGINAL PARTS</span>
+          <h3>Built to original spec</h3>
+          <ul class="h2-compare__list">
+            <li><i class="bi bi-check-circle-fill"></i> Full manufacturer-grade warranty</li>
+            <li><i class="bi bi-check-circle-fill"></i> Rated lifespan matching factory cells</li>
+            <li><i class="bi bi-check-circle-fill"></i> Accurate colour, touch and brightness</li>
+            <li><i class="bi bi-check-circle-fill"></i> Stable performance under daily use</li>
+          </ul>
+        </div>
+
+        <div class="h2-compare__center">
+          <span class="h2-compare__vs">GENUINE VS GENERIC</span>
+          <img src="https://images.unsplash.com/photo-1601524909162-ae8725290836?q=80&w=700&auto=format&fit=crop" alt="Smartphone internal components and spare parts laid out" loading="lazy">
+        </div>
+
+        <div class="h2-compare__col h2-compare__col--bad">
+          <span class="h2-compare__badge"><i class="bi bi-exclamation-triangle-fill"></i> LOW-QUALITY PARTS</span>
+          <h3>Cuts corners that show</h3>
+          <ul class="h2-compare__list">
+            <li><i class="bi bi-x-circle-fill"></i> Short lifespan, often failing in weeks</li>
+            <li><i class="bi bi-x-circle-fill"></i> Prone to overheating under load</li>
+            <li><i class="bi bi-x-circle-fill"></i> Poor performance — dim, laggy, inaccurate</li>
+            <li><i class="bi bi-x-circle-fill"></i> No warranty backing the repair</li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== SECTION 5 — REPAIR TIME & SERVICE DASHBOARD ===================== -->
+  <section class="cm-section" id="dashboard">
+    <div class="cm-container">
+      <div class="cm-section__head" data-reveal>
+        <p class="cm-eyebrow cm-eyebrow--static">PLAN YOUR VISIT</p>
+        <h2 class="cm-section__title">Know before you walk in.</h2>
+        <p class="cm-section__desc">
+          Estimated time, difficulty and warranty for every common repair —
+          scroll to see the full board.
+        </p>
+      </div>
+
+      <div class="h2-dash-hint"><i class="bi bi-arrow-left-right"></i> Swipe to see all repairs</div>
+
+      <div class="h2-dash-scroll" data-reveal>
+
+        <article class="h2-dash-card" data-reveal style="--fill:55%">
+          <div class="h2-dash-card__top">
+            <span class="h2-dash-card__icon"><i class="bi bi-phone"></i></span>
+            <span class="h2-priority h2-priority--high">High demand</span>
+          </div>
+          <h3>Screen Repair</h3>
+          <span class="h2-dash-card__time"><i class="bi bi-clock"></i> 25–35 minutes</span>
+          <div class="h2-dash-card__meter">
+            <div class="h2-dash-card__meter-labels"><span>Difficulty</span><span>Moderate</span></div>
+            <div class="h2-dash-card__bar"><div class="h2-dash-card__fill"></div></div>
+          </div>
+          <div class="h2-dash-card__foot"><span><i class="bi bi-shield-check"></i> 3 mo. warranty</span><i class="bi bi-check-circle-fill" style="color:var(--success)"></i></div>
+        </article>
+
+        <article class="h2-dash-card" data-reveal style="--fill:35%">
+          <div class="h2-dash-card__top">
+            <span class="h2-dash-card__icon"><i class="bi bi-battery-charging"></i></span>
+            <span class="h2-priority h2-priority--low">Easy fix</span>
+          </div>
+          <h3>Battery Replacement</h3>
+          <span class="h2-dash-card__time"><i class="bi bi-clock"></i> 20–30 minutes</span>
+          <div class="h2-dash-card__meter">
+            <div class="h2-dash-card__meter-labels"><span>Difficulty</span><span>Low</span></div>
+            <div class="h2-dash-card__bar"><div class="h2-dash-card__fill"></div></div>
+          </div>
+          <div class="h2-dash-card__foot"><span><i class="bi bi-shield-check"></i> 3 mo. warranty</span><i class="bi bi-check-circle-fill" style="color:var(--success)"></i></div>
+        </article>
+
+        <article class="h2-dash-card" data-reveal style="--fill:60%">
+          <div class="h2-dash-card__top">
+            <span class="h2-dash-card__icon"><i class="bi bi-usb-plug"></i></span>
+            <span class="h2-priority h2-priority--medium">Common</span>
+          </div>
+          <h3>Charging Port</h3>
+          <span class="h2-dash-card__time"><i class="bi bi-clock"></i> 30–45 minutes</span>
+          <div class="h2-dash-card__meter">
+            <div class="h2-dash-card__meter-labels"><span>Difficulty</span><span>Moderate</span></div>
+            <div class="h2-dash-card__bar"><div class="h2-dash-card__fill"></div></div>
+          </div>
+          <div class="h2-dash-card__foot"><span><i class="bi bi-shield-check"></i> 3 mo. warranty</span><i class="bi bi-check-circle-fill" style="color:var(--success)"></i></div>
+        </article>
+
+        <article class="h2-dash-card" data-reveal style="--fill:65%">
+          <div class="h2-dash-card__top">
+            <span class="h2-dash-card__icon"><i class="bi bi-camera"></i></span>
+            <span class="h2-priority h2-priority--medium">Common</span>
+          </div>
+          <h3>Camera Repair</h3>
+          <span class="h2-dash-card__time"><i class="bi bi-clock"></i> 25–40 minutes</span>
+          <div class="h2-dash-card__meter">
+            <div class="h2-dash-card__meter-labels"><span>Difficulty</span><span>Moderate</span></div>
+            <div class="h2-dash-card__bar"><div class="h2-dash-card__fill"></div></div>
+          </div>
+          <div class="h2-dash-card__foot"><span><i class="bi bi-shield-check"></i> 3 mo. warranty</span><i class="bi bi-check-circle-fill" style="color:var(--success)"></i></div>
+        </article>
+
+        <article class="h2-dash-card" data-reveal style="--fill:30%">
+          <div class="h2-dash-card__top">
+            <span class="h2-dash-card__icon"><i class="bi bi-volume-up"></i></span>
+            <span class="h2-priority h2-priority--low">Easy fix</span>
+          </div>
+          <h3>Speaker Repair</h3>
+          <span class="h2-dash-card__time"><i class="bi bi-clock"></i> 15–25 minutes</span>
+          <div class="h2-dash-card__meter">
+            <div class="h2-dash-card__meter-labels"><span>Difficulty</span><span>Low</span></div>
+            <div class="h2-dash-card__bar"><div class="h2-dash-card__fill"></div></div>
+          </div>
+          <div class="h2-dash-card__foot"><span><i class="bi bi-shield-check"></i> 3 mo. warranty</span><i class="bi bi-check-circle-fill" style="color:var(--success)"></i></div>
+        </article>
+
+        <article class="h2-dash-card" data-reveal style="--fill:85%">
+          <div class="h2-dash-card__top">
+            <span class="h2-dash-card__icon"><i class="bi bi-droplet"></i></span>
+            <span class="h2-priority h2-priority--high">Urgent</span>
+          </div>
+          <h3>Water Damage</h3>
+          <span class="h2-dash-card__time"><i class="bi bi-clock"></i> Same day</span>
+          <div class="h2-dash-card__meter">
+            <div class="h2-dash-card__meter-labels"><span>Difficulty</span><span>High</span></div>
+            <div class="h2-dash-card__bar"><div class="h2-dash-card__fill"></div></div>
+          </div>
+          <div class="h2-dash-card__foot"><span><i class="bi bi-shield-check"></i> 1 mo. warranty</span><i class="bi bi-exclamation-circle-fill" style="color:var(--accent)"></i></div>
+        </article>
+
+        <article class="h2-dash-card" data-reveal style="--fill:92%">
+          <div class="h2-dash-card__top">
+            <span class="h2-dash-card__icon"><i class="bi bi-cpu"></i></span>
+            <span class="h2-priority h2-priority--high">Specialist</span>
+          </div>
+          <h3>Motherboard Repair</h3>
+          <span class="h2-dash-card__time"><i class="bi bi-clock"></i> 1–3 days</span>
+          <div class="h2-dash-card__meter">
+            <div class="h2-dash-card__meter-labels"><span>Difficulty</span><span>Very High</span></div>
+            <div class="h2-dash-card__bar"><div class="h2-dash-card__fill"></div></div>
+          </div>
+          <div class="h2-dash-card__foot"><span><i class="bi bi-shield-check"></i> 1 mo. warranty</span><i class="bi bi-exclamation-circle-fill" style="color:var(--accent)"></i></div>
+        </article>
+
+        <article class="h2-dash-card" data-reveal style="--fill:25%">
+          <div class="h2-dash-card__top">
+            <span class="h2-dash-card__icon"><i class="bi bi-terminal"></i></span>
+            <span class="h2-priority h2-priority--low">Easy fix</span>
+          </div>
+          <h3>Software Troubleshooting</h3>
+          <span class="h2-dash-card__time"><i class="bi bi-clock"></i> 15–30 minutes</span>
+          <div class="h2-dash-card__meter">
+            <div class="h2-dash-card__meter-labels"><span>Difficulty</span><span>Low</span></div>
+            <div class="h2-dash-card__bar"><div class="h2-dash-card__fill"></div></div>
+          </div>
+          <div class="h2-dash-card__foot"><span><i class="bi bi-shield-check"></i> No parts risk</span><i class="bi bi-check-circle-fill" style="color:var(--success)"></i></div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== SECTION 6 — MEET OUR TECHNICIANS ===================== -->
+  <section class="cm-section cm-section--tinted" id="team">
+    <div class="cm-container h2-team">
+
+      <div class="h2-team__grid" data-reveal>
+        <article class="h2-tech-card">
+          <div class="h2-tech-card__media">
+            <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?q=80&w=900&auto=format&fit=crop" alt="Lead technician Arjun Mehta portrait" loading="lazy">
+          </div>
+          <div class="h2-tech-card__body">
+            <h3>Arjun Mehta</h3>
+            <span class="h2-tech-card__role">Lead Technician · Motherboard Specialist</span>
+            <div class="h2-tech-card__stats">
+              <div><strong data-count="9">0</strong>Years Exp.</div>
+              <div><strong data-count="4200" data-suffix="+">0</strong>Repairs</div>
+            </div>
+          </div>
+        </article>
+
+        <article class="h2-tech-card">
+          <div class="h2-tech-card__media">
+            <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?q=80&w=700&auto=format&fit=crop" alt="Technician Priya Nair portrait" loading="lazy">
+          </div>
+          <div class="h2-tech-card__body">
+            <h3>Priya Nair</h3>
+            <span class="h2-tech-card__role">Display &amp; Camera Specialist</span>
+            <div class="h2-tech-card__stats">
+              <div><strong data-count="6">0</strong>Years Exp.</div>
+              <div><strong data-count="3100" data-suffix="+">0</strong>Repairs</div>
+            </div>
+          </div>
+        </article>
+
+        <article class="h2-tech-card">
+          <div class="h2-tech-card__media">
+            <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=700&auto=format&fit=crop" alt="Technician Karan Shah portrait" loading="lazy">
+          </div>
+          <div class="h2-tech-card__body">
+            <h3>Karan Shah</h3>
+            <span class="h2-tech-card__role">Water Damage &amp; Micro-soldering</span>
+            <div class="h2-tech-card__stats">
+              <div><strong data-count="5">0</strong>Years Exp.</div>
+              <div><strong data-count="2600" data-suffix="+">0</strong>Repairs</div>
+            </div>
+          </div>
+        </article>
+      </div>
+
+      <div class="h2-team__story" data-reveal>
+        <p class="cm-eyebrow cm-eyebrow--static">THE PEOPLE BEHIND THE BENCH</p>
+        <h2 class="cm-section__title">Trained. Certified. Still learning.</h2>
+        <p>
+          Every technician on our floor completes a structured certification
+          program before touching a customer device, then keeps training as
+          new chipsets and repair techniques appear.
+        </p>
+        <p>
+          We invest in the same calibrated tools used in manufacturer service
+          centres, so the fix you get here holds up to the same standard —
+          without the manufacturer wait times or pricing.
+        </p>
+
+        <div class="h2-team__badges">
+          <span class="h2-badge-pill"><i class="bi bi-award-fill"></i> Certified on 30+ brands</span>
+          <span class="h2-badge-pill"><i class="bi bi-mortarboard-fill"></i> Continuous training program</span>
+          <span class="h2-badge-pill"><i class="bi bi-tools"></i> Manufacturer-grade tools</span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ===================== SECTION 7 — FINAL CTA ===================== -->
+  <section class="h2-final-cta" id="cta2">
+    <div class="h2-final-cta__bg" aria-hidden="true"></div>
+    <img class="h2-final-cta__phone h2-final-cta__phone--1" src="https://images.unsplash.com/photo-1592286927505-1def25115481?q=80&w=300&auto=format&fit=crop" alt="" aria-hidden="true" loading="lazy">
+    <img class="h2-final-cta__phone h2-final-cta__phone--2" src="https://images.unsplash.com/photo-1601784551446-20c9e07cdbdb?q=80&w=300&auto=format&fit=crop" alt="" aria-hidden="true" loading="lazy">
+
+    <div class="cm-container h2-final-cta__inner" data-reveal>
+      <h2>Your device deserves expert care.</h2>
+      <p>
+        Whether it's a cracked screen, battery issue, charging problem, or
+        software malfunction, our certified technicians are ready to restore
+        your device quickly and professionally using genuine parts and
+        advanced repair techniques.
+      </p>
+      <div class="h2-final-cta__actions">
+        <a href="index.html#contact" class="cm-btn cm-btn--white cm-btn--lg">
+          <span>Book A Repair</span>
+          <i class="bi bi-arrow-up-right"></i>
+        </a>
+        <a href="tel:+910000000000" class="cm-btn cm-btn--outline-white cm-btn--lg">
+          <i class="bi bi-telephone-fill"></i><span>Call Now</span>
+        </a>
+        <a href="https://wa.me/910000000000" class="cm-btn cm-btn--outline-white cm-btn--lg">
+          <i class="bi bi-whatsapp"></i><span>WhatsApp</span>
+        </a>
+        <a href="index.html#contact" class="cm-btn cm-btn--outline-white cm-btn--lg">
+          <i class="bi bi-geo-alt-fill"></i><span>Store Location</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ===================== FOOTER ===================== -->
+<footer class="cm-footer">
+  <div class="cm-container">
+    <div class="cm-footer__grid">
+      <div class="cm-footer__brand">
+        <a href="index.html" class="cm-logo cm-logo--footer">
+          <span class="cm-logo__mark"><i class="bi bi-cpu-fill"></i></span>
+          <span class="cm-logo__text">Cell<span>Mate</span></span>
+        </a>
+        <p>Premium mobile phone repair and accessories, built on certified technicians and genuine parts.</p>
+        <div class="cm-social">
+          <a href="#" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+          <a href="#" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+          <a href="#" aria-label="X (Twitter)"><i class="bi bi-twitter-x"></i></a>
+          <a href="#" aria-label="YouTube"><i class="bi bi-youtube"></i></a>
+        </div>
+      </div>
+
+      <div class="cm-footer__col">
+        <h4>Quick Links</h4>
+        <a href="#lab">Repair Lab</a>
+        <a href="#journey">Our Process</a>
+        <a href="#parts">Genuine Parts</a>
+        <a href="#team">Our Team</a>
+      </div>
+
+      <div class="cm-footer__col">
+        <h4>Repair Services</h4>
+        <a href="index.html#services">Screen Replacement</a>
+        <a href="index.html#services">Battery Replacement</a>
+        <a href="index.html#services">Water Damage</a>
+        <a href="index.html#services">Software Repair</a>
+      </div>
+
+      <div class="cm-footer__col">
+        <h4>Business Hours</h4>
+        <p>Mon – Sat<br>10:00 AM – 8:00 PM</p>
+        <p>Sunday<br>Closed</p>
+      </div>
+
+      <div class="cm-footer__col cm-footer__col--news">
+        <h4>Newsletter</h4>
+        <p>Repair tips and offers, once a month.</p>
+        <form class="cm-newsletter" id="newsletterForm">
+          <input type="email" placeholder="you@email.com" aria-label="Email address" required>
+          <button type="submit" aria-label="Subscribe"><i class="bi bi-arrow-right"></i></button>
+        </form>
+      </div>
+    </div>
+
+    <div class="cm-footer__bottom">
+      <span>© 2026 CellMate. All rights reserved.</span>
+      <span>Designed for devices that deserve a second chance.</span>
+    </div>
+  </div>
+</footer>
+
+<button class="cm-to-top" id="toTop" aria-label="Back to top">
+  <i class="bi bi-arrow-up"></i>
+</button>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
