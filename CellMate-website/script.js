@@ -10,12 +10,15 @@
      Theme toggle (light / dark)
   --------------------------------------------------------------------- */
   var root = document.documentElement;
-  var themeToggle = document.getElementById('themeToggle');
+  var themeToggle = document.getElementById('themeToggle') || document.getElementById('themeBtn') || document.querySelector('.cm-theme-btn');
   var STORAGE_KEY = 'cellmate-theme';
 
   function applyTheme(theme) {
     root.setAttribute('data-theme', theme);
-    if (themeToggle) themeToggle.setAttribute('aria-pressed', theme === 'dark');
+    var allThemeBtns = document.querySelectorAll('#themeToggle, #themeBtn, .cm-theme-btn');
+    allThemeBtns.forEach(function(btn) {
+      btn.setAttribute('aria-pressed', theme === 'dark');
+    });
   }
 
   function initTheme() {
@@ -29,15 +32,77 @@
     }
   }
 
-  if (themeToggle) {
-    themeToggle.addEventListener('click', function () {
+  document.querySelectorAll('#themeToggle, #themeBtn, .cm-theme-btn').forEach(function(btn) {
+    btn.addEventListener('click', function () {
       var next = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
       applyTheme(next);
       try { localStorage.setItem(STORAGE_KEY, next); } catch (e) { /* storage blocked */ }
     });
-  }
+  });
 
   initTheme();
+
+  /* ---------------------------------------------------------------------
+     Password Eye Show/Hide Toggle
+  --------------------------------------------------------------------- */
+  var passwordToggles = document.querySelectorAll('.cm-password-toggle');
+  passwordToggles.forEach(function (toggle) {
+    toggle.addEventListener('click', function () {
+      var targetId = toggle.getAttribute('data-target');
+      var input = targetId ? document.getElementById(targetId) : toggle.previousElementSibling;
+      if (!input) return;
+
+      var icon = toggle.querySelector('i');
+      if (input.type === 'password') {
+        input.type = 'text';
+        if (icon) {
+          icon.classList.remove('bi-eye');
+          icon.classList.add('bi-eye-slash');
+        }
+      } else {
+        input.type = 'password';
+        if (icon) {
+          icon.classList.remove('bi-eye-slash');
+          icon.classList.add('bi-eye');
+        }
+      }
+    });
+  });
+
+
+  /* ---------------------------------------------------------------------
+     RTL Mode Toggle (LTR / RTL)
+  --------------------------------------------------------------------- */
+  var rtlToggle = document.getElementById('rtlToggle');
+  var RTL_STORAGE_KEY = 'cellmate-rtl';
+
+  function applyRTL(isRTL) {
+    if (isRTL) {
+      root.setAttribute('dir', 'rtl');
+      if (rtlToggle) rtlToggle.classList.add('is-rtl');
+    } else {
+      root.removeAttribute('dir');
+      if (rtlToggle) rtlToggle.classList.remove('is-rtl');
+    }
+  }
+
+  function initRTL() {
+    var savedRTL = null;
+    try { savedRTL = localStorage.getItem(RTL_STORAGE_KEY); } catch (e) {}
+    applyRTL(savedRTL === 'true');
+  }
+
+  if (rtlToggle) {
+    rtlToggle.addEventListener('click', function () {
+      var isCurrentRTL = root.getAttribute('dir') === 'rtl';
+      var nextRTL = !isCurrentRTL;
+      applyRTL(nextRTL);
+      try { localStorage.setItem(RTL_STORAGE_KEY, nextRTL); } catch (e) {}
+    });
+  }
+
+  initRTL();
+
 
   /* ---------------------------------------------------------------------
      Navbar: solid on scroll + active link highlight

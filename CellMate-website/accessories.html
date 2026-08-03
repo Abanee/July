@@ -1,0 +1,950 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CellMate — Premium Mobile Accessories Showroom</title>
+<meta name="description" content="Explore CellMate's curated premium accessories collection. Phone cases, screen protectors, fast chargers, wireless chargers, earbuds, power banks and more — quality-tested, warranty-backed, and compatible with all major brands.">
+
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+<!-- Bootstrap 5.3 -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<!-- Tailwind (utility helpers only) -->
+<script src="https://cdn.tailwindcss.com"></script>
+<script> tailwind.config = { corePlugins: { preflight: false } }; </script>
+<!-- Bootstrap Icons -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+<!-- Custom Styles -->
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- GRAIN OVERLAY -->
+<div class="grain-overlay" aria-hidden="true"></div>
+
+<!-- ===================== NAVBAR ===================== -->
+<header class="cm-nav" id="cmNav">
+  <div class="cm-nav__inner">
+    <a href="index.html" class="cm-logo">
+      <span class="cm-logo__mark"><i class="bi bi-cpu-fill"></i></span>
+      <span class="cm-logo__text">Cell<span>Mate</span></span>
+    </a>
+
+    <nav class="cm-menu" id="cmMenu" aria-label="Primary">
+      <a href="index.html"       class="cm-menu__link">Home</a>
+      <a href="home2.html"       class="cm-menu__link">Home 2</a>
+      <a href="repairs.html"     class="cm-menu__link">Repairs</a>
+      <a href="accessories.html" class="cm-menu__link active">Accessories</a>
+      <a href="index.html#trust" class="cm-menu__link">Reviews</a>
+    </nav>
+
+    <div class="cm-nav__actions">
+      <button class="cm-rtl-toggle" id="rtlToggle" aria-label="Toggle RTL mode" title="Toggle RTL / LTR mode">RTL</button>
+      <button class="cm-theme-btn" id="themeBtn" aria-label="Switch between light and dark mode">
+        <i class="bi bi-sun-fill"></i>
+        <i class="bi bi-moon-stars-fill"></i>
+      </button>
+      <a href="login.html" class="cm-btn cm-btn--primary d-none d-lg-inline-flex">
+        <span>Login</span>
+        <i class="bi bi-box-arrow-in-right"></i>
+      </a>
+      <button class="cm-burger" id="cmBurger" aria-label="Open menu" aria-expanded="false" aria-controls="cmMenu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- ====================================================
+       SECTION 1 — PREMIUM HERO SHOWCASE
+  ===================================================== -->
+  <section class="acc-hero" id="hero">
+    <div class="acc-hero__mesh" aria-hidden="true"></div>
+    <div class="cm-container">
+      <div class="acc-hero__grid">
+
+        <!-- Left: Content -->
+        <div class="acc-hero__content" data-reveal>
+          <div class="cm-eyebrow acc-hero__eyebrow">
+            <span class="cm-dot-pulse"></span>
+            PREMIUM ACCESSORIES — CAREFULLY CURATED
+          </div>
+
+          <p class="acc-hero__sub">2026 COLLECTION</p>
+
+          <h1 class="acc-hero__title">
+            Protect, Power &<br>
+            <span class="cm-highlight">Enhance</span> Your Device.
+          </h1>
+
+          <p class="acc-hero__desc">
+            Every accessory we stock is individually quality-tested for compatibility, durability, and safety before reaching our shelves. From military-grade cases that absorb 3-metre drops to GaN fast chargers that restore 50% battery in 20 minutes — we stock only products that genuinely extend the life and performance of your smartphone.
+          </p>
+
+          <div class="acc-hero__cta">
+            <a href="#categories" class="cm-btn cm-btn--primary cm-btn--lg">
+              <span>Browse Categories</span>
+              <i class="bi bi-grid-3x3-gap-fill"></i>
+            </a>
+            <a href="#enquiry" class="cm-btn cm-btn--ghost cm-btn--lg">
+              <i class="bi bi-shop"></i>
+              <span>Visit Store</span>
+            </a>
+          </div>
+
+          <!-- Trust Badges -->
+          <div class="acc-trust-row">
+            <div class="acc-trust-pill"><i class="bi bi-patch-check-fill"></i><span>100% Genuine Products</span></div>
+            <div class="acc-trust-pill"><i class="bi bi-shield-check"></i><span>Warranty Available</span></div>
+            <div class="acc-trust-pill"><i class="bi bi-lightning-charge-fill"></i><span>Latest 2026 Arrivals</span></div>
+            <div class="acc-trust-pill"><i class="bi bi-award-fill"></i><span>Expert Recommendations</span></div>
+          </div>
+        </div>
+
+        <!-- Right: Visual Stage -->
+        <div class="acc-hero__visual" data-reveal>
+          <div class="acc-hero__stage">
+
+            <div class="acc-hero__phone-wrap">
+              <div class="acc-hero__glow" aria-hidden="true"></div>
+              <img
+                class="acc-hero__phone-img"
+                src="https://images.unsplash.com/photo-1592750475338-74b7b21085ab?auto=format&fit=crop&w=600&q=80"
+                alt="Premium smartphone surrounded by accessories"
+                loading="eager"
+              >
+            </div>
+
+            <!-- Floating accessory cards -->
+            <div class="acc-float-item acc-float-item--tl">
+              <div class="acc-float-icon"><i class="bi bi-phone"></i></div>
+              <div class="acc-float-info">
+                <strong>Magnetic Case</strong>
+                <span>MagSafe Compatible</span>
+              </div>
+            </div>
+
+            <div class="acc-float-item acc-float-item--tr">
+              <div class="acc-float-icon"><i class="bi bi-battery-charging"></i></div>
+              <div class="acc-float-info">
+                <strong>65W GaN Charger</strong>
+                <span>0→50% in 20 min</span>
+              </div>
+            </div>
+
+            <div class="acc-float-item acc-float-item--ml">
+              <div class="acc-float-icon"><i class="bi bi-wifi"></i></div>
+              <div class="acc-float-info">
+                <strong>Wireless Stand</strong>
+                <span>15W Qi2 Charging</span>
+              </div>
+            </div>
+
+            <div class="acc-float-item acc-float-item--mr">
+              <div class="acc-float-icon"><i class="bi bi-earbuds"></i></div>
+              <div class="acc-float-info">
+                <strong>ANC Earbuds</strong>
+                <span>40dB Noise Cancel</span>
+              </div>
+            </div>
+
+            <div class="acc-float-item acc-float-item--bl">
+              <div class="acc-float-icon"><i class="bi bi-shield-fill-check"></i></div>
+              <div class="acc-float-info">
+                <strong>Tempered Glass</strong>
+                <span>9H Hardness · Privacy</span>
+              </div>
+            </div>
+
+            <div class="acc-float-item acc-float-item--br">
+              <div class="acc-float-icon"><i class="bi bi-lightning-fill"></i></div>
+              <div class="acc-float-info">
+                <strong>20,000 mAh</strong>
+                <span>Power Bank · PD 45W</span>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ====================================================
+       SECTION 2 — SHOP BY CATEGORY
+  ===================================================== -->
+  <section class="cm-section cm-section--tinted" id="categories">
+    <div class="cm-container">
+
+      <div class="cm-section__head" data-reveal>
+        <div class="cm-eyebrow"><i class="bi bi-grid-3x3-gap-fill"></i> BROWSE BY CATEGORY</div>
+        <h2 class="cm-section__title">Every Accessory, Perfectly Organised</h2>
+        <p class="cm-section__desc">
+          Navigate our curated collection by category. Each product family is built around specific performance standards — ensuring what you buy is the right fit for your exact device and use case.
+        </p>
+      </div>
+
+      <div class="acc-cat-grid" data-reveal>
+
+        <!-- Category 1: Phone Cases (Wide) -->
+        <div class="acc-cat-card acc-cat-card--wide">
+          <div class="acc-cat-card__media">
+            <span class="acc-cat-card__count">80+ Products</span>
+            <img src="https://images.unsplash.com/photo-1601593346740-925612772716?auto=format&fit=crop&w=1200&q=80" alt="Premium phone cases collection" loading="lazy">
+          </div>
+          <div class="acc-cat-card__body">
+            <h3>Phone Cases</h3>
+            <p>Military-grade protection meeting slim design. From leather folios to transparent magsafe shells.</p>
+            <a href="#featured" class="acc-cat-link">Shop Cases <i class="bi bi-arrow-right"></i></a>
+          </div>
+        </div>
+
+        <!-- Category 2: Tempered Glass (Tall) -->
+        <div class="acc-cat-card acc-cat-card--tall">
+          <div class="acc-cat-card__media">
+            <span class="acc-cat-card__count">40+ Products</span>
+            <img src="https://images.unsplash.com/photo-1585771724684-38269d6639fd?auto=format&fit=crop&w=800&q=80" alt="Tempered glass screen protectors" loading="lazy">
+          </div>
+          <div class="acc-cat-card__body">
+            <h3>Screen Protectors</h3>
+            <p>9H scratch-resistant, oleophobic coating, and edge-to-edge dust seal.</p>
+            <a href="#featured" class="acc-cat-link">Shop Glass <i class="bi bi-arrow-right"></i></a>
+          </div>
+        </div>
+
+        <!-- Category 3: Chargers -->
+        <div class="acc-cat-card">
+          <div class="acc-cat-card__media">
+            <span class="acc-cat-card__count">35+ Products</span>
+            <img src="https://images.unsplash.com/photo-1609091839311-d5365f9ff1c5?auto=format&fit=crop&w=800&q=80" alt="Fast chargers and adapters" loading="lazy">
+          </div>
+          <div class="acc-cat-card__body">
+            <h3>Fast Chargers</h3>
+            <p>GaN certified adapters delivering up to 100W safe and stable power.</p>
+            <a href="#featured" class="acc-cat-link">Shop Chargers <i class="bi bi-arrow-right"></i></a>
+          </div>
+        </div>
+
+        <!-- Category 4: Wireless Chargers -->
+        <div class="acc-cat-card">
+          <div class="acc-cat-card__media">
+            <span class="acc-cat-card__count">25+ Products</span>
+            <img src="https://images.unsplash.com/photo-1615526675576-b0c3e1a13a2c?auto=format&fit=crop&w=800&q=80" alt="Wireless charging pads and stands" loading="lazy">
+          </div>
+          <div class="acc-cat-card__body">
+            <h3>Wireless Chargers</h3>
+            <p>Qi2 and MagSafe compatible pads, stands, and 3-in-1 charging hubs.</p>
+            <a href="#featured" class="acc-cat-link">Shop Wireless <i class="bi bi-arrow-right"></i></a>
+          </div>
+        </div>
+
+        <!-- Category 5: Power Banks -->
+        <div class="acc-cat-card">
+          <div class="acc-cat-card__media">
+            <span class="acc-cat-card__count">20+ Products</span>
+            <img src="https://images.unsplash.com/photo-1609091839311-d5365f9ff1c5?auto=format&fit=crop&w=800&q=80" alt="Slim high capacity power banks" loading="lazy">
+          </div>
+          <div class="acc-cat-card__body">
+            <h3>Power Banks</h3>
+            <p>10,000–30,000mAh portable chargers with PD 45W bi-directional fast charge.</p>
+            <a href="#featured" class="acc-cat-link">Shop Power <i class="bi bi-arrow-right"></i></a>
+          </div>
+        </div>
+
+        <!-- Category 6: Earbuds -->
+        <div class="acc-cat-card acc-cat-card--wide">
+          <div class="acc-cat-card__media">
+            <span class="acc-cat-card__count">30+ Products</span>
+            <img src="https://images.unsplash.com/photo-1572536147248-ac59a8abfa4b?auto=format&fit=crop&w=1200&q=80" alt="Premium Bluetooth earbuds and neckbands" loading="lazy">
+          </div>
+          <div class="acc-cat-card__body">
+            <h3>Earbuds & Neckbands</h3>
+            <p>Hybrid ANC, 40-hour playtime, and spatial audio support across all devices.</p>
+            <a href="#featured" class="acc-cat-link">Shop Audio <i class="bi bi-arrow-right"></i></a>
+          </div>
+        </div>
+
+        <!-- Category 7: Car Accessories -->
+        <div class="acc-cat-card">
+          <div class="acc-cat-card__media">
+            <span class="acc-cat-card__count">22+ Products</span>
+            <img src="https://images.unsplash.com/photo-1512446733611-9099a758e595?auto=format&fit=crop&w=800&q=80" alt="Car phone mounts and car chargers" loading="lazy">
+          </div>
+          <div class="acc-cat-card__body">
+            <h3>Car Accessories</h3>
+            <p>Magnetic dashboard mounts, CD slot holders, and dual USB-C car chargers.</p>
+            <a href="#featured" class="acc-cat-link">Shop Car <i class="bi bi-arrow-right"></i></a>
+          </div>
+        </div>
+
+        <!-- Category 8: Smartwatch -->
+        <div class="acc-cat-card">
+          <div class="acc-cat-card__media">
+            <span class="acc-cat-card__count">18+ Products</span>
+            <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=800&q=80" alt="Smartwatch bands and chargers" loading="lazy">
+          </div>
+          <div class="acc-cat-card__body">
+            <h3>Smartwatch Accessories</h3>
+            <p>Premium silicone, leather, and metal bands for Apple Watch, Galaxy, and more.</p>
+            <a href="#featured" class="acc-cat-link">Shop Watch <i class="bi bi-arrow-right"></i></a>
+          </div>
+        </div>
+
+        <!-- Category 9: Cleaning Kits -->
+        <div class="acc-cat-card">
+          <div class="acc-cat-card__media">
+            <span class="acc-cat-card__count">12+ Products</span>
+            <img src="https://images.unsplash.com/photo-1563201515-adbe35c669c5?auto=format&fit=crop&w=800&q=80" alt="Phone cleaning kit and microfibre cloth" loading="lazy">
+          </div>
+          <div class="acc-cat-card__body">
+            <h3>Cleaning Kits</h3>
+            <p>Anti-static microfibre, screen-safe sprays, and port cleaning brushes.</p>
+            <a href="#featured" class="acc-cat-link">Shop Kits <i class="bi bi-arrow-right"></i></a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ====================================================
+       SECTION 3 — FEATURED COLLECTION
+  ===================================================== -->
+  <section class="cm-section" id="featured">
+    <div class="cm-container">
+      <div class="cm-section__head" data-reveal>
+        <div class="cm-eyebrow"><i class="bi bi-stars"></i> FEATURED COLLECTION</div>
+        <h2 class="cm-section__title">Handpicked Premium Products</h2>
+        <p class="cm-section__desc">
+          These aren't random off-the-shelf picks. Each featured product is personally tested by our technicians for electromagnetic compatibility, thermal safety, and long-term durability before earning a place in our showroom.
+        </p>
+      </div>
+
+      <div class="acc-feat-grid" data-reveal>
+
+        <!-- Featured 1: Hero - Magnetic Case -->
+        <article class="acc-feat-card acc-feat-card--hero">
+          <div class="acc-feat-card__media">
+            <span class="acc-feat-badge"><i class="bi bi-award-fill"></i> Best Seller</span>
+            <img src="https://images.unsplash.com/photo-1601593346740-925612772716?auto=format&fit=crop&w=1400&q=80" alt="Premium transparent magnetic MagSafe phone case" loading="lazy">
+          </div>
+          <div class="acc-feat-card__body">
+            <h3 class="acc-feat-card__title">Clear Magnetic Shield Case</h3>
+            <p class="acc-feat-card__desc">
+              Military-drop-tested to 3 metres, this optically clear polycarbonate shell retains the original aesthetic of your device while delivering 35 embedded N52 neodymium magnets for perfect MagSafe alignment. The raised lip protects the OLED display and camera lenses from flat surface contacts.
+            </p>
+            <div class="acc-feat-chips">
+              <span class="acc-feat-chip">MagSafe Ready</span>
+              <span class="acc-feat-chip">3m Drop Tested</span>
+              <span class="acc-feat-chip">Anti-Yellowing</span>
+              <span class="acc-feat-chip">Wireless Charge OK</span>
+            </div>
+            <div class="acc-feat-card__meta">
+              <div class="acc-meta-pill"><i class="bi bi-phone-fill"></i> iPhone 14–16 Pro Max</div>
+              <div class="acc-meta-pill"><i class="bi bi-shield-check"></i> 12-Month Warranty</div>
+              <a href="#enquiry" class="cm-btn cm-btn--primary ms-auto">
+                <span>Enquire Product</span>
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Featured 2: GaN Charger -->
+        <article class="acc-feat-card">
+          <div class="acc-feat-card__media">
+            <span class="acc-feat-badge"><i class="bi bi-lightning-charge-fill"></i> 65W GaN</span>
+            <img src="https://images.unsplash.com/photo-1609091839311-d5365f9ff1c5?auto=format&fit=crop&w=800&q=80" alt="65W GaN fast charging adapter" loading="lazy">
+          </div>
+          <div class="acc-feat-card__body">
+            <h3 class="acc-feat-card__title">65W 3-Port GaN Charger</h3>
+            <p class="acc-feat-card__desc">
+              Gallium Nitride technology delivers 65W through a single USB-C port with zero thermal throttling. Certified by UL, CE, and RoHS for complete electrical safety — eliminating the overcharge and voltage surge risk associated with cheap knockoff chargers.
+            </p>
+            <div class="acc-feat-chips">
+              <span class="acc-feat-chip">USB PD 3.1</span>
+              <span class="acc-feat-chip">3 Ports</span>
+              <span class="acc-feat-chip">CE Certified</span>
+            </div>
+            <div class="acc-feat-card__meta">
+              <div class="acc-meta-pill"><i class="bi bi-phone-fill"></i> Universal</div>
+              <div class="acc-meta-pill"><i class="bi bi-shield-check"></i> 12 Months</div>
+              <a href="#enquiry" class="cm-btn cm-btn--primary ms-auto"><span>Enquire</span></a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Featured 3: Wireless Stand -->
+        <article class="acc-feat-card">
+          <div class="acc-feat-card__media">
+            <span class="acc-feat-badge"><i class="bi bi-wifi"></i> Qi2 15W</span>
+            <img src="https://images.unsplash.com/photo-1615526675576-b0c3e1a13a2c?auto=format&fit=crop&w=800&q=80" alt="Premium 15W wireless charging stand" loading="lazy">
+          </div>
+          <div class="acc-feat-card__body">
+            <h3 class="acc-feat-card__title">3-in-1 Magnetic Charging Station</h3>
+            <p class="acc-feat-card__desc">
+              Simultaneously charges your phone at 15W Qi2, Apple Watch at 5W, and earbuds at 5W. Intelligent foreign object detection prevents heating of metallic objects — a critical safety feature cheap wireless pads omit.
+            </p>
+            <div class="acc-feat-chips">
+              <span class="acc-feat-chip">Qi2 15W</span>
+              <span class="acc-feat-chip">3-in-1</span>
+              <span class="acc-feat-chip">FOD Protected</span>
+            </div>
+            <div class="acc-feat-card__meta">
+              <div class="acc-meta-pill"><i class="bi bi-phone-fill"></i> iOS + Android</div>
+              <div class="acc-meta-pill"><i class="bi bi-shield-check"></i> 12 Months</div>
+              <a href="#enquiry" class="cm-btn cm-btn--primary ms-auto"><span>Enquire</span></a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Featured 4: Power Bank -->
+        <article class="acc-feat-card">
+          <div class="acc-feat-card__media">
+            <span class="acc-feat-badge"><i class="bi bi-battery-full"></i> 20,000mAh</span>
+            <img src="https://images.unsplash.com/photo-1609091839311-d5365f9ff1c5?auto=format&fit=crop&w=800&q=80" alt="Slim 20000mAh power bank" loading="lazy">
+          </div>
+          <div class="acc-feat-card__body">
+            <h3 class="acc-feat-card__title">Slim 20,000mAh Power Bank</h3>
+            <p class="acc-feat-card__desc">
+              At just 15mm thin, this power bank delivers PD 45W to charge a MacBook Pro from 0 to 50% in 30 minutes. The lithium polymer cells use a safer, slower self-discharge chemistry that retains 90% capacity after 500 charge cycles.
+            </p>
+            <div class="acc-feat-chips">
+              <span class="acc-feat-chip">PD 45W</span>
+              <span class="acc-feat-chip">15mm Slim</span>
+              <span class="acc-feat-chip">4 Outputs</span>
+            </div>
+            <div class="acc-feat-card__meta">
+              <div class="acc-meta-pill"><i class="bi bi-phone-fill"></i> All Devices</div>
+              <div class="acc-meta-pill"><i class="bi bi-shield-check"></i> 12 Months</div>
+              <a href="#enquiry" class="cm-btn cm-btn--primary ms-auto"><span>Enquire</span></a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Featured 5: Earbuds -->
+        <article class="acc-feat-card">
+          <div class="acc-feat-card__media">
+            <span class="acc-feat-badge"><i class="bi bi-music-note-beamed"></i> ANC Pro</span>
+            <img src="https://images.unsplash.com/photo-1572536147248-ac59a8abfa4b?auto=format&fit=crop&w=800&q=80" alt="Active noise cancelling wireless earbuds" loading="lazy">
+          </div>
+          <div class="acc-feat-card__body">
+            <h3 class="acc-feat-card__title">Hybrid ANC Wireless Earbuds</h3>
+            <p class="acc-feat-card__desc">
+              Feed-forward and feed-back hybrid ANC delivers a combined 40dB of noise suppression — quieting office noise, traffic, and wind. 8mm dynamic drivers reproduce 20Hz–20kHz with natural warmth and separation.
+            </p>
+            <div class="acc-feat-chips">
+              <span class="acc-feat-chip">40dB ANC</span>
+              <span class="acc-feat-chip">40hr Total</span>
+              <span class="acc-feat-chip">IPX5 Water</span>
+            </div>
+            <div class="acc-feat-card__meta">
+              <div class="acc-meta-pill"><i class="bi bi-phone-fill"></i> iOS + Android</div>
+              <div class="acc-meta-pill"><i class="bi bi-shield-check"></i> 12 Months</div>
+              <a href="#enquiry" class="cm-btn cm-btn--primary ms-auto"><span>Enquire</span></a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Featured 6: Privacy Glass (Hero 2) -->
+        <article class="acc-feat-card acc-feat-card--hero">
+          <div class="acc-feat-card__media">
+            <span class="acc-feat-badge"><i class="bi bi-eye-slash-fill"></i> Privacy Shield</span>
+            <img src="https://images.unsplash.com/photo-1585771724684-38269d6639fd?auto=format&fit=crop&w=1400&q=80" alt="Privacy tempered glass screen protector installation" loading="lazy">
+          </div>
+          <div class="acc-feat-card__body">
+            <h3 class="acc-feat-card__title">Privacy Tempered Glass Screen Protector</h3>
+            <p class="acc-feat-card__desc">
+              The micro-louvre privacy filter blocks side-viewing beyond a 30° angle — protecting sensitive content in public spaces. The 9H surface hardness rating resists keys and coins while the oleophobic coating repels oils and fingerprints for a permanently clear display.
+            </p>
+            <div class="acc-feat-chips">
+              <span class="acc-feat-chip">9H Hardness</span>
+              <span class="acc-feat-chip">30° Privacy Filter</span>
+              <span class="acc-feat-chip">Anti-Fingerprint</span>
+              <span class="acc-feat-chip">Dust-Free Install</span>
+            </div>
+            <div class="acc-feat-card__meta">
+              <div class="acc-meta-pill"><i class="bi bi-phone-fill"></i> All Major Models</div>
+              <div class="acc-meta-pill"><i class="bi bi-shield-check"></i> Lifetime Warranty</div>
+              <a href="#enquiry" class="cm-btn cm-btn--primary ms-auto">
+                <span>Enquire Product</span>
+              </a>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ====================================================
+       SECTION 4 — COMPATIBLE BRANDS
+  ===================================================== -->
+  <section class="cm-section cm-section--tinted" id="brands">
+    <div class="cm-container">
+      <div class="cm-section__head text-center mx-auto" data-reveal style="max-width:680px;">
+        <div class="cm-eyebrow"><i class="bi bi-phone-fill"></i> BRAND COMPATIBILITY</div>
+        <h2 class="cm-section__title">Accessories for Every Flagship Brand</h2>
+        <p class="cm-section__desc">
+          Accessories that don't fit precisely leave gaps in protection and charging efficiency. Our range is model-specific — ensuring every case, glass, and charging accessory works without compromise.
+        </p>
+      </div>
+
+      <div class="acc-brand-grid" data-reveal>
+
+        <div class="acc-brand-card">
+          <div class="acc-brand-icon"><i class="bi bi-apple"></i></div>
+          <h3>Apple iPhone</h3>
+          <span class="acc-brand-count">120+ Accessories</span>
+          <p>MagSafe cases, Lightning & USB-C cables, AirPods accessories, Apple Watch bands, and screen protectors for all iPhone generations.</p>
+          <span class="acc-brand-popular">TOP: MagSafe Wallet · Clear Case</span>
+        </div>
+
+        <div class="acc-brand-card">
+          <div class="acc-brand-icon"><i class="bi bi-phone"></i></div>
+          <h3>Samsung Galaxy</h3>
+          <span class="acc-brand-count">95+ Accessories</span>
+          <p>Quad-curve glass protectors, S-Pen compatible cases, 65W Super-Fast chargers, and Galaxy Watch bands across all Galaxy S and Z series.</p>
+          <span class="acc-brand-popular">TOP: S24 Ultra Case · 65W Charger</span>
+        </div>
+
+        <div class="acc-brand-card">
+          <div class="acc-brand-icon"><i class="bi bi-google"></i></div>
+          <h3>Google Pixel</h3>
+          <span class="acc-brand-count">45+ Accessories</span>
+          <p>Precision-cut tempered glass, soft-touch matte cases, and USB-C PD chargers optimised for Adaptive Charging compatibility with Pixel 7–9 Pro.</p>
+          <span class="acc-brand-popular">TOP: Pixel 9 Case · Privacy Glass</span>
+        </div>
+
+        <div class="acc-brand-card">
+          <div class="acc-brand-icon"><i class="bi bi-1-circle-fill"></i></div>
+          <h3>OnePlus</h3>
+          <span class="acc-brand-count">38+ Accessories</span>
+          <p>SuperVOOC certified charging cables, Sandstone texture cases, and high-clarity tempered glass supporting optical fingerprint readers.</p>
+          <span class="acc-brand-popular">TOP: SuperVOOC Cable · 12 Pro Case</span>
+        </div>
+
+        <div class="acc-brand-card">
+          <div class="acc-brand-icon"><i class="bi bi-stars"></i></div>
+          <h3>Xiaomi / Redmi</h3>
+          <span class="acc-brand-count">55+ Accessories</span>
+          <p>HyperCharge 120W cables, HyperOS-compatible cases with fingerprint cutouts, and tempered glass for AMOLED curved screen devices.</p>
+          <span class="acc-brand-popular">TOP: HyperCharge Cable · 14 Ultra</span>
+        </div>
+
+        <div class="acc-brand-card">
+          <div class="acc-brand-icon"><i class="bi bi-broadcast"></i></div>
+          <h3>Realme</h3>
+          <span class="acc-brand-count">30+ Accessories</span>
+          <p>SUPERVOOC compatible cables, slim transparent cases, and privacy glass for GT 6 and Narzo series devices.</p>
+          <span class="acc-brand-popular">TOP: GT6 Case · SUPERVOOC Cable</span>
+        </div>
+
+        <div class="acc-brand-card">
+          <div class="acc-brand-icon"><i class="bi bi-phone-vibrate"></i></div>
+          <h3>OPPO</h3>
+          <span class="acc-brand-count">35+ Accessories</span>
+          <p>SUPERVOOC 80W certified cables, Find N fold cases with precision hinge protection, and full-adhesion curved tempered glass.</p>
+          <span class="acc-brand-popular">TOP: Find N3 Case · 80W Cable</span>
+        </div>
+
+        <div class="acc-brand-card">
+          <div class="acc-brand-icon"><i class="bi bi-camera-fill"></i></div>
+          <h3>Vivo</h3>
+          <span class="acc-brand-count">28+ Accessories</span>
+          <p>FlashCharge certified USB-C cables, camera lens protection rings for X100 Pro, and full-panel tempered glass with fingerprint compatibility.</p>
+          <span class="acc-brand-popular">TOP: X100 Pro Lens Ring · FlashCharge</span>
+        </div>
+
+        <div class="acc-brand-card">
+          <div class="acc-brand-icon"><i class="bi bi-hexagon-fill"></i></div>
+          <h3>Nothing</h3>
+          <span class="acc-brand-count">22+ Accessories</span>
+          <p>Transparent cases celebrating Nothing's Glyph design language, precision glass with speaker mesh cutouts, and USB-C PD cables.</p>
+          <span class="acc-brand-popular">TOP: Phone 2a Clear Case · Glass</span>
+        </div>
+
+        <div class="acc-brand-card">
+          <div class="acc-brand-icon"><i class="bi bi-phone-landscape-fill"></i></div>
+          <h3>Motorola</h3>
+          <span class="acc-brand-count">25+ Accessories</span>
+          <p>TurboPower compatible chargers, Moto Edge cases with precise button cutouts, and anti-fingerprint screen protectors.</p>
+          <span class="acc-brand-popular">TOP: TurboPower 68W · Edge Case</span>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ====================================================
+       SECTION 5 — WHY BUY FROM US (BENTO GRID)
+  ===================================================== -->
+  <section class="cm-section" id="why-us">
+    <div class="cm-container">
+      <div class="cm-section__head" data-reveal>
+        <div class="cm-eyebrow"><i class="bi bi-award-fill"></i> THE CELLMATE DIFFERENCE</div>
+        <h2 class="cm-section__title">Why Our Accessories Stand Above The Rest</h2>
+        <p class="cm-section__desc">
+          The difference between a £5 online accessory and a quality product isn't visible in the product photo — it's in the real-world performance over months of daily use.
+        </p>
+      </div>
+
+      <div class="acc-bento" data-reveal>
+
+        <!-- Bento 1: Large -->
+        <div class="acc-bento__card acc-bento__card--lg">
+          <div class="acc-bento__icon"><i class="bi bi-patch-check-fill"></i></div>
+          <h3>Every Product Is Authenticity-Verified</h3>
+          <p>
+            Before we stock any accessory, we cross-check batch numbers with manufacturers and run a full electrical compatibility test. Counterfeit chargers produce uncontrolled current spikes that permanently damage your device's charging IC — a repair that costs far more than buying a genuine product from the start. We only stock accessories that pass our 12-point quality check.
+          </p>
+        </div>
+
+        <!-- Bento 2 -->
+        <div class="acc-bento__card">
+          <div class="acc-bento__icon"><i class="bi bi-tools"></i></div>
+          <h3>Expert Installation Available</h3>
+          <p>Our technicians apply tempered glass with dust-free precision — eliminating bubbles and misalignment permanently.</p>
+        </div>
+
+        <!-- Bento 3 -->
+        <div class="acc-bento__card">
+          <div class="acc-bento__icon"><i class="bi bi-currency-dollar"></i></div>
+          <h3>Transparent Flat Pricing</h3>
+          <p>The price you see is what you pay. No hidden delivery charges, no surprise installation fees.</p>
+        </div>
+
+        <!-- Bento 4: Wide -->
+        <div class="acc-bento__card acc-bento__card--wide">
+          <div class="acc-bento__icon"><i class="bi bi-shield-lock-fill"></i></div>
+          <h3>Charging Safety Matters More Than Price</h3>
+          <p>
+            Cheap chargers skip the voltage regulation and temperature protection circuitry required for safe fast-charging. Our certified GaN chargers maintain stable output voltage within ±0.1V — preventing the battery cell degradation that causes swollen batteries.
+          </p>
+        </div>
+
+        <!-- Bento 5 -->
+        <div class="acc-bento__card">
+          <div class="acc-bento__icon"><i class="bi bi-stars"></i></div>
+          <h3>2026 Latest Collections</h3>
+          <p>New arrivals stocked weekly including MagSafe 2.0, USB4, and Bluetooth 5.4 accessories.</p>
+        </div>
+
+        <!-- Bento 6 -->
+        <div class="acc-bento__card">
+          <div class="acc-bento__icon"><i class="bi bi-chat-dots-fill"></i></div>
+          <h3>Expert Recommendations</h3>
+          <p>Not sure which glass fits your device? Our technicians select the precise model — preventing returned products.</p>
+        </div>
+
+        <!-- Bento 7 -->
+        <div class="acc-bento__card">
+          <div class="acc-bento__icon"><i class="bi bi-shield-check"></i></div>
+          <h3>Warranty Support</h3>
+          <p>All accessories carry a minimum 6-month warranty with a simple no-questions exchange policy.</p>
+        </div>
+
+        <!-- Bento 8 -->
+        <div class="acc-bento__card">
+          <div class="acc-bento__icon"><i class="bi bi-phone-fill"></i></div>
+          <h3>Perfect Brand Compatibility</h3>
+          <p>Model-specific accessories — not generic fits — ensuring charging, sensors, and cameras work without obstruction.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ====================================================
+       SECTION 6 — ACCESSORIES EXPERIENCE GALLERY
+  ===================================================== -->
+  <section class="cm-section cm-section--tinted" id="gallery">
+    <div class="cm-container">
+      <div class="cm-section__head text-center mx-auto" data-reveal style="max-width:680px;">
+        <div class="cm-eyebrow"><i class="bi bi-images"></i> ACCESSORIES IN REAL LIFE</div>
+        <h2 class="cm-section__title">See Accessories in Their Natural Environment</h2>
+        <p class="cm-section__desc">Real products. Real setups. Every accessory shown is available in our store today.</p>
+      </div>
+
+      <div class="acc-gallery-grid" data-reveal>
+
+        <div class="acc-gallery-item acc-gallery-item--a">
+          <img src="https://images.unsplash.com/photo-1601593346740-925612772716?auto=format&fit=crop&w=1200&q=80" alt="Premium phone case lifestyle" loading="lazy">
+          <div class="acc-gallery-overlay">
+            <h3>Magnetic Clear Case</h3>
+            <p>Protection with personality — see-through design, drop-tested protection.</p>
+          </div>
+        </div>
+
+        <div class="acc-gallery-item acc-gallery-item--b">
+          <img src="https://images.unsplash.com/photo-1615526675576-b0c3e1a13a2c?auto=format&fit=crop&w=800&q=80" alt="Wireless charging desk setup" loading="lazy">
+          <div class="acc-gallery-overlay">
+            <h3>Wireless Desk Setup</h3>
+            <p>3-in-1 charging station powering phone, watch, and earbuds simultaneously.</p>
+          </div>
+        </div>
+
+        <div class="acc-gallery-item acc-gallery-item--c">
+          <img src="https://images.unsplash.com/photo-1609091839311-d5365f9ff1c5?auto=format&fit=crop&w=800&q=80" alt="Power bank on travel" loading="lazy">
+          <div class="acc-gallery-overlay">
+            <h3>Travel Power Bank</h3>
+            <p>20,000mAh slim power bank — 6 full charges for your flagship device.</p>
+          </div>
+        </div>
+
+        <div class="acc-gallery-item acc-gallery-item--d">
+          <img src="https://images.unsplash.com/photo-1585771724684-38269d6639fd?auto=format&fit=crop&w=800&q=80" alt="Tempered glass professional installation" loading="lazy">
+          <div class="acc-gallery-overlay">
+            <h3>Professional Glass Install</h3>
+            <p>Dust-free bubble-free fitting by our trained technicians.</p>
+          </div>
+        </div>
+
+        <div class="acc-gallery-item acc-gallery-item--e">
+          <img src="https://images.unsplash.com/photo-1572536147248-ac59a8abfa4b?auto=format&fit=crop&w=800&q=80" alt="Earbuds lifestyle use" loading="lazy">
+          <div class="acc-gallery-overlay">
+            <h3>ANC Earbuds</h3>
+            <p>40dB hybrid noise cancellation — focus everywhere you go.</p>
+          </div>
+        </div>
+
+        <div class="acc-gallery-item acc-gallery-item--f">
+          <img src="https://images.unsplash.com/photo-1512446733611-9099a758e595?auto=format&fit=crop&w=1200&q=80" alt="Car mount in vehicle" loading="lazy">
+          <div class="acc-gallery-overlay">
+            <h3>Car Magnetic Mount</h3>
+            <p>360° rotation, one-hand mount — navigation without hands.</p>
+          </div>
+        </div>
+
+        <div class="acc-gallery-item acc-gallery-item--g">
+          <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=800&q=80" alt="Smartwatch accessories" loading="lazy">
+          <div class="acc-gallery-overlay">
+            <h3>Smartwatch Bands</h3>
+            <p>Genuine leather and sport silicone — personalise your wearable.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ====================================================
+       SECTION 7 — VISIT STORE & ENQUIRY
+  ===================================================== -->
+  <section class="cm-section" id="enquiry">
+    <div class="cm-container">
+      <div class="acc-cta-wrap" data-reveal>
+        <div class="acc-cta-glow" aria-hidden="true"></div>
+
+        <div class="acc-cta-grid">
+
+          <!-- Left: Text + Buttons -->
+          <div class="acc-cta-text">
+            <div class="cm-eyebrow" style="background:rgba(255,255,255,.15);border-color:rgba(255,255,255,.25);color:#fff;">
+              <i class="bi bi-shop-window"></i> VISIT OUR SHOWROOM
+            </div>
+            <h2>Complete Your Smartphone Experience.</h2>
+            <p>
+              Discover premium accessories that protect, power, and enhance your devices. Whether you're looking for stylish cases, fast chargers, durable screen protectors, or high-performance audio accessories, our curated collection ensures quality, compatibility, and long-lasting performance for every major smartphone brand.
+            </p>
+
+            <div class="acc-cta-actions">
+              <a href="#" class="cm-btn cm-btn--white">
+                <i class="bi bi-geo-alt-fill"></i>
+                <span>Visit Our Store</span>
+              </a>
+              <a href="#" class="cm-btn cm-btn--outline-white">
+                <i class="bi bi-collection-fill"></i>
+                <span>Full Catalogue</span>
+              </a>
+            </div>
+
+            <div class="acc-cta-contacts">
+              <a href="https://wa.me/15550192834" target="_blank" rel="noopener" class="acc-cta-contact-btn">
+                <i class="bi bi-whatsapp"></i> WhatsApp
+              </a>
+              <a href="tel:+18005550199" class="acc-cta-contact-btn">
+                <i class="bi bi-telephone-fill"></i> Call Now
+              </a>
+              <div class="acc-cta-contact-btn">
+                <i class="bi bi-clock-fill"></i> Mon–Sat 9am–8pm
+              </div>
+            </div>
+          </div>
+
+          <!-- Right: Enquiry Form -->
+          <div>
+            <form class="acc-enquiry-form" id="accEnquiryForm">
+              <h3>Quick Product Enquiry</h3>
+
+              <div class="row g-3">
+                <div class="col-12">
+                  <div class="acc-form-group">
+                    <label for="accName">Your Name *</label>
+                    <input type="text" id="accName" placeholder="e.g. Jamie Williams" required>
+                  </div>
+                </div>
+                <div class="col-12">
+                  <div class="acc-form-group">
+                    <label for="accPhone">Phone Number *</label>
+                    <input type="tel" id="accPhone" placeholder="e.g. +1 (555) 019-2834" required>
+                  </div>
+                </div>
+                <div class="col-12">
+                  <div class="acc-form-group">
+                    <label for="accCategory">Accessory Category *</label>
+                    <select id="accCategory" required>
+                      <option value="" disabled selected>Select a Category</option>
+                      <option>Phone Cases</option>
+                      <option>Tempered Glass / Screen Protectors</option>
+                      <option>Fast Chargers</option>
+                      <option>Wireless Chargers</option>
+                      <option>Power Banks</option>
+                      <option>Bluetooth Earbuds / Neckbands</option>
+                      <option>USB Cables</option>
+                      <option>Car Accessories</option>
+                      <option>Smartwatch Accessories</option>
+                      <option>MagSafe Accessories</option>
+                      <option>Cleaning Kits</option>
+                      <option>Other Accessory</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="col-12">
+                  <div class="acc-form-group">
+                    <label for="accBrand">Your Device Brand *</label>
+                    <select id="accBrand" required>
+                      <option value="" disabled selected>Select Device Brand</option>
+                      <option>Apple iPhone</option>
+                      <option>Samsung Galaxy</option>
+                      <option>Google Pixel</option>
+                      <option>OnePlus</option>
+                      <option>Xiaomi / Redmi</option>
+                      <option>Realme</option>
+                      <option>OPPO</option>
+                      <option>Vivo</option>
+                      <option>Nothing</option>
+                      <option>Motorola</option>
+                      <option>Other</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="col-12">
+                  <div class="acc-form-group">
+                    <label for="accMessage">Message</label>
+                    <textarea id="accMessage" rows="2" placeholder="Tell us which specific model or product you're looking for..."></textarea>
+                  </div>
+                </div>
+                <div class="col-12">
+                  <button type="submit" class="cm-btn cm-btn--white w-100 justify-content-center">
+                    <span>Send Enquiry</span>
+                    <i class="bi bi-arrow-right"></i>
+                  </button>
+                  <div class="acc-form-status" id="accFormStatus"></div>
+                </div>
+              </div>
+            </form>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ===================== FOOTER ===================== -->
+<footer class="cm-footer">
+  <div class="cm-container">
+    <div class="cm-footer__grid">
+
+      <div class="cm-footer__brand">
+        <a href="index.html" class="cm-logo cm-logo--footer">
+          <span class="cm-logo__mark"><i class="bi bi-cpu-fill"></i></span>
+          <span class="cm-logo__text">Cell<span>Mate</span></span>
+        </a>
+        <p>Premium mobile phone repairs &amp; accessories. Quality-tested products, certified technicians, genuine spare parts.</p>
+        <div class="cm-social">
+          <a href="#" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+          <a href="#" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+          <a href="#" aria-label="Twitter X"><i class="bi bi-twitter-x"></i></a>
+          <a href="#" aria-label="YouTube"><i class="bi bi-youtube"></i></a>
+        </div>
+      </div>
+
+      <div class="cm-footer__col">
+        <h4>Navigation</h4>
+        <a href="index.html">Home</a>
+        <a href="repairs.html">Repair Services</a>
+        <a href="home2.html">Inside Workshop</a>
+        <a href="accessories.html">Accessories</a>
+        <a href="index.html#trust">Reviews</a>
+      </div>
+
+      <div class="cm-footer__col">
+        <h4>Repair Services</h4>
+        <a href="repairs.html#solutions">Screen Replacement</a>
+        <a href="repairs.html#solutions">Battery Replacement</a>
+        <a href="repairs.html#solutions">Charging Port</a>
+        <a href="repairs.html#solutions">Water Damage</a>
+        <a href="repairs.html#solutions">Motherboard Repair</a>
+      </div>
+
+      <div class="cm-footer__col">
+        <h4>Workshop Hours</h4>
+        <p>Mon – Sat: 9am – 8pm</p>
+        <p>Sunday: 10am – 5pm</p>
+        <p class="cm-eyebrow cm-eyebrow--static mt-2" style="font-size:11px;">
+          <span class="cm-dot-pulse"></span> WORKSHOP OPEN NOW
+        </p>
+      </div>
+
+      <div class="cm-footer__col">
+        <h4>Newsletter</h4>
+        <p>Get accessory deals and repair tips direct to your inbox.</p>
+        <form class="cm-newsletter" id="newsletterForm">
+          <input type="email" placeholder="Your email..." required aria-label="Email address">
+          <button type="submit" aria-label="Subscribe"><i class="bi bi-arrow-right"></i></button>
+        </form>
+      </div>
+
+    </div>
+
+    <div class="cm-footer__bottom">
+      <span>&copy; 2026 CellMate Mobile Services Inc. All rights reserved.</span>
+      <span>Premium Accessories &amp; Authorized Repair Center.</span>
+    </div>
+  </div>
+</footer>
+
+<button class="cm-to-top" id="toTop" aria-label="Back to top">
+  <i class="bi bi-arrow-up"></i>
+</button>
+
+<!-- Scripts -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="script.js"></script>
+<script>
+  // Accessories enquiry form handler
+  (function() {
+    var form   = document.getElementById('accEnquiryForm');
+    var status = document.getElementById('accFormStatus');
+    if (!form || !status) return;
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+      if (!form.checkValidity()) { form.reportValidity(); return; }
+      var name = document.getElementById('accName').value.trim();
+      var ref  = 'ACC-' + Math.floor(100000 + Math.random() * 900000);
+      status.innerHTML = '<i class="bi bi-check-circle-fill"></i> Thanks <strong>' + name + '</strong>! Enquiry <strong>' + ref + '</strong> received — we\'ll reply within the hour.';
+      form.reset();
+    });
+  })();
+</script>
+</body>
+</html>
