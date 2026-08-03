@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CellMate — Tech Journal & Repair Guides</title>
+<meta name="description" content="Read expert smartphone repair guides, battery health tips, water damage recovery steps, and mobile accessory buying advice from CellMate certified technicians.">
+
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+<!-- Bootstrap 5.3 -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<!-- Tailwind (utility helpers only) -->
+<script src="https://cdn.tailwindcss.com"></script>
+<script> tailwind.config = { corePlugins: { preflight: false } }; </script>
+
+<!-- Bootstrap Icons -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+
+<!-- Custom Styles -->
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- GRAIN OVERLAY -->
+<div class="grain-overlay" aria-hidden="true"></div>
+
+<!-- ===================== NAVBAR ===================== -->
+<header class="cm-nav" id="cmNav">
+  <div class="cm-nav__inner">
+    <a href="index.html" class="cm-logo">
+      <span class="cm-logo__mark"><i class="bi bi-cpu-fill"></i></span>
+      <span class="cm-logo__text">Cell<span>Mate</span></span>
+    </a>
+
+    <nav class="cm-menu" id="cmMenu" aria-label="Primary">
+      <a href="index.html"       class="cm-menu__link">Home</a>
+      <a href="home2.html"       class="cm-menu__link">Home 2</a>
+      <a href="repairs.html"     class="cm-menu__link">Repairs</a>
+      <a href="accessories.html" class="cm-menu__link">Accessories</a>
+      <a href="gallery.html"     class="cm-menu__link">Gallery</a>
+      <a href="contact.html"     class="cm-menu__link">Contact</a>
+      <a href="blog.html"        class="cm-menu__link active">Blog</a>
+    </nav>
+
+    <div class="cm-nav__actions">
+      <button class="cm-rtl-toggle" id="rtlToggle" aria-label="Toggle RTL mode" title="Toggle RTL / LTR mode">RTL</button>
+      <button class="cm-theme-btn" id="themeBtn" aria-label="Switch between light and dark mode">
+        <i class="bi bi-sun-fill"></i>
+        <i class="bi bi-moon-stars-fill"></i>
+      </button>
+      <a href="login.html" class="cm-btn cm-btn--primary d-none d-lg-inline-flex">
+        <span>Login</span>
+        <i class="bi bi-box-arrow-in-right"></i>
+      </a>
+      <button class="cm-burger" id="cmBurger" aria-label="Open menu" aria-expanded="false" aria-controls="cmMenu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- ====================================================
+       SECTION 1 — BLOG HERO FEATURED ARTICLE
+  ===================================================== -->
+  <section class="blg-hero" id="hero">
+    <div class="blg-hero__mesh" aria-hidden="true"></div>
+    <div class="cm-container">
+      
+      <div class="cm-hero-badge">
+        <i class="bi bi-journal-richtext"></i>
+        <span>CELLMATE TECH JOURNAL &amp; REPAIR GUIDES</span>
+      </div>
+
+      <div class="row align-items-center g-5">
+        <div class="col-lg-7" data-reveal>
+          <span class="blg-cat-pill">FEATURED GUIDE · BATTERY MAINTENANCE</span>
+          <h1 class="cm-hero-headline mt-2 mb-3">
+            How to Extend Smartphone Battery Lifespan: <span class="cm-hero-blue-text">The 80/20 Rule Explained.</span>
+          </h1>
+          <p class="cm-hero-desc mb-4">
+            Lithium-ion batteries degrade with every charge cycle. Learn why keeping your phone battery between 20% and 80%, avoiding overnight fast-charging heat, and using certified GaN chargers can double your battery’s operational lifespan.
+          </p>
+
+          <div class="blg-meta-row mb-4">
+            <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=120&q=80" alt="Author Marcus Vance" class="blg-author-img">
+            <div>
+              <strong>Marcus Vance · Senior Hardware Engineer</strong>
+              <span>Published August 2026 · 6 Min Read</span>
+            </div>
+          </div>
+
+          <a href="#articles" class="cm-btn cm-btn--primary cm-btn--lg">
+            <span>Read Full Article</span>
+            <i class="bi bi-arrow-down"></i>
+          </a>
+        </div>
+
+        <div class="col-lg-5" data-reveal>
+          <div class="blg-hero-card">
+            <img src="https://images.unsplash.com/photo-1609091839311-d5365f9ff1c5?auto=format&fit=crop&w=800&q=80" alt="Lithium ion battery diagnostic analysis" class="blg-hero-img">
+            <div class="blg-hero-card-overlay">
+              <span class="blg-tag">BATTERY DIAGNOSTICS</span>
+              <h3>Lithium-Ion Degradation Cycles</h3>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ====================================================
+       SECTION 2 — CATEGORY FILTER BAR & ARTICLE GRID
+  ===================================================== -->
+  <section class="cm-section cm-section--tinted" id="articles">
+    <div class="cm-container">
+      
+      <div class="cm-section__head text-center mx-auto mb-5" data-reveal style="max-width: 680px;">
+        <div class="cm-eyebrow"><i class="bi bi-newspaper"></i> RECENT ARTICLES &amp; TUTORIALS</div>
+        <h2 class="cm-section__title">Practical Guides from Certified Technicians</h2>
+        <p class="cm-section__desc">Filter our collection of repair insights, hardware teardowns, and protective accessory reviews.</p>
+      </div>
+
+      <!-- Category Filter Bar -->
+      <div class="blg-filter-bar mb-5" id="blgFilterBar" data-reveal>
+        <button type="button" class="blg-filter-btn active" data-blg-filter="all">All Articles</button>
+        <button type="button" class="blg-filter-btn" data-blg-filter="repair">Repair Guides</button>
+        <button type="button" class="blg-filter-btn" data-blg-filter="battery">Battery &amp; Charging</button>
+        <button type="button" class="blg-filter-btn" data-blg-filter="screen">Screen &amp; Glass</button>
+        <button type="button" class="blg-filter-btn" data-blg-filter="water">Liquid Recovery</button>
+        <button type="button" class="blg-filter-btn" data-blg-filter="accessories">Accessories</button>
+      </div>
+
+      <!-- 6 Main Article Cards Grid -->
+      <div class="row g-4" id="blgGrid" data-reveal>
+
+        <!-- Article 1: Liquid Recovery -->
+        <div class="col-lg-4 col-md-6 blg-item" data-blg-cat="water">
+          <article class="blg-card">
+            <div class="blg-card-media">
+              <span class="blg-card-tag">LIQUID RECOVERY</span>
+              <img src="https://images.unsplash.com/photo-1563201515-adbe35c669c5?auto=format&fit=crop&w=700&q=80" alt="Water damaged phone emergency tips" loading="lazy">
+            </div>
+            <div class="blg-card-body">
+              <div class="blg-card-meta">5 Min Read · Aug 2026</div>
+              <h3 class="blg-card-title">What to Do Immediately After Dropping Your Phone in Water</h3>
+              <p class="blg-card-excerpt">Why putting your wet phone in a bowl of raw rice does more harm than good, and the 4 critical steps to prevent logic board corrosion.</p>
+              <div class="blg-card-foot">
+                <span class="blg-card-author">By Sarah Jenkins</span>
+                <span class="blg-read-link">Read Guide <i class="bi bi-arrow-right"></i></span>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <!-- Article 2: Screen Repair -->
+        <div class="col-lg-4 col-md-6 blg-item" data-blg-cat="screen">
+          <article class="blg-card">
+            <div class="blg-card-media">
+              <span class="blg-card-tag">SCREEN &amp; GLASS</span>
+              <img src="https://images.unsplash.com/photo-1601784551446-20c9e07cdbdb?auto=format&fit=crop&w=700&q=80" alt="OLED vs LCD screen replacement differences" loading="lazy">
+            </div>
+            <div class="blg-card-body">
+              <div class="blg-card-meta">7 Min Read · Jul 2026</div>
+              <h3 class="blg-card-title">OLED vs. LCD Screen Replacement: Why Display Quality Matters</h3>
+              <p class="blg-card-excerpt">Understand the technical differences between cheap aftermarket LCD panels and original Super Retina OLED assemblies, touch sensitivity, and True Tone support.</p>
+              <div class="blg-card-foot">
+                <span class="blg-card-author">By David Ross</span>
+                <span class="blg-read-link">Read Guide <i class="bi bi-arrow-right"></i></span>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <!-- Article 3: Battery & Power -->
+        <div class="col-lg-4 col-md-6 blg-item" data-blg-cat="battery">
+          <article class="blg-card">
+            <div class="blg-card-media">
+              <span class="blg-card-tag">BATTERY &amp; POWER</span>
+              <img src="https://images.unsplash.com/photo-1609091839311-d5365f9ff1c5?auto=format&fit=crop&w=700&q=80" alt="GaN Fast Chargers vs Cheap Knockoffs" loading="lazy">
+            </div>
+            <div class="blg-card-body">
+              <div class="blg-card-meta">4 Min Read · Jul 2026</div>
+              <h3 class="blg-card-title">GaN Fast Chargers vs. Cheap Knockoffs: The Hidden Danger</h3>
+              <p class="blg-card-excerpt">Cheap uncertified wall chargers output unstable voltage spikes that burn charging IC chips. Learn why GaN technology keeps your phone battery safe.</p>
+              <div class="blg-card-foot">
+                <span class="blg-card-author">By Marcus Vance</span>
+                <span class="blg-read-link">Read Guide <i class="bi bi-arrow-right"></i></span>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <!-- Article 4: Repair Guides -->
+        <div class="col-lg-4 col-md-6 blg-item" data-blg-cat="repair">
+          <article class="blg-card">
+            <div class="blg-card-media">
+              <span class="blg-card-tag">REPAIR GUIDES</span>
+              <img src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=700&q=80" alt="Micro-soldering motherboard repair guide" loading="lazy">
+            </div>
+            <div class="blg-card-body">
+              <div class="blg-card-meta">8 Min Read · Jun 2026</div>
+              <h3 class="blg-card-title">Inside Micro-Soldering: How Technicians Fix Dead Motherboards</h3>
+              <p class="blg-card-excerpt">Explore the delicate art of micro-soldering under 40x optical magnification to re-bridge broken logic board copper traces and power ICs.</p>
+              <div class="blg-card-foot">
+                <span class="blg-card-author">By David Ross</span>
+                <span class="blg-read-link">Read Guide <i class="bi bi-arrow-right"></i></span>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <!-- Article 5: Accessories -->
+        <div class="col-lg-4 col-md-6 blg-item" data-blg-cat="accessories">
+          <article class="blg-card">
+            <div class="blg-card-media">
+              <span class="blg-card-tag">ACCESSORIES</span>
+              <img src="https://images.unsplash.com/photo-1585771724684-38269d6639fd?auto=format&fit=crop&w=700&q=80" alt="9H Tempered glass buying guide" loading="lazy">
+            </div>
+            <div class="blg-card-body">
+              <div class="blg-card-meta">4 Min Read · Jun 2026</div>
+              <h3 class="blg-card-title">How 9H Tempered Glass Absorbs Drop Impact &amp; Saves OLED Screens</h3>
+              <p class="blg-card-excerpt">A breakdown of Mohs hardness scale ratings, oleophobic coatings, and why high-tension tempered glass prevents display fractures during corner drops.</p>
+              <div class="blg-card-foot">
+                <span class="blg-card-author">By Elena Rostova</span>
+                <span class="blg-read-link">Read Guide <i class="bi bi-arrow-right"></i></span>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <!-- Article 6: Repair Guides -->
+        <div class="col-lg-4 col-md-6 blg-item" data-blg-cat="repair">
+          <article class="blg-card">
+            <div class="blg-card-media">
+              <span class="blg-card-tag">REPAIR GUIDES</span>
+              <img src="https://images.unsplash.com/photo-1592286927505-1def25115481?auto=format&fit=crop&w=700&q=80" alt="Charging port cleaning and repair tips" loading="lazy">
+            </div>
+            <div class="blg-card-body">
+              <div class="blg-card-meta">3 Min Read · May 2026</div>
+              <h3 class="blg-card-title">Is Your Phone Not Charging? Try Cleaning the Port First</h3>
+              <p class="blg-card-excerpt">Pocket lint and dust compacting inside USB-C and Lightning ports is responsible for 40% of non-charging issues. Learn how to safely inspect and clean your port.</p>
+              <div class="blg-card-foot">
+                <span class="blg-card-author">By Sarah Jenkins</span>
+                <span class="blg-read-link">Read Guide <i class="bi bi-arrow-right"></i></span>
+              </div>
+            </div>
+          </article>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ====================================================
+       SECTION 3 — INTERACTIVE DEVICE CARE CHECKLIST
+  ===================================================== -->
+  <section class="cm-section" id="checklist">
+    <div class="cm-container">
+      <div class="cm-section__head text-center mx-auto mb-5" data-reveal style="max-width: 680px;">
+        <div class="cm-eyebrow"><i class="bi bi-check-all"></i> SMARTPHONE HEALTH CHECKLIST</div>
+        <h2 class="cm-section__title">4 Quick Habits to Avoid Costly Repairs</h2>
+        <p class="cm-section__desc">Proactive device maintenance tips curated by CellMate lab technicians.</p>
+      </div>
+
+      <div class="row g-4" data-reveal>
+        
+        <div class="col-md-6 col-lg-3">
+          <div class="blg-tip-card">
+            <div class="blg-tip-num">01</div>
+            <h4>Avoid Thermal Stress</h4>
+            <p>Never leave your smartphone on a car dashboard under direct sunlight. Heat accelerates lithium cell swelling and display glue separation.</p>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-3">
+          <div class="blg-tip-card">
+            <div class="blg-tip-num">02</div>
+            <h4>Use Certified Cables</h4>
+            <p>MFi (Made for iPhone) and USB-IF certified cables regulate current and prevent over-voltage damage to your phone's Tristar/Tigris charging IC.</p>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-3">
+          <div class="blg-tip-card">
+            <div class="blg-tip-num">03</div>
+            <h4>Replace Cracked Glass</h4>
+            <p>Even small hairline glass cracks break the IP68 moisture seal, allowing ambient humidity to seep into the motherboard over time.</p>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-3">
+          <div class="blg-tip-card">
+            <div class="blg-tip-num">04</div>
+            <h4>Calibrate 80% Charge</h4>
+            <p>Enable optimized battery charging on iOS or protect battery mode on Android to prevent holding 100% state-of-charge overnight.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ====================================================
+       SECTION 4 — TECH NEWS & INSIDE TEARDOWNS
+  ===================================================== -->
+  <section class="cm-section cm-section--tinted" id="teardowns">
+    <div class="cm-container">
+      <div class="row align-items-center g-5" data-reveal>
+        <div class="col-lg-6">
+          <div class="blg-teardown-media">
+            <img src="https://images.unsplash.com/photo-1581092335397-9583fe92d232?auto=format&fit=crop&w=800&q=80" alt="Flagship phone internal component teardown" loading="lazy">
+            <span class="blg-teardown-badge"><i class="bi bi-search"></i> LAB TEARDOWN</span>
+          </div>
+        </div>
+
+        <div class="col-lg-6">
+          <div class="cm-eyebrow"><i class="bi bi-cpu"></i> HARDWARE INSIGHTS</div>
+          <h2 class="cm-section__title">What’s Inside Your Flagship Smartphone?</h2>
+          <p class="cm-section__desc mb-4">
+            Modern smartphones squeeze over 1,500 miniature components onto a multi-layered PCB. From camera optical image stabilization (OIS) magnets to graphite thermal diffusion sheets, see how our technicians diagnose hidden hardware faults.
+          </p>
+
+          <div class="d-flex flex-column gap-3 mb-4">
+            <div class="d-flex align-items-start gap-3">
+              <div class="blg-check-icon"><i class="bi bi-patch-check-fill"></i></div>
+              <div>
+                <strong class="text-slate-900 dark:text-white block font-bold text-base">Genuine OEM Replacement Components</strong>
+                <span class="text-slate-500 text-sm">We source directly from certified component manufacturers to ensure True Tone and battery health reporting work seamlessly.</span>
+              </div>
+            </div>
+
+            <div class="d-flex align-items-start gap-3">
+              <div class="blg-check-icon"><i class="bi bi-shield-lock-fill"></i></div>
+              <div>
+                <strong class="text-slate-900 dark:text-white block font-bold text-base">ESD-Safe Anti-Static Protocols</strong>
+                <span class="text-slate-500 text-sm">Static electricity can instantly destroy microchips. All teardowns occur on grounded conductive mats.</span>
+              </div>
+            </div>
+          </div>
+
+          <a href="repairs.html" class="cm-btn cm-btn--ghost">
+            <span>Explore Repair Services</span>
+            <i class="bi bi-arrow-right"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====================================================
+       SECTION 5 — NEWSLETTER & EXPERT Q&A SUBSCRIPTION
+  ===================================================== -->
+  <section class="cm-section" id="newsletter">
+    <div class="cm-container">
+      <div class="blg-sub-card" data-reveal>
+        <div class="row align-items-center g-4">
+          <div class="col-lg-7">
+            <div class="cm-eyebrow" style="background:rgba(255,255,255,.15);border-color:rgba(255,255,255,.3);color:#fff;">
+              <i class="bi bi-envelope-check-fill"></i> JOIN THE CELLMATE TECH CLUB
+            </div>
+            <h2 class="text-white text-3xl md:text-4xl font-extrabold mb-3">Get Monthly Device Care Tips &amp; Repair Discounts</h2>
+            <p class="text-slate-200 text-base mb-0">Subscribe to our newsletter for exclusive accessory deals, seasonal battery care guides, and instant $10 repair vouchers.</p>
+          </div>
+
+          <div class="col-lg-5">
+            <form class="blg-sub-form" id="blgSubForm" onsubmit="event.preventDefault(); alert('Subscribed! Check your inbox for your $10 repair voucher.'); this.reset();">
+              <input type="email" placeholder="Enter your email address..." required aria-label="Email Address">
+              <button type="submit" class="cm-btn cm-btn--white">
+                <span>Subscribe</span>
+                <i class="bi bi-arrow-right"></i>
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====================================================
+       SECTION 6 — RECOMMENDED REPAIR SERVICES CTA
+  ===================================================== -->
+  <section class="cm-section cm-section--tinted" id="repair-cta">
+    <div class="cm-container text-center" style="max-width: 760px;" data-reveal>
+      <div class="cm-eyebrow mx-auto"><i class="bi bi-tools"></i> NEED A REPAIR TODAY?</div>
+      <h2 class="cm-section__title">Experiencing Phone Issues right now?</h2>
+      <p class="cm-section__desc mx-auto mb-4">
+        Don't let a cracked screen or failing battery slow you down. Our certified technicians diagnose most devices in 15 minutes and complete repairs the same day.
+      </p>
+
+      <div class="d-flex justify-content-center gap-3 flex-wrap">
+        <a href="repairs.html#book" class="cm-btn cm-btn--primary cm-btn--lg">
+          <span>Book Repair Online</span>
+          <i class="bi bi-arrow-right"></i>
+        </a>
+        <a href="contact.html" class="cm-btn cm-btn--ghost cm-btn--lg">
+          <i class="bi bi-geo-alt-fill"></i>
+          <span>Visit Our Store</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ===================== FOOTER ===================== -->
+<footer class="cm-footer">
+  <div class="cm-container">
+    <div class="cm-footer__grid">
+
+      <div class="cm-footer__brand">
+        <a href="index.html" class="cm-logo cm-logo--footer">
+          <span class="cm-logo__mark"><i class="bi bi-cpu-fill"></i></span>
+          <span class="cm-logo__text">Cell<span>Mate</span></span>
+        </a>
+        <p>Premium mobile phone repairs &amp; accessories. Quality-tested products, certified technicians, genuine spare parts.</p>
+        <div class="cm-social">
+          <a href="#" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+          <a href="#" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+          <a href="#" aria-label="Twitter X"><i class="bi bi-twitter-x"></i></a>
+          <a href="#" aria-label="YouTube"><i class="bi bi-youtube"></i></a>
+        </div>
+      </div>
+
+      <div class="cm-footer__col">
+        <h4>Navigation</h4>
+        <a href="index.html">Home</a>
+        <a href="home2.html">Home 2</a>
+        <a href="repairs.html">Repairs</a>
+        <a href="accessories.html">Accessories</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="contact.html">Contact</a>
+        <a href="blog.html">Blog</a>
+      </div>
+
+      <div class="cm-footer__col">
+        <h4>Repair Services</h4>
+        <a href="repairs.html#solutions">Screen Replacement</a>
+        <a href="repairs.html#solutions">Battery Replacement</a>
+        <a href="repairs.html#solutions">Charging Port</a>
+        <a href="repairs.html#solutions">Water Damage</a>
+        <a href="repairs.html#solutions">Motherboard Repair</a>
+      </div>
+
+      <div class="cm-footer__col">
+        <h4>Workshop Hours</h4>
+        <p>Mon – Sat: 9am – 8pm</p>
+        <p>Sunday: 10am – 5pm</p>
+        <p class="cm-eyebrow cm-eyebrow--static mt-2" style="font-size:11px;">
+          <span class="cm-dot-pulse"></span> WORKSHOP OPEN NOW
+        </p>
+      </div>
+
+      <div class="cm-footer__col">
+        <h4>Newsletter</h4>
+        <p>Get accessory deals and repair tips direct to your inbox.</p>
+        <form class="cm-newsletter" id="newsletterForm">
+          <input type="email" placeholder="Your email..." required aria-label="Email address">
+          <button type="submit" aria-label="Subscribe"><i class="bi bi-arrow-right"></i></button>
+        </form>
+      </div>
+
+    </div>
+
+    <div class="cm-footer__bottom">
+      <span>&copy; 2026 CellMate Mobile Services Inc. All rights reserved.</span>
+      <span>Premium Accessories &amp; Authorized Repair Center.</span>
+    </div>
+  </div>
+</footer>
+
+<button class="cm-to-top" id="toTop" aria-label="Back to top">
+  <i class="bi bi-arrow-up"></i>
+</button>
+
+<!-- Scripts -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="script.js"></script>
+</body>
+</html>

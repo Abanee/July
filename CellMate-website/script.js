@@ -498,4 +498,96 @@
     });
   }
 
+  /* ---------------------------------------------------------------------
+     Blog Page (blog.html) Article Filter Interaction
+  --------------------------------------------------------------------- */
+  var blgFilterBtns = document.querySelectorAll('.blg-filter-btn');
+  var blgItems = document.querySelectorAll('.blg-item');
+
+  if (blgFilterBtns.length && blgItems.length) {
+    blgFilterBtns.forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        var filter = btn.getAttribute('data-blg-filter');
+
+        blgFilterBtns.forEach(function (b) { b.classList.remove('active'); });
+        btn.classList.add('active');
+
+        blgItems.forEach(function (item) {
+          var cat = item.getAttribute('data-blg-cat');
+          if (filter === 'all' || cat === filter) {
+            item.style.display = 'block';
+            setTimeout(function () {
+              item.style.opacity = '1';
+              item.style.transform = 'scale(1)';
+            }, 50);
+          } else {
+            item.style.opacity = '0';
+            item.style.transform = 'scale(0.95)';
+            setTimeout(function () {
+              if (item.style.opacity === '0') item.style.display = 'none';
+            }, 300);
+          }
+        });
+      });
+    });
+  }
+
+  /* ---------------------------------------------------------------------
+     Repairs Page (repairs.html) Brand Filter Interaction
+  --------------------------------------------------------------------- */
+  var repBrandBtns = document.querySelectorAll('#repBrandFilter .rep-filter-btn');
+  var repItems = document.querySelectorAll('.rep-item');
+
+  if (repBrandBtns.length && repItems.length) {
+    repBrandBtns.forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        var brand = btn.getAttribute('data-rep-brand');
+
+        repBrandBtns.forEach(function (b) { b.classList.remove('active'); });
+        btn.classList.add('active');
+
+        repItems.forEach(function (item) {
+          var itemBrand = item.getAttribute('data-rep-brand');
+          if (brand === 'all' || itemBrand === brand) {
+            item.style.display = 'block';
+            setTimeout(function () { item.style.opacity = '1'; item.style.transform = 'scale(1)'; }, 50);
+          } else {
+            item.style.opacity = '0';
+            item.style.transform = 'scale(0.95)';
+            setTimeout(function () { if (item.style.opacity === '0') item.style.display = 'none'; }, 300);
+          }
+        });
+      });
+    });
+  }
+
+  /* ---------------------------------------------------------------------
+     Accessories Page (accessories.html) Brand Filter Interaction
+  --------------------------------------------------------------------- */
+  var accBrandBtns = document.querySelectorAll('#accBrandFilter .acc-filter-btn');
+  var accItems = document.querySelectorAll('.acc-item');
+
+  if (accBrandBtns.length && accItems.length) {
+    accBrandBtns.forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        var brand = btn.getAttribute('data-acc-brand');
+
+        accBrandBtns.forEach(function (b) { b.classList.remove('active'); });
+        btn.classList.add('active');
+
+        accItems.forEach(function (item) {
+          var itemBrand = item.getAttribute('data-acc-brand');
+          if (brand === 'all' || itemBrand === brand) {
+            item.style.display = 'block';
+            setTimeout(function () { item.style.opacity = '1'; item.style.transform = 'scale(1)'; }, 50);
+          } else {
+            item.style.opacity = '0';
+            item.style.transform = 'scale(0.95)';
+            setTimeout(function () { if (item.style.opacity === '0') item.style.display = 'none'; }, 300);
+          }
+        });
+      });
+    });
+  }
+
 })();
