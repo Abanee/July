@@ -71,27 +71,6 @@
 
 
   /* ---------------------------------------------------------------------
-     Mobile menu
-  --------------------------------------------------------------------- */
-  var burger = document.getElementById('cmBurger');
-  var menu = document.getElementById('cmMenu');
-
-  if (burger && menu) {
-    burger.addEventListener('click', function () {
-      var isOpen = menu.classList.toggle('is-open');
-      burger.setAttribute('aria-expanded', isOpen);
-      burger.setAttribute('aria-label', isOpen ? 'Close menu' : 'Open menu');
-    });
-
-    navLinks.forEach(function (link) {
-      link.addEventListener('click', function () {
-        menu.classList.remove('is-open');
-        burger.setAttribute('aria-expanded', 'false');
-      });
-    });
-  }
-
-  /* ---------------------------------------------------------------------
      Scroll reveal (fade + rise / slide left / slide right)
   --------------------------------------------------------------------- */
   var revealTargets = document.querySelectorAll('[data-reveal]');

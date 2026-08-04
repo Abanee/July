@@ -72,16 +72,19 @@
   /* ---------------------------------------------------------------------
      RTL Mode Toggle (LTR / RTL)
   --------------------------------------------------------------------- */
-  var rtlToggle = document.getElementById('rtlToggle');
   var RTL_STORAGE_KEY = 'cellmate-rtl';
 
   function applyRTL(isRTL) {
     if (isRTL) {
       root.setAttribute('dir', 'rtl');
-      if (rtlToggle) rtlToggle.classList.add('is-rtl');
+      document.querySelectorAll('#rtlToggle, .cm-rtl-toggle').forEach(function(btn) {
+        btn.classList.add('is-rtl');
+      });
     } else {
       root.removeAttribute('dir');
-      if (rtlToggle) rtlToggle.classList.remove('is-rtl');
+      document.querySelectorAll('#rtlToggle, .cm-rtl-toggle').forEach(function(btn) {
+        btn.classList.remove('is-rtl');
+      });
     }
   }
 
@@ -91,14 +94,14 @@
     applyRTL(savedRTL === 'true');
   }
 
-  if (rtlToggle) {
-    rtlToggle.addEventListener('click', function () {
+  document.querySelectorAll('#rtlToggle, .cm-rtl-toggle').forEach(function(btn) {
+    btn.addEventListener('click', function () {
       var isCurrentRTL = root.getAttribute('dir') === 'rtl';
       var nextRTL = !isCurrentRTL;
       applyRTL(nextRTL);
       try { localStorage.setItem(RTL_STORAGE_KEY, nextRTL); } catch (e) {}
     });
-  }
+  });
 
   initRTL();
 
