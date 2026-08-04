@@ -157,7 +157,7 @@
   /* ---------------------------------------------------------------------
      Journey timeline: trigger the connecting line fill once in view
   --------------------------------------------------------------------- */
-  var journey = document.querySelector('.ab-journey');
+  var journey = document.querySelector('.ab-journey, .ab-vtimeline');
   if (journey) {
     var journeyObserver = new IntersectionObserver(function (entries) {
       entries.forEach(function (entry) {
