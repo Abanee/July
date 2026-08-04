@@ -630,3 +630,192 @@ function updateEstimate() {
     timeEl.textContent = times[repair];
   }
 }
+
+/* ---------------------------------------------------------------------
+   Real-Time Search & Shopping Cart Drawer Manager
+--------------------------------------------------------------------- */
+(function() {
+  // Real-Time Search Logic
+  var searchBtn = document.getElementById('navSearchBtn');
+  var searchOverlay = document.getElementById('cmSearchOverlay');
+  var searchCloseBtn = document.getElementById('cmSearchCloseBtn');
+  var searchInput = document.getElementById('cmSearchInput');
+  var searchResults = document.getElementById('cmSearchResults');
+
+  var searchableDatabase = [
+    { title: 'OLED Screen Replacement', category: 'Repair Service', price: '₹1,499+', link: 'repairs.html' },
+    { title: 'OEM Battery Renewal', category: 'Repair Service', price: '₹999+', link: 'repairs.html' },
+    { title: 'Type-C Charging Port Repair', category: 'Repair Service', price: '₹799+', link: 'repairs.html' },
+    { title: 'Water Damage Ultrasound Recovery', category: 'Repair Service', price: '₹1,999+', link: 'repairs.html' },
+    { title: 'Silicone MagSafe Case', category: 'Accessory', price: '₹499', link: 'accessories.html' },
+    { title: '20W GaN Fast Charger Adapter', category: 'Accessory', price: '₹899', link: 'accessories.html' },
+    { title: '240W Heavy Duty Braided Cable', category: 'Accessory', price: '₹349', link: 'accessories.html' },
+    { title: '10,000mAh Dual-Port Power Bank', category: 'Accessory', price: '₹1,799', link: 'accessories.html' },
+    { title: '9H Sapphire Tempered Glass', category: 'Accessory', price: '₹299', link: 'accessories.html' },
+    { title: 'Wireless ANC Earbuds 5.3', category: 'Accessory', price: '₹2,499', link: 'accessories.html' },
+    { title: 'Battery Lifespan 80/20 Maintenance Rule', category: 'Tech Guide', price: 'Free Guide', link: 'blog.html' },
+    { title: 'ESD Cleanroom Micro-Soldering Process', category: 'Tech Guide', price: 'Free Guide', link: 'blog.html' }
+  ];
+
+  function openSearch() {
+    if (!searchOverlay) return;
+    searchOverlay.classList.add('is-active');
+    setTimeout(function() { if (searchInput) searchInput.focus(); }, 100);
+  }
+
+  function closeSearch() {
+    if (!searchOverlay) return;
+    searchOverlay.classList.remove('is-active');
+  }
+
+  if (searchBtn) searchBtn.addEventListener('click', openSearch);
+  if (searchCloseBtn) searchCloseBtn.addEventListener('click', closeSearch);
+  if (searchOverlay) {
+    searchOverlay.addEventListener('click', function(e) {
+      if (e.target === searchOverlay) closeSearch();
+    });
+  }
+
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') closeSearch();
+  });
+
+  if (searchInput && searchResults) {
+    searchInput.addEventListener('input', function() {
+      var query = searchInput.value.toLowerCase().trim();
+      if (!query) {
+        searchResults.innerHTML = '<p class="text-center text-muted py-4">Type to start searching CellMate services &amp; accessories...</p>';
+        return;
+      }
+
+      var matches = searchableDatabase.filter(function(item) {
+        return item.title.toLowerCase().includes(query) || item.category.toLowerCase().includes(query);
+      });
+
+      if (!matches.length) {
+        searchResults.innerHTML = '<p class="text-center text-muted py-4">No matching services or accessories found.</p>';
+        return;
+      }
+
+      var html = '';
+      matches.forEach(function(item) {
+        html += '<a href="' + item.link + '" class="cm-search-result-item">' +
+          '<div>' +
+            '<div class="cm-search-result-title">' + item.title + '</div>' +
+            '<div class="cm-search-result-sub">' + item.category + '</div>' +
+          '</div>' +
+          '<span class="badge bg-primary-subtle text-primary font-monospace">' + item.price + '</span>' +
+        '</a>';
+      });
+      searchResults.innerHTML = html;
+    });
+  }
+
+  // Shopping Cart Logic
+  var cartBtn = document.getElementById('navCartBtn');
+  var cartOverlay = document.getElementById('cmCartOverlay');
+  var cartDrawer = document.getElementById('cmCartDrawer');
+  var cartCloseBtn = document.getElementById('cmCartCloseBtn');
+  var cartCountEl = document.getElementById('cartCount');
+  var cartItemsEl = document.getElementById('cmCartItems');
+  var cartSubtotalEl = document.getElementById('cmCartSubtotal');
+
+  var cart = [
+    { id: '1', title: 'Silicone MagSafe Case', price: 499, qty: 1, image: 'https://images.unsplash.com/photo-1601593346740-925612772716?q=80&w=700&auto=format&fit=crop' }
+  ];
+
+  function openCart() {
+    if (!cartOverlay || !cartDrawer) return;
+    cartOverlay.classList.add('is-active');
+    cartDrawer.classList.add('is-active');
+  }
+
+  function closeCart() {
+    if (!cartOverlay || !cartDrawer) return;
+    cartOverlay.classList.remove('is-active');
+    cartDrawer.classList.remove('is-active');
+  }
+
+  if (cartBtn) cartBtn.addEventListener('click', openCart);
+  if (cartCloseBtn) cartCloseBtn.addEventListener('click', closeCart);
+  if (cartOverlay) cartOverlay.addEventListener('click', closeCart);
+
+  function renderCart() {
+    if (!cartCountEl || !cartItemsEl || !cartSubtotalEl) return;
+    
+    var totalQty = 0;
+    var totalPrice = 0;
+
+    if (!cart.length) {
+      cartCountEl.textContent = '0';
+      cartItemsEl.innerHTML = '<p class="text-center text-muted py-4">Your cart is currently empty.</p>';
+      cartSubtotalEl.textContent = '₹0';
+      return;
+    }
+
+    var html = '';
+    cart.forEach(function(item, index) {
+      totalQty += item.qty;
+      totalPrice += item.price * item.qty;
+
+      html += '<div class="cm-cart-drawer-item">' +
+        '<img src="' + item.image + '" alt="' + item.title + '">' +
+        '<div class="cm-cart-drawer-item__info">' +
+          '<strong>' + item.title + '</strong>' +
+          '<span>₹' + item.price.toLocaleString('en-IN') + ' x ' + item.qty + '</span>' +
+        '</div>' +
+        '<div class="d-flex align-items-center gap-1">' +
+          '<button type="button" class="btn btn-sm btn-outline-secondary py-0 px-2" onclick="window.changeCartQty(' + index + ', -1)">-</button>' +
+          '<span class="fw-bold px-1">' + item.qty + '</span>' +
+          '<button type="button" class="btn btn-sm btn-outline-secondary py-0 px-2" onclick="window.changeCartQty(' + index + ', 1)">+</button>' +
+        '</div>' +
+      '</div>';
+    });
+
+    cartCountEl.textContent = totalQty;
+    cartItemsEl.innerHTML = html;
+    cartSubtotalEl.textContent = '₹' + totalPrice.toLocaleString('en-IN');
+  }
+
+  window.changeCartQty = function(index, delta) {
+    if (cart[index]) {
+      cart[index].qty += delta;
+      if (cart[index].qty <= 0) cart.splice(index, 1);
+      renderCart();
+    }
+  };
+
+  window.addToCart = function(title, price, image) {
+    var found = false;
+    cart.forEach(function(item) {
+      if (item.title === title) {
+        item.qty += 1;
+        found = true;
+      }
+    });
+    if (!found) {
+      cart.push({ id: String(Date.now()), title: title, price: price, qty: 1, image: image });
+    }
+    renderCart();
+    openCart();
+  };
+
+  // Attach quick buy listeners to accessories cards
+  document.querySelectorAll('.cm-shop-card').forEach(function(card) {
+    var titleEl = card.querySelector('h3');
+    var priceEl = card.querySelector('.cm-shop-card__price');
+    var imgEl = card.querySelector('.cm-shop-card__media img');
+    if (titleEl && priceEl && imgEl) {
+      card.style.cursor = 'pointer';
+      card.addEventListener('click', function(e) {
+        if (e.target.closest('.cm-shop-card__quick')) return;
+        var title = titleEl.textContent.trim();
+        var priceNum = parseInt(priceEl.textContent.replace(/[^0-9]/g, ''), 10) || 499;
+        var imgSrc = imgEl.src;
+        window.addToCart(title, priceNum, imgSrc);
+      });
+    }
+  });
+
+  renderCart();
+})();

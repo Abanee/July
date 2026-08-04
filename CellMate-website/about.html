@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>About CellMate — Our Story, Brands We Repair &amp; Genuine Parts</title>
-<meta name="description" content="Learn how CellMate started, which phone brands we repair, why we only fit genuine spare parts and premium accessories, and what thousands of happy customers say about us.">
+<title>CellMate — About Our Certified Workshop & Technicians</title>
+<meta name="description" content="Learn about CellMate's certified technicians, ESD cleanroom laboratory, genuine OEM parts sourcing, and 3-month repair warranty guarantee.">
 
 <!-- Fonts -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -15,18 +15,16 @@
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 <!-- Tailwind (utility helpers only) -->
 <script src="https://cdn.tailwindcss.com"></script>
-<script>
-  tailwind.config = { corePlugins: { preflight: false } };
-</script>
+<script> tailwind.config = { corePlugins: { preflight: false } }; </script>
 
 <!-- Icons -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
 
-<link rel="stylesheet" href="about.css">
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<div class="ab-progress" id="abProgress"></div>
+<!-- GRAIN OVERLAY -->
 <div class="grain-overlay" aria-hidden="true"></div>
 
 <!-- ===================== NAVBAR ===================== -->
@@ -38,23 +36,27 @@
     </a>
 
     <nav class="cm-menu" id="cmMenu" aria-label="Primary">
-      <a href="index.html" class="cm-menu__link">Home</a>
-      <a href="home2.html" class="cm-menu__link">Repair Lab</a>
-      <a href="index.html#services" class="cm-menu__link">Services</a>
-      <a href="about.html" class="cm-menu__link active">About</a>
-      <a href="about.html#enquiry" class="cm-menu__link">Drop-Off Enquiry</a>
-      <a href="index.html#contact" class="cm-menu__link">Contact</a>
+      <a href="index.html"       class="cm-menu__link">Home</a>
+      <a href="home2.html"       class="cm-menu__link">Home 2</a>
+      <a href="about.html"       class="cm-menu__link active">About</a>
+      <a href="accessories.html" class="cm-menu__link">Accessories</a>
+      <a href="repairs.html"     class="cm-menu__link">Repairs</a>
+      <a href="gallery.html"     class="cm-menu__link">Gallery</a>
+      <a href="blog.html"        class="cm-menu__link">Blog</a>
+      <a href="contact.html"     class="cm-menu__link">Contact</a>
     </nav>
 
     <div class="cm-nav__actions">
-      <button class="cm-theme-toggle" id="themeToggle" aria-label="Switch between light and dark mode" aria-pressed="false">
-        <i class="bi bi-sun-fill cm-theme-toggle__sun"></i>
-        <i class="bi bi-moon-stars-fill cm-theme-toggle__moon"></i>
-        <span class="cm-theme-toggle__ball"></span>
+      <button class="cm-nav-icon-btn" id="navSearchBtn" aria-label="Search website"><i class="bi bi-search"></i></button>
+      <button class="cm-nav-icon-btn" id="navCartBtn" aria-label="Shopping Cart"><i class="bi bi-bag"></i><span class="cm-cart-badge" id="cartCount">0</span></button>
+      <button class="cm-rtl-toggle" id="rtlToggle" aria-label="Toggle RTL mode" title="Toggle RTL / LTR mode">RTL</button>
+      <button class="cm-theme-btn" id="themeBtn" aria-label="Switch between light and dark mode">
+        <i class="bi bi-sun-fill"></i>
+        <i class="bi bi-moon-stars-fill"></i>
       </button>
-      <a href="index.html#contact" class="cm-btn cm-btn--primary d-none d-lg-inline-flex">
-        <span>Book Repair</span>
-        <i class="bi bi-arrow-up-right"></i>
+      <a href="login.html" class="cm-btn cm-btn--primary d-none d-lg-inline-flex">
+        <span>Login</span>
+        <i class="bi bi-box-arrow-in-right"></i>
       </a>
       <button class="cm-burger" id="cmBurger" aria-label="Open menu" aria-expanded="false" aria-controls="cmMenu">
         <span></span><span></span><span></span>
@@ -65,468 +67,84 @@
 
 <main id="top">
 
-  <!-- ===================== SECTION 1 — HERO ===================== -->
-  <section class="ab-hero">
-    <div class="ab-hero__bg" aria-hidden="true">
-      <div class="ab-mesh"></div>
-      <div class="ab-grid-lines"></div>
-    </div>
+  <!-- ====================================================
+       HERO SECTION — ABOUT CELLMATE
+  ===================================================== -->
+  <section class="cm-page-hero" id="hero">
+    <div class="cm-container">
+      <div class="cm-page-hero__inner" data-reveal>
+        <div class="cm-hero-badge">
+          <i class="bi bi-building"></i>
+          <span>INSIDE THE CERTIFIED WORKSHOP</span>
+        </div>
 
-    <div class="ab-container ab-hero__grid">
-      <div class="ab-hero__content" data-reveal="left">
-        <p class="ab-eyebrow"><span class="ab-dot-pulse"></span> ABOUT CELLMATE</p>
-        <h1 class="ab-hero__title">A repair shop built on <span class="ab-highlight">genuine parts</span> and honest work.</h1>
-        <p class="ab-hero__desc">
-          CellMate repairs every major smartphone brand — using original-spec
-          components, technicians trained on each brand's hardware, and a
-          fixed-price quote you approve before we start. No guesswork,
-          no unmarked parts, no surprises at pickup.
+        <h1>
+          The Precision &amp; Passion<br>
+          <span class="cm-hero-blue-text">Behind Every Device Repair.</span>
+        </h1>
+
+        <p class="cm-hero-desc">
+          Founded on technical integrity and genuine OEM parts, CellMate has restored over 10,000+ smartphones with certified cleanroom micro-soldering precision and transparent pricing.
         </p>
 
-        <div class="ab-hero__cta">
-          <a href="index.html#contact" class="cm-btn cm-btn--primary cm-btn--lg cm-btn--magnetic"><span>Book a Repair</span><i class="bi bi-arrow-up-right"></i></a>
-          <a href="#journey" class="cm-btn cm-btn--ghost cm-btn--lg cm-btn--magnetic"><span>Our Story</span></a>
-        </div>
-
-        <div class="ab-hero__trust">
-          <span class="ab-hero__trust-item"><i class="bi bi-patch-check-fill"></i> All major brands</span>
-          <span class="ab-hero__trust-item"><i class="bi bi-box-seam"></i> Genuine parts only</span>
-          <span class="ab-hero__trust-item"><i class="bi bi-shield-check"></i> Warranty on every repair</span>
-        </div>
-      </div>
-
-      <div class="ab-hero__visual" data-reveal="right">
-        <div class="ab-hero__frame">
-          <img src="https://images.unsplash.com/photo-1581092160607-ee22731cb50f?q=80&w=1000&auto=format&fit=crop" alt="CellMate technician repairing a smartphone with precision tools" loading="lazy">
-        </div>
-        <div class="ab-hero__stats">
-          <div class="ab-hero__stat"><strong data-count="10000" data-suffix="+">0</strong><span>Devices Repaired</span></div>
-          <div class="ab-hero__stat"><strong data-count="9">0</strong><span>Brands Serviced</span></div>
-          <div class="ab-hero__stat"><strong>4.9★</strong><span>Average Rating</span></div>
-          <div class="ab-hero__stat"><strong data-count="8" data-suffix="+">0</strong><span>Years Running</span></div>
+        <div class="cm-page-hero__actions">
+          <a href="repairs.html" class="cm-btn cm-btn--primary cm-btn--lg">
+            <span>Explore Repair Services</span>
+            <i class="bi bi-arrow-right"></i>
+          </a>
+          <a href="contact.html" class="cm-btn cm-btn--outline-white cm-btn--lg">
+            <i class="bi bi-geo-alt-fill"></i>
+            <span>Visit Our Workshop</span>
+          </a>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ===================== SECTION — WHAT WE REPAIR ===================== -->
-  <section class="ab-section" id="repairs">
-    <div class="ab-container">
-      <div class="ab-section__head" data-reveal>
-        <p class="ab-eyebrow">WHAT WE FIX</p>
-        <h2 class="ab-section__title">Screens, batteries, charging ports — and everything in between.</h2>
-        <p class="ab-section__desc">The three repairs people need most, done with genuine parts and a technician who explains what went wrong.</p>
+  <!-- ====================================================
+       WHY CELLMATE EQUAL GRID
+  ===================================================== -->
+  <section class="cm-section">
+    <div class="cm-container">
+      <div class="cm-section__head text-center mx-auto mb-5" style="max-width: 720px;">
+        <p class="cm-eyebrow cm-eyebrow--static">OUR WORKSHOP STANDARDS</p>
+        <h2 class="cm-section__title text-center">Built for devices that deserve a second chance.</h2>
+        <p class="cm-section__desc text-center">From free initial fault diagnosis to ESD cleanroom board testing, see why thousands trust CellMate.</p>
       </div>
 
-      <div class="ab-repairs__grid" data-reveal>
-        <div class="ab-repair-card">
-          <span class="ab-repair-card__icon"><i class="bi bi-phone-fill"></i></span>
-          <h3>Screen Replacement</h3>
-          <p>Cracked glass, dead pixels or touch issues — replaced with a display that matches original colour and touch response.</p>
-          <span class="ab-repair-card__time"><i class="bi bi-clock-fill"></i> 25–40 min</span>
-        </div>
-        <div class="ab-repair-card">
-          <span class="ab-repair-card__icon"><i class="bi bi-battery-charging"></i></span>
-          <h3>Battery Replacement</h3>
-          <p>Fast draining or swelling battery? We fit a genuine-spec cell and show you the before/after health report.</p>
-          <span class="ab-repair-card__time"><i class="bi bi-clock-fill"></i> 20–30 min</span>
-        </div>
-        <div class="ab-repair-card">
-          <span class="ab-repair-card__icon"><i class="bi bi-usb-plug-fill"></i></span>
-          <h3>Charging Port Repair</h3>
-          <p>Loose connection, slow charging or a port that won't grip the cable — cleaned, repaired or replaced.</p>
-          <span class="ab-repair-card__time"><i class="bi bi-clock-fill"></i> 30–45 min</span>
-        </div>
-        <div class="ab-repair-card">
-          <span class="ab-repair-card__icon"><i class="bi bi-camera-fill"></i></span>
-          <h3>Camera, Speaker &amp; More</h3>
-          <p>Blurry camera, muffled speaker, water damage or software issues — full diagnostics before any quote.</p>
-          <span class="ab-repair-card__time"><i class="bi bi-clock-fill"></i> Same day</span>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===================== SECTION — HOW IT WORKS / TURNAROUND ===================== -->
-  <section class="ab-section ab-section--tinted" id="process">
-    <div class="ab-container">
-      <div class="ab-section__head" data-reveal>
-        <p class="ab-eyebrow">HOW IT WORKS</p>
-        <h2 class="ab-section__title">Drop it off, know the price, get it back — fast.</h2>
-        <p class="ab-section__desc">No jargon, no hidden add-ons. Here's exactly what happens to your device once it's in our hands.</p>
-      </div>
-
-      <div class="ab-process" data-reveal>
-        <div class="ab-process__step">
-          <h3>Drop off or book</h3>
-          <p>Walk in or reserve a slot online — tell us the brand, model and what's wrong.</p>
-          <span class="ab-process__time"><i class="bi bi-clock-fill"></i> 2 minutes</span>
-        </div>
-        <div class="ab-process__step">
-          <h3>Free diagnosis</h3>
-          <p>A technician runs a full check and shows you exactly what's causing the issue.</p>
-          <span class="ab-process__time"><i class="bi bi-clock-fill"></i> 10–15 minutes</span>
-        </div>
-        <div class="ab-process__step">
-          <h3>Fixed quote, your call</h3>
-          <p>We share one fixed price for parts and labour. Nothing starts until you approve it.</p>
-          <span class="ab-process__time"><i class="bi bi-clock-fill"></i> You decide</span>
-        </div>
-        <div class="ab-process__step">
-          <h3>Repair &amp; pickup</h3>
-          <p>Most repairs are finished while you wait, with a written warranty on every job.</p>
-          <span class="ab-process__time"><i class="bi bi-clock-fill"></i> 25–45 minutes</span>
-        </div>
-      </div>
-
-      <div class="ab-process__total"><i class="bi bi-lightning-charge-fill"></i> Most drop-in repairs are complete in under <strong>1 hour</strong> — no appointment required.</div>
-    </div>
-  </section>
-
-  <!-- ===================== SECTION 2 — OUR JOURNEY (TIMELINE) ===================== -->
-  <section class="ab-section ab-section--tinted" id="journey">
-    <div class="ab-container">
-      <div class="ab-section__head" data-reveal>
-        <p class="ab-eyebrow">OUR STORY</p>
-        <h2 class="ab-section__title">How CellMate came to be.</h2>
-        <p class="ab-section__desc">From a single repair counter to a certified multi-brand centre — here's how we got here, one honest repair at a time.</p>
-      </div>
-
-      <div class="ab-journey-hint"><i class="bi bi-arrow-left-right"></i> Swipe to explore the timeline</div>
-
-      <div class="ab-journey" data-reveal>
-        <div class="ab-journey__track">
-          <div class="ab-journey__line"></div>
-          <div class="ab-journey__row">
-
-            <article class="ab-journey__item">
-              <span class="ab-journey__dot"></span>
-              <div class="ab-journey__media"><img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?q=80&w=500&auto=format&fit=crop" alt="CellMate's first repair counter" loading="lazy"></div>
-              <span class="ab-journey__year">2017</span>
-              <h3>CellMate is founded</h3>
-              <p>Opened as a single repair counter, fixing screens and batteries with parts we'd trust in our own phones.</p>
-            </article>
-
-            <article class="ab-journey__item">
-              <span class="ab-journey__dot"></span>
-              <div class="ab-journey__media"><img src="https://images.unsplash.com/photo-1441984904996-e0b6ba687e04?q=80&w=500&auto=format&fit=crop" alt="First CellMate storefront" loading="lazy"></div>
-              <span class="ab-journey__year">2018</span>
-              <h3>First full-service store</h3>
-              <p>Moved into a proper storefront and added charging port, camera and speaker repair.</p>
-            </article>
-
-            <article class="ab-journey__item">
-              <span class="ab-journey__dot"></span>
-              <div class="ab-journey__media"><img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?q=80&w=500&auto=format&fit=crop" alt="Technician marking 1,000 repairs" loading="lazy"></div>
-              <span class="ab-journey__year">2019</span>
-              <h3>1,000 repairs done</h3>
-              <p>Crossed our first thousand repairs, almost entirely on word-of-mouth referrals.</p>
-            </article>
-
-            <article class="ab-journey__item">
-              <span class="ab-journey__dot"></span>
-              <div class="ab-journey__media"><img src="https://images.unsplash.com/photo-1585298723682-7115561c51b7?q=80&w=500&auto=format&fit=crop" alt="Accessories shelf launch" loading="lazy"></div>
-              <span class="ab-journey__year">2020</span>
-              <h3>Accessories line launched</h3>
-              <p>Added quality-tested cases, chargers and cables alongside our repair services.</p>
-            </article>
-
-            <article class="ab-journey__item">
-              <span class="ab-journey__dot"></span>
-              <div class="ab-journey__media"><img src="https://images.unsplash.com/photo-1581091012184-7f42c66df6a1?q=80&w=500&auto=format&fit=crop" alt="Certified repair centre equipment" loading="lazy"></div>
-              <span class="ab-journey__year">2022</span>
-              <h3>Certified repair centre</h3>
-              <p>Became an authorised multi-brand repair partner, backed by calibrated diagnostic tools.</p>
-            </article>
-
-            <article class="ab-journey__item">
-              <span class="ab-journey__dot"></span>
-              <div class="ab-journey__media"><img src="https://images.unsplash.com/photo-1580894732444-8ecded7900cd?q=80&w=500&auto=format&fit=crop" alt="Team celebrating 10,000 repairs" loading="lazy"></div>
-              <span class="ab-journey__year">2024</span>
-              <h3>10,000+ repairs</h3>
-              <p>Passed ten thousand devices repaired, rated 4.9★ by more than 2,400 customers.</p>
-            </article>
-
-            <article class="ab-journey__item">
-              <span class="ab-journey__dot"></span>
-              <div class="ab-journey__media"><img src="https://images.unsplash.com/photo-1580894908361-967195033215?q=80&w=500&auto=format&fit=crop" alt="CellMate workshop today" loading="lazy"></div>
-              <span class="ab-journey__year">Today</span>
-              <h3>Still growing</h3>
-              <p>A full team of certified technicians servicing every major brand, one repair at a time.</p>
-            </article>
-
+      <div class="cm-why-grid" data-reveal>
+        <article class="cm-why-card">
+          <div class="cm-why-card__media">
+            <img src="Asset/certified_tech.png" alt="Micro soldering technician bench" loading="lazy">
+            <span class="cm-why-card__icon"><i class="bi bi-patch-check-fill"></i></span>
           </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===================== SECTION 3 — BRANDS WE SERVICE ===================== -->
-  <section class="ab-section" id="brands">
-    <div class="ab-container">
-      <div class="ab-section__head" data-reveal>
-        <p class="ab-eyebrow">MULTI-BRAND EXPERTISE</p>
-        <h2 class="ab-section__title">One shop. Every major brand.</h2>
-        <p class="ab-section__desc">Our technicians train on brand-specific hardware, so whatever you carry, it's handled by someone who knows it inside out.</p>
-      </div>
-
-      <div class="ab-brands__grid" data-reveal>
-        <div class="ab-brand-card"><i class="bi bi-apple"></i><h3>Apple</h3><span>iPhone &amp; iPad</span></div>
-        <div class="ab-brand-card"><i class="bi bi-phone-fill"></i><h3>Samsung</h3><span>Galaxy series</span></div>
-        <div class="ab-brand-card"><i class="bi bi-phone-fill"></i><h3>OnePlus</h3><span>All models</span></div>
-        <div class="ab-brand-card"><i class="bi bi-phone-fill"></i><h3>Xiaomi</h3><span>Mi &amp; Redmi</span></div>
-        <div class="ab-brand-card"><i class="bi bi-phone-fill"></i><h3>Vivo</h3><span>All models</span></div>
-        <div class="ab-brand-card"><i class="bi bi-phone-fill"></i><h3>Oppo</h3><span>All models</span></div>
-        <div class="ab-brand-card"><i class="bi bi-phone-fill"></i><h3>Realme</h3><span>All models</span></div>
-        <div class="ab-brand-card"><i class="bi bi-google"></i><h3>Google</h3><span>Pixel series</span></div>
-        <div class="ab-brand-card"><i class="bi bi-phone-fill"></i><h3>Motorola</h3><span>All models</span></div>
-        <div class="ab-brand-card"><i class="bi bi-phone-fill"></i><h3>Nothing</h3><span>All models</span></div>
-      </div>
-
-      <p class="ab-brands__note"><i class="bi bi-info-circle-fill"></i> Don't see your brand listed? Ask us — we service most Android manufacturers.</p>
-    </div>
-  </section>
-
-  <!-- ===================== SECTION 4 — GENUINE PARTS & ACCESSORIES ===================== -->
-  <section class="ab-section ab-section--tinted" id="quality">
-    <div class="ab-container">
-      <div class="ab-section__head" data-reveal>
-        <p class="ab-eyebrow">TOP-QUALITY, ALWAYS</p>
-        <h2 class="ab-section__title">Genuine spare parts &amp; premium accessories.</h2>
-        <p class="ab-section__desc">The part behind your screen or battery decides how long a repair actually lasts. Here's how we make sure it's the right one.</p>
-      </div>
-
-      <div class="ab-quality__grid" data-reveal>
-
-        <div class="ab-quality-card">
-          <div class="ab-quality-card__media">
-            <img src="https://images.unsplash.com/photo-1601524909162-ae8725290836?q=80&w=800&auto=format&fit=crop" alt="Genuine smartphone spare parts laid out for inspection" loading="lazy">
-          </div>
-          <div class="ab-quality-card__body">
-            <span class="ab-quality-card__badge"><i class="bi bi-box-seam"></i> SPARE PARTS</span>
-            <h3>100% genuine, every time</h3>
-            <p>We source displays, batteries and boards that match original factory specification — never the cheapest option on the shelf.</p>
-            <ul class="ab-quality-list">
-              <li><i class="bi bi-check-circle-fill"></i> Verified against manufacturer tolerances before fitting</li>
-              <li><i class="bi bi-check-circle-fill"></i> Accurate colour, touch response and battery lifespan</li>
-              <li><i class="bi bi-check-circle-fill"></i> Backed by a written parts warranty</li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="ab-quality-card">
-          <div class="ab-quality-card__media">
-            <img src="https://images.unsplash.com/photo-1583394838336-acd977736f90?q=80&w=800&auto=format&fit=crop" alt="Premium mobile accessories including cases and chargers" loading="lazy">
-          </div>
-          <div class="ab-quality-card__body">
-            <span class="ab-quality-card__badge"><i class="bi bi-lightning-charge-fill"></i> ACCESSORIES</span>
-            <h3>Tested before they hit the shelf</h3>
-            <p>Every case, charger and cable we stock is checked for build quality and safety compliance before it goes on display.</p>
-            <ul class="ab-quality-list">
-              <li><i class="bi bi-check-circle-fill"></i> Fast-charging support verified on real devices</li>
-              <li><i class="bi bi-check-circle-fill"></i> Drop-tested cases and scratch-resistant screen guards</li>
-              <li><i class="bi bi-check-circle-fill"></i> Exchange support if an item arrives faulty</li>
-            </ul>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- ===================== SECTION 5 — HAPPY CUSTOMERS ===================== -->
-  <section class="ab-section" id="customers">
-    <div class="ab-container">
-      <div class="ab-section__head" data-reveal>
-        <p class="ab-eyebrow">LOVED BY THOUSANDS</p>
-        <h2 class="ab-section__title">Happy customers, real reviews.</h2>
-        <p class="ab-section__desc">We follow up after every repair — this is what people actually tell us.</p>
-      </div>
-
-      <div class="ab-customers__stats" data-reveal>
-        <div class="ab-customers__stat">
-          <strong>4.9★</strong>
-          <div class="ab-stars">★★★★★</div>
-          <span>Average rating across 2,400+ reviews</span>
-        </div>
-        <div class="ab-customers__stat">
-          <strong data-count="98" data-suffix="%">0</strong>
-          <span>Customers who'd recommend us</span>
-        </div>
-        <div class="ab-customers__stat">
-          <strong data-count="10000" data-suffix="+">0</strong>
-          <span>Devices repaired and counting</span>
-        </div>
-      </div>
-
-      <div class="ab-testimonials" data-reveal>
-
-        <article class="ab-testimonial">
-          <span class="ab-testimonial__stars">★★★★★</span>
-          <p>"My iPhone screen was replaced in under 40 minutes and it looks exactly like the original. No colour tint, no touch lag — genuinely impressed."</p>
-          <div class="ab-testimonial__author">
-            <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=100&auto=format&fit=crop" alt="Customer Rohan Verma" loading="lazy">
-            <div><strong>Rohan Verma</strong><span>iPhone 13 — Screen Replacement</span></div>
+          <div class="cm-why-card__body">
+            <h3>Chipset Certification</h3>
+            <p>Technicians certified on specific motherboard logic boards for Apple, Samsung, Google Pixel, and Xiaomi devices.</p>
           </div>
         </article>
 
-        <article class="ab-testimonial">
-          <span class="ab-testimonial__stars">★★★★★</span>
-          <p>"Water damage repair on my Samsung — they were upfront that it might not be fully recoverable, but got it working perfectly. Honest team."</p>
-          <div class="ab-testimonial__author">
-            <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?q=80&w=100&auto=format&fit=crop" alt="Customer Ananya Iyer" loading="lazy">
-            <div><strong>Ananya Iyer</strong><span>Galaxy S22 — Water Damage</span></div>
+        <article class="cm-why-card">
+          <div class="cm-why-card__media">
+            <img src="Asset/oem_parts.png" alt="OEM spare parts inventory" loading="lazy">
+            <span class="cm-why-card__icon"><i class="bi bi-box-seam"></i></span>
+          </div>
+          <div class="cm-why-card__body">
+            <h3>Authentic Sourcing</h3>
+            <p>Original equipment manufacturer panels, zero-cycle batteries, and genuine optical lens assemblies.</p>
           </div>
         </article>
 
-        <article class="ab-testimonial">
-          <span class="ab-testimonial__stars">★★★★★</span>
-          <p>"Battery was draining fast on my OnePlus. They showed me the diagnostic report before quoting, and the new battery holds a full day easily."</p>
-          <div class="ab-testimonial__author">
-            <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=100&auto=format&fit=crop" alt="Customer Karthik Raman" loading="lazy">
-            <div><strong>Karthik Raman</strong><span>OnePlus 10 — Battery Replacement</span></div>
+        <article class="cm-why-card">
+          <div class="cm-why-card__media">
+            <img src="Asset/warranty_card.png" alt="3 month warranty certificate card" loading="lazy">
+            <span class="cm-why-card__icon"><i class="bi bi-shield-check"></i></span>
+          </div>
+          <div class="cm-why-card__body">
+            <h3>90-Day Written Guarantee</h3>
+            <p>Every single repair includes a 3-month comprehensive warranty card covering both parts and technician labor.</p>
           </div>
         </article>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- ===================== SECTION 6 — WHY CHOOSE CELLMATE ===================== -->
-  <section class="ab-section ab-section--tinted" id="why">
-    <div class="ab-container">
-      <div class="ab-section__head" data-reveal>
-        <p class="ab-eyebrow">WHY CUSTOMERS TRUST US</p>
-        <h2 class="ab-section__title">Why choose CellMate.</h2>
-        <p class="ab-section__desc">The short version of everything above.</p>
-      </div>
-
-      <div class="ab-features" data-reveal>
-        <div class="ab-feature">
-          <span class="ab-feature__icon"><i class="bi bi-patch-check-fill"></i></span>
-          <h3>Certified Technicians</h3>
-          <p>Trained and certified on every brand we service, with continuous hands-on training.</p>
-        </div>
-        <div class="ab-feature">
-          <span class="ab-feature__icon"><i class="bi bi-box-seam"></i></span>
-          <h3>Genuine Parts Only</h3>
-          <p>No unverified components — ever. What goes into your phone matches factory spec.</p>
-        </div>
-        <div class="ab-feature">
-          <span class="ab-feature__icon"><i class="bi bi-tag-fill"></i></span>
-          <h3>Transparent Pricing</h3>
-          <p>A fixed quote after diagnosis, approved by you before any work begins.</p>
-        </div>
-        <div class="ab-feature">
-          <span class="ab-feature__icon"><i class="bi bi-lightning-charge-fill"></i></span>
-          <h3>Fast Turnaround</h3>
-          <p>Most repairs are completed in 25–45 minutes, while you wait.</p>
-        </div>
-        <div class="ab-feature">
-          <span class="ab-feature__icon"><i class="bi bi-shield-check"></i></span>
-          <h3>Warranty Included</h3>
-          <p>Every repair is backed by a written warranty covering parts and labour.</p>
-        </div>
-        <div class="ab-feature">
-          <span class="ab-feature__icon"><i class="bi bi-headset"></i></span>
-          <h3>Real Customer Support</h3>
-          <p>Live updates by call or WhatsApp while your device is on the bench.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===================== SECTION — DROP-OFF ENQUIRY FORM ===================== -->
-  <section class="ab-section" id="enquiry">
-    <div class="ab-container">
-      <div class="ab-section__head" data-reveal>
-        <p class="ab-eyebrow">GOT A DEVICE TO DROP OFF?</p>
-        <h2 class="ab-section__title">Tell us what's wrong — we'll take it from there.</h2>
-        <p class="ab-section__desc">Send a quick enquiry before you visit and we'll have an estimate ready when you drop off your device.</p>
-      </div>
-
-      <div class="ab-enquiry" data-reveal>
-        <div class="ab-enquiry__info">
-          <h3>Why enquire first?</h3>
-          <p>A two-minute form gets your repair moving before you even reach the counter.</p>
-          <div class="ab-enquiry__points">
-            <div class="ab-enquiry__point"><i class="bi bi-check-circle-fill"></i> A ballpark price before you travel in</div>
-            <div class="ab-enquiry__point"><i class="bi bi-check-circle-fill"></i> Parts kept ready for common repairs</div>
-            <div class="ab-enquiry__point"><i class="bi bi-check-circle-fill"></i> A callback within business hours</div>
-            <div class="ab-enquiry__point"><i class="bi bi-check-circle-fill"></i> No obligation to go ahead</div>
-          </div>
-        </div>
-
-        <form class="ab-enquiry__form" id="enquiryForm">
-          <div class="ab-form-row">
-            <div class="ab-form-field">
-              <label for="enqName">Full name</label>
-              <input type="text" id="enqName" name="name" placeholder="Your name" required>
-            </div>
-            <div class="ab-form-field">
-              <label for="enqPhone">Phone number</label>
-              <input type="tel" id="enqPhone" name="phone" placeholder="10-digit mobile number" required>
-            </div>
-          </div>
-
-          <div class="ab-form-row">
-            <div class="ab-form-field">
-              <label for="enqBrand">Phone brand</label>
-              <select id="enqBrand" name="brand" required>
-                <option value="" disabled selected>Select brand</option>
-                <option>Apple</option>
-                <option>Samsung</option>
-                <option>OnePlus</option>
-                <option>Xiaomi</option>
-                <option>Vivo</option>
-                <option>Oppo</option>
-                <option>Realme</option>
-                <option>Google</option>
-                <option>Motorola</option>
-                <option>Nothing</option>
-                <option>Other</option>
-              </select>
-            </div>
-            <div class="ab-form-field">
-              <label for="enqIssue">Issue type</label>
-              <select id="enqIssue" name="issue" required>
-                <option value="" disabled selected>Select issue</option>
-                <option>Screen replacement</option>
-                <option>Battery replacement</option>
-                <option>Charging port</option>
-                <option>Camera / speaker</option>
-                <option>Water damage</option>
-                <option>Something else</option>
-              </select>
-            </div>
-          </div>
-
-          <div class="ab-form-field">
-            <label for="enqDetails">Tell us more (optional)</label>
-            <textarea id="enqDetails" name="details" placeholder="e.g. model name, when it started, anything you've already tried"></textarea>
-          </div>
-
-          <button type="submit" class="cm-btn cm-btn--primary cm-btn--lg"><span>Send Enquiry</span><i class="bi bi-arrow-up-right"></i></button>
-          <span class="ab-enquiry__note">We usually reply within business hours. Prefer to talk? <a href="tel:+910000000000" style="color:var(--primary); font-weight:600;">Call us directly</a>.</span>
-        </form>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===================== SECTION 7 — FINAL CTA ===================== -->
-  <section class="ab-cta" id="cta">
-    <div class="ab-cta__bg" aria-hidden="true"></div>
-    <img class="ab-cta__phone ab-cta__phone--1" src="https://images.unsplash.com/photo-1592286927505-1def25115481?q=80&w=300&auto=format&fit=crop" alt="" aria-hidden="true" loading="lazy">
-    <img class="ab-cta__phone ab-cta__phone--2" src="https://images.unsplash.com/photo-1601784551446-20c9e07cdbdb?q=80&w=300&auto=format&fit=crop" alt="" aria-hidden="true" loading="lazy">
-
-    <div class="ab-container ab-cta__inner" data-reveal>
-      <h2>Your device deserves professional care.</h2>
-      <p>Whether it's a cracked screen, battery issue, charging problem, or you're after a genuine accessory — our certified technicians and original parts are ready when you are.</p>
-      <div class="ab-cta__actions">
-        <a href="index.html#contact" class="cm-btn cm-btn--white cm-btn--lg cm-btn--magnetic"><span>Book Repair</span><i class="bi bi-arrow-up-right"></i></a>
-        <a href="#footer" class="cm-btn cm-btn--outline-white cm-btn--lg cm-btn--magnetic"><i class="bi bi-geo-alt-fill"></i><span>Visit Store</span></a>
-        <a href="tel:+910000000000" class="cm-btn cm-btn--outline-white cm-btn--lg cm-btn--magnetic"><i class="bi bi-telephone-fill"></i><span>Call Now</span></a>
-        <a href="https://wa.me/910000000000" class="cm-btn cm-btn--outline-white cm-btn--lg cm-btn--magnetic"><i class="bi bi-whatsapp"></i><span>WhatsApp</span></a>
       </div>
     </div>
   </section>
@@ -534,70 +152,53 @@
 </main>
 
 <!-- ===================== FOOTER ===================== -->
-<footer class="cm-footer" id="footer">
-  <div class="ab-container">
+<footer class="cm-footer">
+  <div class="cm-container">
     <div class="cm-footer__grid">
       <div class="cm-footer__brand">
-        <a href="index.html" class="cm-logo cm-logo--footer">
+        <a href="#top" class="cm-logo cm-logo--footer">
           <span class="cm-logo__mark"><i class="bi bi-cpu-fill"></i></span>
           <span class="cm-logo__text">Cell<span>Mate</span></span>
         </a>
-        <p>Multi-brand mobile repair and accessories, built on genuine parts and certified technicians since 2017.</p>
-        <div class="cm-social">
-          <a href="#" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
-          <a href="#" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
-          <a href="#" aria-label="X (Twitter)"><i class="bi bi-twitter-x"></i></a>
-          <a href="#" aria-label="YouTube"><i class="bi bi-youtube"></i></a>
-        </div>
+        <p>Premium mobile phone repair and accessories, built on certified technicians and genuine parts.</p>
       </div>
 
       <div class="cm-footer__col">
         <h4>Quick Links</h4>
         <a href="index.html">Home</a>
-        <a href="home2.html">Repair Lab</a>
-        <a href="#brands">Brands We Service</a>
-        <a href="#customers">Reviews</a>
+        <a href="about.html">About</a>
+        <a href="repairs.html">Repairs</a>
+        <a href="accessories.html">Accessories</a>
       </div>
 
       <div class="cm-footer__col">
-        <h4>Repair Services</h4>
-        <a href="index.html#services">Screen Replacement</a>
-        <a href="index.html#services">Battery Replacement</a>
-        <a href="index.html#services">Water Damage</a>
-        <a href="index.html#services">Software Repair</a>
+        <h4>Services</h4>
+        <a href="repairs.html">Screen Replacement</a>
+        <a href="repairs.html">Battery Replacement</a>
+        <a href="repairs.html">Water Recovery</a>
       </div>
 
       <div class="cm-footer__col">
-        <h4>Business Hours</h4>
+        <h4>Hours</h4>
         <p>Mon – Sat<br>10:00 AM – 8:00 PM</p>
-        <p>Sunday<br>Closed</p>
       </div>
 
       <div class="cm-footer__col cm-footer__col--news">
         <h4>Newsletter</h4>
-        <p>Repair tips and offers, once a month.</p>
         <form class="cm-newsletter" id="newsletterForm">
-          <input type="email" placeholder="you@email.com" aria-label="Email address" required>
-          <button type="submit" aria-label="Subscribe"><i class="bi bi-arrow-right"></i></button>
+          <input type="email" placeholder="you@email.com" required>
+          <button type="submit"><i class="bi bi-arrow-right"></i></button>
         </form>
-        <div class="cm-footer__map">
-          <iframe src="https://www.google.com/maps?q=Tambaram,Tamil%20Nadu&output=embed" loading="lazy" title="CellMate store location map" referrerpolicy="no-referrer-when-downgrade"></iframe>
-        </div>
       </div>
     </div>
 
     <div class="cm-footer__bottom">
       <span>© 2026 CellMate. All rights reserved.</span>
-      <span>Designed for devices that deserve a second chance.</span>
     </div>
   </div>
 </footer>
 
-<button class="cm-to-top" id="toTop" aria-label="Back to top">
-  <i class="bi bi-arrow-up"></i>
-</button>
-
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-<script src="about.js"></script>
+<script src="script.js"></script>
 </body>
 </html>

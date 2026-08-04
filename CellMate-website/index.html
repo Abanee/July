@@ -42,14 +42,17 @@
     <nav class="cm-menu" id="cmMenu" aria-label="Primary">
       <a href="index.html"       class="cm-menu__link active">Home</a>
       <a href="home2.html"       class="cm-menu__link">Home 2</a>
-      <a href="repairs.html"     class="cm-menu__link">Repairs</a>
+      <a href="about.html"       class="cm-menu__link">About</a>
       <a href="accessories.html" class="cm-menu__link">Accessories</a>
+      <a href="repairs.html"     class="cm-menu__link">Repairs</a>
       <a href="gallery.html"     class="cm-menu__link">Gallery</a>
-      <a href="contact.html"     class="cm-menu__link">Contact</a>
       <a href="blog.html"        class="cm-menu__link">Blog</a>
+      <a href="contact.html"     class="cm-menu__link">Contact</a>
     </nav>
 
     <div class="cm-nav__actions">
+      <button class="cm-nav-icon-btn" id="navSearchBtn" aria-label="Search website"><i class="bi bi-search"></i></button>
+      <button class="cm-nav-icon-btn" id="navCartBtn" aria-label="Shopping Cart"><i class="bi bi-bag"></i><span class="cm-cart-badge" id="cartCount">0</span></button>
       <button class="cm-rtl-toggle" id="rtlToggle" aria-label="Toggle RTL mode" title="Toggle RTL / LTR mode">RTL</button>
       <button class="cm-theme-btn" id="themeBtn" aria-label="Switch between light and dark mode">
         <i class="bi bi-sun-fill"></i>
@@ -691,82 +694,110 @@
     </div>
   </section>
 
-  <!-- ===================== TRUST / TESTIMONIALS — CLEAN SYMMETRICAL ===================== -->
+  <!-- ===================== TRUST / TESTIMONIAL SHOWROOM — ZERO GAPS ===================== -->
   <section class="cm-section" id="trust">
     <div class="cm-container">
-      <div class="cm-section__head text-center mb-4" data-reveal>
+      <div class="cm-section__head text-center mx-auto mb-5" data-reveal style="max-width: 720px; text-align: center; margin-left: auto; margin-right: auto;">
         <p class="cm-eyebrow cm-eyebrow--static">CUSTOMER TRUST</p>
-        <h2 class="cm-section__title">Two thousand devices later, this is what they say.</h2>
+        <h2 class="cm-section__title text-center">Two thousand devices later, this is what they say.</h2>
+        <p class="cm-section__desc text-center">Real reviews from verified customers who brought their smartphones back to life at CellMate.</p>
       </div>
 
-      <!-- Top Symmetrical Stat Strip -->
-      <div class="cm-trust-counters" data-reveal>
-        <div class="cm-counter">
-          <span class="cm-counter__num" data-count="9800" data-suffix="+">9,800+</span>
-          <span class="cm-counter__label">Happy Customers</span>
+      <!-- Top Row: Symmetrical 4-Card Trust Counter Bar -->
+      <div class="cm-trust-stats-bar" data-reveal>
+        <div class="cm-trust-stat-box">
+          <div class="cm-trust-stat-icon"><i class="bi bi-people-fill"></i></div>
+          <div class="cm-trust-stat-content">
+            <strong class="cm-trust-stat-num" data-count="9800" data-suffix="+">9,800+</strong>
+            <span class="cm-trust-stat-label">Happy Customers</span>
+          </div>
         </div>
-        <div class="cm-counter">
-          <span class="cm-counter__num" data-count="10450" data-suffix="+">10,450+</span>
-          <span class="cm-counter__label">Repairs Completed</span>
+        <div class="cm-trust-stat-box">
+          <div class="cm-trust-stat-icon"><i class="bi bi-tools"></i></div>
+          <div class="cm-trust-stat-content">
+            <strong class="cm-trust-stat-num" data-count="10450" data-suffix="+">10,450+</strong>
+            <span class="cm-trust-stat-label">Repairs Completed</span>
+          </div>
         </div>
-        <div class="cm-counter">
-          <span class="cm-counter__num" data-static="7 Years">7 Years</span>
-          <span class="cm-counter__label">Workshop Experience</span>
+        <div class="cm-trust-stat-box">
+          <div class="cm-trust-stat-icon"><i class="bi bi-award-fill"></i></div>
+          <div class="cm-trust-stat-content">
+            <strong class="cm-trust-stat-num">7+ Years</strong>
+            <span class="cm-trust-stat-label">Workshop Excellence</span>
+          </div>
         </div>
-        <div class="cm-counter">
-          <span class="cm-counter__num" data-static="30+ Brands">30+ Brands</span>
-          <span class="cm-counter__label">Official Support</span>
+        <div class="cm-trust-stat-box">
+          <div class="cm-trust-stat-icon"><i class="bi bi-star-fill text-warning"></i></div>
+          <div class="cm-trust-stat-content">
+            <strong class="cm-trust-stat-num">4.9 / 5.0★</strong>
+            <span class="cm-trust-stat-label">Verified Rating</span>
+          </div>
         </div>
       </div>
 
-      <!-- Symmetrical Split: Review Slider + Tech Photo Card -->
-      <div class="cm-trust-grid" data-reveal>
-        <div class="cm-trust-reviews-card">
-          <div class="cm-testimonial-slider" id="testimonialSlider">
-            <div class="cm-testimonial cm-testimonial--active">
-              <div class="cm-stars"><i class="bi bi-star-fill text-warning"></i><i class="bi bi-star-fill text-warning"></i><i class="bi bi-star-fill text-warning"></i><i class="bi bi-star-fill text-warning"></i><i class="bi bi-star-fill text-warning"></i></div>
-              <p>"Screen was cracked corner to corner. They quoted me transparently in ten minutes and it was restored before I finished lunch nearby."</p>
-              <div class="cm-testimonial__author">
-                <img src="https://i.pravatar.cc/64?img=5" alt="Ananya R." loading="lazy">
-                <div>
-                  <strong>Ananya R.</strong>
-                  <span><i class="bi bi-patch-check-fill"></i> Verified Customer · OLED Screen Repair</span>
-                </div>
-              </div>
+      <!-- Bottom Row: 3 Equal-Height Testimonial Cards Side-by-Side Grid -->
+      <div class="cm-trust-cards-grid mt-4" data-reveal>
+        
+        <!-- Review 1 -->
+        <article class="cm-review-card">
+          <div class="cm-review-card__header">
+            <div class="cm-stars">
+              <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
             </div>
-            <div class="cm-testimonial">
-              <div class="cm-stars"><i class="bi bi-star-fill text-warning"></i><i class="bi bi-star-fill text-warning"></i><i class="bi bi-star-fill text-warning"></i><i class="bi bi-star-fill text-warning"></i><i class="bi bi-star-fill text-warning"></i></div>
-              <p>"Dropped my phone in the water. Was sure it was gone for good — CellMate brought it back the same evening with full data intact!"</p>
-              <div class="cm-testimonial__author">
-                <img src="https://i.pravatar.cc/64?img=15" alt="Rohit M." loading="lazy">
-                <div>
-                  <strong>Rohit M.</strong>
-                  <span><i class="bi bi-patch-check-fill"></i> Verified Customer · Water Damage Recovery</span>
-                </div>
-              </div>
-            </div>
-            <div class="cm-testimonial">
-              <div class="cm-stars"><i class="bi bi-star-fill text-warning"></i><i class="bi bi-star-fill text-warning"></i><i class="bi bi-star-fill text-warning"></i><i class="bi bi-star-fill text-warning"></i><i class="bi bi-star-fill text-warning"></i></div>
-              <p>"Battery was dying by 2pm every day. New zero-cycle cell fitted in 20 minutes, now easily lasts 30+ hours."</p>
-              <div class="cm-testimonial__author">
-                <img src="https://i.pravatar.cc/64?img=25" alt="Priya S." loading="lazy">
-                <div>
-                  <strong>Priya S.</strong>
-                  <span><i class="bi bi-patch-check-fill"></i> Verified Customer · Battery Replacement</span>
-                </div>
-              </div>
+            <span class="cm-review-tag"><i class="bi bi-patch-check-fill"></i> Screen Repair</span>
+          </div>
+          <p class="cm-review-text">
+            "Screen was cracked corner to corner. They quoted me transparently in ten minutes and it was fully restored before I finished lunch nearby."
+          </p>
+          <div class="cm-review-author">
+            <img src="https://i.pravatar.cc/64?img=5" alt="Ananya R." loading="lazy">
+            <div>
+              <strong>Ananya R.</strong>
+              <span>Verified Customer · iPhone 14 Pro</span>
             </div>
           </div>
-          <div class="cm-testimonial-dots" id="testimonialDots"></div>
-        </div>
+        </article>
 
-        <div class="cm-trust-photo-card">
-          <img src="Asset/customer_trust_tech.png" alt="CellMate technician holding restored device" loading="lazy">
-          <div class="cm-trust-photo-overlay">
-            <strong>Certified Bench Technicians</strong>
-            <span>100% Quality Inspected &amp; ESD Protected</span>
+        <!-- Review 2 -->
+        <article class="cm-review-card">
+          <div class="cm-review-card__header">
+            <div class="cm-stars">
+              <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+            </div>
+            <span class="cm-review-tag"><i class="bi bi-patch-check-fill"></i> Water Recovery</span>
           </div>
-        </div>
+          <p class="cm-review-text">
+            "Dropped my phone in the water. Was sure it was gone for good — CellMate brought it back the same evening with full data intact!"
+          </p>
+          <div class="cm-review-author">
+            <img src="https://i.pravatar.cc/64?img=15" alt="Rohit M." loading="lazy">
+            <div>
+              <strong>Rohit M.</strong>
+              <span>Verified Customer · Galaxy S23 Ultra</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Review 3 -->
+        <article class="cm-review-card">
+          <div class="cm-review-card__header">
+            <div class="cm-stars">
+              <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+            </div>
+            <span class="cm-review-tag"><i class="bi bi-patch-check-fill"></i> Battery Repair</span>
+          </div>
+          <p class="cm-review-text">
+            "Battery was dying by 2pm every day. New zero-cycle cell fitted in 20 minutes, now easily lasts 30+ hours on heavy usage."
+          </p>
+          <div class="cm-review-author">
+            <img src="https://i.pravatar.cc/64?img=25" alt="Priya S." loading="lazy">
+            <div>
+              <strong>Priya S.</strong>
+              <span>Verified Customer · Pixel 7 Pro</span>
+            </div>
+          </div>
+        </article>
+
       </div>
     </div>
   </section>
@@ -857,6 +888,42 @@
 <button class="cm-to-top" id="toTop" aria-label="Back to top">
   <i class="bi bi-arrow-up"></i>
 </button>
+
+<!-- ===================== REAL-TIME SEARCH MODAL ===================== -->
+<div class="cm-search-overlay" id="cmSearchOverlay">
+  <div class="cm-search-modal">
+    <div class="cm-search-modal__head">
+      <i class="bi bi-search"></i>
+      <input type="text" id="cmSearchInput" placeholder="Search repairs, accessories, guides... (e.g. screen, battery, case)" autocomplete="off">
+      <button type="button" class="cm-search-close-btn" id="cmSearchCloseBtn">ESC</button>
+    </div>
+    <div class="cm-search-modal__body" id="cmSearchResults">
+      <p class="text-center text-muted py-4">Type to start searching CellMate services &amp; accessories...</p>
+    </div>
+  </div>
+</div>
+
+<!-- ===================== SLIDE-OVER CART DRAWER ===================== -->
+<div class="cm-cart-overlay" id="cmCartOverlay"></div>
+<div class="cm-cart-drawer" id="cmCartDrawer">
+  <div class="cm-cart-drawer__head">
+    <h3><i class="bi bi-bag me-2"></i> Your Shopping Cart</h3>
+    <button type="button" class="btn-close" id="cmCartCloseBtn" aria-label="Close Cart"></button>
+  </div>
+  <div class="cm-cart-drawer__body" id="cmCartItems">
+    <p class="text-center text-muted py-4">Your cart is currently empty.</p>
+  </div>
+  <div class="cm-cart-drawer__foot">
+    <div class="cm-cart-subtotal">
+      <span>Subtotal:</span>
+      <strong id="cmCartSubtotal">₹0</strong>
+    </div>
+    <button type="button" class="cm-btn cm-btn--primary w-100 justify-content-center cm-btn--lg" onclick="alert('Proceeding to secure checkout...');">
+      <span>Checkout</span>
+      <i class="bi bi-arrow-right"></i>
+    </button>
+  </div>
+</div>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 <script src="script.js"></script>
