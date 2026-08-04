@@ -591,3 +591,42 @@
   }
 
 })();
+
+/* ---------------------------------------------------------------------
+   Instant Repair Cost Estimator Logic (Home Page)
+--------------------------------------------------------------------- */
+function updateEstimate() {
+  var brandEl = document.getElementById('estBrand');
+  var repairEl = document.getElementById('estRepair');
+  var priceEl = document.getElementById('estPrice');
+  var timeEl = document.getElementById('estTime');
+  var warrantyEl = document.getElementById('estWarranty');
+
+  if (!brandEl || !repairEl || !priceEl) return;
+
+  var brand = brandEl.value;
+  var repair = repairEl.value;
+
+  var prices = {
+    screen: { apple: '₹2,499 - ₹4,999', samsung: '₹2,199 - ₹4,499', pixel: '₹1,999 - ₹3,999', xiaomi: '₹1,499 - ₹2,499', oneplus: '₹1,799 - ₹3,299' },
+    battery: { apple: '₹1,299 - ₹1,999', samsung: '₹1,199 - ₹1,799', pixel: '₹1,099 - ₹1,699', xiaomi: '₹899 - ₹1,299', oneplus: '₹999 - ₹1,499' },
+    port: { apple: '₹999 - ₹1,499', samsung: '₹899 - ₹1,299', pixel: '₹899 - ₹1,299', xiaomi: '₹699 - ₹999', oneplus: '₹799 - ₹1,199' },
+    camera: { apple: '₹1,899 - ₹2,999', samsung: '₹1,599 - ₹2,499', pixel: '₹1,499 - ₹2,299', xiaomi: '₹1,199 - ₹1,799', oneplus: '₹1,299 - ₹1,999' },
+    water: { apple: '₹1,999 - ₹3,499', samsung: '₹1,799 - ₹2,999', pixel: '₹1,699 - ₹2,799', xiaomi: '₹1,299 - ₹1,999', oneplus: '₹1,399 - ₹2,199' }
+  };
+
+  var times = {
+    screen: '25 - 35 Minutes',
+    battery: '20 - 30 Minutes',
+    port: '30 - 45 Minutes',
+    camera: '25 - 40 Minutes',
+    water: 'Same Day Diagnostic'
+  };
+
+  if (prices[repair] && prices[repair][brand]) {
+    priceEl.textContent = prices[repair][brand];
+  }
+  if (times[repair]) {
+    timeEl.textContent = times[repair];
+  }
+}
