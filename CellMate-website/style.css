@@ -199,6 +199,8 @@ input,select{ font-family:inherit; }
 
 .cm-nav__actions { display: flex; align-items: center; gap: 10px; }
 
+.cm-burger { display: none; font-size: 19px; }
+
 /* Navbar Icon Buttons (Search & Cart) */
 .cm-nav-icon-btn {
   height: 36px; width: 36px; border-radius: 50%; border: 1px solid var(--border);
@@ -1249,13 +1251,19 @@ html[data-theme="dark"] .cm-phone{ border-color:#3f3f46; }
 }
 .cm-menu-mobile-toggles .cm-theme-btn,
 .cm-menu-mobile-toggles .cm-rtl-toggle {
+  width: auto;
+  height: auto;
+  min-height: 40px;
+  border-radius: 99px;
+  overflow: visible;
+  box-shadow: none;
+  transform: none;
   flex: 1;
   display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: 8px;
   padding: 10px 16px;
-  border-radius: 99px;
   background: var(--bg-soft, rgba(0,0,0,0.04));
   border: 1px solid var(--border);
   color: var(--text);
@@ -1266,6 +1274,8 @@ html[data-theme="dark"] .cm-phone{ border-color:#3f3f46; }
 }
 .cm-menu-mobile-toggles .cm-theme-btn:hover,
 .cm-menu-mobile-toggles .cm-rtl-toggle:hover {
+  transform: none;
+  box-shadow: none;
   background: rgba(37,99,235,0.1);
   border-color: var(--primary);
 }

@@ -178,12 +178,27 @@
       var isOpen = menu.classList.toggle('is-open');
       burger.setAttribute('aria-expanded', isOpen);
       burger.setAttribute('aria-label', isOpen ? 'Close menu' : 'Open menu');
+      var burgerIcon = burger.querySelector('i');
+      if (burgerIcon) {
+        if (isOpen) {
+          burgerIcon.classList.remove('bi-list');
+          burgerIcon.classList.add('bi-x-lg');
+        } else {
+          burgerIcon.classList.remove('bi-x-lg');
+          burgerIcon.classList.add('bi-list');
+        }
+      }
     });
 
     navLinks.forEach(function (link) {
       link.addEventListener('click', function () {
         menu.classList.remove('is-open');
         burger.setAttribute('aria-expanded', 'false');
+        var burgerIcon = burger.querySelector('i');
+        if (burgerIcon) {
+          burgerIcon.classList.remove('bi-x-lg');
+          burgerIcon.classList.add('bi-list');
+        }
       });
     });
   }
