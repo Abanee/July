@@ -4060,6 +4060,19 @@ html[dir="rtl"] .cm-auth-top-actions { right: auto; left: 20px; }
   .ab-vtimeline__line { left: 16px; width: 3px; }
 }
 
+/* Brand Logo Image */
+.cm-logo__img {
+  width: 38px;
+  height: 38px;
+  object-fit: contain;
+  border-radius: 9px;
+  transition: transform 0.25s ease;
+}
+.cm-logo:hover .cm-logo__img,
+.cm-auth-logo:hover .cm-logo__img {
+  transform: scale(1.08);
+}
+
 
 
 
