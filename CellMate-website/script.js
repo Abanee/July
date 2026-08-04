@@ -843,4 +843,33 @@ function updateEstimate() {
   });
 
   renderCart();
+
+  /* ---------------------------------------------------------------------
+     Hero Before / After Interactive Phone Comparison Slider
+  --------------------------------------------------------------------- */
+  var comparePhone = document.querySelector('.cm-compare-phone');
+  if (comparePhone) {
+    var halfFixed = comparePhone.querySelector('.cm-compare-half--fixed');
+    var halfCracked = comparePhone.querySelector('.cm-compare-half--cracked');
+    var fixedBg = comparePhone.querySelector('.cm-fixed-screen-bg');
+    var divider = comparePhone.querySelector('.cm-compare-divider');
+
+    function updateCompareSlider(pct) {
+      pct = Math.max(5, Math.min(95, pct));
+      if (halfFixed) halfFixed.style.width = (100 - pct) + '%';
+      if (halfCracked) halfCracked.style.width = pct + '%';
+      if (divider) divider.style.left = pct + '%';
+    }
+
+    function onCompareMove(e) {
+      var rect = comparePhone.getBoundingClientRect();
+      var clientX = e.touches ? e.touches[0].clientX : e.clientX;
+      var x = clientX - rect.left;
+      var pct = (x / rect.width) * 100;
+      updateCompareSlider(pct);
+    }
+
+    comparePhone.addEventListener('mousemove', onCompareMove);
+    comparePhone.addEventListener('touchmove', onCompareMove, { passive: true });
+  }
 })();
