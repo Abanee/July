@@ -68,18 +68,7 @@
   window.addEventListener('resize', onScroll);
   onScroll();
 
-  var sectionObserver = new IntersectionObserver(function (entries) {
-    entries.forEach(function (entry) {
-      if (!entry.isIntersecting) return;
-      var id = entry.target.id;
-      navLinks.forEach(function (link) {
-        var href = link.getAttribute('href') || '';
-        if (id && href === '#' + id) link.classList.add('active');
-      });
-    });
-  }, { rootMargin: '-45% 0px -50% 0px' });
 
-  document.querySelectorAll('main section[id]').forEach(function (s) { sectionObserver.observe(s); });
 
   /* ---------------------------------------------------------------------
      Mobile menu

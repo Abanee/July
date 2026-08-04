@@ -103,7 +103,7 @@
   initRTL();
 
   /* ---------------------------------------------------------------------
-     Navbar: solid on scroll + active link highlight
+     Navbar: solid on scroll + intelligent active page & section highlighting
   --------------------------------------------------------------------- */
   var nav = document.getElementById('cmNav');
   var navLinks = document.querySelectorAll('.cm-menu__link');
@@ -123,21 +123,46 @@
   window.addEventListener('scroll', onScroll, { passive: true });
   onScroll();
 
-  var sectionObserver = new IntersectionObserver(function (entries) {
-    entries.forEach(function (entry) {
-      if (!entry.isIntersecting) return;
-      var id = entry.target.id;
-      navLinks.forEach(function (link) {
-        var href = link.getAttribute('href') || '';
-        var isActive = href === '#' + id || (id === 'top' && (href === '#top' || href === 'index.html'));
-        link.classList.toggle('active', isActive);
-      });
-    });
-  }, { rootMargin: '-45% 0px -50% 0px' });
+  function highlightActiveNav() {
+    var currentPage = window.location.pathname.split('/').pop() || 'index.html';
+    if (currentPage === '') currentPage = 'index.html';
 
-  document.querySelectorAll('main section[id]').forEach(function (s) { sectionObserver.observe(s); });
-  var topAnchor = document.getElementById('top');
-  if (topAnchor) sectionObserver.observe(topAnchor);
+    var isHomePage = (currentPage === 'index.html' || currentPage === '');
+
+    navLinks.forEach(function (link) {
+      var href = link.getAttribute('href') || '';
+      var cleanHref = href.split('#')[0].split('?')[0];
+
+      if (cleanHref === currentPage) {
+        link.classList.add('active');
+      } else if (cleanHref !== '' && !cleanHref.startsWith('#')) {
+        link.classList.remove('active');
+      }
+    });
+
+    if (isHomePage) {
+      var sectionObserver = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (!entry.isIntersecting) return;
+          var id = entry.target.id;
+          navLinks.forEach(function (link) {
+            var href = link.getAttribute('href') || '';
+            if (href.startsWith('#') || href.includes('#')) {
+              var targetHash = href.split('#')[1];
+              if (targetHash === id) {
+                navLinks.forEach(function(l){ l.classList.remove('active'); });
+                link.classList.add('active');
+              }
+            }
+          });
+        });
+      }, { rootMargin: '-45% 0px -50% 0px' });
+
+      document.querySelectorAll('main section[id]').forEach(function (s) { sectionObserver.observe(s); });
+    }
+  }
+
+  highlightActiveNav();
 
   /* ---------------------------------------------------------------------
      Mobile menu
