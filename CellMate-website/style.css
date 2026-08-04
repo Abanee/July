@@ -2695,10 +2695,13 @@ html[dir="rtl"] .cm-stage-pill--after { right: auto; left: 10px; }
 @media (max-width: 576px) {
   .cm-hero-cloned { padding-top: 120px; }
   .cm-hero-features { gap: 18px; flex-direction: column; align-items: flex-start; margin-inline: auto; max-width: 260px; }
+  .cm-podium-stage { padding-top: 48px; }
   .cm-compare-phone { width: 230px; height: 460px; }
+  .cm-compare-img { width: 230px; }
   .cm-podium { width: 270px; }
-  .cm-stage-pill--before { left: 5px; }
-  .cm-stage-pill--after { right: 5px; }
+  .cm-stage-pill { top: 4px; padding: 6px 14px; font-size: 12px; z-index: 12; }
+  .cm-stage-pill--before { left: calc(50% - 115px); }
+  .cm-stage-pill--after { right: calc(50% - 115px); }
 }
 
 /* ==========================================================================
