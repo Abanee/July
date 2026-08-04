@@ -3747,12 +3747,12 @@ html[dir="rtl"] .cm-auth-top-actions { right: auto; left: 20px; }
 .ofr-banner-card:hover { transform: translateY(-6px); box-shadow: var(--card-shadow-hover); border-color: rgba(var(--primary-rgb),.35); }
 
 .ofr-banner-media {
-  position: relative; width: 100%; aspect-ratio: 16/9; overflow: hidden; background: var(--bg);
+  position: relative; width: 100%; aspect-ratio: 16/10; overflow: hidden; background: var(--surface-muted);
 }
 .ofr-banner-media img {
-  width: 100%; height: 100%; object-fit: cover; transition: transform .6s ease; display: block;
+  width: 100%; height: 100%; object-fit: cover; object-position: center; transition: transform .6s cubic-bezier(0.16, 1, 0.3, 1); display: block; backface-visibility: hidden;
 }
-.ofr-banner-card:hover .ofr-banner-media img { transform: scale(1.08); }
+.ofr-banner-card:hover .ofr-banner-media img { transform: scale(1.03); }
 
 .ofr-discount-tag {
   position: absolute; top: 14px; right: 14px; z-index: 2;
