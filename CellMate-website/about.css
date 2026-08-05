@@ -223,8 +223,9 @@ input,select{ font-family:inherit; }
 }
 .ab-process__total strong{ color:var(--secondary); font-family:var(--font-mono); }
 
+
 /* ==========================================================================
-   SECTION 2 — Our Journey (Vertical Dot & Line Timeline)
+   SECTION 2 — Our Journey (Featured Banner & Vertical Timeline)
    ========================================================================== */
 .ab-vtimeline {
   position: relative;
