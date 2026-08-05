@@ -3594,11 +3594,20 @@ html[dir="rtl"] .cm-stage-pill--after { right: auto; left: 10px; }
   fill: currentColor;
 }
 .acc-proto-icon--apple   { background: #000000; }
-.acc-proto-icon--samsung { background: #034EA2; }
+.acc-proto-icon--samsung { background: #034EA2; padding: 8px 6px; }
 .acc-proto-icon--xiaomi  { background: #FF6900; }
-.acc-proto-icon--oppo    { background: #088756; }
-.acc-proto-icon--vivo    { background: #0066FF; }
+.acc-proto-icon--oppo    { background: #088756; padding: 8px 6px; }
+.acc-proto-icon--vivo    { background: #0066FF; padding: 8px 6px; }
 .acc-proto-icon--moto    { background: #002244; }
+
+.acc-proto-icon--samsung svg,
+.acc-proto-icon--oppo svg,
+.acc-proto-icon--vivo svg {
+  width: 44px !important;
+  height: 22px !important;
+  max-width: 95% !important;
+  max-height: 95% !important;
+}
 
 .acc-proto-card h3 { font-size: 19px; margin-bottom: 8px; }
 .acc-proto-card p  { font-size: 13.5px; color: var(--text-soft); line-height: 1.5; flex: 1; margin-bottom: 18px; }
