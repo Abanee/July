@@ -636,6 +636,16 @@ html[data-theme="dark"] .ab-brand-logo img {
   .ab-cta__phone{ display:none; }
   .cm-footer__grid{ grid-template-columns:1fr 1fr; }
   .cm-footer__col--news{ grid-column:auto; max-width:none; }
+
+  /* Center solo trailing cards on 2-column grid layouts */
+  .ab-repairs__grid > *:last-child:nth-child(odd),
+  .ab-testimonials > *:last-child:nth-child(odd),
+  .ab-features > *:last-child:nth-child(odd) {
+    grid-column: 1 / -1;
+    max-width: 540px;
+    margin-inline: auto;
+    width: 100%;
+  }
 }
 
 @media (max-width:768px) {
@@ -656,10 +666,16 @@ html[data-theme="dark"] .ab-brand-logo img {
     left: 20px;
     top: 28px;
   }
+  .cm-footer__grid{ display:grid; grid-template-columns:repeat(2, 1fr); gap:32px 24px; }
+  .cm-footer__col--brand,
+  .cm-footer__col--news{ grid-column:1 / -1; }
 }
 
 @media (max-width:576px){
-  .cm-footer__grid{ grid-template-columns:1fr; }
+  .ab-process{ grid-template-columns:1fr; gap:20px; }
+  .cm-footer__grid{ grid-template-columns:1fr; gap:28px; }
+  .cm-footer__col--brand,
+  .cm-footer__col--news{ grid-column:auto; }
   .ab-brands__grid{ grid-template-columns:repeat(2, 1fr); gap:12px; }
   .ab-cta__actions{ flex-direction:column; }
   .ab-cta__actions .cm-btn{ width:100%; }

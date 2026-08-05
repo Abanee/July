@@ -1247,7 +1247,9 @@ html[data-theme="dark"] .cm-phone{ border-color:#3f3f46; }
   .cm-timeline{ grid-template-columns:1fr 1fr; }
   .cm-stat-strip{ grid-template-columns:1fr 1fr; }
   .cm-float-card{ display:none; }
-  .cm-footer__grid{ grid-template-columns:1fr; }
+  .cm-footer__grid{ display:grid; grid-template-columns:repeat(2, 1fr); gap:32px 24px; }
+  .cm-footer__col--brand,
+  .cm-footer__col--news{ grid-column:1 / -1; }
 }
 
 /* Mobile Menu Bottom Action Controls (Theme, RTL, Login) */
@@ -1310,7 +1312,10 @@ html[data-theme="dark"] .cm-phone{ border-color:#3f3f46; }
 
 @media (max-width:576px){
   .cm-services-grid, .cm-shop-grid{ grid-template-columns:1fr; }
-  .cm-timeline{ grid-template-columns:1fr 1fr; }
+  .cm-timeline{ grid-template-columns:1fr; gap:16px; }
+  .cm-footer__grid{ grid-template-columns:1fr; gap:28px; }
+  .cm-footer__col--brand,
+  .cm-footer__col--news{ grid-column:auto; }
   .cm-hero__cta{ flex-direction:column; }
   .cm-cta__actions{ flex-direction:column; }
   .cm-cta__actions .cm-btn{ width:100%; justify-content:center; }
@@ -4300,6 +4305,30 @@ html[dir="rtl"] .cm-auth-top-actions { right: auto; left: 20px; }
   .cm-menu { gap: 2px; }
   .cm-menu__link { padding: 6px 12px; font-size: 13.5px; }
   .ab-brands__grid { grid-template-columns: repeat(4, 1fr); gap: 14px; }
+
+  /* Center solo trailing cards on 2-column grid layouts */
+  .cm-trust-cards-grid > *:last-child:nth-child(odd),
+  .h2-team-cards-grid > *:last-child:nth-child(odd),
+  .h2-lab-grid > *:last-child:nth-child(odd),
+  .h2-dash-normal-grid > *:last-child:nth-child(odd),
+  .cm-services-grid > *:last-child:nth-child(odd),
+  .cm-why-grid > *:last-child:nth-child(odd),
+  .cm-shop-grid > *:last-child:nth-child(odd),
+  .blg-grid > *:last-child:nth-child(odd),
+  .acc-grid > *:last-child:nth-child(odd),
+  .gal-grid-4x6 > *:last-child:nth-child(odd),
+  .rep-diag-grid > *:last-child:nth-child(odd),
+  .rep-flow-grid > *:last-child:nth-child(odd) {
+    grid-column: 1 / -1;
+    max-width: 540px;
+    margin-inline: auto;
+    width: 100%;
+  }
+
+  /* Center solo items in Bootstrap flex rows on tablet viewports */
+  .row {
+    justify-content: center;
+  }
 }
 
 @media (max-width: 820px) {
