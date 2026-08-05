@@ -407,17 +407,29 @@ html[dir="rtl"] .cm-password-toggle { right: auto; left: 12px; }
 
 
 /* RTL Toggle */
-.cm-rtl-toggle{
-  height: 36px; min-width: 36px; padding: 0 12px; border-radius: 999px; border: 1px solid var(--border);
-  background: var(--surface); color: var(--text); font-family: var(--font-mono);
-  font-size: 12px; font-weight: 700; cursor: pointer; display: inline-flex; align-items: center; justify-content: center; gap: 4px;
+.cm-rtl-toggle {
+  height: 36px;
+  width: 36px;
+  padding: 0;
+  border-radius: 50%;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--text);
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 800;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   box-shadow: var(--card-shadow);
   transition: transform .25s ease, border-color .25s ease, background .25s ease, color .25s ease, box-shadow .25s ease;
 }
-.cm-rtl-toggle:hover, .cm-rtl-toggle.is-rtl{
+.cm-rtl-toggle:hover, .cm-rtl-toggle.is-rtl {
   transform: translateY(-2px);
   background: linear-gradient(135deg, var(--primary), var(--secondary));
-  color: #fff; border-color: transparent;
+  color: #fff;
+  border-color: transparent;
   box-shadow: 0 4px 14px -2px rgba(var(--primary-rgb),.4);
 }
 
