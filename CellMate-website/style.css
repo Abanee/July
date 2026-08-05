@@ -3572,12 +3572,32 @@ html[dir="rtl"] .cm-stage-pill--after { right: auto; left: 10px; }
   transition: transform .3s ease;
 }
 .acc-proto-card:hover { transform: translateY(-4px); box-shadow: var(--card-shadow-hover); }
-.acc-proto-icon { width: 50px; height: 50px; border-radius: 16px; display: flex; align-items: center; justify-content: center; font-size: 22px; margin-bottom: 18px; color: #fff; }
-.acc-proto-icon--apple   { background: #000; }
-.acc-proto-icon--samsung { background: #1428a0; }
-.acc-proto-icon--xiaomi  { background: #ff6900; }
-.acc-proto-icon--oppo    { background: #00875a; }
-.acc-proto-icon--vivo    { background: #005bbd; }
+.acc-proto-icon {
+  width: 56px;
+  height: 56px;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 18px;
+  color: #ffffff;
+  padding: 11px;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.15);
+  box-sizing: border-box;
+}
+.acc-proto-icon svg {
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
+  display: block;
+  fill: currentColor;
+}
+.acc-proto-icon--apple   { background: #000000; }
+.acc-proto-icon--samsung { background: #034EA2; }
+.acc-proto-icon--xiaomi  { background: #FF6900; }
+.acc-proto-icon--oppo    { background: #088756; }
+.acc-proto-icon--vivo    { background: #0066FF; }
 .acc-proto-icon--moto    { background: #002244; }
 
 .acc-proto-card h3 { font-size: 19px; margin-bottom: 8px; }
