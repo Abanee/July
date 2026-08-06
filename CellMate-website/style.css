@@ -4564,6 +4564,172 @@ html[data-theme="dark"] .rep-flow-num {
   .h2-3d-card { width: 190px; height: 270px; transform: rotateY(calc((var(--i) - 1) * 60deg)) translateZ(210px); }
 }
 
+/* ==========================================================================
+   HOME 2 — 3x2 ACCESSORIES SHOWCASE SECTION
+   ========================================================================== */
+.h2-accessories-section {
+  position: relative;
+  padding: 100px 0;
+  background: var(--bg);
+}
+
+.h2-accessories-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+}
+
+.h2-acc-card {
+  position: relative;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.06);
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s ease, border-color 0.35s ease;
+}
+
+html[data-theme="dark"] .h2-acc-card {
+  background: rgba(15, 23, 42, 0.6);
+  border-color: rgba(255, 255, 255, 0.08);
+  box-shadow: 0 14px 35px -10px rgba(0, 0, 0, 0.4);
+}
+
+.h2-acc-card:hover {
+  transform: translateY(-6px);
+  border-color: var(--primary);
+  box-shadow: 0 20px 45px -10px rgba(37, 99, 235, 0.18);
+}
+
+.h2-acc-img-wrap {
+  position: relative;
+  width: 100%;
+  height: 280px;
+  background: rgba(0, 0, 0, 0.03);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px;
+}
+
+html[data-theme="dark"] .h2-acc-img-wrap {
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.h2-acc-img-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 14px;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.h2-acc-card:hover .h2-acc-img-wrap img {
+  transform: scale(1.04);
+}
+
+.h2-acc-badge {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  z-index: 3;
+  padding: 4px 12px;
+  border-radius: 999px;
+  background: rgba(37, 99, 235, 0.12);
+  border: 1px solid rgba(37, 99, 235, 0.25);
+  color: var(--primary);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+}
+
+html[dir="rtl"] .h2-acc-badge {
+  left: auto;
+  right: 14px;
+}
+
+.h2-acc-body {
+  padding: 22px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.h2-acc-rating {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  color: #f59e0b;
+  font-size: 12px;
+  margin-bottom: 10px;
+}
+
+.h2-acc-rating span {
+  color: var(--text-soft);
+  font-size: 11.5px;
+  margin-left: 6px;
+}
+
+.h2-acc-title {
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 6px;
+  line-height: 1.3;
+}
+
+.h2-acc-desc {
+  font-size: 13px;
+  color: var(--text-soft);
+  margin-bottom: 18px;
+  line-height: 1.45;
+}
+
+.h2-acc-footer {
+  margin-top: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding-top: 14px;
+  border-top: 1px dashed var(--border);
+}
+
+.h2-acc-price {
+  display: flex;
+  align-items: baseline;
+  gap: 6px;
+}
+
+.h2-acc-price__curr {
+  font-size: 18px;
+  font-weight: 800;
+  color: var(--primary);
+}
+
+.h2-acc-price__old {
+  font-size: 12.5px;
+  color: var(--text-soft);
+  text-decoration: line-through;
+}
+
+/* Responsive Grid for 3x2 Layout */
+@media (max-width: 991px) {
+  .h2-accessories-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 576px) {
+  .h2-accessories-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
 
 
 
