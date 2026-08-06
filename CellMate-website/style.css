@@ -1696,8 +1696,9 @@ html[data-theme="dark"] .cm-timeline__step i {
   display: flex; flex-direction: column; justify-content: space-between;
 }
 .h2-tech-card:hover { transform: translateY(-6px); box-shadow: var(--card-shadow-hover); }
-.h2-tech-card__media { aspect-ratio: 16/10; max-height: 230px; overflow: hidden; }
-.h2-tech-card__media img { width: 100%; height: 100%; max-height: 230px; object-fit: cover; object-position: center; }
+.h2-tech-card__media { height: 280px; aspect-ratio: 4/3; overflow: hidden; background: rgba(0, 0, 0, 0.02); }
+.h2-tech-card__media img { width: 100%; height: 100%; object-fit: cover; object-position: top center; transition: transform 0.4s ease; }
+.h2-tech-card:hover .h2-tech-card__media img { transform: scale(1.03); }
 .h2-tech-card__body { padding: 20px; }
 .h2-tech-card__body h3 { font-size: 17px; margin-bottom: 4px; }
 .h2-tech-card__role { font-size: 12px; color: var(--primary); font-weight: 600; margin-bottom: 12px; display: block; }
@@ -1845,7 +1846,7 @@ html[data-theme="dark"] .cm-timeline__step i {
 
   .h2-team__grid{ grid-template-columns:1fr; }
   .h2-tech-card:first-child{ grid-column:span 1; }
-  .h2-tech-card:first-child .h2-tech-card__media{ aspect-ratio:16/10; }
+  .h2-tech-card:first-child .h2-tech-card__media{ height: 280px; aspect-ratio: 4/3; }
 
   .h2-final-cta__actions{ flex-direction:column; }
   .h2-final-cta__actions .cm-btn{ width:100%; }
