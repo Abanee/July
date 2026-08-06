@@ -393,10 +393,14 @@ input,select{ font-family:inherit; }
   transform: scale(1.1);
 }
 html[data-theme="light"] .ab-brand-logo img {
-  filter: brightness(0) saturate(100%) invert(27%) sepia(91%) saturate(2335%) hue-rotate(215deg) brightness(97%) contrast(92%);
+  filter: none;
 }
 html[data-theme="dark"] .ab-brand-logo img {
-  filter: brightness(0) saturate(100%) invert(67%) sepia(85%) saturate(452%) hue-rotate(188deg) brightness(101%) contrast(96%);
+  filter: none;
+}
+html[data-theme="dark"] .ab-brand-card img[src*="apple"],
+html[data-theme="dark"] .ab-brand-card img[src*="nothing"] {
+  filter: invert(1);
 }
 .ab-brand-card h3{ font-size:14.5px; margin-bottom:4px; }
 .ab-brand-card span{ font-size:11px; color:var(--text-faint); }
