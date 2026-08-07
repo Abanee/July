@@ -44,9 +44,9 @@ html[data-theme="dark"]{
   --accent:#FB923C;
   --accent-rgb:251,146,60;
   --success:#22C55E;
-  --text:#F8FAFC;
-  --text-soft:#CBD5E1;
-  --text-faint:#71717A;
+  --text:#FFFFFF;
+  --text-soft:#E2E8F0;
+  --text-faint:#CBD5E1;
   --border:rgba(255,255,255,.08);
   --card-shadow: 0 1px 2px rgba(0,0,0,.4), 0 16px 40px -16px rgba(0,0,0,.6);
   --card-shadow-hover: 0 1px 2px rgba(0,0,0,.5), 0 28px 56px -18px rgba(96,165,250,.18);

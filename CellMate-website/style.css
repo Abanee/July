@@ -46,9 +46,9 @@ html[data-theme="dark"]{
   --accent:#FB923C;
   --accent-rgb:251,146,60;
   --success:#22C55E;
-  --text:#F8FAFC;
-  --text-soft:#CBD5E1;
-  --text-faint:#71717A;
+  --text:#FFFFFF;
+  --text-soft:#E2E8F0;
+  --text-faint:#CBD5E1;
   --border:rgba(255,255,255,.08);
   --card-shadow: 0 1px 2px rgba(0,0,0,.4), 0 16px 40px -16px rgba(0,0,0,.6);
   --card-shadow-hover: 0 1px 2px rgba(0,0,0,.5), 0 28px 56px -18px rgba(96,165,250,.18);
@@ -457,8 +457,10 @@ html[dir="rtl"]{
 html[dir="rtl"] .cm-nav__inner{
   flex-direction:row;
 }
-html[dir="rtl"] .cm-menu{
-  flex-direction:row;
+@media (min-width: 1025px) {
+  html[dir="rtl"] .cm-menu{
+    flex-direction:row;
+  }
 }
 html[dir="rtl"] .cm-nav__actions{
   flex-direction:row;
@@ -4975,6 +4977,24 @@ html[data-theme="dark"] .cm-form__row textarea {
   background: rgba(15, 23, 42, 0.6);
   border-color: rgba(255, 255, 255, 0.12);
   color: var(--text);
+}
+
+/* ==========================================================================
+   Dark Mode High-Contrast Text Overrides (Zero Faint Grey Text)
+   ========================================================================== */
+html[data-theme="dark"] .cm-trust-row__text span,
+html[data-theme="dark"] .cm-hero-desc,
+html[data-theme="dark"] .cm-section__desc,
+html[data-theme="dark"] .h2-hero__desc,
+html[data-theme="dark"] .cm-trust-stat-box span,
+html[data-theme="dark"] .cm-trust-stat-content span,
+html[data-theme="dark"] .cm-timeline__step p,
+html[data-theme="dark"] .cm-card-sub,
+html[data-theme="dark"] .rep-card-sub,
+html[data-theme="dark"] .acc-bundle-desc,
+html[data-theme="dark"] .ab-brand-card span,
+html[data-theme="dark"] .ab-brands__note {
+  color: #CBD5E1 !important;
 }
 
 
