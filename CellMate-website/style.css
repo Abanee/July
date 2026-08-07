@@ -189,7 +189,7 @@ input,select{ font-family:inherit; }
   height: 3px;
   background: linear-gradient(90deg, var(--primary), var(--secondary));
   border-radius: 99px;
-  transform: translateX(-50%);
+  margin-left: -10px;
   animation: cm-active-pulse 2s ease-in-out infinite;
 }
 @keyframes cm-active-pulse {
@@ -1361,15 +1361,37 @@ html[data-theme="dark"] .cm-timeline__step i {
   .cm-nav__actions .cm-btn--primary {
     display:none !important;
   }
-  .cm-menu{
-    position:fixed; top:70px; left:16px; right:16px; z-index:999;
-    display:flex; flex-direction:column; gap:4px;
-    background:var(--card); border:1px solid var(--border); border-radius:18px; padding:16px;
-    box-shadow:var(--card-shadow-hover);
+  .cm-menu,
+  html[dir="rtl"] .cm-menu {
+    position:fixed !important; top:70px !important; left:16px !important; right:16px !important; z-index:999 !important;
+    display:flex !important; flex-direction:column !important; align-items:stretch !important; gap:6px !important;
+    background:var(--card) !important; border:1px solid var(--border) !important; border-radius:18px !important; padding:18px 16px !important;
+    box-shadow:var(--card-shadow-hover) !important;
     transform:translateY(-12px); opacity:0; pointer-events:none; transition:transform .25s ease, opacity .25s ease;
   }
-  .cm-menu.is-open{ display:flex; transform:translateY(0); opacity:1; pointer-events:auto; }
-  .cm-menu__link{ padding:12px 14px; font-size:15px; }
+  .cm-menu.is-open,
+  html[dir="rtl"] .cm-menu.is-open {
+    display:flex !important;
+    flex-direction:column !important;
+    transform:translateY(0) !important;
+    opacity:1 !important;
+    pointer-events:auto !important;
+  }
+  .cm-menu__link,
+  html[dir="rtl"] .cm-menu__link {
+    padding: 10px 20px !important;
+    font-size: 15px !important;
+    font-weight: 500 !important;
+    text-align: center !important;
+    justify-content: center !important;
+    display: flex !important;
+    align-items: center !important;
+    width: fit-content !important;
+    min-width: 180px !important;
+    max-width: 240px !important;
+    margin-inline: auto !important;
+    border-radius: 999px !important;
+  }
 }
 
 @media (max-width:992px){
@@ -3964,13 +3986,13 @@ html[dir="rtl"] .cm-auth-top-actions { right: auto; left: 20px; }
 .ofr-banner-card:hover { transform: translateY(-6px); box-shadow: var(--card-shadow-hover); border-color: rgba(var(--primary-rgb),.35); }
 
 .ofr-banner-media {
-  position: relative; width: 100%; height: 240px; overflow: hidden; background: rgba(0, 0, 0, 0.03); padding: 12px; display: flex; align-items: center; justify-content: center;
+  position: relative; width: 100%; height: 280px; overflow: hidden; background: rgba(0, 0, 0, 0.03); padding: 12px; display: flex; align-items: center; justify-content: center;
 }
 html[data-theme="dark"] .ofr-banner-media {
   background: rgba(255, 255, 255, 0.03);
 }
 .ofr-banner-media img {
-  max-width: 100%; max-height: 100%; width: auto; height: auto; object-fit: contain; border-radius: 16px; transition: transform .6s cubic-bezier(0.16, 1, 0.3, 1); display: block; backface-visibility: hidden;
+  width: 100%; height: 100%; object-fit: cover; object-position: center; border-radius: 16px; transition: transform .6s cubic-bezier(0.16, 1, 0.3, 1); display: block; backface-visibility: hidden;
 }
 .ofr-banner-card:hover .ofr-banner-media img { transform: scale(1.04); }
 
@@ -4549,8 +4571,6 @@ html[data-theme="dark"] .acc-quality-media {
    Responsive Viewport Audit (1024px, 820px, 760px, 360px)
    ========================================================================== */
 @media (max-width: 1024px) {
-  .cm-menu { gap: 2px; }
-  .cm-menu__link { padding: 6px 12px; font-size: 13.5px; }
   .ab-brands__grid { grid-template-columns: repeat(4, 1fr); gap: 14px; }
   .h2-dash-normal-grid { grid-template-columns: repeat(2, 1fr); gap: 20px; }
 
@@ -4579,6 +4599,7 @@ html[data-theme="dark"] .acc-quality-media {
 
 @media (max-width: 820px) {
   .ab-brands__grid { grid-template-columns: repeat(3, 1fr); gap: 12px; }
+  .ab-brands__grid > *:last-child:nth-child(3n+1) { grid-column: 2; }
   .cm-nav__inner { padding-inline: 18px; }
   .ab-container, .cm-container { padding-inline: 18px; }
 }

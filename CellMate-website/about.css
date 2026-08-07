@@ -625,6 +625,7 @@ html[data-theme="dark"] .ab-brand-card img[src*="nothing"] {
   .ab-process__step::after{ display:none; }
 
   .ab-brands__grid{ grid-template-columns:repeat(3, 1fr); }
+  .ab-brands__grid > *:last-child:nth-child(3n+1) { grid-column: 2; }
 
   .ab-quality__grid{ grid-template-columns:1fr; gap:24px; }
 
