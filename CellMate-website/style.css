@@ -3994,20 +3994,20 @@ html[dir="rtl"] .cm-auth-top-actions { right: auto; left: 20px; }
    SPECIAL OFFERS & PROMOTIONS SECTION (index.html) — Real-world Banners
    ========================================================================== */
 .ofr-banner-card {
-  background: var(--card); border: 1px solid var(--border); border-radius: 28px;
+  background: var(--card); border: 1px solid var(--border); border-radius: 24px;
   overflow: hidden; box-shadow: var(--card-shadow); height: 100%; display: flex;
   flex-direction: column; transition: transform .35s ease, box-shadow .35s ease, border-color .35s ease;
 }
 .ofr-banner-card:hover { transform: translateY(-6px); box-shadow: var(--card-shadow-hover); border-color: rgba(var(--primary-rgb),.35); }
 
 .ofr-banner-media {
-  position: relative; width: 100%; height: 280px; overflow: hidden; background: rgba(0, 0, 0, 0.03); padding: 12px; display: flex; align-items: center; justify-content: center;
+  position: relative; width: 100%; height: 340px; overflow: hidden; background: rgba(0, 0, 0, 0.03); padding: 16px; display: flex; align-items: center; justify-content: center;
 }
 html[data-theme="dark"] .ofr-banner-media {
   background: rgba(255, 255, 255, 0.03);
 }
 .ofr-banner-media img {
-  width: 100%; height: 100%; object-fit: cover; object-position: center; border-radius: 16px; transition: transform .6s cubic-bezier(0.16, 1, 0.3, 1); display: block; backface-visibility: hidden;
+  width: 100% !important; height: 100% !important; max-width: 100%; max-height: 100%; object-fit: cover !important; object-position: center; border-radius: 16px; transition: transform .6s cubic-bezier(0.16, 1, 0.3, 1); display: block; backface-visibility: hidden;
 }
 .ofr-banner-card:hover .ofr-banner-media img { transform: scale(1.04); }
 
@@ -4588,6 +4588,10 @@ html[data-theme="dark"] .acc-quality-media {
 @media (max-width: 1024px) {
   .ab-brands__grid { grid-template-columns: repeat(4, 1fr); gap: 14px; }
   .h2-dash-normal-grid { grid-template-columns: repeat(2, 1fr); gap: 20px; }
+  #offers .row { justify-content: center !important; }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
   .cm-shop-grid {
     display: flex !important;
     flex-wrap: wrap !important;
@@ -4597,6 +4601,18 @@ html[data-theme="dark"] .acc-quality-media {
   .cm-shop-grid > * {
     flex: 0 0 calc((100% - 2 * 16px) / 3) !important;
     max-width: calc((100% - 2 * 16px) / 3) !important;
+  }
+}
+
+@media (max-width: 576px) {
+  .cm-shop-grid {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    gap: 18px !important;
+  }
+  .cm-shop-grid > * {
+    flex: 0 0 100% !important;
+    max-width: 100% !important;
   }
 
   /* Center solo trailing cards on 2-column grid layouts */
