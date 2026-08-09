@@ -332,13 +332,14 @@ html[dir="rtl"] .today-badge{left:auto; right:-4%;}
    ========================================================= */
 .footer{background:var(--dark-section); color:var(--on-dark); padding:64px 0 0;}
 .footer-grid{display:grid; grid-template-columns:1.4fr 1fr 1fr 1fr; gap:32px; padding-bottom:40px; border-bottom:1px solid rgba(255,255,255,.1);}
-.footer-tag{font-size:.85rem; opacity:.65; margin-top:12px; max-width:220px; line-height:1.5;}
-.footer h5{font-size:.8rem; text-transform:uppercase; letter-spacing:.05em; opacity:.55; margin-bottom:16px;}
-.footer a{display:block; font-size:.9rem; opacity:.8; margin-bottom:10px; transition:opacity .2s, transform .2s;}
-.footer a:hover{opacity:1; transform:translateX(3px); color:var(--strawberry);}
-.footer-bottom{display:flex; justify-content:space-between; align-items:center; padding:22px 24px; font-size:.8rem; opacity:.6; flex-wrap:wrap; gap:10px;}
+.footer-tag{font-size:.85rem; color:var(--on-dark); opacity:.75; margin-top:12px; max-width:220px; line-height:1.5;}
+.footer h5{font-size:.8rem; text-transform:uppercase; letter-spacing:.05em; color:var(--on-dark); opacity:.65; margin-bottom:16px;}
+.footer a, .footer a:visited, .footer-legal a, .footer-legal a:visited{color:var(--on-dark) !important; text-decoration:none !important; display:block; font-size:.9rem; opacity:.85; margin-bottom:10px; transition:opacity .2s, transform .2s, color .2s;}
+.footer a:hover, .footer a:focus, .footer-legal a:hover{opacity:1 !important; color:var(--strawberry) !important; transform:translateX(3px); text-decoration:none !important;}
+.footer-bottom{display:flex; justify-content:space-between; align-items:center; padding:22px 24px; font-size:.8rem; color:var(--on-dark); opacity:.75; flex-wrap:wrap; gap:10px;}
 .footer-legal{display:flex; gap:18px;}
-.footer-legal a{margin:0;}
+.footer-legal a, .footer-legal a:visited{display:inline-block; margin-bottom:0;}
+.footer-legal a:hover{transform:none;}
 
 /* =========================================================
    SCROLL REVEAL
@@ -407,6 +408,24 @@ html[dir="rtl"] .today-badge{left:auto; right:-4%;}
   .moments-grid{grid-template-columns:1fr;}
 }
 
+@media (max-width:640px){
+  html, body{overflow-x:hidden !important; width:100% !important; max-width:100% !important;}
+  .nav-inner{padding:10px 14px; gap:6px;}
+  .logo{font-size:1.1rem; gap:6px;}
+  .logo svg{width:24px; height:24px;}
+  .nav-right{gap:6px;}
+  .nav-right .rtl-toggle, .nav-right .btn, .nav-right .btn-primary{display:none !important;}
+  .hero-heading{font-size:1.85rem;}
+  .hero-sub{font-size:.88rem;}
+  .trust-line{gap:6px; font-size:.75rem;}
+  .trust-sep{display:none;}
+  .trust-line li{background:var(--bg-tertiary); padding:4px 8px; border-radius:999px;}
+  .btn-hero-primary, .btn-hero-secondary{width:100%; justify-content:center; padding:10px 16px; font-size:.86rem;}
+  .today-badge{display:none;}
+  .float-label{font-size:.65rem; padding:4px 8px;}
+  .flavor-bar, .flavor-bar-inner{max-width:100% !important; overflow-x:hidden;}
+}
+
 @media (max-width:450px){
   .container{padding:0 16px;}
   .hero-heading{font-size:2rem;}
@@ -423,10 +442,12 @@ html[dir="rtl"] .today-badge{left:auto; right:-4%;}
 }
 
 @media (max-width:360px){
-  .hero-heading{font-size:1.85rem;}
-  .btn-hero-primary, .btn-hero-secondary{font-size:.82rem; padding:9px 14px;}
-  .today-badge{display:none;}
-  .float-label{font-size:.62rem; padding:3px 7px;}
+  .container{padding:0 12px;}
+  .nav-inner{padding:10px 12px;}
+  .logo span{font-size:1.02rem;}
+  .hero-heading{font-size:1.7rem;}
+  .btn-hero-primary, .btn-hero-secondary{font-size:.82rem; padding:9px 12px;}
+  .float-label{font-size:.6rem; padding:3px 6px;}
   .product-body{padding:12px 14px 14px;}
   .footer-grid{grid-template-columns:1fr;}
 }
