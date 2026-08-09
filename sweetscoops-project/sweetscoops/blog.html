@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SweetScoops Journal — Artisan Dessert Stories &amp; Recipes</title>
+<meta name="description" content="Explore handcrafted ice cream recipes, flavor pairing guides, behind-the-scenes stories, and dessert news from the SweetScoops kitchen.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Pacifico&family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600;1,700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="css/style.css" />
+</head>
+<body class="h2-body antialiased">
+
+<!-- ============ NAVIGATION ============ -->
+<header id="siteNav" class="nav">
+  <div class="nav-inner">
+    <a href="index.html" class="logo" aria-label="SweetScoops home">
+      <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M15 3C10 3 7 6.5 7 10.5C7 11.4 7.15 12.25 7.4 13H22.6C22.85 12.25 23 11.4 23 10.5C23 6.5 20 3 15 3Z" fill="#FF6F91"/>
+        <path d="M8 14L15 27L22 14H8Z" fill="#4A2C2A"/>
+        <circle cx="12.5" cy="9" r="1.3" fill="#FFF8E8"/>
+        <circle cx="17.5" cy="8" r="1" fill="#FFF8E8"/>
+      </svg>
+      <span>Sweet<em>Scoops</em></span>
+    </a>
+
+    <nav class="nav-center" aria-label="Primary">
+      <a href="index.html">Home</a>
+      <a href="home2.html">Home 2</a>
+      <a href="about.html">About</a>
+      <a href="celebrations.html">Celebrations</a>
+      <a href="menu.html">Menu</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="blog.html" class="is-current">Blog</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+
+    <div class="nav-right">
+      <button class="icon-btn search-toggle" aria-label="Search site">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><circle cx="11" cy="11" r="7" stroke="currentColor" stroke-width="2"/><path d="M20 20l-4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+      </button>
+      <button class="theme-toggle" type="button" aria-label="Switch to dark mode" aria-pressed="false">
+        <svg class="theme-icon-sun" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="4.5" stroke="currentColor" stroke-width="1.8"/><path d="M12 2.5v2.2M12 19.3v2.2M4.2 4.2l1.55 1.55M18.25 18.25l1.55 1.55M2.5 12h2.2M19.3 12h2.2M4.2 19.8l1.55-1.55M18.25 5.75l1.55-1.55" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+        <svg class="theme-icon-moon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20.5 14.8A8.5 8.5 0 1 1 9.2 3.5a7 7 0 0 0 11.3 11.3Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>
+      </button>
+      <button class="rtl-toggle" type="button" aria-label="Switch text direction">RTL</button>
+      <a href="menu.html" class="btn btn-primary btn-sm">Order Now &rarr;</a>
+      <button id="menuToggle" class="burger" aria-label="Toggle Navigation Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- SEARCH MODAL -->
+<div id="searchModal" class="search-modal" aria-hidden="true" role="dialog">
+  <div class="search-modal-inner">
+    <div class="search-input-wrap">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><circle cx="11" cy="11" r="7" stroke="currentColor" stroke-width="2"/><path d="M20 20l-4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+      <input type="search" id="searchInput" placeholder="Search blog articles, flavors, waffles..." aria-label="Search site content">
+      <button class="search-close" aria-label="Close search">&times;</button>
+    </div>
+    <div class="search-suggestions">
+      <span>Popular:</span>
+      <a href="blog.html">Vanilla Bean Secret</a>
+      <a href="blog.html">Waffle Pairings</a>
+      <a href="menu.html">Belgian Waffle</a>
+    </div>
+  </div>
+</div>
+
+<!-- MOBILE SLIDE-DOWN NAV -->
+<div id="mobileNav" class="mobile-nav" aria-hidden="true">
+  <a href="index.html">Home</a>
+  <a href="home2.html">Home 2</a>
+  <a href="about.html">About</a>
+  <a href="celebrations.html">Celebrations</a>
+  <a href="menu.html">Menu</a>
+  <a href="gallery.html">Gallery</a>
+  <a href="blog.html" class="is-current">Blog</a>
+  <a href="contact.html">Contact</a>
+  <div class="mobile-actions">
+    <a href="menu.html" class="btn btn-primary">Order Now &rarr;</a>
+  </div>
+</div>
+
+<main>
+
+  <!-- ============ BLOG HERO BANNER & CATEGORY FILTER ============ -->
+  <section class="blog-hero-section">
+    <div class="container">
+      <div class="blog-header reveal">
+        <span class="blog-eyebrow-pill">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/>
+            <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/>
+          </svg>
+          SweetScoops Journal
+        </span>
+        <h1 class="blog-main-title">
+          STORIES &amp; SCOOPS FROM OUR <span class="text-strawberry">DESSERT KITCHEN</span>
+        </h1>
+        <p class="blog-subtitle">
+          Discover artisan recipes, flavor pairing secrets, behind-the-scenes stories, and sweet dessert trends from our master ice cream churners.
+        </p>
+      </div>
+
+      <!-- Category Filter Pills -->
+      <div class="blog-filter-bar reveal">
+        <button type="button" class="blog-filter-btn is-active">All Posts</button>
+        <button type="button" class="blog-filter-btn">Artisan Recipes</button>
+        <button type="button" class="blog-filter-btn">Flavor Pairing</button>
+        <button type="button" class="blog-filter-btn">Behind The Scoops</button>
+        <button type="button" class="blog-filter-btn">Seasonal Drops</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FEATURED SPOTLIGHT ARTICLE ============ -->
+  <section class="blog-featured-section">
+    <div class="container">
+      <article class="blog-featured-card reveal">
+        <div class="blog-featured-img-wrap">
+          <img src="Assets/blog_featured.png" alt="Churning Bourbon Vanilla Ice Cream" />
+        </div>
+        <div class="blog-featured-content">
+          <div class="blog-meta-row">
+            <span class="blog-cat-badge">Artisan Secrets</span>
+            <span class="blog-read-time">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              5 min read
+            </span>
+          </div>
+          <h2 class="blog-featured-title">The Secret Art of Churning Madagascar Bourbon Vanilla</h2>
+          <p class="blog-featured-excerpt">
+            Ever wondered why our vanilla bean gelato tastes so velvety? Step inside our kitchen as we reveal how we hand-scrape organic Madagascar vanilla pods and slow-churn with pure farm cream.
+          </p>
+          <div class="blog-author-row">
+            <div class="blog-author-info">
+              <div class="blog-author-avatar">Chef</div>
+              <div>
+                <div class="blog-author-name">Chef Marcus V.</div>
+                <div class="blog-date">August 08, 2026</div>
+              </div>
+            </div>
+            <a href="#article1" class="blog-read-btn">
+              Read Article &rarr;
+            </a>
+          </div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- ============ BLOG POSTS GRID ============ -->
+  <section class="blog-grid-section">
+    <div class="container">
+      <div class="blog-grid reveal">
+
+        <!-- POST CARD 1 -->
+        <article class="blog-card">
+          <div class="blog-card-img-wrap">
+            <img src="Assets/blog_post_1.png" alt="Waffle & Ice Cream Pairings" loading="lazy" />
+          </div>
+          <div class="blog-card-body">
+            <div class="blog-meta-row">
+              <span class="blog-cat-badge">Flavor Pairing</span>
+              <span class="blog-read-time">4 min read</span>
+            </div>
+            <h3 class="blog-card-title">5 Surprising Waffle &amp; Ice Cream Pairings You Must Try</h3>
+            <p class="blog-card-excerpt">
+              From Belgian waffles with salted caramel to dark chocolate bases topped with berry swirl, elevate your dessert pairing game.
+            </p>
+            <div class="blog-card-foot">
+              <span class="blog-date">August 05, 2026</span>
+              <a href="#" class="blog-read-btn" style="padding: 6px 14px; font-size: 0.8rem;">Read More &rarr;</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- POST CARD 2 -->
+        <article class="blog-card">
+          <div class="blog-card-img-wrap">
+            <img src="Assets/Home 2/sec_strawberry_cream.png" alt="Organic Strawberry Farming" loading="lazy" />
+          </div>
+          <div class="blog-card-body">
+            <div class="blog-meta-row">
+              <span class="blog-cat-badge">Behind The Scoops</span>
+              <span class="blog-read-time">3 min read</span>
+            </div>
+            <h3 class="blog-card-title">How We Sourced 100% Organic Farm Strawberries This Summer</h3>
+            <p class="blog-card-excerpt">
+              Journey with our sourcing team to local organic berry farms to see how fresh, sun-ripened strawberries reach your scoop.
+            </p>
+            <div class="blog-card-foot">
+              <span class="blog-date">August 02, 2026</span>
+              <a href="#" class="blog-read-btn" style="padding: 6px 14px; font-size: 0.8rem;">Read More &rarr;</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- POST CARD 3 -->
+        <article class="blog-card">
+          <div class="blog-card-img-wrap">
+            <img src="Assets/blog_post_3.png" alt="Crafting Loaded Sundaes" loading="lazy" />
+          </div>
+          <div class="blog-card-body">
+            <div class="blog-meta-row">
+              <span class="blog-cat-badge">Artisan Recipes</span>
+              <span class="blog-read-time">6 min read</span>
+            </div>
+            <h3 class="blog-card-title">The Ultimate Guide to Crafting Loaded Sundaes at Home</h3>
+            <p class="blog-card-excerpt">
+              Master the exact layering order for fudge, crunch, whipped cream, and cherries so your homemade sundaes never melt down fast.
+            </p>
+            <div class="blog-card-foot">
+              <span class="blog-date">July 28, 2026</span>
+              <a href="#" class="blog-read-btn" style="padding: 6px 14px; font-size: 0.8rem;">Read More &rarr;</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- POST CARD 4 -->
+        <article class="blog-card">
+          <div class="blog-card-img-wrap">
+            <img src="Assets/Home 2/sec_chocolate_fudge.png" alt="Belgian Dark Chocolate Gelato" loading="lazy" />
+          </div>
+          <div class="blog-card-body">
+            <div class="blog-meta-row">
+              <span class="blog-cat-badge">Flavor Pairing</span>
+              <span class="blog-read-time">4 min read</span>
+            </div>
+            <h3 class="blog-card-title">Why Belgian Dark Chocolate Gelato Beats Regular Chocolate</h3>
+            <p class="blog-card-excerpt">
+              Unpacking the rich cocoa percentages, low overrun churning techniques, and intense flavor profiles of 70% dark Belgian fudge.
+            </p>
+            <div class="blog-card-foot">
+              <span class="blog-date">July 24, 2026</span>
+              <a href="#" class="blog-read-btn" style="padding: 6px 14px; font-size: 0.8rem;">Read More &rarr;</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- POST CARD 5 -->
+        <article class="blog-card">
+          <div class="blog-card-img-wrap">
+            <img src="Assets/Home 2/sec_mango_royal.png" alt="Mango Coconut Cloud Story" loading="lazy" />
+          </div>
+          <div class="blog-card-body">
+            <div class="blog-meta-row">
+              <span class="blog-cat-badge">Seasonal Drops</span>
+              <span class="blog-read-time">3 min read</span>
+            </div>
+            <h3 class="blog-card-title">Mango Coconut Cloud: The Story Behind Our Summer Drop</h3>
+            <p class="blog-card-excerpt">
+              How our chefs combined sun-ripened Alphonso mango pulp with toasted coconut crunch to create this summer's viral flavor.
+            </p>
+            <div class="blog-card-foot">
+              <span class="blog-date">July 19, 2026</span>
+              <a href="#" class="blog-read-btn" style="padding: 6px 14px; font-size: 0.8rem;">Read More &rarr;</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- POST CARD 6 -->
+        <article class="blog-card">
+          <div class="blog-card-img-wrap">
+            <img src="Assets/Home 2/sec_vanilla_bean.png" alt="Vegan & Dairy-Free Gelato" loading="lazy" />
+          </div>
+          <div class="blog-card-body">
+            <div class="blog-meta-row">
+              <span class="blog-cat-badge">Artisan Recipes</span>
+              <span class="blog-read-time">5 min read</span>
+            </div>
+            <h3 class="blog-card-title">Vegan &amp; Dairy-Free Desserts: Achieving Ultimate Creaminess</h3>
+            <p class="blog-card-excerpt">
+              Discover how oat milk and coconut cream blends allow us to churn 100% plant-based scoops without compromising on texture.
+            </p>
+            <div class="blog-card-foot">
+              <span class="blog-date">July 14, 2026</span>
+              <a href="#" class="blog-read-btn" style="padding: 6px 14px; font-size: 0.8rem;">Read More &rarr;</a>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ TESTIMONIALS SECTION ============ -->
+  <section class="blog-testimonials-section">
+    <div class="container">
+      
+      <div class="testimonials-header reveal">
+        <span class="blog-eyebrow-pill">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+          </svg>
+          Community Love &amp; Reviews
+        </span>
+        <h2 class="blog-main-title">
+          WHAT DESSERT LOVERS ARE <span class="text-strawberry">SAYING</span>
+        </h2>
+        <p class="blog-subtitle">
+          Real feedback from our happy scoop club members and dessert enthusiasts.
+        </p>
+      </div>
+
+      <div class="testimonials-grid reveal">
+
+        <!-- TESTIMONIAL 1 -->
+        <article class="testimonial-card">
+          <div class="testimonial-stars">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          </div>
+          <p class="testimonial-quote">
+            "The Belgian Waffle with Triple Belgian Fudge ice cream is absolute perfection! You can taste the real cocoa and fresh ingredients. Best ice cream shop in town hands down."
+          </p>
+          <div class="testimonial-author">
+            <img src="Assets/Home 2/cat_ice_cream.png" alt="Sarah Jenkins Avatar" class="testimonial-avatar" />
+            <div>
+              <div class="testimonial-author-title">Sarah Jenkins</div>
+              <div class="testimonial-author-sub">Food &amp; Lifestyle Blogger</div>
+            </div>
+          </div>
+        </article>
+
+        <!-- TESTIMONIAL 2 -->
+        <article class="testimonial-card">
+          <div class="testimonial-stars">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          </div>
+          <p class="testimonial-quote">
+            "I ordered the Family Feast Party Tub for our weekend party. Everyone loved the fresh strawberry swirl and loaded sundaes. Prompt delivery and supreme packaging!"
+          </p>
+          <div class="testimonial-author">
+            <img src="Assets/Home 2/cat_waffle.png" alt="David Miller Avatar" class="testimonial-avatar" />
+            <div>
+              <div class="testimonial-author-title">David Miller</div>
+              <div class="testimonial-author-sub">Scoop Club Member</div>
+            </div>
+          </div>
+        </article>
+
+        <!-- TESTIMONIAL 3 -->
+        <article class="testimonial-card">
+          <div class="testimonial-stars">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          </div>
+          <p class="testimonial-quote">
+            "The journal articles on waffle pairings inspired us to try the Mango Coconut Cloud combo. Highly recommend reading their recipe tips — super creative!"
+          </p>
+          <div class="testimonial-author">
+            <img src="Assets/Home 2/cat_sundae.png" alt="Elena Rostova Avatar" class="testimonial-avatar" />
+            <div>
+              <div class="testimonial-author-title">Elena Rostova</div>
+              <div class="testimonial-author-sub">Regular Visitor</div>
+            </div>
+          </div>
+        </article>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ============ SCOOP CLUB NEWSLETTER BANNER ============ -->
+  <section class="scoop-club-newsletter">
+    <div class="container">
+      <div class="scoop-club-inner reveal">
+        <span class="scoop-club-eyebrow">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+            <polyline points="22,6 12,13 2,6"/>
+          </svg>
+          Join The Scoop Club
+        </span>
+        <h2 class="scoop-club-title">
+          GET FRESH STORIES &amp; <span class="text-strawberry">SECRET DISCOUNTS</span>
+        </h2>
+        <p class="scoop-club-subtitle">
+          Subscribe to our weekly dessert journal for artisan recipes, new flavor drop alerts, and exclusive subscriber perks.
+        </p>
+        <form id="newsletterForm" class="scoop-club-form">
+          <input type="email" class="scoop-club-input" placeholder="Enter your email address..." required aria-label="Email address for newsletter" />
+          <button type="submit" class="scoop-club-btn">Subscribe Now</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer class="footer">
+  <div class="container footer-grid">
+    <div class="footer-col brand">
+      <a href="index.html" class="logo">
+        <svg width="26" height="26" viewBox="0 0 30 30" fill="none"><path d="M15 3C10 3 7 6.5 7 10.5C7 11.4 7.15 12.25 7.4 13H22.6C22.85 12.25 23 11.4 23 10.5C23 6.5 20 3 15 3Z" fill="#FF6F91"/><path d="M8 14L15 27L22 14H8Z" fill="#4A2C2A"/></svg>
+        <span>Sweet<em>Scoops</em></span>
+      </a>
+      <p>Handcrafted ice cream, warm belgian waffles &amp; sweet moments made fresh daily.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Quick Links</h4>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="home2.html">Home 2</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="menu.html">Full Menu</a></li>
+        <li><a href="blog.html">Dessert Blog</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Treats</h4>
+      <ul>
+        <li><a href="menu.html#icecreams">Artisan Scoops</a></li>
+        <li><a href="menu.html#waffles">Belgian Waffles</a></li>
+        <li><a href="menu.html#shakes">Thick Milkshakes</a></li>
+        <li><a href="menu.html#sundaes">Signature Sundaes</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Visit Us</h4>
+      <p>124 Scoop Avenue, Sweet Town</p>
+      <p>Mon - Sun: 10am - 11pm</p>
+    </div>
+  </div>
+  <div class="container footer-bottom">
+    <p>&copy; 2026 SweetScoops. All rights reserved.</p>
+  </div>
+</footer>
+
+<script src="js/script.js"></script>
+</body>
+</html>
