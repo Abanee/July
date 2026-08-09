@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<script>
+(function(){
+  try{
+    var stored = localStorage.getItem('theme');
+    var theme = stored || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+    if (theme === 'dark') document.documentElement.classList.add('dark');
+  } catch(e){}
+})();
+</script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Gallery — SweetScoops</title>
+<meta name="description" content="Browse photos of SweetScoops ice cream, waffles, crepes, milkshakes, sundaes, cakes and in-store moments. Search or filter to find exactly what you're craving." />
+
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="css/style.css" />
+</head>
+<body class="bg-cream text-choco font-body antialiased">
+
+<!-- ============ NAVIGATION ============ -->
+<header id="siteNav" class="nav">
+  <div class="nav-inner">
+<!-- ============ NAVIGATION ============ -->
+<header id="siteNav" class="nav">
+  <div class="nav-inner">
+    <a href="index.html" class="logo" aria-label="SweetScoops home">
+      <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M15 3C10 3 7 6.5 7 10.5C7 11.4 7.15 12.25 7.4 13H22.6C22.85 12.25 23 11.4 23 10.5C23 6.5 20 3 15 3Z" fill="#FF6F91"/>
+        <path d="M8 14L15 27L22 14H8Z" fill="#4A2C2A"/>
+        <circle cx="12.5" cy="9" r="1.3" fill="#FFF8E8"/>
+        <circle cx="17.5" cy="8" r="1" fill="#FFF8E8"/>
+      </svg>
+      <span>Sweet<em>Scoops</em></span>
+    </a>
+
+    <nav class="nav-center" aria-label="Primary">
+      <a href="index.html">Home</a>
+      <a href="home2.html">Home 2</a>
+      <a href="about.html">About</a>
+      <a href="celebrations.html">Celebrations</a>
+      <a href="menu.html">Menu</a>
+      <a href="gallery.html" class="is-current">Gallery</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+
+    <div class="nav-right">
+      <button class="icon-btn search-toggle" aria-label="Search site">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><circle cx="11" cy="11" r="7" stroke="currentColor" stroke-width="2"/><path d="M20 20l-4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+      </button>
+      <button class="theme-toggle" type="button" aria-label="Switch to dark mode" aria-pressed="false">
+        <svg class="theme-icon-sun" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="4.5" stroke="currentColor" stroke-width="1.8"/><path d="M12 2.5v2.2M12 19.3v2.2M4.2 4.2l1.55 1.55M18.25 18.25l1.55 1.55M2.5 12h2.2M19.3 12h2.2M4.2 19.8l1.55-1.55M18.25 5.75l1.55-1.55" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+        <svg class="theme-icon-moon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20.5 14.8A8.5 8.5 0 1 1 9.2 3.5a7 7 0 0 0 11.3 11.3Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>
+      </button>
+      <button class="rtl-toggle" type="button" aria-label="Switch text direction">RTL</button>
+      <a href="#" class="btn btn-primary btn-sm">Sign In</a>
+      <button id="menuToggle" class="menu-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobileNav">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+
+  <!-- Mobile slide-down -->
+  <div id="mobileNav" class="mobile-nav">
+    <div class="mobile-theme-row">
+      <span>Controls</span>
+      <div style="display:flex; gap:8px;">
+        <button class="rtl-toggle" type="button">RTL</button>
+        <button class="theme-toggle" type="button" aria-label="Switch to dark mode" aria-pressed="false">
+          <svg class="theme-icon-sun" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="4.5" stroke="currentColor" stroke-width="1.8"/><path d="M12 2.5v2.2M12 19.3v2.2M4.2 4.2l1.55 1.55M18.25 18.25l1.55 1.55M2.5 12h2.2M19.3 12h2.2M4.2 19.8l1.55-1.55M18.25 5.75l1.55-1.55" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+          <svg class="theme-icon-moon" viewBox="0 0 24 24" fill="none"><path d="M20.5 14.8A8.5 8.5 0 1 1 9.2 3.5a7 7 0 0 0 11.3 11.3Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>
+        </button>
+      </div>
+    </div>
+    <a href="index.html">Home</a>
+    <a href="home2.html">Home 2</a>
+    <a href="about.html">About</a>
+    <a href="celebrations.html">Celebrations</a>
+    <a href="menu.html">Menu</a>
+    <a href="gallery.html" class="is-current">Gallery</a>
+    <a href="contact.html">Contact</a>
+    <a href="#" class="btn btn-primary btn-sm mt-2">Sign In</a>
+  </div>
+</header>
+
+<!-- Search Modal Drawer -->
+<div id="searchModal" class="search-modal" aria-hidden="true">
+  <div class="search-box">
+    <button id="closeSearch" class="search-close" aria-label="Close search">&times;</button>
+    <h3 style="margin-bottom:12px; font-family:'Fredoka',sans-serif;">Search SweetScoops</h3>
+    <input type="text" placeholder="Search flavors, waffles, shakes..." />
+  </div>
+</div>
+
+<main id="home">
+
+  <!-- ============ GALLERY HERO ============ -->
+  <section class="gallery-hero" aria-label="Gallery introduction">
+    <div class="container gallery-hero-grid">
+      <div class="reveal">
+        <p class="eyebrow">OUR GALLERY</p>
+        <h1 class="hero-heading">Sweet Moments,<br><span class="text-strawberry">Captured.</span></h1>
+        <p class="hero-sub">A scoop of everything we make — and every smile it comes with. Search or filter to find your favorite.</p>
+        <div class="hero-actions">
+          <a href="#gallery-grid" class="btn btn-primary">Browse Photos
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </div>
+        <div class="trust-mini-row">
+          <span class="trust-mini">📸 24 Photos</span>
+          <span class="trust-mini">🍨 7 Categories</span>
+          <span class="trust-mini">🔎 Searchable</span>
+        </div>
+      </div>
+
+      <div class="gallery-hero-visual reveal">
+        <div class="gallery-hero-tile gallery-hero-tile-a"><img src="https://loremflickr.com/500/620/icecream,sundae,waffle/all?lock=301" alt="Loaded ice cream sundae with waffle and chocolate drizzle" loading="lazy"></div>
+        <div class="gallery-hero-tile gallery-hero-tile-b"><img src="https://loremflickr.com/500/380/milkshake,strawberry/all?lock=302" alt="Tall strawberry milkshake with whipped cream" loading="lazy"></div>
+        <div class="gallery-hero-tile gallery-hero-tile-c"><img src="https://loremflickr.com/500/380/cafe,dessert,shop/all?lock=303" alt="SweetScoops shop counter with desserts on display" loading="lazy"></div>
+        <span class="doodle" style="left:-4%; top:8%; font-size:1.5rem;">⭐</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FILTER + SEARCH ============ -->
+  <section class="section gallery-controls-section" id="gallery-grid">
+    <div class="container">
+      <div class="section-head reveal">
+        <h2>Browse The Gallery</h2>
+        <p>Filter by category or search for something specific.</p>
+      </div>
+
+      <div class="gallery-controls reveal">
+        <div class="gallery-search">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="11" cy="11" r="7" stroke="currentColor" stroke-width="1.8"/><path d="m20 20-3.2-3.2" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+          <label for="gallerySearch" class="sr-only" style="position:absolute; width:1px; height:1px; overflow:hidden; clip:rect(0 0 0 0);">Search gallery</label>
+          <input id="gallerySearch" type="text" placeholder="Search photos… e.g. waffle, birthday, mango">
+          <button id="gallerySearchClear" class="gallery-search-clear" type="button" aria-label="Clear search" hidden>✕</button>
+        </div>
+
+        <div class="gallery-filters" id="galleryFilters" role="group" aria-label="Filter gallery by category">
+          <button class="chip is-active" data-filter="all" type="button">All</button>
+          <button class="chip" data-filter="Ice Cream" type="button">Ice Cream</button>
+          <button class="chip" data-filter="Waffles" type="button">Waffles</button>
+          <button class="chip" data-filter="Crepes" type="button">Crepes</button>
+          <button class="chip" data-filter="Milkshakes" type="button">Milkshakes</button>
+          <button class="chip" data-filter="Sundaes" type="button">Sundaes</button>
+          <button class="chip" data-filter="Cakes" type="button">Cakes &amp; More</button>
+          <button class="chip" data-filter="In-Store" type="button">In-Store</button>
+        </div>
+      </div>
+
+      <p id="galleryCount" class="gallery-count reveal" aria-live="polite">Showing 24 of 24 photos</p>
+
+      <!-- ============ 4 × 6 IMAGE GRID ============ -->
+      <div class="gallery-grid-wrap reveal-group" id="galleryGrid">
+
+        <button class="gallery-tile" type="button" data-category="Ice Cream" data-tags="ice cream scoop vanilla waffle cone">
+          <img src="https://loremflickr.com/500/500/icecream,scoop,cone/all?lock=311" alt="Vanilla ice cream scoop in a waffle cone" loading="lazy">
+          <span class="gallery-tile-info"><span class="gallery-tile-title">Classic Scoop</span><span class="gallery-tile-cat">Ice Cream</span></span>
+        </button>
+
+        <button class="gallery-tile" type="button" data-category="Waffles" data-tags="waffle chocolate belgian brownie">
+          <img src="https://loremflickr.com/500/500/waffle,chocolate,belgian/all?lock=312" alt="Belgian waffle topped with chocolate sauce" loading="lazy">
+          <span class="gallery-tile-info"><span class="gallery-tile-title">Belgian Waffle</span><span class="gallery-tile-cat">Waffles</span></span>
+        </button>
+
+        <button class="gallery-tile" type="button" data-category="Sundaes" data-tags="sundae chocolate brownie cherry">
+          <img src="https://loremflickr.com/500/500/sundae,chocolate,cherry/all?lock=313" alt="Chocolate brownie sundae with a cherry on top" loading="lazy">
+          <span class="gallery-tile-info"><span class="gallery-tile-title">Brownie Blast</span><span class="gallery-tile-cat">Sundaes</span></span>
+        </button>
+
+        <button class="gallery-tile" type="button" data-category="Milkshakes" data-tags="milkshake strawberry pink whipped cream">
+          <img src="https://loremflickr.com/500/500/milkshake,strawberry,pink/all?lock=314" alt="Pink strawberry milkshake with whipped cream" loading="lazy">
+          <span class="gallery-tile-info"><span class="gallery-tile-title">Berry Shake</span><span class="gallery-tile-cat">Milkshakes</span></span>
+        </button>
+
+        <button class="gallery-tile" type="button" data-category="Crepes" data-tags="crepe caramel banana dessert">
+          <img src="https://loremflickr.com/500/500/crepe,banana,caramel/all?lock=315" alt="Folded crepe with caramel and banana" loading="lazy">
+          <span class="gallery-tile-info"><span class="gallery-tile-title">Caramel Crepe</span><span class="gallery-tile-cat">Crepes</span></span>
+        </button>
+
+        <button class="gallery-tile" type="button" data-category="Cakes" data-tags="cake slice birthday celebration">
+          <img src="https://loremflickr.com/500/500/cake,slice,birthday/all?lock=316" alt="Slice of celebration birthday cake" loading="lazy">
+          <span class="gallery-tile-info"><span class="gallery-tile-title">Birthday Slice</span><span class="gallery-tile-cat">Cakes &amp; More</span></span>
+        </button>
+
+        <button class="gallery-tile" type="button" data-category="Ice Cream" data-tags="ice cream mango tropical scoop">
+          <img src="https://loremflickr.com/500/500/mango,icecream,tropical/all?lock=317" alt="Mango ice cream scoop with fresh mango" loading="lazy">
+          <span class="gallery-tile-info"><span class="gallery-tile-title">Mango Magic</span><span class="gallery-tile-cat">Ice Cream</span></span>
+        </button>
+
+        <button class="gallery-tile" type="button" data-category="Waffles" data-tags="waffle strawberry berries fresh">
+          <img src="https://loremflickr.com/500/500/waffle,strawberry,berries/all?lock=318" alt="Waffle topped with fresh strawberries" loading="lazy">
+          <span class="gallery-tile-info"><span class="gallery-tile-title">Berry Waffle</span><span class="gallery-tile-cat">Waffles</span></span>
+        </button>
+
+        <button class="gallery-tile" type="button" data-category="In-Store" data-tags="shop counter interior cafe">
+          <img src="https://loremflickr.com/500/500/cafe,counter,interior/all?lock=319" alt="SweetScoops shop counter and interior" loading="lazy">
+          <span class="gallery-tile-info"><span class="gallery-tile-title">Our Counter</span><span class="gallery-tile-cat">In-Store</span></span>
+        </button>
+
+        <button class="gallery-tile" type="button" data-category="Sundaes" data-tags="sundae strawberry berries pink">
+          <img src="https://loremflickr.com/500/500/sundae,strawberry,berries/all?lock=320" alt="Strawberry sundae with fresh berries" loading="lazy">
+          <span class="gallery-tile-info"><span class="gallery-tile-title">Strawberry Dream</span><span class="gallery-tile-cat">Sundaes</span></span>
+        </button>
+
+        <button class="gallery-tile" type="button" data-category="Milkshakes" data-tags="milkshake chocolate cookie cream">
+          <img src="https://loremflickr.com/500/500/milkshake,chocolate,cookie/all?lock=321" alt="Chocolate cookie milkshake" loading="lazy">
+          <span class="gallery-tile-info"><span class="gallery-tile-title">Cookie Shake</span><span class="gallery-tile-cat">Milkshakes</span></span>
+        </button>
+
+        <button class="gallery-tile" type="button" data-category="Crepes" data-tags="crepe mango berries fresh">
+          <img src="https://loremflickr.com/500/500/crepe,mango,fruit/all?lock=322" alt="Crepe with mango and fresh fruit" loading="lazy">
+          <span class="gallery-tile-info"><span class="gallery-tile-title">Mango Crepe</span><span class="gallery-tile-cat">Crepes</span></span>
+        </button>
+
+        <button class="gallery-tile" type="button" data-category="Cakes" data-tags="cupcake dessert sprinkles party">
+          <img src="https://loremflickr.com/500/500/cupcake,sprinkles,dessert/all?lock=323" alt="Cupcake with colorful sprinkles" loading="lazy">
+          <span class="gallery-tile-info"><span class="gallery-tile-title">Party Cupcake</span><span class="gallery-tile-cat">Cakes &amp; More</span></span>
+        </button>
+
+        <button class="gallery-tile" type="button" data-category="Ice Cream" data-tags="ice cream pistachio scoop nuts">
+          <img src="https://loremflickr.com/500/500/pistachio,icecream,nuts/all?lock=324" alt="Pistachio ice cream scoop with nuts" loading="lazy">
+          <span class="gallery-tile-info"><span class="gallery-tile-title">Pistachio Scoop</span><span class="gallery-tile-cat">Ice Cream</span></span>
+        </button>
+
+        <button class="gallery-tile" type="button" data-category="In-Store" data-tags="kids family enjoying dessert shop">
+          <img src="https://loremflickr.com/500/500/kids,family,icecream/all?lock=325" alt="Family enjoying desserts together in-store" loading="lazy">
+          <span class="gallery-tile-info"><span class="gallery-tile-title">Family Time</span><span class="gallery-tile-cat">In-Store</span></span>
+        </button>
+
+        <button class="gallery-tile" type="button" data-category="Waffles" data-tags="waffle caramel crunch drizzle">
+          <img src="https://loremflickr.com/500/500/waffle,caramel,crunch/all?lock=326" alt="Waffle with caramel drizzle and crunch topping" loading="lazy">
+          <span class="gallery-tile-info"><span class="gallery-tile-title">Caramel Crunch</span><span class="gallery-tile-cat">Waffles</span></span>
+        </button>
+
+        <button class="gallery-tile" type="button" data-category="Sundaes" data-tags="sundae mango tropical scoop">
+          <img src="https://loremflickr.com/500/500/mango,sundae,tropical/all?lock=327" alt="Tropical mango sundae" loading="lazy">
+          <span class="gallery-tile-info"><span class="gallery-tile-title">Tropical Sundae</span><span class="gallery-tile-cat">Sundaes</span></span>
+        </button>
+
+        <button class="gallery-tile" type="button" data-category="Milkshakes" data-tags="milkshake vanilla classic cream">
+          <img src="https://loremflickr.com/500/500/milkshake,vanilla,classic/all?lock=328" alt="Classic vanilla milkshake" loading="lazy">
+          <span class="gallery-tile-info"><span class="gallery-tile-title">Classic Vanilla Shake</span><span class="gallery-tile-cat">Milkshakes</span></span>
+        </button>
+
+        <button class="gallery-tile" type="button" data-category="Crepes" data-tags="crepe chocolate nutella dessert">
+          <img src="https://loremflickr.com/500/500/crepe,chocolate,nutella/all?lock=329" alt="Chocolate hazelnut crepe" loading="lazy">
+          <span class="gallery-tile-info"><span class="gallery-tile-title">Choco Hazelnut Crepe</span><span class="gallery-tile-cat">Crepes</span></span>
+        </button>
+
+        <button class="gallery-tile" type="button" data-category="Cakes" data-tags="cake chocolate layered celebration">
+          <img src="https://loremflickr.com/500/500/cake,chocolate,layered/all?lock=330" alt="Layered chocolate celebration cake" loading="lazy">
+          <span class="gallery-tile-info"><span class="gallery-tile-title">Choco Layer Cake</span><span class="gallery-tile-cat">Cakes &amp; More</span></span>
+        </button>
+
+        <button class="gallery-tile" type="button" data-category="Ice Cream" data-tags="ice cream chocolate scoop cup">
+          <img src="https://loremflickr.com/500/500/chocolate,icecream,cup/all?lock=331" alt="Chocolate ice cream scoop in a cup" loading="lazy">
+          <span class="gallery-tile-info"><span class="gallery-tile-title">Double Chocolate</span><span class="gallery-tile-cat">Ice Cream</span></span>
+        </button>
+
+        <button class="gallery-tile" type="button" data-category="In-Store" data-tags="birthday party celebration confetti store">
+          <img src="https://loremflickr.com/500/500/birthday,party,celebration/all?lock=332" alt="Birthday party celebration set up in-store" loading="lazy">
+          <span class="gallery-tile-info"><span class="gallery-tile-title">Party Setup</span><span class="gallery-tile-cat">In-Store</span></span>
+        </button>
+
+        <button class="gallery-tile" type="button" data-category="Sundaes" data-tags="sundae caramel nuts crunch">
+          <img src="https://loremflickr.com/500/500/caramel,sundae,nuts/all?lock=333" alt="Caramel sundae with crunchy nut topping" loading="lazy">
+          <span class="gallery-tile-info"><span class="gallery-tile-title">Caramel Crunch Sundae</span><span class="gallery-tile-cat">Sundaes</span></span>
+        </button>
+
+        <button class="gallery-tile" type="button" data-category="Waffles" data-tags="waffle mango tropical fruit">
+          <img src="https://loremflickr.com/500/500/waffle,mango,fruit/all?lock=334" alt="Waffle topped with fresh mango" loading="lazy">
+          <span class="gallery-tile-info"><span class="gallery-tile-title">Mango Waffle</span><span class="gallery-tile-cat">Waffles</span></span>
+        </button>
+
+      </div>
+
+      <p id="galleryEmpty" class="gallery-empty" hidden>No photos match your search. Try a different keyword or category.</p>
+    </div>
+  </section>
+
+  <!-- ============ FINAL BRAND STATEMENT ============ -->
+  <section class="statement reveal">
+    <svg width="34" height="34" viewBox="0 0 30 30" fill="none" class="mx-auto mb-4"><path d="M15 3C10 3 7 6.5 7 10.5C7 11.4 7.15 12.25 7.4 13H22.6C22.85 12.25 23 11.4 23 10.5C23 6.5 20 3 15 3Z" fill="#FF6F91"/><path d="M8 14L15 27L22 14H8Z" fill="#4A2C2A"/></svg>
+    <h2>Tag Us In Your<br>Sweetest Moments!</h2>
+  </section>
+
+</main>
+
+<!-- ============ LIGHTBOX ============ -->
+<div id="lightbox" class="lightbox" hidden>
+  <button id="lightboxClose" class="lightbox-close" type="button" aria-label="Close photo">✕</button>
+  <button id="lightboxPrev" class="lightbox-nav lightbox-prev" type="button" aria-label="Previous photo">‹</button>
+  <figure class="lightbox-figure">
+    <img id="lightboxImg" src="" alt="">
+    <figcaption><span id="lightboxTitle"></span><span id="lightboxCat" class="lightbox-cat"></span></figcaption>
+  </figure>
+  <button id="lightboxNext" class="lightbox-nav lightbox-next" type="button" aria-label="Next photo">›</button>
+</div>
+
+<!-- ============ FOOTER ============ -->
+<footer class="footer">
+  <div class="container footer-grid footer-grid-5">
+    <div>
+      <a href="index.html" class="logo logo-light">
+        <svg width="26" height="26" viewBox="0 0 30 30" fill="none"><path d="M15 3C10 3 7 6.5 7 10.5C7 11.4 7.15 12.25 7.4 13H22.6C22.85 12.25 23 11.4 23 10.5C23 6.5 20 3 15 3Z" fill="#FF6F91"/><path d="M8 14L15 27L22 14H8Z" fill="#FFF8E8"/></svg>
+        <span>Sweet<em>Scoops</em></span>
+      </a>
+      <p class="footer-tag">Scoops of happiness. One bite at a time.</p>
+    </div>
+
+    <div>
+      <h5>Quick Links</h5>
+      <a href="index.html">Home</a>
+      <a href="home2.html">Home 2</a>
+      <a href="about.html">About Us</a>
+      <a href="celebrations.html">Celebrations</a>
+      <a href="menu.html">Menu</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="contact.html">Contact</a>
+    </div>
+
+    <div>
+      <h5>Visit</h5>
+      <a href="contact.html">Location</a>
+      <a href="contact.html">Opening Hours</a>
+      <a href="contact.html">Contact Us</a>
+      <a href="celebrations.html">Party Orders</a>
+    </div>
+
+    <div>
+      <h5>Follow Us</h5>
+      <a href="#">Instagram</a>
+      <a href="#">Facebook</a>
+      <a href="#">YouTube</a>
+    </div>
+
+    <div>
+      <h5>Stay In The Loop</h5>
+      <p class="footer-tag" style="max-width:none;">Get updates on new flavors &amp; sweet offers.</p>
+      <form id="newsletterForm" class="newsletter-form">
+        <label for="newsletterEmail" class="sr-only" style="position:absolute; width:1px; height:1px; overflow:hidden; clip:rect(0 0 0 0);">Email address</label>
+        <input id="newsletterEmail" type="email" required placeholder="Enter your email">
+        <button type="submit" class="newsletter-submit" aria-label="Subscribe">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+      </form>
+      <p id="newsletterMsg" class="newsletter-note" aria-live="polite"></p>
+    </div>
+  </div>
+
+  <div class="container footer-bottom">
+    <span>© 2026 SweetScoops. All rights reserved.</span>
+    <div class="footer-legal"><a href="#">Privacy Policy</a><a href="#">Terms &amp; Conditions</a></div>
+  </div>
+</footer>
+
+<script src="js/script.js"></script>
+</body>
+</html>

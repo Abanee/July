@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<script>
+(function(){
+  try{
+    var stored = localStorage.getItem('theme');
+    var theme = stored || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+    if (theme === 'dark') document.documentElement.classList.add('dark');
+  } catch(e){}
+})();
+</script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>SweetScoops — Ice Cream & Waffle Shop</title>
+<meta name="description" content="Fresh scoops, golden waffles, creamy shakes and little moments worth sharing. Visit SweetScoops today." />
+
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<!-- Tailwind CDN -->
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    darkMode: 'class',
+    theme: {
+      extend: {
+        colors: {
+          cream: 'var(--bg-primary)',
+          choco: 'var(--text-primary)',
+          strawberry: 'var(--strawberry)',
+          mango: 'var(--mango)',
+          mint: 'var(--mint)',
+          berry: 'var(--berry)',
+        },
+        fontFamily: {
+          display: ['Fredoka', 'sans-serif'],
+          body: ['Plus Jakarta Sans', 'sans-serif'],
+        }
+      }
+    }
+  }
+</script>
+
+<link rel="stylesheet" href="css/style.css" />
+</head>
+<body class="bg-cream text-choco font-body antialiased">
+
+<!-- ============ NAVIGATION ============ -->
+<header id="siteNav" class="nav">
+  <div class="nav-inner">
+    <a href="index.html" class="logo" aria-label="SweetScoops home">
+      <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M15 3C10 3 7 6.5 7 10.5C7 11.4 7.15 12.25 7.4 13H22.6C22.85 12.25 23 11.4 23 10.5C23 6.5 20 3 15 3Z" fill="#FF6F91"/>
+        <path d="M8 14L15 27L22 14H8Z" fill="#4A2C2A"/>
+        <circle cx="12.5" cy="9" r="1.3" fill="#FFF8E8"/>
+        <circle cx="17.5" cy="8" r="1" fill="#FFF8E8"/>
+      </svg>
+      <span>Sweet<em>Scoops</em></span>
+    </a>
+
+    <nav class="nav-center" aria-label="Primary">
+      <a href="index.html" class="is-current">Home</a>
+      <a href="home2.html">Home 2</a>
+      <a href="about.html">About</a>
+      <a href="celebrations.html">Celebrations</a>
+      <a href="menu.html">Menu</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+
+    <div class="nav-right">
+      <button class="icon-btn search-toggle" aria-label="Search site">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><circle cx="11" cy="11" r="7" stroke="currentColor" stroke-width="2"/><path d="M20 20l-4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+      </button>
+      <button class="theme-toggle" type="button" aria-label="Switch to dark mode" aria-pressed="false">
+        <svg class="theme-icon-sun" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="4.5" stroke="currentColor" stroke-width="1.8"/><path d="M12 2.5v2.2M12 19.3v2.2M4.2 4.2l1.55 1.55M18.25 18.25l1.55 1.55M2.5 12h2.2M19.3 12h2.2M4.2 19.8l1.55-1.55M18.25 5.75l1.55-1.55" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+        <svg class="theme-icon-moon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20.5 14.8A8.5 8.5 0 1 1 9.2 3.5a7 7 0 0 0 11.3 11.3Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>
+      </button>
+      <button class="rtl-toggle" type="button" aria-label="Switch text direction">RTL</button>
+      <a href="#" class="btn btn-primary btn-sm">Sign In</a>
+      <button id="menuToggle" class="menu-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobileNav">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+
+  <!-- Mobile slide-down -->
+  <div id="mobileNav" class="mobile-nav">
+    <div class="mobile-theme-row">
+      <span>Controls</span>
+      <div style="display:flex; gap:8px;">
+        <button class="rtl-toggle" type="button">RTL</button>
+        <button class="theme-toggle" type="button" aria-label="Switch to dark mode" aria-pressed="false">
+          <svg class="theme-icon-sun" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="4.5" stroke="currentColor" stroke-width="1.8"/><path d="M12 2.5v2.2M12 19.3v2.2M4.2 4.2l1.55 1.55M18.25 18.25l1.55 1.55M2.5 12h2.2M19.3 12h2.2M4.2 19.8l1.55-1.55M18.25 5.75l1.55-1.55" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+          <svg class="theme-icon-moon" viewBox="0 0 24 24" fill="none"><path d="M20.5 14.8A8.5 8.5 0 1 1 9.2 3.5a7 7 0 0 0 11.3 11.3Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>
+        </button>
+      </div>
+    </div>
+    <a href="index.html" class="is-current">Home</a>
+    <a href="home2.html">Home 2</a>
+    <a href="about.html">About</a>
+    <a href="celebrations.html">Celebrations</a>
+    <a href="menu.html">Menu</a>
+    <a href="gallery.html">Gallery</a>
+    <a href="contact.html">Contact</a>
+    <a href="#" class="btn btn-primary btn-sm mt-2">Sign In</a>
+  </div>
+</header>
+
+<!-- Search Modal Drawer -->
+<div id="searchModal" class="search-modal" aria-hidden="true">
+  <div class="search-box">
+    <button id="closeSearch" class="search-close" aria-label="Close search">&times;</button>
+    <h3 style="margin-bottom:12px; font-family:'Fredoka',sans-serif;">Search SweetScoops</h3>
+    <input type="text" placeholder="Search flavors, waffles, shakes..." />
+  </div>
+</div>
+
+<main id="home">
+
+  <!-- ============ HERO ============ -->
+  <section class="hero" aria-label="Introduction">
+    <div class="hero-inner">
+      <div class="hero-text reveal">
+        <h1 class="hero-heading">Life Is Better<br>With <span class="text-strawberry">A Scoop.</span></h1>
+        <p class="hero-sub">Fresh scoops, golden waffles, creamy shakes and little moments worth sharing.</p>
+        <div class="hero-actions">
+          <a href="menu.html" class="btn-hero-primary">Explore Menu <span class="btn-icon-badge">+</span></a>
+          <a href="contact.html" class="btn-hero-secondary">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M12 21s7-6.2 7-11.5A7 7 0 0 0 5 9.5C5 14.8 12 21 12 21Z" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="9.5" r="2.5" stroke="currentColor" stroke-width="2"/></svg>
+            Find Our Store
+          </a>
+        </div>
+        <ul class="trust-line">
+          <li>🍦 Freshly made</li>
+          <span class="trust-sep">|</span>
+          <li>❤️ Family friendly</li>
+          <span class="trust-sep">|</span>
+          <li>🛍️ Dine-in & takeaway</li>
+        </ul>
+      </div>
+
+      <div class="hero-visual reveal">
+        <div class="hero-img-wrap">
+          <img src="Assets/hero_waffle_bowl.png" alt="Waffle bowl piled with colorful ice cream scoops" class="hero-img" />
+        </div>
+
+        <span class="float-label lbl-strawberry">Strawberry</span>
+        <span class="float-label lbl-choco">Belgian Chocolate</span>
+        <span class="float-label lbl-mango">Mango</span>
+        <span class="float-label lbl-mint">Pistachio</span>
+
+        <div class="today-badge" aria-label="Today's flavor: Mango Magic">
+          <span class="tb-sparkle">✨</span>
+          <span class="tb-eyebrow">Today's Flavor</span>
+          <span class="tb-title">Mango Magic</span>
+          <span class="tb-pill">Limited Today</span>
+        </div>
+      </div>
+    </div>
+    <div class="hero-curve" aria-hidden="true">
+      <svg viewBox="0 0 1440 80" fill="none" preserveAspectRatio="none">
+        <path d="M0,32 C320,70 640,85 960,40 C1200,10 1360,25 1440,35 L1440,80 L0,80 Z" fill="var(--bg-primary)"/>
+      </svg>
+    </div>
+  </section>
+
+  <!-- ============ WHAT ARE YOU CRAVING ============ -->
+  <section id="craving" class="section">
+    <div class="container">
+      <div class="section-head reveal">
+        <h2>What Are You Craving?</h2>
+        <p>Pick your favorite way to make today sweeter.</p>
+      </div>
+
+      <div class="craving-rail reveal">
+        <a href="#signature" class="craving-item">
+          <span class="craving-circle"><img src="https://loremflickr.com/300/300/icecream,scoop" alt="Colorful ice cream scoops"></span>
+          <span class="craving-name">Ice Cream</span>
+          <span class="craving-arrow">→</span>
+        </a>
+        <a href="#signature" class="craving-item">
+          <span class="craving-circle"><img src="https://loremflickr.com/300/300/waffle,belgian" alt="Belgian waffle"></span>
+          <span class="craving-name">Waffles</span>
+          <span class="craving-arrow">→</span>
+        </a>
+        <a href="#signature" class="craving-item">
+          <span class="craving-circle"><img src="https://loremflickr.com/300/300/crepe,dessert" alt="Folded crepe"></span>
+          <span class="craving-name">Crepes</span>
+          <span class="craving-arrow">→</span>
+        </a>
+        <a href="#signature" class="craving-item">
+          <span class="craving-circle"><img src="https://loremflickr.com/300/300/milkshake,pink" alt="Tall milkshake"></span>
+          <span class="craving-name">Milkshakes</span>
+          <span class="craving-arrow">→</span>
+        </a>
+        <a href="#signature" class="craving-item">
+          <span class="craving-circle"><img src="https://loremflickr.com/300/300/sundae,chocolate" alt="Loaded sundae"></span>
+          <span class="craving-name">Sundaes</span>
+          <span class="craving-arrow">→</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ SIGNATURE CREATIONS ============ -->
+  <section id="signature" class="section section-alt">
+    <div class="container">
+      <div class="section-head-split reveal">
+        <div>
+          <h2>Made For<br>Serious Cravings.</h2>
+          <p>A few of the treats our customers keep coming back for.</p>
+        </div>
+        <a href="#signature" class="btn btn-primary btn-sm">View Full Menu</a>
+      </div>
+
+      <div class="product-grid reveal">
+        <article class="product-card product-featured">
+          <span class="tag tag-pop">Popular</span>
+          <div class="product-img"><img src="https://loremflickr.com/700/500/waffle,chocolate,icecream" alt="Belgian Chocolate Waffle"></div>
+          <div class="product-body">
+            <span class="product-cat">Waffle • Chocolate • Brownie</span>
+            <h3>Belgian Chocolate Waffle</h3>
+            <p>Crispy golden waffle, chocolate ice cream, brownie pieces and warm chocolate drizzle.</p>
+            <div class="product-foot"><span class="price">₹249</span><a href="#" class="btn btn-primary btn-xs">Try This</a></div>
+          </div>
+        </article>
+
+        <article class="product-card">
+          <div class="product-img"><img src="https://loremflickr.com/500/400/strawberry,sundae" alt="Strawberry Dream Sundae"></div>
+          <div class="product-body">
+            <span class="product-cat">Strawberry • Berries • Cream</span>
+            <h3>Strawberry Dream Sundae</h3>
+            <p>Fresh strawberry ice cream, berries, cream and strawberry sauce.</p>
+            <div class="product-foot"><span class="price">₹229</span><a href="#" class="btn btn-primary btn-xs">View</a></div>
+          </div>
+        </article>
+
+        <article class="product-card">
+          <div class="product-img"><img src="https://loremflickr.com/500/400/milkshake,cookies" alt="Cookies & Cream Shake"></div>
+          <div class="product-body">
+            <span class="product-cat">Vanilla • Cookie • Cream</span>
+            <h3>Cookies & Cream Shake</h3>
+            <p>Creamy vanilla shake with cookie crumble and whipped cream.</p>
+            <div class="product-foot"><span class="price">₹199</span><a href="#" class="btn btn-primary btn-xs">View</a></div>
+          </div>
+        </article>
+
+        <article class="product-card">
+          <div class="product-img"><img src="https://loremflickr.com/500/400/crepe,caramel" alt="Caramel Crunch Crepe"></div>
+          <div class="product-body">
+            <span class="product-cat">Caramel • Crepe • Crunch</span>
+            <h3>Caramel Crunch Crepe</h3>
+            <p>Warm crepe with caramel ice cream, crunchy toppings and caramel drizzle.</p>
+            <div class="product-foot"><span class="price">₹239</span><a href="#" class="btn btn-primary btn-xs">View</a></div>
+          </div>
+        </article>
+
+        <article class="product-card">
+          <div class="product-img"><img src="https://loremflickr.com/500/400/mango,icecream" alt="Mango Magic"></div>
+          <div class="product-body">
+            <span class="product-cat">Mango • Fresh Fruit</span>
+            <h3>Mango Magic</h3>
+            <p>Mango ice cream with fresh mango pieces.</p>
+            <div class="product-foot"><span class="price">₹219</span><a href="#" class="btn btn-primary btn-xs">View</a></div>
+          </div>
+        </article>
+
+        <article class="product-card">
+          <div class="product-img"><img src="https://loremflickr.com/500/400/brownie,chocolate,sundae" alt="Brownie Blast"></div>
+          <div class="product-body">
+            <span class="product-cat">Chocolate • Brownie • Sauce</span>
+            <h3>Brownie Blast</h3>
+            <p>Chocolate ice cream, brownie chunks and chocolate sauce.</p>
+            <div class="product-foot"><span class="price">₹259</span><a href="#" class="btn btn-primary btn-xs">View</a></div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ PICK YOUR PERFECT PAIR ============ -->
+  <section id="pair" class="section">
+    <div class="container pair-grid">
+      <div class="pair-img reveal">
+        <img src="https://loremflickr.com/800/900/waffle,strawberry" alt="Warm waffle with a scoop of ice cream">
+      </div>
+
+      <div class="pair-content reveal">
+        <h2>Pick Your Perfect Pair.</h2>
+        <p class="section-sub">Warm waffle. Cold scoop. Perfect combination.</p>
+
+        <div class="pair-steps">
+          <div class="pair-step">
+            <span class="step-label">Step 1 — Choose Waffle</span>
+            <div class="chip-group" data-group="waffle">
+              <button class="chip is-active" data-value="Belgian" data-price="0">Belgian</button>
+              <button class="chip" data-value="Chocolate" data-price="20">Chocolate</button>
+              <button class="chip" data-value="Caramel" data-price="20">Caramel</button>
+            </div>
+          </div>
+
+          <div class="pair-step">
+            <span class="step-label">Step 2 — Choose Ice Cream</span>
+            <div class="chip-group" data-group="icecream">
+              <button class="chip" data-value="Vanilla" data-price="0">Vanilla</button>
+              <button class="chip" data-value="Chocolate" data-price="0">Chocolate</button>
+              <button class="chip is-active" data-value="Strawberry" data-price="10">Strawberry</button>
+              <button class="chip" data-value="Mango" data-price="10">Mango</button>
+            </div>
+          </div>
+
+          <div class="pair-step">
+            <span class="step-label">Step 3 — Choose Topping</span>
+            <div class="chip-group" data-group="topping">
+              <button class="chip is-active" data-value="Brownie" data-price="30">Brownie</button>
+              <button class="chip" data-value="Oreo" data-price="25">Oreo</button>
+              <button class="chip" data-value="Berries" data-price="20">Berries</button>
+              <button class="chip" data-value="Caramel" data-price="20">Caramel</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="pair-result reveal">
+        <span class="result-eyebrow">Your Creation</span>
+        <h4 id="resultWaffle">Belgian Waffle</h4>
+        <ul id="resultList">
+          <li>+ Strawberry</li>
+          <li>+ Brownie</li>
+        </ul>
+        <span class="result-price" id="resultPrice" data-base="249">₹299</span>
+        <button class="btn btn-primary btn-block">Build My Combo</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ SEASONAL DROP ============ -->
+  <section class="seasonal">
+    <div class="container seasonal-grid">
+      <div class="seasonal-text reveal">
+        <span class="badge-limited">Limited Flavor</span>
+        <h2>Here For A<br><span class="text-mango">Limited</span> Time.</h2>
+        <h3>Mango Coconut Cloud</h3>
+        <p>Creamy mango ice cream, coconut crunch and fresh mango pieces.</p>
+        <a href="#" class="btn btn-mango">Try The Seasonal Drop</a>
+      </div>
+      <div class="seasonal-visual reveal">
+        <span class="avail-tag">Available Now</span>
+        <img src="https://loremflickr.com/700/700/mango,coconut,icecream" alt="Mango coconut ice cream in a coconut shell">
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FAMILY MOMENTS ============ -->
+  <section id="family" class="section">
+    <div class="container">
+      <div class="section-head reveal">
+        <h2>Dessert Tastes Better Together.</h2>
+      </div>
+      <div class="moments-grid reveal">
+        <figure class="moment-card">
+          <img src="https://loremflickr.com/600/750/kids,icecream" alt="Kids enjoying ice cream cones together">
+          <figcaption><h4>After-School Treat</h4><p>The perfect way to end the day.</p></figcaption>
+        </figure>
+        <figure class="moment-card">
+          <img src="https://loremflickr.com/600/750/friends,waffle,cafe" alt="Friends sharing waffles on a weekend">
+          <figcaption><h4>Weekend Waffle Date</h4><p>Good food. Great company.</p></figcaption>
+        </figure>
+        <figure class="moment-card">
+          <img src="https://loremflickr.com/600/750/birthday,cake,celebration" alt="Birthday celebration dessert table">
+          <figcaption><h4>Birthday Celebration</h4><p>Make birthdays extra special.</p></figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ STORE EXPERIENCE ============ -->
+  <section id="store" class="section section-alt">
+    <div class="container store-grid">
+      <div class="store-img reveal">
+        <img src="https://loremflickr.com/900/900/cafe,interior,dessert" alt="Warm, inviting SweetScoops dessert shop interior">
+      </div>
+      <div class="store-content reveal">
+        <h2>Come Get Happy.</h2>
+        <p>Drop in for a quick scoop, stay for a waffle, or make us part of your next celebration.</p>
+
+        <div class="store-info">
+          <div class="info-row">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.6"/><path d="M12 7v5l3 3" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+            <div>
+              <span class="info-label">Opening Hours</span>
+              <span>Mon – Fri &nbsp;10:00 AM – 10:00 PM</span>
+              <span>Sat – Sun &nbsp;10:00 AM – 11:00 PM</span>
+            </div>
+            <span id="hoursStatus" class="status-pill">—</span>
+          </div>
+          <div class="info-row">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M12 21s7-6.2 7-11.5A7 7 0 0 0 5 9.5C5 14.8 12 21 12 21Z" stroke="currentColor" stroke-width="1.6"/><circle cx="12" cy="9.5" r="2.3" stroke="currentColor" stroke-width="1.6"/></svg>
+            <div>
+              <span class="info-label">Location</span>
+              <span>123 Dessert Street, Sweet City</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-actions">
+          <a href="#" class="btn btn-primary">Get Directions</a>
+          <a href="#" class="btn btn-outline">Contact Us</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ PARTY CTA ============ -->
+  <section id="party" class="party">
+    <div class="confetti" aria-hidden="true"></div>
+    <div class="container party-grid">
+      <div class="reveal">
+        <h2>Planning Something<br><span class="text-mango">Sweet?</span></h2>
+        <p>Birthday parties, family celebrations, school events and bulk dessert orders.</p>
+        <div class="hero-actions">
+          <a href="#" class="btn btn-primary">Plan A Party</a>
+          <a href="#" class="btn btn-outline btn-light">Bulk Orders</a>
+        </div>
+      </div>
+      <div class="party-img reveal">
+        <img src="https://loremflickr.com/700/600/birthday,dessert,party" alt="Birthday party dessert arrangement">
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FINAL BRAND STATEMENT ============ -->
+  <section class="statement reveal">
+    <svg width="34" height="34" viewBox="0 0 30 30" fill="none" class="mx-auto mb-4"><path d="M15 3C10 3 7 6.5 7 10.5C7 11.4 7.15 12.25 7.4 13H22.6C22.85 12.25 23 11.4 23 10.5C23 6.5 20 3 15 3Z" fill="#FF6F91"/><path d="M8 14L15 27L22 14H8Z" fill="#4A2C2A"/></svg>
+    <h2>Scoops of happiness.<br>One bite at a time.</h2>
+  </section>
+
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer class="footer">
+  <div class="container footer-grid footer-grid-5">
+    <div>
+      <a href="index.html" class="logo logo-light">
+        <svg width="26" height="26" viewBox="0 0 30 30" fill="none"><path d="M15 3C10 3 7 6.5 7 10.5C7 11.4 7.15 12.25 7.4 13H22.6C22.85 12.25 23 11.4 23 10.5C23 6.5 20 3 15 3Z" fill="#FF6F91"/><path d="M8 14L15 27L22 14H8Z" fill="#FFF8E8"/></svg>
+        <span>Sweet<em>Scoops</em></span>
+      </a>
+      <p class="footer-tag">Scoops of happiness. One bite at a time.</p>
+    </div>
+
+    <div>
+      <h5>Quick Links</h5>
+      <a href="index.html">Home</a>
+      <a href="home2.html">Home 2</a>
+      <a href="about.html">About Us</a>
+      <a href="celebrations.html">Celebrations</a>
+      <a href="menu.html">Menu</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="contact.html">Contact</a>
+    </div>
+
+    <div>
+      <h5>Visit</h5>
+      <a href="contact.html">Location</a>
+      <a href="contact.html">Opening Hours</a>
+      <a href="contact.html">Contact Us</a>
+      <a href="celebrations.html">Party Orders</a>
+    </div>
+
+    <div>
+      <h5>Follow Us</h5>
+      <a href="#">Instagram</a>
+      <a href="#">Facebook</a>
+      <a href="#">YouTube</a>
+    </div>
+
+    <div>
+      <h5>Stay In The Loop</h5>
+      <p class="footer-tag" style="max-width:none;">Get updates on new flavors &amp; sweet offers.</p>
+      <form id="newsletterForm" class="newsletter-form">
+        <label for="newsletterEmail" class="sr-only" style="position:absolute; width:1px; height:1px; overflow:hidden; clip:rect(0 0 0 0);">Email address</label>
+        <input id="newsletterEmail" type="email" required placeholder="Enter your email">
+        <button type="submit" class="newsletter-submit" aria-label="Subscribe">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+      </form>
+      <p id="newsletterMsg" class="newsletter-note" aria-live="polite"></p>
+    </div>
+  </div>
+
+  <div class="container footer-bottom">
+    <span>© 2026 SweetScoops. All rights reserved.</span>
+    <div class="footer-legal"><a href="#">Privacy Policy</a><a href="#">Terms &amp; Conditions</a></div>
+  </div>
+</footer>
+
+<script src="js/script.js"></script>
+</body>
+</html>

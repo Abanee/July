@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<script>
+(function(){
+  try{
+    var storedTheme = localStorage.getItem('theme');
+    var theme = storedTheme || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+    if (theme === 'dark') document.documentElement.classList.add('dark');
+    if (localStorage.getItem('dir') === 'rtl') document.documentElement.setAttribute('dir', 'rtl');
+  } catch(e){}
+})();
+</script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Contact Us — SweetScoops</title>
+<meta name="description" content="Get in touch with SweetScoops. Find our store locations, opening hours, or send us a message." />
+
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="css/style.css" />
+</head>
+<body class="bg-cream text-choco font-body antialiased">
+
+<!-- ============ NAVIGATION ============ -->
+<header id="siteNav" class="nav">
+  <div class="nav-inner">
+    <a href="index.html" class="logo" aria-label="SweetScoops home">
+      <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M15 3C10 3 7 6.5 7 10.5C7 11.4 7.15 12.25 7.4 13H22.6C22.85 12.25 23 11.4 23 10.5C23 6.5 20 3 15 3Z" fill="#FF6F91"/>
+        <path d="M8 14L15 27L22 14H8Z" fill="#4A2C2A"/>
+        <circle cx="12.5" cy="9" r="1.3" fill="#FFF8E8"/>
+        <circle cx="17.5" cy="8" r="1" fill="#FFF8E8"/>
+      </svg>
+      <span>Sweet<em>Scoops</em></span>
+    </a>
+
+    <nav class="nav-center" aria-label="Primary">
+      <a href="index.html">Home</a>
+      <a href="home2.html">Home 2</a>
+      <a href="about.html">About</a>
+      <a href="celebrations.html">Celebrations</a>
+      <a href="menu.html">Menu</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="contact.html" class="is-current">Contact</a>
+    </nav>
+
+    <div class="nav-right">
+      <button class="icon-btn search-toggle" aria-label="Search site">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><circle cx="11" cy="11" r="7" stroke="currentColor" stroke-width="2"/><path d="M20 20l-4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+      </button>
+      <button class="theme-toggle" type="button" aria-label="Switch to dark mode" aria-pressed="false">
+        <svg class="theme-icon-sun" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="4.5" stroke="currentColor" stroke-width="1.8"/><path d="M12 2.5v2.2M12 19.3v2.2M4.2 4.2l1.55 1.55M18.25 18.25l1.55 1.55M2.5 12h2.2M19.3 12h2.2M4.2 19.8l1.55-1.55M18.25 5.75l1.55-1.55" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+        <svg class="theme-icon-moon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20.5 14.8A8.5 8.5 0 1 1 9.2 3.5a7 7 0 0 0 11.3 11.3Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>
+      </button>
+      <button class="rtl-toggle" type="button" aria-label="Switch text direction">RTL</button>
+      <a href="#" class="btn btn-primary btn-sm">Sign In</a>
+      <button id="menuToggle" class="menu-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobileNav">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+
+  <!-- Mobile slide-down -->
+  <div id="mobileNav" class="mobile-nav">
+    <div class="mobile-theme-row">
+      <span>Controls</span>
+      <div style="display:flex; gap:8px;">
+        <button class="rtl-toggle" type="button">RTL</button>
+        <button class="theme-toggle" type="button" aria-label="Switch to dark mode" aria-pressed="false">
+          <svg class="theme-icon-sun" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="4.5" stroke="currentColor" stroke-width="1.8"/><path d="M12 2.5v2.2M12 19.3v2.2M4.2 4.2l1.55 1.55M18.25 18.25l1.55 1.55M2.5 12h2.2M19.3 12h2.2M4.2 19.8l1.55-1.55M18.25 5.75l1.55-1.55" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+          <svg class="theme-icon-moon" viewBox="0 0 24 24" fill="none"><path d="M20.5 14.8A8.5 8.5 0 1 1 9.2 3.5a7 7 0 0 0 11.3 11.3Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>
+        </button>
+      </div>
+    </div>
+    <a href="index.html">Home</a>
+    <a href="home2.html">Home 2</a>
+    <a href="about.html">About</a>
+    <a href="celebrations.html">Celebrations</a>
+    <a href="menu.html">Menu</a>
+    <a href="gallery.html">Gallery</a>
+    <a href="contact.html" class="is-current">Contact</a>
+    <a href="#" class="btn btn-primary btn-sm mt-2">Sign In</a>
+  </div>
+</header>
+
+<!-- Search Modal Drawer -->
+<div id="searchModal" class="search-modal" aria-hidden="true">
+  <div class="search-box">
+    <button id="closeSearch" class="search-close" aria-label="Close search">&times;</button>
+    <h3 style="margin-bottom:12px; font-family:'Fredoka',sans-serif;">Search SweetScoops</h3>
+    <input type="text" placeholder="Search flavors, waffles, shakes..." />
+  </div>
+</div>
+
+<main>
+  <!-- HERO -->
+  <section class="section" style="padding:60px 0 40px; text-align:center;">
+    <div class="container reveal">
+      <p class="eyebrow" style="font-weight:700; color:var(--strawberry); text-transform:uppercase; letter-spacing:.05em; font-size:.85rem; margin-bottom:10px;">We'd Love To Hear From You</p>
+      <h1 style="font-size:clamp(2.4rem, 4.5vw, 3.8rem); font-family:'Fredoka',sans-serif; margin-bottom:16px;">Contact <span class="text-strawberry">SweetScoops</span></h1>
+      <p style="max-width:560px; margin:0 auto; opacity:.85; line-height:1.6;">Have questions about our menu, party hosting, or bulk orders? Drop us a line or visit our store!</p>
+    </div>
+  </section>
+
+  <!-- CONTACT GRID -->
+  <section class="section section-alt">
+    <div class="container enquiry-grid reveal">
+      <div class="enquiry-info">
+        <h2>Visit Our Scoop Shop</h2>
+        <p>Step in for freshly baked waffles, handcrafted artisanal scoops, and a warm atmosphere for family & friends.</p>
+        
+        <div class="enquiry-contact">
+          <div class="enquiry-contact-row">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 21s7-6.2 7-11.5A7 7 0 0 0 5 9.5C5 14.8 12 21 12 21Z" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="9.5" r="2.5" stroke="currentColor" stroke-width="2"/></svg>
+            <span>124 Sweet Haven Lane, Dessert District</span>
+          </div>
+          <div class="enquiry-contact-row">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" stroke="currentColor" stroke-width="2"/></svg>
+            <span>+1 (800) 555-SCOOP</span>
+          </div>
+          <div class="enquiry-contact-row">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" stroke="currentColor" stroke-width="2"/><polyline points="22,6 12,13 2,6" stroke="currentColor" stroke-width="2"/></svg>
+            <span>hello@sweetscoops.com</span>
+          </div>
+        </div>
+
+        <div style="background:var(--bg-primary); border-radius:20px; padding:20px; border:1px solid var(--border); margin-top:20px;">
+          <h4 style="font-family:'Fredoka',sans-serif; margin-bottom:8px; font-size:1.1rem; color:var(--strawberry);">Opening Hours</h4>
+          <p style="font-size:.9rem; margin-bottom:4px; opacity:.85;">Mon – Thu: 11:00 AM – 10:00 PM</p>
+          <p style="font-size:.9rem; margin-bottom:4px; opacity:.85;">Fri – Sat: 11:00 AM – 11:30 PM</p>
+          <p style="font-size:.9rem; opacity:.85;">Sunday: 12:00 PM – 10:00 PM</p>
+        </div>
+      </div>
+
+      <div class="enquiry-form">
+        <h3 style="font-family:'Fredoka',sans-serif; font-size:1.4rem; margin-bottom:18px;">Send Us A Message</h3>
+        <form id="contactPageForm">
+          <div class="form-row">
+            <div class="form-field">
+              <label for="cName">Your Name</label>
+              <input id="cName" type="text" required placeholder="John Doe">
+            </div>
+            <div class="form-field">
+              <label for="cEmail">Your Email</label>
+              <input id="cEmail" type="email" required placeholder="john@example.com">
+            </div>
+          </div>
+          <div class="form-field">
+            <label for="cSubject">Subject</label>
+            <input id="cSubject" type="text" placeholder="General Inquiry / Feedback">
+          </div>
+          <div class="form-field">
+            <label for="cMessage">Message</label>
+            <textarea id="cMessage" required placeholder="Tell us what's on your mind..."></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary btn-block">Send Message</button>
+        </form>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer class="footer">
+  <div class="container footer-grid footer-grid-5">
+    <div>
+      <a href="index.html" class="logo logo-light">
+        <svg width="26" height="26" viewBox="0 0 30 30" fill="none"><path d="M15 3C10 3 7 6.5 7 10.5C7 11.4 7.15 12.25 7.4 13H22.6C22.85 12.25 23 11.4 23 10.5C23 6.5 20 3 15 3Z" fill="#FF6F91"/><path d="M8 14L15 27L22 14H8Z" fill="#FFF8E8"/></svg>
+        <span>Sweet<em>Scoops</em></span>
+      </a>
+      <p class="footer-tag">Scoops of happiness. One bite at a time.</p>
+    </div>
+
+    <div>
+      <h5>Quick Links</h5>
+      <a href="index.html">Home</a>
+      <a href="home2.html">Home 2</a>
+      <a href="about.html">About Us</a>
+      <a href="celebrations.html">Celebrations</a>
+      <a href="menu.html">Menu</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="contact.html">Contact</a>
+    </div>
+
+    <div>
+      <h5>Visit</h5>
+      <a href="contact.html">Location</a>
+      <a href="contact.html">Opening Hours</a>
+      <a href="contact.html">Contact Us</a>
+      <a href="celebrations.html">Party Orders</a>
+    </div>
+
+    <div>
+      <h5>Follow Us</h5>
+      <a href="#">Instagram</a>
+      <a href="#">Facebook</a>
+      <a href="#">YouTube</a>
+    </div>
+
+    <div>
+      <h5>Stay In The Loop</h5>
+      <p class="footer-tag" style="max-width:none;">Get updates on new flavors &amp; sweet offers.</p>
+      <form id="newsletterForm" class="newsletter-form">
+        <label for="newsletterEmail" class="sr-only" style="position:absolute; width:1px; height:1px; overflow:hidden; clip:rect(0 0 0 0);">Email address</label>
+        <input id="newsletterEmail" type="email" required placeholder="Enter your email">
+        <button type="submit" class="newsletter-submit" aria-label="Subscribe">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+      </form>
+      <p id="newsletterMsg" class="newsletter-note" aria-live="polite"></p>
+    </div>
+  </div>
+
+  <div class="container footer-bottom">
+    <span>© 2026 SweetScoops. All rights reserved.</span>
+    <div class="footer-legal"><a href="#">Privacy Policy</a><a href="#">Terms &amp; Conditions</a></div>
+  </div>
+</footer>
+
+<script src="js/script.js"></script>
+</body>
+</html>
