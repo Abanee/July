@@ -552,4 +552,27 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  /* ---------- Today's Special Countdown Timer ---------- */
+  const timerHrs = document.getElementById('timerHrs');
+  const timerMins = document.getElementById('timerMins');
+  const timerSecs = document.getElementById('timerSecs');
+
+  if (timerHrs && timerMins && timerSecs) {
+    const updateCountdown = () => {
+      const now = new Date();
+      const endOfDay = new Date(now.getFullYear(), now.getMonth(), now.getDate(), 23, 59, 59);
+      const diff = Math.max(0, endOfDay - now);
+
+      const hrs = Math.floor(diff / (1000 * 60 * 60));
+      const mins = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+      const secs = Math.floor((diff % (1000 * 60)) / 1000);
+
+      timerHrs.textContent = String(hrs).padStart(2, '0');
+      timerMins.textContent = String(mins).padStart(2, '0');
+      timerSecs.textContent = String(secs).padStart(2, '0');
+    };
+    updateCountdown();
+    setInterval(updateCountdown, 1000);
+  }
+
 });
