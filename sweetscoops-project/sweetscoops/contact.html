@@ -15,6 +15,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Contact Us — SweetScoops</title>
 <meta name="description" content="Get in touch with SweetScoops. Find our store locations, opening hours, or send us a message." />
+<link rel="icon" type="image/png" href="logo.png" />
+<link rel="apple-touch-icon" href="logo.png" />
 
 <!-- Fonts -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -29,12 +31,7 @@
 <header id="siteNav" class="nav">
   <div class="nav-inner">
     <a href="index.html" class="logo" aria-label="SweetScoops home">
-      <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M15 3C10 3 7 6.5 7 10.5C7 11.4 7.15 12.25 7.4 13H22.6C22.85 12.25 23 11.4 23 10.5C23 6.5 20 3 15 3Z" fill="#FF6F91"/>
-        <path d="M8 14L15 27L22 14H8Z" fill="#4A2C2A"/>
-        <circle cx="12.5" cy="9" r="1.3" fill="#FFF8E8"/>
-        <circle cx="17.5" cy="8" r="1" fill="#FFF8E8"/>
-      </svg>
+      <img src="logo.png" alt="SweetScoops Logo" class="logo-img" />
       <span>Sweet<em>Scoops</em></span>
     </a>
 
@@ -169,6 +166,39 @@
       </div>
     </div>
   </section>
+
+  <!-- ============ REAL MAP SECTION ============ -->
+  <section class="section contact-map-section" aria-label="Store Location Map">
+    <div class="container reveal">
+      <div class="section-head text-center" style="margin-bottom: 28px; text-align:center;">
+        <h2 style="font-family:'Fredoka',sans-serif; font-size:2.1rem; color:var(--choco);">Find Our Store On The Map</h2>
+        <p style="color:var(--choco); opacity:0.85;">Visit us in person for fresh scoops, crispy warm waffles, and handcrafted milkshakes.</p>
+      </div>
+
+      <div class="map-card-wrapper">
+        <iframe
+          class="map-iframe"
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3022.21770731454!2d-73.98656668459367!3d40.75797497932688!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25855c6480299%3A0x55194ec5a1ae072e!2sTimes%20Square!5e0!3m2!1sen!2sus!4v1629800000000!5m2!1sen!2sus"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          title="SweetScoops Shop Location">
+        </iframe>
+
+        <div class="map-floating-card">
+          <h4>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 21s7-6.2 7-11.5A7 7 0 0 0 5 9.5C5 14.8 12 21 12 21Z"/><circle cx="12" cy="9.5" r="2.5"/></svg>
+            SweetScoops Flagship
+          </h4>
+          <p>124 Sweet Haven Lane, Dessert District<br>Open Daily: 11:00 AM – 11:30 PM</p>
+          <a href="https://maps.google.com/?q=124+Sweet+Haven+Lane+Dessert+District" target="_blank" rel="noopener noreferrer" class="map-directions-btn">
+            Get Directions
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
 </main>
 
 <!-- ============ FOOTER ============ -->
@@ -176,7 +206,7 @@
   <div class="container footer-grid footer-grid-5">
     <div>
       <a href="index.html" class="logo logo-light">
-        <svg width="26" height="26" viewBox="0 0 30 30" fill="none"><path d="M15 3C10 3 7 6.5 7 10.5C7 11.4 7.15 12.25 7.4 13H22.6C22.85 12.25 23 11.4 23 10.5C23 6.5 20 3 15 3Z" fill="#FF6F91"/><path d="M8 14L15 27L22 14H8Z" fill="#FFF8E8"/></svg>
+        <img src="logo.png" alt="SweetScoops Logo" class="logo-img" />
         <span>Sweet<em>Scoops</em></span>
       </a>
       <p class="footer-tag">Scoops of happiness. One bite at a time.</p>

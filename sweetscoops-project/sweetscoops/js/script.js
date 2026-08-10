@@ -443,6 +443,7 @@ document.addEventListener('DOMContentLoaded', () => {
      "no fake price" summary, per spec: show "Custom quote" instead of a total. */
   const celebSummaryList = document.getElementById('celebSummaryList');
   const celebSummaryGuests = document.getElementById('celebSummaryGuests');
+  const celebSummaryImg = document.getElementById('celebSummaryImg');
   const celebGroups = document.querySelectorAll('.chip-group[data-celeb]');
 
   function renderCelebrationSummary() {
@@ -453,12 +454,19 @@ document.addEventListener('DOMContentLoaded', () => {
     celebGroups.forEach(group => {
       const activeChips = Array.from(group.querySelectorAll('.chip.is-active'));
       if (!activeChips.length) return;
-      const values = activeChips.map(c => c.dataset.value);
 
       if (group.dataset.celeb === 'guests') {
-        guestsText = `${values[0]} Guests`;
+        const val = activeChips[0].dataset.value;
+        guestsText = val.includes('Guests') ? val : `${val} Guests`;
       } else {
-        values.forEach(v => lines.push(`<li>${v}</li>`));
+        activeChips.forEach(c => {
+          if (c.dataset.img && celebSummaryImg) {
+            celebSummaryImg.src = c.dataset.img;
+          }
+          if (c.dataset.value) {
+            lines.push(`<li>${c.dataset.value}</li>`);
+          }
+        });
       }
     });
 

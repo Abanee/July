@@ -14,6 +14,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Sweet Celebrations — SweetScoops</title>
 <meta name="description" content="Birthdays, family days, school and office events, bulk dessert orders — SweetScoops brings the ice cream, waffles and smiles to every celebration." />
+<link rel="icon" type="image/png" href="logo.png" />
+<link rel="apple-touch-icon" href="logo.png" />
 
 <!-- Fonts -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -28,12 +30,7 @@
 <header id="siteNav" class="nav">
   <div class="nav-inner">
     <a href="index.html" class="logo" aria-label="SweetScoops home">
-      <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M15 3C10 3 7 6.5 7 10.5C7 11.4 7.15 12.25 7.4 13H22.6C22.85 12.25 23 11.4 23 10.5C23 6.5 20 3 15 3Z" fill="#FF6F91"/>
-        <path d="M8 14L15 27L22 14H8Z" fill="#4A2C2A"/>
-        <circle cx="12.5" cy="9" r="1.3" fill="#FFF8E8"/>
-        <circle cx="17.5" cy="8" r="1" fill="#FFF8E8"/>
-      </svg>
+      <img src="logo.png" alt="SweetScoops Logo" class="logo-img" />
       <span>Sweet<em>Scoops</em></span>
     </a>
 
@@ -240,80 +237,186 @@
     </div>
   </section>
 
-  <!-- ============ 04 — BUILD YOUR PERFECT PARTY ============ -->
+  <!-- ============ 04 — BUILD YOUR PERFECT PARTY (REDESIGNED VISUAL BUILDER) ============ -->
   <section id="builder" class="section section-alt">
     <div class="container">
       <div class="section-head reveal">
         <h2>Build Your Perfect Party</h2>
-        <p>Choose what you need. We'll take care of the sweet part.</p>
+        <p>Pick your favorite setup, guest count, and delicious add-on treats.</p>
       </div>
 
-      <div class="builder-flex reveal">
-        <div class="builder-mini-grid">
+      <div class="visual-party-builder reveal">
+        
+        <!-- MAIN STEP-BY-STEP BUILDER -->
+        <div class="v-builder-main">
+          
+          <!-- STEP 1: PARTY SETUP / PACKAGE -->
+          <div class="v-step-block">
+            <div class="v-step-header">
+              <span class="v-step-num">1</span>
+              <h3>Choose Your Celebration Vibe</h3>
+            </div>
+            
+            <div class="v-pkg-grid chip-group" data-celeb="style" data-group="style">
+              
+              <button type="button" class="v-pkg-card chip is-active" data-value="Scoop Station Bar" data-img="Assets/Home 2/combo_family_tub.png">
+                <span class="v-check-icon">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none"><path d="M5 12l5 5L19 7" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </span>
+                <div class="v-pkg-img-wrap">
+                  <img src="Assets/Home 2/combo_family_tub.png" alt="Scoop Station Bar setup" loading="lazy">
+                  <span class="v-pkg-badge">Most Popular</span>
+                </div>
+                <div class="v-pkg-body">
+                  <h4>Scoop Station Bar</h4>
+                  <p>Handcrafted scoops served fresh with assorted sprinkles &amp; cones.</p>
+                </div>
+              </button>
 
-          <div class="builder-mini-card">
-            <span class="builder-mini-num">1</span>
-            <span class="step-label">How Many Guests?</span>
-            <div class="chip-group" data-celeb="guests" data-group="guests">
-              <button class="chip" data-value="10–15" type="button"><span class="chip-radio"></span>10–15</button>
-              <button class="chip" data-value="15–25" type="button"><span class="chip-radio"></span>15–25</button>
-              <button class="chip is-active" data-value="25–50" type="button"><span class="chip-radio"></span>25–50</button>
-              <button class="chip" data-value="50+" type="button"><span class="chip-radio"></span>50+</button>
+              <button type="button" class="v-pkg-card chip" data-value="Waffle &amp; Crepe Feast" data-img="Assets/Home 2/cat_waffle.png">
+                <span class="v-check-icon">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none"><path d="M5 12l5 5L19 7" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </span>
+                <div class="v-pkg-img-wrap">
+                  <img src="Assets/Home 2/cat_waffle.png" alt="Waffle and crepe feast setup" loading="lazy">
+                  <span class="v-pkg-badge">Warm &amp; Fresh</span>
+                </div>
+                <div class="v-pkg-body">
+                  <h4>Waffle &amp; Crepe Feast</h4>
+                  <p>Golden waffles, crepe bites, and warm Belgian chocolate drizzle.</p>
+                </div>
+              </button>
+
+              <button type="button" class="v-pkg-card chip" data-value="Shake &amp; Sundae Party" data-img="Assets/Home 2/cat_milkshakes.png">
+                <span class="v-check-icon">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none"><path d="M5 12l5 5L19 7" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </span>
+                <div class="v-pkg-img-wrap">
+                  <img src="Assets/Home 2/cat_milkshakes.png" alt="Shake and sundae party setup" loading="lazy">
+                  <span class="v-pkg-badge">Crowd Favorite</span>
+                </div>
+                <div class="v-pkg-body">
+                  <h4>Shake &amp; Sundae Party</h4>
+                  <p>Thick artisanal milkshakes topped with whipped cream &amp; berries.</p>
+                </div>
+              </button>
+
+              <button type="button" class="v-pkg-card chip" data-value="Ultimate Dessert Buffet" data-img="Assets/blog_featured.png">
+                <span class="v-check-icon">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none"><path d="M5 12l5 5L19 7" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </span>
+                <div class="v-pkg-img-wrap">
+                  <img src="Assets/blog_featured.png" alt="Grand dessert buffet setup" loading="lazy">
+                  <span class="v-pkg-badge">Deluxe Spread</span>
+                </div>
+                <div class="v-pkg-body">
+                  <h4>Ultimate Buffet</h4>
+                  <p>Full catering spread with scoops, waffles, shakes &amp; gourmet toppings.</p>
+                </div>
+              </button>
+
             </div>
           </div>
 
-          <div class="builder-mini-card">
-            <span class="builder-mini-num">2</span>
-            <span class="step-label">Choose Your Treats</span>
-            <div class="chip-group" data-celeb="treats" data-group="treats" data-multi="true">
-              <button class="chip is-active" data-value="Ice Cream Cups" type="button"><span class="chip-check"><svg width="10" height="10" viewBox="0 0 24 24" fill="none"><path d="M5 12l5 5L19 7" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Ice Cream Cups</button>
-              <button class="chip" data-value="Mini Waffles" type="button"><span class="chip-check"><svg width="10" height="10" viewBox="0 0 24 24" fill="none"><path d="M5 12l5 5L19 7" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Mini Waffles</button>
-              <button class="chip" data-value="Crepe Bites" type="button"><span class="chip-check"><svg width="10" height="10" viewBox="0 0 24 24" fill="none"><path d="M5 12l5 5L19 7" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Crepe Bites</button>
-              <button class="chip is-active" data-value="Milkshakes" type="button"><span class="chip-check"><svg width="10" height="10" viewBox="0 0 24 24" fill="none"><path d="M5 12l5 5L19 7" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Milkshakes</button>
-              <button class="chip" data-value="Sundaes" type="button"><span class="chip-check"><svg width="10" height="10" viewBox="0 0 24 24" fill="none"><path d="M5 12l5 5L19 7" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Sundaes</button>
+          <!-- STEP 2: GUEST COUNT -->
+          <div class="v-step-block">
+            <div class="v-step-header">
+              <span class="v-step-num">2</span>
+              <h3>Select Expected Guests</h3>
+            </div>
+
+            <div class="v-guest-grid chip-group" data-celeb="guests" data-group="guests">
+              <button type="button" class="v-guest-btn chip" data-value="10–15">10–15 Guests</button>
+              <button type="button" class="v-guest-btn chip" data-value="15–25">15–25 Guests</button>
+              <button type="button" class="v-guest-btn chip is-active" data-value="25–50">25–50 Guests</button>
+              <button type="button" class="v-guest-btn chip" data-value="50+">50+ Guests</button>
             </div>
           </div>
 
-          <div class="builder-mini-card">
-            <span class="builder-mini-num">3</span>
-            <span class="step-label">Choose Your Extras</span>
-            <div class="chip-group" data-celeb="extras" data-group="extras" data-multi="true">
-              <button class="chip is-active" data-value="Brownies" type="button"><span class="chip-check"><svg width="10" height="10" viewBox="0 0 24 24" fill="none"><path d="M5 12l5 5L19 7" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Brownies</button>
-              <button class="chip" data-value="Fresh Berries" type="button"><span class="chip-check"><svg width="10" height="10" viewBox="0 0 24 24" fill="none"><path d="M5 12l5 5L19 7" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Fresh Berries</button>
-              <button class="chip" data-value="Oreo" type="button"><span class="chip-check"><svg width="10" height="10" viewBox="0 0 24 24" fill="none"><path d="M5 12l5 5L19 7" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Oreo</button>
-              <button class="chip" data-value="Sprinkles" type="button"><span class="chip-check"><svg width="10" height="10" viewBox="0 0 24 24" fill="none"><path d="M5 12l5 5L19 7" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Sprinkles</button>
-              <button class="chip" data-value="Caramel" type="button"><span class="chip-check"><svg width="10" height="10" viewBox="0 0 24 24" fill="none"><path d="M5 12l5 5L19 7" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Caramel</button>
-              <button class="chip is-active" data-value="Chocolate Sauce" type="button"><span class="chip-check"><svg width="10" height="10" viewBox="0 0 24 24" fill="none"><path d="M5 12l5 5L19 7" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Chocolate Sauce</button>
+          <!-- STEP 3: TREATS & EXTRAS -->
+          <div class="v-step-block">
+            <div class="v-step-header">
+              <span class="v-step-num">3</span>
+              <h3>Choose Treats &amp; Add-ons</h3>
+            </div>
+
+            <div class="v-treat-grid chip-group" data-celeb="treats" data-group="treats" data-multi="true">
+              
+              <button type="button" class="v-treat-card chip is-active" data-value="Ice Cream Cups">
+                <span class="v-check-icon"><svg width="10" height="10" viewBox="0 0 24 24" fill="none"><path d="M5 12l5 5L19 7" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                <img src="Assets/Home 2/combo_family_tub.png" alt="Ice cream cups" class="v-treat-img">
+                <span class="v-treat-name">Ice Cream Cups</span>
+              </button>
+
+              <button type="button" class="v-treat-card chip is-active" data-value="Mini Waffles">
+                <span class="v-check-icon"><svg width="10" height="10" viewBox="0 0 24 24" fill="none"><path d="M5 12l5 5L19 7" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                <img src="Assets/Home 2/cat_waffle.png" alt="Mini waffles" class="v-treat-img">
+                <span class="v-treat-name">Mini Waffles</span>
+              </button>
+
+              <button type="button" class="v-treat-card chip" data-value="Milkshakes">
+                <span class="v-check-icon"><svg width="10" height="10" viewBox="0 0 24 24" fill="none"><path d="M5 12l5 5L19 7" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                <img src="Assets/Home 2/cat_milkshakes.png" alt="Milkshakes" class="v-treat-img">
+                <span class="v-treat-name">Milkshakes</span>
+              </button>
+
+              <button type="button" class="v-treat-card chip is-active" data-value="Brownie Bites">
+                <span class="v-check-icon"><svg width="10" height="10" viewBox="0 0 24 24" fill="none"><path d="M5 12l5 5L19 7" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                <img src="Assets/blog_post_2.png" alt="Brownie bites" class="v-treat-img">
+                <span class="v-treat-name">Brownie Bites</span>
+              </button>
+
+              <button type="button" class="v-treat-card chip" data-value="Fresh Berries">
+                <span class="v-check-icon"><svg width="10" height="10" viewBox="0 0 24 24" fill="none"><path d="M5 12l5 5L19 7" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                <img src="Assets/blog_post_1.png" alt="Fresh berries" class="v-treat-img">
+                <span class="v-treat-name">Fresh Berries</span>
+              </button>
+
+              <button type="button" class="v-treat-card chip is-active" data-value="Chocolate Fudge">
+                <span class="v-check-icon"><svg width="10" height="10" viewBox="0 0 24 24" fill="none"><path d="M5 12l5 5L19 7" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                <img src="Assets/hero_waffle_bowl.png" alt="Chocolate fudge" class="v-treat-img">
+                <span class="v-treat-name">Chocolate Fudge</span>
+              </button>
+
             </div>
           </div>
 
-          <div class="builder-mini-card">
-            <span class="builder-mini-num">4</span>
-            <span class="step-label">Choose Your Style</span>
-            <div class="chip-group" data-celeb="style" data-group="style">
-              <button class="chip" data-value="Classic" type="button"><span class="chip-radio"></span>Classic</button>
-              <button class="chip" data-value="Kids" type="button"><span class="chip-radio"></span>Kids</button>
-              <button class="chip is-active" data-value="Premium" type="button"><span class="chip-radio"></span>Premium</button>
-              <button class="chip" data-value="Custom" type="button"><span class="chip-radio"></span>Custom</button>
+        </div>
+
+        <!-- SIDEBAR: LIVE PARTY SUMMARY -->
+        <div class="v-summary-sidebar">
+          <div class="v-summary-card">
+            <h4>Party Summary</h4>
+            <span class="v-summary-badge">Custom Event Package</span>
+            
+            <img id="celebSummaryImg" src="Assets/Home 2/combo_family_tub.png" alt="Party preview image" class="v-summary-preview-img">
+
+            <div class="v-summary-detail-row">
+              <span>Guest Count</span>
+              <span id="celebSummaryGuests">25–50 Guests</span>
             </div>
+
+            <div style="margin-top:14px;">
+              <span style="font-size:0.85rem; font-weight:700; color:var(--choco);">Included Treats &amp; Extras:</span>
+              <ul id="celebSummaryList" class="v-summary-items-list">
+                <li>Ice Cream Cups</li>
+                <li>Mini Waffles</li>
+                <li>Brownie Bites</li>
+                <li>Chocolate Fudge</li>
+              </ul>
+            </div>
+
+            <p style="font-size:0.8rem; color:var(--choco); opacity:0.85; margin-bottom:16px; line-height:1.4;">
+              We'll prepare a custom quote tailored to your selection.
+            </p>
+
+            <button id="sendPlanBtn" type="button" class="btn btn-primary btn-block" style="background:#FF4D79; color:#FFF; font-weight:700; border-radius:99px; padding:12px 20px; box-shadow:0 6px 18px rgba(255,77,121,0.4);">
+              Send This Plan
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" style="margin-left:6px;"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
           </div>
         </div>
 
-        <div class="celeb-result">
-          <span class="result-eyebrow">Your Celebration</span>
-          <h4>Celebration Summary</h4>
-          <span id="celebSummaryGuests" class="celeb-result-guests">25–50 Guests</span>
-          <ul id="celebSummaryList">
-            <li>Ice Cream Cups</li>
-            <li>Milkshakes</li>
-            <li>Brownies</li>
-            <li>Chocolate Sauce</li>
-          </ul>
-          <p class="celeb-quote-note">Pricing depends on final selection — we'll send you a custom quote.</p>
-          <button id="sendPlanBtn" type="button" class="btn btn-primary btn-block">Send This Plan
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </button>
-        </div>
       </div>
     </div>
   </section>
@@ -609,7 +712,7 @@
   <div class="container footer-grid footer-grid-5">
     <div>
       <a href="index.html" class="logo logo-light">
-        <svg width="26" height="26" viewBox="0 0 30 30" fill="none"><path d="M15 3C10 3 7 6.5 7 10.5C7 11.4 7.15 12.25 7.4 13H22.6C22.85 12.25 23 11.4 23 10.5C23 6.5 20 3 15 3Z" fill="#FF6F91"/><path d="M8 14L15 27L22 14H8Z" fill="#FFF8E8"/></svg>
+        <img src="logo.png" alt="SweetScoops Logo" class="logo-img" />
         <span>Sweet<em>Scoops</em></span>
       </a>
       <p class="footer-tag">Scoops of happiness. One bite at a time.</p>
