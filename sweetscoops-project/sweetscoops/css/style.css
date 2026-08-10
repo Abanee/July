@@ -4817,3 +4817,127 @@ html.dark .map-floating-card {
   color: #FF4D79;
 }
 
+/* ==========================================================================
+   PREMIUM ADD-ONS REDESIGN (EQUAL ASPECT RATIO CARDS)
+   ========================================================================== */
+.addon-grid-v2 {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 24px;
+}
+
+.addon-card-v2 {
+  background: var(--bg-primary);
+  border: 2px solid var(--border);
+  border-radius: 24px;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.03);
+}
+
+.addon-card-v2:hover {
+  transform: translateY(-6px);
+  border-color: #FF4D79;
+  box-shadow: 0 16px 36px rgba(255, 77, 121, 0.15);
+}
+
+.addon-img-box {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  border-radius: 18px;
+  overflow: hidden;
+  position: relative;
+  background: var(--bg-secondary);
+}
+
+.addon-img-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s var(--ease);
+}
+
+.addon-card-v2:hover .addon-img-box img {
+  transform: scale(1.08);
+}
+
+.addon-badge-pill {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(8px);
+  padding: 4px 10px;
+  border-radius: 99px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--choco);
+  z-index: 2;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.addon-body-v2 {
+  padding-top: 14px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.addon-title-v2 {
+  font-family: 'Fredoka', sans-serif;
+  font-size: 1.1rem;
+  color: var(--choco);
+  margin-bottom: 4px;
+}
+
+.addon-desc-v2 {
+  font-size: 0.82rem;
+  color: var(--choco);
+  opacity: 0.8;
+  line-height: 1.4;
+  margin-bottom: 14px;
+  flex: 1;
+}
+
+.addon-foot-v2 {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 10px;
+  border-top: 1px dashed var(--border);
+}
+
+.addon-price-v2 {
+  font-family: 'Fredoka', sans-serif;
+  font-weight: 700;
+  font-size: 1.15rem;
+  color: #FF4D79;
+}
+
+.addon-add-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 14px;
+  background: rgba(255, 77, 121, 0.1);
+  color: #FF4D79 !important;
+  border: 1.5px solid rgba(255, 77, 121, 0.3);
+  border-radius: 99px;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-weight: 700;
+  font-size: 0.82rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.addon-add-btn:hover {
+  background: #FF4D79;
+  color: #FFF !important;
+  border-color: #FF4D79;
+  box-shadow: 0 4px 12px rgba(255, 77, 121, 0.35);
+}
+
+
