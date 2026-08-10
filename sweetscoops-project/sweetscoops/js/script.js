@@ -30,8 +30,9 @@ document.addEventListener('DOMContentLoaded', () => {
   const syncRtlA11y = () => {
     const isRtl = document.documentElement.getAttribute('dir') === 'rtl';
     rtlToggles.forEach(btn => {
+      btn.textContent = isRtl ? 'LTR' : 'RTL';
       btn.classList.toggle('is-active', isRtl);
-      btn.setAttribute('aria-label', isRtl ? 'Switch to LTR' : 'Switch to RTL');
+      btn.setAttribute('aria-label', isRtl ? 'Switch to Left to Right text' : 'Switch to Right to Left text');
     });
   };
   try {
@@ -42,7 +43,8 @@ document.addEventListener('DOMContentLoaded', () => {
   syncRtlA11y();
 
   rtlToggles.forEach(btn => {
-    btn.addEventListener('click', () => {
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
       const isRtl = document.documentElement.getAttribute('dir') === 'rtl';
       const newDir = isRtl ? 'ltr' : 'rtl';
       document.documentElement.setAttribute('dir', newDir);
