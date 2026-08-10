@@ -106,11 +106,95 @@ html.dark .theme-toggle .theme-icon-moon{display:block;}
 .nav-inner{max-width:1320px; margin:0 auto; padding:18px 24px; display:flex; align-items:center; justify-content:space-between; transition:padding .35s var(--ease);}
 .nav.scrolled .nav-inner{padding:12px 24px;}
 
-.logo{display:flex; align-items:center; gap:8px; font-weight:600; font-size:1.25rem; color:var(--choco);}
-.logo-img{height:38px; width:auto; max-height:38px; object-fit:contain; display:block;}
-.logo em{font-style:normal; color:var(--strawberry);}
-.logo-light{color:#fff;}
-.logo-light em{color:var(--strawberry);}
+.logo,
+.logo:hover,
+.logo:focus,
+.logo:visited,
+.logo span,
+.logo em {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 600;
+  font-size: 1.25rem;
+  color: var(--choco);
+  text-decoration: none !important;
+  border: none !important;
+  outline: none !important;
+}
+
+.logo::after,
+.logo::before,
+.logo span::after,
+.logo span::before {
+  display: none !important;
+  content: none !important;
+}
+
+.logo-img {
+  height: 38px;
+  width: auto;
+  max-height: 38px;
+  object-fit: contain;
+  display: block;
+}
+
+.logo em {
+  font-style: normal;
+  color: var(--strawberry);
+}
+
+.logo-light {
+  color: #fff !important;
+}
+
+.logo-light em {
+  color: var(--strawberry) !important;
+}
+
+.footer .logo,
+.footer .logo-light,
+.footer .logo span,
+.footer .logo-light span {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 12px !important;
+  flex-direction: row !important;
+  text-decoration: none !important;
+  font-size: 1.55rem !important;
+  font-weight: 700 !important;
+  line-height: 1 !important;
+  margin-bottom: 12px !important;
+  color: #FFFFFF !important;
+}
+
+.footer .logo em,
+.footer .logo-light em {
+  color: #FF4D79 !important;
+}
+
+.footer .logo-img {
+  height: 44px !important;
+  max-height: 44px !important;
+  width: auto !important;
+}
+
+.footer-brand-extra {
+  margin-top: 12px;
+}
+
+.footer-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: #FFF3E0;
+  padding: 6px 14px;
+  border-radius: 99px;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
 
 .nav-center{display:flex; gap:34px;}
 .nav-center a{font-size:.92rem; font-weight:600; color:var(--choco); opacity:.8; position:relative; padding-bottom:4px;}
@@ -1635,6 +1719,8 @@ body.h2-body {
   width: 100%;
   max-width: 550px;
   padding-top: 18px;
+  padding-bottom: 20px;
+  margin-bottom: 24px;
   border-top: 1px solid var(--h2-border);
 }
 
@@ -1777,7 +1863,7 @@ body.h2-body {
 .h2-signature-section {
   position: relative;
   z-index: 30;
-  margin-top: -30px;
+  margin-top: 12px;
   padding: 0 32px 32px;
   background-color: var(--h2-vanilla);
 }
@@ -4939,5 +5025,478 @@ html.dark .map-floating-card {
   border-color: #FF4D79;
   box-shadow: 0 4px 12px rgba(255, 77, 121, 0.35);
 }
+
+/* ==========================================================================
+   ABOUT PAGE 6-CARD PROCESS GRID (3x2 ALIGNMENT)
+   ========================================================================== */
+.process-grid-v2 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.process-card-v2 {
+  background: var(--bg-primary);
+  border: 1px solid var(--border);
+  border-radius: 24px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  position: relative;
+  transition: transform 0.3s var(--ease), box-shadow 0.3s var(--ease), border-color 0.3s ease;
+}
+
+.process-card-v2:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.08);
+  border-color: #FF4D79;
+}
+
+.process-num-v2 {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: #FF4D79;
+  color: #FFF;
+  font-family: 'Fredoka', sans-serif;
+  font-weight: 700;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 14px;
+  box-shadow: 0 4px 12px rgba(255, 77, 121, 0.3);
+}
+
+.process-img-v2 {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  border-radius: 18px;
+  overflow: hidden;
+  margin-bottom: 14px;
+  background: var(--bg-secondary);
+}
+
+.process-img-v2 img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s var(--ease);
+}
+
+.process-card-v2:hover .process-img-v2 img {
+  transform: scale(1.08);
+}
+
+.process-card-v2 h5 {
+  font-family: 'Fredoka', sans-serif;
+  font-size: 1.15rem;
+  color: var(--choco);
+  margin-bottom: 6px;
+}
+
+.process-card-v2 p {
+  font-size: 0.85rem;
+  color: var(--choco);
+  opacity: 0.8;
+  line-height: 1.45;
+  margin: 0;
+}
+
+/* ==========================================================================
+   CELEBRATIONS PAGE REAL MOMENTS EQUAL ASPECT RATIO GRID
+   ========================================================================== */
+.real-moments-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 24px;
+}
+
+.real-moment-card {
+  position: relative;
+  border-radius: 22px;
+  overflow: hidden;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  background: var(--bg-card, #FFF);
+  border: 1px solid var(--border);
+  transition: transform 0.35s var(--ease), box-shadow 0.35s var(--ease);
+}
+
+.real-moment-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.15);
+}
+
+.real-moment-img-box {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+  position: relative;
+}
+
+.real-moment-img-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s var(--ease);
+}
+
+.real-moment-card:hover .real-moment-img-box img {
+  transform: scale(1.08);
+}
+
+.real-moment-caption {
+  position: absolute;
+  bottom: 0;
+  inset-x: 0;
+  background: linear-gradient(180deg, transparent 0%, rgba(18, 9, 11, 0.85) 100%);
+  color: #FFF;
+  padding: 20px 16px 14px;
+  font-family: 'Fredoka', sans-serif;
+  font-size: 1.1rem;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+@media (max-width: 1024px) {
+  .process-grid-v2 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .process-grid-v2 {
+    grid-template-columns: 1fr;
+  }
+  .real-moments-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 400px) {
+  .real-moments-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ==========================================================================
+   ARTISAN DIETARY GUIDE GRID (SECTION 02 ON MENU PAGE)
+   ========================================================================== */
+.dietary-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 24px;
+}
+
+.dietary-card {
+  background: var(--bg-primary);
+  border: 1px solid var(--border);
+  border-radius: 24px;
+  padding: 18px;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s var(--ease), box-shadow 0.3s var(--ease), border-color 0.3s ease;
+  position: relative;
+}
+
+.dietary-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.08);
+  border-color: #FF4D79;
+}
+
+.dietary-img-box {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  border-radius: 18px;
+  overflow: hidden;
+  position: relative;
+  background: var(--bg-secondary);
+}
+
+.dietary-img-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s var(--ease);
+}
+
+.dietary-card:hover .dietary-img-box img {
+  transform: scale(1.08);
+}
+
+.dietary-badge {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  background: rgba(255, 255, 255, 0.94);
+  backdrop-filter: blur(8px);
+  padding: 4px 12px;
+  border-radius: 99px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--choco);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  z-index: 2;
+}
+
+.dietary-body {
+  padding: 14px 4px 4px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.dietary-title {
+  font-family: 'Fredoka', sans-serif;
+  font-size: 1.15rem;
+  color: var(--choco);
+  margin-bottom: 6px;
+}
+
+.dietary-desc {
+  font-size: 0.85rem;
+  color: var(--choco);
+  opacity: 0.8;
+  line-height: 1.45;
+  margin: 0;
+}
+
+/* ==========================================================================
+   LOVED BY THOUSANDS - EQUAL ASPECT RATIO TESTIMONIAL GRID
+   ========================================================================== */
+.testimonial-grid-v2 {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+
+.testimonial-card-v2 {
+  background: var(--bg-primary);
+  border: 1px solid var(--border);
+  border-radius: 24px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 220px;
+  transition: transform 0.3s var(--ease), box-shadow 0.3s var(--ease), border-color 0.3s ease;
+}
+
+.testimonial-card-v2:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.08);
+  border-color: #FF4D79;
+}
+
+.testimonial-stars-v2 {
+  color: #FFB800;
+  font-size: 1rem;
+  letter-spacing: 2px;
+  margin-bottom: 12px;
+}
+
+.testimonial-quote-v2 {
+  font-size: 0.92rem;
+  color: var(--choco);
+  opacity: 0.88;
+  line-height: 1.55;
+  margin-bottom: 20px;
+  flex: 1;
+}
+
+.testimonial-author-v2 {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding-top: 14px;
+  border-top: 1px dashed var(--border);
+}
+
+.testimonial-avatar-v2 {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #FF4D79;
+}
+
+.testimonial-info-v2 {
+  display: flex;
+  flex-direction: column;
+}
+
+.testimonial-name-v2 {
+  font-family: 'Fredoka', sans-serif;
+  font-size: 0.98rem;
+  color: var(--choco);
+  font-weight: 600;
+}
+
+.testimonial-tag-v2 {
+  font-size: 0.72rem;
+  color: #FF4D79;
+  font-weight: 700;
+}
+
+@media (max-width: 1024px) {
+  .testimonial-grid-v2 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .testimonial-grid-v2 {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ==========================================================================
+   EVENT CATERING & SPECIAL SERVICES (CELEBRATIONS PAGE)
+   ========================================================================== */
+.celeb-services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 24px;
+}
+
+.celeb-service-card {
+  background: var(--bg-primary);
+  border: 1px solid var(--border);
+  border-radius: 24px;
+  padding: 18px;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s var(--ease), box-shadow 0.3s var(--ease), border-color 0.3s ease;
+  position: relative;
+}
+
+.celeb-service-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.08);
+  border-color: #FF4D79;
+}
+
+.celeb-service-img-box {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  border-radius: 18px;
+  overflow: hidden;
+  position: relative;
+  background: var(--bg-secondary);
+}
+
+.celeb-service-img-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s var(--ease);
+}
+
+.celeb-service-card:hover .celeb-service-img-box img {
+  transform: scale(1.08);
+}
+
+.celeb-service-badge {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  background: rgba(255, 255, 255, 0.94);
+  backdrop-filter: blur(8px);
+  padding: 4px 12px;
+  border-radius: 99px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--choco);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  z-index: 2;
+}
+
+.celeb-service-body {
+  padding: 16px 4px 4px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.celeb-service-head-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 8px;
+}
+
+.celeb-service-icon {
+  width: 34px;
+  height: 34px;
+  border-radius: 10px;
+  background: rgba(255, 77, 121, 0.12);
+  color: #FF4D79;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.celeb-service-title {
+  font-family: 'Fredoka', sans-serif;
+  font-size: 1.15rem;
+  color: var(--choco);
+  margin: 0;
+}
+
+.celeb-service-desc {
+  font-size: 0.85rem;
+  color: var(--choco);
+  opacity: 0.8;
+  line-height: 1.45;
+  margin-bottom: 16px;
+  flex: 1;
+}
+
+.celeb-service-foot {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 12px;
+  border-top: 1px dashed var(--border);
+}
+
+.celeb-service-price {
+  font-family: 'Fredoka', sans-serif;
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: #FF4D79;
+}
+
+.celeb-service-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 7px 16px;
+  background: #FF4D79;
+  color: #FFF !important;
+  border: none;
+  border-radius: 99px;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-weight: 700;
+  font-size: 0.82rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 12px rgba(255, 77, 121, 0.3);
+  text-decoration: none !important;
+}
+
+.celeb-service-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 18px rgba(255, 77, 121, 0.4);
+}
+
+
+
 
 
