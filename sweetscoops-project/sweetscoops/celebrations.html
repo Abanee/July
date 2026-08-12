@@ -106,7 +106,7 @@
         <h1 class="hero-heading">Make Every Moment <span class="text-strawberry">Sweeter.</span></h1>
         <p class="hero-sub">From birthday parties to big celebrations, we bring handcrafted scoops, warm waffles, and smiles to your special day.</p>
         <div class="hero-actions">
-          <a href="#builder" class="btn btn-primary">Plan My Celebration &rarr;</a>
+          <a href="#events" class="btn btn-primary">Plan My Celebration &rarr;</a>
           <a href="#packages" class="btn btn-outline" style="color:#FFF; border-color:rgba(255,255,255,0.6);">View Party Options</a>
         </div>
       </div>
@@ -193,7 +193,7 @@
             <span class="package-price-label">Starting at</span>
             <span class="package-price">₹1,499</span>
           </div>
-          <a href="#enquiry" class="btn btn-primary btn-block package-choose-btn" data-package="Sweet Starter">Choose Starter →</a>
+          <a href="#enquiry" class="btn btn-primary btn-block package-choose-btn" data-package="Sweet Starter">Choose Starter &rarr;</a>
         </article>
 
         <article class="package-card pkg-mango">
@@ -210,7 +210,7 @@
             <span class="package-price-label">Starting at</span>
             <span class="package-price">₹3,499</span>
           </div>
-          <a href="#enquiry" class="btn btn-mango btn-block package-choose-btn" data-package="Happy Crowd">Choose Happy Crowd →</a>
+          <a href="#enquiry" class="btn btn-primary btn-block package-choose-btn" data-package="Happy Crowd">Choose Happy Crowd &rarr;</a>
         </article>
 
         <article class="package-card pkg-mint">
@@ -228,7 +228,7 @@
             <span class="package-price-label">Starting at</span>
             <span class="package-price">₹5,999</span>
           </div>
-          <a href="#enquiry" class="btn btn-outline btn-block package-choose-btn" data-package="Big Sweet Day">Choose Big Sweet Day →</a>
+          <a href="#enquiry" class="btn btn-primary btn-block package-choose-btn" data-package="Big Sweet Day">Choose Big Sweet Day &rarr;</a>
         </article>
       </div>
 
@@ -236,187 +236,147 @@
     </div>
   </section>
 
-  <!-- ============ 04 — BUILD YOUR PERFECT PARTY (REDESIGNED VISUAL BUILDER) ============ -->
-  <section id="builder" class="section section-alt">
+
+  <!-- ============ 04 — WE CELEBRATE EVERY OCCASION ============ -->
+  <section id="events" class="section section-alt">
     <div class="container">
       <div class="section-head reveal">
-        <h2>Build Your Perfect Party</h2>
-        <p>Pick your favorite setup, guest count, and delicious add-on treats.</p>
+        <span class="eyebrow">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 2L14.5 9.5L22 12L14.5 14.5L12 22L9.5 14.5L2 12L9.5 9.5L12 2Z"/></svg>
+          Every Occasion
+        </span>
+        <h2>We Celebrate <span class="text-strawberry">Every Moment</span></h2>
+        <p>From intimate gatherings to grand celebrations — we sweeten them all.</p>
       </div>
 
-      <div class="visual-party-builder reveal">
-        
-        <!-- MAIN STEP-BY-STEP BUILDER -->
-        <div class="v-builder-main">
-          
-          <!-- STEP 1: PARTY SETUP / PACKAGE -->
-          <div class="v-step-block">
-            <div class="v-step-header">
-              <span class="v-step-num">1</span>
-              <h3>Choose Your Celebration Vibe</h3>
-            </div>
-            
-            <div class="v-pkg-grid chip-group" data-celeb="style" data-group="style">
-              
-              <button type="button" class="v-pkg-card chip is-active" data-value="Scoop Station Bar" data-img="Assets/Home 2/combo_family_tub.png">
-                <span class="v-check-icon">
-                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none"><path d="M5 12l5 5L19 7" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                </span>
-                <div class="v-pkg-img-wrap">
-                  <img src="Assets/Home 2/combo_family_tub.png" alt="Scoop Station Bar setup" loading="lazy">
-                  <span class="v-pkg-badge">Most Popular</span>
-                </div>
-                <div class="v-pkg-body">
-                  <h4>Scoop Station Bar</h4>
-                  <p>Handcrafted scoops served fresh with assorted sprinkles &amp; cones.</p>
-                </div>
-              </button>
+      <div class="event-type-grid reveal-group">
 
-              <button type="button" class="v-pkg-card chip" data-value="Waffle &amp; Crepe Feast" data-img="Assets/Home 2/cat_waffle.png">
-                <span class="v-check-icon">
-                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none"><path d="M5 12l5 5L19 7" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                </span>
-                <div class="v-pkg-img-wrap">
-                  <img src="Assets/Home 2/cat_waffle.png" alt="Waffle and crepe feast setup" loading="lazy">
-                  <span class="v-pkg-badge">Warm &amp; Fresh</span>
-                </div>
-                <div class="v-pkg-body">
-                  <h4>Waffle &amp; Crepe Feast</h4>
-                  <p>Golden waffles, crepe bites, and warm Belgian chocolate drizzle.</p>
-                </div>
-              </button>
-
-              <button type="button" class="v-pkg-card chip" data-value="Shake &amp; Sundae Party" data-img="Assets/Home 2/cat_milkshakes.png">
-                <span class="v-check-icon">
-                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none"><path d="M5 12l5 5L19 7" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                </span>
-                <div class="v-pkg-img-wrap">
-                  <img src="Assets/Home 2/cat_milkshakes.png" alt="Shake and sundae party setup" loading="lazy">
-                  <span class="v-pkg-badge">Crowd Favorite</span>
-                </div>
-                <div class="v-pkg-body">
-                  <h4>Shake &amp; Sundae Party</h4>
-                  <p>Thick artisanal milkshakes topped with whipped cream &amp; berries.</p>
-                </div>
-              </button>
-
-              <button type="button" class="v-pkg-card chip" data-value="Ultimate Dessert Buffet" data-img="Assets/blog_featured.png">
-                <span class="v-check-icon">
-                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none"><path d="M5 12l5 5L19 7" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                </span>
-                <div class="v-pkg-img-wrap">
-                  <img src="Assets/blog_featured.png" alt="Grand dessert buffet setup" loading="lazy">
-                  <span class="v-pkg-badge">Deluxe Spread</span>
-                </div>
-                <div class="v-pkg-body">
-                  <h4>Ultimate Buffet</h4>
-                  <p>Full catering spread with scoops, waffles, shakes &amp; gourmet toppings.</p>
-                </div>
-              </button>
-
-            </div>
+        <!-- Wedding -->
+        <div class="event-type-card reveal">
+          <div class="event-type-img-wrap">
+            <img src="https://loremflickr.com/600/420/wedding,dessert,elegant/all?lock=701" alt="Wedding dessert setup" loading="lazy">
+            <span class="event-type-badge" style="background:rgba(255,111,145,0.9);">Most Loved</span>
           </div>
-
-          <!-- STEP 2: GUEST COUNT -->
-          <div class="v-step-block">
-            <div class="v-step-header">
-              <span class="v-step-num">2</span>
-              <h3>Select Expected Guests</h3>
-            </div>
-
-            <div class="v-guest-grid chip-group" data-celeb="guests" data-group="guests">
-              <button type="button" class="v-guest-btn chip" data-value="10–15">10–15 Guests</button>
-              <button type="button" class="v-guest-btn chip" data-value="15–25">15–25 Guests</button>
-              <button type="button" class="v-guest-btn chip is-active" data-value="25–50">25–50 Guests</button>
-              <button type="button" class="v-guest-btn chip" data-value="50+">50+ Guests</button>
-            </div>
+          <div class="event-type-body">
+            <span class="event-type-icon" style="background:rgba(255,111,145,0.12); color:var(--strawberry);">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+            </span>
+            <h3>Weddings</h3>
+            <p>Elegant dessert stations, custom gelato cakes &amp; beautifully packaged sweet favors for your big day.</p>
+            <ul class="event-type-perks">
+              <li>Live Scoop Station</li>
+              <li>Custom Gelato Cake</li>
+              <li>Guest Favor Boxes</li>
+            </ul>
+            <a href="#enquiry" class="event-type-link">Plan Your Wedding Sweets &rarr;</a>
           </div>
-
-          <!-- STEP 3: TREATS & EXTRAS -->
-          <div class="v-step-block">
-            <div class="v-step-header">
-              <span class="v-step-num">3</span>
-              <h3>Choose Treats &amp; Add-ons</h3>
-            </div>
-
-            <div class="v-treat-grid chip-group" data-celeb="treats" data-group="treats" data-multi="true">
-              
-              <button type="button" class="v-treat-card chip is-active" data-value="Ice Cream Cups">
-                <span class="v-check-icon"><svg width="10" height="10" viewBox="0 0 24 24" fill="none"><path d="M5 12l5 5L19 7" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-                <img src="Assets/Home 2/combo_family_tub.png" alt="Ice cream cups" class="v-treat-img">
-                <span class="v-treat-name">Ice Cream Cups</span>
-              </button>
-
-              <button type="button" class="v-treat-card chip is-active" data-value="Mini Waffles">
-                <span class="v-check-icon"><svg width="10" height="10" viewBox="0 0 24 24" fill="none"><path d="M5 12l5 5L19 7" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-                <img src="Assets/Home 2/cat_waffle.png" alt="Mini waffles" class="v-treat-img">
-                <span class="v-treat-name">Mini Waffles</span>
-              </button>
-
-              <button type="button" class="v-treat-card chip" data-value="Milkshakes">
-                <span class="v-check-icon"><svg width="10" height="10" viewBox="0 0 24 24" fill="none"><path d="M5 12l5 5L19 7" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-                <img src="Assets/Home 2/cat_milkshakes.png" alt="Milkshakes" class="v-treat-img">
-                <span class="v-treat-name">Milkshakes</span>
-              </button>
-
-              <button type="button" class="v-treat-card chip is-active" data-value="Brownie Bites">
-                <span class="v-check-icon"><svg width="10" height="10" viewBox="0 0 24 24" fill="none"><path d="M5 12l5 5L19 7" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-                <img src="Assets/blog_post_2.png" alt="Brownie bites" class="v-treat-img">
-                <span class="v-treat-name">Brownie Bites</span>
-              </button>
-
-              <button type="button" class="v-treat-card chip" data-value="Fresh Berries">
-                <span class="v-check-icon"><svg width="10" height="10" viewBox="0 0 24 24" fill="none"><path d="M5 12l5 5L19 7" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-                <img src="Assets/blog_post_1.png" alt="Fresh berries" class="v-treat-img">
-                <span class="v-treat-name">Fresh Berries</span>
-              </button>
-
-              <button type="button" class="v-treat-card chip is-active" data-value="Chocolate Fudge">
-                <span class="v-check-icon"><svg width="10" height="10" viewBox="0 0 24 24" fill="none"><path d="M5 12l5 5L19 7" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-                <img src="Assets/hero_waffle_bowl.png" alt="Chocolate fudge" class="v-treat-img">
-                <span class="v-treat-name">Chocolate Fudge</span>
-              </button>
-
-            </div>
-          </div>
-
         </div>
 
-        <!-- SIDEBAR: LIVE PARTY SUMMARY -->
-        <div class="v-summary-sidebar">
-          <div class="v-summary-card">
-            <h4>Party Summary</h4>
-            <span class="v-summary-badge">Custom Event Package</span>
-            
-            <img id="celebSummaryImg" src="Assets/Home 2/combo_family_tub.png" alt="Party preview image" class="v-summary-preview-img">
+        <!-- Birthday -->
+        <div class="event-type-card reveal">
+          <div class="event-type-img-wrap">
+            <img src="https://loremflickr.com/600/420/birthday,party,icecream/all?lock=702" alt="Birthday party dessert" loading="lazy">
+            <span class="event-type-badge" style="background:rgba(255,200,87,0.95); color:#4A2C2A;">Popular Pick</span>
+          </div>
+          <div class="event-type-body">
+            <span class="event-type-icon" style="background:rgba(255,200,87,0.18); color:#c98a00;">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-8a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8"/><path d="M4 16s.5-1 2-1 2.5 2 4 2 2.5-2 4-2 2.5 2 4 2 2-1 2-1"/><path d="M2 21h20"/><path d="M7 8v-2a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v2"/></svg>
+            </span>
+            <h3>Birthday Parties</h3>
+            <p>Make every birthday unforgettable with handcrafted scoops, waffle platters &amp; custom-themed treats.</p>
+            <ul class="event-type-perks">
+              <li>Birthday Scoop Bars</li>
+              <li>Waffle Platters</li>
+              <li>Milkshake Towers</li>
+            </ul>
+            <a href="#enquiry" class="event-type-link">Plan Your Birthday &rarr;</a>
+          </div>
+        </div>
 
-            <div class="v-summary-detail-row">
-              <span>Guest Count</span>
-              <span id="celebSummaryGuests">25–50 Guests</span>
-            </div>
+        <!-- Kids Party -->
+        <div class="event-type-card reveal">
+          <div class="event-type-img-wrap">
+            <img src="https://loremflickr.com/600/420/kids,icecream,smiling,colorful/all?lock=703" alt="Kids ice cream party" loading="lazy">
+            <span class="event-type-badge" style="background:rgba(126,214,178,0.95); color:#1a4a35;">Family Fave</span>
+          </div>
+          <div class="event-type-body">
+            <span class="event-type-icon" style="background:rgba(126,214,178,0.18); color:#2f8a5f;">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg>
+            </span>
+            <h3>Kids Parties</h3>
+            <p>Bright, fun &amp; absolutely delicious — colourful scoops and waffle pops designed to delight little ones.</p>
+            <ul class="event-type-perks">
+              <li>Mini Scoop Cones</li>
+              <li>Waffle Pops</li>
+              <li>Sprinkle Toppings Bar</li>
+            </ul>
+            <a href="#enquiry" class="event-type-link">Plan Kids Party &rarr;</a>
+          </div>
+        </div>
 
-            <div style="margin-top:14px;">
-              <span style="font-size:0.85rem; font-weight:700; color:var(--choco);">Included Treats &amp; Extras:</span>
-              <ul id="celebSummaryList" class="v-summary-items-list">
-                <li>Ice Cream Cups</li>
-                <li>Mini Waffles</li>
-                <li>Brownie Bites</li>
-                <li>Chocolate Fudge</li>
-              </ul>
-            </div>
+        <!-- Corporate -->
+        <div class="event-type-card reveal">
+          <div class="event-type-img-wrap">
+            <img src="https://loremflickr.com/600/420/corporate,office,dessert,team/all?lock=704" alt="Corporate event desserts" loading="lazy">
+          </div>
+          <div class="event-type-body">
+            <span class="event-type-icon" style="background:rgba(116,86,200,0.12); color:var(--berry);">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
+            </span>
+            <h3>Corporate Events</h3>
+            <p>Sweeten team milestones, product launches &amp; office parties with premium bulk dessert packages.</p>
+            <ul class="event-type-perks">
+              <li>Bulk Ice Cream Tubs</li>
+              <li>Dessert Box Gifts</li>
+              <li>Catered Delivery</li>
+            </ul>
+            <a href="#enquiry" class="event-type-link">Corporate Enquiry &rarr;</a>
+          </div>
+        </div>
 
-            <p style="font-size:0.8rem; color:var(--choco); opacity:0.85; margin-bottom:16px; line-height:1.4;">
-              We'll prepare a custom quote tailored to your selection.
-            </p>
+        <!-- School Events -->
+        <div class="event-type-card reveal">
+          <div class="event-type-img-wrap">
+            <img src="https://loremflickr.com/600/420/school,children,icecream,event/all?lock=705" alt="School event desserts" loading="lazy">
+          </div>
+          <div class="event-type-body">
+            <span class="event-type-icon" style="background:rgba(255,111,145,0.1); color:var(--strawberry);">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+            </span>
+            <h3>School Fests</h3>
+            <p>Annual days, farewell parties &amp; cultural fests made sweeter with budget-friendly, crowd-ready desserts.</p>
+            <ul class="event-type-perks">
+              <li>Portion Cups</li>
+              <li>Milkshake Sets</li>
+              <li>Custom Stall Setup</li>
+            </ul>
+            <a href="#enquiry" class="event-type-link">Plan School Event &rarr;</a>
+          </div>
+        </div>
 
-            <button id="sendPlanBtn" type="button" class="btn btn-primary btn-block" style="background:#FF4D79; color:#FFF; font-weight:700; border-radius:99px; padding:12px 20px; box-shadow:0 6px 18px rgba(255,77,121,0.4);">
-              Send This Plan
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" style="margin-left:6px;"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            </button>
+        <!-- Anniversary -->
+        <div class="event-type-card reveal">
+          <div class="event-type-img-wrap">
+            <img src="https://loremflickr.com/600/420/anniversary,couple,dessert,romantic/all?lock=706" alt="Anniversary dessert setup" loading="lazy">
+          </div>
+          <div class="event-type-body">
+            <span class="event-type-icon" style="background:rgba(255,200,87,0.15); color:#c98a00;">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            </span>
+            <h3>Anniversaries</h3>
+            <p>Celebrate years of love with a romantic dessert setup — custom gelato, shared sundaes &amp; candlelit sweet bars.</p>
+            <ul class="event-type-perks">
+              <li>Couples Sundae Bar</li>
+              <li>Custom Flavour Picks</li>
+              <li>Elegant Plating</li>
+            </ul>
+            <a href="#enquiry" class="event-type-link">Plan Anniversary &rarr;</a>
           </div>
         </div>
 
       </div>
+
+      <p class="event-type-footnote reveal">Don't see your event type? <a href="contact.html">Talk to us</a> — we cater to any occasion.</p>
     </div>
   </section>
 
@@ -597,7 +557,7 @@
             </div>
             <p class="celeb-service-desc">Individually packed mini waffles, brownie bites &amp; ice cream jars for guest takeaway gifts.</p>
             <div class="celeb-service-foot">
-              <span class="celeb-service-price">From ₹199 / box</span>
+              <span class="celeb-service-price">From ₹199</span>
               <a href="contact.html" class="celeb-service-btn">Order Boxes &rarr;</a>
             </div>
           </div>

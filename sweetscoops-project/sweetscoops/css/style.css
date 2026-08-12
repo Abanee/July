@@ -1,11 +1,11 @@
 /* =========================================================
-   SweetScoops — shared stylesheet
-   Brand tokens: Vanilla Cream #FFF8E8 · Chocolate #4A2C2A
-   Strawberry #FF6F91 · Mango #FFC857 · Mint #7ED6B2 · Berry #7456C8
+   SweetScoops â€” shared stylesheet
+   Brand tokens: Vanilla Cream #FFF8E8 Â· Chocolate #4A2C2A
+   Strawberry #FF6F91 Â· Mango #FFC857 Â· Mint #7ED6B2 Â· Berry #7456C8
    ========================================================= */
 
 :root{
-  /* brand accent colors — constant across both themes (decorative identity) */
+  /* brand accent colors â€” constant across both themes (decorative identity) */
   --cream:#FFF8E8;
   --white:#FFFFFF;
   --strawberry:#FF6F91;
@@ -14,12 +14,12 @@
   --berry:#7456C8;
   --ink-on-accent:#4A2C2A; /* always-dark ink for text sitting on bright accent fills (mango pills, pastel badges) */
 
-  /* seasonal (purple) section gradient stops — themed separately from --berry so
+  /* seasonal (purple) section gradient stops â€” themed separately from --berry so
      --berry itself can stay a legible accent color for text/icons */
   --seasonal-1:#7456C8;
   --seasonal-2:#5c3fae;
 
-  /* mint promo-section surface — themed separately from --mint so --mint itself
+  /* mint promo-section surface â€” themed separately from --mint so --mint itself
      can stay a legible accent color for text/icons/category tags */
   --mint-surface:#7ED6B2;
 
@@ -32,9 +32,9 @@
   --text-secondary:#6B514C;
   --text-muted:#8A7470;
   --border:#E9DCC8;
-  --choco: var(--text-primary); /* legacy alias — every existing var(--choco) usage now themes automatically */
+  --choco: var(--text-primary); /* legacy alias â€” every existing var(--choco) usage now themes automatically */
 
-  /* constant "on dark surface" text — used on footer/party/rating-card, which
+  /* constant "on dark surface" text â€” used on footer/party/rating-card, which
      stay dark regardless of site theme */
   --on-dark:#FFF5E8;
   --on-dark-muted:#BDAAA1;
@@ -84,7 +84,7 @@ html.dark .theme-toggle .theme-icon-moon{display:block;}
 .mobile-theme-row{display:flex; align-items:center; justify-content:space-between; padding:12px 4px; border-bottom:1px solid var(--border); font-weight:600; font-size:.9rem;}
 
 /* ---------- buttons ---------- */
-.btn{display:inline-flex; align-items:center; gap:8px; padding:14px 26px; border-radius:999px; font-weight:600; font-size:.95rem; transition:transform .35s var(--ease), box-shadow .35s var(--ease), background .3s, color .3s; white-space:nowrap;}
+.btn{display:inline-flex; align-items:center; gap:8px; padding:14px 26px; border-radius:999px; font-weight:600; font-size:.95rem; transition:transform .35s var(--ease), box-shadow .35s var(--ease), background .3s, color .3s; white-space:nowrap; text-decoration:none !important;}
 .btn-primary{background:var(--strawberry); color:#fff; box-shadow:0 10px 24px -10px rgba(255,111,145,.6);}
 .btn-primary:hover{transform:translateY(-2px); box-shadow:0 14px 28px -10px rgba(255,111,145,.7);}
 .btn-outline{background:transparent; color:var(--choco); border:1.5px solid var(--border);}
@@ -947,6 +947,24 @@ html.dark .pillar-icon {
   background: var(--bg-tertiary);
 }
 
+.pillar-icon-green {
+  color: #2F8A5F;
+  background: rgba(126, 214, 178, 0.18);
+  border-color: rgba(126, 214, 178, 0.4);
+}
+
+.pillar-icon-amber {
+  color: #D97706;
+  background: rgba(255, 200, 87, 0.2);
+  border-color: rgba(255, 200, 87, 0.45);
+}
+
+.pillar-icon-pink {
+  color: var(--strawberry);
+  background: rgba(255, 111, 145, 0.18);
+  border-color: rgba(255, 111, 145, 0.35);
+}
+
 .promise-pillar-item h4 {
   font-size: 1rem;
   font-weight: 700;
@@ -1371,7 +1389,7 @@ html.dark .c-stat-box {
 }
 
 /* =========================================================
-   HOME 2 — "What Kind Of Sweet Are You?"
+   HOME 2 â€” "What Kind Of Sweet Are You?"
    Supplemental rules only. Shared rules above (nav, buttons,
    chip builder, reveal, seasonal, party, moments, footer,
    status pills) are reused as-is by home2.html.
@@ -1554,10 +1572,10 @@ html.dark .c-stat-box {
 .feature-grid{display:grid; grid-template-columns:repeat(4,1fr); gap:22px;}
 .feature-card{background:var(--bg-secondary); border-radius:24px; overflow:hidden; box-shadow:0 10px 26px -18px rgba(74,44,42,.3); transition:transform .35s var(--ease), box-shadow .35s var(--ease);}
 .feature-card:hover{transform:translateY(-5px); box-shadow:0 18px 34px -18px rgba(74,44,42,.35);}
-.feature-img{position:relative; aspect-ratio:4/3; overflow:hidden;}
-.feature-img img{width:100%; height:100%; object-fit:cover; transition:transform .5s var(--ease);}
+.feature-img{position:relative; aspect-ratio:4/3; overflow:visible;}
+.feature-img img{width:100%; height:100%; object-fit:cover; transition:transform .5s var(--ease); border-radius:24px 24px 0 0;}
 .feature-card:hover .feature-img img{transform:scale(1.06);}
-.feature-icon{position:absolute; bottom:-20px; right:18px; width:42px; height:42px; border-radius:50%; background:var(--bg-secondary); display:flex; align-items:center; justify-content:center; box-shadow:0 8px 18px -8px rgba(74,44,42,.4); z-index:2;}
+.feature-icon{position:absolute; bottom:-21px; right:18px; width:44px; height:44px; border-radius:50%; background:var(--bg-secondary); display:flex; align-items:center; justify-content:center; box-shadow:0 8px 20px rgba(74,44,42,.2); z-index:5; border:2px solid var(--bg-secondary);}
 .feature-body{padding:30px 20px 22px;}
 .feature-body h4{font-size:1.1rem; font-weight:600; margin-bottom:6px;}
 .feature-body p{font-size:.85rem; opacity:.7; line-height:1.5;}
@@ -1825,7 +1843,7 @@ html.dark .c-stat-box {
 
 .gallery-count{font-size:.82rem; font-weight:600; opacity:.6; margin-bottom:18px;}
 
-/* ---------- 4 × 6 equal-size image grid ---------- */
+/* ---------- 4 Ã— 6 equal-size image grid ---------- */
 .gallery-grid-wrap{display:grid; grid-template-columns:repeat(4,1fr); gap:20px;}
 .gallery-tile{position:relative; display:block; width:100%; aspect-ratio:1/1; border-radius:20px; overflow:hidden; border:none; padding:0; cursor:pointer; background:var(--bg-tertiary); box-shadow:0 8px 20px -14px rgba(74,44,42,.3); transition:transform .35s var(--ease), box-shadow .35s var(--ease);}
 .gallery-tile img{width:100%; height:100%; object-fit:cover; transition:transform .5s var(--ease);}
@@ -1933,7 +1951,7 @@ html.dark .c-stat-box {
 .package-for{font-size:.82rem; opacity:.7;}
 .package-list{list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:8px; font-size:.87rem;}
 .package-list li{display:flex; align-items:center; gap:8px;}
-.package-list li::before{content:'✓'; color:var(--strawberry); font-weight:700; font-size:.8rem;}
+.package-list li::before{content:'âœ“'; color:var(--strawberry); font-weight:700; font-size:.8rem;}
 .package-price-row{margin-top:auto; padding-top:6px;}
 .package-price-label{font-size:.72rem; opacity:.6; display:block; margin-bottom:2px;}
 .package-price{font-family:'Fredoka',sans-serif; font-weight:700; font-size:1.7rem;}
@@ -1960,7 +1978,7 @@ html.dark .c-stat-box {
 .celeb-result-guests{color:var(--strawberry); font-weight:700; font-size:.95rem; margin-bottom:14px; display:block;}
 .celeb-result ul{list-style:none; margin:0 0 18px; padding:0; display:flex; flex-direction:column; gap:8px; font-size:.88rem; opacity:.85;}
 .celeb-result ul li{display:flex; align-items:center; gap:8px;}
-.celeb-result ul li::before{content:'•'; color:var(--strawberry); font-weight:700;}
+.celeb-result ul li::before{content:'â€¢'; color:var(--strawberry); font-weight:700;}
 .celeb-result-empty{opacity:.55; font-size:.85rem; font-style:italic;}
 .celeb-quote-note{font-size:.76rem; opacity:.55; margin-bottom:16px;}
 
@@ -2151,7 +2169,7 @@ html.dark .deal-desc{color:#D9C3B4;}
 }
 
 /* =========================================================
-   Home 2 Hero Section — Pixel-Perfect Reproductions
+   Home 2 Hero Section â€” Pixel-Perfect Reproductions
    ========================================================= */
 
 :root {
@@ -3121,7 +3139,7 @@ body.h2-body {
 }
 
 /* =========================================================
-   Build Your Perfect Waffle — Enhanced UI/UX
+   Build Your Perfect Waffle â€” Enhanced UI/UX
    ========================================================= */
 
 .waffle-builder-section {
@@ -3576,7 +3594,7 @@ body.h2-body {
 }
 
 /* =========================================================
-   Home 2 Expansion — Artisan Scoops & Bundle Combos
+   Home 2 Expansion â€” Artisan Scoops & Bundle Combos
    ========================================================= */
 
 /* Typography Unification */
@@ -3999,7 +4017,7 @@ body.h2-body {
 }
 
 /* =========================================================
-   Blog Page — SweetScoops Journal & Testimonials
+   Blog Page â€” SweetScoops Journal & Testimonials
    ========================================================= */
 
 .blog-hero-section {
@@ -4446,7 +4464,7 @@ body.h2-body {
 }
 
 /* =========================================================
-   Scoop Club Newsletter Banner — Centered & High Contrast
+   Scoop Club Newsletter Banner â€” Centered & High Contrast
    ========================================================= */
 
 .scoop-club-newsletter {
@@ -4736,7 +4754,7 @@ html.dark .page-hero-glass-card {
 }
 
 /* =========================================================
-   Vertical Timeline — About Page
+   Vertical Timeline â€” About Page
    ========================================================= */
 
 .vertical-timeline {
@@ -4864,7 +4882,7 @@ html.dark .page-hero-glass-card {
   transform: scale(1.06);
 }
 
-/* Responsiveness for Mobile (360px–768px) */
+/* Responsiveness for Mobile (360pxâ€“768px) */
 @media (max-width: 768px) {
   .vertical-timeline::before {
     left: 24px;
@@ -5281,365 +5299,198 @@ html.dark .map-floating-card {
 }
 
 /* ==========================================================================
-   VISUAL PARTY BUILDER (CELEBRATIONS PAGE REDESIGN)
+   EVENT TYPE CARDS (CELEBRATIONS PAGE â€” WE CELEBRATE EVERY MOMENT)
    ========================================================================== */
-.visual-party-builder {
+
+.event-type-grid {
   display: grid;
-  grid-template-columns: 1fr 340px;
-  gap: 32px;
-  align-items: start;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+  margin-top: 16px;
 }
 
-.v-builder-main {
-  display: flex;
-  flex-direction: column;
-  gap: 32px;
-}
-
-.v-step-block {
-  background: var(--bg-primary);
-  border: 1px solid var(--border);
+.event-type-card {
+  background: var(--bg-secondary);
   border-radius: 24px;
-  padding: 28px;
-  box-shadow: 0 8px 24px rgba(0,0,0,0.04);
-}
-
-.v-step-header {
-  display: flex;
-  align-items: center;
-  gap: 14px;
-  margin-bottom: 20px;
-}
-
-.v-step-num {
-  width: 34px;
-  height: 34px;
-  border-radius: 50%;
-  background: #FF4D79;
-  color: #FFF;
-  font-family: 'Fredoka', sans-serif;
-  font-weight: 700;
-  font-size: 1.1rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 0 4px 12px rgba(255,77,121,0.3);
-  flex-shrink: 0;
-}
-
-.v-step-header h3 {
-  font-family: 'Fredoka', sans-serif;
-  font-size: 1.35rem;
-  color: var(--choco);
-  margin: 0;
-}
-
-/* Step 1: Package Grid */
-.v-pkg-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
-  gap: 16px;
-}
-
-.v-pkg-card {
-  position: relative;
-  border-radius: 18px;
   overflow: hidden;
-  border: 2px solid var(--border);
-  background: var(--bg-card, #FFF);
-  cursor: pointer;
-  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
-  text-align: left;
+  border: 1.5px solid var(--border);
   display: flex;
   flex-direction: column;
-  padding: 0;
+  transition: transform 0.35s var(--ease), box-shadow 0.35s var(--ease), border-color 0.3s ease;
+  box-shadow: 0 8px 28px -16px rgba(74,44,42,0.22);
 }
 
-.v-pkg-card:hover {
-  transform: translateY(-4px);
-  border-color: #FF4D79;
-  box-shadow: 0 12px 28px rgba(255, 77, 121, 0.18);
+.event-type-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 40px -16px rgba(74,44,42,0.28);
+  border-color: var(--strawberry);
 }
 
-.v-pkg-card.is-active {
-  border-color: #FF4D79;
-  background: rgba(255, 77, 121, 0.04);
-  box-shadow: 0 0 0 3px rgba(255, 77, 121, 0.25);
-}
-
-.v-pkg-img-wrap {
-  width: 100%;
-  height: 130px;
+.event-type-img-wrap {
   position: relative;
+  width: 100%;
+  aspect-ratio: 16/10;
   overflow: hidden;
 }
 
-.v-pkg-img-wrap img {
+.event-type-img-wrap img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform 0.35s ease;
+  transition: transform 0.5s var(--ease);
 }
 
-.v-pkg-card:hover .v-pkg-img-wrap img {
-  transform: scale(1.06);
+.event-type-card:hover .event-type-img-wrap img {
+  transform: scale(1.07);
 }
 
-.v-pkg-badge {
+.event-type-badge {
   position: absolute;
-  top: 10px;
-  right: 10px;
-  background: rgba(255, 255, 255, 0.92);
-  backdrop-filter: blur(8px);
-  padding: 4px 10px;
+  top: 14px;
+  left: 14px;
+  padding: 5px 12px;
   border-radius: 99px;
-  font-size: 0.75rem;
+  font-size: 0.72rem;
   font-weight: 700;
-  color: var(--choco);
+  letter-spacing: 0.03em;
+  color: #fff;
+  backdrop-filter: blur(6px);
 }
 
-.v-pkg-body {
-  padding: 16px;
+.event-type-body {
+  padding: 22px 22px 24px;
   display: flex;
   flex-direction: column;
-  gap: 6px;
+  gap: 10px;
   flex: 1;
 }
 
-.v-pkg-body h4 {
-  font-family: 'Fredoka', sans-serif;
-  font-size: 1.1rem;
-  color: var(--choco);
-  margin: 0;
-}
-
-.v-pkg-body p {
-  font-size: 0.82rem;
-  color: var(--choco);
-  opacity: 0.8;
-  margin: 0;
-  line-height: 1.4;
-}
-
-.v-check-icon {
-  position: absolute;
-  top: 10px;
-  left: 10px;
-  width: 26px;
-  height: 26px;
-  border-radius: 50%;
-  background: #FF4D79;
-  color: #FFF;
+.event-type-icon {
+  width: 42px;
+  height: 42px;
+  border-radius: 12px;
   display: flex;
   align-items: center;
   justify-content: center;
-  opacity: 0;
-  transform: scale(0.6);
-  transition: all 0.2s ease;
-  z-index: 5;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+  flex-shrink: 0;
 }
 
-.v-pkg-card.is-active .v-check-icon,
-.v-treat-card.is-active .v-check-icon {
-  opacity: 1;
-  transform: scale(1);
-}
-
-/* Step 2: Guest Count Pills */
-.v-guest-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 12px;
-}
-
-.v-guest-btn {
-  padding: 14px 12px;
-  border-radius: 14px;
-  border: 2px solid var(--border);
-  background: var(--bg-card, #FFF);
-  font-family: 'Plus Jakarta Sans', sans-serif;
-  font-weight: 700;
-  font-size: 0.95rem;
-  color: var(--choco);
-  cursor: pointer;
-  transition: all 0.2s ease;
-  text-align: center;
-}
-
-.v-guest-btn:hover {
-  border-color: #FF4D79;
-  background: rgba(255, 77, 121, 0.05);
-}
-
-.v-guest-btn.is-active {
-  border-color: #FF4D79;
-  background: #FF4D79;
-  color: #FFF !important;
-  box-shadow: 0 6px 16px rgba(255, 77, 121, 0.35);
-}
-
-/* Step 3: Visual Treats & Add-ons */
-.v-treat-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-  gap: 14px;
-}
-
-.v-treat-card {
-  position: relative;
-  border-radius: 16px;
-  border: 2px solid var(--border);
-  background: var(--bg-card, #FFF);
-  padding: 12px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  gap: 10px;
-  cursor: pointer;
-  transition: all 0.2s ease;
-}
-
-.v-treat-card:hover {
-  border-color: #FF4D79;
-  transform: translateY(-2px);
-}
-
-.v-treat-card.is-active {
-  border-color: #FF4D79;
-  background: rgba(255, 77, 121, 0.06);
-  box-shadow: 0 4px 14px rgba(255, 77, 121, 0.15);
-}
-
-.v-treat-img {
-  width: 100%;
-  height: 90px;
-  border-radius: 12px;
-  object-fit: cover;
-}
-
-.v-treat-name {
+.event-type-body h3 {
   font-family: 'Fredoka', sans-serif;
-  font-size: 0.95rem;
+  font-size: 1.25rem;
   font-weight: 600;
-  color: var(--choco);
+  color: var(--text-primary);
+  margin: 0;
 }
 
-/* Sticky Live Summary Sidebar */
-.v-summary-sidebar {
-  position: sticky;
-  top: 100px;
+.event-type-body > p {
+  font-size: 0.86rem;
+  line-height: 1.55;
+  color: var(--text-secondary);
+  margin: 0;
 }
 
-.v-summary-card {
-  background: var(--bg-primary);
-  border: 2px solid var(--border);
-  border-radius: 24px;
-  padding: 24px;
-  box-shadow: 0 16px 40px rgba(0,0,0,0.08);
-}
-
-.v-summary-card h4 {
-  font-family: 'Fredoka', sans-serif;
-  font-size: 1.35rem;
-  color: var(--choco);
-  margin-bottom: 4px;
-}
-
-.v-summary-badge {
-  display: inline-block;
-  font-size: 0.8rem;
-  font-weight: 700;
-  color: #FF4D79;
-  background: rgba(255, 77, 121, 0.12);
-  padding: 4px 12px;
-  border-radius: 99px;
-  margin-bottom: 16px;
-}
-
-.v-summary-preview-img {
-  width: 100%;
-  height: 130px;
-  border-radius: 14px;
-  object-fit: cover;
-  margin-bottom: 16px;
-  border: 1px solid var(--border);
-}
-
-.v-summary-detail-row {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 10px 0;
-  border-bottom: 1px dashed var(--border);
-  font-size: 0.88rem;
-}
-
-.v-summary-detail-row span:first-child {
-  color: var(--choco);
-  opacity: 0.8;
-}
-
-.v-summary-detail-row span:last-child {
-  font-weight: 700;
-  color: var(--choco);
-}
-
-.v-summary-items-list {
+.event-type-perks {
   list-style: none;
   padding: 0;
-  margin: 14px 0 20px;
+  margin: 4px 0 0;
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 6px;
 }
 
-.v-summary-items-list li {
-  font-size: 0.85rem;
-  color: var(--choco);
+.event-type-perks li {
+  font-size: 0.82rem;
+  color: var(--text-secondary);
   display: flex;
   align-items: center;
   gap: 8px;
 }
 
-.v-summary-items-list li::before {
-  content: "✨";
-  font-size: 0.8rem;
+.event-type-perks li::before {
+  content: '';
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--strawberry);
+  flex-shrink: 0;
+}
+
+.event-type-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: auto;
+  padding-top: 14px;
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: var(--strawberry);
+  text-decoration: none !important;
+  transition: gap 0.2s ease, opacity 0.2s ease;
+  border-top: 1px solid var(--border);
+}
+
+.event-type-link:hover {
+  gap: 10px;
+  opacity: 0.85;
+}
+
+.event-type-footnote {
+  text-align: center;
+  margin-top: 32px;
+  font-size: 0.88rem;
+  opacity: 0.7;
+}
+
+.event-type-footnote a {
+  color: var(--strawberry);
+  font-weight: 600;
+  text-decoration: none !important;
+}
+
+.event-type-footnote a:hover {
+  text-decoration: underline !important;
 }
 
 /* ==========================================================================
-   RESPONSIVE BREAKPOINTS (1024px, 820px, 768px, 480px, 360px)
+   RESPONSIVE â€” EVENT TYPE GRID
    ========================================================================== */
+
+/* Tablet: 2-column */
 @media (max-width: 1024px) {
-  .visual-party-builder {
-    grid-template-columns: 1fr;
-    gap: 28px;
-  }
-  .v-summary-sidebar {
-    position: static;
+  .event-type-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 22px;
   }
   .map-iframe {
     height: 400px;
   }
 }
 
+/* Mid-tablet: keep 2-col */
 @media (max-width: 820px) {
-  .v-pkg-grid {
+  .event-type-grid {
     grid-template-columns: repeat(2, 1fr);
+    gap: 18px;
   }
-  .v-guest-grid {
-    grid-template-columns: repeat(2, 1fr);
+}
+
+/* Mobile: 1-column */
+@media (max-width: 580px) {
+  .event-type-grid {
+    grid-template-columns: 1fr;
+    gap: 18px;
   }
-  .v-treat-grid {
-    grid-template-columns: repeat(3, 1fr);
+  .event-type-img-wrap {
+    aspect-ratio: 16/9;
+  }
+  .event-type-body {
+    padding: 18px 18px 20px;
   }
 }
 
 @media (max-width: 768px) {
-  .v-step-block {
-    padding: 20px;
-  }
   .map-floating-card {
     position: relative;
     bottom: auto;
@@ -5652,25 +5503,7 @@ html.dark .map-floating-card {
   }
 }
 
-@media (max-width: 480px) {
-  .v-pkg-grid {
-    grid-template-columns: 1fr;
-  }
-  .v-treat-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
 @media (max-width: 360px) {
-  .v-step-header h3 {
-    font-size: 1.15rem;
-  }
-  .v-guest-grid {
-    grid-template-columns: 1fr;
-  }
-  .v-treat-grid {
-    grid-template-columns: 1fr;
-  }
   .map-iframe {
     height: 300px;
   }
@@ -5679,6 +5512,7 @@ html.dark .map-floating-card {
 /* ==========================================================================
    ARTISAN ICE CREAMS GRID (EQUAL HEIGHT & WIDTH IMAGES)
    ========================================================================== */
+
 .icecream-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
