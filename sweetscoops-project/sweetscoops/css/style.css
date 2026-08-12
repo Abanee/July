@@ -336,9 +336,10 @@ html[dir="rtl"] .today-badge { left: auto; right: -4%; }
    ========================================================= */
 .section{padding:96px 0;}
 .section-alt{background:var(--bg-secondary);}
-.section-head{text-align:center; max-width:560px; margin:0 auto 48px;}
-.section-head h2{font-size:clamp(1.9rem,3vw,2.6rem); font-weight:600; position:relative; display:inline-block;}
-.section-head p{margin-top:10px; opacity:.7;}
+.section-head{text-align:center; max-width:580px; margin:0 auto 48px; display:flex; flex-direction:column; align-items:center;}
+.section-head h2{font-size:clamp(1.9rem,3vw,2.6rem); font-weight:600; position:relative; display:block; margin:0; line-height:1.2;}
+.section-head p{margin-top:10px; opacity:.75; font-size:0.95rem; line-height:1.5;}
+.eyebrow{display:inline-flex; align-items:center; justify-content:center; gap:8px; padding:5px 14px; background:rgba(255,77,121,0.12); color:var(--strawberry); border:1px solid rgba(255,77,121,0.25); border-radius:99px; font-family:'Plus Jakarta Sans',sans-serif; font-weight:700; font-size:0.78rem; letter-spacing:0.03em; text-transform:uppercase; margin-bottom:12px;}
 .section-sub{opacity:.7; margin-bottom:26px;}
 
 .section-head-split{display:flex; justify-content:space-between; align-items:flex-end; gap:24px; margin-bottom:44px; flex-wrap:wrap;}
@@ -1700,14 +1701,9 @@ html.dark .c-stat-box {
 .craving-item.is-selected .craving-name::after{width:60%;}
 .craving-item.is-selected .craving-arrow{opacity:1; color:var(--strawberry); transform:translateX(4px);}
 
-/* ---------- signature picks: side heading + horizontal scroll row ---------- */
-.signature-layout{display:flex; gap:40px; align-items:flex-start;}
-.signature-side{flex:0 0 250px;}
-.signature-side h2{font-size:clamp(1.8rem,2.6vw,2.3rem); font-weight:600; line-height:1.1; margin-bottom:12px;}
-.signature-side p{opacity:.7; margin-bottom:20px; font-size:.92rem;}
-.prod-scroll{flex:1; min-width:0; display:flex; grid-template-columns:none; gap:18px; overflow-x:auto; scrollbar-width:none; -ms-overflow-style:none; padding-bottom:4px;}
-.prod-scroll::-webkit-scrollbar{display:none;}
-.prod-scroll .prod-card{flex:0 0 220px;}
+/* ---------- signature picks: static responsive grid ---------- */
+.sig-picks-grid{display:grid; grid-template-columns:repeat(auto-fit, minmax(220px, 1fr)); gap:22px;}
+.sig-picks-grid .prod-card{width:100%;}
 .prod-desc{font-size:.78rem; opacity:.65; line-height:1.4; margin-bottom:4px; min-height:34px;}
 
 /* ---------- build your own treat: layout wrapper ---------- */
@@ -5715,23 +5711,25 @@ html.dark .map-floating-card {
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  padding: 6px 14px;
-  background: rgba(255, 77, 121, 0.1);
-  color: #FF4D79 !important;
-  border: 1.5px solid rgba(255, 77, 121, 0.3);
+  padding: 7px 16px;
+  background: #FF4D79;
+  color: #FFFFFF !important;
+  border: 1.5px solid #FF4D79;
   border-radius: 99px;
   font-family: 'Plus Jakarta Sans', sans-serif;
   font-weight: 700;
   font-size: 0.82rem;
   cursor: pointer;
+  box-shadow: 0 4px 12px rgba(255, 77, 121, 0.28);
   transition: all 0.2s ease;
 }
 
 .addon-add-btn:hover {
-  background: #FF4D79;
-  color: #FFF !important;
-  border-color: #FF4D79;
-  box-shadow: 0 4px 12px rgba(255, 77, 121, 0.35);
+  background: #e63963;
+  color: #FFFFFF !important;
+  border-color: #e63963;
+  box-shadow: 0 6px 16px rgba(255, 77, 121, 0.42);
+  transform: translateY(-1px);
 }
 
 /* ==========================================================================
