@@ -483,9 +483,17 @@ html[dir="rtl"] .today-badge { left: auto; right: -4%; }
   .mobile-controls-row { display: flex !important; align-items: center; justify-content: center; gap: 12px; padding: 14px 0 6px; border-top: 1px solid var(--border); margin-top: 10px; }
   .mobile-nav a.btn-primary, .mobile-nav .btn-block, .mobile-nav .btn { margin: 10px 0 6px !important; display: flex !important; width: 100% !important; align-self: stretch !important; justify-content: center !important; text-align: center !important; padding: 12px 20px !important; border-radius: 999px !important; }
   .footer-grid { grid-template-columns: repeat(2, 1fr) !important; gap: 32px !important; }
+  .footer-tag { max-width: 100% !important; }
   .h2-sig-view-all { display: none !important; }
   .h2-sig-heading-block { grid-column: span 2; text-align: center; }
   .h2-signature-panel { grid-template-columns: repeat(2, 1fr); gap: 16px; padding: 24px; }
+  .visit-happy-grid { grid-template-columns: 1fr !important; gap: 32px !important; }
+  .combo-grid { grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)) !important; overflow: visible !important; height: auto !important; max-height: none !important; }
+  .waffle-customizer-grid { grid-template-columns: 1fr !important; gap: 32px !important; }
+  .waffle-preview-column { position: static !important; width: 100% !important; }
+  .waffle-result-card { max-width: 100% !important; width: 100% !important; margin: 0 auto !important; position: static !important; }
+  .waffle-result-img-container { height: auto !important; min-height: 200px !important; max-height: 260px !important; width: 100% !important; padding: 16px !important; }
+  .waffle-result-img-container img { max-width: 100% !important; max-height: 100% !important; object-fit: contain !important; }
   .hero-inner {
     grid-template-columns: 1fr;
     text-align: center;
@@ -5667,7 +5675,41 @@ html.dark .map-floating-card {
   box-shadow: 0 8px 18px rgba(255, 77, 121, 0.4);
 }
 
+/* ---------- Auth Card Logo & Welcome Text ---------- */
+.auth-topbar {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 20px 28px;
+  position: relative;
+  z-index: 10;
+}
 
+.auth-controls {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-left: auto;
+}
 
+.auth-card-logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 14px;
+  text-decoration: none !important;
+}
 
-
+.auth-welcome-text {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-weight: 700;
+  font-size: 0.9rem;
+  color: var(--strawberry);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 8px;
+  background: none !important;
+  border: none !important;
+  padding: 0 !important;
+  box-shadow: none !important;
+}

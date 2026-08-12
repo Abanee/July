@@ -99,6 +99,23 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
+  /* ---------- Keyboard interaction: Escape key to close drawers ---------- */
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+      if (mobileNav && mobileNav.classList.contains('is-open')) {
+        mobileNav.classList.remove('is-open');
+        if (menuToggle) {
+          menuToggle.classList.remove('is-open');
+          menuToggle.setAttribute('aria-expanded', 'false');
+        }
+      }
+      const searchModal = document.getElementById('searchModal');
+      if (searchModal && searchModal.classList.contains('is-open')) {
+        searchModal.classList.remove('is-open');
+      }
+    }
+  });
+
   /* ---------- 4: Scroll reveal animations ---------- */
   const revealEls = document.querySelectorAll('.reveal, .reveal-group');
   const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
