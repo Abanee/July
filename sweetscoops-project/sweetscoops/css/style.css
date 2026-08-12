@@ -706,6 +706,172 @@ html.dark .cta-perk {
 }
 
 /* =========================================================
+   HOME 2 UNIQUE EXPRESS CTA SECTION
+   ========================================================= */
+.h2-express-cta-section {
+  padding: 60px 0 80px;
+}
+
+.h2-express-cta-card {
+  background: linear-gradient(135deg, #FFF9F0 0%, #FFF0F4 50%, #FFEFC8 100%);
+  border: 1.5px solid var(--border);
+  border-radius: 36px;
+  padding: 48px;
+  display: grid;
+  grid-template-columns: 0.95fr 1.05fr;
+  gap: 48px;
+  align-items: center;
+  box-shadow: var(--shadow);
+  position: relative;
+  overflow: hidden;
+}
+
+html.dark .h2-express-cta-card {
+  background: linear-gradient(135deg, #1C1211 0%, #291B1A 100%);
+  border-color: var(--border);
+}
+
+.h2-express-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255, 168, 38, 0.15);
+  color: var(--mango);
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-weight: 800;
+  font-size: 0.8rem;
+  letter-spacing: 0.12em;
+  padding: 6px 16px;
+  border-radius: 999px;
+  margin-bottom: 18px;
+  text-transform: uppercase;
+}
+
+.h2-express-title {
+  font-family: 'Fredoka', sans-serif;
+  font-size: clamp(2.2rem, 3.8vw, 3rem);
+  font-weight: 700;
+  line-height: 1.15;
+  color: var(--choco);
+  margin-bottom: 16px;
+}
+
+html.dark .h2-express-title {
+  color: #FFFFFF;
+}
+
+.h2-express-sub {
+  font-size: 1.02rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin-bottom: 28px;
+  max-width: 540px;
+}
+
+html.dark .h2-express-sub {
+  color: #E7D8CF;
+}
+
+.h2-express-features {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 32px;
+}
+
+.h2-express-feat-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+}
+
+.h2-feat-icon {
+  font-size: 1.25rem;
+  line-height: 1;
+  background: var(--bg-primary);
+  border: 1px solid var(--border);
+  padding: 8px;
+  border-radius: 12px;
+  flex-shrink: 0;
+}
+
+html.dark .h2-feat-icon {
+  background: var(--bg-tertiary);
+}
+
+.h2-express-feat-item strong {
+  display: block;
+  font-size: 0.95rem;
+  color: var(--choco);
+  margin-bottom: 2px;
+}
+
+html.dark .h2-express-feat-item strong {
+  color: #FFF5E8;
+}
+
+.h2-express-feat-item p {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  margin: 0;
+}
+
+.h2-express-cta-visual {
+  position: relative;
+  border-radius: 28px;
+  overflow: hidden;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.12);
+}
+
+.h2-express-cta-visual img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  transition: transform 0.4s var(--ease);
+}
+
+.h2-express-cta-card:hover .h2-express-cta-visual img {
+  transform: scale(1.05);
+}
+
+@media (max-width: 1024px) {
+  .h2-express-cta-card {
+    grid-template-columns: 1fr;
+    padding: 40px 28px;
+    gap: 32px;
+    text-align: center;
+  }
+  .h2-express-cta-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  .h2-express-sub {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .h2-express-feat-item {
+    text-align: left;
+  }
+  .h2-express-cta-visual {
+    width: 100%;
+    max-width: 680px;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 600px) {
+  .h2-express-cta-card {
+    padding: 24px 16px !important;
+    border-radius: 24px !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+  }
+}
+
+/* =========================================================
    FOOTER
    ========================================================= */
 .footer{background:var(--dark-section); color:var(--on-dark); padding:64px 0 0;}
