@@ -480,8 +480,8 @@ html[dir="rtl"] .today-badge { left: auto; right: -4%; }
   .menu-toggle { display: flex !important; }
   .mobile-nav { display: flex; }
   .nav-right .theme-toggle, .nav-right .rtl-toggle, .nav-right .btn-primary, .nav-right .btn { display: none !important; }
-  .mobile-theme-row { display: flex !important; }
-  .mobile-nav a.btn-primary, .mobile-nav .btn { margin: 16px auto 6px !important; display: inline-flex !important; width: fit-content !important; align-self: center !important; justify-content: center !important; text-align: center !important; }
+  .mobile-controls-row { display: flex !important; align-items: center; justify-content: center; gap: 12px; padding: 14px 0 6px; border-top: 1px solid var(--border); margin-top: 10px; }
+  .mobile-nav a.btn-primary, .mobile-nav .btn-block, .mobile-nav .btn { margin: 10px 0 6px !important; display: flex !important; width: 100% !important; align-self: stretch !important; justify-content: center !important; text-align: center !important; padding: 12px 20px !important; border-radius: 999px !important; }
   .footer-grid { grid-template-columns: repeat(2, 1fr) !important; gap: 32px !important; }
   .h2-sig-view-all { display: none !important; }
   .h2-sig-heading-block { grid-column: span 2; text-align: center; }
