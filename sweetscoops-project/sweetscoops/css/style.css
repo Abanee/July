@@ -197,11 +197,11 @@ html.dark .theme-toggle .theme-icon-moon{display:block;}
 }
 
 .nav-center{display:flex; gap:34px;}
-.nav-center a{font-size:.92rem; font-weight:600; color:var(--choco); opacity:.8; position:relative; padding-bottom:4px;}
+.nav-center a{font-size:.92rem; font-weight:600; color:var(--choco); opacity:.8; position:relative; padding-bottom:4px; text-decoration:none !important; border-bottom:none !important; outline:none;}
 .nav-center a::after{content:''; position:absolute; left:0; bottom:0; width:0; height:2px; background:var(--strawberry); transition:width .3s var(--ease);}
 .nav-center a:hover{opacity:1;}
 .nav-center a:hover::after{width:100%;}
-.nav-center a.is-current{opacity:1; color:var(--strawberry);}
+.nav-center a.is-current{opacity:1; color:var(--strawberry); text-decoration:none !important; border-bottom:none !important;}
 .nav-center a.is-current::after{width:100%;}
 
 .nav-right{display:flex; align-items:center; gap:10px;}
@@ -226,8 +226,8 @@ html.dark .theme-toggle .theme-icon-moon{display:block;}
 .menu-toggle.is-open span:nth-child(2){opacity:0;}
 .menu-toggle.is-open span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
 
-.mobile-nav{display:none; flex-direction:column; gap:2px; padding:0 24px; max-height:0; overflow:hidden; transition:max-height .4s var(--ease), padding .4s var(--ease);}
-.mobile-nav a{padding:12px 4px; font-weight:600; border-bottom:1px solid var(--border); color:var(--text-primary); text-decoration:none;}
+.mobile-nav{display:none; flex-direction:column; gap:2px; padding:0 24px; max-height:0; overflow:hidden; transition:max-height .4s var(--ease), padding .4s var(--ease); position:relative; z-index:100;}
+.mobile-nav a{padding:12px 4px; font-weight:600; border-bottom:1px solid var(--border); color:var(--text-primary); text-decoration:none !important; display:block; pointer-events:auto;}
 .mobile-nav a.is-current{color:var(--strawberry);}
 .mobile-nav.is-open{max-height:560px; padding:6px 24px 20px;}
 
@@ -476,6 +476,16 @@ html[dir="rtl"] .today-badge { left: auto; right: -4%; }
    RESPONSIVE (1024px, 820px, 768px, 360px)
    ========================================================= */
 @media (max-width:1024px){
+  .nav-center { display: none !important; }
+  .menu-toggle { display: flex !important; }
+  .mobile-nav { display: flex; }
+  .nav-right .theme-toggle, .nav-right .rtl-toggle, .nav-right .btn-primary, .nav-right .btn { display: none !important; }
+  .mobile-theme-row { display: flex !important; }
+  .mobile-nav a.btn-primary, .mobile-nav .btn { margin: 16px auto 6px !important; display: inline-flex !important; width: fit-content !important; align-self: center !important; justify-content: center !important; text-align: center !important; }
+  .footer-grid { grid-template-columns: repeat(2, 1fr) !important; gap: 32px !important; }
+  .h2-sig-view-all { display: none !important; }
+  .h2-sig-heading-block { grid-column: span 2; text-align: center; }
+  .h2-signature-panel { grid-template-columns: repeat(2, 1fr); gap: 16px; padding: 24px; }
   .hero-inner {
     grid-template-columns: 1fr;
     text-align: center;
@@ -573,9 +583,6 @@ html[dir="rtl"] .today-badge { left: auto; right: -4%; }
 }
 
 @media (max-width:830px){
-  .nav-center { display: none; }
-  .menu-toggle { display: flex; }
-  .mobile-nav { display: flex; }
   .seasonal-grid, .store-grid, .party-grid { grid-template-columns: 1fr; }
   .seasonal-visual { order: -1; }
   .moments-grid { grid-template-columns: 1fr 1fr; }
@@ -1652,12 +1659,12 @@ body.h2-body {
 .h2-hero-container {
   max-width: 1440px;
   margin: 0 auto;
-  padding: 0 32px;
+  padding: 24px 32px;
   display: grid;
   grid-template-columns: 43% 57%;
   align-items: center;
   position: relative;
-  min-height: calc(100vh - 80px - 155px);
+  min-height: auto;
 }
 
 .h2-hero-left {
@@ -2185,30 +2192,69 @@ body.h2-body {
     font-size: 0.88rem;
   }
   .h2-hero-container {
-    grid-template-columns: 48% 52%;
-    gap: 20px;
+    grid-template-columns: 1fr;
+    gap: 28px;
+    padding: 20px 24px;
+    min-height: auto;
+  }
+  .h2-hero-left {
+    padding-right: 0;
+    align-items: center;
+    text-align: center;
+    max-width: 680px;
+    margin: 0 auto;
   }
   .h2-heading {
     font-size: 2.8rem;
+    text-align: center;
   }
   .h2-script-line {
     font-size: 3rem;
   }
+  .h2-description {
+    text-align: center;
+    max-width: 560px;
+    margin: 0 auto 20px;
+  }
+  .h2-cta-group {
+    justify-content: center;
+    width: 100%;
+    margin-bottom: 24px;
+  }
+  .h2-benefits-row {
+    justify-content: center;
+    width: 100%;
+    max-width: 580px;
+    margin: 0 auto 16px;
+  }
+  .h2-hero-right {
+    width: 100%;
+    max-width: 520px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+  }
+  .h2-signature-section {
+    margin-top: 10px;
+    padding: 0 24px 24px;
+  }
   .h2-signature-panel {
-    flex-wrap: wrap;
-    justify-content: flex-start;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
     gap: 16px;
+    padding: 24px;
+    overflow-x: visible;
   }
   .h2-sig-heading-block {
-    flex: 0 0 100%;
+    grid-column: span 2;
     margin-bottom: 4px;
+    text-align: center;
   }
   .h2-sig-cat-item {
-    flex: 1 1 calc(50% - 16px);
+    width: 100%;
   }
   .h2-sig-view-all {
-    flex: 0 0 100%;
-    margin-top: 8px;
+    display: none !important;
   }
 }
 
@@ -2221,8 +2267,8 @@ body.h2-body {
   }
   .h2-hero-container {
     grid-template-columns: 1fr;
-    gap: 40px;
-    padding-top: 20px;
+    gap: 24px;
+    padding: 16px;
   }
   .h2-hero-left {
     padding-right: 0;
@@ -2245,49 +2291,96 @@ body.h2-body {
 
 @media (max-width: 768px) {
   .h2-signature-panel {
-    display: flex;
-    overflow-x: auto;
-    flex-wrap: nowrap;
-    scroll-snap-type: x mandatory;
-    padding: 16px;
-    gap: 16px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    overflow-x: visible;
+    flex-wrap: wrap;
+    padding: 20px;
+    gap: 14px;
   }
   .h2-sig-heading-block {
-    flex: 0 0 auto;
-    min-width: 160px;
+    grid-column: span 2;
+    min-width: 0;
+    text-align: center;
   }
   .h2-sig-cat-item {
-    flex: 0 0 auto;
-    min-width: 200px;
-    scroll-snap-align: start;
+    min-width: 0;
+    width: 100%;
   }
   .h2-sig-view-all {
-    flex: 0 0 auto;
-    min-width: 140px;
+    grid-column: span 2;
+    min-width: 0;
+    width: 100%;
   }
 }
 
 @media (max-width: 480px) {
   .h2-nav-inner {
-    padding: 0 16px;
+    padding: 0 14px;
   }
   .h2-hero-container {
-    padding: 0 16px;
+    padding: 12px 14px;
+    gap: 20px;
   }
   .h2-heading {
-    font-size: 2.2rem;
+    font-size: 2.1rem;
   }
   .h2-script-line {
-    font-size: 2.4rem;
+    font-size: 2.3rem;
   }
   .h2-description {
-    font-size: 0.95rem;
+    font-size: 0.92rem;
+    margin-bottom: 18px;
   }
   .h2-cta-group {
     flex-direction: column;
     width: 100%;
     gap: 12px;
+    align-items: center;
   }
+  .h2-btn-primary, .h2-btn-secondary {
+    width: 100%;
+    max-width: 280px;
+    justify-content: center;
+  }
+  .h2-benefits-row {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+    border-top: 1px solid var(--h2-border);
+    padding-top: 14px;
+    padding-bottom: 10px;
+    margin-bottom: 14px;
+  }
+  .h2-benefit-item {
+    padding: 0;
+    gap: 8px;
+    justify-content: center;
+  }
+  .h2-benefit-item:not(:last-child)::after {
+    display: none;
+  }
+  .h2-signature-panel {
+    grid-template-columns: repeat(2, 1fr);
+    padding: 16px 12px;
+    gap: 12px;
+  }
+}
+
+@media (max-width: 360px) {
+  .h2-heading {
+    font-size: 1.95rem;
+  }
+  .h2-script-line {
+    font-size: 2.1rem;
+  }
+  .h2-signature-panel {
+    grid-template-columns: 1fr;
+  }
+  .h2-sig-heading-block, .h2-sig-view-all {
+    grid-column: auto;
+  }
+}
   .h2-btn-primary, .h2-btn-secondary {
     width: 100%;
   }
@@ -2316,7 +2409,7 @@ body.h2-body {
     bottom: 4%;
     left: 2%;
   }
-}
+
 
 @media (prefers-reduced-motion: reduce) {
   .h2-eyebrow, .h2-heading, .h2-description, .h2-cta-group, .h2-benefits-row, .h2-dessert-img, .h2-signature-panel, .h2-float-badge-1, .h2-float-badge-2 {
