@@ -878,6 +878,274 @@ html.dark .h2-express-feat-item strong {
 }
 
 /* =========================================================
+   ABOUT PAGE: CULINARY PROMISE & COMMUNITY SECTIONS
+   ========================================================= */
+.about-promise-card {
+  background: linear-gradient(135deg, var(--bg-secondary) 0%, var(--bg-tertiary) 100%);
+  border: 1.5px solid var(--border);
+  border-radius: 36px;
+  padding: 48px;
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 48px;
+  align-items: center;
+  box-shadow: var(--shadow);
+}
+
+html.dark .about-promise-card {
+  background: linear-gradient(135deg, #201514 0%, #2A1D1C 100%);
+}
+
+.promise-title {
+  font-family: 'Fredoka', sans-serif;
+  font-size: clamp(2.2rem, 3.8vw, 3rem);
+  font-weight: 700;
+  line-height: 1.15;
+  color: var(--choco);
+  margin-bottom: 14px;
+}
+
+html.dark .promise-title {
+  color: #FFFFFF;
+}
+
+.promise-sub {
+  font-size: 1.02rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin-bottom: 28px;
+  max-width: 540px;
+}
+
+.promise-pillars-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.promise-pillar-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+.pillar-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 14px;
+  background: var(--bg-primary);
+  border: 1px solid var(--border);
+  font-size: 1.3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.04);
+}
+
+html.dark .pillar-icon {
+  background: var(--bg-tertiary);
+}
+
+.promise-pillar-item h4 {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--choco);
+  margin-bottom: 4px;
+}
+
+html.dark .promise-pillar-item h4 {
+  color: #FFF5E8;
+}
+
+.promise-pillar-item p {
+  font-size: 0.88rem;
+  color: var(--text-secondary);
+  margin: 0;
+  line-height: 1.5;
+}
+
+.about-promise-visual {
+  border-radius: 28px;
+  overflow: hidden;
+  box-shadow: 0 16px 40px rgba(0,0,0,0.12);
+}
+
+.about-promise-visual img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+}
+
+/* Community & Eco Section */
+.community-split-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+}
+
+.community-card {
+  background: var(--bg-primary);
+  border: 1.5px solid var(--border);
+  border-radius: 28px;
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s var(--ease);
+}
+
+.community-card:hover {
+  transform: translateY(-4px);
+}
+
+html.dark .community-card {
+  background: var(--bg-secondary);
+}
+
+.community-card-img {
+  position: relative;
+  width: 100%;
+  height: 220px;
+  overflow: hidden;
+}
+
+.community-card-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.community-badge-tag {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  background: var(--strawberry);
+  color: #FFF;
+  font-size: 0.75rem;
+  font-weight: 800;
+  padding: 6px 14px;
+  border-radius: 999px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.community-card-body {
+  padding: 28px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.community-card-body h3 {
+  font-family: 'Fredoka', sans-serif;
+  font-size: 1.4rem;
+  color: var(--choco);
+  margin-bottom: 10px;
+}
+
+html.dark .community-card-body h3 {
+  color: #FFFFFF;
+}
+
+.community-card-body p {
+  font-size: 0.92rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.community-check-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.community-check-list li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: var(--choco);
+}
+
+html.dark .community-check-list li {
+  color: #FFF5E8;
+}
+
+.community-check-list li span {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: rgba(255, 111, 145, 0.15);
+  color: var(--strawberry);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem;
+}
+
+.community-stats-row {
+  display: flex;
+  gap: 12px;
+  margin-top: auto;
+}
+
+.c-stat-box {
+  flex: 1;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border);
+  padding: 12px 10px;
+  border-radius: 16px;
+  text-align: center;
+}
+
+html.dark .c-stat-box {
+  background: var(--bg-tertiary);
+}
+
+.c-stat-val {
+  display: block;
+  font-family: 'Fredoka', sans-serif;
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--strawberry);
+}
+
+.c-stat-lbl {
+  font-size: 0.72rem;
+  color: var(--text-secondary);
+  font-weight: 600;
+}
+
+@media (max-width: 1024px) {
+  .about-promise-card {
+    grid-template-columns: 1fr;
+    padding: 36px 24px;
+    gap: 32px;
+  }
+  .community-split-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .about-promise-card {
+    padding: 24px 16px !important;
+    border-radius: 24px !important;
+  }
+  .community-card-body {
+    padding: 20px 16px;
+  }
+  .community-stats-row {
+    flex-wrap: wrap;
+  }
+}
+
+/* =========================================================
    FOOTER
    ========================================================= */
 .footer{background:var(--dark-section); color:var(--on-dark); padding:64px 0 0;}
