@@ -5797,10 +5797,18 @@ html.dark .map-floating-card {
 
 /* Global Mobile Gutters & Component Rules (<=600px) */
 @media (max-width: 600px) {
-  html, body {
-    overflow-x: hidden !important;
+  /* Master Reset for Body and Section Containers */
+  html, body, main, #home, #home2-main, section, .section {
     width: 100% !important;
     max-width: 100vw !important;
+    overflow-x: hidden !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    box-sizing: border-box !important;
+  }
+
+  *, *::before, *::after {
+    box-sizing: border-box !important;
   }
 
   .container {
@@ -5813,17 +5821,26 @@ html.dark .map-floating-card {
     box-sizing: border-box !important;
   }
 
-  .nav-inner {
+  .nav, .nav-inner {
     padding-left: 16px !important;
     padding-right: 16px !important;
     width: 100% !important;
+    max-width: 100% !important;
     box-sizing: border-box !important;
   }
 
-  .inner-page-hero {
-    padding: 60px 0 36px !important;
+  .inner-page-hero,
+  .hero,
+  .hero2,
+  .h2-hero-section,
+  .h2-hero-container {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
     width: 100% !important;
     max-width: 100vw !important;
+    box-sizing: border-box !important;
   }
 
   .hero-inner {
@@ -5839,9 +5856,46 @@ html.dark .map-floating-card {
     max-width: 100% !important;
     margin-left: auto !important;
     margin-right: auto !important;
-    padding: 28px 16px !important;
+    padding: 24px 16px !important;
     border-radius: 24px !important;
     box-sizing: border-box !important;
+    overflow: hidden !important;
+  }
+
+  /* Reflow Stats Row inside Hero Cards */
+  .stats-row {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    justify-content: center !important;
+    gap: 12px !important;
+    margin-top: 24px !important;
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  .stat-item {
+    flex: 1 1 42% !important;
+    min-width: 0 !important;
+    padding: 8px 10px !important;
+    text-align: center !important;
+    align-items: center !important;
+  }
+
+  .stat-sep {
+    display: none !important;
+  }
+
+  /* Flex Row Safety Reset */
+  .hero-actions, .h2-cta-group, .blog-author-row, .celeb-type-body, .form-meta {
+    width: 100% !important;
+    max-width: 100% !important;
+    flex-wrap: wrap !important;
+    min-width: 0 !important;
+    box-sizing: border-box !important;
+  }
+
+  img, svg, video, button, a, input, select, textarea {
+    max-width: 100% !important;
   }
 
   .celeb-type-grid {
