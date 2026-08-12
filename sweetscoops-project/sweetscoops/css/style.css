@@ -1169,7 +1169,11 @@ html.dark .c-stat-box {
    ========================================================= */
 .footer{background:var(--dark-section); color:var(--on-dark); padding:64px 0 0;}
 .footer-grid{display:grid; grid-template-columns:1.4fr 1fr 1fr 1fr; gap:32px; padding-bottom:40px; border-bottom:1px solid rgba(255,255,255,.1);}
-.footer-tag{font-size:.85rem; color:var(--on-dark); opacity:.75; margin-top:12px; max-width:220px; line-height:1.5;}
+.footer-grid-5{grid-template-columns:1.4fr 1fr 1fr 1fr 1.2fr !important;}
+.footer-tag{font-size:.85rem; color:var(--on-dark); opacity:.75; margin-top:12px; max-width:240px; line-height:1.5;}
+.footer-desc{font-size:.84rem; color:var(--on-dark-muted, #BDAAA1); opacity:.85; margin-top:10px; max-width:260px; line-height:1.55;}
+.footer-info-list{margin-top:14px; display:flex; flex-direction:column; gap:8px; font-size:.82rem; color:var(--on-dark-muted, #BDAAA1); opacity:.9;}
+.footer-info-item{display:flex; align-items:center; gap:8px; line-height:1.4;}
 .footer h5{font-size:.8rem; text-transform:uppercase; letter-spacing:.05em; color:var(--on-dark); opacity:.65; margin-bottom:16px;}
 .footer a, .footer a:visited, .footer-legal a, .footer-legal a:visited{color:var(--on-dark) !important; text-decoration:none !important; display:block; font-size:.9rem; opacity:.85; margin-bottom:10px; transition:opacity .2s, transform .2s, color .2s;}
 .footer a:hover, .footer a:focus, .footer-legal a:hover{opacity:1 !important; color:var(--strawberry) !important; transform:translateX(3px); text-decoration:none !important;}
