@@ -299,33 +299,43 @@
   <!-- ============ TODAY'S FLAVOR BAR ============ -->
   <section id="flavors" class="flavor-bar">
     <div class="flavor-bar-inner">
-      <button id="flavorPrev" class="flavor-nav-btn" aria-label="Scroll flavors left">
-        <svg width="13" height="13" viewBox="0 0 24 24" fill="none"><path d="M15 6l-6 6 6 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      </button>
-
-      <span style="flex-shrink:0; font-family:'Fredoka',sans-serif; font-weight:600; color:#fff; font-size:.85rem; line-height:1.2; text-transform:uppercase;">
+      <span class="flavor-label-badge">
         <span style="color:#FFC857;">Today's</span><br>Flavors
       </span>
 
-      <div id="flavorTrack" class="flavor-track">
-        <span style="color:#fff; font-family:'Fredoka',sans-serif; font-weight:700; text-transform:uppercase; font-size:.85rem;">Vanilla</span>
-        <span style="color:#FF6F91;">•</span>
-        <span style="color:#fff; font-family:'Fredoka',sans-serif; font-weight:700; text-transform:uppercase; font-size:.85rem;">Chocolate</span>
-        <span style="color:#FF6F91;">•</span>
-        <span style="color:#fff; font-family:'Fredoka',sans-serif; font-weight:700; text-transform:uppercase; font-size:.85rem;">Strawberry</span>
-        <span style="color:#FF6F91;">•</span>
-        <span style="color:#fff; font-family:'Fredoka',sans-serif; font-weight:700; text-transform:uppercase; font-size:.85rem;">Pistachio</span>
-        <span style="color:#FF6F91;">•</span>
-        <span style="color:#fff; font-family:'Fredoka',sans-serif; font-weight:700; text-transform:uppercase; font-size:.85rem;">Mango</span>
-        <span style="color:#FF6F91;">•</span>
-        <span style="color:#fff; font-family:'Fredoka',sans-serif; font-weight:700; text-transform:uppercase; font-size:.85rem;">Cookie Crunch</span>
-        <span style="color:#FF6F91;">•</span>
-        <span style="color:#fff; font-family:'Fredoka',sans-serif; font-weight:700; text-transform:uppercase; font-size:.85rem;">Salted Caramel</span>
-      </div>
+      <div class="flavor-track-wrap">
+        <div id="flavorTrack" class="flavor-track">
+          <!-- LOOP SET 1 -->
+          <span>Vanilla Bean</span><span class="flavor-sep">•</span>
+          <span>Triple Belgian Chocolate</span><span class="flavor-sep">•</span>
+          <span>Wild Berry Strawberry</span><span class="flavor-sep">•</span>
+          <span>Sicilian Pistachio</span><span class="flavor-sep">•</span>
+          <span>Alphonso Mango Swirl</span><span class="flavor-sep">•</span>
+          <span>Cookies &amp; Cream</span><span class="flavor-sep">•</span>
+          <span>Salted Caramel Crunch</span><span class="flavor-sep">•</span>
+          <span>Bourbon Vanilla</span><span class="flavor-sep">•</span>
+          <span>Espresso Mocha Crunch</span><span class="flavor-sep">•</span>
+          <span>Blackcurrant Bliss</span><span class="flavor-sep">•</span>
+          <span>Butterscotch Fudge</span><span class="flavor-sep">•</span>
+          <span>Paan Kulfi Scoop</span><span class="flavor-sep">•</span>
+          <span>Choco Hazelnut Nutella</span><span class="flavor-sep">•</span>
 
-      <button id="flavorNext" class="flavor-nav-btn" aria-label="Scroll flavors right">
-        <svg width="13" height="13" viewBox="0 0 24 24" fill="none"><path d="M9 6l6 6-6 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      </button>
+          <!-- LOOP SET 2 (DUPLICATED FOR INFINITE SMOOTH MARQUEE) -->
+          <span>Vanilla Bean</span><span class="flavor-sep">•</span>
+          <span>Triple Belgian Chocolate</span><span class="flavor-sep">•</span>
+          <span>Wild Berry Strawberry</span><span class="flavor-sep">•</span>
+          <span>Sicilian Pistachio</span><span class="flavor-sep">•</span>
+          <span>Alphonso Mango Swirl</span><span class="flavor-sep">•</span>
+          <span>Cookies &amp; Cream</span><span class="flavor-sep">•</span>
+          <span>Salted Caramel Crunch</span><span class="flavor-sep">•</span>
+          <span>Bourbon Vanilla</span><span class="flavor-sep">•</span>
+          <span>Espresso Mocha Crunch</span><span class="flavor-sep">•</span>
+          <span>Blackcurrant Bliss</span><span class="flavor-sep">•</span>
+          <span>Butterscotch Fudge</span><span class="flavor-sep">•</span>
+          <span>Paan Kulfi Scoop</span><span class="flavor-sep">•</span>
+          <span>Choco Hazelnut Nutella</span><span class="flavor-sep">•</span>
+        </div>
+      </div>
     </div>
   </section>
 

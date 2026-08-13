@@ -1204,7 +1204,51 @@ html.dark .c-stat-box {
   .h2-sig-heading-block { grid-column: span 2; text-align: center; }
   .h2-signature-panel { grid-template-columns: repeat(2, 1fr); gap: 16px; padding: 24px; }
   .visit-happy-grid { grid-template-columns: 1fr !important; gap: 32px !important; }
-  .combo-grid { grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)) !important; overflow: visible !important; height: auto !important; max-height: none !important; }
+  .combo-grid, .curated-combos-grid { display: flex !important; flex-wrap: wrap !important; justify-content: center !important; gap: 24px !important; overflow: visible !important; height: auto !important; max-height: none !important; }
+  .combo-card, .curated-combo-card { flex: 1 1 320px !important; max-width: 480px !important; width: 100% !important; }
+  .package-grid { display: flex !important; flex-wrap: wrap !important; justify-content: center !important; gap: 24px !important; }
+  .package-card { flex: 1 1 320px !important; max-width: 480px !important; width: 100% !important; }
+  .celeb-services-grid { display: flex !important; flex-wrap: wrap !important; justify-content: center !important; gap: 24px !important; }
+  .celeb-service-card { flex: 1 1 300px !important; max-width: 440px !important; width: 100% !important; }
+  .celeb-service-img-box { width: 100% !important; aspect-ratio: 4 / 3 !important; overflow: hidden !important; border-radius: 20px 20px 0 0 !important; }
+  .celeb-service-img-box img { width: 100% !important; height: 100% !important; object-fit: cover !important; }
+  .real-moments-grid { display: flex !important; flex-wrap: wrap !important; justify-content: center !important; gap: 20px !important; }
+  .real-moment-card { flex: 0 0 calc(33.333% - 14px) !important; min-width: 250px !important; max-width: 340px !important; width: 100% !important; }
+  .real-moment-img-box { width: 100% !important; aspect-ratio: 1 / 1 !important; overflow: hidden !important; border-radius: 20px !important; }
+  .real-moment-img-box img { width: 100% !important; height: 100% !important; object-fit: cover !important; }
+  .event-type-grid { display: flex !important; flex-wrap: wrap !important; justify-content: center !important; gap: 24px !important; }
+  .event-type-card { flex: 1 1 300px !important; max-width: 440px !important; width: 100% !important; }
+  .event-type-img-wrap { width: 100% !important; aspect-ratio: 4 / 3 !important; overflow: hidden !important; }
+  .event-type-img-wrap img { width: 100% !important; height: 100% !important; object-fit: cover !important; }
+  .bulk-grid { display: flex !important; flex-wrap: wrap !important; justify-content: center !important; gap: 20px !important; }
+  .bulk-card { flex: 1 1 240px !important; max-width: 320px !important; width: 100% !important; }
+  .bulk-img { width: 100% !important; aspect-ratio: 1 / 1 !important; overflow: hidden !important; }
+  .bulk-img img { width: 100% !important; height: 100% !important; object-fit: cover !important; }
+  .product-grid, .signature-picks-grid, .sig-picks-grid { display: flex !important; flex-wrap: wrap !important; justify-content: center !important; gap: 20px !important; }
+  .product-card, .sig-picks-grid .prod-card { flex: 1 1 220px !important; max-width: 320px !important; width: 100% !important; }
+  .product-img, .prod-card-img { width: 100% !important; aspect-ratio: 4 / 3 !important; overflow: hidden !important; }
+  .product-img img, .prod-card-img img { width: 100% !important; height: 100% !important; object-fit: cover !important; }
+  .dietary-grid { display: flex !important; flex-wrap: wrap !important; justify-content: center !important; gap: 24px !important; }
+  .dietary-card { flex: 1 1 280px !important; max-width: 380px !important; width: 100% !important; }
+  .dietary-img-box { width: 100% !important; aspect-ratio: 4 / 3 !important; overflow: hidden !important; border-radius: 20px 20px 0 0 !important; }
+  .dietary-img-box img { width: 100% !important; height: 100% !important; object-fit: cover !important; }
+  .icecream-grid { display: flex !important; flex-wrap: wrap !important; justify-content: center !important; gap: 24px !important; }
+  .icecream-card { flex: 1 1 280px !important; max-width: 380px !important; width: 100% !important; }
+  .icecream-img-box { width: 100% !important; aspect-ratio: 4 / 3 !important; overflow: hidden !important; border-radius: 20px 20px 0 0 !important; }
+  .icecream-img-box img { width: 100% !important; height: 100% !important; object-fit: cover !important; }
+  .addon-grid-v2 { display: flex !important; flex-wrap: wrap !important; justify-content: center !important; gap: 20px !important; }
+  .addon-card-v2 { flex: 1 1 220px !important; max-width: 300px !important; width: 100% !important; }
+  .addon-img-box { width: 100% !important; aspect-ratio: 4 / 3 !important; overflow: hidden !important; border-radius: 18px 18px 0 0 !important; }
+  .addon-img-box img { width: 100% !important; height: 100% !important; object-fit: cover !important; }
+  .blog-grid { display: flex !important; flex-wrap: wrap !important; justify-content: center !important; gap: 24px !important; }
+  .blog-card { flex: 1 1 320px !important; max-width: 460px !important; width: 100% !important; }
+  .blog-card-img, .blog-img-wrap { width: 100% !important; aspect-ratio: 16 / 10 !important; overflow: hidden !important; }
+  .blog-card-img img, .blog-img-wrap img { width: 100% !important; height: 100% !important; object-fit: cover !important; }
+  .gallery-grid-wrap, .gallery-grid { display: flex !important; flex-wrap: wrap !important; justify-content: center !important; gap: 20px !important; }
+  .gallery-tile, .gallery-item { flex: 0 0 calc(25% - 15px) !important; min-width: 220px !important; max-width: 320px !important; width: 100% !important; }
+  .gallery-tile img, .gallery-item img { width: 100% !important; height: 100% !important; object-fit: cover !important; aspect-ratio: 1 / 1 !important; }
+  .feature-grid, .team-grid, .place-grid { display: flex !important; flex-wrap: wrap !important; justify-content: center !important; gap: 22px !important; }
+  .feature-card, .team-card, .place-card { flex: 1 1 260px !important; max-width: 360px !important; width: 100% !important; }
   .waffle-customizer-grid { grid-template-columns: 1fr !important; gap: 32px !important; }
   .waffle-preview-column { position: static !important; width: 100% !important; }
   .waffle-result-card { max-width: 100% !important; width: 100% !important; margin: 0 auto !important; position: static !important; }
@@ -6588,3 +6632,261 @@ html.dark .map-floating-card {
     white-space: nowrap !important;
   }
 }
+
+/* ==========================================================================
+   SCOOP CLUB NEWSLETTER BANNER (BLOG PAGE & GENERAL DARK MODE FIX)
+   ========================================================================== */
+.scoop-club-newsletter {
+  padding: 64px 0;
+  background: var(--dark-section);
+  color: #FFFFFF;
+}
+
+.scoop-club-inner {
+  background: linear-gradient(135deg, #3A201C 0%, #2A1714 100%);
+  border: 1.5px solid rgba(255, 255, 255, 0.12);
+  border-radius: 36px;
+  padding: 48px 32px;
+  text-align: center;
+  box-shadow: var(--shadow);
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+html.dark .scoop-club-newsletter {
+  background: var(--dark-section);
+}
+
+html.dark .scoop-club-inner {
+  background: linear-gradient(135deg, #241716 0%, #1A100F 100%) !important;
+  border-color: var(--border) !important;
+}
+
+.scoop-club-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255, 111, 145, 0.15);
+  color: var(--strawberry);
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-weight: 800;
+  font-size: 0.8rem;
+  letter-spacing: 0.1em;
+  padding: 6px 16px;
+  border-radius: 999px;
+  margin-bottom: 16px;
+  text-transform: uppercase;
+}
+
+.scoop-club-title {
+  font-family: 'Fredoka', sans-serif;
+  font-size: clamp(2rem, 3.5vw, 2.6rem);
+  font-weight: 700;
+  color: #FFFFFF !important;
+  margin-bottom: 12px;
+  line-height: 1.2;
+}
+
+.scoop-club-subtitle {
+  font-size: 1rem;
+  color: #E7D8CF !important;
+  max-width: 580px;
+  margin: 0 auto 28px;
+  line-height: 1.6;
+}
+
+.scoop-club-form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  max-width: 520px;
+  margin: 0 auto;
+  flex-wrap: wrap;
+}
+
+.scoop-club-input {
+  flex: 1 1 280px;
+  padding: 14px 20px;
+  border-radius: 999px;
+  border: 1.5px solid rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.1);
+  color: #FFFFFF !important;
+  font-size: 0.95rem;
+  outline: none;
+}
+
+.scoop-club-input::placeholder {
+  color: rgba(255, 255, 255, 0.65) !important;
+}
+
+.scoop-club-input:focus {
+  border-color: var(--strawberry);
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.scoop-club-btn {
+  padding: 14px 28px;
+  border-radius: 999px;
+  background: var(--strawberry);
+  color: #FFFFFF !important;
+  font-weight: 700;
+  font-size: 0.95rem;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 8px 20px rgba(255, 111, 145, 0.4);
+  transition: transform 0.25s var(--ease), box-shadow 0.25s var(--ease);
+}
+
+.scoop-club-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 24px rgba(255, 111, 145, 0.5);
+}
+
+/* ==========================================================================
+   HERO SECONDARY BUTTON DARK MODE CONTRAST FIX (INDEX HERO)
+   ========================================================================== */
+html.dark .btn-hero-secondary {
+  background: var(--bg-tertiary) !important;
+  color: var(--text-primary) !important;
+  border-color: var(--border) !important;
+}
+
+html.dark .btn-hero-secondary:hover {
+  border-color: var(--strawberry) !important;
+  color: var(--strawberry) !important;
+}
+
+/* ==========================================================================
+   IMAGE OVERLAY BADGES DARK MODE CONTRAST FIX (MENU, CELEBRATIONS, GALLERY)
+   ========================================================================== */
+.icecream-badge,
+.dietary-badge,
+.addon-badge-pill,
+.celeb-service-badge,
+.tag-pop-badge,
+.tag {
+  color: #321B13 !important;
+}
+
+html.dark .icecream-badge,
+html.dark .dietary-badge,
+html.dark .addon-badge-pill,
+html.dark .celeb-service-badge,
+html.dark .event-type-badge {
+  background: rgba(23, 16, 15, 0.92) !important;
+  color: #FFF5E8 !important;
+  border: 1px solid rgba(255, 255, 255, 0.2) !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4) !important;
+}
+
+/* ==========================================================================
+   TODAY'S FLAVOR BAR AUTOMATIC MARQUEE CAROUSEL (HOME 2)
+   ========================================================================== */
+.flavor-bar {
+  background: var(--dark-section);
+  padding: 16px 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  overflow: hidden;
+}
+
+.flavor-bar-inner {
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: 0 24px;
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  overflow: hidden;
+}
+
+.flavor-label-badge {
+  flex-shrink: 0;
+  font-family: 'Fredoka', sans-serif;
+  font-weight: 700;
+  color: #FFFFFF;
+  font-size: 0.85rem;
+  line-height: 1.25;
+  text-transform: uppercase;
+  z-index: 2;
+  background: var(--dark-section);
+  padding-right: 12px;
+}
+
+.flavor-track-wrap {
+  flex: 1;
+  overflow: hidden;
+  position: relative;
+  mask-image: linear-gradient(to right, transparent, #000 6%, #000 94%, transparent);
+  -webkit-mask-image: linear-gradient(to right, transparent, #000 6%, #000 94%, transparent);
+}
+
+.flavor-track {
+  display: inline-flex;
+  align-items: center;
+  gap: 18px;
+  white-space: nowrap;
+  animation: flavorMarqueeLoop 28s linear infinite;
+  will-change: transform;
+}
+
+.flavor-track:hover {
+  animation-play-state: paused;
+}
+
+.flavor-track span:not(.flavor-sep) {
+  color: #FFFFFF;
+  font-family: 'Fredoka', sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 0.88rem;
+  letter-spacing: 0.04em;
+}
+
+.flavor-sep {
+  color: var(--strawberry);
+  font-size: 1rem;
+  font-weight: 800;
+}
+
+@keyframes flavorMarqueeLoop {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+/* ==========================================================================
+   CONTACT PAGE SOCIAL MEDIA BUTTONS (FB, INSTA, X, PINTEREST)
+   ========================================================================== */
+.contact-social-grid {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.contact-social-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 14px;
+  border-radius: 999px;
+  font-size: 0.82rem;
+  font-weight: 700;
+  text-decoration: none !important;
+  transition: all 0.25s var(--ease);
+  border: 1px solid var(--border);
+  background: var(--bg-secondary);
+  color: var(--text-primary);
+}
+
+.contact-social-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+}
+
+.btn-fb:hover { background: #1877F2 !important; color: #FFF !important; border-color: #1877F2 !important; }
+.btn-insta:hover { background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888) !important; color: #FFF !important; border-color: #dc2743 !important; }
+.btn-x:hover { background: #111111 !important; color: #FFF !important; border-color: #111111 !important; }
+.btn-pin:hover { background: #E60023 !important; color: #FFF !important; border-color: #E60023 !important; }
+
+html.dark .btn-x:hover { background: #FFFFFF !important; color: #000000 !important; border-color: #FFFFFF !important; }
