@@ -142,6 +142,9 @@ html.dark .theme-toggle .theme-icon-moon{display:block;}
 .logo em {
   font-style: normal;
   color: var(--strawberry);
+  font-size: inherit;
+  font-weight: inherit;
+  line-height: inherit;
 }
 
 .logo-light {
@@ -401,7 +404,7 @@ html[dir="rtl"] .today-badge { left: auto; right: -4%; }
 
 /* ---------- seasonal ---------- */
 .seasonal{background:linear-gradient(120deg, var(--seasonal-1), var(--seasonal-2)); color:#fff; padding:90px 0; position:relative; overflow:hidden;}
-.seasonal-grid{display:grid; grid-template-columns:1fr minmax(220px, 280px) 1fr; align-items:center; gap:24px;}
+.seasonal-grid{display:grid; grid-template-columns:1fr minmax(300px, 340px) 1fr; align-items:center; gap:24px;}
 .badge-limited{display:inline-block; background:var(--mango); color:var(--ink-on-accent); font-size:.72rem; font-weight:700; padding:6px 14px; border-radius:999px; margin-bottom:18px;}
 .seasonal-text h2{font-size:clamp(2rem,3.6vw,2.8rem); font-weight:600; line-height:1.1; margin-bottom:12px;}
 .seasonal-text h3{font-size:1.3rem; font-weight:600; margin-bottom:8px; opacity:.95;}
@@ -503,20 +506,20 @@ html[dir="rtl"] .today-badge { left: auto; right: -4%; }
 }
 
 .node-mango {
-  top: 8%;
-  left: -2%;
+  top: 6%;
+  left: 0%;
   animation: floatMango 5s ease-in-out infinite alternate;
 }
 
 .node-coconut {
-  top: 42%;
-  left: 28%;
+  top: 40%;
+  left: 24%;
   animation: floatCoconut 5.8s ease-in-out infinite alternate 0.9s;
 }
 
 .node-cream {
-  top: 74%;
-  left: 56%;
+  top: 72%;
+  left: 48%;
   animation: floatCream 5.2s ease-in-out infinite alternate 1.8s;
 }
 
@@ -5885,8 +5888,8 @@ html.dark .map-floating-card {
 
 .icecream-card:hover {
   transform: translateY(-6px);
-  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.08);
-  border-color: #FF4D79;
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.06);
+  border-color: var(--strawberry);
 }
 
 .icecream-img-box {
@@ -5902,11 +5905,12 @@ html.dark .map-floating-card {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform 0.4s var(--ease);
+  transition: transform 0.45s var(--ease), filter 0.45s var(--ease);
 }
 
 .icecream-card:hover .icecream-img-box img {
-  transform: scale(1.08);
+  transform: scale(1.10);
+  filter: brightness(1.05);
 }
 
 .icecream-badge {
@@ -5920,8 +5924,16 @@ html.dark .map-floating-card {
   font-size: 0.75rem;
   font-weight: 700;
   color: var(--choco);
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  box-shadow: none !important;
   z-index: 2;
+  transition: all 0.3s var(--ease);
+}
+
+.icecream-card:hover .icecream-badge {
+  background: var(--strawberry);
+  color: #FFFFFF;
+  transform: scale(1.05);
+  box-shadow: none !important;
 }
 
 .icecream-card-body {
@@ -5936,6 +5948,11 @@ html.dark .map-floating-card {
   font-size: 1.15rem;
   color: var(--choco);
   margin-bottom: 6px;
+  transition: color 0.25s var(--ease);
+}
+
+.icecream-card:hover .icecream-title {
+  color: var(--strawberry);
 }
 
 .icecream-desc {
@@ -5960,6 +5977,13 @@ html.dark .map-floating-card {
   font-weight: 700;
   font-size: 1.2rem;
   color: #FF4D79;
+}
+
+.icecream-card:hover .plus-btn {
+  background: var(--strawberry) !important;
+  color: #FFFFFF !important;
+  transform: scale(1.1) rotate(90deg) !important;
+  box-shadow: none !important;
 }
 
 /* ==========================================================================
@@ -6582,7 +6606,8 @@ html.dark .map-floating-card {
   text-decoration: none !important;
 }
 
-.auth-card-logo span {
+.auth-card-logo span,
+.auth-card-logo em {
   font-size: 1.75rem !important;
   font-weight: 700 !important;
   line-height: 1 !important;
