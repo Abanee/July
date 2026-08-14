@@ -216,8 +216,15 @@ document.addEventListener('DOMContentLoaded', () => {
   const flavorPrev = document.getElementById('flavorPrev');
   const flavorNext = document.getElementById('flavorNext');
   if (flavorTrack && flavorPrev && flavorNext) {
-    flavorPrev.addEventListener('click', () => flavorTrack.scrollBy({ left: -160, behavior: 'smooth' }));
-    flavorNext.addEventListener('click', () => flavorTrack.scrollBy({ left: 160, behavior: 'smooth' }));
+    const isRtl = () => document.documentElement.getAttribute('dir') === 'rtl';
+    flavorPrev.addEventListener('click', () => {
+      const offset = isRtl() ? 160 : -160;
+      flavorTrack.scrollBy({ left: offset, behavior: 'smooth' });
+    });
+    flavorNext.addEventListener('click', () => {
+      const offset = isRtl() ? -160 : 160;
+      flavorTrack.scrollBy({ left: offset, behavior: 'smooth' });
+    });
   }
 
   /* ---------- Newsletter form (Home 2 footer) ---------- */
