@@ -1,0 +1,985 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Coaches — Champion Sports Academy</title>
+<meta name="description" content="Meet the certified coaches at Champion Sports Academy. Our football, basketball, badminton and athletics coaches bring experience, qualifications and genuine passion for athlete development.">
+
+<!-- Theme init — before paint to prevent flash -->
+<script>
+  (function () {
+    var t = localStorage.getItem('csa-theme');
+    document.documentElement.setAttribute('data-theme', t === 'light' ? 'light' : 'dark');
+    var r = localStorage.getItem('csa-rtl');
+    if (r === 'true') document.documentElement.setAttribute('dir', 'rtl');
+  })();
+</script>
+
+<!-- Tailwind CDN -->
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    darkMode: 'class',
+    theme: {
+      extend: {
+        colors: { navy: '#061A2E', lime: '#A8D600' },
+        fontFamily: {
+          sans: ['"Inter"', 'sans-serif'],
+          display: ['"Manrope"', 'sans-serif'],
+        }
+      }
+    }
+  }
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="coaches.css">
+</head>
+<body class="font-sans antialiased">
+
+<!-- ===================== HEADER ===================== -->
+<header id="site-header" class="site-header">
+  <div class="inner">
+
+    <!-- Logo -->
+    <a href="index.html" class="logo-link" aria-label="Champion Sports Academy home">
+      <svg width="32" height="32" viewBox="0 0 34 34" fill="none" aria-hidden="true">
+        <path d="M17 1L31 6.5V16C31 24.5 25.5 30.8 17 33C8.5 30.8 3 24.5 3 16V6.5L17 1Z" fill="#B8E000"/>
+        <path d="M17 6L25 9V16C25 21.2 21.7 25.2 17 27C12.3 25.2 9 21.2 9 16V9L17 6Z" fill="#06101C"/>
+      </svg>
+      <div class="leading-none">
+        <div class="logo-text-champion">CHAMPION</div>
+        <div class="logo-text-sub">SPORTS ACADEMY</div>
+      </div>
+    </a>
+
+    <!-- Desktop Nav -->
+    <nav class="desktop-nav" aria-label="Primary navigation">
+      <a href="index.html"    class="nav-link">Home</a>
+      <a href="programs.html" class="nav-link">Sports Programs</a>
+      <a href="coaches.html"  class="nav-link is-active" aria-current="page">Coaches</a>
+      <a href="events.html"   class="nav-link">Events</a>
+      <a href="about.html"    class="nav-link">About</a>
+      <a href="contact.html"  class="nav-link">Contact</a>
+    </nav>
+
+    <!-- Right desktop actions -->
+    <div class="header-actions">
+      <button id="rtl-toggle" class="rtl-toggle" aria-label="Toggle right-to-left layout" aria-pressed="false" title="Toggle RTL">RTL</button>
+      <button id="theme-toggle" class="theme-toggle" aria-label="Switch to light theme" type="button">
+        <svg id="icon-moon" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.8A9 9 0 1 1 11.2 3 7 7 0 0 0 21 12.8Z"/></svg>
+        <svg id="icon-sun"  width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="hidden"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+      </button>
+      <a href="dashboard.html" class="header-outline-btn">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+        Student Login
+      </a>
+      <a href="#trial" class="header-lime-btn">Book a Trial</a>
+    </div>
+
+    <!-- Mobile controls -->
+    <div class="mobile-controls">
+      <button id="theme-toggle-mobile" class="theme-toggle" aria-label="Switch to light theme" type="button">
+        <svg class="icon-moon-m" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.8A9 9 0 1 1 11.2 3 7 7 0 0 0 21 12.8Z"/></svg>
+        <svg class="icon-sun-m  hidden" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+      </button>
+      <button id="menu-btn" class="hamburger" aria-label="Open navigation menu" aria-expanded="false" aria-controls="mobile-drawer">
+        <svg id="menu-icon-open"  width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6"  x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+        <svg id="menu-icon-close" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="hidden"><line x1="6" y1="6" x2="18" y2="18"/><line x1="6" y1="18" x2="18" y2="6"/></svg>
+      </button>
+    </div>
+  </div>
+
+  <!-- Mobile Drawer -->
+  <nav id="mobile-drawer" class="mobile-drawer" role="dialog" aria-label="Mobile navigation" aria-modal="true">
+    <a href="index.html"    class="drawer-link">Home</a>
+    <a href="programs.html" class="drawer-link">Sports Programs</a>
+    <a href="coaches.html"  class="drawer-link is-active" aria-current="page">Coaches</a>
+    <a href="events.html"   class="drawer-link">Events</a>
+    <a href="about.html"    class="drawer-link">About</a>
+    <a href="contact.html"  class="drawer-link">Contact</a>
+    <div class="drawer-divider"></div>
+    <a href="dashboard.html" class="drawer-link">Student Login</a>
+    <a href="#trial" class="drawer-cta">Book a Trial</a>
+    <div class="drawer-bottom">
+      <button id="rtl-toggle-mobile" class="drawer-rtl-btn" aria-label="Toggle RTL layout">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 3H3M21 9H9M21 15H3M21 21H9"/></svg>
+        RTL Mode
+      </button>
+    </div>
+  </nav>
+</header>
+
+<!-- Backdrop -->
+<div id="menu-backdrop" class="menu-backdrop" aria-hidden="true"></div>
+
+<main>
+
+<!-- ===================== BREADCRUMB ===================== -->
+<div class="breadcrumb-bar">
+  <div class="max-w-site mx-auto px-5 sm:px-6 lg:px-10 breadcrumb-inner">
+    <a href="index.html">Home</a>
+    <span class="crumb-sep">›</span>
+    <span class="crumb-current">Coaches</span>
+  </div>
+</div>
+
+<!-- ===================== HERO ===================== -->
+<section class="coaches-hero" aria-labelledby="hero-heading">
+  <div class="hero-inner max-w-site mx-auto px-5 sm:px-6 lg:px-10">
+
+    <!-- Left -->
+    <div class="hero-left reveal-up">
+      <span class="hero-eyebrow">Our Coaching Team</span>
+      <h1 id="hero-heading" class="hero-heading">Experienced Coaches.<br>Stronger Athletes.</h1>
+      <p class="hero-desc">Our certified coaches bring years of experience, proven methodology and a passion for developing athletes both on and off the field.</p>
+
+      <!-- Trust points -->
+      <div class="hero-trust">
+        <div class="trust-item">
+          <div class="trust-icon" aria-hidden="true">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l8 3.5v5.5c0 5-3.5 8.5-8 11-4.5-2.5-8-6-8-11V5.5L12 2Z"/></svg>
+          </div>
+          <div>
+            <p class="trust-title">Certified Experts</p>
+            <p class="trust-desc">Qualified and experienced coaching staff.</p>
+          </div>
+        </div>
+        <div class="trust-item">
+          <div class="trust-icon" aria-hidden="true">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19V9M10 19V5M16 19v-7M22 19V3"/></svg>
+          </div>
+          <div>
+            <p class="trust-title">Proven Methodology</p>
+            <p class="trust-desc">Structured training for measurable development.</p>
+          </div>
+        </div>
+        <div class="trust-item">
+          <div class="trust-icon" aria-hidden="true">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.6-7 8-7s8 3 8 7"/></svg>
+          </div>
+          <div>
+            <p class="trust-title">Athlete First</p>
+            <p class="trust-desc">Focused on holistic athlete development.</p>
+          </div>
+        </div>
+        <div class="trust-item">
+          <div class="trust-icon" aria-hidden="true">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12l2 2 4-4"/><path d="M12 2l8 3.5v5.5c0 5-3.5 8.5-8 11-4.5-2.5-8-6-8-11V5.5L12 2Z"/></svg>
+          </div>
+          <div>
+            <p class="trust-title">Safe &amp; Supportive</p>
+            <p class="trust-desc">Creating a positive and safe environment.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Buttons -->
+      <div class="hero-buttons">
+        <a href="#coaches" class="btn-lime">
+          Meet Our Coaches
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+        <a href="#trial" class="btn-outline">Book a Trial</a>
+      </div>
+    </div>
+
+    <!-- Right — photography -->
+    <div class="hero-right" aria-hidden="true">
+      <img
+        src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?q=80&w=1200&auto=format&fit=crop"
+        alt="Coach mentoring young athletes during a training session"
+        loading="eager"
+        width="800" height="600"
+      >
+    </div>
+  </div>
+</section>
+
+<!-- ===================== MEET OUR COACHING TEAM ===================== -->
+<section id="coaches" class="coaches-section" aria-labelledby="coaches-heading">
+  <div class="max-w-site mx-auto px-5 sm:px-6 lg:px-10">
+
+    <!-- Section head -->
+    <div class="section-head-center reveal-on-scroll">
+      <span class="eyebrow">Our Coaching Team</span>
+      <h2 id="coaches-heading" class="section-heading">Meet Our Coaching Team</h2>
+      <p class="section-desc">Dedicated professionals committed to bringing out the best in every athlete.</p>
+    </div>
+
+    <!-- Sport filter -->
+    <div class="filter-bar reveal-on-scroll" role="group" aria-label="Filter coaches by sport">
+      <button class="filter-btn is-active" data-filter="all"        aria-pressed="true">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+        All Coaches
+      </button>
+      <button class="filter-btn" data-filter="football"    aria-pressed="false">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7l3.5 2.5-1.3 4h-4.4L8.5 9.5 12 7Z"/></svg>
+        Football
+      </button>
+      <button class="filter-btn" data-filter="basketball"  aria-pressed="false">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 3v18M3 12h18M5.6 5.6c2.4 2.4 2.4 10.4 0 12.8M18.4 5.6c-2.4 2.4-2.4 10.4 0 12.8"/></svg>
+        Basketball
+      </button>
+      <button class="filter-btn" data-filter="badminton"   aria-pressed="false">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 5 9.5 14.5M5 19l3-3M14 14l-9 5 2-4M15 3c2 0 5 2 5 5 0 4-4 6-6 6-1 0-2-.5-2-2 0-3 3-9 3-9Z"/></svg>
+        Badminton
+      </button>
+      <button class="filter-btn" data-filter="athletics"   aria-pressed="false">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="16.5" cy="5.5" r="1.8"/><path d="M6 22l3-6 3 2 2-5 4 2M8 12l2-3 4 1"/></svg>
+        Athletics
+      </button>
+    </div>
+
+    <!-- ===== HEAD COACHES ===== -->
+    <p class="coaches-label reveal-on-scroll">Head Coaches</p>
+    <div class="coaches-grid reveal-on-scroll" id="head-coaches-grid">
+
+      <!-- Daniel Carter -->
+      <article class="coach-card stagger-1"
+        data-sport="football"
+        data-name="Daniel Carter"
+        data-role="Head Coach — Football"
+        data-years="12+"
+        data-cert="UEFA A Licensed"
+        data-specs="Player Development,Tactical Training"
+        data-philosophy="I focus on helping athletes understand why they train a skill, not just how to perform it. Real improvement comes from understanding."
+        data-focus="Technical Development,Decision Making,Fitness,Match Preparation"
+        data-image="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=600&auto=format&fit=crop"
+        tabindex="0"
+        role="button"
+        aria-label="View profile of Daniel Carter, Head Football Coach"
+      >
+        <div class="coach-img-wrap">
+          <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=600&auto=format&fit=crop" alt="Daniel Carter, Head Football Coach" loading="lazy">
+          <span class="sport-badge">Football</span>
+        </div>
+        <div class="coach-body">
+          <h3 class="coach-name">Daniel Carter</h3>
+          <p class="coach-role">Head Coach — Football</p>
+          <p class="coach-desc">UEFA Licensed coach with 12+ years in player development and tactical training.</p>
+          <div class="coach-meta">
+            <div class="coach-meta-item">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l3 7h7l-5.5 4.5L18.5 22 12 17l-6.5 5 2-8.5L2 9h7l3-7Z"/></svg>
+              <div>
+                <div class="coach-meta-val">12+</div>
+                <div class="coach-meta-label">Yrs Exp.</div>
+              </div>
+            </div>
+            <div class="coach-meta-item">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l8 3.5v5.5c0 5-3.5 8.5-8 11-4.5-2.5-8-6-8-11V5.5L12 2Z"/></svg>
+              <div>
+                <div class="coach-meta-val">UEFA A</div>
+                <div class="coach-meta-label">Licensed</div>
+              </div>
+            </div>
+          </div>
+          <div class="coach-specs">
+            <span class="spec-tag">Player Development</span>
+            <span class="spec-tag">Tactical Training</span>
+          </div>
+          <button class="coach-view-btn" aria-label="View full profile of Daniel Carter">
+            View Profile
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </button>
+        </div>
+      </article>
+
+      <!-- Marcus Williams -->
+      <article class="coach-card stagger-2"
+        data-sport="basketball"
+        data-name="Marcus Williams"
+        data-role="Head Coach — Basketball"
+        data-years="10+"
+        data-cert="FIBA Certified"
+        data-specs="Skill Development,Team Strategy"
+        data-philosophy="Basketball is a team game. I train individuals to think collectively, so when they play together they move as one."
+        data-focus="Ball Handling,Shooting Technique,Team Play,Game Strategy"
+        data-image="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=600&auto=format&fit=crop"
+        tabindex="0"
+        role="button"
+        aria-label="View profile of Marcus Williams, Head Basketball Coach"
+      >
+        <div class="coach-img-wrap">
+          <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=600&auto=format&fit=crop" alt="Marcus Williams, Head Basketball Coach" loading="lazy">
+          <span class="sport-badge">Basketball</span>
+        </div>
+        <div class="coach-body">
+          <h3 class="coach-name">Marcus Williams</h3>
+          <p class="coach-role">Head Coach — Basketball</p>
+          <p class="coach-desc">Professional basketball coach with 10+ years in skill development and team strategy.</p>
+          <div class="coach-meta">
+            <div class="coach-meta-item">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l3 7h7l-5.5 4.5L18.5 22 12 17l-6.5 5 2-8.5L2 9h7l3-7Z"/></svg>
+              <div>
+                <div class="coach-meta-val">10+</div>
+                <div class="coach-meta-label">Yrs Exp.</div>
+              </div>
+            </div>
+            <div class="coach-meta-item">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l8 3.5v5.5c0 5-3.5 8.5-8 11-4.5-2.5-8-6-8-11V5.5L12 2Z"/></svg>
+              <div>
+                <div class="coach-meta-val">FIBA</div>
+                <div class="coach-meta-label">Certified</div>
+              </div>
+            </div>
+          </div>
+          <div class="coach-specs">
+            <span class="spec-tag">Skill Development</span>
+            <span class="spec-tag">Team Strategy</span>
+          </div>
+          <button class="coach-view-btn" aria-label="View full profile of Marcus Williams">
+            View Profile
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </button>
+        </div>
+      </article>
+
+      <!-- Ananya Sharma -->
+      <article class="coach-card stagger-3"
+        data-sport="badminton"
+        data-name="Ananya Sharma"
+        data-role="Head Coach — Badminton"
+        data-years="8+"
+        data-cert="BWF Level 1"
+        data-specs="Technique,Footwork,Match Preparation"
+        data-philosophy="Good footwork is the foundation of every shot. Get that right and everything else becomes easier to learn."
+        data-focus="Footwork,Racket Technique,Rally Consistency,Match Preparation"
+        data-image="https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?q=80&w=600&auto=format&fit=crop"
+        tabindex="0"
+        role="button"
+        aria-label="View profile of Ananya Sharma, Head Badminton Coach"
+      >
+        <div class="coach-img-wrap">
+          <img src="https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?q=80&w=600&auto=format&fit=crop" alt="Ananya Sharma, Head Badminton Coach" loading="lazy">
+          <span class="sport-badge">Badminton</span>
+        </div>
+        <div class="coach-body">
+          <h3 class="coach-name">Ananya Sharma</h3>
+          <p class="coach-role">Head Coach — Badminton</p>
+          <p class="coach-desc">BWF Certified coach with 8+ years developing national-level players through technique and footwork.</p>
+          <div class="coach-meta">
+            <div class="coach-meta-item">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l3 7h7l-5.5 4.5L18.5 22 12 17l-6.5 5 2-8.5L2 9h7l3-7Z"/></svg>
+              <div>
+                <div class="coach-meta-val">8+</div>
+                <div class="coach-meta-label">Yrs Exp.</div>
+              </div>
+            </div>
+            <div class="coach-meta-item">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l8 3.5v5.5c0 5-3.5 8.5-8 11-4.5-2.5-8-6-8-11V5.5L12 2Z"/></svg>
+              <div>
+                <div class="coach-meta-val">BWF L1</div>
+                <div class="coach-meta-label">Certified</div>
+              </div>
+            </div>
+          </div>
+          <div class="coach-specs">
+            <span class="spec-tag">Technique</span>
+            <span class="spec-tag">Footwork</span>
+            <span class="spec-tag">Match Prep</span>
+          </div>
+          <button class="coach-view-btn" aria-label="View full profile of Ananya Sharma">
+            View Profile
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </button>
+        </div>
+      </article>
+
+      <!-- Rohan Mehta -->
+      <article class="coach-card stagger-4"
+        data-sport="athletics"
+        data-name="Rohan Mehta"
+        data-role="Head Coach — Athletics"
+        data-years="11+"
+        data-cert="IAAF Level 2"
+        data-specs="Speed,Strength,Conditioning"
+        data-philosophy="I train athletes to respect their body — build strength, recover properly and run faster through smart training, not just harder training."
+        data-focus="Sprint Technique,Strength Training,Endurance,Recovery"
+        data-image="https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=600&auto=format&fit=crop"
+        tabindex="0"
+        role="button"
+        aria-label="View profile of Rohan Mehta, Head Athletics Coach"
+      >
+        <div class="coach-img-wrap">
+          <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=600&auto=format&fit=crop" alt="Rohan Mehta, Head Athletics Coach" loading="lazy">
+          <span class="sport-badge">Athletics</span>
+        </div>
+        <div class="coach-body">
+          <h3 class="coach-name">Rohan Mehta</h3>
+          <p class="coach-role">Head Coach — Athletics</p>
+          <p class="coach-desc">Former national athlete with 11+ years in speed, strength and conditioning programs.</p>
+          <div class="coach-meta">
+            <div class="coach-meta-item">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l3 7h7l-5.5 4.5L18.5 22 12 17l-6.5 5 2-8.5L2 9h7l3-7Z"/></svg>
+              <div>
+                <div class="coach-meta-val">11+</div>
+                <div class="coach-meta-label">Yrs Exp.</div>
+              </div>
+            </div>
+            <div class="coach-meta-item">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l8 3.5v5.5c0 5-3.5 8.5-8 11-4.5-2.5-8-6-8-11V5.5L12 2Z"/></svg>
+              <div>
+                <div class="coach-meta-val">IAAF L2</div>
+                <div class="coach-meta-label">Certified</div>
+              </div>
+            </div>
+          </div>
+          <div class="coach-specs">
+            <span class="spec-tag">Speed</span>
+            <span class="spec-tag">Strength</span>
+            <span class="spec-tag">Conditioning</span>
+          </div>
+          <button class="coach-view-btn" aria-label="View full profile of Rohan Mehta">
+            View Profile
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </button>
+        </div>
+      </article>
+    </div><!-- /head-coaches-grid -->
+
+    <!-- ===== ASSISTANT / SPECIALIST COACHES ===== -->
+    <p class="coaches-label reveal-on-scroll">Assistant &amp; Specialist Coaches</p>
+    <div class="coaches-grid coaches-grid-sm reveal-on-scroll" id="assistant-coaches-grid">
+
+      <!-- Arjun Nair -->
+      <article class="coach-card coach-card-sm stagger-1"
+        data-sport="football"
+        data-name="Arjun Nair"
+        data-role="Assistant Coach — Football"
+        data-years="6+"
+        data-cert="UEFA B"
+        data-specs="Fitness,Ball Control,Set Pieces"
+        data-philosophy="Every training session matters. I push athletes to give their best every day, not just when it's easy."
+        data-focus="Fitness,Ball Control,Set Pieces,Match Scenarios"
+        data-image="https://images.unsplash.com/photo-1463453091185-61582044d556?q=80&w=600&auto=format&fit=crop"
+        tabindex="0"
+        role="button"
+        aria-label="View profile of Arjun Nair, Football Assistant Coach"
+      >
+        <div class="coach-img-wrap">
+          <img src="https://images.unsplash.com/photo-1463453091185-61582044d556?q=80&w=600&auto=format&fit=crop" alt="Arjun Nair, Assistant Football Coach" loading="lazy">
+          <span class="sport-badge">Football</span>
+        </div>
+        <div class="coach-body">
+          <h3 class="coach-name">Arjun Nair</h3>
+          <p class="coach-role">Assistant Coach — Football</p>
+          <div class="coach-meta">
+            <div class="coach-meta-item">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l3 7h7l-5.5 4.5L18.5 22 12 17l-6.5 5 2-8.5L2 9h7l3-7Z"/></svg>
+              <div>
+                <div class="coach-meta-val">6+</div>
+                <div class="coach-meta-label">Yrs Exp.</div>
+              </div>
+            </div>
+          </div>
+          <button class="coach-view-btn" aria-label="View full profile of Arjun Nair">
+            View Profile
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </button>
+        </div>
+      </article>
+
+      <!-- Sophie Brown -->
+      <article class="coach-card coach-card-sm stagger-2"
+        data-sport="basketball"
+        data-name="Sophie Brown"
+        data-role="Assistant Coach — Basketball"
+        data-years="5+"
+        data-cert="FIBA Level 1"
+        data-specs="Defense,Conditioning,Youth Coaching"
+        data-philosophy="Consistency beats talent when talent isn't consistent. I teach athletes to be consistent in their effort and execution."
+        data-focus="Defense,Conditioning,Youth Development,Game Drills"
+        data-image="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&w=600&auto=format&fit=crop"
+        tabindex="0"
+        role="button"
+        aria-label="View profile of Sophie Brown, Basketball Assistant Coach"
+      >
+        <div class="coach-img-wrap">
+          <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&w=600&auto=format&fit=crop" alt="Sophie Brown, Assistant Basketball Coach" loading="lazy">
+          <span class="sport-badge">Basketball</span>
+        </div>
+        <div class="coach-body">
+          <h3 class="coach-name">Sophie Brown</h3>
+          <p class="coach-role">Assistant Coach — Basketball</p>
+          <div class="coach-meta">
+            <div class="coach-meta-item">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l3 7h7l-5.5 4.5L18.5 22 12 17l-6.5 5 2-8.5L2 9h7l3-7Z"/></svg>
+              <div>
+                <div class="coach-meta-val">5+</div>
+                <div class="coach-meta-label">Yrs Exp.</div>
+              </div>
+            </div>
+          </div>
+          <button class="coach-view-btn" aria-label="View full profile of Sophie Brown">
+            View Profile
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </button>
+        </div>
+      </article>
+
+      <!-- Vikram Singh -->
+      <article class="coach-card coach-card-sm stagger-3"
+        data-sport="badminton"
+        data-name="Vikram Singh"
+        data-role="Assistant Coach — Badminton"
+        data-years="6+"
+        data-cert="BWF Intro"
+        data-specs="Smash Technique,Rally Drills,Beginners"
+        data-philosophy="The first few months of training are the most important. I make sure beginners build the right habits from day one."
+        data-focus="Smash Technique,Rally Drills,Beginner Development,Court Movement"
+        data-image="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=600&auto=format&fit=crop"
+        tabindex="0"
+        role="button"
+        aria-label="View profile of Vikram Singh, Badminton Assistant Coach"
+      >
+        <div class="coach-img-wrap">
+          <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=600&auto=format&fit=crop" alt="Vikram Singh, Assistant Badminton Coach" loading="lazy">
+          <span class="sport-badge">Badminton</span>
+        </div>
+        <div class="coach-body">
+          <h3 class="coach-name">Vikram Singh</h3>
+          <p class="coach-role">Assistant Coach — Badminton</p>
+          <div class="coach-meta">
+            <div class="coach-meta-item">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l3 7h7l-5.5 4.5L18.5 22 12 17l-6.5 5 2-8.5L2 9h7l3-7Z"/></svg>
+              <div>
+                <div class="coach-meta-val">6+</div>
+                <div class="coach-meta-label">Yrs Exp.</div>
+              </div>
+            </div>
+          </div>
+          <button class="coach-view-btn" aria-label="View full profile of Vikram Singh">
+            View Profile
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </button>
+        </div>
+      </article>
+
+      <!-- Priya Patel -->
+      <article class="coach-card coach-card-sm stagger-4"
+        data-sport="football"
+        data-name="Priya Patel"
+        data-role="Goalkeeper Coach — Football"
+        data-years="7+"
+        data-cert="GK Specialist"
+        data-specs="Goalkeeping,Reflexes,Positioning"
+        data-philosophy="Goalkeeping is more than saving goals. I train keepers to command their area, lead their defenders and stay focused for 90 minutes."
+        data-focus="Shot Stopping,Positioning,Distribution,Mental Focus"
+        data-image="https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=600&auto=format&fit=crop"
+        tabindex="0"
+        role="button"
+        aria-label="View profile of Priya Patel, Goalkeeper Coach"
+      >
+        <div class="coach-img-wrap">
+          <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=600&auto=format&fit=crop" alt="Priya Patel, Goalkeeper Football Coach" loading="lazy">
+          <span class="sport-badge">Football</span>
+        </div>
+        <div class="coach-body">
+          <h3 class="coach-name">Priya Patel</h3>
+          <p class="coach-role">Goalkeeper Coach — Football</p>
+          <div class="coach-meta">
+            <div class="coach-meta-item">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l3 7h7l-5.5 4.5L18.5 22 12 17l-6.5 5 2-8.5L2 9h7l3-7Z"/></svg>
+              <div>
+                <div class="coach-meta-val">7+</div>
+                <div class="coach-meta-label">Yrs Exp.</div>
+              </div>
+            </div>
+          </div>
+          <button class="coach-view-btn" aria-label="View full profile of Priya Patel">
+            View Profile
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </button>
+        </div>
+      </article>
+
+      <!-- Neeraj Verma -->
+      <article class="coach-card coach-card-sm stagger-5"
+        data-sport="athletics"
+        data-name="Neeraj Verma"
+        data-role="Strength &amp; Conditioning — Athletics"
+        data-years="8+"
+        data-cert="NSCA Certified"
+        data-specs="Strength Training,Injury Prevention,Performance"
+        data-philosophy="Strength is the base for everything in sport. Build it the right way and every other quality improves with it."
+        data-focus="Strength Training,Conditioning,Injury Prevention,Performance Testing"
+        data-image="https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=600&auto=format&fit=crop"
+        tabindex="0"
+        role="button"
+        aria-label="View profile of Neeraj Verma, Strength and Conditioning Coach"
+      >
+        <div class="coach-img-wrap">
+          <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=600&auto=format&fit=crop" alt="Neeraj Verma, Strength and Conditioning Coach" loading="lazy">
+          <span class="sport-badge">Athletics</span>
+        </div>
+        <div class="coach-body">
+          <h3 class="coach-name">Neeraj Verma</h3>
+          <p class="coach-role">Strength &amp; Conditioning</p>
+          <div class="coach-meta">
+            <div class="coach-meta-item">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l3 7h7l-5.5 4.5L18.5 22 12 17l-6.5 5 2-8.5L2 9h7l3-7Z"/></svg>
+              <div>
+                <div class="coach-meta-val">8+</div>
+                <div class="coach-meta-label">Yrs Exp.</div>
+              </div>
+            </div>
+          </div>
+          <button class="coach-view-btn" aria-label="View full profile of Neeraj Verma">
+            View Profile
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </button>
+        </div>
+      </article>
+
+      <!-- Maya Iyer -->
+      <article class="coach-card coach-card-sm stagger-6"
+        data-sport="basketball"
+        data-name="Maya Iyer"
+        data-role="Skills Coach — Basketball"
+        data-years="4+"
+        data-cert="FIBA Intro"
+        data-specs="Individual Skills,Shooting,Young Athletes"
+        data-philosophy="Young players need to fall in love with the game first. I make every session fun while building the fundamentals they'll need later."
+        data-focus="Shooting,Dribbling,Individual Skills,Youth Drills"
+        data-image="https://images.unsplash.com/photo-1607746882042-944635dfe10e?q=80&w=600&auto=format&fit=crop"
+        tabindex="0"
+        role="button"
+        aria-label="View profile of Maya Iyer, Basketball Skills Coach"
+      >
+        <div class="coach-img-wrap">
+          <img src="https://images.unsplash.com/photo-1607746882042-944635dfe10e?q=80&w=600&auto=format&fit=crop" alt="Maya Iyer, Basketball Skills Coach" loading="lazy">
+          <span class="sport-badge">Basketball</span>
+        </div>
+        <div class="coach-body">
+          <h3 class="coach-name">Maya Iyer</h3>
+          <p class="coach-role">Skills Coach — Basketball</p>
+          <div class="coach-meta">
+            <div class="coach-meta-item">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l3 7h7l-5.5 4.5L18.5 22 12 17l-6.5 5 2-8.5L2 9h7l3-7Z"/></svg>
+              <div>
+                <div class="coach-meta-val">4+</div>
+                <div class="coach-meta-label">Yrs Exp.</div>
+              </div>
+            </div>
+          </div>
+          <button class="coach-view-btn" aria-label="View full profile of Maya Iyer">
+            View Profile
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </button>
+        </div>
+      </article>
+    </div><!-- /assistant-coaches-grid -->
+
+    <!-- Empty state for filter -->
+    <div id="no-results" class="hidden text-center py-16" aria-live="polite">
+      <p style="color:var(--text-muted); font-size:15px;">No coaches found for this filter. Try a different sport.</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- ===================== COACHING SPECIALIZATIONS ===================== -->
+<section class="spec-section section-alt" aria-labelledby="spec-heading">
+  <div class="max-w-site mx-auto px-5 sm:px-6 lg:px-10">
+    <div class="section-head-center reveal-on-scroll">
+      <span class="eyebrow">Areas of Development</span>
+      <h2 id="spec-heading" class="section-heading">What Our Coaches Help You Develop</h2>
+      <p class="section-desc">Every coach session is focused on building something specific — here's what our coaches work on with every athlete.</p>
+    </div>
+
+    <div class="spec-grid reveal-on-scroll">
+      <div class="spec-item stagger-1">
+        <div class="spec-icon" aria-hidden="true">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M6.5 6.5l11 11M4 9l3-3 3 3-3 3-3-3ZM14 19l3-3 3 3-3 3-3-3ZM2 6l2-2M20 18l2 2"/></svg>
+        </div>
+        <h3 class="spec-title">Technical Skills</h3>
+        <p class="spec-desc">Build sport-specific fundamentals with correct technique from day one.</p>
+      </div>
+      <div class="spec-item stagger-2">
+        <div class="spec-icon" aria-hidden="true">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M9.5 2A2.5 2.5 0 0 1 12 4.5v15a2.5 2.5 0 0 1-4.96.44 2.5 2.5 0 0 1-2.96-3.08 3 3 0 0 1-.34-5.58 2.5 2.5 0 0 1 1.32-4.24 2.5 2.5 0 0 1 1.44-4.04M14.5 2A2.5 2.5 0 0 0 12 4.5v15a2.5 2.5 0 0 0 4.96.44 2.5 2.5 0 0 0 2.96-3.08 3 3 0 0 0 .34-5.58 2.5 2.5 0 0 0-1.32-4.24 2.5 2.5 0 0 0-1.44-4.04"/></svg>
+        </div>
+        <h3 class="spec-title">Tactical Awareness</h3>
+        <p class="spec-desc">Make better decisions during play by understanding game situations.</p>
+      </div>
+      <div class="spec-item stagger-3">
+        <div class="spec-icon" aria-hidden="true">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="16.5" cy="5.5" r="1.8"/><path d="M6 22l3-6 3 2 2-5 4 2M8 12l2-3 4 1"/></svg>
+        </div>
+        <h3 class="spec-title">Fitness</h3>
+        <p class="spec-desc">Develop strength, speed and endurance appropriate for your age and level.</p>
+      </div>
+      <div class="spec-item stagger-4">
+        <div class="spec-icon" aria-hidden="true">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2M12 8v4M12 16h.01"/></svg>
+        </div>
+        <h3 class="spec-title">Mental Preparation</h3>
+        <p class="spec-desc">Build confidence, focus and composure under competitive pressure.</p>
+      </div>
+      <div class="spec-item stagger-5">
+        <div class="spec-icon" aria-hidden="true">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M8 21h8M12 17v4M7 4h10v3a5 5 0 01-10 0V4ZM7 4H3v2a4 4 0 004 4M17 4h4v2a4 4 0 01-4 4"/></svg>
+        </div>
+        <h3 class="spec-title">Match Preparation</h3>
+        <p class="spec-desc">Prepare physically and mentally for competitive matches and events.</p>
+      </div>
+      <div class="spec-item stagger-6">
+        <div class="spec-icon" aria-hidden="true">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 3v18h18M7 15l4-5 3 3 5-7"/></svg>
+        </div>
+        <h3 class="spec-title">Long-Term Development</h3>
+        <p class="spec-desc">Create sustainable progress that improves year-on-year throughout a career.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== HOW COACHING WORKS ===================== -->
+<section class="process-section section-pad" aria-labelledby="process-heading">
+  <div class="max-w-site mx-auto px-5 sm:px-6 lg:px-10">
+    <div class="section-head-center reveal-on-scroll">
+      <span class="eyebrow">Our Coaching Approach</span>
+      <h2 id="process-heading" class="section-heading">How Coaching Works</h2>
+      <p class="section-desc">A structured four-step method that keeps every athlete progressing in the right direction.</p>
+    </div>
+
+    <div class="process-row reveal-on-scroll" role="list">
+      <div class="step-item stagger-1" role="listitem">
+        <div class="step-num" aria-hidden="true">01</div>
+        <h3 class="step-title">Assess</h3>
+        <p class="step-desc">Understand the athlete's current level, fitness and goals through observation and evaluation.</p>
+      </div>
+      <div class="step-item stagger-2" role="listitem">
+        <div class="step-num" aria-hidden="true">02</div>
+        <h3 class="step-title">Plan</h3>
+        <p class="step-desc">Create a structured training plan matched to the athlete's age, level and specific improvement areas.</p>
+      </div>
+      <div class="step-item stagger-3" role="listitem">
+        <div class="step-num" aria-hidden="true">03</div>
+        <h3 class="step-title">Train</h3>
+        <p class="step-desc">Develop skills through focused, structured sessions with clear objectives and consistent feedback.</p>
+      </div>
+      <div class="step-item stagger-4" role="listitem">
+        <div class="step-num" aria-hidden="true">04</div>
+        <h3 class="step-title">Review</h3>
+        <p class="step-desc">Track progress, identify improvements and adjust training to keep the athlete moving forward.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== COACHING IMPACT ===================== -->
+<section class="impact-section" aria-labelledby="impact-heading">
+  <div class="impact-bg" aria-hidden="true">
+    <img src="https://images.unsplash.com/photo-1547347298-4074fc3086f0?q=80&w=1400&auto=format&fit=crop" alt="" loading="lazy">
+  </div>
+  <div class="impact-inner">
+    <div class="impact-head reveal-on-scroll">
+      <span class="eyebrow">Our Coaching Impact</span>
+      <h2 id="impact-heading" class="section-heading">Our Coaching Impact</h2>
+      <p class="section-desc" style="color:rgba(255,255,255,.6)">Real results built through consistent coaching and athlete effort.</p>
+    </div>
+    <div class="impact-stats reveal-on-scroll">
+      <div class="impact-stat stagger-1">
+        <div class="impact-icon" aria-hidden="true">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+        </div>
+        <div class="impact-num" data-target="25" data-suffix="+">0</div>
+        <div class="impact-label">Expert Coaches</div>
+      </div>
+      <div class="impact-stat stagger-2">
+        <div class="impact-icon" aria-hidden="true">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M12 2l3 7h7l-5.5 4.5L18.5 22 12 17l-6.5 5 2-8.5L2 9h7l3-7Z"/></svg>
+        </div>
+        <div class="impact-num" data-target="10" data-suffix="+">0</div>
+        <div class="impact-label">Avg. Years Experience</div>
+      </div>
+      <div class="impact-stat stagger-3">
+        <div class="impact-icon" aria-hidden="true">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/></svg>
+        </div>
+        <div class="impact-num" data-target="1500" data-suffix="+">0</div>
+        <div class="impact-label">Athletes Trained</div>
+      </div>
+      <div class="impact-stat stagger-4">
+        <div class="impact-icon" aria-hidden="true">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M3 3v18h18M7 15l4-5 3 3 5-7"/></svg>
+        </div>
+        <div class="impact-num" data-target="95" data-suffix="%">0</div>
+        <div class="impact-label">Athlete Progress Rate</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== FIND YOUR COACH ===================== -->
+<section class="find-coach-section" aria-labelledby="find-heading">
+  <div class="find-coach-inner reveal-on-scroll">
+    <span class="eyebrow">Get Started</span>
+    <h2 id="find-heading" class="section-heading">Looking For The Right Coach?</h2>
+    <p class="section-desc">Choose your sport, training level and goals. Our team can help you find the right coaching program.</p>
+    <div class="find-coach-buttons">
+      <a href="programs.html" class="btn-lime">
+        Explore Sports Programs
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </a>
+      <a href="#trial" class="btn-outline-dark">Book a Trial</a>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== FINAL CTA ===================== -->
+<section id="trial" class="final-cta" aria-labelledby="cta-heading">
+  <div class="final-cta-inner max-w-site mx-auto px-5 sm:px-6 lg:px-10">
+    <div class="final-cta-left reveal-up">
+      <span class="final-cta-eyebrow">Start Training</span>
+      <h2 id="cta-heading" class="final-cta-heading">Learn From Coaches Who Care About Your Progress.</h2>
+      <p class="final-cta-desc">Meet your coaching team, choose your sport and take your first step with Champion Sports Academy.</p>
+      <div class="final-cta-buttons">
+        <a href="contact.html" class="btn-lime">
+          Book a Trial
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+        <a href="programs.html" class="btn-outline">Explore Programs</a>
+      </div>
+    </div>
+    <div class="final-cta-right" aria-hidden="true">
+      <img
+        src="https://images.unsplash.com/photo-1526232761682-d26e03ac148e?q=80&w=800&auto=format&fit=crop"
+        alt="Young athlete training hard under the guidance of a coach"
+        loading="lazy"
+      >
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ===================== FOOTER ===================== -->
+<footer class="site-footer" aria-label="Site footer">
+  <div class="footer-grid">
+    <div class="footer-col">
+      <a href="index.html" class="logo-link mb-5" style="margin-bottom:16px;" aria-label="Champion Sports Academy">
+        <svg width="28" height="28" viewBox="0 0 34 34" fill="none" aria-hidden="true">
+          <path d="M17 1L31 6.5V16C31 24.5 25.5 30.8 17 33C8.5 30.8 3 24.5 3 16V6.5L17 1Z" fill="#B8E000"/>
+          <path d="M17 6L25 9V16C25 21.2 21.7 25.2 17 27C12.3 25.2 9 21.2 9 16V9L17 6Z" fill="#06101C"/>
+        </svg>
+        <div>
+          <div class="logo-text-champion">CHAMPION</div>
+          <div class="logo-text-sub">SPORTS ACADEMY</div>
+        </div>
+      </a>
+      <p class="footer-tag">Building athletes.<br>Building futures.</p>
+      <nav class="footer-social" aria-label="Social media links">
+        <a href="#" aria-label="Facebook"><svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M22 12a10 10 0 1 0-11.6 9.9v-7H7.9V12h2.5V9.8c0-2.5 1.5-3.9 3.8-3.9 1.1 0 2.2.2 2.2.2v2.5h-1.3c-1.2 0-1.6.8-1.6 1.6V12h2.8l-.4 2.9h-2.4v7A10 10 0 0 0 22 12z"/></svg></a>
+        <a href="#" aria-label="Instagram"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.5" fill="currentColor"/></svg></a>
+        <a href="#" aria-label="YouTube"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="5" width="20" height="14" rx="4"/><path d="M10 9l6 3-6 3V9Z" fill="currentColor" stroke="none"/></svg></a>
+        <a href="#" aria-label="Twitter / X"><svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M22 5.9c-.7.3-1.5.6-2.4.7.9-.5 1.5-1.3 1.8-2.3-.8.5-1.7.8-2.7 1a4.3 4.3 0 0 0-7.3 3.9A12.1 12.1 0 0 1 2.8 4.7a4.3 4.3 0 0 0 1.3 5.7c-.7 0-1.4-.2-2-.5v.1c0 2.1 1.5 3.8 3.4 4.2-.6.2-1.3.2-1.9.1.5 1.7 2.1 2.9 4 3A8.6 8.6 0 0 1 1 19a12.1 12.1 0 0 0 6.6 1.9c7.9 0 12.2-6.5 12.2-12.2v-.6c.8-.6 1.5-1.3 2.2-2.2z"/></svg></a>
+      </nav>
+    </div>
+
+    <div class="footer-col">
+      <h4>Explore</h4>
+      <a href="index.html">Home</a>
+      <a href="programs.html">Sports Programs</a>
+      <a href="coaches.html">Coaches</a>
+      <a href="events.html">Events</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </div>
+
+    <div class="footer-col">
+      <h4>Start Training</h4>
+      <a href="programs.html">Find Training</a>
+      <a href="programs.html#schedule">Batch Timings</a>
+      <a href="#trial">Book a Trial</a>
+      <a href="dashboard.html">Student Login</a>
+    </div>
+
+    <div class="footer-col">
+      <h4>Contact</h4>
+      <div class="footer-contact-item">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2A19.8 19.8 0 0 1 3.1 4.2 2 2 0 0 1 5.1 2h3a2 2 0 0 1 2 1.7 12.8 12.8 0 0 0 .7 2.8 2 2 0 0 1-.5 2.1L9.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4 12.8 12.8 0 0 0 2.8.7A2 2 0 0 1 23 16.9z"/></svg>
+        +91 98765 43210
+      </div>
+      <div class="footer-contact-item">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        info@championsports.com
+      </div>
+      <div class="footer-contact-item">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        <span>Academy Road, Chennai<br>Tamil Nadu, India</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <div class="footer-bottom-inner">
+      <p>© 2026 Champion Sports Academy. All Rights Reserved.</p>
+      <div class="footer-legal">
+        <a href="#">Privacy Policy</a>
+        <span>|</span>
+        <a href="#">Terms &amp; Conditions</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- Back to top -->
+<button id="backToTop" class="back-to-top" aria-label="Back to top">
+  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+</button>
+
+<!-- ===================== COACH PROFILE MODAL ===================== -->
+<div id="coach-modal" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="modal-name" aria-hidden="true">
+  <div class="modal-box" id="modal-box">
+    <button class="modal-close" id="modal-close" aria-label="Close profile">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><line x1="6" y1="6" x2="18" y2="18"/><line x1="6" y1="18" x2="18" y2="6"/></svg>
+    </button>
+
+    <div class="modal-header">
+      <div class="modal-img">
+        <img id="modal-img" src="" alt="" loading="lazy">
+      </div>
+      <div class="modal-info">
+        <span class="modal-sport-badge" id="modal-sport-badge"></span>
+        <h2 class="modal-name" id="modal-name"></h2>
+        <p class="modal-role" id="modal-role"></p>
+        <div class="modal-stats">
+          <div class="modal-stat">
+            <span class="modal-stat-val" id="modal-years"></span>
+            <span class="modal-stat-label">Years Experience</span>
+          </div>
+        </div>
+        <div class="modal-cert" id="modal-cert-wrap">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 2l8 3.5v5.5c0 5-3.5 8.5-8 11-4.5-2.5-8-6-8-11V5.5L12 2Z"/></svg>
+          <span id="modal-cert"></span>
+        </div>
+        <div class="modal-specs" id="modal-specs"></div>
+      </div>
+    </div>
+
+    <div class="modal-body">
+      <div class="modal-philosophy">
+        <p class="modal-philosophy-label">Coaching Philosophy</p>
+        <p id="modal-philosophy"></p>
+      </div>
+      <p class="modal-focus-title">Training Focus</p>
+      <div class="modal-focus-grid" id="modal-focus"></div>
+      <div class="modal-cta">
+        <a href="#trial" class="btn-lime" id="modal-trial-btn">
+          Book a Trial
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+        <button class="btn-outline-dark" id="modal-close-btn">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="coaches.js"></script>
+</body>
+</html>

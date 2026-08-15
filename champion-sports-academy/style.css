@@ -1,0 +1,602 @@
+/* ===================== THEME & RTL ===================== */
+:root[data-theme="light"] {
+  --bg-primary: #F5F7F5;
+  --bg-secondary: #FFFFFF;
+  --text-primary: #102033;
+  --text-secondary: #4B5A6A;
+  --border-color: #DDE4E8;
+  --navy: #061A2E;
+  --accent: #A8D600;
+}
+
+:root[data-theme="light"] body {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+}
+
+[dir="rtl"] {
+  direction: rtl;
+}
+
+/* ===================== BASE ===================== */
+html { scroll-behavior: smooth; }
+body { -webkit-font-smoothing: antialiased; transition: background-color .25s ease, color .25s ease; }
+
+::selection { background: #A8D600; color: #061A2E; }
+
+a:focus-visible, button:focus-visible {
+  outline: 2px solid #A8D600;
+  outline-offset: 2px;
+}
+
+/* ===================== HEADER ===================== */
+#site-header.scrolled {
+  box-shadow: 0 4px 24px rgba(3, 17, 31, 0.25);
+}
+
+.nav-active::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 100%;
+  height: 2px;
+  background: #A8D600;
+}
+
+#mobile-menu.open { display: flex; }
+
+/* ===================== HERO ===================== */
+[data-hero-item] { transform: translateY(18px); }
+
+/* ===================== BENEFIT CARDS ===================== */
+.benefit-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+.benefit-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 28px rgba(16, 32, 51, 0.08);
+  border-color: #A8D600;
+}
+
+/* ===================== JOURNEY ===================== */
+.journey-line {
+  height: 1px;
+  background: repeating-linear-gradient(to right, #A8D600 0, #A8D600 6px, transparent 6px, transparent 12px);
+  position: relative;
+  overflow: hidden;
+}
+.journey-line::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: #E5E9ED;
+  transform-origin: left;
+  transform: scaleX(1);
+  transition: transform 1s ease;
+}
+.journey-line.drawn::after { transform: scaleX(0); }
+
+.journey-card img { transition: transform 0.5s ease; }
+.journey-card:hover img { transform: scale(1.04); }
+
+.tag {
+  font-size: 11.5px;
+  font-weight: 600;
+  color: #061A2E;
+  background: #F6F8F5;
+  border: 1px solid #E5E9ED;
+  border-radius: 5px;
+  padding: 4px 10px;
+}
+
+/* ===================== SPORT CARDS ===================== */
+.sport-card {
+  position: relative;
+  display: block;
+  border-radius: 10px;
+  overflow: hidden;
+  height: 380px;
+}
+.sport-card-img {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+}
+.sport-card-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s cubic-bezier(.25,.8,.25,1);
+}
+.sport-card:hover .sport-card-img img { transform: scale(1.05); }
+
+.sport-card-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(3,17,31,0.95) 0%, rgba(3,17,31,0.55) 45%, rgba(3,17,31,0.1) 100%);
+  transition: background 0.4s ease;
+}
+.sport-card:hover .sport-card-overlay {
+  background: linear-gradient(to top, rgba(3,17,31,0.97) 10%, rgba(3,17,31,0.65) 55%, rgba(3,17,31,0.15) 100%);
+}
+
+.sport-card-content {
+  position: absolute;
+  left: 0; right: 0; bottom: 0;
+  padding: 22px;
+}
+
+.sport-arrow {
+  position: absolute;
+  top: 22px;
+  right: 22px;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: #A8D600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s ease;
+}
+.sport-card:hover .sport-arrow { transform: translateX(4px); }
+
+/* ===================== COACHES ===================== */
+.coach-card { text-align: left; }
+.coach-img {
+  width: 100%;
+  height: 320px;
+  object-fit: cover;
+  border-radius: 10px;
+  filter: grayscale(8%);
+  transition: transform 0.5s ease, filter 0.5s ease;
+}
+.coach-card:hover .coach-img {
+  transform: translateY(-4px);
+  filter: grayscale(0%);
+}
+
+/* ===================== FACILITIES GALLERY ===================== */
+.facility-tile {
+  position: relative;
+  border-radius: 10px;
+  overflow: hidden;
+}
+.facility-tile img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s cubic-bezier(.25,.8,.25,1);
+}
+.facility-tile:hover img { transform: scale(1.06); }
+.facility-tile::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(3,17,31,0.75) 0%, rgba(3,17,31,0) 55%);
+}
+.facility-label {
+  position: absolute;
+  left: 16px;
+  bottom: 14px;
+  color: #fff;
+  font-weight: 700;
+  font-size: 13.5px;
+  z-index: 2;
+  font-family: 'Manrope', sans-serif;
+}
+
+/* ===================== EVENTS ===================== */
+.event-row {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  padding: 22px 4px;
+  transition: background 0.3s ease;
+}
+.event-row:hover { background: rgba(255,255,255,0.03); }
+
+.event-date {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 64px;
+  height: 64px;
+  border: 1px solid rgba(255,255,255,0.15);
+  border-radius: 8px;
+  flex-shrink: 0;
+  gap: 2px;
+}
+
+.event-sport {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #A8D600;
+  background: rgba(168, 214, 0, 0.12);
+  border-radius: 4px;
+  padding: 3px 9px;
+}
+
+.event-status {
+  flex-shrink: 0;
+  font-size: 12.5px;
+  font-weight: 700;
+  color: #A8D600;
+  border: 1px solid rgba(168,214,0,0.4);
+  border-radius: 20px;
+  padding: 6px 14px;
+  white-space: nowrap;
+}
+.event-status-closed {
+  color: #F0A500;
+  border-color: rgba(240,165,0,0.4);
+}
+
+/* ===================== DASHBOARD PREVIEW ===================== */
+.dashboard-preview {
+  display: grid;
+  grid-template-columns: 130px 1fr;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 24px 60px rgba(6, 26, 46, 0.18);
+  border: 1px solid #E5E9ED;
+  min-height: 380px;
+}
+.dashboard-sidebar {
+  background: #061A2E;
+  padding: 20px 14px;
+}
+.db-nav-item {
+  padding: 8px 10px;
+  border-radius: 6px;
+  color: rgba(255,255,255,0.55);
+  cursor: default;
+}
+.db-nav-item.active {
+  background: rgba(168,214,0,0.15);
+  color: #A8D600;
+  font-weight: 600;
+}
+.dashboard-main {
+  background: #fff;
+  padding: 24px;
+}
+.db-stat, .db-mini {
+  background: #F6F8F5;
+  border: 1px solid #E5E9ED;
+  border-radius: 8px;
+  padding: 10px 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.db-stat-label {
+  font-size: 10.5px;
+  color: #687585;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+.db-stat-value {
+  font-size: 14px;
+  font-weight: 700;
+  color: #102033;
+  font-family: 'Manrope', sans-serif;
+}
+.text-lime-dark { color: #6f9700; }
+.db-feedback {
+  background: #F6F8F5;
+  border: 1px solid #E5E9ED;
+  border-radius: 8px;
+  padding: 12px;
+}
+
+/* ===================== FOOTER ===================== */
+.social-icon {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  border: 1px solid rgba(255,255,255,0.2);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.3s ease, border-color 0.3s ease;
+}
+.social-icon:hover {
+  background: #A8D600;
+  border-color: #A8D600;
+  color: #061A2E;
+}
+
+/* ===================== SCROLL REVEAL ===================== */
+.reveal {
+  opacity: 0;
+  transform: translateY(25px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+.reveal.in-view {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ===================== RESPONSIVE ADJUSTMENTS ===================== */
+@media (max-width: 830px) {
+  .dashboard-preview { grid-template-columns: 100px 1fr; }
+}
+
+@media (max-width: 720px) {
+  .sport-card { height: 320px; }
+  .event-row { align-items: flex-start; }
+  .event-status { margin-left: auto; }
+}
+
+@media (max-width: 450px) {
+  .event-row { flex-wrap: wrap; }
+  .event-status { width: 100%; text-align: center; margin-left: 0; margin-top: 10px; }
+  .dashboard-preview { grid-template-columns: 1fr; }
+  .dashboard-sidebar { display: none; }
+}
+
+/* ===================== REDUCED MOTION ===================== */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  * { animation-duration: 0.001ms !important; transition-duration: 0.001ms !important; }
+  .reveal { opacity: 1; transform: none; }
+  [data-hero-item] { opacity: 1 !important; transform: none !important; }
+}
+
+
+/* =====================================================
+   ABOUT PAGE — appended styles
+   ===================================================== */
+
+/* ---------- Hero values row ---------- */
+.about-value-icon {
+  width: 34px;
+  height: 34px;
+  border-radius: 8px;
+  background: rgba(168, 214, 0, 0.12);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+/* ---------- Mission / Vision ---------- */
+.mv-icon {
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  background: #F6F8F5;
+  border: 1px solid #E5E9ED;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ---------- Our Journey (circular photographic timeline) ---------- */
+.about-timeline-track {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+}
+.about-timeline-track::before {
+  content: "";
+  position: absolute;
+  top: 44px;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: #E5E9ED;
+  z-index: 0;
+}
+.about-timeline-track::after {
+  content: "";
+  position: absolute;
+  top: 44px;
+  left: 0;
+  height: 1px;
+  background: #A8D600;
+  width: 0%;
+  z-index: 1;
+  transition: width 1.6s cubic-bezier(.25,.8,.25,1);
+}
+.about-timeline-track.drawn::after { width: 100%; }
+
+.timeline-milestone {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  width: 19%;
+  min-width: 120px;
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+.timeline-milestone.in-view { opacity: 1; transform: translateY(0); }
+
+.timeline-circle {
+  width: 88px;
+  height: 88px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 3px solid #E5E9ED;
+  margin-bottom: 18px;
+  background: #F6F8F5;
+  transition: border-color 0.4s ease, width 0.4s ease, height 0.4s ease, margin 0.4s ease;
+}
+.timeline-circle img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: grayscale(35%);
+  transition: filter 0.4s ease;
+}
+.timeline-milestone.active .timeline-circle {
+  border-color: #A8D600;
+  width: 106px;
+  height: 106px;
+  margin-bottom: 12px;
+}
+.timeline-milestone.active .timeline-circle img { filter: grayscale(0%); }
+.timeline-year {
+  font-family: 'Manrope', sans-serif;
+  font-weight: 800;
+  font-size: 14px;
+  color: #687585;
+  margin-bottom: 6px;
+  letter-spacing: 0.02em;
+}
+.timeline-milestone.active .timeline-year { color: #6f9700; }
+
+@media (max-width: 830px) {
+  .about-timeline-track {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 34px;
+  }
+  .about-timeline-track::before,
+  .about-timeline-track::after {
+    top: 0;
+    bottom: 0;
+    left: 44px;
+    right: auto;
+    width: 1px;
+    height: 100%;
+  }
+  .about-timeline-track::after { width: 1px; height: 0%; }
+  .about-timeline-track.drawn::after { height: 100%; }
+  .timeline-milestone {
+    flex-direction: row;
+    text-align: left;
+    width: 100%;
+    min-width: 0;
+    gap: 20px;
+  }
+  .timeline-milestone.active .timeline-circle { margin-bottom: 0; }
+  .timeline-circle { margin-bottom: 0; flex-shrink: 0; }
+}
+
+/* ---------- Coaching approach principles ---------- */
+.principle-item + .principle-item {
+  border-top: 1px solid rgba(255,255,255,0.1);
+}
+@media (min-width: 1024px) {
+  .principle-item + .principle-item {
+    border-top: none;
+    border-left: 1px solid rgba(255,255,255,0.1);
+  }
+}
+
+/* ---------- Who We Serve — stage rows ---------- */
+.stage-row {
+  position: relative;
+  transition: background 0.35s ease;
+}
+.stage-row:hover { background: rgba(168, 214, 0, 0.05); }
+.stage-row-img {
+  overflow: hidden;
+  border-radius: 10px;
+}
+.stage-row-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s cubic-bezier(.25,.8,.25,1);
+}
+.stage-row:hover .stage-row-img img { transform: scale(1.03); }
+.stage-number {
+  font-family: 'Manrope', sans-serif;
+  font-weight: 800;
+  font-size: 40px;
+  color: #E5E9ED;
+  line-height: 1;
+  transition: color 0.35s ease;
+}
+.stage-row:hover .stage-number { color: #A8D600; }
+.stage-content { transition: transform 0.35s ease; }
+.stage-row:hover .stage-content { transform: translateX(4px); }
+
+/* ---------- Life at the Academy — editorial collage ---------- */
+.collage-tile {
+  position: relative;
+  border-radius: 10px;
+  overflow: hidden;
+}
+.collage-tile img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s cubic-bezier(.25,.8,.25,1);
+  opacity: 0;
+  transform: scale(1.06);
+}
+.collage-tile.in-view img { opacity: 1; transform: scale(1); }
+.collage-tile:hover img { transform: scale(1.05); }
+.collage-tile.in-view:hover img { transform: scale(1.05); }
+.collage-tile::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(3,17,31,0.65) 0%, rgba(3,17,31,0) 45%);
+}
+
+.culture-principle-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: rgba(168, 214, 0, 0.14);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+/* ---------- Our Impact ---------- */
+.impact-block + .impact-block {
+  border-top: 1px solid #E5E9ED;
+}
+@media (min-width: 1024px) {
+  .impact-block + .impact-block {
+    border-top: none;
+    border-left: 1px solid #E5E9ED;
+  }
+}
+.impact-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #F6F8F5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ---------- Final CTA (image based) ---------- */
+.about-cta {
+  position: relative;
+  overflow: hidden;
+}
+.about-cta img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 30%;
+}
+.about-cta::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(100deg, rgba(3,17,31,0.96) 0%, rgba(3,17,31,0.88) 38%, rgba(3,17,31,0.45) 75%, rgba(3,17,31,0.2) 100%);
+}

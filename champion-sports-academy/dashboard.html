@@ -1,0 +1,757 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Student Dashboard — Champion Sports Academy</title>
+<meta name="description" content="Champion Sports Academy student portal — training plan, attendance, progress, coach feedback and upcoming events.">
+
+<!-- Tailwind CDN -->
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    darkMode: 'class',
+    theme: {
+      extend: {
+        colors: {
+          navy: '#061A2E',
+          'deep-navy': '#03111F',
+          soft: '#F6F8F5',
+          lime: '#A8D600',
+          'lime-dark': '#B8E000',
+          'dark-text': '#102033',
+          muted: '#687585',
+          border: '#E5E9ED',
+        },
+        fontFamily: {
+          sans: ['"Inter"', 'sans-serif'],
+          display: ['"Manrope"', 'sans-serif'],
+        }
+      }
+    }
+  }
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<!-- Theme + RTL init — runs before paint -->
+<script>
+  (function () {
+    var t = localStorage.getItem('csa-theme') || localStorage.getItem('csa-dashboard-theme');
+    document.documentElement.setAttribute('data-theme', t === 'light' ? 'light' : 'dark');
+    if (t === 'light') document.documentElement.classList.add('light');
+    var r = localStorage.getItem('csa-rtl') === 'true';
+    if (r) document.documentElement.setAttribute('dir', 'rtl');
+  })();
+</script>
+
+<link rel="stylesheet" href="dashboard.css">
+</head>
+<body class="font-sans antialiased">
+
+<div id="app">
+
+  <!-- ================= MOBILE OVERLAY ================= -->
+  <div id="sidebar-overlay" class="sidebar-overlay" aria-hidden="true"></div>
+
+  <div class="dash-shell">
+
+    <!-- ================= SIDEBAR ================= -->
+    <aside id="sidebar" class="sidebar" aria-label="Primary navigation">
+      <div class="sidebar-inner">
+
+        <!-- Logo -->
+        <div class="sidebar-logo">
+          <a href="#overview" class="flex items-center gap-3" data-nav-link data-page="overview">
+            <svg width="30" height="30" viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M17 1L31 6.5V16C31 24.5 25.5 30.8 17 33C8.5 30.8 3 24.5 3 16V6.5L17 1Z" fill="#A8D600"/>
+              <path d="M17 6L25 9V16C25 21.2 21.7 25.2 17 27C12.3 25.2 9 21.2 9 16V9L17 6Z" fill="#061A2E"/>
+            </svg>
+            <div class="leading-none">
+              <div class="text-white font-display font-extrabold text-[14px] tracking-wide">CHAMPION</div>
+              <div class="text-lime text-[9.5px] tracking-[0.2em] font-semibold">SPORTS ACADEMY</div>
+            </div>
+          </a>
+          <button id="sidebar-close" class="sidebar-close" aria-label="Close menu">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+          </button>
+        </div>
+
+        <div class="sidebar-divider"></div>
+
+        <!-- Mobile-only profile block (shown per spec order on mobile drawer) -->
+        <div class="sidebar-mobile-profile md:hidden">
+          <img src="https://images.unsplash.com/photo-1568602471122-7832951cc4c5?w=100&h=100&fit=crop&crop=faces" alt="" class="sidebar-avatar">
+          <div>
+            <div class="text-white text-[13px] font-semibold">Alex Johnson</div>
+            <div class="text-lime text-[11px] font-medium">Football · Developing</div>
+          </div>
+        </div>
+
+        <!-- Nav -->
+        <nav class="sidebar-nav" role="navigation">
+          <button class="nav-item active" data-page="overview" data-nav-link aria-current="page">
+            <span class="nav-icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="9" rx="1.5"/><rect x="14" y="3" width="7" height="5" rx="1.5"/><rect x="14" y="12" width="7" height="9" rx="1.5"/><rect x="3" y="16" width="7" height="5" rx="1.5"/></svg>
+            </span>
+            <span class="nav-label">Overview</span>
+          </button>
+          <button class="nav-item" data-page="profile" data-nav-link>
+            <span class="nav-icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+            </span>
+            <span class="nav-label">Profile</span>
+          </button>
+          <button class="nav-item" data-page="activities" data-nav-link>
+            <span class="nav-icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+            </span>
+            <span class="nav-label">Activities</span>
+          </button>
+          <button class="nav-item" data-page="plan" data-nav-link>
+            <span class="nav-icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1"/></svg>
+            </span>
+            <span class="nav-label">My Plan</span>
+          </button>
+          <button class="nav-item" data-page="attendance" data-nav-link>
+            <span class="nav-icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/><path d="M9 16l2 2 4-4"/></svg>
+            </span>
+            <span class="nav-label">Attendance</span>
+          </button>
+          <button class="nav-item" data-page="events" data-nav-link>
+            <span class="nav-icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 21h8M12 17v4M7 4h10v5a5 5 0 0 1-10 0V4z"/><path d="M7 5H4a1 1 0 0 0-1 1c0 2.5 1.5 4 4 4.3M17 5h3a1 1 0 0 1 1 1c0 2.5-1.5 4-4 4.3"/></svg>
+            </span>
+            <span class="nav-label">Events</span>
+          </button>
+        </nav>
+
+        <div class="sidebar-bottom-group">
+          <div class="sidebar-divider"></div>
+          <nav class="sidebar-nav">
+            <button class="nav-item" data-page="settings" data-nav-link>
+              <span class="nav-icon">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+              </span>
+              <span class="nav-label">Settings</span>
+            </button>
+            <a href="index.html" class="nav-item">
+              <span class="nav-icon">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+              </span>
+              <span class="nav-label">Main Website</span>
+            </a>
+            <button class="nav-item" id="logout-btn">
+              <span class="nav-icon">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg>
+              </span>
+              <span class="nav-label">Logout</span>
+            </button>
+          </nav>
+
+          <!-- Desktop sidebar profile -->
+          <button class="sidebar-profile hidden md:flex" data-nav-link data-page="profile">
+            <img src="https://images.unsplash.com/photo-1568602471122-7832951cc4c5?w=100&h=100&fit=crop&crop=faces" alt="" class="sidebar-avatar">
+            <span class="sidebar-profile-text">
+              <span class="sidebar-profile-name">Alex Johnson</span>
+              <span class="sidebar-profile-meta">Football · Developing</span>
+            </span>
+          </button>
+        </div>
+
+      </div>
+    </aside>
+
+    <!-- ================= MAIN ================= -->
+    <div class="dash-main">
+
+      <!-- Header -->
+      <header class="dash-header">
+        <div class="header-left">
+          <button id="menu-btn" class="menu-btn" aria-label="Open menu" aria-expanded="false">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+          </button>
+          <div class="header-logo-mobile md:hidden">
+            <svg width="24" height="24" viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M17 1L31 6.5V16C31 24.5 25.5 30.8 17 33C8.5 30.8 3 24.5 3 16V6.5L17 1Z" fill="#A8D600"/>
+              <path d="M17 6L25 9V16C25 21.2 21.7 25.2 17 27C12.3 25.2 9 21.2 9 16V9L17 6Z" fill="#061A2E"/>
+            </svg>
+          </div>
+          <div class="header-title-block">
+            <h1 id="page-title" class="page-title">Overview</h1>
+            <p id="page-subtitle" class="page-subtitle">Good morning, Alex! Here's your training overview for this week.</p>
+          </div>
+        </div>
+
+        <div class="header-right">
+          <!-- RTL Toggle -->
+          <button id="rtl-toggle" class="flex items-center justify-center w-8 h-8 rounded-full border border-border-c text-text-muted text-[11px] font-bold hover:text-accent hover:border-accent transition-colors" aria-label="Toggle RTL layout" aria-pressed="false" title="Toggle RTL">RTL</button>
+
+          <!-- Theme Toggle -->
+          <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark and light theme">
+            <svg class="icon-moon" width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+            <span class="theme-toggle-knob"></span>
+            <svg class="icon-sun" width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.2 4.2l1.4 1.4M18.4 18.4l1.4 1.4M1 12h2M21 12h2M4.2 19.8l1.4-1.4M18.4 5.6l1.4-1.4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+          </button>
+
+          <!-- Notifications -->
+          <div class="notif-wrap">
+            <button id="notif-btn" class="icon-btn" aria-label="Notifications" aria-haspopup="true" aria-expanded="false">
+              <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8a6 6 0 0 0-12 0c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>
+              <span id="notif-count" class="notif-badge">3</span>
+            </button>
+            <div id="notif-dropdown" class="notif-dropdown" role="menu" aria-label="Notifications">
+              <div class="notif-dropdown-header">Notifications</div>
+              <div class="notif-item">
+                <span class="notif-dot"></span>
+                <div><p>New coach feedback added.</p><span>2h ago</span></div>
+              </div>
+              <div class="notif-item">
+                <span class="notif-dot"></span>
+                <div><p>Your Football session starts today at 5:30 PM.</p><span>4h ago</span></div>
+              </div>
+              <div class="notif-item">
+                <span class="notif-dot"></span>
+                <div><p>Football Trial Camp registration is open.</p><span>1d ago</span></div>
+              </div>
+              <div class="notif-item">
+                <span class="notif-dot muted"></span>
+                <div><p>Attendance updated.</p><span>2d ago</span></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Avatar -->
+          <button class="header-avatar-btn" data-nav-link data-page="profile" aria-label="Go to profile">
+            <img src="https://images.unsplash.com/photo-1568602471122-7832951cc4c5?w=100&h=100&fit=crop&crop=faces" alt="" class="header-avatar">
+            <span class="header-avatar-name hidden lg:inline">Alex Johnson</span>
+            <svg class="hidden lg:inline" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+        </div>
+      </header>
+
+      <!-- Content -->
+      <main id="main-content" class="dash-content">
+
+        <!-- ============ OVERVIEW PAGE ============ -->
+        <section data-page-content="overview" class="page-section">
+
+          <!-- Welcome -->
+          <div class="welcome-card">
+            <div class="welcome-left">
+              <div class="welcome-eyebrow">Good morning, Alex</div>
+              <h2 class="welcome-heading">Welcome Back, Alex.</h2>
+              <p class="welcome-sub">Here's your training overview for this week.</p>
+
+              <div class="welcome-meta-row">
+                <div class="welcome-meta">
+                  <span class="welcome-meta-icon">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 2a15 15 0 0 1 0 20M12 2a15 15 0 0 0 0 20M2 12h20"/></svg>
+                  </span>
+                  <span><strong>Football</strong><small>Primary Sport</small></span>
+                </div>
+                <div class="welcome-meta">
+                  <span class="welcome-meta-icon">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 20V10M12 20V4M6 20v-6"/></svg>
+                  </span>
+                  <span><strong>Developing Level</strong><small>Current Level</small></span>
+                </div>
+                <div class="welcome-meta">
+                  <span class="welcome-meta-icon">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                  </span>
+                  <span><strong>Mon / Wed / Fri</strong><small>Training Days</small></span>
+                </div>
+                <div class="welcome-meta">
+                  <span class="welcome-meta-icon">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                  </span>
+                  <span><strong>5:30 PM – 7:00 PM</strong><small>Training Time</small></span>
+                </div>
+              </div>
+            </div>
+            <div class="welcome-photo">
+              <img src="https://images.unsplash.com/photo-1517927033932-b3d18e61fb3a?w=700&h=600&fit=crop" alt="Alex Johnson training on the football field">
+            </div>
+            <aside class="welcome-profile-card">
+              <img src="https://images.unsplash.com/photo-1568602471122-7832951cc4c5?w=120&h=120&fit=crop&crop=faces" alt="" class="welcome-profile-avatar">
+              <div class="welcome-profile-name">Alex Johnson</div>
+              <div class="welcome-profile-age">Age 14</div>
+              <dl class="welcome-profile-list">
+                <div><dt>Sport</dt><dd>Football</dd></div>
+                <div><dt>Level</dt><dd>Developing</dd></div>
+                <div><dt>Member Since</dt><dd>Jan 2024</dd></div>
+              </dl>
+              <button class="btn-outline-lime w-full" data-nav-link data-page="profile">View Profile
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+              </button>
+            </aside>
+          </div>
+
+          <!-- Quick Stats -->
+          <div class="stat-grid">
+            <div class="stat-card">
+              <div class="stat-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg></div>
+              <div class="stat-label">Attendance</div>
+              <div class="stat-value">92<span>%</span></div>
+              <div class="stat-note">This Month</div>
+              <div class="stat-bar"><span style="width:92%"></span></div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg></div>
+              <div class="stat-label">Training Sessions</div>
+              <div class="stat-value">18</div>
+              <div class="stat-note">Completed</div>
+              <svg class="stat-spark" viewBox="0 0 100 30" preserveAspectRatio="none"><polyline points="0,22 15,18 30,24 45,10 60,16 75,6 100,12" fill="none" stroke="currentColor" stroke-width="2"/></svg>
+            </div>
+            <div class="stat-card">
+              <div class="stat-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 20V10M12 20V4M6 20v-6"/></svg></div>
+              <div class="stat-label">Current Level</div>
+              <div class="stat-value stat-value-text">Developing</div>
+              <div class="stat-note">Football</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
+              <div class="stat-label">Next Session</div>
+              <div class="stat-value stat-value-text">Today</div>
+              <div class="stat-note">5:30 PM</div>
+            </div>
+          </div>
+
+          <!-- Activities + Plan + Attendance -->
+          <div class="overview-grid">
+
+            <div class="panel">
+              <div class="panel-header">
+                <h3>Recent Activities</h3>
+                <button class="link-btn" data-nav-link data-page="activities">View All</button>
+              </div>
+              <ol class="timeline">
+                <li class="timeline-item">
+                  <span class="timeline-icon"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 2a15 15 0 0 1 0 20M12 2a15 15 0 0 0 0 20M2 12h20"/></svg></span>
+                  <div class="timeline-body">
+                    <div class="timeline-date">Today</div>
+                    <div class="timeline-title">Football Skills Training</div>
+                    <div class="timeline-desc">5:30 PM – 7:00 PM</div>
+                  </div>
+                  <span class="badge badge-lime">Completed</span>
+                </li>
+                <li class="timeline-item">
+                  <span class="timeline-icon"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></span>
+                  <div class="timeline-body">
+                    <div class="timeline-date">Yesterday</div>
+                    <div class="timeline-title">Coach Feedback Added</div>
+                    <div class="timeline-desc">Daniel Carter added new training notes.</div>
+                  </div>
+                  <span class="badge badge-blue">Update</span>
+                </li>
+                <li class="timeline-item">
+                  <span class="timeline-icon"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2L3 14h7l-1 8 10-12h-7l1-8z"/></svg></span>
+                  <div class="timeline-body">
+                    <div class="timeline-date">Aug 12</div>
+                    <div class="timeline-title">Fitness Assessment</div>
+                    <div class="timeline-desc">Completed</div>
+                  </div>
+                  <span class="badge badge-lime">Completed</span>
+                </li>
+                <li class="timeline-item">
+                  <span class="timeline-icon"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg></span>
+                  <div class="timeline-body">
+                    <div class="timeline-date">Aug 10</div>
+                    <div class="timeline-title">Match Practice</div>
+                    <div class="timeline-desc">Completed</div>
+                  </div>
+                  <span class="badge badge-lime">Completed</span>
+                </li>
+                <li class="timeline-item">
+                  <span class="timeline-icon"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg></span>
+                  <div class="timeline-body">
+                    <div class="timeline-date">Aug 08</div>
+                    <div class="timeline-title">Training Attendance</div>
+                    <div class="timeline-desc">Marked Present</div>
+                  </div>
+                  <span class="badge badge-muted">Present</span>
+                </li>
+              </ol>
+            </div>
+
+            <div class="panel">
+              <div class="panel-header">
+                <h3>My Training Plan</h3>
+                <button class="link-btn" data-nav-link data-page="plan">View Full Plan</button>
+              </div>
+              <div class="plan-eyebrow">Current Program</div>
+              <div class="plan-title">Football – Developing</div>
+              <p class="plan-goal"><strong>Goal:</strong> Improve technical skills and match confidence.</p>
+              <div class="plan-eyebrow mt">Current Focus</div>
+              <div class="chip-row">
+                <span class="chip">Ball Control</span>
+                <span class="chip">Passing</span>
+                <span class="chip">Movement</span>
+                <span class="chip">Decision Making</span>
+              </div>
+              <div class="plan-progress-row">
+                <div><span class="plan-progress-label">Weekly Target</span><strong>3 Sessions</strong></div>
+                <div><span class="plan-progress-label">Progress</span><strong>72%</strong></div>
+              </div>
+              <div class="progress-track"><span class="progress-fill" style="width:72%"></span></div>
+              <div class="week-grid">
+                <div class="week-cell today"><span class="week-day">Mon</span><span class="week-focus">Ball Control</span><span class="week-time">5:30 PM</span></div>
+                <div class="week-cell today"><span class="week-day">Wed</span><span class="week-focus">Passing &amp; Movement</span><span class="week-time">5:30 PM</span></div>
+                <div class="week-cell is-today"><span class="week-day">Fri</span><span class="week-focus">Match Practice</span><span class="week-time">5:30 PM</span><span class="today-tag">Today</span></div>
+                <div class="week-cell rest"><span class="week-day">Sat</span><span class="week-focus">Optional Fitness</span><span class="week-time">9:00 AM</span></div>
+              </div>
+            </div>
+
+            <div class="panel panel-wide">
+              <div class="panel-header">
+                <h3>Attendance &amp; Progress</h3>
+              </div>
+              <div class="attendance-split">
+                <div class="attendance-left">
+                  <div class="attendance-ring-label">Attendance This Month</div>
+                  <div class="ring-wrap">
+                    <svg viewBox="0 0 120 120" class="ring-svg">
+                      <circle cx="60" cy="60" r="50" class="ring-bg"/>
+                      <circle cx="60" cy="60" r="50" class="ring-fg" style="--pct:92"/>
+                    </svg>
+                    <div class="ring-center"><strong>92%</strong></div>
+                  </div>
+                  <div class="attendance-sessions">23 / 25 Sessions</div>
+                  <div class="attendance-legend">
+                    <div><span class="dot dot-lime"></span>Present<strong>23</strong></div>
+                    <div><span class="dot dot-red"></span>Absent<strong>2</strong></div>
+                  </div>
+                </div>
+                <div class="attendance-right">
+                  <div class="progress-line-header">Progress Overview</div>
+                  <div class="bar-row"><span>Technical Skills</span><strong>78%</strong></div>
+                  <div class="progress-track"><span class="progress-fill" style="width:78%"></span></div>
+                  <div class="bar-row"><span>Fitness</span><strong>84%</strong></div>
+                  <div class="progress-track"><span class="progress-fill" style="width:84%"></span></div>
+                  <div class="bar-row"><span>Game Understanding</span><strong>71%</strong></div>
+                  <div class="progress-track"><span class="progress-fill" style="width:71%"></span></div>
+                  <div class="bar-row"><span>Consistency</span><strong>92%</strong></div>
+                  <div class="progress-track"><span class="progress-fill" style="width:92%"></span></div>
+                </div>
+              </div>
+
+              <div class="coach-note">
+                <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=100&h=100&fit=crop&crop=faces" alt="" class="coach-avatar">
+                <div class="coach-note-body">
+                  <div class="coach-note-top">
+                    <div>
+                      <span class="coach-note-tag">Coach's Note</span>
+                      <div class="coach-name">Daniel Carter <span>· Football Coach</span></div>
+                    </div>
+                    <span class="coach-date">Aug 14, 2026</span>
+                  </div>
+                  <p class="coach-quote">"Your passing accuracy has improved. Continue working on your first touch and decision-making under pressure."</p>
+                  <button class="link-btn" data-nav-link data-page="activities">View All Feedback</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Upcoming Opportunities -->
+          <div class="panel">
+            <div class="panel-header">
+              <h3>Upcoming Opportunities</h3>
+              <button class="link-btn" data-nav-link data-page="events">View All Events</button>
+            </div>
+            <div class="event-grid">
+              <div class="event-card">
+                <div class="event-img"><img src="https://images.unsplash.com/photo-1489944440615-453fc2b6a9a9?w=500&h=300&fit=crop" alt="Football trial camp"><span class="event-date"><strong>Aug 24</strong>Sat</span></div>
+                <div class="event-body">
+                  <h4>Football Trial Camp</h4>
+                  <div class="event-meta"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>9:00 AM</div>
+                  <div class="event-meta"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 12-9 12s-9-5-9-12a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>Football Ground</div>
+                  <span class="badge badge-lime">Registration Open</span>
+                  <div class="event-actions">
+                    <button class="btn-lime flex-1">Register</button>
+                  </div>
+                </div>
+              </div>
+              <div class="event-card">
+                <div class="event-img"><img src="https://images.unsplash.com/photo-1567427017947-545c5f8d16ad?w=500&h=300&fit=crop" alt="Inter academy tournament trophy"><span class="event-date"><strong>Sep 07</strong>Sun</span></div>
+                <div class="event-body">
+                  <h4>Inter-Academy Tournament</h4>
+                  <div class="event-meta"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>8:00 AM</div>
+                  <div class="event-meta"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 12-9 12s-9-5-9-12a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>Main Stadium</div>
+                  <span class="badge badge-blue">Eligible</span>
+                  <div class="event-actions">
+                    <button class="btn-outline flex-1">View Details</button>
+                  </div>
+                </div>
+              </div>
+              <div class="event-card">
+                <div class="event-img"><img src="https://images.unsplash.com/photo-1526232761682-d26e03ac148e?w=500&h=300&fit=crop" alt="Performance assessment training"><span class="event-date"><strong>Sep 14</strong>Sat</span></div>
+                <div class="event-body">
+                  <h4>Performance Assessment</h4>
+                  <div class="event-meta"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>5:30 PM</div>
+                  <div class="event-meta"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 12-9 12s-9-5-9-12a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>Training Centre</div>
+                  <span class="badge badge-amber">Upcoming</span>
+                  <div class="event-actions">
+                    <button class="btn-outline flex-1">View Details</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </section>
+
+        <!-- ============ PROFILE PAGE ============ -->
+        <section data-page-content="profile" class="page-section" hidden>
+          <div class="panel profile-panel">
+            <div class="panel-header">
+              <h3>My Profile</h3>
+              <button class="btn-outline-lime">Edit Profile</button>
+            </div>
+            <div class="profile-layout">
+              <div class="profile-photo-block">
+                <img src="https://images.unsplash.com/photo-1517927033932-b3d18e61fb3a?w=300&h=300&fit=crop" alt="Alex Johnson">
+                <div class="profile-photo-name">Alex Johnson</div>
+                <div class="profile-photo-sport">Football · Developing</div>
+              </div>
+              <dl class="profile-detail-list">
+                <div><dt>Student Name</dt><dd>Alex Johnson</dd></div>
+                <div><dt>Student ID</dt><dd>CSA-0248</dd></div>
+                <div><dt>Age</dt><dd>14</dd></div>
+                <div><dt>Primary Sport</dt><dd>Football</dd></div>
+                <div><dt>Training Level</dt><dd>Developing</dd></div>
+                <div><dt>Batch</dt><dd>Evening Batch B</dd></div>
+                <div><dt>Training Time</dt><dd>Mon / Wed / Fri · 5:30 PM – 7:00 PM</dd></div>
+                <div><dt>Coach</dt><dd>Daniel Carter</dd></div>
+                <div><dt>Emergency Contact</dt><dd>Priya Johnson · +91 98765 43210</dd></div>
+              </dl>
+            </div>
+          </div>
+        </section>
+
+        <!-- ============ ACTIVITIES PAGE ============ -->
+        <section data-page-content="activities" class="page-section" hidden>
+          <div class="two-col-grid">
+            <div class="panel">
+              <div class="panel-header"><h3>Recent Activities</h3></div>
+              <ol class="timeline">
+                <li class="timeline-item">
+                  <span class="timeline-icon"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 2a15 15 0 0 1 0 20M12 2a15 15 0 0 0 0 20M2 12h20"/></svg></span>
+                  <div class="timeline-body"><div class="timeline-date">Today</div><div class="timeline-title">Football Skills Training</div><div class="timeline-desc">5:30 PM – 7:00 PM</div></div>
+                  <span class="badge badge-lime">Completed</span>
+                </li>
+                <li class="timeline-item">
+                  <span class="timeline-icon"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></span>
+                  <div class="timeline-body"><div class="timeline-date">Yesterday</div><div class="timeline-title">Coach Feedback Added</div><div class="timeline-desc">Daniel Carter added new training notes.</div></div>
+                  <span class="badge badge-blue">Update</span>
+                </li>
+                <li class="timeline-item">
+                  <span class="timeline-icon"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2L3 14h7l-1 8 10-12h-7l1-8z"/></svg></span>
+                  <div class="timeline-body"><div class="timeline-date">Aug 12</div><div class="timeline-title">Fitness Assessment</div><div class="timeline-desc">Completed</div></div>
+                  <span class="badge badge-lime">Completed</span>
+                </li>
+                <li class="timeline-item">
+                  <span class="timeline-icon"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg></span>
+                  <div class="timeline-body"><div class="timeline-date">Aug 10</div><div class="timeline-title">Match Practice</div><div class="timeline-desc">Completed</div></div>
+                  <span class="badge badge-lime">Completed</span>
+                </li>
+                <li class="timeline-item">
+                  <span class="timeline-icon"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg></span>
+                  <div class="timeline-body"><div class="timeline-date">Aug 08</div><div class="timeline-title">Training Attendance</div><div class="timeline-desc">Marked Present</div></div>
+                  <span class="badge badge-muted">Present</span>
+                </li>
+              </ol>
+            </div>
+            <div class="panel">
+              <div class="panel-header"><h3>Coach Feedback</h3></div>
+              <div class="coach-note coach-note-standalone">
+                <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=100&h=100&fit=crop&crop=faces" alt="" class="coach-avatar">
+                <div class="coach-note-body">
+                  <div class="coach-note-top">
+                    <div><span class="coach-note-tag">Coach's Note</span><div class="coach-name">Daniel Carter <span>· Football Coach</span></div></div>
+                    <span class="coach-date">Aug 14, 2026</span>
+                  </div>
+                  <p class="coach-quote">"Your passing accuracy has improved. Continue working on your first touch and decision-making under pressure."</p>
+                </div>
+              </div>
+              <div class="coach-note coach-note-standalone">
+                <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=100&h=100&fit=crop&crop=faces" alt="" class="coach-avatar">
+                <div class="coach-note-body">
+                  <div class="coach-note-top">
+                    <div><span class="coach-note-tag">Coach's Note</span><div class="coach-name">Daniel Carter <span>· Football Coach</span></div></div>
+                    <span class="coach-date">Aug 07, 2026</span>
+                  </div>
+                  <p class="coach-quote">"Great intensity in fitness assessment this week. Let's work on recovery pacing next session."</p>
+                </div>
+              </div>
+              <button class="btn-outline-lime w-full">View All Feedback</button>
+            </div>
+          </div>
+        </section>
+
+        <!-- ============ MY PLAN PAGE ============ -->
+        <section data-page-content="plan" class="page-section" hidden>
+          <div class="panel">
+            <div class="panel-header">
+              <h3>My Training Plan</h3>
+              <button class="btn-outline-lime">View Full Plan</button>
+            </div>
+            <div class="plan-eyebrow">Current Program</div>
+            <div class="plan-title">Football – Developing</div>
+            <p class="plan-goal"><strong>Goal:</strong> Improve technical skills and match confidence.</p>
+            <div class="plan-eyebrow mt">Current Focus</div>
+            <div class="chip-row">
+              <span class="chip">Ball Control</span>
+              <span class="chip">Passing</span>
+              <span class="chip">Movement</span>
+              <span class="chip">Decision Making</span>
+            </div>
+            <div class="plan-progress-row">
+              <div><span class="plan-progress-label">Weekly Target</span><strong>3 Sessions</strong></div>
+              <div><span class="plan-progress-label">Progress</span><strong>72%</strong></div>
+            </div>
+            <div class="progress-track"><span class="progress-fill" style="width:72%"></span></div>
+
+            <div class="plan-eyebrow mt">Batch Schedule</div>
+            <div class="week-grid week-grid-wide">
+              <div class="week-cell is-today"><span class="week-day">Mon</span><span class="week-focus">Ball Control</span><span class="week-time">5:30 PM – 7:00 PM</span></div>
+              <div class="week-cell"><span class="week-day">Wed</span><span class="week-focus">Passing &amp; Movement</span><span class="week-time">5:30 PM – 7:00 PM</span></div>
+              <div class="week-cell"><span class="week-day">Fri</span><span class="week-focus">Match Practice</span><span class="week-time">5:30 PM – 7:00 PM</span><span class="today-tag">Today</span></div>
+              <div class="week-cell rest"><span class="week-day">Sat</span><span class="week-focus">Optional Fitness</span><span class="week-time">9:00 AM – 10:00 AM</span></div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ============ ATTENDANCE PAGE ============ -->
+        <section data-page-content="attendance" class="page-section" hidden>
+          <div class="panel">
+            <div class="panel-header"><h3>Attendance &amp; Progress</h3></div>
+            <div class="attendance-split">
+              <div class="attendance-left">
+                <div class="attendance-ring-label">Attendance This Month</div>
+                <div class="ring-wrap">
+                  <svg viewBox="0 0 120 120" class="ring-svg">
+                    <circle cx="60" cy="60" r="50" class="ring-bg"/>
+                    <circle cx="60" cy="60" r="50" class="ring-fg" style="--pct:92"/>
+                  </svg>
+                  <div class="ring-center"><strong>92%</strong></div>
+                </div>
+                <div class="attendance-sessions">23 / 25 Sessions</div>
+                <div class="attendance-legend">
+                  <div><span class="dot dot-lime"></span>Present<strong>23</strong></div>
+                  <div><span class="dot dot-red"></span>Absent<strong>2</strong></div>
+                </div>
+              </div>
+              <div class="attendance-right">
+                <div class="progress-line-header">Progress Overview</div>
+                <div class="bar-row"><span>Technical Skills</span><strong>78%</strong></div>
+                <div class="progress-track"><span class="progress-fill" style="width:78%"></span></div>
+                <div class="bar-row"><span>Fitness</span><strong>84%</strong></div>
+                <div class="progress-track"><span class="progress-fill" style="width:84%"></span></div>
+                <div class="bar-row"><span>Game Understanding</span><strong>71%</strong></div>
+                <div class="progress-track"><span class="progress-fill" style="width:71%"></span></div>
+                <div class="bar-row"><span>Consistency</span><strong>92%</strong></div>
+                <div class="progress-track"><span class="progress-fill" style="width:92%"></span></div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ============ EVENTS PAGE ============ -->
+        <section data-page-content="events" class="page-section" hidden>
+          <div class="panel">
+            <div class="panel-header"><h3>Upcoming Opportunities</h3></div>
+            <div class="event-grid">
+              <div class="event-card">
+                <div class="event-img"><img src="https://images.unsplash.com/photo-1489944440615-453fc2b6a9a9?w=500&h=300&fit=crop" alt="Football trial camp"><span class="event-date"><strong>Aug 24</strong>Sat</span></div>
+                <div class="event-body">
+                  <h4>Football Trial Camp</h4>
+                  <div class="event-meta"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>9:00 AM</div>
+                  <div class="event-meta"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 12-9 12s-9-5-9-12a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>Football Ground</div>
+                  <span class="badge badge-lime">Registration Open</span>
+                  <div class="event-actions"><button class="btn-lime flex-1">Register</button></div>
+                </div>
+              </div>
+              <div class="event-card">
+                <div class="event-img"><img src="https://images.unsplash.com/photo-1567427017947-545c5f8d16ad?w=500&h=300&fit=crop" alt="Inter academy tournament trophy"><span class="event-date"><strong>Sep 07</strong>Sun</span></div>
+                <div class="event-body">
+                  <h4>Inter-Academy Tournament</h4>
+                  <div class="event-meta"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>8:00 AM</div>
+                  <div class="event-meta"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 12-9 12s-9-5-9-12a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>Main Stadium</div>
+                  <span class="badge badge-blue">Eligible</span>
+                  <div class="event-actions"><button class="btn-outline flex-1">View Details</button></div>
+                </div>
+              </div>
+              <div class="event-card">
+                <div class="event-img"><img src="https://images.unsplash.com/photo-1526232761682-d26e03ac148e?w=500&h=300&fit=crop" alt="Performance assessment training"><span class="event-date"><strong>Sep 14</strong>Sat</span></div>
+                <div class="event-body">
+                  <h4>Performance Assessment</h4>
+                  <div class="event-meta"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>5:30 PM</div>
+                  <div class="event-meta"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 12-9 12s-9-5-9-12a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>Training Centre</div>
+                  <span class="badge badge-amber">Upcoming</span>
+                  <div class="event-actions"><button class="btn-outline flex-1">View Details</button></div>
+                </div>
+              </div>
+              <div class="event-card">
+                <div class="event-img"><img src="https://images.unsplash.com/photo-1517466787929-bc90951d0974?w=500&h=300&fit=crop" alt="Trial dates announcement"><span class="event-date"><strong>Oct 02</strong>Fri</span></div>
+                <div class="event-body">
+                  <h4>Regional Trial Dates</h4>
+                  <div class="event-meta"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>10:00 AM</div>
+                  <div class="event-meta"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 12-9 12s-9-5-9-12a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>Regional Sports Complex</div>
+                  <span class="badge badge-amber">Upcoming</span>
+                  <div class="event-actions"><button class="btn-outline flex-1">View Details</button></div>
+                </div>
+              </div>
+              <div class="event-card">
+                <div class="event-img"><img src="https://images.unsplash.com/photo-1508098682722-e99c43a406b2?w=500&h=300&fit=crop" alt="Academy scholarship opportunity"><span class="event-date"><strong>Oct 18</strong>Sun</span></div>
+                <div class="event-body">
+                  <h4>Academy Scholarship Trials</h4>
+                  <div class="event-meta"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>9:00 AM</div>
+                  <div class="event-meta"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 12-9 12s-9-5-9-12a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>Football Ground</div>
+                  <span class="badge badge-blue">Eligible</span>
+                  <div class="event-actions"><button class="btn-outline flex-1">View Details</button></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ============ SETTINGS PAGE ============ -->
+        <section data-page-content="settings" class="page-section" hidden>
+          <div class="panel">
+            <div class="panel-header"><h3>Account Preferences</h3></div>
+            <dl class="profile-detail-list">
+              <div><dt>Full Name</dt><dd>Alex Johnson</dd></div>
+              <div><dt>Email</dt><dd>alex.johnson@example.com</dd></div>
+              <div><dt>Phone</dt><dd>+91 98765 43211</dd></div>
+              <div><dt>Notifications</dt><dd>Email &amp; Push enabled</dd></div>
+              <div><dt>Theme</dt><dd>Follows toggle in header</dd></div>
+            </dl>
+          </div>
+        </section>
+
+      </main>
+
+    </div>
+  </div>
+
+  <!-- ================= LOGOUT MODAL ================= -->
+  <div id="logout-modal" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="logout-title">
+    <div class="modal-box">
+      <h2 id="logout-title" class="modal-title">Log out of your account?</h2>
+      <p class="modal-text">Are you sure you want to log out?</p>
+      <div class="modal-actions">
+        <button id="logout-cancel" class="btn-secondary">Cancel</button>
+        <button id="logout-confirm" class="btn-danger">Logout</button>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<script src="dashboard.js"></script>
+</body>
+</html>
