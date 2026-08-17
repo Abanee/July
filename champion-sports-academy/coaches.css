@@ -70,6 +70,14 @@ a:focus-visible, button:focus-visible {
 
 img { display: block; max-width: 100%; }
 
+.logo-link img {
+  width: 36px;
+  height: 36px;
+  object-fit: contain;
+  flex-shrink: 0;
+  display: block;
+}
+
 /* Smooth theme transitions on all surfaces */
 header, section, footer, aside, div,
 .coach-card, .spec-item, .step-item, .impact-stat {

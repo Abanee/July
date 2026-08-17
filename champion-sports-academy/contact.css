@@ -140,6 +140,22 @@ header, section, footer, .contact-info-card, .ct-map-card, .channel-card, .conta
   flex-shrink: 0;
 }
 
+.logo-link img {
+  width: 36px;
+  height: 36px;
+  object-fit: contain;
+  flex-shrink: 0;
+  display: block;
+}
+
+.footer-logo img {
+  width: 32px;
+  height: 32px;
+  object-fit: contain;
+  flex-shrink: 0;
+  display: block;
+}
+
 .logo-text-group {
   display: flex;
   flex-direction: column;

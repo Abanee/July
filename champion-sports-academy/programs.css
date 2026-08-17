@@ -58,6 +58,22 @@ a:focus-visible, button:focus-visible {
   outline-offset: 2px;
 }
 
+.site-header a img {
+  width: 36px;
+  height: 36px;
+  object-fit: contain;
+  flex-shrink: 0;
+  display: block;
+}
+
+.footer-brand img {
+  width: 32px;
+  height: 32px;
+  object-fit: contain;
+  flex-shrink: 0;
+  display: block;
+}
+
 /* transition every themed surface smoothly */
 header, section, footer, .level-card, .included-item, .format-card,
 .faq-item, .sport-tab, .schedule-table, .sched-col, .why-item {

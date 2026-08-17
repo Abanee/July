@@ -154,6 +154,14 @@ button { cursor: pointer; font-family: inherit; }
   transform: scale(1.03);
 }
 
+.auth-logo-link img {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+  flex-shrink: 0;
+  display: block;
+}
+
 .auth-logo-text {
   text-align: left;
   line-height: 1.1;

@@ -149,31 +149,38 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   /* =====================================================
-     ABOUT PAGE — Our Journey circular photographic timeline
+     ABOUT PAGE — Our Journey Vertical Scrollable Timeline
      ===================================================== */
   const aboutTrack = document.querySelector('.about-timeline-track');
   if (aboutTrack) {
     const milestones = aboutTrack.querySelectorAll('.timeline-milestone');
-    const revealTimeline = () => {
-      aboutTrack.classList.add('drawn');
-      milestones.forEach((m, i) => {
-        setTimeout(() => m.classList.add('in-view'), i * 180);
-      });
-    };
     if (prefersReducedMotion) {
-      revealTimeline();
+      aboutTrack.classList.add('drawn');
+      milestones.forEach(m => m.classList.add('in-view'));
     } else if ('IntersectionObserver' in window) {
-      const timelineIo = new IntersectionObserver((entries) => {
+      const trackIo = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
           if (entry.isIntersecting) {
-            revealTimeline();
-            timelineIo.disconnect();
+            aboutTrack.classList.add('drawn');
+            trackIo.disconnect();
           }
         });
-      }, { threshold: 0.3 });
-      timelineIo.observe(aboutTrack);
+      }, { threshold: 0.15 });
+      trackIo.observe(aboutTrack);
+
+      const milestoneIo = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('in-view');
+            milestoneIo.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.2 });
+
+      milestones.forEach(m => milestoneIo.observe(m));
     } else {
-      revealTimeline();
+      aboutTrack.classList.add('drawn');
+      milestones.forEach(m => m.classList.add('in-view'));
     }
   }
 
