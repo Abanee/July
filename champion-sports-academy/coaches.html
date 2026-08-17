@@ -138,73 +138,64 @@
 </div>
 
 <!-- ===================== HERO ===================== -->
-<section class="coaches-hero" aria-labelledby="hero-heading">
-  <div class="hero-inner max-w-site mx-auto px-5 sm:px-6 lg:px-10">
+<section class="coaches-hero relative min-h-[520px] flex items-center justify-center overflow-hidden bg-navy pt-28 pb-16 md:py-24" aria-labelledby="hero-heading">
+  <div class="coaches-hero-bg absolute inset-0">
+    <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?q=80&w=1600&auto=format&fit=crop" alt="Coaches mentoring athletes" class="w-full h-full object-cover object-center" loading="eager">
+    <div class="absolute inset-0 bg-gradient-to-b from-navy/95 via-navy/85 to-navy/95"></div>
+  </div>
 
-    <!-- Left -->
-    <div class="hero-left reveal-up">
-      <span class="hero-eyebrow">Our Coaching Team</span>
-      <h1 id="hero-heading" class="hero-heading">Experienced Coaches.<br>Stronger Athletes.</h1>
-      <p class="hero-desc">Our certified coaches bring years of experience, proven methodology and a passion for developing athletes both on and off the field.</p>
+  <div class="relative z-10 max-w-[860px] mx-auto px-5 sm:px-6 lg:px-10 text-center flex flex-col items-center">
+    <span class="hero-eyebrow">Our Coaching Team</span>
+    <h1 id="hero-heading" class="hero-heading">Experienced Coaches. Stronger <span style="color:var(--accent)">Athletes.</span></h1>
+    <p class="hero-desc">Our certified coaches bring years of competitive experience, proven methodology, and dedicated mentorship to guide every athlete toward peak performance.</p>
 
-      <!-- Trust points -->
-      <div class="hero-trust">
-        <div class="trust-item">
-          <div class="trust-icon" aria-hidden="true">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l8 3.5v5.5c0 5-3.5 8.5-8 11-4.5-2.5-8-6-8-11V5.5L12 2Z"/></svg>
-          </div>
-          <div>
-            <p class="trust-title">Certified Experts</p>
-            <p class="trust-desc">Qualified and experienced coaching staff.</p>
-          </div>
+    <!-- Trust points centered -->
+    <div class="hero-trust">
+      <div class="trust-item">
+        <div class="trust-icon" aria-hidden="true">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l8 3.5v5.5c0 5-3.5 8.5-8 11-4.5-2.5-8-6-8-11V5.5L12 2Z"/></svg>
         </div>
-        <div class="trust-item">
-          <div class="trust-icon" aria-hidden="true">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19V9M10 19V5M16 19v-7M22 19V3"/></svg>
-          </div>
-          <div>
-            <p class="trust-title">Proven Methodology</p>
-            <p class="trust-desc">Structured training for measurable development.</p>
-          </div>
-        </div>
-        <div class="trust-item">
-          <div class="trust-icon" aria-hidden="true">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.6-7 8-7s8 3 8 7"/></svg>
-          </div>
-          <div>
-            <p class="trust-title">Athlete First</p>
-            <p class="trust-desc">Focused on holistic athlete development.</p>
-          </div>
-        </div>
-        <div class="trust-item">
-          <div class="trust-icon" aria-hidden="true">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12l2 2 4-4"/><path d="M12 2l8 3.5v5.5c0 5-3.5 8.5-8 11-4.5-2.5-8-6-8-11V5.5L12 2Z"/></svg>
-          </div>
-          <div>
-            <p class="trust-title">Safe &amp; Supportive</p>
-            <p class="trust-desc">Creating a positive and safe environment.</p>
-          </div>
+        <div>
+          <p class="trust-title">Certified Experts</p>
+          <p class="trust-desc">Qualified coaching staff.</p>
         </div>
       </div>
-
-      <!-- Buttons -->
-      <div class="hero-buttons">
-        <a href="#coaches" class="btn-lime">
-          Meet Our Coaches
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-        </a>
-        <a href="#trial" class="btn-outline">Book a Trial</a>
+      <div class="trust-item">
+        <div class="trust-icon" aria-hidden="true">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19V9M10 19V5M16 19v-7M22 19V3"/></svg>
+        </div>
+        <div>
+          <p class="trust-title">Proven Methodology</p>
+          <p class="trust-desc">Structured development.</p>
+        </div>
+      </div>
+      <div class="trust-item">
+        <div class="trust-icon" aria-hidden="true">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.6-7 8-7s8 3 8 7"/></svg>
+        </div>
+        <div>
+          <p class="trust-title">Athlete-First Focus</p>
+          <p class="trust-desc">Holistic development.</p>
+        </div>
+      </div>
+      <div class="trust-item">
+        <div class="trust-icon" aria-hidden="true">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12l2 2 4-4"/><path d="M12 2l8 3.5v5.5c0 5-3.5 8.5-8 11-4.5-2.5-8-6-8-11V5.5L12 2Z"/></svg>
+        </div>
+        <div>
+          <p class="trust-title">Safe &amp; Supportive</p>
+          <p class="trust-desc">Positive environment.</p>
+        </div>
       </div>
     </div>
 
-    <!-- Right — photography -->
-    <div class="hero-right" aria-hidden="true">
-      <img
-        src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?q=80&w=1200&auto=format&fit=crop"
-        alt="Coach mentoring young athletes during a training session"
-        loading="eager"
-        width="800" height="600"
-      >
+    <!-- Buttons -->
+    <div class="hero-buttons">
+      <a href="#coaches" class="btn-lime">
+        Meet Our Coaches
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </a>
+      <a href="contact.html" class="btn-outline">Book a Free Trial</a>
     </div>
   </div>
 </section>

@@ -33,6 +33,7 @@
   --text-muted:    #718096;
   --border-color:  #DDE4E8;
   --accent:        #A8D600;
+  --accent-text:   #4D7C0F;
   --accent-hover:  #95C000;
   --navy:          #061A2E;
   --on-accent:     #061A2E;
@@ -97,7 +98,7 @@ header, section, footer, aside, div,
 
 .eyebrow {
   display: inline-block;
-  color: var(--accent);
+  color: var(--accent-text, #4D7C0F);
   font-weight: 700;
   font-size: 11.5px;
   letter-spacing: 0.18em;
@@ -584,7 +585,7 @@ header, section, footer, aside, div,
 .hero-heading {
   font-family: 'Manrope', sans-serif;
   font-weight: 800;
-  font-size: 50px;
+  font-size: clamp(32px, 5vw, 50px);
   line-height: 1.1;
   color: #fff;
   letter-spacing: -.018em;
@@ -592,24 +593,31 @@ header, section, footer, aside, div,
 }
 
 .hero-desc {
-  color: rgba(255,255,255,.72);
-  font-size: 15.5px;
+  color: rgba(255,255,255,.82);
+  font-size: 16px;
   line-height: 1.68;
-  max-width: 460px;
-  margin-bottom: 30px;
+  max-width: 680px;
+  margin-bottom: 32px;
 }
 
 .hero-trust {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   gap: 16px 24px;
   margin-bottom: 36px;
+  width: 100%;
 }
 
 .trust-item {
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   gap: 10px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  padding: 10px 16px;
+  border-radius: 10px;
+  text-align: left;
 }
 .trust-icon {
   width: 30px; height: 30px;

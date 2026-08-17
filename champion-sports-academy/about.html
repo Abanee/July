@@ -129,47 +129,45 @@
 </header>
 
 <!-- ================= HERO ================= -->
-<section class="relative w-full h-[560px] md:h-[600px] overflow-hidden bg-deep-navy">
-  <div class="h-full flex flex-col lg:flex-row">
-    <!-- Left image -->
-    <div class="relative w-full lg:w-[55%] h-[240px] lg:h-full">
-      <img src="https://images.unsplash.com/photo-1522778119026-d647f0596c20?w=1400&q=80&auto=format&fit=crop"
-           alt="Champion Sports Academy training ground at golden hour"
-           class="absolute inset-0 w-full h-full object-cover">
-      <div class="absolute inset-0 bg-gradient-to-t from-deep-navy/70 via-transparent to-transparent"></div>
-      <div class="absolute inset-0 bg-gradient-to-r from-transparent via-transparent to-deep-navy/40 lg:to-deep-navy"></div>
-    </div>
+<section class="relative w-full min-h-[480px] md:min-h-[520px] flex items-center justify-center overflow-hidden bg-deep-navy pt-28 pb-16 md:py-24">
+  <!-- Background Image with Dark Contrast Overlay -->
+  <img src="https://images.unsplash.com/photo-1522778119026-d647f0596c20?w=1600&q=80&auto=format&fit=crop"
+       alt="Champion Sports Academy training ground"
+       class="absolute inset-0 w-full h-full object-cover object-center" loading="eager">
+  <div class="absolute inset-0 bg-gradient-to-b from-deep-navy/95 via-deep-navy/85 to-deep-navy/95 z-[1]"></div>
 
-    <!-- Right content panel -->
-    <div class="relative w-full lg:w-[45%] flex-1 bg-deep-navy flex items-center">
-      <div class="px-6 md:px-10 lg:px-14 py-10 lg:py-0 max-w-[520px]">
-        <p class="text-lime font-bold text-[13px] tracking-[0.18em] mb-4 opacity-0" data-hero-item>ABOUT CHAMPION SPORTS ACADEMY</p>
-        <h1 class="font-display font-extrabold text-white text-[34px] sm:text-[42px] lg:text-[52px] leading-[1.1] mb-5 opacity-0" data-hero-item>
-          Building Athletes.<br>
-          Building <span class="text-lime">Futures.</span>
-        </h1>
-        <p class="text-white/70 text-[15.5px] md:text-[16.5px] leading-relaxed mb-9 opacity-0" data-hero-item>
-          Champion Sports Academy is a multi-sport training academy committed to developing skilled, confident and disciplined athletes through quality coaching, structure and values-driven training.
-        </p>
+  <!-- Centered Content -->
+  <div class="relative z-10 max-w-[860px] mx-auto px-6 md:px-10 text-center flex flex-col items-center">
+    <span class="inline-flex items-center gap-2 text-lime font-bold text-[12px] tracking-[0.2em] uppercase mb-4 bg-lime/10 px-4 py-1.5 rounded-full border border-lime/20 opacity-0" data-hero-item>
+      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="4"/></svg>
+      ABOUT CHAMPION SPORTS ACADEMY
+    </span>
 
-        <div class="grid grid-cols-2 gap-x-6 gap-y-5 border-t border-white/15 pt-7 opacity-0" data-hero-item>
-          <div class="flex items-center gap-3">
-            <span class="about-value-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#A8D600" stroke-width="2"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="4"/></svg></span>
-            <span class="text-white text-[13px] font-medium leading-snug">Purposeful<br>Training</span>
-          </div>
-          <div class="flex items-center gap-3">
-            <span class="about-value-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#A8D600" stroke-width="2"><path d="M12 2v4M12 18v4M4.9 4.9l2.8 2.8M16.3 16.3l2.8 2.8M2 12h4M18 12h4M4.9 19.1l2.8-2.8M16.3 7.7l2.8-2.8"/></svg></span>
-            <span class="text-white text-[13px] font-medium leading-snug">Holistic<br>Development</span>
-          </div>
-          <div class="flex items-center gap-3">
-            <span class="about-value-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#A8D600" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></span>
-            <span class="text-white text-[13px] font-medium leading-snug">Trusted By<br>Families</span>
-          </div>
-          <div class="flex items-center gap-3">
-            <span class="about-value-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#A8D600" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg></span>
-            <span class="text-white text-[13px] font-medium leading-snug">Driven By<br>Excellence</span>
-          </div>
-        </div>
+    <h1 class="font-display font-extrabold text-white text-[36px] sm:text-[46px] md:text-[54px] leading-[1.1] mb-5 tracking-tight opacity-0" data-hero-item>
+      Building Athletes. Building <span class="text-lime">Futures.</span>
+    </h1>
+
+    <p class="text-white/80 text-[15.5px] md:text-[17px] leading-relaxed max-w-[680px] mb-8 opacity-0" data-hero-item>
+      Champion Sports Academy is committed to developing skilled, confident, and disciplined athletes through structured training, certified mentorship, and an inclusive sports community.
+    </p>
+
+    <!-- Centered Pillars / Values -->
+    <div class="flex flex-wrap justify-center items-center gap-4 sm:gap-6 border-t border-white/15 pt-6 w-full max-w-[720px] opacity-0" data-hero-item>
+      <div class="flex items-center gap-2.5 bg-white/5 border border-white/10 px-4 py-2 rounded-lg">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#A8D600" stroke-width="2.2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="4"/></svg>
+        <span class="text-white text-[13px] font-semibold">Purposeful Training</span>
+      </div>
+      <div class="flex items-center gap-2.5 bg-white/5 border border-white/10 px-4 py-2 rounded-lg">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#A8D600" stroke-width="2.2" aria-hidden="true"><path d="M12 2v4M12 18v4M4.9 4.9l2.8 2.8M16.3 16.3l2.8 2.8M2 12h4M18 12h4M4.9 19.1l2.8-2.8M16.3 7.7l2.8-2.8"/></svg>
+        <span class="text-white text-[13px] font-semibold">Holistic Growth</span>
+      </div>
+      <div class="flex items-center gap-2.5 bg-white/5 border border-white/10 px-4 py-2 rounded-lg">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#A8D600" stroke-width="2.2" aria-hidden="true"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+        <span class="text-white text-[13px] font-semibold">Trusted Community</span>
+      </div>
+      <div class="flex items-center gap-2.5 bg-white/5 border border-white/10 px-4 py-2 rounded-lg">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#A8D600" stroke-width="2.2" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>
+        <span class="text-white text-[13px] font-semibold">Excellence Driven</span>
       </div>
     </div>
   </div>

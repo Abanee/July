@@ -11,6 +11,7 @@
   --text-muted:    #94A3B8;
   --border-color:  #263548;
   --accent:        #B8E000;
+  --accent-text:   #B8E000;
   --accent-hover:  #C9F000;
   --navy:          #06101C;
   --on-accent:     #061A2E;
@@ -29,6 +30,7 @@
   --text-muted:    #718096;
   --border-color:  #DDE4E8;
   --accent:        #A8D600;
+  --accent-text:   #4D7C0F;
   --accent-hover:  #95C000;
   --navy:          #061A2E;
   --on-accent:     #061A2E;
@@ -37,6 +39,36 @@
 }
 
 [dir="rtl"] { direction: rtl; }
+
+/* Light mode high-contrast text rules */
+:root[data-theme="light"] .text-lime {
+  color: #4D7C0F;
+}
+
+:root[data-theme="light"] .eyebrow,
+:root[data-theme="light"] .eyebrow-dark,
+:root[data-theme="light"] .hero-eyebrow,
+:root[data-theme="light"] .spec-eyebrow,
+:root[data-theme="light"] .section-eyebrow,
+:root[data-theme="light"] .step-num {
+  color: #4D7C0F !important;
+}
+
+/* Preserve bright neon lime inside dark elements and headers/footers */
+:root[data-theme="light"] .site-header .text-lime,
+:root[data-theme="light"] .bg-navy .text-lime,
+:root[data-theme="light"] .bg-deep-navy .text-lime,
+:root[data-theme="light"] [class*="bg-navy"] .text-lime,
+:root[data-theme="light"] [class*="bg-deep-navy"] .text-lime,
+:root[data-theme="light"] .hero-dark .text-lime,
+:root[data-theme="light"] .about-hero .text-lime,
+:root[data-theme="light"] .contact-hero .text-lime,
+:root[data-theme="light"] .site-footer .text-lime,
+:root[data-theme="light"] footer .text-lime,
+:root[data-theme="light"] .btn-lime .text-lime,
+:root[data-theme="light"] .bg-lime .text-lime {
+  color: #A8D600;
+}
 
 
 /* ===================== BASE ===================== */

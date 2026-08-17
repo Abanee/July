@@ -21,6 +21,7 @@
   --navy:     #061A2E;
   --deep-navy:#03111F;
   --lime:     #B8E000;
+  --lime-text:#B8E000;
   --softbg:   #0B1624;
   --dark:     #F8FAFC;
   --muted:    #94A3B8;
@@ -46,10 +47,36 @@
   --navy:     #061A2E;
   --deep-navy:#03111F;
   --lime:     #A8D600;
+  --lime-text:#4D7C0F;
   --softbg:   #F5F7F5;
   --dark:     #102033;
   --muted:    #687585;
   --bd:       #E3E8E5;
+}
+
+/* Light mode high-contrast text rules */
+:root[data-theme="light"] .text-lime {
+  color: #4D7C0F;
+}
+
+:root[data-theme="light"] .eyebrow,
+:root[data-theme="light"] .eyebrow-dark,
+:root[data-theme="light"] .hero-eyebrow,
+:root[data-theme="light"] .step-num {
+  color: #4D7C0F !important;
+}
+
+/* Preserve bright neon lime inside dark elements and headers/footers */
+:root[data-theme="light"] .site-header .text-lime,
+:root[data-theme="light"] .bg-navy .text-lime,
+:root[data-theme="light"] .bg-deep-navy .text-lime,
+:root[data-theme="light"] [class*="bg-navy"] .text-lime,
+:root[data-theme="light"] [class*="bg-deep-navy"] .text-lime,
+:root[data-theme="light"] .site-footer .text-lime,
+:root[data-theme="light"] footer .text-lime,
+:root[data-theme="light"] .btn-lime .text-lime,
+:root[data-theme="light"] .bg-lime .text-lime {
+  color: #A8D600;
 }
 
 * { box-sizing: border-box; }
@@ -69,7 +96,7 @@ body {
 .section-pad { padding-top: 90px; padding-bottom: 90px; }
 .section-head { max-width: 640px; margin-bottom: 48px; }
 .eyebrow-dark {
-  color: var(--lime);
+  color: var(--lime-text, #4D7C0F);
   font-weight: 700;
   font-size: 12.5px;
   letter-spacing: 0.14em;
@@ -77,7 +104,7 @@ body {
   margin-bottom: 14px;
 }
 .eyebrow {
-  color: var(--lime);
+  color: var(--lime-text, #4D7C0F);
   font-weight: 700;
   font-size: 12.5px;
   letter-spacing: 0.14em;
