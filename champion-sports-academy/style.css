@@ -70,6 +70,14 @@
   color: #A8D600;
 }
 
+/* Universal Deep Navy container & footer enforcement */
+.bg-deep-navy {
+  background-color: #03111F !important;
+  color: #ffffff !important;
+}
+.bg-deep-navy a {
+  color: inherit;
+}
 
 /* ===================== BASE ===================== */
 html { scroll-behavior: smooth; }

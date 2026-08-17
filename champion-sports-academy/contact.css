@@ -43,6 +43,15 @@
   --card-shadow:   0 4px 20px rgba(16, 32, 51, 0.08);
 }
 
+/* Universal Deep Navy container & footer enforcement */
+.bg-deep-navy {
+  background-color: #03111F !important;
+  color: #ffffff !important;
+}
+.bg-deep-navy a {
+  color: inherit;
+}
+
 /* ============================================================
    2. RESET & BASE
    ============================================================ */

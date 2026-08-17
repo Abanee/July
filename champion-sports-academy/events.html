@@ -522,61 +522,122 @@
   </div>
 </section>
 
-<!-- FOOTER -->
-<footer class="bg-deep-navy pt-16 pb-8">
+<!-- ================= FOOTER ================= -->
+<footer class="bg-deep-navy text-white pt-16 pb-8 border-t border-white/10">
   <div class="max-w-[1400px] mx-auto px-6 md:px-10">
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 pb-12 border-b border-white/10">
-      <div>
-        <div class="flex items-center gap-3 mb-4">
-          <img src="Assets/logo.png" alt="Champion Sports Academy" class="w-8 h-8 object-contain">
-          <div class="leading-none">
-            <div class="text-white font-display font-extrabold text-[14px] tracking-wide">CHAMPION</div>
-            <div class="text-lime text-[9px] tracking-[0.2em] font-semibold">SPORTS ACADEMY</div>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 lg:gap-8 pb-12 border-b border-white/10">
+      
+      <!-- Brand & Mission (4 cols) -->
+      <div class="lg:col-span-4 flex flex-col justify-between">
+        <div>
+          <a href="index.html" class="flex items-center gap-3 mb-4 inline-flex">
+            <img src="Assets/logo.png" alt="Champion Sports Academy Logo" class="w-9 h-9 object-contain">
+            <div class="leading-tight">
+              <span class="block text-white font-display font-black text-[15px] tracking-wide">CHAMPION</span>
+              <span class="block text-lime text-[9.5px] tracking-[0.2em] font-extrabold uppercase">Sports Academy</span>
+            </div>
+          </a>
+          <p class="text-white/65 text-[13.5px] leading-relaxed mb-5 max-w-[340px]">
+            Premier multi-sport training institution empowering youth and aspiring athletes through certified coaching, world-class facilities, and progressive athletic pathways.
+          </p>
+          <div class="flex items-center gap-2 text-lime text-[12px] font-semibold mb-6 bg-lime/10 border border-lime/20 px-3.5 py-1.5 rounded-lg w-fit">
+            <span class="w-2 h-2 rounded-full bg-lime animate-pulse"></span>
+            <span>Admissions Open for 2026 Batches</span>
           </div>
         </div>
-        <p class="text-white/50 text-[13.5px] leading-relaxed mb-5">Building athletes.<br>Building futures.</p>
+
         <div class="flex items-center gap-3">
-          <a href="#" class="social-icon" aria-label="Facebook"><svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M22 12a10 10 0 1 0-11.6 9.9v-7H7.9V12h2.5V9.8c0-2.5 1.5-3.9 3.8-3.9 1.1 0 2.2.2 2.2.2v2.5h-1.3c-1.2 0-1.6.8-1.6 1.6V12h2.8l-.4 2.9h-2.4v7A10 10 0 0 0 22 12z"/></svg></a>
-          <a href="#" class="social-icon" aria-label="Instagram"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><line x1="17.5" y1="6.5" x2="17.5" y2="6.5"/></svg></a>
-          <a href="#" class="social-icon" aria-label="YouTube"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22.5 7.6c-.3-1-1-1.8-2-2C18.7 5 12 5 12 5s-6.7 0-8.5.6c-1 .2-1.7 1-2 2C1 9.4 1 12 1 12s0 2.6.5 4.4c.3 1 1 1.8 2 2C5.3 19 12 19 12 19s6.7 0 8.5-.6c1-.2 1.7-1 2-2C23 14.6 23 12 23 12s0-2.6-.5-4.4z"/><path d="M9.8 15.4l6-3.4-6-3.4v6.8z"/></svg></a>
-          <a href="#" class="social-icon" aria-label="Twitter / X"><svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M22 5.9c-.7.3-1.5.6-2.4.7.9-.5 1.5-1.3 1.8-2.3-.8.5-1.7.8-2.7 1a4.3 4.3 0 0 0-7.3 3.9A12.1 12.1 0 0 1 2.8 4.7a4.3 4.3 0 0 0 1.3 5.7c-.7 0-1.4-.2-2-.5v.1c0 2.1 1.5 3.8 3.4 4.2-.6.2-1.3.2-1.9.1.5 1.7 2.1 2.9 4 3A8.6 8.6 0 0 1 1 19a12.1 12.1 0 0 0 6.6 1.9c7.9 0 12.2-6.5 12.2-12.2v-.6c.8-.6 1.5-1.3 2.2-2.2z"/></svg></a>
+          <a href="#" class="w-9 h-9 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center text-white/70 hover:text-lime hover:border-lime/60 hover:bg-lime/10 transition-all" aria-label="Facebook">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M22 12a10 10 0 1 0-11.6 9.9v-7H7.9V12h2.5V9.8c0-2.5 1.5-3.9 3.8-3.9 1.1 0 2.2.2 2.2.2v2.5h-1.3c-1.2 0-1.6.8-1.6 1.6V12h2.8l-.4 2.9h-2.4v7A10 10 0 0 0 22 12z"/></svg>
+          </a>
+          <a href="#" class="w-9 h-9 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center text-white/70 hover:text-lime hover:border-lime/60 hover:bg-lime/10 transition-all" aria-label="Instagram">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><line x1="17.5" y1="6.5" x2="17.5" y2="6.5"/></svg>
+          </a>
+          <a href="#" class="w-9 h-9 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center text-white/70 hover:text-lime hover:border-lime/60 hover:bg-lime/10 transition-all" aria-label="YouTube">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22.5 7.6c-.3-1-1-1.8-2-2C18.7 5 12 5 12 5s-6.7 0-8.5.6c-1 .2-1.7 1-2 2C1 9.4 1 12 1 12s0 2.6.5 4.4c.3 1 1 1.8 2 2C5.3 19 12 19 12 19s6.7 0 8.5-.6c1-.2 1.7-1 2-2C23 14.6 23 12 23 12s0-2.6-.5-4.4z"/><path d="M9.8 15.4l6-3.4-6-3.4v6.8z"/></svg>
+          </a>
+          <a href="#" class="w-9 h-9 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center text-white/70 hover:text-lime hover:border-lime/60 hover:bg-lime/10 transition-all" aria-label="Twitter">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M22 5.9c-.7.3-1.5.6-2.4.7.9-.5 1.5-1.3 1.8-2.3-.8.5-1.7.8-2.7 1a4.3 4.3 0 0 0-7.3 3.9A12.1 12.1 0 0 1 2.8 4.7a4.3 4.3 0 0 0 1.3 5.7c-.7 0-1.4-.2-2-.5v.1c0 2.1 1.5 3.8 3.4 4.2-.6.2-1.3.2-1.9.1.5 1.7 2.1 2.9 4 3A8.6 8.6 0 0 1 1 19a12.1 12.1 0 0 0 6.6 1.9c7.9 0 12.2-6.5 12.2-12.2v-.6c.8-.6 1.5-1.3 2.2-2.2z"/></svg>
+          </a>
         </div>
       </div>
-      <div>
-        <h4 class="text-white font-display font-bold text-[14px] mb-5">Explore</h4>
-        <ul class="space-y-3 text-white/50 text-[13.5px]">
-          <li><a href="index.html" class="hover:text-lime transition-colors">Home</a></li>
-          <li><a href="programs.html" class="hover:text-lime transition-colors">Sports Programs</a></li>
-          <li><a href="coaches.html" class="hover:text-lime transition-colors">Coaches</a></li>
-          <li><a href="events.html" class="hover:text-lime transition-colors">Events</a></li>
-          <li><a href="about.html" class="hover:text-lime transition-colors">About</a></li>
-          <li><a href="contact.html" class="hover:text-lime transition-colors">Contact</a></li>
+
+      <!-- Sports & Programs (3 cols) -->
+      <div class="lg:col-span-3">
+        <h4 class="text-white font-display font-bold text-[14.5px] uppercase tracking-wider mb-5 flex items-center gap-2">
+          <span class="w-1.5 h-1.5 rounded-full bg-lime"></span>Sports &amp; Programs
+        </h4>
+        <ul class="space-y-2.5 text-white/60 text-[13.5px]">
+          <li><a href="programs.html#football" class="hover:text-lime hover:translate-x-1 inline-block transition-all">Football Academy (Ages 5–18)</a></li>
+          <li><a href="programs.html#basketball" class="hover:text-lime hover:translate-x-1 inline-block transition-all">Basketball Training (Indoor Courts)</a></li>
+          <li><a href="programs.html#badminton" class="hover:text-lime hover:translate-x-1 inline-block transition-all">Badminton Excellence (BWF Mats)</a></li>
+          <li><a href="programs.html#athletics" class="hover:text-lime hover:translate-x-1 inline-block transition-all">Athletics &amp; Track Fitness</a></li>
+          <li><a href="programs.html#pathways" class="hover:text-lime hover:translate-x-1 inline-block transition-all">Development Pathways</a></li>
+          <li><a href="programs.html#schedule" class="hover:text-lime hover:translate-x-1 inline-block transition-all">Weekly Batch Schedule</a></li>
         </ul>
       </div>
-      <div>
-        <h4 class="text-white font-display font-bold text-[14px] mb-5">Start Training</h4>
-        <ul class="space-y-3 text-white/50 text-[13.5px]">
-          <li><a href="programs.html" class="hover:text-lime transition-colors">Find Training</a></li>
-          <li><a href="programs.html#schedule" class="hover:text-lime transition-colors">Batch Timings</a></li>
-          <li><a href="#register" class="hover:text-lime transition-colors">Book a Trial</a></li>
-          <li><a href="dashboard.html" class="hover:text-lime transition-colors">Student Login</a></li>
+
+      <!-- Quick Navigation & Portal (2 cols) -->
+      <div class="lg:col-span-2">
+        <h4 class="text-white font-display font-bold text-[14.5px] uppercase tracking-wider mb-5 flex items-center gap-2">
+          <span class="w-1.5 h-1.5 rounded-full bg-lime"></span>Academy
+        </h4>
+        <ul class="space-y-2.5 text-white/60 text-[13.5px]">
+          <li><a href="about.html" class="hover:text-lime hover:translate-x-1 inline-block transition-all">About Our Academy</a></li>
+          <li><a href="coaches.html" class="hover:text-lime hover:translate-x-1 inline-block transition-all">Certified Coaches</a></li>
+          <li><a href="events.html" class="hover:text-lime hover:translate-x-1 inline-block transition-all">Events &amp; Tournaments</a></li>
+          <li><a href="dashboard.html" class="hover:text-lime hover:translate-x-1 inline-block transition-all">Student Dashboard</a></li>
+          <li><a href="signin.html" class="hover:text-lime hover:translate-x-1 inline-block transition-all">Parent / Student Portal</a></li>
+          <li><a href="contact.html" class="hover:text-lime hover:translate-x-1 inline-block transition-all">Get in Touch</a></li>
         </ul>
       </div>
-      <div>
-        <h4 class="text-white font-display font-bold text-[14px] mb-5">Contact Us</h4>
-        <ul class="space-y-3.5 text-white/50 text-[13.5px]">
-          <li class="flex items-center gap-2.5"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#A8D600" stroke-width="2"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.1-8.6A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 2 .7 3a2 2 0 0 1-.5 2.1L8 10a16 16 0 0 0 6 6l1.2-1.3a2 2 0 0 1 2.1-.5c1 .3 2 .5 3 .7a2 2 0 0 1 1.7 2z"/></svg>+91 98765 43210</li>
-          <li class="flex items-center gap-2.5"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#A8D600" stroke-width="2"><path d="M22 6l-10 7L2 6"/><rect x="2" y="4" width="20" height="16" rx="2"/></svg>info@championsports.com</li>
-          <li class="flex items-start gap-2.5"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#A8D600" stroke-width="2" class="mt-0.5 shrink-0"><path d="M21 10c0 6-9 12-9 12s-9-6-9-12a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>Academy Road, Chennai<br>Tamil Nadu, India</li>
+
+      <!-- Contact & Campus Info (3 cols) -->
+      <div class="lg:col-span-3">
+        <h4 class="text-white font-display font-bold text-[14.5px] uppercase tracking-wider mb-5 flex items-center gap-2">
+          <span class="w-1.5 h-1.5 rounded-full bg-lime"></span>Campus &amp; Contact
+        </h4>
+        <ul class="space-y-3.5 text-white/60 text-[13px]">
+          <li class="flex items-start gap-3">
+            <div class="w-8 h-8 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center shrink-0 text-lime mt-0.5">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 6-9 12-9 12s-9-6-9-12a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            </div>
+            <span>Champion Sports Complex, 42 Academy Way, Anna Nagar, Chennai 600040</span>
+          </li>
+          <li class="flex items-center gap-3">
+            <div class="w-8 h-8 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center shrink-0 text-lime">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.1-8.6A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 2 .7 3a2 2 0 0 1-.5 2.1L8 10a16 16 0 0 0 6 6l1.2-1.3a2 2 0 0 1 2.1-.5c1 .3 2 .5 3 .7a2 2 0 0 1 1.7 2z"/></svg>
+            </div>
+            <a href="tel:+919876543210" class="hover:text-lime transition-colors">+91 98765 43210</a>
+          </li>
+          <li class="flex items-center gap-3">
+            <div class="w-8 h-8 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center shrink-0 text-lime">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            </div>
+            <a href="mailto:admissions@championsports.com" class="hover:text-lime transition-colors">admissions@championsports.com</a>
+          </li>
+          <li class="flex items-center gap-3 text-white/50 text-[12px] pt-1">
+            <div class="w-8 h-8 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center shrink-0 text-lime">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            </div>
+            <span>Mon–Sat: 6:00 AM – 8:30 PM &bull; Sun: Morning Camps</span>
+          </li>
         </ul>
       </div>
+
     </div>
-    <div class="pt-6 flex flex-col sm:flex-row items-center justify-between gap-3 text-white/40 text-[12.5px]">
-      <p>2026 Champion Sports Academy. All Rights Reserved.</p>
-      <div class="flex items-center gap-4">
+
+    <!-- Bottom Bar -->
+    <div class="pt-8 flex flex-col md:flex-row items-center justify-between gap-4 text-white/50 text-[12.5px]">
+      <p>© 2026 Champion Sports Academy. All rights reserved. Building athletic excellence.</p>
+      <div class="flex flex-wrap items-center gap-4 sm:gap-6">
         <a href="#" class="hover:text-lime transition-colors">Privacy Policy</a>
-        <span class="opacity-40">|</span>
-        <a href="#" class="hover:text-lime transition-colors">Terms and Conditions</a>
+        <span class="text-white/20">&bull;</span>
+        <a href="#" class="hover:text-lime transition-colors">Terms &amp; Conditions</a>
+        <span class="text-white/20">&bull;</span>
+        <a href="#" class="hover:text-lime transition-colors">Child Safeguarding</a>
+        <span class="text-white/20">&bull;</span>
+        <a href="#" class="hover:text-lime transition-colors">Sitemap</a>
       </div>
     </div>
   </div>

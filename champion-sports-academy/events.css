@@ -66,6 +66,15 @@
   --on-accent:      #061A2E;
 }
 
+/* Universal Deep Navy container & footer enforcement */
+.bg-deep-navy {
+  background-color: #03111F !important;
+  color: #ffffff !important;
+}
+.bg-deep-navy a {
+  color: inherit;
+}
+
 /* ============================================================
    2. BASE — body background driven by theme
    ============================================================ */

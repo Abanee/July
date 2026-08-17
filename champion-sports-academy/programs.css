@@ -37,6 +37,15 @@
   --shadow-soft: rgba(16, 32, 51, 0.1);
 }
 
+/* Universal Deep Navy container & footer enforcement */
+.bg-deep-navy {
+  background-color: #03111F !important;
+  color: #ffffff !important;
+}
+.bg-deep-navy a {
+  color: inherit;
+}
+
 * { box-sizing: border-box; }
 
 html { scroll-behavior: smooth; }
