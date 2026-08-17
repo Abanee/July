@@ -355,74 +355,92 @@
     </div>
 
     <!-- Sports grid -->
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-      <div class="sport-card bg-navy-card border border-white/10 rounded-xl overflow-hidden reveal">
-        <div class="relative h-[220px]">
-          <img src="https://images.unsplash.com/photo-1508098682722-e99c43a406b2?w=600&q=80&auto=format&fit=crop" alt="Football coaching" class="w-full h-full object-cover">
-          <span class="sport-badge bg-lime text-navy">Football</span>
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 items-stretch">
+      
+      <!-- Football Card -->
+      <div class="sport-card bg-navy-card border border-white/10 rounded-xl overflow-hidden flex flex-col justify-between h-full hover:border-lime/60 transition-all duration-300 group reveal">
+        <div class="relative h-[210px] overflow-hidden">
+          <img src="https://images.unsplash.com/photo-1579952363873-27f3bade9f55?w=600&q=80&auto=format&fit=crop" alt="Football training at Champion Sports Academy" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+          <div class="absolute inset-0 bg-gradient-to-t from-navy-card/80 via-transparent to-black/20"></div>
+          <span class="absolute top-3.5 left-3.5 bg-lime text-navy text-[11px] font-extrabold px-3 py-1 rounded-full uppercase tracking-wider shadow-md z-10">Football</span>
         </div>
-        <div class="p-6">
-          <p class="text-white/50 text-[12px] mb-2 font-medium">Ages 5–18 &bull; Grassroots to Elite</p>
-          <h3 class="font-display font-bold text-white text-[17px] mb-2">Football Academy</h3>
-          <p class="text-white/60 text-[13.5px] leading-relaxed mb-4">Ball mastery, positional play, physical conditioning and tournament match exposure.</p>
-          <ul class="text-white/50 text-[12.5px] space-y-1.5 mb-5">
-            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-lime"></span>Weekly match simulations</li>
-            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-lime"></span>UEFA/AFC certified coaches</li>
-          </ul>
-          <a href="programs.html" class="inline-block w-full text-center bg-white/5 border border-white/15 text-white font-medium text-[13px] rounded-md py-2.5 hover:bg-lime hover:text-navy hover:border-lime transition">Program Details</a>
-        </div>
-      </div>
-
-      <div class="sport-card bg-navy-card border border-white/10 rounded-xl overflow-hidden reveal">
-        <div class="relative h-[220px]">
-          <img src="https://images.unsplash.com/photo-1546519638-68e109498ffc?w=600&q=80&auto=format&fit=crop" alt="Basketball coaching" class="w-full h-full object-cover">
-          <span class="sport-badge bg-lime text-navy">Basketball</span>
-        </div>
-        <div class="p-6">
-          <p class="text-white/50 text-[12px] mb-2 font-medium">Ages 6–18 &bull; Indoor Court</p>
-          <h3 class="font-display font-bold text-white text-[17px] mb-2">Basketball Academy</h3>
-          <p class="text-white/60 text-[13.5px] leading-relaxed mb-4">Shooting mechanics, footwork, team defense and high-intensity game preparation.</p>
-          <ul class="text-white/50 text-[12.5px] space-y-1.5 mb-5">
-            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-lime"></span>Wooden indoor flooring</li>
-            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-lime"></span>FIBA-certified coaching drills</li>
-          </ul>
-          <a href="programs.html" class="inline-block w-full text-center bg-white/5 border border-white/15 text-white font-medium text-[13px] rounded-md py-2.5 hover:bg-lime hover:text-navy hover:border-lime transition">Program Details</a>
+        <div class="p-6 flex flex-col flex-1 justify-between">
+          <div>
+            <p class="text-lime text-[12px] mb-2 font-bold tracking-wide">Ages 5–18 &bull; Grassroots to Elite</p>
+            <h3 class="font-display font-bold text-white text-[18px] mb-2">Football Academy</h3>
+            <p class="text-white/60 text-[13.5px] leading-relaxed mb-4 min-h-[60px]">Ball mastery, positional play, physical conditioning and tournament match exposure.</p>
+            <ul class="text-white/60 text-[12.5px] space-y-2 mb-5 border-t border-white/10 pt-3.5">
+              <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-lime shrink-0"></span>Weekly match simulations</li>
+              <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-lime shrink-0"></span>UEFA &amp; AFC certified coaches</li>
+            </ul>
+          </div>
+          <a href="programs.html" class="inline-block w-full text-center bg-white/5 border border-white/15 text-white font-semibold text-[13px] rounded-md py-2.5 hover:bg-lime hover:text-navy hover:border-lime transition mt-auto">Program Details</a>
         </div>
       </div>
 
-      <div class="sport-card bg-navy-card border border-white/10 rounded-xl overflow-hidden reveal">
-        <div class="relative h-[220px]">
-          <img src="https://images.unsplash.com/photo-1626224583764-f87db24ac4ea?w=600&q=80&auto=format&fit=crop" alt="Badminton coaching" class="w-full h-full object-cover">
-          <span class="sport-badge bg-lime text-navy">Badminton</span>
+      <!-- Basketball Card -->
+      <div class="sport-card bg-navy-card border border-white/10 rounded-xl overflow-hidden flex flex-col justify-between h-full hover:border-lime/60 transition-all duration-300 group reveal">
+        <div class="relative h-[210px] overflow-hidden">
+          <img src="https://images.unsplash.com/photo-1546519638-68e109498ffc?w=600&q=80&auto=format&fit=crop" alt="Basketball training at Champion Sports Academy" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+          <div class="absolute inset-0 bg-gradient-to-t from-navy-card/80 via-transparent to-black/20"></div>
+          <span class="absolute top-3.5 left-3.5 bg-lime text-navy text-[11px] font-extrabold px-3 py-1 rounded-full uppercase tracking-wider shadow-md z-10">Basketball</span>
         </div>
-        <div class="p-6">
-          <p class="text-white/50 text-[12px] mb-2 font-medium">Ages 6–18 &bull; Synthetic Courts</p>
-          <h3 class="font-display font-bold text-white text-[17px] mb-2">Badminton Academy</h3>
-          <p class="text-white/60 text-[13.5px] leading-relaxed mb-4">Racquet skills, court agility, smash technique and competitive tournament coaching.</p>
-          <ul class="text-white/50 text-[12.5px] space-y-1.5 mb-5">
-            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-lime"></span>BWF standard court mats</li>
-            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-lime"></span>National-level coaching staff</li>
-          </ul>
-          <a href="programs.html" class="inline-block w-full text-center bg-white/5 border border-white/15 text-white font-medium text-[13px] rounded-md py-2.5 hover:bg-lime hover:text-navy hover:border-lime transition">Program Details</a>
+        <div class="p-6 flex flex-col flex-1 justify-between">
+          <div>
+            <p class="text-lime text-[12px] mb-2 font-bold tracking-wide">Ages 6–18 &bull; Indoor Court</p>
+            <h3 class="font-display font-bold text-white text-[18px] mb-2">Basketball Academy</h3>
+            <p class="text-white/60 text-[13.5px] leading-relaxed mb-4 min-h-[60px]">Shooting mechanics, footwork, team defense and high-intensity game preparation.</p>
+            <ul class="text-white/60 text-[12.5px] space-y-2 mb-5 border-t border-white/10 pt-3.5">
+              <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-lime shrink-0"></span>Wooden indoor flooring</li>
+              <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-lime shrink-0"></span>FIBA-certified coaching drills</li>
+            </ul>
+          </div>
+          <a href="programs.html" class="inline-block w-full text-center bg-white/5 border border-white/15 text-white font-semibold text-[13px] rounded-md py-2.5 hover:bg-lime hover:text-navy hover:border-lime transition mt-auto">Program Details</a>
         </div>
       </div>
 
-      <div class="sport-card bg-navy-card border border-white/10 rounded-xl overflow-hidden reveal">
-        <div class="relative h-[220px]">
-          <img src="https://images.unsplash.com/photo-1461896836934-ffe607ba8211?w=600&q=80&auto=format&fit=crop" alt="Athletics coaching" class="w-full h-full object-cover">
-          <span class="sport-badge bg-lime text-navy">Athletics</span>
+      <!-- Badminton Card -->
+      <div class="sport-card bg-navy-card border border-white/10 rounded-xl overflow-hidden flex flex-col justify-between h-full hover:border-lime/60 transition-all duration-300 group reveal">
+        <div class="relative h-[210px] overflow-hidden">
+          <img src="https://images.unsplash.com/photo-1626224583764-f87db24ac4ea?w=600&q=80&auto=format&fit=crop" alt="Badminton coaching at Champion Sports Academy" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+          <div class="absolute inset-0 bg-gradient-to-t from-navy-card/80 via-transparent to-black/20"></div>
+          <span class="absolute top-3.5 left-3.5 bg-lime text-navy text-[11px] font-extrabold px-3 py-1 rounded-full uppercase tracking-wider shadow-md z-10">Badminton</span>
         </div>
-        <div class="p-6">
-          <p class="text-white/50 text-[12px] mb-2 font-medium">Ages 7–18 &bull; Track &amp; Field</p>
-          <h3 class="font-display font-bold text-white text-[17px] mb-2">Athletics &amp; Fitness</h3>
-          <p class="text-white/60 text-[13.5px] leading-relaxed mb-4">Sprint mechanics, endurance, strength &amp; conditioning and agility fundamentals.</p>
-          <ul class="text-white/50 text-[12.5px] space-y-1.5 mb-5">
-            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-lime"></span>Synthetic running track</li>
-            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-lime"></span>Personal fitness analytics</li>
-          </ul>
-          <a href="programs.html" class="inline-block w-full text-center bg-white/5 border border-white/15 text-white font-medium text-[13px] rounded-md py-2.5 hover:bg-lime hover:text-navy hover:border-lime transition">Program Details</a>
+        <div class="p-6 flex flex-col flex-1 justify-between">
+          <div>
+            <p class="text-lime text-[12px] mb-2 font-bold tracking-wide">Ages 6–18 &bull; Synthetic Courts</p>
+            <h3 class="font-display font-bold text-white text-[18px] mb-2">Badminton Academy</h3>
+            <p class="text-white/60 text-[13.5px] leading-relaxed mb-4 min-h-[60px]">Racquet skills, court agility, smash technique and competitive tournament coaching.</p>
+            <ul class="text-white/60 text-[12.5px] space-y-2 mb-5 border-t border-white/10 pt-3.5">
+              <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-lime shrink-0"></span>BWF standard court mats</li>
+              <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-lime shrink-0"></span>National-level coaching staff</li>
+            </ul>
+          </div>
+          <a href="programs.html" class="inline-block w-full text-center bg-white/5 border border-white/15 text-white font-semibold text-[13px] rounded-md py-2.5 hover:bg-lime hover:text-navy hover:border-lime transition mt-auto">Program Details</a>
         </div>
       </div>
+
+      <!-- Athletics Card -->
+      <div class="sport-card bg-navy-card border border-white/10 rounded-xl overflow-hidden flex flex-col justify-between h-full hover:border-lime/60 transition-all duration-300 group reveal">
+        <div class="relative h-[210px] overflow-hidden">
+          <img src="https://images.unsplash.com/photo-1461896836934-ffe607ba8211?w=600&q=80&auto=format&fit=crop" alt="Athletics coaching at Champion Sports Academy" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+          <div class="absolute inset-0 bg-gradient-to-t from-navy-card/80 via-transparent to-black/20"></div>
+          <span class="absolute top-3.5 left-3.5 bg-lime text-navy text-[11px] font-extrabold px-3 py-1 rounded-full uppercase tracking-wider shadow-md z-10">Athletics</span>
+        </div>
+        <div class="p-6 flex flex-col flex-1 justify-between">
+          <div>
+            <p class="text-lime text-[12px] mb-2 font-bold tracking-wide">Ages 7–18 &bull; Track &amp; Field</p>
+            <h3 class="font-display font-bold text-white text-[18px] mb-2">Athletics &amp; Fitness</h3>
+            <p class="text-white/60 text-[13.5px] leading-relaxed mb-4 min-h-[60px]">Sprint mechanics, endurance, strength &amp; conditioning and agility fundamentals.</p>
+            <ul class="text-white/60 text-[12.5px] space-y-2 mb-5 border-t border-white/10 pt-3.5">
+              <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-lime shrink-0"></span>Synthetic running track</li>
+              <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-lime shrink-0"></span>Personal fitness analytics</li>
+            </ul>
+          </div>
+          <a href="programs.html" class="inline-block w-full text-center bg-white/5 border border-white/15 text-white font-semibold text-[13px] rounded-md py-2.5 hover:bg-lime hover:text-navy hover:border-lime transition mt-auto">Program Details</a>
+        </div>
+      </div>
+
     </div>
   </div>
 </section>
