@@ -66,6 +66,54 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  /* ---------- Sports Cards Carousel ---------- */
+  const sportTrack = document.getElementById('sportCardsTrack');
+  const sportPrev  = document.getElementById('sportPrev');
+  const sportNext  = document.getElementById('sportNext');
+
+  if (sportTrack && sportPrev && sportNext) {
+    const getCardWidth = () => {
+      const card = sportTrack.querySelector('.sport-card');
+      return card ? card.offsetWidth + 20 : 300;
+    };
+
+    sportPrev.addEventListener('click', () => {
+      sportTrack.scrollBy({ left: -getCardWidth(), behavior: 'smooth' });
+    });
+
+    sportNext.addEventListener('click', () => {
+      const maxScroll = sportTrack.scrollWidth - sportTrack.clientWidth;
+      if (sportTrack.scrollLeft >= maxScroll - 10) {
+        sportTrack.scrollTo({ left: 0, behavior: 'smooth' });
+      } else {
+        sportTrack.scrollBy({ left: getCardWidth(), behavior: 'smooth' });
+      }
+    });
+
+    // Auto-advance every 4.5s unless hovered
+    let autoRotate = setInterval(() => {
+      const maxScroll = sportTrack.scrollWidth - sportTrack.clientWidth;
+      if (sportTrack.scrollLeft >= maxScroll - 10) {
+        sportTrack.scrollTo({ left: 0, behavior: 'smooth' });
+      } else {
+        sportTrack.scrollBy({ left: getCardWidth(), behavior: 'smooth' });
+      }
+    }, 4500);
+
+    sportTrack.addEventListener('mouseenter', () => clearInterval(autoRotate));
+    sportTrack.addEventListener('mouseleave', () => {
+      clearInterval(autoRotate);
+      autoRotate = setInterval(() => {
+        const maxScroll = sportTrack.scrollWidth - sportTrack.clientWidth;
+        if (sportTrack.scrollLeft >= maxScroll - 10) {
+          sportTrack.scrollTo({ left: 0, behavior: 'smooth' });
+        } else {
+          sportTrack.scrollBy({ left: getCardWidth(), behavior: 'smooth' });
+        }
+      }, 4500);
+    });
+  }
+
   /* ---------- FAQ accordion ---------- */
   const faqItems = document.querySelectorAll('.faq-item');
   faqItems.forEach(item => {
