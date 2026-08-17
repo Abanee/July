@@ -1,4 +1,4 @@
-﻿/* ================================================================
+/* ================================================================
    EVENTS.JS — Champion Sports Academy · Events & Tournaments Page
    ================================================================ */
 
@@ -22,6 +22,9 @@ document.addEventListener('DOMContentLoaded', () => {
     iconSun   && iconSun.classList.toggle('hidden', !isLight);
     iconMoonM && iconMoonM.classList.toggle('hidden', isLight);
     iconSunM  && iconSunM.classList.toggle('hidden', !isLight);
+    const label = isLight ? 'Switch to dark theme' : 'Switch to light theme';
+    themeToggle       && themeToggle.setAttribute('aria-label', label);
+    themeToggleMobile && themeToggleMobile.setAttribute('aria-label', label);
   }
   function setTheme(t) {
     root.setAttribute('data-theme', t);
@@ -31,6 +34,26 @@ document.addEventListener('DOMContentLoaded', () => {
   reflectThemeIcons(root.getAttribute('data-theme') || 'dark');
   themeToggle       && themeToggle.addEventListener('click', () => setTheme(root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark'));
   themeToggleMobile && themeToggleMobile.addEventListener('click', () => setTheme(root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark'));
+
+  /* ------------------------------------------------------------------
+     1b. RTL TOGGLE
+     ------------------------------------------------------------------ */
+  const rtlToggle       = document.getElementById('rtl-toggle');
+  const rtlToggleMobile = document.getElementById('rtl-toggle-mobile');
+
+  function reflectRTL(isRTL) {
+    root.setAttribute('dir', isRTL ? 'rtl' : 'ltr');
+    if (rtlToggle)       rtlToggle.setAttribute('aria-pressed', String(isRTL));
+    if (rtlToggleMobile) rtlToggleMobile.setAttribute('aria-pressed', String(isRTL));
+  }
+  function toggleRTL() {
+    const isRTL = root.getAttribute('dir') !== 'rtl';
+    reflectRTL(isRTL);
+    localStorage.setItem('csa-rtl', String(isRTL));
+  }
+  reflectRTL(localStorage.getItem('csa-rtl') === 'true');
+  rtlToggle       && rtlToggle.addEventListener('click', toggleRTL);
+  rtlToggleMobile && rtlToggleMobile.addEventListener('click', toggleRTL);
 
   /* ------------------------------------------------------------------
      2. HEADER SCROLL SHADOW

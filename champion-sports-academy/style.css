@@ -1,22 +1,43 @@
 /* ===================== THEME & RTL ===================== */
+
+/* --- Dark tokens (default) --- */
+:root, :root[data-theme="dark"] {
+  --bg-primary:    #06101C;
+  --bg-secondary:  #0B1624;
+  --bg-card:       #111D2B;
+  --bg-elevated:   #162334;
+  --text-primary:  #F8FAFC;
+  --text-secondary:#CBD5E1;
+  --text-muted:    #94A3B8;
+  --border-color:  #263548;
+  --accent:        #B8E000;
+  --accent-hover:  #C9F000;
+  --navy:          #06101C;
+  --on-accent:     #061A2E;
+  --shadow-soft:   rgba(0,0,0,0.35);
+  --card-shadow:   0 4px 20px rgba(0,0,0,0.28);
+}
+
+/* --- Light tokens --- */
 :root[data-theme="light"] {
-  --bg-primary: #F5F7F5;
-  --bg-secondary: #FFFFFF;
-  --text-primary: #102033;
-  --text-secondary: #4B5A6A;
-  --border-color: #DDE4E8;
-  --navy: #061A2E;
-  --accent: #A8D600;
+  --bg-primary:    #F5F7F5;
+  --bg-secondary:  #FFFFFF;
+  --bg-card:       #FFFFFF;
+  --bg-elevated:   #F1F4F1;
+  --text-primary:  #102033;
+  --text-secondary:#4B5A6A;
+  --text-muted:    #718096;
+  --border-color:  #DDE4E8;
+  --accent:        #A8D600;
+  --accent-hover:  #95C000;
+  --navy:          #061A2E;
+  --on-accent:     #061A2E;
+  --shadow-soft:   rgba(16,32,51,0.1);
+  --card-shadow:   0 4px 20px rgba(16,32,51,0.08);
 }
 
-:root[data-theme="light"] body {
-  background-color: var(--bg-primary);
-  color: var(--text-primary);
-}
+[dir="rtl"] { direction: rtl; }
 
-[dir="rtl"] {
-  direction: rtl;
-}
 
 /* ===================== BASE ===================== */
 html { scroll-behavior: smooth; }
@@ -32,6 +53,15 @@ a:focus-visible, button:focus-visible {
 /* ===================== HEADER ===================== */
 #site-header.scrolled {
   box-shadow: 0 4px 24px rgba(3, 17, 31, 0.25);
+}
+
+.nav-dropdown-menu::before {
+  content: '';
+  position: absolute;
+  top: -14px;
+  left: 0;
+  right: 0;
+  height: 14px;
 }
 
 .nav-active::after {
@@ -599,4 +629,170 @@ a:focus-visible, button:focus-visible {
   position: absolute;
   inset: 0;
   background: linear-gradient(100deg, rgba(3,17,31,0.96) 0%, rgba(3,17,31,0.88) 38%, rgba(3,17,31,0.45) 75%, rgba(3,17,31,0.2) 100%);
+}
+
+/* =====================================================
+   DARK THEME SYSTEM ADAPTATIONS (index.html & about.html)
+   ===================================================== */
+:root[data-theme="dark"] body,
+body[data-theme="dark"] {
+  background-color: var(--bg-primary) !important;
+  color: var(--text-primary) !important;
+}
+
+:root[data-theme="dark"] .bg-soft,
+:root[data-theme="dark"] section.bg-soft,
+:root[data-theme="dark"] div.bg-soft {
+  background-color: var(--bg-secondary) !important;
+}
+
+:root[data-theme="dark"] .bg-white,
+:root[data-theme="dark"] section.bg-white,
+:root[data-theme="dark"] div.bg-white {
+  background-color: var(--bg-primary) !important;
+}
+
+:root[data-theme="dark"] .text-dark-text,
+:root[data-theme="dark"] h1.text-dark-text,
+:root[data-theme="dark"] h2.text-dark-text,
+:root[data-theme="dark"] h3.text-dark-text,
+:root[data-theme="dark"] h4.text-dark-text {
+  color: var(--text-primary) !important;
+}
+
+:root[data-theme="dark"] .text-muted,
+:root[data-theme="dark"] p.text-muted,
+:root[data-theme="dark"] span.text-muted {
+  color: var(--text-secondary) !important;
+}
+
+:root[data-theme="dark"] .border-border,
+:root[data-theme="dark"] .border-\[\#E5E9ED\],
+:root[data-theme="dark"] .border-border\/15 {
+  border-color: var(--border-color) !important;
+}
+
+:root[data-theme="dark"] .benefit-card {
+  background-color: var(--bg-card) !important;
+  border-color: var(--border-color) !important;
+  box-shadow: var(--card-shadow) !important;
+}
+
+:root[data-theme="dark"] .benefit-card h3 {
+  color: var(--text-primary) !important;
+}
+
+:root[data-theme="dark"] .benefit-card p {
+  color: var(--text-secondary) !important;
+}
+
+:root[data-theme="dark"] .benefit-card svg {
+  stroke: var(--accent) !important;
+}
+
+:root[data-theme="dark"] .journey-card {
+  background-color: var(--bg-card) !important;
+  border-color: var(--border-color) !important;
+}
+
+:root[data-theme="dark"] .journey-card h3 {
+  color: var(--text-primary) !important;
+}
+
+:root[data-theme="dark"] .journey-card p {
+  color: var(--text-secondary) !important;
+}
+
+:root[data-theme="dark"] .journey-line {
+  background: repeating-linear-gradient(to right, var(--accent) 0, var(--accent) 6px, transparent 6px, transparent 12px);
+}
+
+:root[data-theme="dark"] .journey-line::after {
+  background: var(--border-color) !important;
+}
+
+:root[data-theme="dark"] .tag {
+  background-color: var(--bg-elevated) !important;
+  border-color: var(--border-color) !important;
+  color: var(--text-primary) !important;
+}
+
+:root[data-theme="dark"] .coach-card h3 {
+  color: var(--text-primary) !important;
+}
+
+:root[data-theme="dark"] .coach-card p {
+  color: var(--text-secondary) !important;
+}
+
+:root[data-theme="dark"] .dashboard-main {
+  background-color: var(--bg-card) !important;
+  color: var(--text-primary) !important;
+}
+
+:root[data-theme="dark"] .db-stat,
+:root[data-theme="dark"] .db-mini,
+:root[data-theme="dark"] .db-feedback {
+  background-color: var(--bg-elevated) !important;
+  border-color: var(--border-color) !important;
+}
+
+:root[data-theme="dark"] .db-stat-value {
+  color: var(--text-primary) !important;
+}
+
+:root[data-theme="dark"] .db-stat-label {
+  color: var(--text-muted) !important;
+}
+
+/* About Page in Dark Theme */
+:root[data-theme="dark"] .mv-icon {
+  background-color: var(--bg-elevated) !important;
+  border-color: var(--border-color) !important;
+}
+
+:root[data-theme="dark"] .about-timeline-track::before {
+  background-color: var(--border-color) !important;
+}
+
+:root[data-theme="dark"] .timeline-circle {
+  background-color: var(--bg-card) !important;
+  border-color: var(--border-color) !important;
+}
+
+:root[data-theme="dark"] .timeline-year {
+  color: var(--text-muted) !important;
+}
+
+:root[data-theme="dark"] .timeline-milestone h3 {
+  color: var(--text-primary) !important;
+}
+
+:root[data-theme="dark"] .timeline-milestone p {
+  color: var(--text-secondary) !important;
+}
+
+:root[data-theme="dark"] .stage-row:hover {
+  background: rgba(184, 224, 0, 0.08) !important;
+}
+
+:root[data-theme="dark"] .stage-number {
+  color: var(--border-color) !important;
+}
+
+:root[data-theme="dark"] .stage-content h3 {
+  color: var(--text-primary) !important;
+}
+
+:root[data-theme="dark"] .stage-content p {
+  color: var(--text-secondary) !important;
+}
+
+:root[data-theme="dark"] .impact-block + .impact-block {
+  border-color: var(--border-color) !important;
+}
+
+:root[data-theme="dark"] .impact-icon {
+  background-color: var(--bg-elevated) !important;
+  border: 1px solid var(--border-color) !important;
 }

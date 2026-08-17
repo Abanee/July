@@ -19,7 +19,8 @@
   --amber:#FBBF24;
 }
 
-html.light{
+html.light,
+[data-theme="light"] {
   --bg-main:#F5F7F5;
   --bg-sidebar:#FFFFFF;
   --bg-card:#FFFFFF;

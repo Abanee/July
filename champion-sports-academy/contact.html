@@ -1,0 +1,920 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact Us — Champion Sports Academy</title>
+<meta name="description" content="Get in touch with Champion Sports Academy. Visit us in Chennai, call, email, or fill in our contact form. Free trial sessions available — no commitment required.">
+
+<!-- Theme + RTL init — runs immediately before paint to prevent flashing -->
+<script>
+  (function () {
+    var saved = localStorage.getItem('csa-theme');
+    var theme = saved === 'light' || saved === 'dark' ? saved : 'dark';
+    document.documentElement.setAttribute('data-theme', theme);
+    var rtl = localStorage.getItem('csa-rtl') === 'true';
+    if (rtl) document.documentElement.setAttribute('dir', 'rtl');
+  })();
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="contact.css">
+</head>
+<body>
+
+<!-- ═══════════════════════ HEADER ═══════════════════════ -->
+<header id="site-header" class="site-header">
+  <div class="header-inner max-w-site">
+    <!-- Brand Logo -->
+    <a href="index.html" class="logo-link" aria-label="Champion Sports Academy Home">
+      <svg width="32" height="32" viewBox="0 0 34 34" fill="none" aria-hidden="true">
+        <path d="M17 1L31 6.5V16C31 24.5 25.5 30.8 17 33C8.5 30.8 3 24.5 3 16V6.5L17 1Z" fill="#B8E000"/>
+        <path d="M17 6L25 9V16C25 21.2 21.7 25.2 17 27C12.3 25.2 9 21.2 9 16V9L17 6Z" fill="#06101C"/>
+      </svg>
+      <div class="logo-text-group">
+        <span class="logo-title">CHAMPION</span>
+        <span class="logo-subtitle">SPORTS ACADEMY</span>
+      </div>
+    </a>
+
+    <!-- Desktop Navigation -->
+    <nav class="desktop-nav" aria-label="Primary navigation">
+      <a href="index.html" class="nav-link">Home</a>
+      <a href="index2.html" class="nav-link">Home 2</a>
+      <a href="about.html" class="nav-link">About</a>
+      <!-- Sports Dropdown -->
+      <div class="nav-dropdown" id="sports-drop">
+        <button class="nav-link nav-dropdown-trigger" type="button" aria-haspopup="true" aria-expanded="false" id="sports-drop-btn">
+          Sports
+          <svg class="drop-chevron" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="nav-dropdown-menu" role="menu">
+          <a href="programs.html" role="menuitem">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            Sports Programs
+          </a>
+          <a href="coaches.html" role="menuitem">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+            Coaches
+          </a>
+        </div>
+      </div>
+      <a href="events.html" class="nav-link">Events</a>
+      <a href="contact.html" class="nav-link nav-active" aria-current="page">Contact</a>
+    </nav>
+
+    <!-- Header Actions (RTL, Theme, Dashboard, Sign In) -->
+    <div class="header-actions">
+      <button id="rtl-toggle" class="header-icon-btn" aria-label="Toggle right-to-left layout" aria-pressed="false" title="Toggle RTL">RTL</button>
+      <button id="theme-toggle" class="header-icon-btn" aria-label="Switch colour theme" type="button">
+        <svg id="icon-moon" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.8A9 9 0 1 1 11.2 3 7 7 0 0 0 21 12.8Z"/></svg>
+        <svg id="icon-sun" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="hidden"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+      </button>
+      <a href="dashboard.html" class="header-btn-outline">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+        Dashboard
+      </a>
+      <a href="signin.html" class="header-btn-lime">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"/><polyline points="10 17 15 12 10 7"/><line x1="15" y1="12" x2="3" y2="12"/></svg>
+        Sign In
+      </a>
+    </div>
+
+    <!-- Mobile Menu Button -->
+    <div class="mobile-controls">
+      <button id="theme-toggle-mobile" class="header-icon-btn" aria-label="Switch colour theme" type="button">
+        <svg class="icon-moon-m" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.8A9 9 0 1 1 11.2 3 7 7 0 0 0 21 12.8Z"/></svg>
+        <svg class="icon-sun-m hidden" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+      </button>
+      <button id="menu-btn" class="hamburger-btn" aria-label="Open navigation menu" aria-expanded="false" aria-controls="mobile-drawer">
+        <svg id="menu-icon-open" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+        <svg id="menu-icon-close" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="hidden"><line x1="6" y1="6" x2="18" y2="18"/><line x1="6" y1="18" x2="18" y2="6"/></svg>
+      </button>
+    </div>
+  </div>
+
+  <!-- Mobile Drawer -->
+  <nav id="mobile-drawer" class="mobile-drawer" role="dialog" aria-label="Mobile navigation" aria-modal="true">
+    <a href="index.html" class="drawer-link">Home</a>
+    <a href="index2.html" class="drawer-link">Home 2</a>
+    <a href="about.html" class="drawer-link">About</a>
+    <a href="programs.html" class="drawer-link sub-link">↳ Sports Programs</a>
+    <a href="coaches.html" class="drawer-link sub-link">↳ Coaches</a>
+    <a href="events.html" class="drawer-link">Events</a>
+    <a href="contact.html" class="drawer-link drawer-active" aria-current="page">Contact</a>
+    <div class="drawer-divider"></div>
+    <button id="rtl-toggle-mobile" class="drawer-link rtl-btn" aria-label="Toggle RTL">RTL Mode</button>
+    <a href="dashboard.html" class="drawer-link">Dashboard</a>
+    <a href="signin.html" class="drawer-cta">Sign In</a>
+  </nav>
+</header>
+
+<div id="menu-backdrop" class="menu-backdrop" aria-hidden="true"></div>
+
+<main id="main-content">
+
+<!-- ═══════════════════════ BREADCRUMB ═══════════════════════ -->
+<div class="breadcrumb-bar">
+  <div class="max-w-site mx-auto px-5 sm:px-6 lg:px-10 breadcrumb-inner">
+    <a href="index.html">Home</a>
+    <span class="crumb-sep">›</span>
+    <span class="crumb-current">Contact</span>
+  </div>
+</div>
+
+<!-- ═══════════════════════ HERO SECTION ═══════════════════════ -->
+<section class="contact-hero" aria-labelledby="contact-hero-heading">
+  <div class="contact-hero-bg" aria-hidden="true">
+    <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=1600&q=80&auto=format&fit=crop" alt="" class="contact-hero-img">
+    <div class="contact-hero-overlay"></div>
+  </div>
+  <div class="contact-hero-inner max-w-site mx-auto px-5 sm:px-6 lg:px-10">
+    <div class="contact-hero-text reveal-up">
+      <span class="hero-eyebrow">Get In Touch</span>
+      <h1 id="contact-hero-heading" class="hero-heading">We Are Here<br>To Help.</h1>
+      <p class="hero-desc">Have a question about our programs, coaching team or upcoming events? Reach out and our team will get back to you within one working day.</p>
+      
+      <!-- Trust Points -->
+      <div class="hero-trust">
+        <div class="trust-item">
+          <div class="trust-icon" aria-hidden="true">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          </div>
+          <div>
+            <p class="trust-title">Quick Response</p>
+            <p class="trust-desc">We reply within 1 working day.</p>
+          </div>
+        </div>
+        <div class="trust-item">
+          <div class="trust-icon" aria-hidden="true">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          </div>
+          <div>
+            <p class="trust-title">Dedicated Team</p>
+            <p class="trust-desc">Certified coaching staff.</p>
+          </div>
+        </div>
+        <div class="trust-item">
+          <div class="trust-icon" aria-hidden="true">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          </div>
+          <div>
+            <p class="trust-title">Safe &amp; Private</p>
+            <p class="trust-desc">Confidential communication.</p>
+          </div>
+        </div>
+        <div class="trust-item">
+          <div class="trust-icon" aria-hidden="true">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12l2 2 4-4M12 2l8 3.5v5.5c0 5-3.5 8.5-8 11-4.5-2.5-8-6-8-11V5.5L12 2Z"/></svg>
+          </div>
+          <div>
+            <p class="trust-title">No Obligation</p>
+            <p class="trust-desc">Free trial session included.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Action Buttons -->
+      <div class="hero-buttons">
+        <a href="#contact-form" class="btn-lime">
+          Send a Message
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+        <a href="tel:+919876543210" class="btn-outline">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2A19.8 19.8 0 0 1 3.1 4.2 2 2 0 0 1 5.1 2h3a2 2 0 0 1 2 1.7 12.8 12.8 0 0 0 .7 2.8 2 2 0 0 1-.5 2.1L9.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4 12.8 12.8 0 0 0 2.8.7A2 2 0 0 1 23 16.9z"/></svg>
+          Call Us Now
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════ INFO CARDS ═══════════════════════ -->
+<section class="section-pad ct-info-section" aria-labelledby="info-heading">
+  <div class="max-w-site mx-auto px-5 sm:px-6 lg:px-10">
+    <div class="section-head-center">
+      <span class="eyebrow">Reach Us</span>
+      <h2 id="info-heading" class="section-heading">Contact Information</h2>
+      <p class="section-desc">Visit us at the academy, call, email or send a message below. We are open six days a week.</p>
+    </div>
+    <div class="contact-info-grid">
+
+      <div class="contact-info-card reveal-on-scroll">
+        <div class="contact-info-icon" aria-hidden="true">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.9v3a2 2 0 0 1-2.2 2A19.8 19.8 0 0 1 3.1 4.2 2 2 0 0 1 5.1 2h3a2 2 0 0 1 2 1.7 12.8 12.8 0 0 0 .7 2.8 2 2 0 0 1-.5 2.1L9.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4 12.8 12.8 0 0 0 2.8.7A2 2 0 0 1 23 16.9z"/></svg>
+        </div>
+        <h3 class="contact-info-title">Phone</h3>
+        <p class="contact-info-val"><a href="tel:+919876543210">+91 98765 43210</a></p>
+        <p class="contact-info-note">Mon – Sat, 7:00 AM – 8:00 PM</p>
+        <a href="tel:+919876543210" class="ct-info-action">
+          Call now
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+      </div>
+
+      <div class="contact-info-card reveal-on-scroll">
+        <div class="contact-info-icon" aria-hidden="true">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        </div>
+        <h3 class="contact-info-title">Email</h3>
+        <p class="contact-info-val"><a href="mailto:info@championsports.com">info@championsports.com</a></p>
+        <p class="contact-info-note">We reply within one working day.</p>
+        <a href="mailto:info@championsports.com" class="ct-info-action">
+          Send email
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+      </div>
+
+      <div class="contact-info-card reveal-on-scroll">
+        <div class="contact-info-icon" aria-hidden="true">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        </div>
+        <h3 class="contact-info-title">Address</h3>
+        <p class="contact-info-val">Academy Road, Velachery<br>Chennai, Tamil Nadu 600 042</p>
+        <p class="contact-info-note">
+          <a href="https://maps.google.com/?q=Velachery,+Chennai" target="_blank" rel="noopener noreferrer" class="ct-info-action">
+            View on map
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+          </a>
+        </p>
+      </div>
+
+      <div class="contact-info-card reveal-on-scroll">
+        <div class="contact-info-icon" aria-hidden="true">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+        </div>
+        <h3 class="contact-info-title">Office Hours</h3>
+        <p class="contact-info-val">Mon – Fri: 7 AM – 8 PM<br>Saturday: 7 AM – 5 PM</p>
+        <p class="contact-info-note">Closed on Sundays &amp; holidays.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════ FORM + MAP ═══════════════════════ -->
+<section id="contact-form" class="section-pad ct-form-section" aria-labelledby="form-heading">
+  <div class="max-w-site mx-auto px-5 sm:px-6 lg:px-10">
+    <div class="ct-form-map-grid">
+
+      <!-- LEFT — FORM -->
+      <div class="ct-form-col reveal-on-scroll">
+        <span class="eyebrow">Send a Message</span>
+        <h2 id="form-heading" class="section-heading" style="margin-bottom:8px">How Can We Help?</h2>
+        <p class="section-desc" style="text-align:left;margin:0 0 32px">Fill in the form and our team will get back to you within one working day.</p>
+
+        <form id="contact-form-el" class="cf-form" novalidate aria-label="Contact form">
+
+          <!-- Name + Phone -->
+          <div class="cf-row-2">
+            <div class="cf-group">
+              <label class="cf-label" for="cf-name">Full Name <span class="cf-req" aria-hidden="true">*</span></label>
+              <div class="cf-input-wrap">
+                <span class="cf-input-icon" aria-hidden="true">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                </span>
+                <input type="text" id="cf-name" name="name" class="cf-input" placeholder="Your full name" required autocomplete="name" aria-required="true">
+              </div>
+              <span class="cf-error" id="cf-name-err" role="alert" aria-live="polite"></span>
+            </div>
+            <div class="cf-group">
+              <label class="cf-label" for="cf-phone">Phone Number <span style="font-weight:400;color:var(--text-muted)">(optional)</span></label>
+              <div class="cf-input-wrap">
+                <span class="cf-input-icon" aria-hidden="true">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.9v3a2 2 0 0 1-2.2 2A19.8 19.8 0 0 1 3.1 4.2 2 2 0 0 1 5.1 2h3a2 2 0 0 1 2 1.7 12.8 12.8 0 0 0 .7 2.8 2 2 0 0 1-.5 2.1L9.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4 12.8 12.8 0 0 0 2.8.7A2 2 0 0 1 23 16.9z"/></svg>
+                </span>
+                <input type="tel" id="cf-phone" name="phone" class="cf-input" placeholder="+91 00000 00000" autocomplete="tel">
+              </div>
+            </div>
+          </div>
+
+          <!-- Email -->
+          <div class="cf-group">
+            <label class="cf-label" for="cf-email">Email Address <span class="cf-req" aria-hidden="true">*</span></label>
+            <div class="cf-input-wrap">
+              <span class="cf-input-icon" aria-hidden="true">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              </span>
+              <input type="email" id="cf-email" name="email" class="cf-input" placeholder="your@email.com" required autocomplete="email" aria-required="true">
+            </div>
+            <span class="cf-error" id="cf-email-err" role="alert" aria-live="polite"></span>
+          </div>
+
+          <!-- Sport + Enquiry Type -->
+          <div class="cf-row-2">
+            <div class="cf-group">
+              <label class="cf-label" for="cf-sport">Sport of Interest</label>
+              <div class="cf-input-wrap cf-select-wrap">
+                <span class="cf-input-icon" aria-hidden="true">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                </span>
+                <select id="cf-sport" name="sport" class="cf-input cf-select">
+                  <option value="">Select a sport</option>
+                  <option value="football">Football</option>
+                  <option value="basketball">Basketball</option>
+                  <option value="badminton">Badminton</option>
+                  <option value="athletics">Athletics</option>
+                  <option value="multiple">Multiple sports</option>
+                  <option value="other">Other / Not sure</option>
+                </select>
+                <span class="cf-select-arrow" aria-hidden="true">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+                </span>
+              </div>
+            </div>
+            <div class="cf-group">
+              <label class="cf-label" for="cf-reason">Enquiry Type <span class="cf-req" aria-hidden="true">*</span></label>
+              <div class="cf-input-wrap cf-select-wrap">
+                <span class="cf-input-icon" aria-hidden="true">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+                </span>
+                <select id="cf-reason" name="reason" class="cf-input cf-select" required aria-required="true">
+                  <option value="">Select a reason</option>
+                  <option value="trial">Book a Trial Session</option>
+                  <option value="programs">Sports Programs</option>
+                  <option value="events">Events &amp; Tournaments</option>
+                  <option value="fees">Fees &amp; Schedules</option>
+                  <option value="coaching">Coaching Enquiry</option>
+                  <option value="general">General Question</option>
+                </select>
+                <span class="cf-select-arrow" aria-hidden="true">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+                </span>
+              </div>
+              <span class="cf-error" id="cf-reason-err" role="alert" aria-live="polite"></span>
+            </div>
+          </div>
+
+          <!-- Message -->
+          <div class="cf-group">
+            <label class="cf-label" for="cf-message">Message <span class="cf-req" aria-hidden="true">*</span></label>
+            <div class="cf-input-wrap cf-textarea-wrap">
+              <textarea id="cf-message" name="message" class="cf-input cf-textarea" rows="5" placeholder="Tell us what you need — the more detail, the better we can help." required aria-required="true"></textarea>
+            </div>
+            <span class="cf-error" id="cf-message-err" role="alert" aria-live="polite"></span>
+          </div>
+
+          <!-- Consent Checkbox -->
+          <div class="cf-consent-row">
+            <label class="cf-checkbox-label">
+              <input type="checkbox" id="cf-consent" name="consent" class="cf-checkbox" required aria-required="true">
+              <span class="cf-checkmark" aria-hidden="true"></span>
+              <span>I agree to Champion Sports Academy contacting me about my enquiry. <a href="#" class="cf-policy-link">Privacy Policy</a>.</span>
+            </label>
+            <span class="cf-error" id="cf-consent-err" role="alert" aria-live="polite"></span>
+          </div>
+
+          <!-- Submit Button -->
+          <div class="cf-submit-row">
+            <button type="submit" class="cf-submit-btn" id="cf-submit">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+              Send Message
+            </button>
+            <p class="cf-note">We reply within one working day.</p>
+          </div>
+
+          <!-- Success Banner -->
+          <div id="cf-success" class="cf-success hidden" role="alert" aria-live="polite">
+            <div class="cf-success-icon" aria-hidden="true">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+            </div>
+            <div>
+              <p class="cf-success-title">Message sent successfully!</p>
+              <p class="cf-success-sub">Our team will get back to you within one working day.</p>
+            </div>
+          </div>
+
+        </form>
+      </div>
+
+      <!-- RIGHT — MAP + QUICK INFO -->
+      <div class="ct-map-col reveal-on-scroll">
+
+        <!-- Map embed card -->
+        <div class="ct-map-card">
+          <div class="ct-map-embed" aria-label="Academy location map">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15554.08!2d80.2185!3d12.9698!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a525d4b7dec8e2b%3A0x4e4d1b5d4e8c3aab!2sVelachery%2C%20Chennai%2C%20Tamil%20Nadu!5e0!3m2!1sen!2sin!4v1723919400000"
+              width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"
+              title="Champion Sports Academy location on Google Maps"
+              referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+          </div>
+          <!-- Address panel inside map card -->
+          <div class="ct-map-details">
+            <div class="ct-map-detail-row">
+              <span class="ct-map-detail-icon" aria-hidden="true">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              </span>
+              <div>
+                <p class="ct-map-detail-label">Academy Address</p>
+                <p class="ct-map-detail-val">Academy Road, Velachery, Chennai 600 042</p>
+              </div>
+            </div>
+            <div class="ct-map-detail-row">
+              <span class="ct-map-detail-icon" aria-hidden="true">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.9v3a2 2 0 0 1-2.2 2A19.8 19.8 0 0 1 3.1 4.2 2 2 0 0 1 5.1 2h3a2 2 0 0 1 2 1.7 12.8 12.8 0 0 0 .7 2.8 2 2 0 0 1-.5 2.1L9.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4 12.8 12.8 0 0 0 2.8.7A2 2 0 0 1 23 16.9z"/></svg>
+              </span>
+              <div>
+                <p class="ct-map-detail-label">Phone</p>
+                <p class="ct-map-detail-val"><a href="tel:+919876543210">+91 98765 43210</a></p>
+              </div>
+            </div>
+            <div class="ct-map-detail-row">
+              <span class="ct-map-detail-icon" aria-hidden="true">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              </span>
+              <div>
+                <p class="ct-map-detail-label">Email</p>
+                <p class="ct-map-detail-val"><a href="mailto:info@championsports.com">info@championsports.com</a></p>
+              </div>
+            </div>
+            <div class="ct-map-detail-row">
+              <span class="ct-map-detail-icon" aria-hidden="true">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+              </span>
+              <div>
+                <p class="ct-map-detail-label">Office Hours</p>
+                <p class="ct-map-detail-val">Mon – Fri: 7 AM – 8 PM &nbsp;|&nbsp; Sat: 7 AM – 5 PM</p>
+              </div>
+            </div>
+            <a href="https://maps.google.com/?q=Velachery,+Chennai" target="_blank" rel="noopener noreferrer" class="ct-directions-btn">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><polygon points="3 11 22 2 13 21 11 13 3 11"/></svg>
+              Get Directions
+            </a>
+          </div>
+        </div>
+
+        <!-- WhatsApp quick contact card -->
+        <a href="https://wa.me/919876543210" target="_blank" rel="noopener noreferrer" class="ct-whatsapp-card reveal-on-scroll">
+          <div class="ct-whatsapp-icon" aria-hidden="true">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg>
+          </div>
+          <div>
+            <p class="ct-whatsapp-title">Chat on WhatsApp</p>
+            <p class="ct-whatsapp-desc">Get a quick answer from our team — usually within a few hours.</p>
+          </div>
+          <svg class="ct-whatsapp-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════ SOCIAL CHANNELS ═══════════════════════ -->
+<section class="section-pad ct-channels-section" aria-labelledby="channels-heading">
+  <div class="max-w-site mx-auto px-5 sm:px-6 lg:px-10">
+    <div class="section-head-center">
+      <span class="eyebrow">Other Ways To Reach Us</span>
+      <h2 id="channels-heading" class="section-heading">Connect With Us</h2>
+      <p class="section-desc">Follow our academy on social media or reach out through WhatsApp for a quicker response.</p>
+    </div>
+    <div class="channels-grid">
+
+      <a href="https://wa.me/919876543210" target="_blank" rel="noopener noreferrer" class="channel-card reveal-on-scroll" aria-label="Contact us on WhatsApp">
+        <div class="channel-icon channel-icon-green" aria-hidden="true">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg>
+        </div>
+        <h3 class="channel-title">WhatsApp</h3>
+        <p class="channel-desc">Quick questions answered fast. Message us directly on WhatsApp.</p>
+        <span class="channel-cta">Chat Now <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+      </a>
+
+      <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="channel-card reveal-on-scroll" aria-label="Follow us on Instagram">
+        <div class="channel-icon channel-icon-purple" aria-hidden="true">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+        </div>
+        <h3 class="channel-title">Instagram</h3>
+        <p class="channel-desc">Follow our training reels, match highlights and academy updates.</p>
+        <span class="channel-cta">Follow Us <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+      </a>
+
+      <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" class="channel-card reveal-on-scroll" aria-label="Like us on Facebook">
+        <div class="channel-icon channel-icon-blue" aria-hidden="true">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor"><path d="M22 12a10 10 0 1 0-11.6 9.9v-7H7.9V12h2.5V9.8c0-2.5 1.5-3.9 3.8-3.9 1.1 0 2.2.2 2.2.2v2.5h-1.3c-1.2 0-1.6.8-1.6 1.6V12h2.8l-.4 2.9h-2.4v7A10 10 0 0 0 22 12z"/></svg>
+        </div>
+        <h3 class="channel-title">Facebook</h3>
+        <p class="channel-desc">Like our page for event announcements, news and parent updates.</p>
+        <span class="channel-cta">Like Page <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+      </a>
+
+      <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" class="channel-card reveal-on-scroll" aria-label="Subscribe to us on YouTube">
+        <div class="channel-icon channel-icon-red" aria-hidden="true">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22.5 7.6c-.3-1-1-1.8-2-2C18.7 5 12 5 12 5s-6.7 0-8.5.6c-1 .2-1.7 1-2 2C1 9.4 1 12 1 12s0 2.6.5 4.4c.3 1 1 1.8 2 2C5.3 19 12 19 12 19s6.7 0 8.5-.6c1-.2 1.7-1 2-2C23 14.6 23 12 23 12s0-2.6-.5-4.4z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02"/></svg>
+        </div>
+        <h3 class="channel-title">YouTube</h3>
+        <p class="channel-desc">Watch training videos, match recordings and coach insights.</p>
+        <span class="channel-cta">Subscribe <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════ FAQ ACCORDION ═══════════════════════ -->
+<section class="section-pad ct-faq-section" aria-labelledby="faq-heading">
+  <div class="max-w-site mx-auto px-5 sm:px-6 lg:px-10">
+    <div class="section-head-center">
+      <span class="eyebrow">FAQ</span>
+      <h2 id="faq-heading" class="section-heading">Common Questions</h2>
+      <p class="section-desc">Find quick answers before sending a message.</p>
+    </div>
+    <div class="contact-faq-list" id="contact-faq">
+
+      <div class="contact-faq-item reveal-on-scroll" data-faq>
+        <button class="contact-faq-q" aria-expanded="false" aria-controls="cfaq-a1" id="cfaq-btn1">
+          <span>How do I book a trial session?</span>
+          <svg class="cfaq-chevron" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="contact-faq-a" id="cfaq-a1" role="region" aria-labelledby="cfaq-btn1">
+          <p>Fill in the contact form on this page, call us or send a WhatsApp message. Our team will confirm your preferred sport, batch time and trial date within one working day. Trial sessions are free for new students.</p>
+        </div>
+      </div>
+
+      <div class="contact-faq-item reveal-on-scroll" data-faq>
+        <button class="contact-faq-q" aria-expanded="false" aria-controls="cfaq-a2" id="cfaq-btn2">
+          <span>What sports do you currently offer?</span>
+          <svg class="cfaq-chevron" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="contact-faq-a" id="cfaq-a2" role="region" aria-labelledby="cfaq-btn2">
+          <p>We currently offer coaching for Football, Basketball, Badminton and Athletics. Each sport has multiple batch timings for different age groups and skill levels. Visit our Sports Programs page for full details.</p>
+        </div>
+      </div>
+
+      <div class="contact-faq-item reveal-on-scroll" data-faq>
+        <button class="contact-faq-q" aria-expanded="false" aria-controls="cfaq-a3" id="cfaq-btn3">
+          <span>What age groups can join the academy?</span>
+          <svg class="cfaq-chevron" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="contact-faq-a" id="cfaq-a3" role="region" aria-labelledby="cfaq-btn3">
+          <p>We accept students from age 6 upwards across all sports. Batches are grouped by age (6–9, 10–13, 14–17, 18+) and by skill level (beginner, intermediate, advanced) so each athlete trains with peers of a similar stage.</p>
+        </div>
+      </div>
+
+      <div class="contact-faq-item reveal-on-scroll" data-faq>
+        <button class="contact-faq-q" aria-expanded="false" aria-controls="cfaq-a4" id="cfaq-btn4">
+          <span>Are the coaches certified?</span>
+          <svg class="cfaq-chevron" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="contact-faq-a" id="cfaq-a4" role="region" aria-labelledby="cfaq-btn4">
+          <p>Yes. All our coaches hold recognised sports coaching certifications. Many have played at the state or national level and have years of academy coaching experience. Full coach profiles are available on our Coaches page.</p>
+        </div>
+      </div>
+
+      <div class="contact-faq-item reveal-on-scroll" data-faq>
+        <button class="contact-faq-q" aria-expanded="false" aria-controls="cfaq-a5" id="cfaq-btn5">
+          <span>How can I find out about fees and batch schedules?</span>
+          <svg class="cfaq-chevron" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="contact-faq-a" id="cfaq-a5" role="region" aria-labelledby="cfaq-btn5">
+          <p>Fees and detailed batch schedules are shared directly after an enquiry, as they vary by sport, level and session frequency. Fill in the contact form or call us and we will send you a full breakdown.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════ CTA BANNER ═══════════════════════ -->
+<section class="ct-cta-band" aria-labelledby="cta-band-heading">
+  <div class="max-w-site mx-auto px-5 sm:px-6 lg:px-10 ct-cta-band-inner">
+    <div>
+      <p class="ct-cta-band-eyebrow">Ready to start?</p>
+      <h2 id="cta-band-heading" class="ct-cta-band-heading">Book Your Free Trial Session</h2>
+      <p class="ct-cta-band-desc">One session with our coaches is all it takes. No fees, no commitment.</p>
+    </div>
+    <div class="ct-cta-band-btns">
+      <a href="#contact-form" class="ct-cta-btn-lime">Book a Free Trial</a>
+      <a href="programs.html" class="ct-cta-btn-outline">View Programs</a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ═══════════════════════ SITE FOOTER ═══════════════════════ -->
+<footer class="site-footer">
+  <div class="max-w-site mx-auto px-5 sm:px-6 lg:px-10 footer-grid">
+    
+    <!-- Brand Info -->
+    <div class="footer-col footer-brand">
+      <a href="index.html" class="footer-logo" aria-label="Champion Sports Academy">
+        <svg width="28" height="28" viewBox="0 0 34 34" fill="none" aria-hidden="true">
+          <path d="M17 1L31 6.5V16C31 24.5 25.5 30.8 17 33C8.5 30.8 3 24.5 3 16V6.5L17 1Z" fill="#B8E000"/>
+          <path d="M17 6L25 9V16C25 21.2 21.7 25.2 17 27C12.3 25.2 9 21.2 9 16V9L17 6Z" fill="#03111F"/>
+        </svg>
+        <div class="logo-text-group">
+          <span class="logo-title">CHAMPION</span>
+          <span class="logo-subtitle">SPORTS ACADEMY</span>
+        </div>
+      </a>
+      <p class="footer-tag">Building athletes.<br>Building futures.</p>
+      <div class="footer-social">
+        <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M22 12a10 10 0 1 0-11.6 9.9v-7H7.9V12h2.5V9.8c0-2.5 1.5-3.9 3.8-3.9 1.1 0 2.2.2 2.2.2v2.5h-1.3c-1.2 0-1.6.8-1.6 1.6V12h2.8l-.4 2.9h-2.4v7A10 10 0 0 0 22 12z"/></svg></a>
+        <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/></svg></a>
+        <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" aria-label="YouTube"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="5" width="20" height="14" rx="4"/><path d="M10 9l6 3-6 3V9Z" fill="currentColor" stroke="none"/></svg></a>
+        <a href="https://wa.me/919876543210" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg></a>
+      </div>
+    </div>
+
+    <!-- Navigation Links -->
+    <div class="footer-col">
+      <h4>Explore</h4>
+      <a href="index.html">Home</a>
+      <a href="index2.html">Home 2</a>
+      <a href="about.html">About Us</a>
+      <a href="programs.html">Sports Programs</a>
+      <a href="coaches.html">Coaches</a>
+      <a href="events.html">Events &amp; Tournaments</a>
+      <a href="contact.html">Contact Us</a>
+    </div>
+
+    <!-- Sports Programs -->
+    <div class="footer-col">
+      <h4>Start Training</h4>
+      <a href="programs.html">Football Coaching</a>
+      <a href="programs.html">Basketball Academy</a>
+      <a href="programs.html">Badminton Training</a>
+      <a href="programs.html">Athletics Program</a>
+      <a href="#contact-form">Book a Free Trial</a>
+      <a href="dashboard.html">Student Portal</a>
+    </div>
+
+    <!-- Contact Info -->
+    <div class="footer-col">
+      <h4>Contact</h4>
+      <p class="footer-contact">+91 98765 43210</p>
+      <p class="footer-contact">info@championsports.com</p>
+      <p class="footer-contact">Academy Road, Velachery<br>Chennai, Tamil Nadu 600 042</p>
+    </div>
+  </div>
+
+  <!-- Footer Bottom Bar -->
+  <div class="footer-bottom">
+    <div class="max-w-site mx-auto px-5 sm:px-6 lg:px-10 footer-bottom-inner">
+      <p>© 2026 Champion Sports Academy. All Rights Reserved.</p>
+      <div class="footer-legal">
+        <a href="#">Privacy Policy</a>
+        <span>|</span>
+        <a href="#">Terms &amp; Conditions</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- ═══════════════════════ BACK TO TOP ═══════════════════════ -->
+<button id="backToTop" class="back-to-top" aria-label="Back to top" title="Back to top">
+  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+</button>
+
+<!-- ═══════════════════════ SCRIPTS ═══════════════════════ -->
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  var root = document.documentElement;
+
+  /* ─── 1. Theme System ─── */
+  var themeToggle       = document.getElementById('theme-toggle');
+  var themeToggleMobile = document.getElementById('theme-toggle-mobile');
+  var iconMoon          = document.getElementById('icon-moon');
+  var iconSun           = document.getElementById('icon-sun');
+  var iconMoonM         = document.querySelector('.icon-moon-m');
+  var iconSunM          = document.querySelector('.icon-sun-m');
+
+  function reflectThemeIcons(theme) {
+    var isLight = theme === 'light';
+    if (iconMoon)  iconMoon.classList.toggle('hidden', isLight);
+    if (iconSun)   iconSun.classList.toggle('hidden', !isLight);
+    if (iconMoonM) iconMoonM.classList.toggle('hidden', isLight);
+    if (iconSunM)  iconSunM.classList.toggle('hidden', !isLight);
+    var label = isLight ? 'Switch to dark theme' : 'Switch to light theme';
+    if (themeToggle)       themeToggle.setAttribute('aria-label', label);
+    if (themeToggleMobile) themeToggleMobile.setAttribute('aria-label', label);
+  }
+
+  function setTheme(theme) {
+    root.setAttribute('data-theme', theme);
+    localStorage.setItem('csa-theme', theme);
+    reflectThemeIcons(theme);
+  }
+
+  function toggleTheme() {
+    var current = root.getAttribute('data-theme') === 'light' ? 'light' : 'dark';
+    setTheme(current === 'dark' ? 'light' : 'dark');
+  }
+
+  reflectThemeIcons(root.getAttribute('data-theme') || 'dark');
+  if (themeToggle)       themeToggle.addEventListener('click', toggleTheme);
+  if (themeToggleMobile) themeToggleMobile.addEventListener('click', toggleTheme);
+
+  /* ─── 2. RTL System ─── */
+  var rtlToggle       = document.getElementById('rtl-toggle');
+  var rtlToggleMobile = document.getElementById('rtl-toggle-mobile');
+
+  function reflectRTL(isRTL) {
+    root.setAttribute('dir', isRTL ? 'rtl' : 'ltr');
+    if (rtlToggle)       rtlToggle.setAttribute('aria-pressed', String(isRTL));
+    if (rtlToggleMobile) rtlToggleMobile.setAttribute('aria-pressed', String(isRTL));
+  }
+
+  function toggleRTL() {
+    var isRTL = root.getAttribute('dir') !== 'rtl';
+    reflectRTL(isRTL);
+    localStorage.setItem('csa-rtl', String(isRTL));
+  }
+
+  var savedRTL = localStorage.getItem('csa-rtl') === 'true';
+  reflectRTL(savedRTL);
+  if (rtlToggle)       rtlToggle.addEventListener('click', toggleRTL);
+  if (rtlToggleMobile) rtlToggleMobile.addEventListener('click', toggleRTL);
+
+  /* ─── 3. Mobile Navigation ─── */
+  var menuBtn      = document.getElementById('menu-btn');
+  var mobileDrawer = document.getElementById('mobile-drawer');
+  var menuBackdrop = document.getElementById('menu-backdrop');
+  var openIcon     = document.getElementById('menu-icon-open');
+  var closeIcon    = document.getElementById('menu-icon-close');
+
+  function openMenu() {
+    mobileDrawer.classList.add('is-open');
+    menuBackdrop.classList.add('is-open');
+    menuBtn.setAttribute('aria-expanded', 'true');
+    if (openIcon)  openIcon.classList.add('hidden');
+    if (closeIcon) closeIcon.classList.remove('hidden');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeMenu() {
+    mobileDrawer.classList.remove('is-open');
+    menuBackdrop.classList.remove('is-open');
+    menuBtn.setAttribute('aria-expanded', 'false');
+    if (openIcon)  openIcon.classList.remove('hidden');
+    if (closeIcon) closeIcon.classList.add('hidden');
+    document.body.style.overflow = '';
+  }
+
+  if (menuBtn && mobileDrawer) {
+    menuBtn.addEventListener('click', function () {
+      mobileDrawer.classList.contains('is-open') ? closeMenu() : openMenu();
+    });
+    if (menuBackdrop) menuBackdrop.addEventListener('click', closeMenu);
+    mobileDrawer.querySelectorAll('a').forEach(function (a) {
+      a.addEventListener('click', closeMenu);
+    });
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && mobileDrawer.classList.contains('is-open')) closeMenu();
+    });
+  }
+
+  /* ─── 4. Header Shadow on Scroll ─── */
+  var header = document.getElementById('site-header');
+  function updateHeader() {
+    if (!header) return;
+    header.classList.toggle('is-scrolled', window.scrollY > 8);
+  }
+  updateHeader();
+  window.addEventListener('scroll', updateHeader, { passive: true });
+
+  /* ─── 5. Sports Dropdown ─── */
+  var sportsDrop = document.getElementById('sports-drop');
+  var sportsBtn  = document.getElementById('sports-drop-btn');
+  if (sportsDrop && sportsBtn) {
+    function setDrop(open) {
+      sportsDrop.classList.toggle('is-open', open);
+      sportsBtn.setAttribute('aria-expanded', String(open));
+    }
+    sportsDrop.addEventListener('mouseenter', function () { setDrop(true); });
+    sportsDrop.addEventListener('mouseleave', function () { setDrop(false); });
+    sportsBtn.addEventListener('click', function (e) {
+      e.stopPropagation();
+      setDrop(!sportsDrop.classList.contains('is-open'));
+    });
+    document.addEventListener('click', function () { setDrop(false); });
+  }
+
+  /* ─── 6. FAQ Accordion ─── */
+  var faqItems = document.querySelectorAll('[data-faq]');
+  faqItems.forEach(function (item) {
+    var btn = item.querySelector('.contact-faq-q');
+    var ans = item.querySelector('.contact-faq-a');
+    if (!btn || !ans) return;
+    btn.addEventListener('click', function () {
+      var isExpanded = btn.getAttribute('aria-expanded') === 'true';
+      faqItems.forEach(function (other) {
+        var otherBtn = other.querySelector('.contact-faq-q');
+        var otherAns = other.querySelector('.contact-faq-a');
+        if (otherBtn) otherBtn.setAttribute('aria-expanded', 'false');
+        if (otherAns) otherAns.classList.remove('is-open');
+      });
+      if (!isExpanded) {
+        btn.setAttribute('aria-expanded', 'true');
+        ans.classList.add('is-open');
+      }
+    });
+  });
+
+  /* ─── 7. Scroll Reveal ─── */
+  var revealEls = document.querySelectorAll('.reveal-on-scroll');
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting) {
+          e.target.classList.add('in-view');
+          io.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+    revealEls.forEach(function (el) { io.observe(el); });
+  } else {
+    revealEls.forEach(function (el) { el.classList.add('in-view'); });
+  }
+
+  /* ─── 8. Contact Form Validation & Submission ─── */
+  var contactForm = document.getElementById('contact-form-el');
+  if (contactForm) {
+    function setErr(inputId, errId, msg) {
+      var inp = document.getElementById(inputId);
+      var err = document.getElementById(errId);
+      if (err) err.textContent = msg;
+      if (inp) inp.classList.toggle('cf-error-state', Boolean(msg));
+    }
+
+    contactForm.addEventListener('submit', function (e) {
+      e.preventDefault();
+      var isValid = true;
+      var nameEl    = document.getElementById('cf-name');
+      var emailEl   = document.getElementById('cf-email');
+      var reasonEl  = document.getElementById('cf-reason');
+      var msgEl     = document.getElementById('cf-message');
+      var consentEl = document.getElementById('cf-consent');
+
+      if (!nameEl || !nameEl.value.trim()) {
+        setErr('cf-name', 'cf-name-err', 'Please enter your full name.');
+        isValid = false;
+      } else {
+        setErr('cf-name', 'cf-name-err', '');
+      }
+
+      if (!emailEl || !emailEl.value.trim() || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailEl.value.trim())) {
+        setErr('cf-email', 'cf-email-err', 'Please enter a valid email address.');
+        isValid = false;
+      } else {
+        setErr('cf-email', 'cf-email-err', '');
+      }
+
+      if (!reasonEl || !reasonEl.value) {
+        var reasonErr = document.getElementById('cf-reason-err');
+        if (reasonErr) reasonErr.textContent = 'Please select an enquiry type.';
+        isValid = false;
+      } else {
+        var reasonErr2 = document.getElementById('cf-reason-err');
+        if (reasonErr2) reasonErr2.textContent = '';
+      }
+
+      if (!msgEl || !msgEl.value.trim()) {
+        setErr('cf-message', 'cf-message-err', 'Please enter your message.');
+        isValid = false;
+      } else {
+        setErr('cf-message', 'cf-message-err', '');
+      }
+
+      if (!consentEl || !consentEl.checked) {
+        var consentErr = document.getElementById('cf-consent-err');
+        if (consentErr) consentErr.textContent = 'You must agree to continue.';
+        isValid = false;
+      } else {
+        var consentErr2 = document.getElementById('cf-consent-err');
+        if (consentErr2) consentErr2.textContent = '';
+      }
+
+      if (isValid) {
+        contactForm.style.display = 'none';
+        var successBanner = document.getElementById('cf-success');
+        if (successBanner) {
+          successBanner.classList.remove('hidden');
+          successBanner.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        }
+      }
+    });
+  }
+
+  /* ─── 9. Back To Top ─── */
+  var backToTop = document.getElementById('backToTop');
+  function updateBackToTop() {
+    if (!backToTop) return;
+    backToTop.classList.toggle('is-visible', window.scrollY > 500);
+  }
+  updateBackToTop();
+  window.addEventListener('scroll', updateBackToTop, { passive: true });
+  if (backToTop) {
+    backToTop.addEventListener('click', function () {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  }
+});
+</script>
+
+</body>
+</html>

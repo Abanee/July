@@ -6,6 +6,17 @@
 <title>Champion Sports Academy — Find Your Sport. Build Your Game.</title>
 <meta name="description" content="Champion Sports Academy — multi-sport coaching in Football, Basketball, Badminton and Athletics for all ages and skill levels.">
 
+<!-- Theme + RTL init — runs before paint to avoid flash -->
+<script>
+  (function () {
+    var saved = localStorage.getItem('csa-theme');
+    var theme = saved === 'light' || saved === 'dark' ? saved : 'dark';
+    document.documentElement.setAttribute('data-theme', theme);
+    var rtl = localStorage.getItem('csa-rtl') === 'true';
+    if (rtl) document.documentElement.setAttribute('dir', 'rtl');
+  })();
+</script>
+
 <!-- Fonts -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -69,12 +80,25 @@
       </span>
     </a>
 
-    <nav class="hidden lg:flex items-center gap-9 nav-main">
-      <a href="index.html" class="nav-link nav-active" aria-current="page">Home</a>
-      <a href="programs.html" class="nav-link">Sports Programs</a>
-      <a href="coaches.html" class="nav-link">Coaches</a>
-      <a href="events.html" class="nav-link">Events</a>
-      <a href="about.html" class="nav-link">About</a>
+    <nav class="hidden lg:flex items-center gap-7 nav-main">
+      <a href="index.html"  class="nav-link">Home</a>
+      <a href="index2.html" class="nav-link nav-active" aria-current="page">Home 2</a>
+      <a href="about.html"  class="nav-link">About</a>
+      <div class="relative group">
+        <button class="nav-link flex items-center gap-1" type="button">
+          Sports
+          <svg class="transition-transform duration-200 group-hover:rotate-180" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="absolute top-[calc(100%+8px)] left-1/2 -translate-x-1/2 bg-deep-navy border border-white/10 rounded-xl min-w-[190px] p-2 shadow-2xl opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto transition-all duration-200 z-50 before:content-[''] before:absolute before:-top-3 before:left-0 before:w-full before:h-3">
+          <a href="programs.html" class="flex items-center gap-2 px-3 py-2.5 rounded-lg text-[13.5px] text-white/80 hover:bg-white/10 hover:text-lime transition-colors">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>Sports Programs
+          </a>
+          <a href="coaches.html" class="flex items-center gap-2 px-3 py-2.5 rounded-lg text-[13.5px] text-white/80 hover:bg-white/10 hover:text-lime transition-colors">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>Coaches
+          </a>
+        </div>
+      </div>
+      <a href="events.html"  class="nav-link">Events</a>
       <a href="contact.html" class="nav-link">Contact</a>
     </nav>
 
@@ -85,10 +109,13 @@
         <svg id="icon-sun" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="hidden"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
       </button>
       <a href="dashboard.html" class="btn-outline-sm">
-        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.6-7 8-7s8 3 8 7"/></svg>
-        Student Login
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+        Dashboard
       </a>
-      <a href="#book-trial" class="btn-lime-sm">Book a Trial</a>
+      <a href="signin.html" class="btn-lime-sm flex items-center gap-2">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"/><polyline points="10 17 15 12 10 7"/><line x1="15" y1="12" x2="3" y2="12"/></svg>
+        Sign In
+      </a>
     </div>
 
     <div class="flex items-center gap-1 lg:hidden">
@@ -105,16 +132,17 @@
 
   <!-- Mobile nav -->
   <div id="mobileMenu" class="mobile-menu lg:hidden">
-    <a href="index.html" class="mobile-link mobile-active" aria-current="page">Home</a>
-    <a href="programs.html" class="mobile-link">Sports Programs</a>
-    <a href="coaches.html" class="mobile-link">Coaches</a>
-    <a href="events.html" class="mobile-link">Events</a>
-    <a href="about.html" class="mobile-link">About</a>
+    <a href="index.html"  class="mobile-link">Home</a>
+    <a href="index2.html" class="mobile-link mobile-active" aria-current="page">Home 2</a>
+    <a href="about.html"  class="mobile-link">About</a>
+    <a href="programs.html" class="mobile-link" style="padding-left:16px">↳ Sports Programs</a>
+    <a href="coaches.html"  class="mobile-link" style="padding-left:16px">↳ Coaches</a>
+    <a href="events.html"  class="mobile-link">Events</a>
     <a href="contact.html" class="mobile-link">Contact</a>
     <div class="flex flex-col gap-3 mt-4 px-1">
-      <a href="dashboard.html" class="btn-outline-sm justify-center">Student Login</a>
-      <a href="#book-trial" class="btn-lime-sm justify-center">Book a Trial</a>
-      <button id="rtl-toggle-mobile" class="text-left text-white/70 font-medium py-2" aria-label="Toggle RTL">RTL Mode</button>
+      <button id="rtl-toggle-mobile" class="text-left text-white/70 font-medium bg-transparent border-none w-full" aria-label="Toggle RTL">RTL Mode</button>
+      <a href="dashboard.html" class="btn-outline-sm justify-center">Dashboard</a>
+      <a href="signin.html" class="btn-lime-sm justify-center">Sign In</a>
     </div>
   </div>
 </header>

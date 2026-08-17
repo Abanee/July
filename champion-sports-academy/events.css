@@ -1,11 +1,9 @@
-﻿/* ================================================================
-   EVENTS.CSS — Champion Sports Academy · Events & Tournaments Page
-   ================================================================ */
-
 /* ============================================================
    1. CSS CUSTOM PROPERTIES — THEME TOKENS
    ============================================================ */
-:root {
+
+/* --- Light tokens (default/fallback) --- */
+:root, :root[data-theme="light"] {
   --ev-bg:          #F5F7F5;
   --ev-bg2:         #FFFFFF;
   --ev-card:        #FFFFFF;
@@ -25,8 +23,19 @@
   --ev-eyebrow:     #A8D600;
   --ev-h2:          #102033;
   --ev-sub:         #4B5A6A;
+  /* Standard aliases */
+  --bg-primary:     #F5F7F5;
+  --bg-secondary:   #FFFFFF;
+  --bg-card:        #FFFFFF;
+  --text-primary:   #102033;
+  --text-secondary: #4B5A6A;
+  --text-muted:     #718096;
+  --border-color:   #DDE4E8;
+  --accent:         #A8D600;
+  --on-accent:      #061A2E;
 }
 
+/* --- Dark tokens --- */
 [data-theme="dark"] {
   --ev-bg:          #06101C;
   --ev-bg2:         #0B1624;
@@ -45,13 +54,26 @@
   --ev-eyebrow:     #B8E000;
   --ev-h2:          #F8FAFC;
   --ev-sub:         #94A3B8;
+  /* Standard aliases */
+  --bg-primary:     #06101C;
+  --bg-secondary:   #0B1624;
+  --bg-card:        #111D2B;
+  --text-primary:   #F8FAFC;
+  --text-secondary: #CBD5E1;
+  --text-muted:     #94A3B8;
+  --border-color:   #263548;
+  --accent:         #B8E000;
+  --on-accent:      #061A2E;
 }
 
 /* ============================================================
    2. BASE — body background driven by theme
    ============================================================ */
-[data-theme="dark"] body  { background-color: var(--ev-bg); color: var(--ev-text); }
-[data-theme="light"] body { background-color: var(--ev-bg); color: var(--ev-text); }
+body {
+  background-color: var(--ev-bg);
+  color: var(--ev-text);
+  transition: background-color .25s ease, color .25s ease;
+}
 
 /* ============================================================
    3. SHARED TYPOGRAPHY UTILITIES

@@ -2,31 +2,66 @@
    CHAMPION SPORTS ACADEMY — HOME 2 CUSTOM CSS
    ============================================ */
 
+/* --- Dark tokens (default) --- */
 :root, :root[data-theme="dark"] {
-  --navy: #061A2E;
-  --deep-navy: #03111F;
-  --lime: #A8D600;
-  --softbg: #0B1624;
-  --dark: #F8FAFC;
-  --muted: #94A3B8;
-  --bd: #263548;
+  --bg-primary:    #061A2E;
+  --bg-secondary:  #0B1624;
+  --bg-card:       #111D2B;
+  --bg-elevated:   #162334;
+  --text-primary:  #F8FAFC;
+  --text-secondary:#CBD5E1;
+  --text-muted:    #94A3B8;
+  --border-color:  #263548;
+  --accent:        #B8E000;
+  --accent-hover:  #C9F000;
+  --on-accent:     #061A2E;
+  --shadow-soft:   rgba(0,0,0,0.35);
+  --card-shadow:   0 4px 20px rgba(0,0,0,0.28);
+  /* Aliases for existing classes */
+  --navy:     #061A2E;
+  --deep-navy:#03111F;
+  --lime:     #B8E000;
+  --softbg:   #0B1624;
+  --dark:     #F8FAFC;
+  --muted:    #94A3B8;
+  --bd:       #263548;
 }
 
+/* --- Light tokens --- */
 :root[data-theme="light"] {
-  --navy: #061A2E;
-  --deep-navy: #03111F;
-  --lime: #A8D600;
-  --softbg: #F5F7F5;
-  --dark: #102033;
-  --muted: #687585;
-  --bd: #E3E8E5;
+  --bg-primary:    #F5F7F5;
+  --bg-secondary:  #FFFFFF;
+  --bg-card:       #FFFFFF;
+  --bg-elevated:   #F1F4F1;
+  --text-primary:  #102033;
+  --text-secondary:#4B5A6A;
+  --text-muted:    #718096;
+  --border-color:  #DDE4E8;
+  --accent:        #A8D600;
+  --accent-hover:  #95C000;
+  --on-accent:     #061A2E;
+  --shadow-soft:   rgba(16,32,51,0.1);
+  --card-shadow:   0 4px 20px rgba(16,32,51,0.08);
+  /* Aliases */
+  --navy:     #061A2E;
+  --deep-navy:#03111F;
+  --lime:     #A8D600;
+  --softbg:   #F5F7F5;
+  --dark:     #102033;
+  --muted:    #687585;
+  --bd:       #E3E8E5;
 }
 
 * { box-sizing: border-box; }
 
 html { scroll-behavior: smooth; }
 
-body { overflow-x: hidden; transition: background-color .25s ease, color .25s ease; }
+body {
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  overflow-x: hidden;
+  transition: background-color .25s ease, color .25s ease;
+}
 
 [dir="rtl"] { direction: rtl; }
 
@@ -69,6 +104,14 @@ body { overflow-x: hidden; transition: background-color .25s ease, color .25s ea
 
 /* ---------- Header ---------- */
 .site-header { border-bottom: 1px solid rgba(255,255,255,0.06); }
+.nav-dropdown-menu::before {
+  content: '';
+  position: absolute;
+  top: -14px;
+  left: 0;
+  right: 0;
+  height: 14px;
+}
 .nav-link {
   color: rgba(255,255,255,0.85);
   font-size: 14.5px;
@@ -829,4 +872,108 @@ body { overflow-x: hidden; transition: background-color .25s ease, color .25s ea
   .hero-heading { font-size: 30px; }
   .section-heading { font-size: 25px; }
   .sport-card-content h3 { font-size: 17px; }
+}
+
+/* =====================================================
+   DARK THEME SYSTEM ADAPTATIONS (index2.html)
+   ===================================================== */
+:root[data-theme="dark"] body,
+body[data-theme="dark"] {
+  background-color: var(--bg-primary) !important;
+  color: var(--text-primary) !important;
+}
+
+:root[data-theme="dark"] .bg-white,
+:root[data-theme="dark"] section.bg-white,
+:root[data-theme="dark"] div.bg-white {
+  background-color: var(--bg-primary) !important;
+}
+
+:root[data-theme="dark"] .section-pad[style*="#F5F7F5"],
+:root[data-theme="dark"] section[style*="#F5F7F5"],
+:root[data-theme="dark"] .bg-softbg {
+  background-color: var(--bg-secondary) !important;
+}
+
+:root[data-theme="dark"] .section-heading {
+  color: var(--text-primary) !important;
+}
+
+:root[data-theme="dark"] .section-desc {
+  color: var(--text-secondary) !important;
+}
+
+:root[data-theme="dark"] .level-card {
+  background-color: var(--bg-card) !important;
+  border-color: var(--border-color) !important;
+  box-shadow: var(--card-shadow) !important;
+}
+
+:root[data-theme="dark"] .level-card h3 {
+  color: var(--text-primary) !important;
+}
+
+:root[data-theme="dark"] .level-card .level-tag {
+  color: var(--text-muted) !important;
+}
+
+:root[data-theme="dark"] .level-card .level-desc,
+:root[data-theme="dark"] .level-card .level-list li {
+  color: var(--text-secondary) !important;
+}
+
+:root[data-theme="dark"] .level-line {
+  background: var(--border-color) !important;
+}
+
+:root[data-theme="dark"] .learn-item {
+  border-left-color: var(--border-color) !important;
+}
+
+:root[data-theme="dark"] .learn-item h3 {
+  color: var(--text-primary) !important;
+}
+
+:root[data-theme="dark"] .learn-item p {
+  color: var(--text-secondary) !important;
+}
+
+:root[data-theme="dark"] .sched-col {
+  background-color: var(--bg-card) !important;
+  border-color: var(--border-color) !important;
+}
+
+:root[data-theme="dark"] .sched-col h4,
+:root[data-theme="dark"] .sched-col .sched-day {
+  color: var(--text-primary) !important;
+}
+
+:root[data-theme="dark"] .sched-col p {
+  color: var(--text-secondary) !important;
+}
+
+:root[data-theme="dark"] .practical-bar {
+  background-color: var(--bg-card) !important;
+  border-color: var(--border-color) !important;
+}
+
+:root[data-theme="dark"] .practical-item h4 {
+  color: var(--text-primary) !important;
+}
+
+:root[data-theme="dark"] .practical-item p {
+  color: var(--text-secondary) !important;
+}
+
+:root[data-theme="dark"] .faq-item {
+  background-color: var(--bg-card) !important;
+  border-color: var(--border-color) !important;
+}
+
+:root[data-theme="dark"] .faq-q {
+  color: var(--text-primary) !important;
+}
+
+:root[data-theme="dark"] .faq-a p {
+  color: var(--text-secondary) !important;
 }

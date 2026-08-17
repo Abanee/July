@@ -16,6 +16,9 @@ document.addEventListener('DOMContentLoaded', () => {
     iconSun   && iconSun.classList.toggle('hidden', !isLight);
     iconMoonM && iconMoonM.classList.toggle('hidden', isLight);
     iconSunM  && iconSunM.classList.toggle('hidden', !isLight);
+    const label = isLight ? 'Switch to dark theme' : 'Switch to light theme';
+    themeToggle       && themeToggle.setAttribute('aria-label', label);
+    themeToggleMobile && themeToggleMobile.setAttribute('aria-label', label);
   }
   function setTheme(t) {
     root.setAttribute('data-theme', t);
