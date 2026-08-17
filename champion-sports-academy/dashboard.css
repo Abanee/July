@@ -96,6 +96,30 @@ button{font-family:inherit;cursor:pointer;background:none;border:none;color:inhe
   justify-content:space-between;
   padding:2px 8px 0;
 }
+.sidebar-logo .logo-link {
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.sidebar-logo .logo-title {
+  font-family: 'Manrope', sans-serif;
+  font-weight: 800;
+  font-size: 15px;
+  letter-spacing: 0.05em;
+  color: var(--text-main);
+  line-height: 1.1;
+}
+.sidebar-logo .logo-sub {
+  color: var(--accent);
+  font-size: 9.5px;
+  letter-spacing: 0.2em;
+  font-weight: 700;
+  line-height: 1.1;
+}
+html.light .sidebar-logo .logo-sub {
+  color: #4D7C0F;
+}
 .sidebar-close{display:none;color:var(--text-muted);padding:4px;}
 
 .sidebar-divider{
@@ -252,30 +276,60 @@ html.light .nav-item:hover{color:var(--accent-navy);}
 
 .header-right{display:flex;align-items:center;gap:10px;flex-shrink:0;}
 
-/* Theme toggle */
-.theme-toggle{
-  position:relative;
-  width:52px;
-  height:28px;
-  background:var(--bg-card);
-  border:1px solid var(--border-c);
-  border-radius:999px;
-  display:flex;
-  align-items:center;
-  padding:0 6px;
-  justify-content:space-between;
-  flex-shrink:0;
+/* Header RTL & Theme Buttons */
+.rtl-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 1px solid var(--border-c);
+  color: var(--text-muted);
+  font-size: 11px;
+  font-weight: 700;
+  cursor: pointer;
+  background: transparent;
+  transition: all .2s ease;
+  flex-shrink: 0;
 }
-.theme-toggle .icon-moon,.theme-toggle .icon-sun{color:var(--text-muted);position:relative;z-index:1;}
-.theme-toggle-knob{
-  position:absolute;
-  top:2px;left:2px;
-  width:22px;height:22px;
-  border-radius:50%;
-  background:var(--accent);
-  transition:transform .25s ease;
+.rtl-btn:hover, .rtl-btn[aria-pressed="true"] {
+  border-color: var(--accent);
+  color: var(--accent);
 }
-html.light .theme-toggle-knob{transform:translateX(24px);}
+html.light .rtl-btn:hover, html.light .rtl-btn[aria-pressed="true"] {
+  border-color: #4D7C0F;
+  color: #4D7C0F;
+}
+
+.theme-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 1px solid var(--border-c);
+  color: var(--text-muted);
+  cursor: pointer;
+  background: transparent;
+  transition: all .2s ease;
+  flex-shrink: 0;
+}
+.theme-btn:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+html.light .theme-btn:hover {
+  border-color: #4D7C0F;
+  color: #4D7C0F;
+}
+.theme-btn svg {
+  display: block;
+}
+.theme-btn svg.hidden {
+  display: none !important;
+}
 
 .icon-btn{
   position:relative;

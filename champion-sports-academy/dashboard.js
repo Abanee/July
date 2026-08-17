@@ -5,27 +5,33 @@
      THEME & RTL
      ============================================================ */
   const root = document.documentElement;
-  const themeToggle = document.getElementById('theme-toggle');
-  const rtlToggle   = document.getElementById('rtl-toggle');
+  const themeToggles = document.querySelectorAll('#theme-toggle, #sidebar-theme-toggle');
+  const rtlToggles   = document.querySelectorAll('#rtl-toggle, #sidebar-rtl-toggle');
 
   function applyTheme(theme) {
     root.setAttribute('data-theme', theme);
+    const moonIcons = document.querySelectorAll('#icon-moon, .icon-moon');
+    const sunIcons = document.querySelectorAll('#icon-sun, .icon-sun');
     if (theme === 'light') {
       root.classList.add('light');
+      moonIcons.forEach(el => el.classList.add('hidden'));
+      sunIcons.forEach(el => el.classList.remove('hidden'));
     } else {
       root.classList.remove('light');
+      moonIcons.forEach(el => el.classList.remove('hidden'));
+      sunIcons.forEach(el => el.classList.add('hidden'));
     }
-    if (themeToggle) {
-      themeToggle.setAttribute('aria-pressed', theme === 'light');
-      themeToggle.setAttribute('aria-label', theme === 'light' ? 'Switch to dark theme' : 'Switch to light theme');
-    }
+    themeToggles.forEach(btn => {
+      btn.setAttribute('aria-pressed', theme === 'light');
+      btn.setAttribute('aria-label', theme === 'light' ? 'Switch to dark theme' : 'Switch to light theme');
+    });
   }
 
   function applyRTL(isRTL) {
     root.setAttribute('dir', isRTL ? 'rtl' : 'ltr');
-    if (rtlToggle) {
-      rtlToggle.setAttribute('aria-pressed', String(isRTL));
-    }
+    rtlToggles.forEach(btn => {
+      btn.setAttribute('aria-pressed', String(isRTL));
+    });
   }
 
   const savedTheme = localStorage.getItem('csa-theme') || localStorage.getItem('csa-dashboard-theme');
@@ -34,23 +40,23 @@
   const savedRTL = localStorage.getItem('csa-rtl') === 'true';
   applyRTL(savedRTL);
 
-  if (themeToggle) {
-    themeToggle.addEventListener('click', function () {
+  themeToggles.forEach(btn => {
+    btn.addEventListener('click', function () {
       const isLight = root.getAttribute('data-theme') === 'light' || root.classList.contains('light');
       const next = isLight ? 'dark' : 'light';
       applyTheme(next);
       localStorage.setItem('csa-theme', next);
       localStorage.setItem('csa-dashboard-theme', next);
     });
-  }
+  });
 
-  if (rtlToggle) {
-    rtlToggle.addEventListener('click', function () {
+  rtlToggles.forEach(btn => {
+    btn.addEventListener('click', function () {
       const isRTL = root.getAttribute('dir') !== 'rtl';
       applyRTL(isRTL);
       localStorage.setItem('csa-rtl', String(isRTL));
     });
-  }
+  });
 
   /* ============================================================
      PAGE NAVIGATION (sidebar switches main content, no reload)
