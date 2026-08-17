@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Champion Sports Academy — Train With Purpose. Compete With Confidence.</title>
 <meta name="description" content="Premium multi-sport coaching academy offering Football, Basketball, Badminton and Athletics training for athletes of every level.">
+<link rel="icon" type="image/png" href="Assets/logo.png">
 
 <!-- Theme + RTL init — runs before paint to avoid flash -->
 <script>
@@ -24,39 +25,33 @@
     theme: {
       extend: {
         colors: {
-          navy: '#061A2E',
+          'navy': '#061A2E',
           'deep-navy': '#03111F',
-          soft: '#F6F8F5',
-          lime: '#A8D600',
+          'navy-card': '#0A2239',
+          'lime': '#A8D600',
+          'lime-dark': '#8CB500',
+          'soft': '#F5F7F5',
           'dark-text': '#102033',
-          muted: '#687585',
-          border: '#E5E9ED',
+          'muted': '#687585',
+          'border': '#E3E8E5',
         },
         fontFamily: {
-          sans: ['"Inter"', 'sans-serif'],
-          display: ['"Manrope"', 'sans-serif'],
+          display: ['Manrope', 'sans-serif'],
+          body: ['Inter', 'sans-serif'],
         }
       }
     }
   }
 </script>
 
+<!-- Google Fonts -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-
-<!-- Theme + RTL init — runs before paint -->
-<script>
-  (function () {
-    var t = localStorage.getItem('csa-theme');
-    document.documentElement.setAttribute('data-theme', t === 'light' ? 'light' : 'dark');
-    var r = localStorage.getItem('csa-rtl') === 'true';
-    if (r) document.documentElement.setAttribute('dir', 'rtl');
-  })();
-</script>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet">
 
 <link rel="stylesheet" href="style.css">
 </head>
-<body class="bg-white text-dark-text font-sans antialiased">
+<body class="font-body text-dark-text bg-white antialiased">
 
 <!-- ================= HEADER ================= -->
 <header id="site-header" class="fixed top-0 left-0 w-full z-50 bg-navy h-[72px] flex items-center transition-shadow duration-300">
@@ -64,10 +59,7 @@
 
     <!-- Logo -->
     <a href="index.html" class="flex items-center gap-3 shrink-0">
-      <svg width="34" height="34" viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M17 1L31 6.5V16C31 24.5 25.5 30.8 17 33C8.5 30.8 3 24.5 3 16V6.5L17 1Z" fill="#A8D600"/>
-        <path d="M17 6L25 9V16C25 21.2 21.7 25.2 17 27C12.3 25.2 9 21.2 9 16V9L17 6Z" fill="#061A2E"/>
-      </svg>
+      <img src="Assets/logo.png" alt="Champion Sports Academy" class="w-9 h-9 object-contain">
       <div class="leading-none">
         <div class="text-white font-display font-extrabold text-[15px] tracking-wide">CHAMPION</div>
         <div class="text-lime text-[10px] tracking-[0.2em] font-semibold">SPORTS ACADEMY</div>
@@ -145,7 +137,7 @@
 
 <!-- ================= HERO ================= -->
 <section class="relative w-full h-[650px] md:h-[700px] mt-0 overflow-hidden bg-deep-navy">
-  <img src="https://images.unsplash.com/photo-1508098682722-e99c43a406b2?w=1800&q=80&auto=format&fit=crop"
+  <img src="Assets/Home/Hero.png"
        alt="Young football athlete training with the academy"
        class="absolute inset-0 w-full h-full object-cover object-[75%_center]">
   <div class="absolute inset-0 bg-gradient-to-r from-deep-navy via-deep-navy/85 to-deep-navy/10"></div>
@@ -179,58 +171,41 @@
         <div><div class="text-white font-display font-bold text-[20px] counter" data-target="20">0</div><div class="text-white/50 text-[12px]">Coaches</div></div>
       </div>
       <div class="flex items-center gap-3">
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#A8D600" stroke-width="2"><path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="8.5" cy="7" r="4"/><path d="M20 8v6M23 11h-6"/></svg>
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#A8D600" stroke-width="2"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
         <div><div class="text-white font-display font-bold text-[20px] counter" data-target="500">0</div><div class="text-white/50 text-[12px]">Athletes</div></div>
       </div>
       <div class="flex items-center gap-3">
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#A8D600" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#A8D600" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
         <div><div class="text-white font-display font-bold text-[20px] counter" data-target="50">0</div><div class="text-white/50 text-[12px]">Events</div></div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ================= SECTION 01 — WHY CHOOSE US ================= -->
+<!-- ================= SECTION 01 — WHY CSA ================= -->
 <section class="bg-soft py-20 md:py-24">
   <div class="max-w-[1400px] mx-auto px-6 md:px-10">
-    <div class="text-center max-w-[640px] mx-auto mb-14 reveal">
-      <p class="text-lime font-bold text-[12px] tracking-[0.18em] mb-3">WHY CHOOSE US</p>
-      <h2 class="font-display font-extrabold text-[28px] md:text-[36px] text-dark-text mb-4">More Than Training. We Build Athletes.</h2>
-      <p class="text-muted text-[15px] leading-relaxed">A structured environment designed to develop skill, fitness, confidence and competitive performance.</p>
+    <div class="text-center max-w-[620px] mx-auto mb-14 reveal">
+      <p class="text-lime font-bold text-[12px] tracking-[0.18em] mb-3">WHY CHAMPION SPORTS ACADEMY</p>
+      <h2 class="font-display font-extrabold text-[28px] md:text-[36px] text-dark-text mb-4">Structured Coaching. Real Progress.</h2>
+      <p class="text-muted text-[15px] leading-relaxed">We provide a supportive, high-standards environment where young athletes develop skills, discipline and confidence.</p>
     </div>
 
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6 gap-5">
-      <!-- Card template x6 -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
       <div class="benefit-card bg-white border border-border rounded-lg p-6 reveal">
         <div class="w-11 h-11 rounded-md bg-lime/15 flex items-center justify-center mb-5">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#061A2E" stroke-width="2"><path d="M12 2l3 7h7l-5.5 4.5L18 21l-6-4.5L6 21l1.5-7.5L2 9h7z"/></svg>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#061A2E" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
         </div>
-        <h3 class="font-display font-bold text-[15px] mb-2">Expert Coaches</h3>
-        <p class="text-muted text-[13.5px] leading-relaxed">Certified and experienced coaches in each sport.</p>
+        <h3 class="font-display font-bold text-[15px] mb-2">Certified Coaches</h3>
+        <p class="text-muted text-[13.5px] leading-relaxed">Experienced professionals committed to athlete growth.</p>
       </div>
 
       <div class="benefit-card bg-white border border-border rounded-lg p-6 reveal">
         <div class="w-11 h-11 rounded-md bg-lime/15 flex items-center justify-center mb-5">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#061A2E" stroke-width="2"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
-        </div>
-        <h3 class="font-display font-bold text-[15px] mb-2">Personalized Training</h3>
-        <p class="text-muted text-[13.5px] leading-relaxed">Structured training plans for every athlete.</p>
-      </div>
-
-      <div class="benefit-card bg-white border border-border rounded-lg p-6 reveal">
-        <div class="w-11 h-11 rounded-md bg-lime/15 flex items-center justify-center mb-5">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#061A2E" stroke-width="2"><path d="M3 21h18"/><path d="M5 21V7l7-4 7 4v14"/><path d="M9 9h1M14 9h1M9 13h1M14 13h1M9 17h1M14 17h1"/></svg>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#061A2E" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
         </div>
         <h3 class="font-display font-bold text-[15px] mb-2">Modern Facilities</h3>
         <p class="text-muted text-[13.5px] leading-relaxed">Professional facilities and training equipment.</p>
-      </div>
-
-      <div class="benefit-card bg-white border border-border rounded-lg p-6 reveal">
-        <div class="w-11 h-11 rounded-md bg-lime/15 flex items-center justify-center mb-5">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#061A2E" stroke-width="2"><path d="M8 21h8M12 17v4M7 4h10v5a5 5 0 0 1-10 0V4z"/><path d="M17 4h3a2 2 0 0 1-2 4M7 4H4a2 2 0 0 0 2 4"/></svg>
-        </div>
-        <h3 class="font-display font-bold text-[15px] mb-2">Match Exposure</h3>
-        <p class="text-muted text-[13.5px] leading-relaxed">Regular matches, tournaments and competitive play.</p>
       </div>
 
       <div class="benefit-card bg-white border border-border rounded-lg p-6 reveal">
@@ -240,29 +215,28 @@
         <h3 class="font-display font-bold text-[15px] mb-2">Performance Tracking</h3>
         <p class="text-muted text-[13.5px] leading-relaxed">Regular evaluations and coach feedback.</p>
       </div>
-
       <div class="benefit-card bg-white border border-border rounded-lg p-6 reveal">
         <div class="w-11 h-11 rounded-md bg-lime/15 flex items-center justify-center mb-5">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#061A2E" stroke-width="2"><path d="M12 22s8-4 8-11V5l-8-3-8 3v6c0 7 8 11 8 11z"/></svg>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#061A2E" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
         </div>
-        <h3 class="font-display font-bold text-[15px] mb-2">Safe &amp; Supportive</h3>
-        <p class="text-muted text-[13.5px] leading-relaxed">A disciplined and encouraging training environment.</p>
+        <h3 class="font-display font-bold text-[15px] mb-2">Competition Ready</h3>
+        <p class="text-muted text-[13.5px] leading-relaxed">Regular match play and tournament exposure.</p>
       </div>
     </div>
   </div>
 </section>
 
 <!-- ================= SECTION 02 — YOUR ATHLETE JOURNEY ================= -->
-<section class="bg-white py-20 md:py-24">
+<section class="bg-white py-24 md:py-28 scroll-mt-20">
   <div class="max-w-[1400px] mx-auto px-6 md:px-10">
-    <div class="text-center max-w-[640px] mx-auto mb-14 reveal">
+    <div class="text-center max-w-[680px] mx-auto mb-14 reveal">
       <p class="text-lime font-bold text-[12px] tracking-[0.18em] mb-3">YOUR ATHLETE JOURNEY</p>
-      <h2 class="font-display font-extrabold text-[28px] md:text-[36px] text-dark-text mb-4">From First Session to Competition Day.</h2>
+      <h2 class="font-display font-extrabold text-[28px] sm:text-[34px] md:text-[38px] text-dark-text leading-tight mb-4">From First Session to Competition Day.</h2>
       <p class="text-muted text-[15px] leading-relaxed">A structured journey that helps every athlete learn, improve, measure progress and compete with confidence.</p>
     </div>
 
     <!-- Number connector row -->
-    <div class="hidden md:flex items-center justify-between max-w-[900px] mx-auto mb-6 px-2 reveal">
+    <div class="hidden md:flex items-center justify-between max-w-[900px] mx-auto mb-8 px-2 reveal">
       <span class="text-lime font-display font-extrabold text-[15px]">01</span>
       <span class="journey-line flex-1 mx-3"></span>
       <span class="text-lime font-display font-extrabold text-[15px]">02</span>
@@ -338,115 +312,136 @@
 <section id="sports" class="bg-navy py-20 md:py-24">
   <div class="max-w-[1400px] mx-auto px-6 md:px-10">
     <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12 reveal">
-      <div class="max-w-[640px]">
-        <p class="text-lime font-bold text-[12px] tracking-[0.18em] mb-3">OUR SPORTS</p>
-        <h2 class="font-display font-extrabold text-[28px] md:text-[36px] text-white mb-4">Choose Your Sport. Build Your Game.</h2>
-        <p class="text-white/60 text-[15px] leading-relaxed">Professional coaching programs designed for beginners, developing athletes and competitive players.</p>
+      <div class="max-w-[560px]">
+        <p class="text-lime font-bold text-[12px] tracking-[0.18em] mb-3">CORE DISCIPLINES</p>
+        <h2 class="font-display font-extrabold text-[28px] md:text-[36px] text-white mb-4">Choose Your Sport. Build Your Future.</h2>
+        <p class="text-white/60 text-[15px] leading-relaxed">Year-round training programs with structured age-group batches, specialized skill drills and competition pathways.</p>
       </div>
-      <a href="#" class="shrink-0 border border-white/25 text-white font-semibold text-[13px] rounded-md px-5 py-2.5 hover:bg-white/10 transition flex items-center gap-2">
-        View All Sports <span>→</span>
-      </a>
+      <a href="programs.html" class="self-start md:self-auto inline-block border border-lime text-lime font-semibold text-[13.5px] rounded-md px-5 py-3 hover:bg-lime hover:text-navy transition whitespace-nowrap">View All Programs →</a>
     </div>
 
+    <!-- Sports grid -->
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-      <!-- Football -->
-      <a href="#" class="sport-card reveal">
-        <div class="sport-card-img">
-          <img src="https://images.unsplash.com/photo-1579952363873-27f3bade9f55?w=600&q=80&auto=format&fit=crop" alt="Football training">
+      <div class="sport-card bg-navy-card border border-white/10 rounded-xl overflow-hidden reveal">
+        <div class="relative h-[220px]">
+          <img src="https://images.unsplash.com/photo-1508098682722-e99c43a406b2?w=600&q=80&auto=format&fit=crop" alt="Football coaching" class="w-full h-full object-cover">
+          <span class="sport-badge bg-lime text-navy">Football</span>
         </div>
-        <div class="sport-card-overlay"></div>
-        <div class="sport-card-content">
-          <h3 class="font-display font-bold text-[19px] text-white mb-2">Football</h3>
-          <p class="flex items-center gap-2 text-white/70 text-[12.5px] mb-1"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/></svg>All Levels</p>
-          <p class="flex items-center gap-2 text-white/70 text-[12.5px] mb-1"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/></svg>Age 6+</p>
-          <p class="flex items-center gap-2 text-white/70 text-[12.5px]"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 3v18h18"/></svg>Technical + Tactical Training</p>
-          <span class="sport-arrow"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#061A2E" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        <div class="p-6">
+          <p class="text-white/50 text-[12px] mb-2 font-medium">Ages 5–18 &bull; Grassroots to Elite</p>
+          <h3 class="font-display font-bold text-white text-[17px] mb-2">Football Academy</h3>
+          <p class="text-white/60 text-[13.5px] leading-relaxed mb-4">Ball mastery, positional play, physical conditioning and tournament match exposure.</p>
+          <ul class="text-white/50 text-[12.5px] space-y-1.5 mb-5">
+            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-lime"></span>Weekly match simulations</li>
+            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-lime"></span>UEFA/AFC certified coaches</li>
+          </ul>
+          <a href="programs.html" class="inline-block w-full text-center bg-white/5 border border-white/15 text-white font-medium text-[13px] rounded-md py-2.5 hover:bg-lime hover:text-navy hover:border-lime transition">Program Details</a>
         </div>
-      </a>
-      <!-- Basketball -->
-      <a href="#" class="sport-card reveal">
-        <div class="sport-card-img">
-          <img src="https://images.unsplash.com/photo-1546519638-68e109498ffc?w=600&q=80&auto=format&fit=crop" alt="Basketball training">
+      </div>
+
+      <div class="sport-card bg-navy-card border border-white/10 rounded-xl overflow-hidden reveal">
+        <div class="relative h-[220px]">
+          <img src="https://images.unsplash.com/photo-1546519638-68e109498ffc?w=600&q=80&auto=format&fit=crop" alt="Basketball coaching" class="w-full h-full object-cover">
+          <span class="sport-badge bg-lime text-navy">Basketball</span>
         </div>
-        <div class="sport-card-overlay"></div>
-        <div class="sport-card-content">
-          <h3 class="font-display font-bold text-[19px] text-white mb-2">Basketball</h3>
-          <p class="flex items-center gap-2 text-white/70 text-[12.5px] mb-1"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/></svg>All Levels</p>
-          <p class="flex items-center gap-2 text-white/70 text-[12.5px] mb-1"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/></svg>Age 8+</p>
-          <p class="flex items-center gap-2 text-white/70 text-[12.5px]"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 3v18h18"/></svg>Skills + Game Strategy</p>
-          <span class="sport-arrow"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#061A2E" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        <div class="p-6">
+          <p class="text-white/50 text-[12px] mb-2 font-medium">Ages 6–18 &bull; Indoor Court</p>
+          <h3 class="font-display font-bold text-white text-[17px] mb-2">Basketball Academy</h3>
+          <p class="text-white/60 text-[13.5px] leading-relaxed mb-4">Shooting mechanics, footwork, team defense and high-intensity game preparation.</p>
+          <ul class="text-white/50 text-[12.5px] space-y-1.5 mb-5">
+            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-lime"></span>Wooden indoor flooring</li>
+            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-lime"></span>FIBA-certified coaching drills</li>
+          </ul>
+          <a href="programs.html" class="inline-block w-full text-center bg-white/5 border border-white/15 text-white font-medium text-[13px] rounded-md py-2.5 hover:bg-lime hover:text-navy hover:border-lime transition">Program Details</a>
         </div>
-      </a>
-      <!-- Badminton -->
-      <a href="#" class="sport-card reveal">
-        <div class="sport-card-img">
-          <img src="https://images.unsplash.com/photo-1521537634581-0dced2fee2ef?w=600&q=80&auto=format&fit=crop" alt="Badminton training">
+      </div>
+
+      <div class="sport-card bg-navy-card border border-white/10 rounded-xl overflow-hidden reveal">
+        <div class="relative h-[220px]">
+          <img src="https://images.unsplash.com/photo-1626224583764-f87db24ac4ea?w=600&q=80&auto=format&fit=crop" alt="Badminton coaching" class="w-full h-full object-cover">
+          <span class="sport-badge bg-lime text-navy">Badminton</span>
         </div>
-        <div class="sport-card-overlay"></div>
-        <div class="sport-card-content">
-          <h3 class="font-display font-bold text-[19px] text-white mb-2">Badminton</h3>
-          <p class="flex items-center gap-2 text-white/70 text-[12.5px] mb-1"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/></svg>Beginner to Advanced</p>
-          <p class="flex items-center gap-2 text-white/70 text-[12.5px] mb-1"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/></svg>Age 7+</p>
-          <p class="flex items-center gap-2 text-white/70 text-[12.5px]"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 3v18h18"/></svg>Technique + Match Play</p>
-          <span class="sport-arrow"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#061A2E" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        <div class="p-6">
+          <p class="text-white/50 text-[12px] mb-2 font-medium">Ages 6–18 &bull; Synthetic Courts</p>
+          <h3 class="font-display font-bold text-white text-[17px] mb-2">Badminton Academy</h3>
+          <p class="text-white/60 text-[13.5px] leading-relaxed mb-4">Racquet skills, court agility, smash technique and competitive tournament coaching.</p>
+          <ul class="text-white/50 text-[12.5px] space-y-1.5 mb-5">
+            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-lime"></span>BWF standard court mats</li>
+            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-lime"></span>National-level coaching staff</li>
+          </ul>
+          <a href="programs.html" class="inline-block w-full text-center bg-white/5 border border-white/15 text-white font-medium text-[13px] rounded-md py-2.5 hover:bg-lime hover:text-navy hover:border-lime transition">Program Details</a>
         </div>
-      </a>
-      <!-- Athletics -->
-      <a href="#" class="sport-card reveal">
-        <div class="sport-card-img">
-          <img src="https://images.unsplash.com/photo-1461896836934-ffe607ba8211?w=600&q=80&auto=format&fit=crop" alt="Athletics training">
+      </div>
+
+      <div class="sport-card bg-navy-card border border-white/10 rounded-xl overflow-hidden reveal">
+        <div class="relative h-[220px]">
+          <img src="https://images.unsplash.com/photo-1461896836934-ffe607ba8211?w=600&q=80&auto=format&fit=crop" alt="Athletics coaching" class="w-full h-full object-cover">
+          <span class="sport-badge bg-lime text-navy">Athletics</span>
         </div>
-        <div class="sport-card-overlay"></div>
-        <div class="sport-card-content">
-          <h3 class="font-display font-bold text-[19px] text-white mb-2">Athletics</h3>
-          <p class="flex items-center gap-2 text-white/70 text-[12.5px] mb-1"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/></svg>Foundation to Competitive</p>
-          <p class="flex items-center gap-2 text-white/70 text-[12.5px] mb-1"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/></svg>Age 8+</p>
-          <p class="flex items-center gap-2 text-white/70 text-[12.5px]"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 3v18h18"/></svg>Speed + Endurance</p>
-          <span class="sport-arrow"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#061A2E" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        <div class="p-6">
+          <p class="text-white/50 text-[12px] mb-2 font-medium">Ages 7–18 &bull; Track &amp; Field</p>
+          <h3 class="font-display font-bold text-white text-[17px] mb-2">Athletics &amp; Fitness</h3>
+          <p class="text-white/60 text-[13.5px] leading-relaxed mb-4">Sprint mechanics, endurance, strength &amp; conditioning and agility fundamentals.</p>
+          <ul class="text-white/50 text-[12.5px] space-y-1.5 mb-5">
+            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-lime"></span>Synthetic running track</li>
+            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-lime"></span>Personal fitness analytics</li>
+          </ul>
+          <a href="programs.html" class="inline-block w-full text-center bg-white/5 border border-white/15 text-white font-medium text-[13px] rounded-md py-2.5 hover:bg-lime hover:text-navy hover:border-lime transition">Program Details</a>
         </div>
-      </a>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- ================= SECTION 04 — MEET OUR COACHES ================= -->
+<!-- ================= SECTION 04 — COACHES ================= -->
 <section id="coaches" class="bg-white py-20 md:py-24">
   <div class="max-w-[1400px] mx-auto px-6 md:px-10">
     <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12 reveal">
       <div class="max-w-[560px]">
-        <p class="text-lime font-bold text-[12px] tracking-[0.18em] mb-3">OUR COACHES</p>
-        <h2 class="font-display font-extrabold text-[26px] md:text-[32px] text-dark-text mb-4">Learn From Coaches Who Develop Athletes.</h2>
-        <p class="text-muted text-[15px] leading-relaxed mb-6">Experienced coaches who combine technical knowledge, structured training and individual feedback.</p>
-        <a href="#" class="inline-block bg-lime text-navy font-bold text-[13.5px] rounded-md px-5 py-3 hover:brightness-95 transition">Meet All Coaches →</a>
+        <p class="text-lime font-bold text-[12px] tracking-[0.18em] mb-3">EXPERT COACHING TEAM</p>
+        <h2 class="font-display font-extrabold text-[28px] md:text-[36px] text-dark-text mb-4">Learn From Coaches Who've Competed.</h2>
+        <p class="text-muted text-[15px] leading-relaxed">Certified professionals dedicated to identifying talent, instilling discipline and accelerating athlete development.</p>
       </div>
+      <a href="coaches.html" class="self-start md:self-auto inline-block border border-border text-dark-text font-semibold text-[13.5px] rounded-md px-5 py-3 hover:bg-soft transition whitespace-nowrap">Meet All Coaches →</a>
     </div>
 
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
       <div class="coach-card reveal">
-        <img src="https://randomuser.me/api/portraits/men/45.jpg" alt="Arjun Rao, Football Coach" class="coach-img">
-        <h3 class="font-display font-bold text-[16px] mt-4 mb-0.5">Arjun Rao</h3>
-        <p class="text-muted text-[13px]">Football Coach</p>
+        <div class="coach-image-wrap">
+          <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=600&q=80&auto=format&fit=crop" alt="Head Coach Arjun Rao" class="w-full h-full object-cover">
+          <span class="sport-badge bg-lime text-navy">Football</span>
+        </div>
+        <h3 class="font-display font-bold text-[17px] text-dark-text mb-1">Arjun Rao</h3>
         <p class="text-muted text-[13px]">12+ Years Experience</p>
-        <p class="text-dark-text text-[13px] font-medium">Technical Development</p>
+        <p class="text-dark-text text-[13px] font-medium">UEFA B Licensed Coach</p>
       </div>
+
       <div class="coach-card reveal">
-        <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Priya Menon, Basketball Coach" class="coach-img">
-        <h3 class="font-display font-bold text-[16px] mt-4 mb-0.5">Priya Menon</h3>
-        <p class="text-muted text-[13px]">Basketball Coach</p>
+        <div class="coach-image-wrap">
+          <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&q=80&auto=format&fit=crop" alt="Basketball Coach Priya Sundaram" class="w-full h-full object-cover">
+          <span class="sport-badge bg-lime text-navy">Basketball</span>
+        </div>
+        <h3 class="font-display font-bold text-[17px] text-dark-text mb-1">Priya Sundaram</h3>
         <p class="text-muted text-[13px]">9+ Years Experience</p>
-        <p class="text-dark-text text-[13px] font-medium">Performance Training</p>
+        <p class="text-dark-text text-[13px] font-medium">Former National Player</p>
       </div>
+
       <div class="coach-card reveal">
-        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Karthik Anand, Badminton Coach" class="coach-img">
-        <h3 class="font-display font-bold text-[16px] mt-4 mb-0.5">Karthik Anand</h3>
-        <p class="text-muted text-[13px]">Badminton Coach</p>
-        <p class="text-muted text-[13px]">10+ Years Experience</p>
-        <p class="text-dark-text text-[13px] font-medium">Competitive Training</p>
+        <div class="coach-image-wrap">
+          <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=600&q=80&auto=format&fit=crop" alt="Badminton Coach Rajesh Kumar" class="w-full h-full object-cover">
+          <span class="sport-badge bg-lime text-navy">Badminton</span>
+        </div>
+        <h3 class="font-display font-bold text-[17px] text-dark-text mb-1">Rajesh Kumar</h3>
+        <p class="text-muted text-[13px]">11+ Years Experience</p>
+        <p class="text-dark-text text-[13px] font-medium">BWF Level 2 Certified</p>
       </div>
+
       <div class="coach-card reveal">
-        <img src="https://randomuser.me/api/portraits/men/68.jpg" alt="Rahul Kumar, Athletics Coach" class="coach-img">
-        <h3 class="font-display font-bold text-[16px] mt-4 mb-0.5">Rahul Kumar</h3>
-        <p class="text-muted text-[13px]">Athletics Coach</p>
+        <div class="coach-image-wrap">
+          <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=600&q=80&auto=format&fit=crop" alt="Athletics Coach Sneha Menon" class="w-full h-full object-cover">
+          <span class="sport-badge bg-lime text-navy">Athletics</span>
+        </div>
+        <h3 class="font-display font-bold text-[17px] text-dark-text mb-1">Sneha Menon</h3>
         <p class="text-muted text-[13px]">14+ Years Experience</p>
         <p class="text-dark-text text-[13px] font-medium">Sprint &amp; Conditioning</p>
       </div>
@@ -466,30 +461,30 @@
       </div>
     </div>
 
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-      <!-- Large image -->
-      <div class="facility-tile md:row-span-2 h-[240px] md:h-full reveal">
-        <img src="https://images.unsplash.com/photo-1459865264687-595d652de67e?w=900&q=80&auto=format&fit=crop" alt="Football Ground">
+    <!-- Uniform 3x2 Facilities Grid -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div class="facility-tile h-[220px] md:h-[240px] w-full rounded-xl overflow-hidden reveal">
+        <img src="https://images.unsplash.com/photo-1459865264687-595d652de67e?w=900&q=80&auto=format&fit=crop" alt="Football Ground" class="w-full h-full object-cover">
         <span class="facility-label">Football Ground</span>
       </div>
-      <div class="facility-tile h-[190px] reveal">
-        <img src="https://images.unsplash.com/photo-1546519638-68e109498ffc?w=700&q=80&auto=format&fit=crop" alt="Indoor Basketball Court">
+      <div class="facility-tile h-[220px] md:h-[240px] w-full rounded-xl overflow-hidden reveal">
+        <img src="https://images.unsplash.com/photo-1546519638-68e109498ffc?w=700&q=80&auto=format&fit=crop" alt="Indoor Basketball Court" class="w-full h-full object-cover">
         <span class="facility-label">Indoor Basketball Court</span>
       </div>
-      <div class="facility-tile h-[190px] reveal">
-        <img src="https://images.unsplash.com/photo-1626224583764-f87db24ac4ea?w=700&q=80&auto=format&fit=crop" alt="Badminton Courts">
+      <div class="facility-tile h-[220px] md:h-[240px] w-full rounded-xl overflow-hidden reveal">
+        <img src="https://images.unsplash.com/photo-1626224583764-f87db24ac4ea?w=700&q=80&auto=format&fit=crop" alt="Badminton Courts" class="w-full h-full object-cover">
         <span class="facility-label">Badminton Courts</span>
       </div>
-      <div class="facility-tile h-[190px] reveal">
-        <img src="https://images.unsplash.com/photo-1461896836934-ffe607ba8211?w=700&q=80&auto=format&fit=crop" alt="Athletics Track">
+      <div class="facility-tile h-[220px] md:h-[240px] w-full rounded-xl overflow-hidden reveal">
+        <img src="https://images.unsplash.com/photo-1461896836934-ffe607ba8211?w=700&q=80&auto=format&fit=crop" alt="Athletics Track" class="w-full h-full object-cover">
         <span class="facility-label">Athletics Track</span>
       </div>
-      <div class="facility-tile h-[190px] reveal">
-        <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=700&q=80&auto=format&fit=crop" alt="Strength & Conditioning">
+      <div class="facility-tile h-[220px] md:h-[240px] w-full rounded-xl overflow-hidden reveal">
+        <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=700&q=80&auto=format&fit=crop" alt="Strength & Conditioning" class="w-full h-full object-cover">
         <span class="facility-label">Strength &amp; Conditioning</span>
       </div>
-      <div class="facility-tile h-[190px] reveal">
-        <img src="https://images.unsplash.com/photo-1600965962102-9d260a71890d?w=700&q=80&auto=format&fit=crop" alt="Changing Rooms">
+      <div class="facility-tile h-[220px] md:h-[240px] w-full rounded-xl overflow-hidden reveal">
+        <img src="https://images.unsplash.com/photo-1600965962102-9d260a71890d?w=700&q=80&auto=format&fit=crop" alt="Changing Rooms" class="w-full h-full object-cover">
         <span class="facility-label">Changing Rooms</span>
       </div>
     </div>
@@ -518,41 +513,31 @@
         </div>
         <span class="event-status">Registration Open</span>
       </div>
+
       <div class="event-row reveal">
         <div class="event-date">
-          <span class="text-lime font-display font-extrabold text-[22px] leading-none">31</span>
-          <span class="text-white/50 text-[11px] uppercase tracking-wide">May 2026</span>
-        </div>
-        <div class="flex-1">
-          <span class="event-sport">Basketball</span>
-          <h3 class="font-display font-bold text-white text-[16px] mt-1.5">Basketball Trial Session</h3>
-          <p class="text-white/50 text-[13px] mt-1">Indoor Court, Champion Academy</p>
-        </div>
-        <span class="event-status">Registration Open</span>
-      </div>
-      <div class="event-row reveal">
-        <div class="event-date">
-          <span class="text-lime font-display font-extrabold text-[22px] leading-none">02</span>
+          <span class="text-lime font-display font-extrabold text-[22px] leading-none">05</span>
           <span class="text-white/50 text-[11px] uppercase tracking-wide">Jun 2026</span>
         </div>
         <div class="flex-1">
-          <span class="event-sport">Athletics</span>
-          <h3 class="font-display font-bold text-white text-[16px] mt-1.5">Athletics Selection Camp</h3>
-          <p class="text-white/50 text-[13px] mt-1">Athletics Track, Champion Academy</p>
+          <span class="event-sport">Basketball</span>
+          <h3 class="font-display font-bold text-white text-[16px] mt-1.5">Under-16 3x3 Basketball League</h3>
+          <p class="text-white/50 text-[13px] mt-1">Indoor Sports Complex, Chennai</p>
         </div>
         <span class="event-status">Registration Open</span>
       </div>
+
       <div class="event-row reveal">
         <div class="event-date">
-          <span class="text-lime font-display font-extrabold text-[22px] leading-none">10</span>
+          <span class="text-lime font-display font-extrabold text-[22px] leading-none">14</span>
           <span class="text-white/50 text-[11px] uppercase tracking-wide">Jun 2026</span>
         </div>
         <div class="flex-1">
           <span class="event-sport">Badminton</span>
-          <h3 class="font-display font-bold text-white text-[16px] mt-1.5">Badminton Tournament</h3>
-          <p class="text-white/50 text-[13px] mt-1">Badminton Courts, Champion Academy</p>
+          <h3 class="font-display font-bold text-white text-[16px] mt-1.5">All-Junior Badminton Championship</h3>
+          <p class="text-white/50 text-[13px] mt-1">Synthetic Court Arena, Chennai</p>
         </div>
-        <span class="event-status event-status-closed">Registration Closing Soon</span>
+        <span class="event-status">Upcoming</span>
       </div>
     </div>
 
@@ -620,17 +605,21 @@
         </div>
       </div>
 
-      <!-- CTA -->
-      <div class="reveal">
-        <p class="text-lime font-bold text-[12px] tracking-[0.18em] mb-3">YOUR JOURNEY STARTS HERE</p>
-        <h3 class="font-display font-extrabold text-[26px] md:text-[32px] text-dark-text mb-4 leading-tight">Ready to Start Your Journey?</h3>
-        <p class="text-muted text-[15px] leading-relaxed mb-8 max-w-[440px]">Choose your sport, meet your coach and take your first step toward becoming a stronger athlete.</p>
-        <div class="flex flex-wrap gap-4">
-          <a href="#sports" class="bg-lime text-navy font-bold text-[14px] rounded-md px-6 py-3.5 hover:brightness-95 transition">Explore Sports</a>
-          <a href="#" class="bg-navy text-white font-bold text-[14px] rounded-md px-6 py-3.5 hover:bg-deep-navy transition">Book a Trial</a>
-        </div>
-        <div class="relative mt-10 hidden lg:block">
-          <img src="https://images.unsplash.com/photo-1517927033932-b3d18e61fb3a?w=500&q=80&auto=format&fit=crop" alt="Young athlete ready to start training" class="rounded-lg w-full max-w-[360px] h-[280px] object-cover ml-auto">
+      <!-- CTA Background Banner Card -->
+      <div class="reveal relative rounded-2xl overflow-hidden p-8 md:p-12 min-h-[440px] flex flex-col justify-center bg-deep-navy shadow-xl border border-white/10">
+        <img src="https://images.unsplash.com/photo-1517927033932-b3d18e61fb3a?w=1000&q=80&auto=format&fit=crop"
+             alt="Athletes training on field"
+             class="absolute inset-0 w-full h-full object-cover">
+        <div class="absolute inset-0 bg-gradient-to-r from-deep-navy/95 via-deep-navy/85 to-deep-navy/60"></div>
+        
+        <div class="relative z-10">
+          <p class="text-lime font-bold text-[12px] tracking-[0.18em] mb-3">YOUR JOURNEY STARTS HERE</p>
+          <h3 class="font-display font-extrabold text-[26px] md:text-[34px] text-white mb-4 leading-tight">Ready to Start Your Journey?</h3>
+          <p class="text-white/75 text-[15px] leading-relaxed mb-8 max-w-[440px]">Choose your sport, meet your coach and take your first step toward becoming a stronger athlete.</p>
+          <div class="flex flex-wrap gap-4">
+            <a href="#sports" class="bg-lime text-navy font-bold text-[14px] rounded-md px-6 py-3.5 hover:brightness-95 transition">Explore Sports</a>
+            <a href="signin.html" class="border border-white/30 text-white font-bold text-[14px] rounded-md px-6 py-3.5 hover:bg-white/10 transition">Book a Trial</a>
+          </div>
         </div>
       </div>
     </div>
@@ -644,10 +633,7 @@
       <!-- Academy -->
       <div>
         <div class="flex items-center gap-3 mb-4">
-          <svg width="30" height="30" viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M17 1L31 6.5V16C31 24.5 25.5 30.8 17 33C8.5 30.8 3 24.5 3 16V6.5L17 1Z" fill="#A8D600"/>
-            <path d="M17 6L25 9V16C25 21.2 21.7 25.2 17 27C12.3 25.2 9 21.2 9 16V9L17 6Z" fill="#03111F"/>
-          </svg>
+          <img src="Assets/logo.png" alt="Champion Sports Academy" class="w-8 h-8 object-contain">
           <div class="leading-none">
             <div class="text-white font-display font-extrabold text-[14px] tracking-wide">CHAMPION</div>
             <div class="text-lime text-[9px] tracking-[0.2em] font-semibold">SPORTS ACADEMY</div>

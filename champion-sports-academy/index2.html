@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Champion Sports Academy — Find Your Sport. Build Your Game.</title>
 <meta name="description" content="Champion Sports Academy — multi-sport coaching in Football, Basketball, Badminton and Athletics for all ages and skill levels.">
+<link rel="icon" type="image/png" href="Assets/logo.png">
 
 <!-- Theme + RTL init — runs before paint to avoid flash -->
 <script>
@@ -49,31 +50,17 @@
   }
 </script>
 
-<!-- Theme + RTL init — runs before paint -->
-<script>
-  (function () {
-    var t = localStorage.getItem('csa-theme');
-    document.documentElement.setAttribute('data-theme', t === 'light' ? 'light' : 'dark');
-    var r = localStorage.getItem('csa-rtl') === 'true';
-    if (r) document.documentElement.setAttribute('dir', 'rtl');
-  })();
-</script>
-
 <link rel="stylesheet" href="style2.css">
 </head>
 <body class="font-body text-dark bg-white antialiased">
 
-<!-- ============ HEADER ============ -->
 <!-- ============ HEADER ============ -->
 <header class="fixed top-0 left-0 w-full z-50 bg-navy/90 backdrop-blur-md border-b border-white/10" style="height:72px;">
   <div class="max-w-[1400px] mx-auto px-6 md:px-10 flex items-center justify-between h-[72px]">
 
     <!-- Logo -->
     <a href="index.html" class="flex items-center gap-3 shrink-0">
-      <svg width="34" height="34" viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M17 1L31 6.5V16C31 24.5 25.5 30.8 17 33C8.5 30.8 3 24.5 3 16V6.5L17 1Z" fill="#A8D600"/>
-        <path d="M17 6L25 9V16C25 21.2 21.7 25.2 17 27C12.3 25.2 9 21.2 9 16V9L17 6Z" fill="#061A2E"/>
-      </svg>
+      <img src="Assets/logo.png" alt="Champion Sports Academy" class="w-9 h-9 object-contain">
       <div class="leading-none">
         <div class="text-white font-display font-extrabold text-[15px] tracking-wide">CHAMPION</div>
         <div class="text-lime text-[10px] tracking-[0.2em] font-semibold">SPORTS ACADEMY</div>
@@ -739,10 +726,7 @@
   <div class="max-w-container mx-auto px-6 lg:px-10 footer-grid">
     <div class="footer-col footer-brand">
       <a href="#" class="flex items-center gap-3 mb-4">
-        <svg width="30" height="34" viewBox="0 0 34 38" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M17 1L32 6V17.5C32 26.5 25.8 32.7 17 37C8.2 32.7 2 26.5 2 17.5V6L17 1Z" stroke="#A8D600" stroke-width="1.6"/>
-          <path d="M17 8L24 20L17 30L10 20L17 8Z" fill="#A8D600"/>
-        </svg>
+        <img src="Assets/logo.png" alt="Champion Sports Academy" class="w-8 h-8 object-contain">
         <span class="leading-tight">
           <span class="block text-white font-display font-extrabold text-[14px] tracking-wide">CHAMPION</span>
           <span class="block text-lime text-[9px] tracking-[0.18em] font-semibold">SPORTS ACADEMY</span>
