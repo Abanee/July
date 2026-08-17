@@ -68,7 +68,7 @@
     </a>
 
     <!-- Desktop Nav -->
-    <nav class="hidden lg:flex items-center gap-7 text-[14px] font-medium">
+    <nav class="hidden xl:flex items-center gap-7 text-[14px] font-medium">
       <a href="index.html"  class="text-white/70 hover:text-white transition-colors">Home</a>
       <a href="index2.html" class="relative text-lime pb-1 nav-active" aria-current="page">Home 2</a>
       <a href="about.html"  class="text-white/70 hover:text-white transition-colors">About</a>
@@ -91,8 +91,8 @@
       <a href="contact.html" class="text-white/70 hover:text-white transition-colors">Contact</a>
     </nav>
 
-    <!-- Right actions -->
-    <div class="hidden lg:flex items-center gap-3">
+    <!-- Right actions (Desktop xl+) -->
+    <div class="hidden xl:flex items-center gap-3">
       <button id="rtl-toggle" class="flex items-center justify-center w-9 h-9 rounded-full border border-white/20 text-white/80 text-[11px] font-bold hover:border-lime hover:text-lime transition-colors" aria-label="Toggle RTL layout" aria-pressed="false" title="Toggle RTL">RTL</button>
       <button id="theme-toggle" class="flex items-center justify-center w-9 h-9 rounded-full border border-white/20 text-white/80 hover:border-lime hover:text-lime transition-colors" aria-label="Switch theme" type="button">
         <svg id="icon-moon" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.8A9 9 0 1 1 11.2 3 7 7 0 0 0 21 12.8Z"/></svg>
@@ -106,31 +106,37 @@
       </a>
     </div>
 
-    <!-- Mobile Controls -->
-    <div class="flex items-center gap-1 lg:hidden">
-      <button id="theme-toggle-mobile" class="flex items-center justify-center w-9 h-9 rounded-full border border-white/20 text-white/80" aria-label="Switch theme" type="button">
-        <svg class="icon-moon-m" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.8A9 9 0 1 1 11.2 3 7 7 0 0 0 21 12.8Z"/></svg>
-        <svg class="icon-sun-m hidden" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
-      </button>
-      <button id="menu-btn" class="text-white p-2" aria-label="Open menu">
+    <!-- Mobile Controls (<=1024px) -->
+    <div class="flex items-center gap-2 xl:hidden">
+      <button id="menu-btn" class="text-white p-2 flex items-center justify-center rounded-lg hover:bg-white/10 transition" aria-label="Open menu">
         <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
       </button>
     </div>
   </div>
 
-  <!-- Mobile Menu -->
-  <div id="mobile-menu" class="lg:hidden fixed top-[72px] left-0 w-full bg-navy border-t border-white/10 flex-col px-6 py-6 gap-5 hidden">
-    <a href="index.html" class="text-white/70 font-medium">Home</a>
-    <a href="index2.html" class="text-lime font-medium" aria-current="page">Home 2</a>
-    <a href="about.html" class="text-white/70 font-medium">About</a>
-    <a href="programs.html" class="text-white/70 font-medium" style="padding-left:16px">↳ Sports Programs</a>
-    <a href="coaches.html" class="text-white/70 font-medium" style="padding-left:16px">↳ Coaches</a>
-    <a href="events.html" class="text-white/70 font-medium">Events</a>
-    <a href="contact.html" class="text-white/70 font-medium">Contact</a>
-    <div class="h-px bg-white/10 my-1"></div>
-    <button id="rtl-toggle-mobile" class="text-left text-white/70 font-medium" aria-label="Toggle RTL">RTL Mode</button>
-    <a href="dashboard.html" class="text-white font-medium">Dashboard</a>
-    <a href="signin.html" class="bg-lime text-navy text-center font-bold rounded-md px-5 py-3">Sign In</a>
+  <!-- Mobile Menu Drawer (<=1024px) -->
+  <div id="mobile-menu" class="xl:hidden fixed top-[72px] left-0 w-full bg-navy border-t border-white/10 flex flex-col px-6 py-6 gap-4 shadow-2xl hidden max-h-[calc(100vh-72px)] overflow-y-auto z-50">
+    <a href="index.html" class="text-white/80 font-medium text-[15px] hover:text-white">Home</a>
+    <a href="index2.html" class="text-lime font-bold text-[15px]" aria-current="page">Home 2</a>
+    <a href="about.html" class="text-white/80 font-medium text-[15px] hover:text-white">About</a>
+    <a href="programs.html" class="text-white/80 font-medium text-[14.5px] hover:text-lime" style="padding-left:14px">&bull; Sports Programs</a>
+    <a href="coaches.html" class="text-white/80 font-medium text-[14.5px] hover:text-lime" style="padding-left:14px">&bull; Coaches</a>
+    <a href="events.html" class="text-white/80 font-medium text-[15px] hover:text-white">Events</a>
+    <a href="contact.html" class="text-white/80 font-medium text-[15px] hover:text-white">Contact</a>
+    
+    <div class="h-px bg-white/15 my-2"></div>
+    
+    <!-- Mobile Drawer Action Controls: RTL, Theme, Dashboard, Sign In -->
+    <div class="flex items-center gap-3 py-1">
+      <button id="rtl-toggle-mobile" class="flex items-center justify-center px-4 py-2 rounded-full border border-white/20 text-white/90 text-xs font-bold hover:border-lime hover:text-lime transition-colors" aria-label="Toggle RTL layout">RTL</button>
+      <button id="theme-toggle-mobile" class="flex items-center justify-center w-9 h-9 rounded-full border border-white/20 text-white/90 hover:border-lime hover:text-lime transition-colors" aria-label="Switch theme" type="button">
+        <svg class="icon-moon-m" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.8A9 9 0 1 1 11.2 3 7 7 0 0 0 21 12.8Z"/></svg>
+        <svg class="icon-sun-m hidden" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+      </button>
+    </div>
+    
+    <a href="dashboard.html" class="border border-white/25 text-white text-center font-semibold text-[14px] rounded-lg px-5 py-2.5 hover:bg-white/5 transition">Dashboard</a>
+    <a href="signin.html" class="bg-lime text-navy text-center font-extrabold text-[14px] rounded-lg px-5 py-2.5 hover:brightness-95 transition">Sign In</a>
   </div>
 </header>
 
@@ -491,6 +497,57 @@
       <p class="section-desc">Schedules vary by sport, age group and training level. Select a sport to view a sample weekly schedule.</p>
     </div>
 
+    <!-- Visual Batch Facility Hero Image -->
+    <div class="schedule-visual-hero reveal-on-scroll mb-8">
+      <div class="schedule-img-wrap relative rounded-2xl overflow-hidden shadow-lg border border-bd">
+        <img src="Assets/Home 2/batch-schedule.jpg" alt="Champion Sports Academy Training Batches across outdoor turfs and courts" class="w-full h-[240px] sm:h-[320px] object-cover">
+        <div class="schedule-img-overlay absolute inset-0 bg-gradient-to-t from-[#03111F]/90 via-[#03111F]/40 to-transparent flex flex-col justify-end p-6 sm:p-8">
+          <div class="flex flex-wrap items-center gap-3">
+            <span class="bg-[#A8D600] text-[#03111F] text-xs font-extrabold px-3 py-1 rounded-full uppercase tracking-wider">Active Cohorts</span>
+            <span class="text-white text-xs sm:text-sm font-semibold">Morning (6:00 AM) &bull; Evening (4:30 PM) &bull; Weekend Camps</span>
+          </div>
+          <p class="text-white/90 text-sm mt-2 max-w-2xl hidden sm:block">Designed for seamless school and family balance with multi-sport coaching slots throughout the week.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 3 Visual Timing Quick-Cards -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-5 mb-10 reveal-on-scroll">
+      <div class="p-5 rounded-xl border border-bd bg-[#F5F7F5] flex items-start gap-4 hover:border-[#A8D600] transition-colors">
+        <div class="w-10 h-10 rounded-lg bg-[rgba(168,214,0,0.18)] text-[#2B3B00] flex items-center justify-center shrink-0">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+        </div>
+        <div>
+          <h4 class="font-display font-bold text-[#03111F] text-base">Morning Batches</h4>
+          <p class="text-xs font-semibold text-[#4D7C0F] mt-0.5">6:00 AM &ndash; 7:30 AM (Mon &bull; Wed &bull; Fri)</p>
+          <p class="text-xs text-[#526071] mt-1">High-energy physical conditioning &amp; skill repetition before school.</p>
+        </div>
+      </div>
+
+      <div class="p-5 rounded-xl border border-bd bg-[#F5F7F5] flex items-start gap-4 hover:border-[#A8D600] transition-colors">
+        <div class="w-10 h-10 rounded-lg bg-[rgba(168,214,0,0.18)] text-[#2B3B00] flex items-center justify-center shrink-0">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+        </div>
+        <div>
+          <h4 class="font-display font-bold text-[#03111F] text-base">Evening Batches</h4>
+          <p class="text-xs font-semibold text-[#4D7C0F] mt-0.5">4:30 PM &ndash; 7:00 PM (Daily Slots)</p>
+          <p class="text-xs text-[#526071] mt-1">Game simulation, tactical positioning &amp; technical team coaching.</p>
+        </div>
+      </div>
+
+      <div class="p-5 rounded-xl border border-bd bg-[#F5F7F5] flex items-start gap-4 hover:border-[#A8D600] transition-colors">
+        <div class="w-10 h-10 rounded-lg bg-[rgba(168,214,0,0.18)] text-[#2B3B00] flex items-center justify-center shrink-0">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+        </div>
+        <div>
+          <h4 class="font-display font-bold text-[#03111F] text-base">Weekend Intensives</h4>
+          <p class="text-xs font-semibold text-[#4D7C0F] mt-0.5">8:00 AM &ndash; 11:30 AM (Sat &amp; Sun)</p>
+          <p class="text-xs text-[#526071] mt-1">Full match play, referee tournaments &amp; specialized masterclasses.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Interactive Sport Tabs & Detailed Timetable -->
     <div class="reveal-on-scroll">
       <div class="sport-tabs" id="sportTabs" role="tablist">
         <button class="sport-tab is-active" data-sport="football" role="tab" aria-selected="true">Football</button>
@@ -518,7 +575,7 @@
   <div class="max-w-container mx-auto px-6 lg:px-10">
     <div class="firstday-grid">
       <div class="firstday-image reveal-on-scroll">
-        <img src="https://images.unsplash.com/photo-1560253023-3ec5d502959f?q=80&w=1000&auto=format&fit=crop" alt="Coach greeting a young student before training">
+        <img src="Assets/Home 2/first-day.jpg" alt="Coach greeting a young student athlete on their first training day" class="w-full h-full object-cover rounded-2xl" loading="lazy">
       </div>
 
       <div class="firstday-content reveal-on-scroll">

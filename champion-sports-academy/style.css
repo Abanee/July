@@ -204,6 +204,12 @@ a:focus-visible, button:focus-visible {
 }
 .sport-card:hover .sport-arrow { transform: translateX(4px); }
 
+/* ===================== ATHLETE JOURNEY ===================== */
+.journey-dashed-line {
+  height: 2px;
+  background: repeating-linear-gradient(90deg, #A8D600 0, #A8D600 8px, transparent 8px, transparent 16px);
+}
+
 /* ===================== COACHES ===================== */
 .coach-card {
   text-align: left;

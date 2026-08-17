@@ -68,42 +68,23 @@ document.addEventListener('DOMContentLoaded', () => {
   rtlToggleMobile && rtlToggleMobile.addEventListener('click', toggleRTL);
 
   // ============================================================
-  // MOBILE DRAWER
+  // MOBILE NAVIGATION
   // ============================================================
-  const menuBtn       = document.getElementById('menu-btn');
-  const mobileDrawer  = document.getElementById('mobile-drawer');
-  const menuBackdrop  = document.getElementById('menu-backdrop');
-  const menuIconOpen  = document.getElementById('menu-icon-open');
-  const menuIconClose = document.getElementById('menu-icon-close');
+  const menuBtn = document.getElementById('menu-btn');
+  const mobileMenu = document.getElementById('mobile-menu') || document.getElementById('mobile-drawer');
 
-  function openMenu() {
-    mobileDrawer.classList.add('is-open');
-    menuBackdrop.classList.add('is-open');
-    menuBtn.setAttribute('aria-expanded', 'true');
-    mobileDrawer.setAttribute('aria-hidden', 'false');
-    menuIconOpen  && menuIconOpen.classList.add('hidden');
-    menuIconClose && menuIconClose.classList.remove('hidden');
-    document.body.style.overflow = 'hidden';
-  }
-
-  function closeMenu() {
-    mobileDrawer.classList.remove('is-open');
-    menuBackdrop.classList.remove('is-open');
-    menuBtn.setAttribute('aria-expanded', 'false');
-    mobileDrawer.setAttribute('aria-hidden', 'true');
-    menuIconOpen  && menuIconOpen.classList.remove('hidden');
-    menuIconClose && menuIconClose.classList.add('hidden');
-    document.body.style.overflow = '';
-  }
-
-  if (menuBtn && mobileDrawer) {
+  if (menuBtn && mobileMenu) {
     menuBtn.addEventListener('click', () => {
-      mobileDrawer.classList.contains('is-open') ? closeMenu() : openMenu();
+      const isOpen = mobileMenu.classList.toggle('open');
+      mobileMenu.classList.toggle('hidden', !isOpen);
+      mobileMenu.classList.toggle('flex', isOpen);
     });
-    menuBackdrop.addEventListener('click', closeMenu);
-    mobileDrawer.querySelectorAll('a').forEach(link => link.addEventListener('click', closeMenu));
-    document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape' && mobileDrawer.classList.contains('is-open')) closeMenu();
+
+    mobileMenu.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.remove('open', 'flex');
+        mobileMenu.classList.add('hidden');
+      });
     });
   }
 

@@ -77,33 +77,38 @@
       </a>
     </div>
 
-    <!-- Mobile Menu Button -->
-    <div class="mobile-controls">
-      <button id="theme-toggle-mobile" class="header-icon-btn" aria-label="Switch colour theme" type="button">
-        <svg class="icon-moon-m" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.8A9 9 0 1 1 11.2 3 7 7 0 0 0 21 12.8Z"/></svg>
-        <svg class="icon-sun-m hidden" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
-      </button>
-      <button id="menu-btn" class="hamburger-btn" aria-label="Open navigation menu" aria-expanded="false" aria-controls="mobile-drawer">
-        <svg id="menu-icon-open" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
-        <svg id="menu-icon-close" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="hidden"><line x1="6" y1="6" x2="18" y2="18"/><line x1="6" y1="18" x2="18" y2="6"/></svg>
+    <!-- Mobile Controls (<=1024px) -->
+    <div class="flex items-center gap-2 xl:hidden">
+      <button id="menu-btn" class="text-white p-2 flex items-center justify-center rounded-lg hover:bg-white/10 transition" aria-label="Open menu">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
       </button>
     </div>
   </div>
 
-  <!-- Mobile Drawer -->
-  <nav id="mobile-drawer" class="mobile-drawer" role="dialog" aria-label="Mobile navigation" aria-modal="true">
-    <a href="index.html" class="drawer-link">Home</a>
-    <a href="index2.html" class="drawer-link">Home 2</a>
-    <a href="about.html" class="drawer-link">About</a>
-    <a href="programs.html" class="drawer-link sub-link">↳ Sports Programs</a>
-    <a href="coaches.html" class="drawer-link sub-link">↳ Coaches</a>
-    <a href="events.html" class="drawer-link">Events</a>
-    <a href="contact.html" class="drawer-link drawer-active" aria-current="page">Contact</a>
-    <div class="drawer-divider"></div>
-    <button id="rtl-toggle-mobile" class="drawer-link rtl-btn" aria-label="Toggle RTL">RTL Mode</button>
-    <a href="dashboard.html" class="drawer-link">Dashboard</a>
-    <a href="signin.html" class="drawer-cta">Sign In</a>
-  </nav>
+  <!-- Mobile Menu Drawer (<=1024px) -->
+  <div id="mobile-menu" class="xl:hidden fixed top-[72px] left-0 w-full bg-navy border-t border-white/10 flex flex-col px-6 py-6 gap-4 shadow-2xl hidden max-h-[calc(100vh-72px)] overflow-y-auto z-50">
+    <a href="index.html" class="text-white/80 font-medium text-[15px] hover:text-white">Home</a>
+    <a href="index2.html" class="text-white/80 font-medium text-[15px] hover:text-white">Home 2</a>
+    <a href="about.html" class="text-white/80 font-medium text-[15px] hover:text-white">About</a>
+    <a href="programs.html" class="text-white/80 font-medium text-[14.5px] hover:text-lime" style="padding-left:14px">&bull; Sports Programs</a>
+    <a href="coaches.html" class="text-white/80 font-medium text-[14.5px] hover:text-lime" style="padding-left:14px">&bull; Coaches</a>
+    <a href="events.html" class="text-white/80 font-medium text-[15px] hover:text-white">Events</a>
+    <a href="contact.html" class="text-lime font-bold text-[15px]" aria-current="page">Contact</a>
+    
+    <div class="h-px bg-white/15 my-2"></div>
+    
+    <!-- Mobile Drawer Action Controls: RTL, Theme, Dashboard, Sign In -->
+    <div class="flex items-center gap-3 py-1">
+      <button id="rtl-toggle-mobile" class="flex items-center justify-center px-4 py-2 rounded-full border border-white/20 text-white/90 text-xs font-bold hover:border-lime hover:text-lime transition-colors" aria-label="Toggle RTL">RTL</button>
+      <button id="theme-toggle-mobile" class="flex items-center justify-center w-9 h-9 rounded-full border border-white/20 text-white/90 hover:border-lime hover:text-lime transition-colors" aria-label="Switch colour theme" type="button">
+        <svg class="icon-moon-m" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.8A9 9 0 1 1 11.2 3 7 7 0 0 0 21 12.8Z"/></svg>
+        <svg class="icon-sun-m hidden" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+      </button>
+    </div>
+    
+    <a href="dashboard.html" class="border border-white/25 text-white text-center font-semibold text-[14px] rounded-lg px-5 py-2.5 hover:bg-white/5 transition">Dashboard</a>
+    <a href="signin.html" class="bg-lime text-navy text-center font-extrabold text-[14px] rounded-lg px-5 py-2.5 hover:brightness-95 transition">Sign In</a>
+  </div>
 </header>
 
 <div id="menu-backdrop" class="menu-backdrop" aria-hidden="true"></div>
@@ -724,40 +729,21 @@ document.addEventListener('DOMContentLoaded', function () {
   if (rtlToggleMobile) rtlToggleMobile.addEventListener('click', toggleRTL);
 
   /* ─── 3. Mobile Navigation ─── */
-  var menuBtn      = document.getElementById('menu-btn');
-  var mobileDrawer = document.getElementById('mobile-drawer');
-  var menuBackdrop = document.getElementById('menu-backdrop');
-  var openIcon     = document.getElementById('menu-icon-open');
-  var closeIcon    = document.getElementById('menu-icon-close');
+  var menuBtn    = document.getElementById('menu-btn');
+  var mobileMenu = document.getElementById('mobile-menu') || document.getElementById('mobile-drawer');
 
-  function openMenu() {
-    mobileDrawer.classList.add('is-open');
-    menuBackdrop.classList.add('is-open');
-    menuBtn.setAttribute('aria-expanded', 'true');
-    if (openIcon)  openIcon.classList.add('hidden');
-    if (closeIcon) closeIcon.classList.remove('hidden');
-    document.body.style.overflow = 'hidden';
-  }
-
-  function closeMenu() {
-    mobileDrawer.classList.remove('is-open');
-    menuBackdrop.classList.remove('is-open');
-    menuBtn.setAttribute('aria-expanded', 'false');
-    if (openIcon)  openIcon.classList.remove('hidden');
-    if (closeIcon) closeIcon.classList.add('hidden');
-    document.body.style.overflow = '';
-  }
-
-  if (menuBtn && mobileDrawer) {
+  if (menuBtn && mobileMenu) {
     menuBtn.addEventListener('click', function () {
-      mobileDrawer.classList.contains('is-open') ? closeMenu() : openMenu();
+      var isOpen = mobileMenu.classList.toggle('open');
+      mobileMenu.classList.toggle('hidden', !isOpen);
+      mobileMenu.classList.toggle('flex', isOpen);
     });
-    if (menuBackdrop) menuBackdrop.addEventListener('click', closeMenu);
-    mobileDrawer.querySelectorAll('a').forEach(function (a) {
-      a.addEventListener('click', closeMenu);
-    });
-    document.addEventListener('keydown', function (e) {
-      if (e.key === 'Escape' && mobileDrawer.classList.contains('is-open')) closeMenu();
+
+    mobileMenu.querySelectorAll('a').forEach(function (a) {
+      a.addEventListener('click', function () {
+        mobileMenu.classList.remove('open', 'flex');
+        mobileMenu.classList.add('hidden');
+      });
     });
   }
 

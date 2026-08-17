@@ -43,14 +43,16 @@ document.addEventListener('DOMContentLoaded', () => {
   rtlToggleMobile && rtlToggleMobile.addEventListener('click', toggleRTL);
 
   /* ---------- Mobile navigation ---------- */
-  const menuToggle = document.getElementById('menuToggle');
-  const mobileMenu = document.getElementById('mobileMenu');
+  const menuToggle = document.getElementById('menuToggle') || document.getElementById('menu-btn');
+  const mobileMenu = document.getElementById('mobileMenu') || document.getElementById('mobile-menu');
   const iconMenu = document.getElementById('iconMenu');
   const iconClose = document.getElementById('iconClose');
 
   if (menuToggle && mobileMenu) {
     menuToggle.addEventListener('click', () => {
       const isOpen = mobileMenu.classList.toggle('is-open');
+      mobileMenu.classList.toggle('hidden', !isOpen);
+      mobileMenu.classList.toggle('flex', isOpen);
       menuToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
       iconMenu && iconMenu.classList.toggle('hidden', isOpen);
       iconClose && iconClose.classList.toggle('hidden', !isOpen);
@@ -59,6 +61,8 @@ document.addEventListener('DOMContentLoaded', () => {
     mobileMenu.querySelectorAll('a').forEach(link => {
       link.addEventListener('click', () => {
         mobileMenu.classList.remove('is-open');
+        mobileMenu.classList.add('hidden');
+        mobileMenu.classList.remove('flex');
         menuToggle.setAttribute('aria-expanded', 'false');
         iconMenu && iconMenu.classList.remove('hidden');
         iconClose && iconClose.classList.add('hidden');

@@ -69,35 +69,19 @@ document.addEventListener('DOMContentLoaded', () => {
      ============================================ */
   const menuBtn = document.getElementById('menu-btn');
   const mobileMenu = document.getElementById('mobile-menu');
-  const menuBackdrop = document.getElementById('menu-backdrop');
-  const menuIconOpen = document.getElementById('menu-icon-open');
-  const menuIconClose = document.getElementById('menu-icon-close');
-
-  function openMenu() {
-    mobileMenu.classList.add('is-open');
-    menuBackdrop.classList.remove('hidden');
-    requestAnimationFrame(() => menuBackdrop.classList.add('is-open'));
-    menuBtn.setAttribute('aria-expanded', 'true');
-    menuIconOpen.classList.add('hidden');
-    menuIconClose.classList.remove('hidden');
-  }
-  function closeMenu() {
-    mobileMenu.classList.remove('is-open');
-    menuBackdrop.classList.remove('is-open');
-    setTimeout(() => menuBackdrop.classList.add('hidden'), 200);
-    menuBtn.setAttribute('aria-expanded', 'false');
-    menuIconOpen.classList.remove('hidden');
-    menuIconClose.classList.add('hidden');
-  }
 
   if (menuBtn && mobileMenu) {
     menuBtn.addEventListener('click', () => {
-      mobileMenu.classList.contains('is-open') ? closeMenu() : openMenu();
+      const isOpen = mobileMenu.classList.toggle('open');
+      mobileMenu.classList.toggle('hidden', !isOpen);
+      mobileMenu.classList.toggle('flex', isOpen);
     });
-    menuBackdrop.addEventListener('click', closeMenu);
-    mobileMenu.querySelectorAll('a').forEach(link => link.addEventListener('click', closeMenu));
-    document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape' && mobileMenu.classList.contains('is-open')) closeMenu();
+
+    mobileMenu.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.remove('open', 'flex');
+        mobileMenu.classList.add('hidden');
+      });
     });
   }
 
