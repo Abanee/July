@@ -313,8 +313,8 @@ body {
   justify-content: center;
   gap: 10px;
   padding: 15px 36px;
-  background: var(--gal-accent);
-  color: #061A2E;
+  background: var(--gal-accent) !important;
+  color: #061A2E !important;
   font-family: 'Manrope', sans-serif;
   font-size: 15px;
   font-weight: 800;
@@ -327,8 +327,9 @@ body {
 }
 
 .gal-view-more-btn:hover {
-  background: var(--gal-accent-h);
-  border-color: var(--gal-accent-h);
+  background: var(--gal-accent-h) !important;
+  border-color: var(--gal-accent-h) !important;
+  color: #061A2E !important;
   transform: translateY(-3px);
   box-shadow: 0 14px 32px rgba(168, 214, 0, 0.38);
 }

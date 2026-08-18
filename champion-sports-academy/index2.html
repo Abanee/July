@@ -558,16 +558,27 @@
         <button class="sport-tab" data-sport="athletics" role="tab" aria-selected="false">Athletics</button>
       </div>
 
-      <div class="schedule-table" id="scheduleTable"></div>
+      <!-- 2-Column Sport Card + Weekly Timetable Showcase -->
+      <div class="sport-schedule-showcase grid grid-cols-1 lg:grid-cols-12 gap-6 items-stretch mt-6" id="sportShowcase">
+        <!-- Left: Dynamic Sport Image Card (4 cols) -->
+        <div class="lg:col-span-4" id="sportImageCard">
+          <!-- Populated dynamically by JS -->
+        </div>
 
-      <div class="schedule-note">
-        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#687585" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 8v5M12 16h.01"/></svg>
-        Actual timings may vary by age group and batch availability.
+        <!-- Right: 7-Day Timetable Grid (8 cols) -->
+        <div class="lg:col-span-8 flex flex-col justify-between">
+          <div class="schedule-table" id="scheduleTable"></div>
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mt-6 pt-4 border-t border-bd">
+            <div class="schedule-note m-0 flex items-center gap-2 text-xs text-muted">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 8v5M12 16h.01"/></svg>
+              <span>Actual timings may vary by age group and batch availability.</span>
+            </div>
+            <a href="#book-trial" class="btn-lime-sm whitespace-nowrap shrink-0">View All Batch Timings
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </a>
+          </div>
+        </div>
       </div>
-
-      <a href="#" class="btn-lime-sm mt-8">View All Batch Timings
-        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-      </a>
     </div>
   </div>
 </section>

@@ -101,11 +101,25 @@ document.addEventListener('DOMContentLoaded', () => {
      ============================================ */
   const sportsData = {
     football: {
-      name: 'Football',
-      description: 'Structured football coaching focused on ball control, passing, movement, decision-making and match awareness.',
+      name: 'Football Program',
+      tagline: 'Technical Precision, Positional Mastery & Fast-Paced Matchplay',
+      description: 'A comprehensive curriculum compounding technical touch, passing speed, pressing structure, positional discipline and high-intensity match IQ.',
       age: '5+ years',
-      levels: ['Beginner', 'Developing', 'Advanced', 'Competitive'],
-      focus: ['Technical Skills', 'Game Awareness', 'Fitness', 'Match Practice'],
+      levels: ['Beginner (5-8)', 'Developing (9-13)', 'Advanced (14-16)', 'Elite Squads (17+)'],
+      coachRatio: '8:1 Athlete to Coach',
+      coachCert: 'UEFA / State Licensed Staff',
+      surface: 'FIFA Quality Pro Artificial Turf',
+      telemetry: 'Quarterly Speed & Sprint Tracking',
+      curriculum: [
+        { title: 'Ball Mastery & 1v1 Dominance', desc: 'First touch control, turning, dribbling in tight channels, and defensive shielding.' },
+        { title: 'Passing Tempo & Support Angles', desc: 'One-touch distribution, wall passes, switching play, and diagonal penetrations.' },
+        { title: 'Tactical Structure & Pressing', desc: 'Compact defensive lines, transition triggers, counter-pressing, and set-piece execution.' }
+      ],
+      milestones: [
+        { stage: 'Stage 1 (Grassroots)', desc: 'Movement literacy, ball coordination and fun competitive small-sided games.' },
+        { stage: 'Stage 2 (Foundation)', desc: 'Positional awareness, tactical communication, and structured team play.' },
+        { stage: 'Stage 3 (Performance)', desc: 'Full 11v11 matchplay, video review, speed periodization, and regional tournaments.' }
+      ],
       schedule: [
         { day: 'MON', title: 'Skills Training', time: '5:30 PM – 7:00 PM' },
         { day: 'TUE', title: 'Fitness Development', time: '5:30 PM – 6:30 PM' },
@@ -118,11 +132,25 @@ document.addEventListener('DOMContentLoaded', () => {
       scheduleNote: "Schedules vary by age group, level and sport. Here's a sample week for a Developing Football program.",
     },
     basketball: {
-      name: 'Basketball',
-      description: 'Build basketball fundamentals through ball handling, shooting, passing, movement and game situations.',
+      name: 'Basketball Program',
+      tagline: 'Handles, Shot Mechanics, Court Vision & Transition Offense',
+      description: 'Refining biomechanical shooting form, two-ball dribbling under contact, pick-and-roll reads, fastbreak spacing and perimeter defense.',
       age: '8+ years',
-      levels: ['Beginner', 'Developing', 'Advanced', 'Competitive'],
-      focus: ['Ball Handling', 'Shooting Technique', 'Team Play', 'Game Practice'],
+      levels: ['Beginner (8-10)', 'Developing (11-13)', 'Advanced (14-16)', 'Varsity Squad (17+)'],
+      coachRatio: '6:1 Athlete to Coach',
+      coachCert: 'FIBA / National Certified Coaches',
+      surface: 'Shock-Absorbent Maple Wood Hardwood Courts',
+      telemetry: 'Vertical Jump & Shot Arc Analysis',
+      curriculum: [
+        { title: 'Ball Handling & Separation', desc: 'Crossover counters, hesitation moves, retreat dribbles and attacking closeouts.' },
+        { title: 'Shooting Form & Catch-and-Shoot', desc: 'Arc optimization, balance hand release, free-throw consistency and pull-up jumpers.' },
+        { title: 'Defensive Stance & Help Rotation', desc: 'Denying passing lanes, boxing out, screen coverage and transition defense.' }
+      ],
+      milestones: [
+        { stage: 'Stage 1 (Fundamentals)', desc: 'Dribbling rhythm, layup footwork, passing accuracy and basic court rules.' },
+        { stage: 'Stage 2 (Development)', desc: 'Pick-and-roll execution, fastbreak spacing and full-court scrimmage habits.' },
+        { stage: 'Stage 3 (Championship)', desc: 'High-tempo 5v5 tournament play, video scouting and collegiate showcase preparation.' }
+      ],
       schedule: [
         { day: 'MON', title: 'Ball Handling', time: '5:00 PM – 6:30 PM' },
         { day: 'TUE', title: 'Shooting Drills', time: '5:00 PM – 6:30 PM' },
@@ -135,11 +163,25 @@ document.addEventListener('DOMContentLoaded', () => {
       scheduleNote: "Schedules vary by age group, level and sport. Here's a sample week for a Developing Basketball program.",
     },
     badminton: {
-      name: 'Badminton',
-      description: 'Develop footwork, racket control, shot technique, movement and match confidence through structured practice.',
+      name: 'Badminton Program',
+      tagline: 'Explosive Footwork, Racket Speed, Smashes & Rally Control',
+      description: 'Developing lightning-quick multi-directional split steps, wrist snap power, net deception, deceptive drops and match stamina.',
       age: '7+ years',
-      levels: ['Beginner', 'Developing', 'Advanced', 'Competitive'],
-      focus: ['Footwork', 'Racket Technique', 'Rally Consistency', 'Match Practice'],
+      levels: ['Beginner (7-9)', 'Developing (10-12)', 'Advanced (13-15)', 'Tournament Squad (16+)'],
+      coachRatio: '4:1 Athlete to Coach',
+      coachCert: 'BWF Certified International Coaches',
+      surface: 'BWF Standard Multi-Layered Synthetic Courts',
+      telemetry: 'Agility Gate & Smash Speed Telemetry',
+      curriculum: [
+        { title: '6-Corner Footwork Dynamics', desc: 'Split-step timing, lunging recovery, shadow footwork and court coverage.' },
+        { title: 'Shot Variety & Stroke Mechanics', desc: 'Forehand/backhand clears, tumbling net shots, drops, drives and steep smashes.' },
+        { title: 'Match Strategy & Tactical Mindset', desc: 'Singles court manipulation, doubles rotation patterns and pressure handling.' }
+      ],
+      milestones: [
+        { stage: 'Stage 1 (Foundation)', desc: 'Grip techniques, balance posture, basic clears and shuttle hand-eye tracking.' },
+        { stage: 'Stage 2 (Intermediate)', desc: 'Smash-and-net combinations, serve variations and fast doubles counter-rallies.' },
+        { stage: 'Stage 3 (Competitive)', desc: 'State-ranking circuit prep, high-tempo sparring and tactical match video analytics.' }
+      ],
       schedule: [
         { day: 'MON', title: 'Footwork & Movement', time: '4:30 PM – 6:00 PM' },
         { day: 'TUE', title: 'Racket Technique', time: '4:30 PM – 6:00 PM' },
@@ -152,11 +194,25 @@ document.addEventListener('DOMContentLoaded', () => {
       scheduleNote: "Schedules vary by age group, level and sport. Here's a sample week for a Developing Badminton program.",
     },
     athletics: {
-      name: 'Athletics',
-      description: 'Develop speed, endurance, coordination and running technique through age-appropriate athletics training.',
+      name: 'Athletics & Track Program',
+      tagline: 'Sprint Mechanics, Acceleration, Endurance & Core Power',
+      description: 'Scientific running biomechanics, block starts, anaerobic power periodization, hurdle agility, pacing strategies and race preparation.',
       age: '8+ years',
-      levels: ['Foundation', 'Developing', 'Advanced', 'Competitive'],
-      focus: ['Sprint Technique', 'Endurance', 'Coordination', 'Track Drills'],
+      levels: ['Foundation (8-10)', 'Developing (11-13)', 'Advanced (14-16)', 'State Squad (17+)'],
+      coachRatio: '8:1 Athlete to Coach',
+      coachCert: 'World Athletics Certified Coaches',
+      surface: '8-Lane Full Olympic Synthetic Tartan Track',
+      telemetry: 'Laser Photocell Sprint Gates',
+      curriculum: [
+        { title: 'Sprint Biomechanics & Drive Phase', desc: 'Knee drive posture, arm swing velocity, ground contact force and acceleration angles.' },
+        { title: 'Endurance & Lactate Threshold', desc: 'Interval tempo runs, aerobic base compounding, pacing splits and breathing rhythm.' },
+        { title: 'Explosive Power & Plyometrics', desc: 'Bound drills, box jumps, resistance band sprints and core rotational stability.' }
+      ],
+      milestones: [
+        { stage: 'Stage 1 (Fundamentals)', desc: 'Form posture, stride rhythm, kinetic flexibility and fun obstacle relays.' },
+        { stage: 'Stage 2 (Track Development)', desc: 'Starting block mastery, hurdle clearance, baton exchange and 100m-800m splits.' },
+        { stage: 'Stage 3 (Elite Timing)', desc: 'National qualifying benchmarks, laser-timed time trials and peak periodization.' }
+      ],
       schedule: [
         { day: 'MON', title: 'Sprint Technique', time: '6:00 AM – 7:30 AM' },
         { day: 'TUE', title: 'Strength Training', time: '6:00 AM – 7:00 AM' },
@@ -174,7 +230,7 @@ document.addEventListener('DOMContentLoaded', () => {
   let currentLevel = 'beginner';
 
   /* ============================================
-     SPORT SELECTOR
+     SPORT SELECTOR & CURRICULUM EXPLORER
      ============================================ */
   const sportTabs = document.querySelectorAll('.sport-tab');
   const sportPanel = document.getElementById('sportPanel');
@@ -185,34 +241,110 @@ document.addEventListener('DOMContentLoaded', () => {
   function renderSportPanel(sportKey) {
     const s = sportsData[sportKey];
     if (!s || !sportPanel) return;
+
     sportPanel.innerHTML = `
-      <div class="sp-fade">
-        <p class="sp-description">${s.description}</p>
-        <div class="sp-meta-row">
+      <div class="curriculum-explorer-card bg-white border border-border rounded-2xl p-6 sm:p-8 shadow-sm reveal-up">
+        
+        <!-- Header Row -->
+        <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-4 pb-6 border-b border-border">
           <div>
-            <p class="sp-meta-label">Recommended Age</p>
-            <p class="sp-meta-value">${s.age}</p>
-          </div>
-          <div>
-            <p class="sp-meta-label">Sport</p>
-            <p class="sp-meta-value">${s.name}</p>
-          </div>
-        </div>
-        <p class="sp-meta-label" style="margin-bottom:10px;">Available Levels</p>
-        <div class="sp-levels">
-          ${s.levels.map(l => `<span class="sp-level-chip">${l}</span>`).join('')}
-        </div>
-      </div>
-      <div class="sp-focus-box sp-fade">
-        <p class="sp-focus-title">Training Focus</p>
-        <div class="sp-focus-list">
-          ${s.focus.map(f => `
-            <div class="sp-focus-item">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><polyline points="20 6 9 17 4 12"/></svg>
-              <span>${f}</span>
+            <div class="flex flex-wrap items-center gap-2.5 mb-2">
+              <span class="bg-lime/20 text-navy font-display font-extrabold text-[12px] px-3 py-1 rounded-full uppercase tracking-wider">${s.name}</span>
+              <span class="text-muted text-[12.5px] font-semibold">${s.age}</span>
+              <span class="text-muted/40 font-bold hidden sm:inline">&bull;</span>
+              <span class="text-muted text-[12.5px] font-semibold">${s.coachRatio}</span>
             </div>
-          `).join('')}
+            <h3 class="font-display font-extrabold text-[22px] sm:text-[26px] text-dark-text tracking-tight">${s.tagline}</h3>
+            <p class="text-muted text-[14.5px] leading-relaxed mt-2 max-w-3xl">${s.description}</p>
+          </div>
+          <div class="flex items-center gap-3 shrink-0">
+            <a href="contact.html?sport=${sportKey}" class="btn-lime">Book a Trial &rarr;</a>
+          </div>
         </div>
+
+        <!-- 3-Column Bento Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 pt-6 items-stretch">
+          
+          <!-- Bento 1: Core Methodology Pillars -->
+          <div class="bento-curriculum-col p-5 rounded-xl bg-soft border border-border flex flex-col justify-between">
+            <div>
+              <div class="flex items-center gap-2.5 mb-4">
+                <span class="w-8 h-8 rounded-lg bg-lime/20 text-navy flex items-center justify-center font-bold text-xs">01</span>
+                <h4 class="font-display font-bold text-dark-text text-[15px]">Core Curriculum Pillars</h4>
+              </div>
+              <div class="space-y-3">
+                ${s.curriculum.map(c => `
+                  <div class="text-left">
+                    <p class="text-[13px] font-bold text-dark-text flex items-center gap-1.5">
+                      <svg class="text-lime shrink-0" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                      ${c.title}
+                    </p>
+                    <p class="text-[12px] text-muted leading-relaxed pl-5 mt-0.5">${c.desc}</p>
+                  </div>
+                `).join('')}
+              </div>
+            </div>
+            <div class="pt-4 mt-4 border-t border-border/80 flex items-center justify-between text-xs text-muted">
+              <span>Sessions: 75–90 mins</span>
+              <span class="font-semibold text-lime">Skill Evaluated</span>
+            </div>
+          </div>
+
+          <!-- Bento 2: Progression Roadmaps -->
+          <div class="bento-curriculum-col p-5 rounded-xl bg-soft border border-border flex flex-col justify-between">
+            <div>
+              <div class="flex items-center gap-2.5 mb-4">
+                <span class="w-8 h-8 rounded-lg bg-lime/20 text-navy flex items-center justify-center font-bold text-xs">02</span>
+                <h4 class="font-display font-bold text-dark-text text-[15px]">Progression Milestones</h4>
+              </div>
+              <div class="space-y-3">
+                ${s.milestones.map(m => `
+                  <div class="text-left">
+                    <p class="text-[13px] font-bold text-dark-text flex items-center gap-1.5">
+                      <span class="w-1.5 h-1.5 rounded-full bg-lime shrink-0"></span>
+                      ${m.stage}
+                    </p>
+                    <p class="text-[12px] text-muted leading-relaxed pl-3.5 mt-0.5">${m.desc}</p>
+                  </div>
+                `).join('')}
+              </div>
+            </div>
+            <div class="pt-4 mt-4 border-t border-border/80 flex items-center justify-between text-xs text-muted">
+              <span>All 4 Skill Levels</span>
+              <span class="font-semibold text-lime">Quarterly Tests</span>
+            </div>
+          </div>
+
+          <!-- Bento 3: Standards & Facility Specs -->
+          <div class="bento-curriculum-col p-5 rounded-xl bg-soft border border-border flex flex-col justify-between">
+            <div>
+              <div class="flex items-center gap-2.5 mb-4">
+                <span class="w-8 h-8 rounded-lg bg-lime/20 text-navy flex items-center justify-center font-bold text-xs">03</span>
+                <h4 class="font-display font-bold text-dark-text text-[15px]">Academy Standards</h4>
+              </div>
+              <div class="space-y-3 text-[12.5px] text-muted">
+                <div class="flex items-start gap-2">
+                  <svg class="text-lime shrink-0 mt-0.5" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                  <div><strong>Coach Credentials:</strong> ${s.coachCert}</div>
+                </div>
+                <div class="flex items-start gap-2">
+                  <svg class="text-lime shrink-0 mt-0.5" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                  <div><strong>Surface Quality:</strong> ${s.surface}</div>
+                </div>
+                <div class="flex items-start gap-2">
+                  <svg class="text-lime shrink-0 mt-0.5" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                  <div><strong>Telemetry:</strong> ${s.telemetry}</div>
+                </div>
+              </div>
+            </div>
+            <div class="pt-4 mt-4 border-t border-border/80 flex items-center justify-between text-xs text-muted">
+              <span>Verified Safety</span>
+              <span class="font-semibold text-lime">Certified Gear</span>
+            </div>
+          </div>
+
+        </div>
+
       </div>
     `;
   }

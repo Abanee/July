@@ -59,8 +59,29 @@
   background-color: #03111F !important;
   color: #ffffff !important;
 }
-.bg-deep-navy a {
+.bg-deep-navy a:not([class*="btn-lime"]):not([class*="bg-lime"]):not(.btn-lime):not(.btn-lime-sm) {
   color: inherit;
+}
+
+/* Global Lime Button Legibility */
+.btn-lime,
+.btn-lime-sm,
+.bg-lime,
+[class*="bg-lime"],
+[class*="bg-[#A8D600]"] {
+  color: #061A2E !important;
+}
+.btn-lime:hover,
+.btn-lime-sm:hover,
+.bg-lime:hover,
+[class*="bg-lime"]:hover {
+  color: #061A2E !important;
+}
+.btn-lime svg,
+.btn-lime-sm svg,
+.bg-lime svg {
+  stroke: currentColor !important;
+  color: #061A2E !important;
 }
 
 /* Light mode high-contrast text rules */
@@ -290,8 +311,8 @@ body {
 
 .btn-lime {
   display: inline-flex; align-items: center; gap: 9px;
-  background: var(--lime);
-  color: var(--navy);
+  background: var(--lime) !important;
+  color: #061A2E !important;
   font-weight: 700;
   font-size: 14px;
   height: 46px;
@@ -299,7 +320,11 @@ body {
   border-radius: 8px;
   transition: all .2s ease;
 }
-.btn-lime:hover { transform: translateY(-2px); box-shadow: 0 10px 22px rgba(168,214,0,0.3); }
+.btn-lime:hover {
+  color: #061A2E !important;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 22px rgba(168,214,0,0.3);
+}
 
 .btn-outline-light {
   display: inline-flex; align-items: center;
@@ -750,26 +775,88 @@ body {
   display: grid;
   grid-template-columns: repeat(7, 1fr);
   border: 1px solid var(--bd);
-  border-radius: 12px;
+  border-radius: 14px;
   overflow: hidden;
+  background: var(--bg-card);
+  flex: 1;
+  min-height: 260px;
+  align-content: stretch;
 }
 .sched-col {
-  padding: 18px 14px;
+  padding: 16px 12px;
   border-left: 1px solid var(--bd);
-  min-height: 128px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  min-height: 100%;
+  min-width: 0;
+  background: var(--bg-card);
+  transition: background-color .2s ease;
 }
 .sched-col:first-child { border-left: none; }
 .sched-day {
-  font-size: 11.5px;
+  font-size: 11px;
   font-weight: 800;
-  letter-spacing: 0.06em;
-  color: var(--muted);
-  margin-bottom: 12px;
+  letter-spacing: 0.08em;
+  color: var(--accent-text, #4D7C0F);
+  margin-bottom: 10px;
+  text-transform: uppercase;
 }
-.sched-title { font-size: 13.5px; font-weight: 700; color: var(--dark); line-height: 1.4; margin-bottom: 6px; }
-.sched-time { font-size: 12.5px; color: var(--muted); line-height: 1.5; }
-.sched-col.is-rest { background: #FAFBFA; }
-.sched-col.is-rest .sched-title { color: var(--muted); }
+:root[data-theme="dark"] .sched-day {
+  color: var(--accent);
+}
+.sched-title {
+  font-family: 'Manrope', sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--dark);
+  line-height: 1.35;
+  margin-bottom: 8px;
+  word-break: normal;
+  hyphens: none;
+}
+.sched-time {
+  font-size: 11.5px;
+  font-weight: 500;
+  color: var(--muted);
+  line-height: 1.4;
+  white-space: normal;
+  margin-top: auto;
+}
+.sched-col.is-rest {
+  background: #FAFBFA;
+}
+.sched-col.is-rest .sched-title {
+  color: var(--muted);
+}
+
+.sport-image-card {
+  background: var(--bg-card);
+  border: 1px solid var(--bd);
+  border-radius: 16px;
+  overflow: hidden;
+  height: 100%;
+  transition: all .25s ease;
+}
+.sport-image-card:hover {
+  border-color: var(--lime);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+:root[data-theme="dark"] .sport-image-card {
+  background: var(--bg-card) !important;
+  border-color: var(--border-color) !important;
+}
+:root[data-theme="dark"] .sport-image-card:hover {
+  border-color: var(--accent) !important;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35) !important;
+}
+:root[data-theme="dark"] .sched-col {
+  background: var(--bg-card) !important;
+  border-color: var(--border-color) !important;
+}
+:root[data-theme="dark"] .sched-col.is-rest {
+  background: rgba(255, 255, 255, 0.02) !important;
+}
 
 .schedule-note {
   display: flex; align-items: center; gap: 8px;

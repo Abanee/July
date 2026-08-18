@@ -146,6 +146,53 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   /* ---------- Batch schedule data + tab switching ---------- */
+  const sportsMeta = {
+    football: {
+      name: 'Football Academy',
+      tagline: 'High-Tempo Matchplay & Skill Drills',
+      image: 'Assets/Home/home01.jpg',
+      badge: 'Active Cohorts',
+      age: 'Ages 5 – 18',
+      ratio: '8:1 Athlete to Coach',
+      facility: 'Full-Size FIFA Certified Turf',
+      tags: ['Tactical IQ', 'Ball Mastery', 'Agility & Speed'],
+      trialLink: 'contact.html?sport=football',
+    },
+    basketball: {
+      name: 'Basketball Academy',
+      tagline: 'Court Vision, Shooting & Playmaking',
+      image: 'Assets/Home/home02.jpg',
+      badge: 'Open Enrollments',
+      age: 'Ages 7 – 18',
+      ratio: '6:1 Athlete to Coach',
+      facility: 'Indoor Maple Wood Courts',
+      tags: ['Ball Handling', 'Shooting Form', 'Defensive Stance'],
+      trialLink: 'contact.html?sport=basketball',
+    },
+    badminton: {
+      name: 'Badminton Academy',
+      tagline: 'Reflex Speed, Racket Precision & Rallies',
+      image: 'Assets/Home/home03.jpg',
+      badge: 'Limited Slots',
+      age: 'Ages 6 – 17',
+      ratio: '4:1 Athlete to Coach',
+      facility: 'BWF Standard Synthetic Courts',
+      tags: ['Footwork Agility', 'Smash Accuracy', 'Match Fitness'],
+      trialLink: 'contact.html?sport=badminton',
+    },
+    athletics: {
+      name: 'Athletics & Track',
+      tagline: 'Explosive Acceleration, Stamina & Form',
+      image: 'Assets/Home/home04.jpg',
+      badge: 'New Season',
+      age: 'Ages 8 – 18',
+      ratio: '8:1 Athlete to Coach',
+      facility: '8-Lane Synthetic Tartan Track',
+      tags: ['Sprint Mechanics', 'Laser Telemetry', 'Core Strength'],
+      trialLink: 'contact.html?sport=athletics',
+    },
+  };
+
   const schedules = {
     football: [
       { day: 'MON', title: 'Football Skills', time: '5:30 PM – 7:00 PM' },
@@ -186,18 +233,51 @@ document.addEventListener('DOMContentLoaded', () => {
   };
 
   const scheduleTable = document.getElementById('scheduleTable');
+  const sportImageCard = document.getElementById('sportImageCard');
   const sportTabs = document.querySelectorAll('.sport-tab');
 
   function renderSchedule(sport) {
-    if (!scheduleTable) return;
+    const meta = sportsMeta[sport] || sportsMeta.football;
     const data = schedules[sport] || schedules.football;
-    scheduleTable.innerHTML = data.map(d => `
-      <div class="sched-col ${d.rest ? 'is-rest' : ''}">
-        <p class="sched-day">${d.day}</p>
-        <p class="sched-title">${d.title}</p>
-        ${!d.rest ? `<p class="sched-time">${d.time}</p>` : ''}
-      </div>
-    `).join('');
+
+    if (sportImageCard) {
+      sportImageCard.innerHTML = `
+        <div class="sport-image-card bg-white border border-bd rounded-2xl overflow-hidden shadow-sm flex flex-col h-full hover:border-lime transition-all duration-300">
+          <div class="relative h-[190px] overflow-hidden group">
+            <img src="${meta.image}" alt="${meta.name} training at Champion Sports Academy" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy">
+            <div class="absolute inset-0 bg-gradient-to-t from-[#061A2E]/85 via-transparent to-transparent"></div>
+            <span class="absolute top-3 left-3 bg-[#A8D600] text-[#03111F] text-[11px] font-extrabold px-3 py-1 rounded-full uppercase tracking-wider shadow-sm">${meta.badge}</span>
+            <span class="absolute bottom-3 left-3 text-white font-display font-extrabold text-[17px] drop-shadow-md">${meta.name}</span>
+          </div>
+          <div class="p-5 flex flex-col flex-1 justify-between gap-4">
+            <div>
+              <p class="text-xs font-semibold text-lime-dark tracking-wide uppercase mb-1">${meta.age} &bull; ${meta.ratio}</p>
+              <p class="text-muted text-[13px] leading-relaxed">${meta.tagline}</p>
+              <div class="flex flex-wrap gap-1.5 mt-3">
+                ${meta.tags.map(t => `<span class="text-[11px] font-semibold bg-softbg text-muted px-2.5 py-1 rounded-md border border-bd">${t}</span>`).join('')}
+              </div>
+            </div>
+            <div class="pt-3 border-t border-bd flex items-center justify-between">
+              <span class="text-[12px] text-muted flex items-center gap-1.5">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#A8D600" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                ${meta.facility}
+              </span>
+              <a href="${meta.trialLink}" class="text-[12.5px] font-bold text-lime-dark hover:underline flex items-center gap-1">Book Trial &rarr;</a>
+            </div>
+          </div>
+        </div>
+      `;
+    }
+
+    if (scheduleTable) {
+      scheduleTable.innerHTML = data.map(d => `
+        <div class="sched-col ${d.rest ? 'is-rest' : ''}">
+          <p class="sched-day">${d.day}</p>
+          <p class="sched-title">${d.title}</p>
+          ${!d.rest ? `<p class="sched-time">${d.time}</p>` : ''}
+        </div>
+      `).join('');
+    }
   }
 
   sportTabs.forEach(tab => {

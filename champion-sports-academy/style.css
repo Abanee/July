@@ -75,8 +75,35 @@
   background-color: #03111F !important;
   color: #ffffff !important;
 }
-.bg-deep-navy a {
+.bg-deep-navy a:not([class*="btn-lime"]):not([class*="bg-lime"]):not(.btn-lime):not(.btn-lime-sm):not(.header-btn-lime) {
   color: inherit;
+}
+
+/* Global Lime Button Legibility */
+.btn-lime,
+.btn-lime-sm,
+.btn-lime-hero,
+.bg-lime,
+[class*="bg-lime"],
+.header-btn-lime,
+.ct-cta-btn-lime {
+  color: #061A2E !important;
+}
+.btn-lime:hover,
+.btn-lime-sm:hover,
+.btn-lime-hero:hover,
+.bg-lime:hover,
+[class*="bg-lime"]:hover,
+.header-btn-lime:hover,
+.ct-cta-btn-lime:hover {
+  color: #061A2E !important;
+}
+.btn-lime svg,
+.btn-lime-sm svg,
+.bg-lime svg,
+[class*="bg-lime"] svg {
+  stroke: currentColor !important;
+  color: #061A2E !important;
 }
 
 /* ===================== BASE ===================== */
@@ -805,21 +832,29 @@ body[data-theme="dark"] {
 
 :root[data-theme="dark"] .bg-soft,
 :root[data-theme="dark"] section.bg-soft,
-:root[data-theme="dark"] div.bg-soft {
+:root[data-theme="dark"] div.bg-soft,
+:root[data-theme="dark"] .bg-\[\#F5F7F5\],
+:root[data-theme="dark"] [class*="bg-[#F5F7F5]"] {
   background-color: var(--bg-secondary) !important;
 }
 
 :root[data-theme="dark"] .bg-white,
 :root[data-theme="dark"] section.bg-white,
 :root[data-theme="dark"] div.bg-white {
-  background-color: var(--bg-primary) !important;
+  background-color: var(--bg-card) !important;
+}
+
+:root[data-theme="dark"] .bg-white .bg-white,
+:root[data-theme="dark"] div.bg-card div.bg-white {
+  background-color: var(--bg-elevated) !important;
 }
 
 :root[data-theme="dark"] .text-dark-text,
 :root[data-theme="dark"] h1.text-dark-text,
 :root[data-theme="dark"] h2.text-dark-text,
 :root[data-theme="dark"] h3.text-dark-text,
-:root[data-theme="dark"] h4.text-dark-text {
+:root[data-theme="dark"] h4.text-dark-text,
+:root[data-theme="dark"] p.text-dark-text {
   color: var(--text-primary) !important;
 }
 

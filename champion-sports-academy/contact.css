@@ -48,8 +48,28 @@
   background-color: #03111F !important;
   color: #ffffff !important;
 }
-.bg-deep-navy a {
+.bg-deep-navy a:not([class*="btn-lime"]):not([class*="bg-lime"]):not(.btn-lime):not(.header-btn-lime) {
   color: inherit;
+}
+
+/* Global Lime Button Legibility */
+.btn-lime,
+.header-btn-lime,
+.bg-lime,
+[class*="bg-lime"] {
+  color: #061A2E !important;
+}
+.btn-lime:hover,
+.header-btn-lime:hover,
+.bg-lime:hover,
+[class*="bg-lime"]:hover {
+  color: #061A2E !important;
+}
+.btn-lime svg,
+.header-btn-lime svg,
+.bg-lime svg {
+  stroke: currentColor !important;
+  color: #061A2E !important;
 }
 
 /* ============================================================
@@ -80,7 +100,7 @@ body {
 }
 
 .max-w-site {
-  max-width: 1280px;
+  max-width: 1400px;
   margin-left: auto;
   margin-right: auto;
 }
@@ -136,6 +156,8 @@ header, section, footer, .contact-info-card, .ct-map-card, .channel-card, .conta
 
 .header-inner {
   width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
   padding: 0 24px;
   display: flex;
   align-items: center;
@@ -665,8 +687,8 @@ header, section, footer, .contact-info-card, .ct-map-card, .channel-card, .conta
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  background: var(--accent);
-  color: var(--on-accent);
+  background: var(--accent) !important;
+  color: #061A2E !important;
   font-size: 14px;
   font-weight: 700;
   padding: 13px 26px;
@@ -675,7 +697,8 @@ header, section, footer, .contact-info-card, .ct-map-card, .channel-card, .conta
 }
 
 .btn-lime:hover {
-  background: var(--accent-hover);
+  background: var(--accent-hover) !important;
+  color: #061A2E !important;
   transform: translateY(-2px);
 }
 
