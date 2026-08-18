@@ -194,9 +194,45 @@ footer .flex.items-center.gap-3 a:hover svg,
   color: #061A2E !important;
 }
 
+/* ===================== FOOTER RESPONSIVE FIXES (<=1024px) ===================== */
+footer {
+  width: 100% !important;
+  max-width: 100% !important;
+  overflow-x: hidden !important;
+  box-sizing: border-box !important;
+}
+
+footer a, footer li, footer span {
+  overflow-wrap: break-word;
+  word-break: break-word;
+}
+
+footer a[href^="mailto:"] {
+  word-break: break-all !important;
+}
+
+@media (max-width: 1024px) {
+  footer .grid.xl\:grid-cols-12,
+  footer .grid.lg\:grid-cols-12 {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 2.5rem 2rem !important;
+  }
+  footer [class*="col-span"] {
+    grid-column: span 1 / span 1 !important;
+  }
+}
+
+@media (max-width: 640px) {
+  footer .grid.xl\:grid-cols-12,
+  footer .grid.lg\:grid-cols-12 {
+    grid-template-columns: repeat(1, minmax(0, 1fr)) !important;
+    gap: 2rem !important;
+  }
+}
+
 /* ===================== BASE ===================== */
-html { scroll-behavior: smooth; }
-body { -webkit-font-smoothing: antialiased; transition: background-color .25s ease, color .25s ease; }
+html { scroll-behavior: smooth; overflow-x: hidden; }
+body { -webkit-font-smoothing: antialiased; transition: background-color .25s ease, color .25s ease; overflow-x: hidden; }
 
 ::selection { background: #A8D600; color: #061A2E; }
 
