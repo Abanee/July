@@ -78,7 +78,10 @@ document.addEventListener('DOMContentLoaded', () => {
   if (sportTrack && sportPrev && sportNext) {
     const getCardWidth = () => {
       const card = sportTrack.querySelector('.sport-card');
-      return card ? card.offsetWidth + 20 : 300;
+      if (!card) return 300;
+      const trackStyle = window.getComputedStyle(sportTrack);
+      const gap = parseFloat(trackStyle.gap) || 16;
+      return card.offsetWidth + gap;
     };
 
     const scrollNext = () => {
