@@ -114,6 +114,58 @@ header, section, footer, aside, div,
   transition: background-color .25s ease, border-color .25s ease, color .25s ease;
 }
 
+/* Footer Admissions Badge & Social Icons Contrast */
+footer .bg-lime\/10,
+.bg-deep-navy .bg-lime\/10 {
+  background-color: rgba(184, 224, 0, 0.18) !important;
+  border-color: rgba(184, 224, 0, 0.45) !important;
+  color: #A8D600 !important;
+}
+footer .bg-lime\/10 span,
+.bg-deep-navy .bg-lime\/10 span {
+  color: #A8D600 !important;
+}
+footer .bg-lime,
+.bg-deep-navy .bg-lime {
+  background-color: #A8D600 !important;
+}
+
+/* Footer Social Icon Buttons */
+.footer-social-btn,
+footer .footer-socials a,
+footer .flex.items-center.gap-3 a,
+.bg-deep-navy .flex.items-center.gap-3 a {
+  background-color: rgba(255, 255, 255, 0.12) !important;
+  border: 1px solid rgba(255, 255, 255, 0.25) !important;
+  color: #FFFFFF !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  transition: all 0.2s ease !important;
+}
+.footer-social-btn svg,
+footer .footer-socials a svg,
+footer .flex.items-center.gap-3 a svg,
+.bg-deep-navy .flex.items-center.gap-3 a svg {
+  color: #FFFFFF !important;
+  opacity: 1 !important;
+}
+.footer-social-btn:hover,
+footer .footer-socials a:hover,
+footer .flex.items-center.gap-3 a:hover,
+.bg-deep-navy .flex.items-center.gap-3 a:hover {
+  background-color: #A8D600 !important;
+  border-color: #A8D600 !important;
+  color: #03111F !important;
+  transform: translateY(-2px) !important;
+}
+.footer-social-btn:hover svg,
+footer .footer-socials a:hover svg,
+footer .flex.items-center.gap-3 a:hover svg,
+.bg-deep-navy .flex.items-center.gap-3 a:hover svg {
+  color: #03111F !important;
+}
+
 /* ---------- Section rhythm ---------- */
 .section-pad { padding-top: 90px; padding-bottom: 90px; }
 .section-alt { background: var(--bg-secondary); }

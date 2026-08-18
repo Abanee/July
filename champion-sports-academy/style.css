@@ -98,6 +98,94 @@
 .ct-cta-btn-lime:hover {
   color: #061A2E !important;
 }
+
+/* =======================================================
+   HIGH CONTRAST ENFORCEMENT — SPORT CARDS & FOOTER
+   ======================================================= */
+/* Sport Cards in index.html */
+.sport-card {
+  height: auto !important;
+  min-height: 440px !important;
+  background-color: #061A2E !important;
+  border-color: rgba(255, 255, 255, 0.15) !important;
+}
+.sport-card a.sport-details-btn,
+.sport-card a[href*="programs.html"] {
+  background: #A8D600 !important;
+  color: #03111F !important;
+  font-weight: 800 !important;
+  border: 1px solid #A8D600 !important;
+  box-shadow: 0 4px 14px rgba(168, 214, 0, 0.25) !important;
+  transition: all 0.2s ease !important;
+}
+.sport-card a.sport-details-btn:hover,
+.sport-card a[href*="programs.html"]:hover {
+  background: #B8E000 !important;
+  color: #03111F !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 6px 18px rgba(184, 224, 0, 0.4) !important;
+}
+.sport-card h3 {
+  color: #FFFFFF !important;
+}
+.sport-card p {
+  color: rgba(255, 255, 255, 0.75) !important;
+}
+.sport-card ul li {
+  color: rgba(255, 255, 255, 0.8) !important;
+}
+
+/* Footer Admissions Badge & Social Icons Contrast */
+footer .bg-lime\/10,
+.bg-deep-navy .bg-lime\/10 {
+  background-color: rgba(184, 224, 0, 0.18) !important;
+  border-color: rgba(184, 224, 0, 0.45) !important;
+  color: #A8D600 !important;
+}
+footer .bg-lime\/10 span,
+.bg-deep-navy .bg-lime\/10 span {
+  color: #A8D600 !important;
+}
+footer .bg-lime,
+.bg-deep-navy .bg-lime {
+  background-color: #A8D600 !important;
+}
+
+/* Footer Social Icon Buttons */
+.footer-social-btn,
+footer .footer-socials a,
+footer .flex.items-center.gap-3 a,
+.bg-deep-navy .flex.items-center.gap-3 a {
+  background-color: rgba(255, 255, 255, 0.12) !important;
+  border: 1px solid rgba(255, 255, 255, 0.25) !important;
+  color: #FFFFFF !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  transition: all 0.2s ease !important;
+}
+.footer-social-btn svg,
+footer .footer-socials a svg,
+footer .flex.items-center.gap-3 a svg,
+.bg-deep-navy .flex.items-center.gap-3 a svg {
+  color: #FFFFFF !important;
+  opacity: 1 !important;
+}
+.footer-social-btn:hover,
+footer .footer-socials a:hover,
+footer .flex.items-center.gap-3 a:hover,
+.bg-deep-navy .flex.items-center.gap-3 a:hover {
+  background-color: #A8D600 !important;
+  border-color: #A8D600 !important;
+  color: #03111F !important;
+  transform: translateY(-2px) !important;
+}
+.footer-social-btn:hover svg,
+footer .footer-socials a:hover svg,
+footer .flex.items-center.gap-3 a:hover svg,
+.bg-deep-navy .flex.items-center.gap-3 a:hover svg {
+  color: #03111F !important;
+}
 .btn-lime svg,
 .btn-lime-sm svg,
 .bg-lime svg,
