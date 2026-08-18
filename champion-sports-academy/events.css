@@ -351,14 +351,14 @@ body {
    ============================================================ */
 .ev-cards-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  grid-template-columns: 1fr;
   gap: 24px;
 }
-@media (min-width: 1024px) {
-  .ev-cards-grid { grid-template-columns: repeat(4, 1fr); }
+@media (min-width: 640px) {
+  .ev-cards-grid { grid-template-columns: repeat(2, 1fr); }
 }
-@media (max-width: 767px) {
-  .ev-cards-grid { grid-template-columns: 1fr; }
+@media (min-width: 1200px) {
+  .ev-cards-grid { grid-template-columns: repeat(4, 1fr); }
 }
 
 .ev-card {
@@ -368,6 +368,7 @@ body {
   overflow: hidden;
   display: flex;
   flex-direction: column;
+  height: 100%;
   transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
 }
 .ev-card:hover {
@@ -459,11 +460,12 @@ body {
 
 /* Card body */
 .ev-card-body {
-  padding: 18px 18px 20px;
+  padding: 20px 20px 22px;
   display: flex;
   flex-direction: column;
-  flex: 1;
+  flex: 1 1 auto;
   gap: 0;
+  min-height: 0;
 }
 .ev-card-title {
   font-family: 'Manrope', sans-serif;
@@ -491,16 +493,18 @@ body {
   font-size: 13px;
   color: var(--ev-muted);
   line-height: 1.6;
-  margin-bottom: 16px;
-  flex: 1;
+  margin-bottom: 18px;
+  flex: 1 1 auto;
 }
 .ev-card-footer {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 10px;
-  flex-wrap: wrap;
+  gap: 12px;
   margin-top: auto;
+  padding-top: 14px;
+  border-top: 1px solid var(--ev-border);
+  min-height: 50px;
 }
 
 /* ---- Status badges ---- */
@@ -511,8 +515,9 @@ body {
   font-size: 11.5px;
   font-weight: 700;
   border-radius: 100px;
-  padding: 5px 11px;
+  padding: 5px 12px;
   white-space: nowrap;
+  flex-shrink: 0;
 }
 .ev-status-dot {
   width: 7px;
@@ -568,19 +573,23 @@ body {
 .ev-card-cta-btn {
   display: inline-flex;
   align-items: center;
-  font-size: 12.5px;
+  gap: 4px;
+  font-size: 13px;
   font-weight: 700;
   color: var(--ev-accent);
   background: none;
   border: none;
   cursor: pointer;
   text-decoration: none;
-  padding: 8px 0;
-  min-height: 44px;
-  transition: gap 0.2s, color 0.2s;
-  gap: 0;
+  padding: 6px 0;
+  white-space: nowrap;
+  flex-shrink: 0;
+  transition: gap 0.2s, color 0.2s, transform 0.2s;
 }
-.ev-card-cta-btn:hover { color: var(--ev-accent-h); }
+.ev-card-cta-btn:hover {
+  color: var(--ev-accent-h);
+  transform: translateX(2px);
+}
 
 /* No results */
 .ev-no-result-icon { color: var(--ev-muted); }
@@ -881,7 +890,7 @@ body {
   grid-template-columns: repeat(4, 1fr);
   gap: 20px;
 }
-@media (max-width: 1023px) { .ev-past-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 1199px) { .ev-past-grid { grid-template-columns: repeat(2, 1fr); } }
 @media (max-width: 600px)  { .ev-past-grid { grid-template-columns: 1fr; } }
 
 .ev-past-card {
@@ -953,7 +962,7 @@ body {
   grid-template-columns: repeat(4, 1fr);
   gap: 24px;
 }
-@media (max-width: 1023px) { .ev-steps-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 1199px) { .ev-steps-grid { grid-template-columns: repeat(2, 1fr); } }
 @media (max-width: 600px)  { .ev-steps-grid { grid-template-columns: 1fr; } }
 
 .ev-step {

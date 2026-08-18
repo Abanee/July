@@ -81,41 +81,48 @@ document.addEventListener('DOMContentLoaded', () => {
       return card ? card.offsetWidth + 20 : 300;
     };
 
-    sportPrev.addEventListener('click', () => {
-      sportTrack.scrollBy({ left: -getCardWidth(), behavior: 'smooth' });
-    });
-
-    sportNext.addEventListener('click', () => {
+    const scrollNext = () => {
       const maxScroll = sportTrack.scrollWidth - sportTrack.clientWidth;
-      if (sportTrack.scrollLeft >= maxScroll - 10) {
+      if (sportTrack.scrollLeft >= maxScroll - 12) {
         sportTrack.scrollTo({ left: 0, behavior: 'smooth' });
       } else {
         sportTrack.scrollBy({ left: getCardWidth(), behavior: 'smooth' });
       }
-    });
+    };
 
-    // Auto-advance every 4.5s unless hovered
-    let autoRotate = setInterval(() => {
+    const scrollPrev = () => {
       const maxScroll = sportTrack.scrollWidth - sportTrack.clientWidth;
-      if (sportTrack.scrollLeft >= maxScroll - 10) {
-        sportTrack.scrollTo({ left: 0, behavior: 'smooth' });
+      if (sportTrack.scrollLeft <= 12) {
+        sportTrack.scrollTo({ left: maxScroll, behavior: 'smooth' });
       } else {
-        sportTrack.scrollBy({ left: getCardWidth(), behavior: 'smooth' });
+        sportTrack.scrollBy({ left: -getCardWidth(), behavior: 'smooth' });
       }
-    }, 4500);
+    };
 
-    sportTrack.addEventListener('mouseenter', () => clearInterval(autoRotate));
-    sportTrack.addEventListener('mouseleave', () => {
-      clearInterval(autoRotate);
-      autoRotate = setInterval(() => {
-        const maxScroll = sportTrack.scrollWidth - sportTrack.clientWidth;
-        if (sportTrack.scrollLeft >= maxScroll - 10) {
-          sportTrack.scrollTo({ left: 0, behavior: 'smooth' });
-        } else {
-          sportTrack.scrollBy({ left: getCardWidth(), behavior: 'smooth' });
-        }
-      }, 4500);
-    });
+    sportPrev.addEventListener('click', scrollPrev);
+    sportNext.addEventListener('click', scrollNext);
+
+    // Auto-advance every 3.8s with smooth looping (pause on hover / touch)
+    let autoRotateTimer = null;
+    const startAutoRotate = () => {
+      stopAutoRotate();
+      autoRotateTimer = setInterval(scrollNext, 3800);
+    };
+    const stopAutoRotate = () => {
+      if (autoRotateTimer) {
+        clearInterval(autoRotateTimer);
+        autoRotateTimer = null;
+      }
+    };
+
+    startAutoRotate();
+
+    sportTrack.addEventListener('mouseenter', stopAutoRotate);
+    sportTrack.addEventListener('mouseleave', startAutoRotate);
+    sportTrack.addEventListener('touchstart', stopAutoRotate, { passive: true });
+    sportTrack.addEventListener('touchend', () => {
+      setTimeout(startAutoRotate, 3000);
+    }, { passive: true });
   }
 
   /* ---------- FAQ accordion ---------- */

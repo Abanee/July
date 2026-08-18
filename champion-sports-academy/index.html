@@ -89,6 +89,7 @@
         </div>
       </div>
       <a href="events.html" class="text-white/70 hover:text-white transition-colors">Events</a>
+      <a href="gallery.html" class="text-white/70 hover:text-white transition-colors">Gallery</a>
       <a href="contact.html" class="text-white/70 hover:text-white transition-colors">Contact</a>
     </nav>
 
@@ -109,7 +110,7 @@
 
     <!-- Mobile Controls (<=1024px) -->
     <div class="flex items-center gap-2 xl:hidden">
-      <button id="menu-btn" class="text-white p-2 flex items-center justify-center rounded-lg hover:bg-white/10 transition" aria-label="Open menu">
+      <button id="menu-btn" class="text-white p-2 flex items-center justify-center rounded-lg hover:bg-white/10 transition" aria-label="Open menu" aria-expanded="false">
         <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
       </button>
     </div>
@@ -123,6 +124,7 @@
     <a href="programs.html" class="text-white/80 font-medium text-[14.5px] hover:text-lime" style="padding-left:14px">&bull; Sports Programs</a>
     <a href="coaches.html" class="text-white/80 font-medium text-[14.5px] hover:text-lime" style="padding-left:14px">&bull; Coaches</a>
     <a href="events.html" class="text-white/80 font-medium text-[15px] hover:text-white">Events</a>
+    <a href="gallery.html" class="text-white/80 font-medium text-[15px] hover:text-white">Gallery</a>
     <a href="contact.html" class="text-white/80 font-medium text-[15px] hover:text-white">Contact</a>
     
     <div class="h-px bg-white/15 my-2"></div>
@@ -547,7 +549,7 @@
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
       <div class="coach-card reveal">
         <div class="coach-image-wrap relative w-full h-[280px] sm:h-[300px] md:h-[320px] rounded-xl overflow-hidden mb-4 bg-soft">
-          <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=600&q=80&auto=format&fit=crop" alt="Head Coach Arjun Rao" class="coach-img w-full h-full object-cover object-top">
+          <img src="Assets/Home/co1.jpg" alt="Head Coach Arjun Rao" class="coach-img w-full h-full object-cover object-top">
           <span class="sport-badge absolute top-3 left-3 bg-lime text-navy font-bold text-[11px] px-3 py-1 rounded-md tracking-wider uppercase z-10 shadow-sm">Football</span>
         </div>
         <h3 class="font-display font-bold text-[17px] text-dark-text mb-1">Arjun Rao</h3>
@@ -557,7 +559,7 @@
 
       <div class="coach-card reveal">
         <div class="coach-image-wrap relative w-full h-[280px] sm:h-[300px] md:h-[320px] rounded-xl overflow-hidden mb-4 bg-soft">
-          <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=600&q=80&auto=format&fit=crop" alt="Basketball Coach Priya Sundaram" class="coach-img w-full h-full object-cover object-top">
+          <img src="Assets/Home/co2.jpg" alt="Basketball Coach Priya Sundaram" class="coach-img w-full h-full object-cover object-top">
           <span class="sport-badge absolute top-3 left-3 bg-lime text-navy font-bold text-[11px] px-3 py-1 rounded-md tracking-wider uppercase z-10 shadow-sm">Basketball</span>
         </div>
         <h3 class="font-display font-bold text-[17px] text-dark-text mb-1">Priya Sundaram</h3>
@@ -567,7 +569,7 @@
 
       <div class="coach-card reveal">
         <div class="coach-image-wrap relative w-full h-[280px] sm:h-[300px] md:h-[320px] rounded-xl overflow-hidden mb-4 bg-soft">
-          <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=600&q=80&auto=format&fit=crop" alt="Badminton Coach Rajesh Kumar" class="coach-img w-full h-full object-cover object-top">
+          <img src="Assets/Home/co3.jpg" alt="Badminton Coach Rajesh Kumar" class="coach-img w-full h-full object-cover object-top">
           <span class="sport-badge absolute top-3 left-3 bg-lime text-navy font-bold text-[11px] px-3 py-1 rounded-md tracking-wider uppercase z-10 shadow-sm">Badminton</span>
         </div>
         <h3 class="font-display font-bold text-[17px] text-dark-text mb-1">Rajesh Kumar</h3>
@@ -577,7 +579,7 @@
 
       <div class="coach-card reveal">
         <div class="coach-image-wrap relative w-full h-[280px] sm:h-[300px] md:h-[320px] rounded-xl overflow-hidden mb-4 bg-soft">
-          <img src="https://images.unsplash.com/photo-1567532939604-b6b5b0db2604?w=600&q=80&auto=format&fit=crop" alt="Athletics Coach Sneha Menon" class="coach-img w-full h-full object-cover object-top">
+          <img src="Assets/Home/co4.jpg" alt="Athletics Coach Sneha Menon" class="coach-img w-full h-full object-cover object-top">
           <span class="sport-badge absolute top-3 left-3 bg-lime text-navy font-bold text-[11px] px-3 py-1 rounded-md tracking-wider uppercase z-10 shadow-sm">Athletics</span>
         </div>
         <h3 class="font-display font-bold text-[17px] text-dark-text mb-1">Sneha Menon</h3>
@@ -603,27 +605,27 @@
     <!-- Uniform 3x2 Facilities Grid -->
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
       <div class="facility-tile h-[220px] md:h-[240px] w-full rounded-xl overflow-hidden reveal">
-        <img src="https://images.unsplash.com/photo-1459865264687-595d652de67e?w=900&q=80&auto=format&fit=crop" alt="Football Ground" class="w-full h-full object-cover">
+        <img src="Assets/Home/home01.jpg" alt="Football Ground" class="w-full h-full object-cover">
         <span class="facility-label">Football Ground</span>
       </div>
       <div class="facility-tile h-[220px] md:h-[240px] w-full rounded-xl overflow-hidden reveal">
-        <img src="https://images.unsplash.com/photo-1546519638-68e109498ffc?w=700&q=80&auto=format&fit=crop" alt="Indoor Basketball Court" class="w-full h-full object-cover">
+        <img src="Assets/Home/home02.jpg" alt="Indoor Basketball Court" class="w-full h-full object-cover">
         <span class="facility-label">Indoor Basketball Court</span>
       </div>
       <div class="facility-tile h-[220px] md:h-[240px] w-full rounded-xl overflow-hidden reveal">
-        <img src="https://images.unsplash.com/photo-1626224583764-f87db24ac4ea?w=700&q=80&auto=format&fit=crop" alt="Badminton Courts" class="w-full h-full object-cover">
+        <img src="Assets/Home/home03.jpg" alt="Badminton Courts" class="w-full h-full object-cover">
         <span class="facility-label">Badminton Courts</span>
       </div>
       <div class="facility-tile h-[220px] md:h-[240px] w-full rounded-xl overflow-hidden reveal">
-        <img src="https://images.unsplash.com/photo-1461896836934-ffe607ba8211?w=700&q=80&auto=format&fit=crop" alt="Athletics Track" class="w-full h-full object-cover">
+        <img src="Assets/Home/home04.jpg" alt="Athletics Track" class="w-full h-full object-cover">
         <span class="facility-label">Athletics Track</span>
       </div>
       <div class="facility-tile h-[220px] md:h-[240px] w-full rounded-xl overflow-hidden reveal">
-        <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=700&q=80&auto=format&fit=crop" alt="Strength & Conditioning" class="w-full h-full object-cover">
+        <img src="Assets/Home/home05.jpg" alt="Strength & Conditioning" class="w-full h-full object-cover">
         <span class="facility-label">Strength &amp; Conditioning</span>
       </div>
       <div class="facility-tile h-[220px] md:h-[240px] w-full rounded-xl overflow-hidden reveal">
-        <img src="https://images.unsplash.com/photo-1600965962102-9d260a71890d?w=700&q=80&auto=format&fit=crop" alt="Changing Rooms" class="w-full h-full object-cover">
+        <img src="Assets/Home/home06.jpg" alt="Changing Rooms" class="w-full h-full object-cover">
         <span class="facility-label">Changing Rooms</span>
       </div>
     </div>
@@ -829,6 +831,7 @@
           <li><a href="about.html" class="hover:text-lime hover:translate-x-1 inline-block transition-all">About Our Academy</a></li>
           <li><a href="coaches.html" class="hover:text-lime hover:translate-x-1 inline-block transition-all">Certified Coaches</a></li>
           <li><a href="events.html" class="hover:text-lime hover:translate-x-1 inline-block transition-all">Events &amp; Tournaments</a></li>
+          <li><a href="gallery.html" class="hover:text-lime hover:translate-x-1 inline-block transition-all">Photo Gallery</a></li>
           <li><a href="dashboard.html" class="hover:text-lime hover:translate-x-1 inline-block transition-all">Student Dashboard</a></li>
           <li><a href="signin.html" class="hover:text-lime hover:translate-x-1 inline-block transition-all">Parent / Student Portal</a></li>
           <li><a href="contact.html" class="hover:text-lime hover:translate-x-1 inline-block transition-all">Get in Touch</a></li>
