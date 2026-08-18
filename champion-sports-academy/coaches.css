@@ -774,13 +774,15 @@ header, section, footer, aside, div,
 /* Card image */
 .coach-img-wrap {
   position: relative;
-  aspect-ratio: 4/3;
+  aspect-ratio: 3/3.8;
+  min-height: 280px;
   overflow: hidden;
+  background-color: var(--bg-elevated);
 }
 .coach-img-wrap img {
   width: 100%; height: 100%;
   object-fit: cover;
-  object-position: center top;
+  object-position: center 15%;
   transition: transform .5s ease;
   display: block;
 }
@@ -894,7 +896,7 @@ header, section, footer, aside, div,
 }
 
 /* Small card variant (assistant coaches) */
-.coach-card-sm .coach-img-wrap { aspect-ratio: 4/3; }
+.coach-card-sm .coach-img-wrap { aspect-ratio: 3/3.6; min-height: 240px; }
 .coach-card-sm .coach-name   { font-size: 15px; }
 .coach-card-sm .coach-desc   { display: none; }
 

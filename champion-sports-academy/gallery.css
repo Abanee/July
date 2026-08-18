@@ -63,7 +63,7 @@ body {
 .gal-hero {
   position: relative;
   min-height: 480px;
-  background-color: var(--gal-navy);
+  background-color: var(--gal-deep);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -84,7 +84,23 @@ body {
 .gal-hero-overlay {
   position: absolute;
   inset: 0;
-  background: var(--gal-hero-ov);
+  background: linear-gradient(180deg, rgba(3,17,31,0.95) 0%, rgba(3,17,31,0.85) 60%, rgba(3,17,31,0.95) 100%);
+}
+
+.gal-hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: #A8D600 !important;
+  font-weight: 700;
+  font-size: 12px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  margin-bottom: 16px;
+  background: rgba(168, 214, 0, 0.12);
+  padding: 6px 16px;
+  border-radius: 9999px;
+  border: 1px solid rgba(168, 214, 0, 0.3);
 }
 
 .gal-hero-h1 {
@@ -94,6 +110,9 @@ body {
   color: #ffffff;
   line-height: 1.15;
   letter-spacing: -0.02em;
+}
+.gal-hero-h1 span {
+  color: #A8D600 !important;
 }
 
 /* Filter Controls */
