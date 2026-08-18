@@ -127,12 +127,12 @@ document.addEventListener('DOMContentLoaded', () => {
       ],
       schedule: [
         { day: 'MON', title: 'Skills Training', time: '5:30 PM – 7:00 PM' },
-        { day: 'TUE', title: 'Fitness Development', time: '5:30 PM – 6:30 PM' },
-        { day: 'WED', title: 'Technical Training', time: '5:30 PM – 7:00 PM' },
-        { day: 'THU', title: 'Recovery / Mobility', time: 'Flexible' },
+        { day: 'TUE', title: 'Fitness & Agility', time: '5:30 PM – 6:30 PM' },
+        { day: 'WED', title: 'Tactical Play', time: '5:30 PM – 7:00 PM' },
+        { day: 'THU', title: 'Mobility Work', time: 'Flexible Timings' },
         { day: 'FRI', title: 'Match Practice', time: '5:30 PM – 7:00 PM' },
-        { day: 'SAT', title: 'Game Session', time: '9:00 AM – 11:00 AM' },
-        { day: 'SUN', title: 'Rest & Recovery', time: '—', rest: true },
+        { day: 'SAT', title: 'Weekend League', time: '9:00 AM – 11:00 AM' },
+        { day: 'SUN', title: 'Active Recovery', time: 'Rest & Recovery', rest: true },
       ],
       scheduleNote: "Schedules vary by age group, level and sport. Here's a sample week for a Developing Football program.",
     },
@@ -163,12 +163,12 @@ document.addEventListener('DOMContentLoaded', () => {
       ],
       schedule: [
         { day: 'MON', title: 'Ball Handling', time: '5:00 PM – 6:30 PM' },
-        { day: 'TUE', title: 'Shooting Drills', time: '5:00 PM – 6:30 PM' },
-        { day: 'WED', title: 'Team Offense', time: '5:00 PM – 6:30 PM' },
-        { day: 'THU', title: 'Strength & Conditioning', time: '5:00 PM – 6:00 PM' },
-        { day: 'FRI', title: 'Defense & Strategy', time: '5:00 PM – 6:30 PM' },
-        { day: 'SAT', title: 'Scrimmage Match', time: '9:00 AM – 11:00 AM' },
-        { day: 'SUN', title: 'Rest & Recovery', time: '—', rest: true },
+        { day: 'TUE', title: 'Shooting Reps', time: '5:00 PM – 6:30 PM' },
+        { day: 'WED', title: 'Tactical Play', time: '5:00 PM – 6:30 PM' },
+        { day: 'THU', title: 'Mobility Work', time: 'Flexible Timings' },
+        { day: 'FRI', title: 'Defense Drills', time: '5:00 PM – 6:30 PM' },
+        { day: 'SAT', title: 'Weekend League', time: '9:00 AM – 11:00 AM' },
+        { day: 'SUN', title: 'Active Recovery', time: 'Rest & Recovery', rest: true },
       ],
       scheduleNote: "Schedules vary by age group, level and sport. Here's a sample week for a Developing Basketball program.",
     },
@@ -198,13 +198,13 @@ document.addEventListener('DOMContentLoaded', () => {
         { label: 'Performance Telemetry', desc: 'High-speed smash velocity radar, agility gate tests & recovery metrics.' }
       ],
       schedule: [
-        { day: 'MON', title: 'Footwork & Movement', time: '4:30 PM – 6:00 PM' },
+        { day: 'MON', title: 'Footwork Drills', time: '4:30 PM – 6:00 PM' },
         { day: 'TUE', title: 'Racket Technique', time: '4:30 PM – 6:00 PM' },
-        { day: 'WED', title: 'Rally Practice', time: '4:30 PM – 6:00 PM' },
-        { day: 'THU', title: 'Recovery / Mobility', time: 'Flexible' },
+        { day: 'WED', title: 'Rally & Control', time: '4:30 PM – 6:00 PM' },
+        { day: 'THU', title: 'Mobility Work', time: 'Flexible Timings' },
         { day: 'FRI', title: 'Match Practice', time: '4:30 PM – 6:00 PM' },
-        { day: 'SAT', title: 'Doubles Session', time: '9:00 AM – 10:30 AM' },
-        { day: 'SUN', title: 'Rest & Recovery', time: '—', rest: true },
+        { day: 'SAT', title: 'Weekend Doubles', time: '9:00 AM – 10:30 AM' },
+        { day: 'SUN', title: 'Active Recovery', time: 'Rest & Recovery', rest: true },
       ],
       scheduleNote: "Schedules vary by age group, level and sport. Here's a sample week for a Developing Badminton program.",
     },
@@ -234,13 +234,13 @@ document.addEventListener('DOMContentLoaded', () => {
         { label: 'Performance Telemetry', desc: 'Laser photocell timing gates (10m, 30m, 100m) & jump height telemetry.' }
       ],
       schedule: [
-        { day: 'MON', title: 'Sprint Technique', time: '6:00 AM – 7:30 AM' },
+        { day: 'MON', title: 'Sprint Mechanics', time: '6:00 AM – 7:30 AM' },
         { day: 'TUE', title: 'Strength Training', time: '6:00 AM – 7:00 AM' },
-        { day: 'WED', title: 'Endurance Run', time: '6:00 AM – 7:30 AM' },
-        { day: 'THU', title: 'Recovery / Mobility', time: 'Flexible' },
-        { day: 'FRI', title: 'Track Drills', time: '6:00 AM – 7:30 AM' },
-        { day: 'SAT', title: 'Time Trials', time: '7:00 AM – 9:00 AM' },
-        { day: 'SUN', title: 'Rest & Recovery', time: '—', rest: true },
+        { day: 'WED', title: 'Endurance Runs', time: '6:00 AM – 7:30 AM' },
+        { day: 'THU', title: 'Mobility Work', time: 'Flexible Timings' },
+        { day: 'FRI', title: 'Track & Hurdles', time: '6:00 AM – 7:30 AM' },
+        { day: 'SAT', title: 'Laser Trials', time: '7:00 AM – 9:00 AM' },
+        { day: 'SUN', title: 'Active Recovery', time: 'Rest & Recovery', rest: true },
       ],
       scheduleNote: "Schedules vary by age group, level and sport. Here's a sample week for a Developing Athletics program.",
     },
@@ -379,7 +379,7 @@ document.addEventListener('DOMContentLoaded', () => {
         <p class="sched-day-label">${d.day}</p>
         <span class="sched-icon">${d.rest ? dayIcons.rest : dayIcons.default}</span>
         <p class="sched-title">${d.title}</p>
-        ${!d.rest ? `<p class="sched-time">${d.time}</p>` : ''}
+        <p class="sched-time">${d.time}</p>
       </div>
     `).join('');
     if (scheduleDesc) scheduleDesc.textContent = s.scheduleNote;

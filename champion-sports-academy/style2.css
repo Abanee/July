@@ -1339,36 +1339,57 @@ a.btn-outline-lime:hover {
   .section-heading { font-size: 34px; }
   .sport-cards { gap: 16px; }
   .session-grid { gap: 40px; }
-  .learn-row { grid-template-columns: repeat(3, 1fr); row-gap: 32px; }
-  .learn-item:nth-child(4) { border-left: none; padding-left: 0; }
+  .learn-row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 32px 24px;
+  }
+  .learn-item {
+    flex: 0 1 calc(33.333% - 24px);
+    min-width: 240px;
+    max-width: 310px;
+    border-left: none;
+    padding: 0 10px;
+  }
   .faq-grid, .firstday-grid { gap: 40px; }
   
   /* Section 01: 2x2 Level Path Grid with pinned bottom CTA */
   .level-path {
     grid-template-columns: repeat(2, 1fr);
     gap: 24px;
+    justify-content: center;
   }
   .level-line { display: none; }
   
-  /* Section 04: Modern 4-Column Card Grid with clean gaps */
+  /* Section 04: Modern Centered 4-and-3 Multi-Row Grid */
+  .sport-schedule-showcase {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
   .schedule-table {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 14px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
     border: none;
     background: transparent;
     overflow: visible;
   }
   .sched-col {
+    flex: 0 1 calc(25% - 12px);
+    width: calc(25% - 12px);
+    min-width: 170px;
+    max-width: 228px;
     border: 1px solid var(--bd) !important;
     border-radius: 12px;
-    background: #ffffff;
-    padding: 18px 16px;
+    background: var(--bg-card);
+    padding: 16px 14px;
     min-height: 120px;
     box-shadow: 0 2px 8px rgba(6,26,46,0.03);
   }
   .sched-col.is-rest {
-    background: #FAFBFA;
+    background: var(--bg-soft);
   }
 }
 
@@ -1404,17 +1425,35 @@ a.btn-outline-lime:hover {
     -webkit-overflow-scrolling: touch;
   }
   .sport-card { scroll-snap-align: start; aspect-ratio: 3/3.6; }
-  .learn-row { grid-template-columns: repeat(2, 1fr); }
-  .learn-item:nth-child(3) { border-left: none; padding-left: 0; }
+  .learn-row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 24px;
+  }
+  .learn-item {
+    flex: 0 1 calc(50% - 16px);
+    min-width: 220px;
+    max-width: 320px;
+    border-left: none;
+    padding: 0 10px;
+  }
   .join-steps { flex-direction: column; align-items: stretch; gap: 22px; }
   .join-step { text-align: left; display: flex; gap: 16px; align-items: center; }
   .join-num { margin-bottom: 0; flex-shrink: 0; }
   .join-arrow { display: none; }
   
-  /* 2-Column Schedule Grid with gaps */
+  /* 2-Column Centered Schedule Grid */
   .schedule-table {
-    grid-template-columns: repeat(2, 1fr);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
     gap: 12px;
+  }
+  .sched-col {
+    flex: 0 1 calc(50% - 12px);
+    min-width: 200px;
+    max-width: 280px;
   }
 }
 
