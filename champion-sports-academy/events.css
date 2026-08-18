@@ -71,8 +71,29 @@
   background-color: #03111F !important;
   color: #ffffff !important;
 }
-.bg-deep-navy a:not(.ev-btn-primary):not(.ev-btn-ghost):not(.btn-lime):not(.bg-lime) {
+.bg-deep-navy a:not(.ev-btn-primary):not(.ev-btn-ghost):not(.btn-lime):not(.bg-lime):not(.btn-outline-lime) {
   color: inherit;
+}
+
+/* Dedicated Outline Lime Button */
+.btn-outline-lime,
+a.btn-outline-lime {
+  color: #A8D600 !important;
+  border: 1.5px solid #A8D600 !important;
+  background-color: transparent !important;
+  font-weight: 700 !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  transition: all 0.2s ease !important;
+}
+.btn-outline-lime:hover,
+a.btn-outline-lime:hover {
+  background-color: #A8D600 !important;
+  color: #03111F !important;
+  border-color: #A8D600 !important;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 14px rgba(168, 214, 0, 0.3) !important;
 }
 
 /* ============================================================

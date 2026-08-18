@@ -207,7 +207,7 @@ document.addEventListener('DOMContentLoaded', () => {
         day: 'TUE',
         focus: 'Fitness',
         title: 'Speed & Agility Reps',
-        drills: ['Speed Ladder Drills', 'Acceleration Sprints', 'Core Conditioning'],
+        drills: ['Speed Ladder Drills', 'Acceleration Sprints', 'Core Stability Reps'],
         time: '5:30 – 6:30 PM',
         batch: 'Fitness Zone'
       },
@@ -215,7 +215,7 @@ document.addEventListener('DOMContentLoaded', () => {
         day: 'WED',
         focus: 'Tactical',
         title: 'Passing & Team Shape',
-        drills: ['Positional Rondos', 'Transition Triggers', 'Width & Crossing'],
+        drills: ['Positional Rondos', 'Transition Triggers', 'Cross & Finish Drills'],
         time: '5:30 – 7:00 PM',
         batch: 'Main Turf'
       },
@@ -223,7 +223,7 @@ document.addEventListener('DOMContentLoaded', () => {
         day: 'THU',
         focus: 'Recovery',
         title: 'Mobility & Personal Work',
-        drills: ['Dynamic Foam Rolling', 'Joint Flexibility', 'Individual Shooting'],
+        drills: ['Foam Rolling Routine', 'Joint Mobility Work', 'Free-Kick Practice'],
         time: 'Flexible Slots',
         batch: 'Studio & Turf'
       },
@@ -231,7 +231,7 @@ document.addEventListener('DOMContentLoaded', () => {
         day: 'FRI',
         focus: 'Matchplay',
         title: 'Tactical Set Pieces',
-        drills: ['Corner Kick Routines', 'Defensive Pressing', '7v7 Mini Matches'],
+        drills: ['Set-Piece Setups', 'Pressing Triggers', '7v7 Small Sided Game'],
         time: '5:30 – 7:00 PM',
         batch: 'Full Pitch'
       },
@@ -239,7 +239,7 @@ document.addEventListener('DOMContentLoaded', () => {
         day: 'SAT',
         focus: 'League',
         title: 'Competitive Scrimmage',
-        drills: ['11v11 Matchplay', 'Referee Officiating', 'Video Analysis Log'],
+        drills: ['11v11 Match Format', 'Referee Officiating', 'Video Analysis Brief'],
         time: '9:00 – 11:00 AM',
         batch: 'Stadium Arena'
       },
@@ -247,7 +247,7 @@ document.addEventListener('DOMContentLoaded', () => {
         day: 'SUN',
         focus: 'Rest',
         title: 'Active Recovery Day',
-        drills: ['Hydration Protocol', 'Muscle Decompression', 'Weekly Performance Log'],
+        drills: ['Hydration Protocols', 'Light Muscle Stretch', 'Weekly Progress Log'],
         time: 'Rest Day',
         batch: 'All Cohorts',
         rest: true
@@ -257,8 +257,8 @@ document.addEventListener('DOMContentLoaded', () => {
       {
         day: 'MON',
         focus: 'Handles',
-        title: 'Dribbling & Control',
-        drills: ['2-Ball Dribble Drills', 'Crossover Transitions', 'Pace & Acceleration'],
+        title: 'Dribbling & Ball Control',
+        drills: ['2-Ball Dribble Drills', 'Crossover Footwork', 'Pace & Acceleration'],
         time: '5:00 – 6:30 PM',
         batch: 'Court 1'
       },
@@ -266,47 +266,47 @@ document.addEventListener('DOMContentLoaded', () => {
         day: 'TUE',
         focus: 'Shooting',
         title: 'Shooting Form & Reps',
-        drills: ['Catch & Shoot Form', 'Free Throw Routines', 'Off-Dribble Pullups'],
+        drills: ['Catch & Shoot Form', 'Free Throw Routine', 'Off-Dribble Pullups'],
         time: '5:00 – 6:30 PM',
         batch: 'Court 2'
       },
       {
         day: 'WED',
         focus: 'Tactics',
-        title: 'Pick & Roll Spacing',
-        drills: ['Offensive Spacing', 'Fastbreak Lanes', 'Screening Angles'],
+        title: 'Spacing & Team Offense',
+        drills: ['Pick & Roll Reads', 'Fastbreak Outlets', 'Screening Angles'],
         time: '5:00 – 6:30 PM',
         batch: 'Main Court'
       },
       {
         day: 'THU',
         focus: 'Fitness',
-        title: 'Explosive Vertical Jump',
-        drills: ['Plyometric Box Jumps', 'Lateral Defensive Slides', 'Core & Stability'],
+        title: 'Vertical Jump & Power',
+        drills: ['Plyo Box Jumps', 'Defensive Slide Reps', 'Core Stability Work'],
         time: '5:00 – 6:00 PM',
         batch: 'Gym / Court'
       },
       {
         day: 'FRI',
         focus: 'Defense',
-        title: 'Lockdown Guarding',
-        drills: ['1v1 Containment Drills', 'Help & Recover Shifts', 'Rebound Boxing Out'],
+        title: 'Lockdown Guarding Drills',
+        drills: ['1v1 Containment', 'Help & Recover Shifts', 'Rebound Boxing Out'],
         time: '5:00 – 6:30 PM',
         batch: 'Main Court'
       },
       {
         day: 'SAT',
         focus: 'Matchplay',
-        title: 'Full-Court 5v5 League',
-        drills: ['Live Game Simulation', 'Electronic Shot Clock', 'Stat Sheet Review'],
+        title: 'Full-Court 5v5 Scrimmage',
+        drills: ['Live Game Scrimmage', 'Shot Clock Training', 'Box Score Review'],
         time: '9:00 – 11:00 AM',
         batch: 'Arena Court'
       },
       {
         day: 'SUN',
         focus: 'Rest',
-        title: 'Recovery & Mobility',
-        drills: ['Hydration Protocols', 'Static Stretching Routine', 'Injury Prevention Check'],
+        title: 'Recovery & Mobility Day',
+        drills: ['Hydration Protocol', 'Static Stretch Routine', 'Injury Check-in'],
         time: 'Rest Day',
         batch: 'All Cohorts',
         rest: true
@@ -317,23 +317,23 @@ document.addEventListener('DOMContentLoaded', () => {
         day: 'MON',
         focus: 'Footwork',
         title: '6-Corner Court Agility',
-        drills: ['Shadow Split-Step', 'Lunging Recovery Speed', 'Rear Corner Retract'],
+        drills: ['Split-Step Rhythm', 'Lunge Recovery Reps', 'Rear Corner Retract'],
         time: '4:30 – 6:00 PM',
         batch: 'Mats 1 & 2'
       },
       {
         day: 'TUE',
         focus: 'Technique',
-        title: 'Overhead & Net Control',
-        drills: ['Forehand Clear Drills', 'Tight Hairpin Net Shots', 'Deceptive Drops'],
+        title: 'Overhead & Net Accuracy',
+        drills: ['Forehand Clear Form', 'Tight Hairpin Drops', 'Deceptive Net Kills'],
         time: '4:30 – 6:00 PM',
         batch: 'Mats 3 & 4'
       },
       {
         day: 'WED',
         focus: 'Stamina',
-        title: 'High-Tempo Rallies',
-        drills: ['Multi-Shuttle Feeding', 'Continuous 40-Shot Rallies', 'Counter-Attack Drills'],
+        title: 'High-Tempo Rally Sets',
+        drills: ['Multi-Shuttle Feed', '40-Shot Rally Drills', 'Fast Counter Attacks'],
         time: '4:30 – 6:00 PM',
         batch: 'All Mats'
       },
@@ -341,7 +341,7 @@ document.addEventListener('DOMContentLoaded', () => {
         day: 'THU',
         focus: 'Recovery',
         title: 'Wrist & Core Mobility',
-        drills: ['Resistance Band Work', 'Shoulder Rotator Rehab', 'Flexibility Stretches'],
+        drills: ['Resistance Band Work', 'Rotator Cuff Rehab', 'Flexibility Stretches'],
         time: 'Flexible Slots',
         batch: 'Warm-up Zone'
       },
@@ -349,23 +349,23 @@ document.addEventListener('DOMContentLoaded', () => {
         day: 'FRI',
         focus: 'Offense',
         title: 'Power Smash & Intercept',
-        drills: ['Jump Smash Angles', 'Net Kill Interceptions', 'Doubles Fast Rotations'],
+        drills: ['Jump Smash Angles', 'Mid-Court Push Work', 'Doubles Fast Rotations'],
         time: '4:30 – 6:00 PM',
         batch: 'All Mats'
       },
       {
         day: 'SAT',
         focus: 'Matchplay',
-        title: 'Ranked Sparring Matches',
-        drills: ['Singles Ladder Matches', 'Doubles Tournament Play', 'Coach Tactical Brief'],
+        title: 'Ranked Sparring Rounds',
+        drills: ['Singles Ladder Match', 'Doubles Set Rounds', 'Tactical Video Brief'],
         time: '9:00 – 10:30 AM',
         batch: 'Championship Hall'
       },
       {
         day: 'SUN',
         focus: 'Rest',
-        title: 'Joint Decompression',
-        drills: ['Foam Roller Routine', 'Hydration & Nutrition', 'Weekly Video Recap'],
+        title: 'Joint Decompression Day',
+        drills: ['Foam Roller Routine', 'Electrolyte Replenish', 'Weekly Performance Log'],
         time: 'Rest Day',
         batch: 'All Cohorts',
         rest: true
@@ -376,7 +376,7 @@ document.addEventListener('DOMContentLoaded', () => {
         day: 'MON',
         focus: 'Speed',
         title: 'Sprint Block Mechanics',
-        drills: ['Crouch Start Angles', 'Drive Phase Mechanics', 'Arm Action Rhythm'],
+        drills: ['Block Start Angles', 'Drive Phase Posture', 'Arm Action Rhythm'],
         time: '6:00 – 7:30 AM',
         batch: 'Track Lanes 1–4'
       },
@@ -384,7 +384,7 @@ document.addEventListener('DOMContentLoaded', () => {
         day: 'TUE',
         focus: 'Strength',
         title: 'Explosive Power & Plyo',
-        drills: ['Hurdle Hop Reps', 'Weighted Sled Pushes', 'Core Stability Work'],
+        drills: ['Hurdle Hop Reps', 'Sled Push Intervals', 'Core Stability Work'],
         time: '6:00 – 7:00 AM',
         batch: 'Track Infield'
       },
@@ -392,7 +392,7 @@ document.addEventListener('DOMContentLoaded', () => {
         day: 'WED',
         focus: 'Endurance',
         title: 'Aerobic Interval Splits',
-        drills: ['400m / 800m Pacing', 'Lactate Threshold Runs', 'Recovery Jog Intervals'],
+        drills: ['400m / 800m Pacing', 'Lactate Threshold', 'Recovery Jog Splits'],
         time: '6:00 – 7:30 AM',
         batch: 'Full Track'
       },
@@ -407,8 +407,8 @@ document.addEventListener('DOMContentLoaded', () => {
       {
         day: 'FRI',
         focus: 'Track',
-        title: 'Curve Running & Relay',
-        drills: ['Centrifugal Lean Drills', 'Blind Baton Exchanges', 'Race Simulation Runs'],
+        title: 'Curve Running & Relays',
+        drills: ['Curve Lean Technique', 'Baton Hand-off Drills', 'Race Simulation Runs'],
         time: '6:00 – 7:30 AM',
         batch: 'Full Track'
       },
@@ -416,7 +416,7 @@ document.addEventListener('DOMContentLoaded', () => {
         day: 'SAT',
         focus: 'Trials',
         title: 'Laser Timed Sprint Tests',
-        drills: ['Photocell 60m/100m Times', 'Jump Distance Metric', 'Coach Data Review'],
+        drills: ['60m / 100m Laser Gate', 'Jump Distance Metric', 'Coach Data Review'],
         time: '7:00 – 9:00 AM',
         batch: 'Timing Gate'
       },

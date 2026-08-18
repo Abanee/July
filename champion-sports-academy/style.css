@@ -79,12 +79,11 @@
   color: inherit;
 }
 
-/* Global Lime Button Legibility */
+/* Global Lime Button Legibility (Excludes outline buttons & hover-only classes) */
 .btn-lime,
 .btn-lime-sm,
 .btn-lime-hero,
-.bg-lime,
-[class*="bg-lime"],
+.bg-lime:not(.btn-outline-lime),
 .header-btn-lime,
 .ct-cta-btn-lime {
   color: #061A2E !important;
@@ -92,11 +91,30 @@
 .btn-lime:hover,
 .btn-lime-sm:hover,
 .btn-lime-hero:hover,
-.bg-lime:hover,
-[class*="bg-lime"]:hover,
 .header-btn-lime:hover,
 .ct-cta-btn-lime:hover {
   color: #061A2E !important;
+}
+
+/* Dedicated Outline Lime Button */
+.btn-outline-lime,
+a.btn-outline-lime {
+  color: #A8D600 !important;
+  border: 1.5px solid #A8D600 !important;
+  background-color: transparent !important;
+  font-weight: 700 !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  transition: all 0.2s ease !important;
+}
+.btn-outline-lime:hover,
+a.btn-outline-lime:hover {
+  background-color: #A8D600 !important;
+  color: #03111F !important;
+  border-color: #A8D600 !important;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 14px rgba(168, 214, 0, 0.3) !important;
 }
 
 /* =======================================================

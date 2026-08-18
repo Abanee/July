@@ -55,14 +55,11 @@
 /* Global Lime Button Legibility */
 .btn-lime,
 .btn-lime-sm,
-.bg-lime,
-[class*="bg-lime"] {
+.bg-lime:not(.btn-outline-lime) {
   color: #061A2E !important;
 }
 .btn-lime:hover,
-.btn-lime-sm:hover,
-.bg-lime:hover,
-[class*="bg-lime"]:hover {
+.btn-lime-sm:hover {
   color: #061A2E !important;
 }
 .btn-lime svg,
@@ -70,6 +67,27 @@
 .bg-lime svg {
   stroke: currentColor !important;
   color: #061A2E !important;
+}
+
+/* Dedicated Outline Lime Button */
+.btn-outline-lime,
+a.btn-outline-lime {
+  color: #A8D600 !important;
+  border: 1.5px solid #A8D600 !important;
+  background-color: transparent !important;
+  font-weight: 700 !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  transition: all 0.2s ease !important;
+}
+.btn-outline-lime:hover,
+a.btn-outline-lime:hover {
+  background-color: #A8D600 !important;
+  color: #03111F !important;
+  border-color: #A8D600 !important;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 14px rgba(168, 214, 0, 0.3) !important;
 }
 
 /* ===================== FOOTER RESPONSIVE FIXES (<=1024px) ===================== */
