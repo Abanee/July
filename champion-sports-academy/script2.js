@@ -195,40 +195,240 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const schedules = {
     football: [
-      { day: 'MON', title: 'Football Skills', time: '5:30 PM – 7:00 PM' },
-      { day: 'TUE', title: 'Fitness Development', time: '5:30 PM – 6:30 PM' },
-      { day: 'WED', title: 'Football Training', time: '5:30 PM – 7:00 PM' },
-      { day: 'THU', title: 'Recovery / Personal Practice', time: 'Flexible' },
-      { day: 'FRI', title: 'Match Preparation', time: '5:30 PM – 7:00 PM' },
-      { day: 'SAT', title: 'Game Session', time: '9:00 AM – 11:00 AM' },
-      { day: 'SUN', title: 'Rest Day', time: '—', rest: true },
+      {
+        day: 'MON',
+        focus: 'Technique',
+        title: 'Ball Mastery & Control',
+        drills: ['1v1 Dribble Moves', 'First-Touch Trapping', 'Cone Passing Drills'],
+        time: '5:30 – 7:00 PM',
+        batch: 'Turf A'
+      },
+      {
+        day: 'TUE',
+        focus: 'Fitness',
+        title: 'Speed & Agility Reps',
+        drills: ['Speed Ladder Drills', 'Acceleration Sprints', 'Core Conditioning'],
+        time: '5:30 – 6:30 PM',
+        batch: 'Fitness Zone'
+      },
+      {
+        day: 'WED',
+        focus: 'Tactical',
+        title: 'Passing & Team Shape',
+        drills: ['Positional Rondos', 'Transition Triggers', 'Width & Crossing'],
+        time: '5:30 – 7:00 PM',
+        batch: 'Main Turf'
+      },
+      {
+        day: 'THU',
+        focus: 'Recovery',
+        title: 'Mobility & Personal Work',
+        drills: ['Dynamic Foam Rolling', 'Joint Flexibility', 'Individual Shooting'],
+        time: 'Flexible Slots',
+        batch: 'Studio & Turf'
+      },
+      {
+        day: 'FRI',
+        focus: 'Matchplay',
+        title: 'Tactical Set Pieces',
+        drills: ['Corner Kick Routines', 'Defensive Pressing', '7v7 Mini Matches'],
+        time: '5:30 – 7:00 PM',
+        batch: 'Full Pitch'
+      },
+      {
+        day: 'SAT',
+        focus: 'League',
+        title: 'Competitive Scrimmage',
+        drills: ['11v11 Matchplay', 'Referee Officiating', 'Video Analysis Log'],
+        time: '9:00 – 11:00 AM',
+        batch: 'Stadium Arena'
+      },
+      {
+        day: 'SUN',
+        focus: 'Rest',
+        title: 'Active Recovery Day',
+        drills: ['Hydration Protocol', 'Muscle Decompression', 'Weekly Performance Log'],
+        time: 'Rest Day',
+        batch: 'All Cohorts',
+        rest: true
+      },
     ],
     basketball: [
-      { day: 'MON', title: 'Ball Handling', time: '5:00 PM – 6:30 PM' },
-      { day: 'TUE', title: 'Shooting Drills', time: '5:00 PM – 6:30 PM' },
-      { day: 'WED', title: 'Team Offense', time: '5:00 PM – 6:30 PM' },
-      { day: 'THU', title: 'Strength & Conditioning', time: '5:00 PM – 6:00 PM' },
-      { day: 'FRI', title: 'Defense & Strategy', time: '5:00 PM – 6:30 PM' },
-      { day: 'SAT', title: 'Scrimmage Match', time: '9:00 AM – 11:00 AM' },
-      { day: 'SUN', title: 'Rest Day', time: '—', rest: true },
+      {
+        day: 'MON',
+        focus: 'Handles',
+        title: 'Dribbling & Control',
+        drills: ['2-Ball Dribble Drills', 'Crossover Transitions', 'Pace & Acceleration'],
+        time: '5:00 – 6:30 PM',
+        batch: 'Court 1'
+      },
+      {
+        day: 'TUE',
+        focus: 'Shooting',
+        title: 'Shooting Form & Reps',
+        drills: ['Catch & Shoot Form', 'Free Throw Routines', 'Off-Dribble Pullups'],
+        time: '5:00 – 6:30 PM',
+        batch: 'Court 2'
+      },
+      {
+        day: 'WED',
+        focus: 'Tactics',
+        title: 'Pick & Roll Spacing',
+        drills: ['Offensive Spacing', 'Fastbreak Lanes', 'Screening Angles'],
+        time: '5:00 – 6:30 PM',
+        batch: 'Main Court'
+      },
+      {
+        day: 'THU',
+        focus: 'Fitness',
+        title: 'Explosive Vertical Jump',
+        drills: ['Plyometric Box Jumps', 'Lateral Defensive Slides', 'Core & Stability'],
+        time: '5:00 – 6:00 PM',
+        batch: 'Gym / Court'
+      },
+      {
+        day: 'FRI',
+        focus: 'Defense',
+        title: 'Lockdown Guarding',
+        drills: ['1v1 Containment Drills', 'Help & Recover Shifts', 'Rebound Boxing Out'],
+        time: '5:00 – 6:30 PM',
+        batch: 'Main Court'
+      },
+      {
+        day: 'SAT',
+        focus: 'Matchplay',
+        title: 'Full-Court 5v5 League',
+        drills: ['Live Game Simulation', 'Electronic Shot Clock', 'Stat Sheet Review'],
+        time: '9:00 – 11:00 AM',
+        batch: 'Arena Court'
+      },
+      {
+        day: 'SUN',
+        focus: 'Rest',
+        title: 'Recovery & Mobility',
+        drills: ['Hydration Protocols', 'Static Stretching Routine', 'Injury Prevention Check'],
+        time: 'Rest Day',
+        batch: 'All Cohorts',
+        rest: true
+      },
     ],
     badminton: [
-      { day: 'MON', title: 'Footwork & Movement', time: '4:30 PM – 6:00 PM' },
-      { day: 'TUE', title: 'Racket Technique', time: '4:30 PM – 6:00 PM' },
-      { day: 'WED', title: 'Rally Practice', time: '4:30 PM – 6:00 PM' },
-      { day: 'THU', title: 'Recovery / Personal Practice', time: 'Flexible' },
-      { day: 'FRI', title: 'Match Preparation', time: '4:30 PM – 6:00 PM' },
-      { day: 'SAT', title: 'Doubles Session', time: '9:00 AM – 10:30 AM' },
-      { day: 'SUN', title: 'Rest Day', time: '—', rest: true },
+      {
+        day: 'MON',
+        focus: 'Footwork',
+        title: '6-Corner Court Agility',
+        drills: ['Shadow Split-Step', 'Lunging Recovery Speed', 'Rear Corner Retract'],
+        time: '4:30 – 6:00 PM',
+        batch: 'Mats 1 & 2'
+      },
+      {
+        day: 'TUE',
+        focus: 'Technique',
+        title: 'Overhead & Net Control',
+        drills: ['Forehand Clear Drills', 'Tight Hairpin Net Shots', 'Deceptive Drops'],
+        time: '4:30 – 6:00 PM',
+        batch: 'Mats 3 & 4'
+      },
+      {
+        day: 'WED',
+        focus: 'Stamina',
+        title: 'High-Tempo Rallies',
+        drills: ['Multi-Shuttle Feeding', 'Continuous 40-Shot Rallies', 'Counter-Attack Drills'],
+        time: '4:30 – 6:00 PM',
+        batch: 'All Mats'
+      },
+      {
+        day: 'THU',
+        focus: 'Recovery',
+        title: 'Wrist & Core Mobility',
+        drills: ['Resistance Band Work', 'Shoulder Rotator Rehab', 'Flexibility Stretches'],
+        time: 'Flexible Slots',
+        batch: 'Warm-up Zone'
+      },
+      {
+        day: 'FRI',
+        focus: 'Offense',
+        title: 'Power Smash & Intercept',
+        drills: ['Jump Smash Angles', 'Net Kill Interceptions', 'Doubles Fast Rotations'],
+        time: '4:30 – 6:00 PM',
+        batch: 'All Mats'
+      },
+      {
+        day: 'SAT',
+        focus: 'Matchplay',
+        title: 'Ranked Sparring Matches',
+        drills: ['Singles Ladder Matches', 'Doubles Tournament Play', 'Coach Tactical Brief'],
+        time: '9:00 – 10:30 AM',
+        batch: 'Championship Hall'
+      },
+      {
+        day: 'SUN',
+        focus: 'Rest',
+        title: 'Joint Decompression',
+        drills: ['Foam Roller Routine', 'Hydration & Nutrition', 'Weekly Video Recap'],
+        time: 'Rest Day',
+        batch: 'All Cohorts',
+        rest: true
+      },
     ],
     athletics: [
-      { day: 'MON', title: 'Sprint Technique', time: '6:00 AM – 7:30 AM' },
-      { day: 'TUE', title: 'Strength Training', time: '6:00 AM – 7:00 AM' },
-      { day: 'WED', title: 'Endurance Run', time: '6:00 AM – 7:30 AM' },
-      { day: 'THU', title: 'Recovery / Mobility', time: 'Flexible' },
-      { day: 'FRI', title: 'Track Drills', time: '6:00 AM – 7:30 AM' },
-      { day: 'SAT', title: 'Time Trials', time: '7:00 AM – 9:00 AM' },
-      { day: 'SUN', title: 'Rest Day', time: '—', rest: true },
+      {
+        day: 'MON',
+        focus: 'Speed',
+        title: 'Sprint Block Mechanics',
+        drills: ['Crouch Start Angles', 'Drive Phase Mechanics', 'Arm Action Rhythm'],
+        time: '6:00 – 7:30 AM',
+        batch: 'Track Lanes 1–4'
+      },
+      {
+        day: 'TUE',
+        focus: 'Strength',
+        title: 'Explosive Power & Plyo',
+        drills: ['Hurdle Hop Reps', 'Weighted Sled Pushes', 'Core Stability Work'],
+        time: '6:00 – 7:00 AM',
+        batch: 'Track Infield'
+      },
+      {
+        day: 'WED',
+        focus: 'Endurance',
+        title: 'Aerobic Interval Splits',
+        drills: ['400m / 800m Pacing', 'Lactate Threshold Runs', 'Recovery Jog Intervals'],
+        time: '6:00 – 7:30 AM',
+        batch: 'Full Track'
+      },
+      {
+        day: 'THU',
+        focus: 'Mobility',
+        title: 'Stride Efficiency Form',
+        drills: ['Hip Mobility Drills', 'A-Skip & B-Skip Form', 'Dynamic Flexibility'],
+        time: 'Flexible Slots',
+        batch: 'Warm-up Strip'
+      },
+      {
+        day: 'FRI',
+        focus: 'Track',
+        title: 'Curve Running & Relay',
+        drills: ['Centrifugal Lean Drills', 'Blind Baton Exchanges', 'Race Simulation Runs'],
+        time: '6:00 – 7:30 AM',
+        batch: 'Full Track'
+      },
+      {
+        day: 'SAT',
+        focus: 'Trials',
+        title: 'Laser Timed Sprint Tests',
+        drills: ['Photocell 60m/100m Times', 'Jump Distance Metric', 'Coach Data Review'],
+        time: '7:00 – 9:00 AM',
+        batch: 'Timing Gate'
+      },
+      {
+        day: 'SUN',
+        focus: 'Rest',
+        title: 'Full Rest & Recovery',
+        drills: ['Contrast Bath Routine', 'Sleep Optimization', 'Training Log Entry'],
+        time: 'Rest Day',
+        batch: 'All Cohorts',
+        rest: true
+      },
     ],
   };
 
@@ -272,9 +472,21 @@ document.addEventListener('DOMContentLoaded', () => {
     if (scheduleTable) {
       scheduleTable.innerHTML = data.map(d => `
         <div class="sched-col ${d.rest ? 'is-rest' : ''}">
-          <p class="sched-day">${d.day}</p>
-          <p class="sched-title">${d.title}</p>
-          ${!d.rest ? `<p class="sched-time">${d.time}</p>` : ''}
+          <div class="sched-col-header">
+            <span class="sched-day">${d.day}</span>
+            ${d.focus ? `<span class="sched-pill ${d.rest ? 'sched-pill-rest' : ''}">${d.focus}</span>` : ''}
+          </div>
+          <h4 class="sched-title">${d.title}</h4>
+          <ul class="sched-drills">
+            ${(d.drills || []).map(drill => `<li><span class="sched-dot">&bull;</span><span>${drill}</span></li>`).join('')}
+          </ul>
+          <div class="sched-footer">
+            <div class="sched-time-wrap">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" class="shrink-0"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              <span class="sched-time">${d.time}</span>
+            </div>
+            ${d.batch ? `<span class="sched-batch">${d.batch}</span>` : ''}
+          </div>
         </div>
       `).join('');
     }

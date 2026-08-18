@@ -779,11 +779,11 @@ body {
   overflow: hidden;
   background: var(--bg-card);
   flex: 1;
-  min-height: 260px;
+  min-height: 310px;
   align-content: stretch;
 }
 .sched-col {
-  padding: 16px 12px;
+  padding: 14px 10px;
   border-left: 1px solid var(--bd);
   display: flex;
   flex-direction: column;
@@ -794,34 +794,121 @@ body {
   transition: background-color .2s ease;
 }
 .sched-col:first-child { border-left: none; }
+
+.sched-col-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 4px;
+  margin-bottom: 8px;
+}
 .sched-day {
-  font-size: 11px;
+  font-family: 'Manrope', sans-serif;
+  font-size: 11.5px;
   font-weight: 800;
   letter-spacing: 0.08em;
   color: var(--accent-text, #4D7C0F);
-  margin-bottom: 10px;
   text-transform: uppercase;
 }
 :root[data-theme="dark"] .sched-day {
   color: var(--accent);
 }
+.sched-pill {
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  padding: 2px 5px;
+  border-radius: 4px;
+  background: rgba(168, 214, 0, 0.16);
+  color: var(--accent-text, #4D7C0F);
+  white-space: nowrap;
+}
+:root[data-theme="dark"] .sched-pill {
+  background: rgba(184, 224, 0, 0.18);
+  color: var(--accent);
+}
+.sched-pill-rest {
+  background: rgba(104, 117, 133, 0.12);
+  color: var(--muted);
+}
 .sched-title {
   font-family: 'Manrope', sans-serif;
-  font-size: 13px;
-  font-weight: 700;
+  font-size: 12.5px;
+  font-weight: 800;
   color: var(--dark);
-  line-height: 1.35;
+  line-height: 1.25;
   margin-bottom: 8px;
   word-break: normal;
   hyphens: none;
 }
-.sched-time {
-  font-size: 11.5px;
-  font-weight: 500;
+.sched-drills {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 10px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  flex: 1;
+}
+.sched-drills li {
+  display: flex;
+  align-items: flex-start;
+  gap: 5px;
+  font-size: 11px;
+  line-height: 1.35;
   color: var(--muted);
-  line-height: 1.4;
-  white-space: normal;
+}
+:root[data-theme="dark"] .sched-drills li {
+  color: rgba(255, 255, 255, 0.7);
+}
+.sched-dot {
+  color: var(--accent-text, #4D7C0F);
+  font-weight: 800;
+  font-size: 12px;
+  line-height: 1;
+  flex-shrink: 0;
+}
+:root[data-theme="dark"] .sched-dot {
+  color: var(--accent);
+}
+.sched-footer {
   margin-top: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+.sched-time-wrap {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 10.5px;
+  font-weight: 700;
+  color: var(--dark);
+  background: var(--softbg, #F5F7F5);
+  border: 1px solid var(--bd);
+  padding: 4px 6px;
+  border-radius: 6px;
+  white-space: nowrap;
+  overflow: hidden;
+}
+:root[data-theme="dark"] .sched-time-wrap {
+  background: rgba(255, 255, 255, 0.04);
+  border-color: var(--border-color);
+  color: var(--text-primary);
+}
+.sched-time {
+  font-size: 10.5px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  white-space: nowrap;
+}
+.sched-batch {
+  font-size: 9.5px;
+  font-weight: 600;
+  color: var(--muted);
+  text-align: right;
+  padding-right: 2px;
 }
 .sched-col.is-rest {
   background: #FAFBFA;
