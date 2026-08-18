@@ -120,6 +120,11 @@ document.addEventListener('DOMContentLoaded', () => {
         { stage: 'Stage 2 (Foundation)', desc: 'Positional awareness, tactical communication, and structured team play.' },
         { stage: 'Stage 3 (Performance)', desc: 'Full 11v11 matchplay, video review, speed periodization, and regional tournaments.' }
       ],
+      standards: [
+        { label: 'Coach Credentials', desc: 'UEFA & AFC licensed staff with 8:1 maximum athlete-to-coach ratio.' },
+        { label: 'Surface Quality', desc: 'FIFA Quality Pro artificial turf with shock-pad underlayment.' },
+        { label: 'Performance Telemetry', desc: 'Laser sprint timing gates, agility metrics & quarterly biometric reports.' }
+      ],
       schedule: [
         { day: 'MON', title: 'Skills Training', time: '5:30 PM – 7:00 PM' },
         { day: 'TUE', title: 'Fitness Development', time: '5:30 PM – 6:30 PM' },
@@ -150,6 +155,11 @@ document.addEventListener('DOMContentLoaded', () => {
         { stage: 'Stage 1 (Fundamentals)', desc: 'Dribbling rhythm, layup footwork, passing accuracy and basic court rules.' },
         { stage: 'Stage 2 (Development)', desc: 'Pick-and-roll execution, fastbreak spacing and full-court scrimmage habits.' },
         { stage: 'Stage 3 (Championship)', desc: 'High-tempo 5v5 tournament play, video scouting and collegiate showcase preparation.' }
+      ],
+      standards: [
+        { label: 'Coach Credentials', desc: 'FIBA & National certified coaching staff with 6:1 player-to-coach ratio.' },
+        { label: 'Surface Quality', desc: 'Shock-absorbent maple wood hardwood courts with electronic scoreboards.' },
+        { label: 'Performance Telemetry', desc: 'Vertical jump testing, shot-release arc analysis & speed telemetry.' }
       ],
       schedule: [
         { day: 'MON', title: 'Ball Handling', time: '5:00 PM – 6:30 PM' },
@@ -182,6 +192,11 @@ document.addEventListener('DOMContentLoaded', () => {
         { stage: 'Stage 2 (Intermediate)', desc: 'Smash-and-net combinations, serve variations and fast doubles counter-rallies.' },
         { stage: 'Stage 3 (Competitive)', desc: 'State-ranking circuit prep, high-tempo sparring and tactical match video analytics.' }
       ],
+      standards: [
+        { label: 'Coach Credentials', desc: 'BWF certified international coaches with 4:1 personalized court ratio.' },
+        { label: 'Surface Quality', desc: 'BWF standard multi-layered synthetic shock-absorbing mat courts.' },
+        { label: 'Performance Telemetry', desc: 'High-speed smash velocity radar, agility gate tests & recovery metrics.' }
+      ],
       schedule: [
         { day: 'MON', title: 'Footwork & Movement', time: '4:30 PM – 6:00 PM' },
         { day: 'TUE', title: 'Racket Technique', time: '4:30 PM – 6:00 PM' },
@@ -212,6 +227,11 @@ document.addEventListener('DOMContentLoaded', () => {
         { stage: 'Stage 1 (Fundamentals)', desc: 'Form posture, stride rhythm, kinetic flexibility and fun obstacle relays.' },
         { stage: 'Stage 2 (Track Development)', desc: 'Starting block mastery, hurdle clearance, baton exchange and 100m-800m splits.' },
         { stage: 'Stage 3 (Elite Timing)', desc: 'National qualifying benchmarks, laser-timed time trials and peak periodization.' }
+      ],
+      standards: [
+        { label: 'Coach Credentials', desc: 'World Athletics certified sprint & endurance coaches with 8:1 cohort ratio.' },
+        { label: 'Surface Quality', desc: '8-lane Olympic standard synthetic tartan track with all-weather drainage.' },
+        { label: 'Performance Telemetry', desc: 'Laser photocell timing gates (10m, 30m, 100m) & jump height telemetry.' }
       ],
       schedule: [
         { day: 'MON', title: 'Sprint Technique', time: '6:00 AM – 7:30 AM' },
@@ -249,7 +269,7 @@ document.addEventListener('DOMContentLoaded', () => {
         <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-4 pb-6 border-b border-border">
           <div>
             <div class="flex flex-wrap items-center gap-2.5 mb-2">
-              <span class="bg-lime/20 text-navy font-display font-extrabold text-[12px] px-3 py-1 rounded-full uppercase tracking-wider">${s.name}</span>
+              <span class="curriculum-badge bg-lime text-navy font-display font-extrabold text-[11.5px] px-3 py-1 rounded-full uppercase tracking-wider shadow-sm">${s.name}</span>
               <span class="text-muted text-[12.5px] font-semibold">${s.age}</span>
               <span class="text-muted/40 font-bold hidden sm:inline">&bull;</span>
               <span class="text-muted text-[12.5px] font-semibold">${s.coachRatio}</span>
@@ -269,10 +289,10 @@ document.addEventListener('DOMContentLoaded', () => {
           <div class="bento-curriculum-col p-5 rounded-xl bg-soft border border-border flex flex-col justify-between">
             <div>
               <div class="flex items-center gap-2.5 mb-4">
-                <span class="w-8 h-8 rounded-lg bg-lime/20 text-navy flex items-center justify-center font-bold text-xs">01</span>
+                <span class="w-8 h-8 rounded-lg bg-lime text-navy flex items-center justify-center font-display font-black text-xs shrink-0 shadow-sm">01</span>
                 <h4 class="font-display font-bold text-dark-text text-[15px]">Core Curriculum Pillars</h4>
               </div>
-              <div class="space-y-3">
+              <div class="space-y-3.5">
                 ${s.curriculum.map(c => `
                   <div class="text-left">
                     <p class="text-[13px] font-bold text-dark-text flex items-center gap-1.5">
@@ -294,10 +314,10 @@ document.addEventListener('DOMContentLoaded', () => {
           <div class="bento-curriculum-col p-5 rounded-xl bg-soft border border-border flex flex-col justify-between">
             <div>
               <div class="flex items-center gap-2.5 mb-4">
-                <span class="w-8 h-8 rounded-lg bg-lime/20 text-navy flex items-center justify-center font-bold text-xs">02</span>
+                <span class="w-8 h-8 rounded-lg bg-lime text-navy flex items-center justify-center font-display font-black text-xs shrink-0 shadow-sm">02</span>
                 <h4 class="font-display font-bold text-dark-text text-[15px]">Progression Milestones</h4>
               </div>
-              <div class="space-y-3">
+              <div class="space-y-3.5">
                 ${s.milestones.map(m => `
                   <div class="text-left">
                     <p class="text-[13px] font-bold text-dark-text flex items-center gap-1.5">
@@ -319,27 +339,24 @@ document.addEventListener('DOMContentLoaded', () => {
           <div class="bento-curriculum-col p-5 rounded-xl bg-soft border border-border flex flex-col justify-between">
             <div>
               <div class="flex items-center gap-2.5 mb-4">
-                <span class="w-8 h-8 rounded-lg bg-lime/20 text-navy flex items-center justify-center font-bold text-xs">03</span>
+                <span class="w-8 h-8 rounded-lg bg-lime text-navy flex items-center justify-center font-display font-black text-xs shrink-0 shadow-sm">03</span>
                 <h4 class="font-display font-bold text-dark-text text-[15px]">Academy Standards</h4>
               </div>
-              <div class="space-y-3 text-[12.5px] text-muted">
-                <div class="flex items-start gap-2">
-                  <svg class="text-lime shrink-0 mt-0.5" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-                  <div><strong>Coach Credentials:</strong> ${s.coachCert}</div>
-                </div>
-                <div class="flex items-start gap-2">
-                  <svg class="text-lime shrink-0 mt-0.5" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-                  <div><strong>Surface Quality:</strong> ${s.surface}</div>
-                </div>
-                <div class="flex items-start gap-2">
-                  <svg class="text-lime shrink-0 mt-0.5" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-                  <div><strong>Telemetry:</strong> ${s.telemetry}</div>
-                </div>
+              <div class="space-y-3.5">
+                ${(s.standards || []).map(std => `
+                  <div class="text-left">
+                    <p class="text-[13px] font-bold text-dark-text flex items-center gap-1.5">
+                      <svg class="text-lime shrink-0" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                      ${std.label}
+                    </p>
+                    <p class="text-[12px] text-muted leading-relaxed pl-5 mt-0.5">${std.desc}</p>
+                  </div>
+                `).join('')}
               </div>
             </div>
             <div class="pt-4 mt-4 border-t border-border/80 flex items-center justify-between text-xs text-muted">
               <span>Verified Safety</span>
-              <span class="font-semibold text-lime">Certified Gear</span>
+              <span class="font-semibold text-lime">Certified Facilities</span>
             </div>
           </div>
 
