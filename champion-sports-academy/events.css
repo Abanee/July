@@ -1095,6 +1095,27 @@ footer .flex.items-center.gap-3 a:hover svg,
 .ev-past-dates {
   font-size: 12.5px;
   color: var(--ev-muted);
+  margin-bottom: 4px;
+}
+.ev-past-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  margin-top: auto;
+  padding-top: 10px;
+  border-top: 1px solid var(--ev-border);
+}
+.ev-past-body .ev-status {
+  align-self: flex-start;
+  width: fit-content;
+  font-size: 11px;
+  padding: 3px 10px;
+}
+.ev-past-stat {
+  font-size: 11.5px;
+  font-weight: 600;
+  color: var(--ev-muted);
 }
 
 /* ============================================================
