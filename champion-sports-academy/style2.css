@@ -1166,13 +1166,20 @@ body[data-theme="dark"] {
 :root[data-theme="dark"] .bg-white,
 :root[data-theme="dark"] section.bg-white,
 :root[data-theme="dark"] div.bg-white {
-  background-color: var(--bg-primary) !important;
+  background-color: var(--bg-card) !important;
 }
 
 :root[data-theme="dark"] .section-pad[style*="#F5F7F5"],
 :root[data-theme="dark"] section[style*="#F5F7F5"],
-:root[data-theme="dark"] .bg-softbg {
+:root[data-theme="dark"] .bg-softbg,
+:root[data-theme="dark"] .bg-\[\#F5F7F5\],
+:root[data-theme="dark"] [class*="bg-[#F5F7F5]"] {
   background-color: var(--bg-secondary) !important;
+}
+
+:root[data-theme="dark"] .bg-white .bg-softbg,
+:root[data-theme="dark"] div[class*="bg-white"] div[class*="bg-softbg"] {
+  background-color: var(--bg-elevated) !important;
 }
 
 :root[data-theme="dark"] .section-heading {
@@ -1181,6 +1188,34 @@ body[data-theme="dark"] {
 
 :root[data-theme="dark"] .section-desc {
   color: var(--text-secondary) !important;
+}
+
+/* Global utility contrast overrides in Dark Mode */
+:root[data-theme="dark"] .text-dark,
+:root[data-theme="dark"] [class*="text-[#03111F]"],
+:root[data-theme="dark"] [class*="text-[#102033]"] {
+  color: var(--text-primary) !important;
+}
+
+:root[data-theme="dark"] .text-muted,
+:root[data-theme="dark"] [class*="text-[#526071]"],
+:root[data-theme="dark"] [class*="text-[#687585]"] {
+  color: var(--text-secondary) !important;
+}
+
+:root[data-theme="dark"] .border-bd,
+:root[data-theme="dark"] [class*="border-[#E3E8E5]"] {
+  border-color: var(--border-color) !important;
+}
+
+:root[data-theme="dark"] .text-lime-dark,
+:root[data-theme="dark"] [class*="text-[#4D7C0F]"] {
+  color: var(--accent) !important;
+}
+
+:root[data-theme="dark"] [class*="bg-[rgba(168,214,0,0.18)]"] {
+  background-color: rgba(184, 224, 0, 0.15) !important;
+  color: var(--accent) !important;
 }
 
 :root[data-theme="dark"] .level-card {

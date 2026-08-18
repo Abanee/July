@@ -467,6 +467,10 @@ a:focus-visible, button:focus-visible {
   display: flex;
   align-items: center;
   justify-content: center;
+  color: #061A2E;
+}
+.mv-icon svg {
+  stroke: currentColor;
 }
 
 /* ---------- Our Journey (Vertical Scrollable Timeline) ---------- */
@@ -746,6 +750,10 @@ a:focus-visible, button:focus-visible {
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
+  color: #061A2E;
+}
+.culture-principle-icon svg {
+  stroke: currentColor;
 }
 
 /* ---------- Our Impact ---------- */
@@ -902,8 +910,22 @@ body[data-theme="dark"] {
 
 /* About Page in Dark Theme */
 :root[data-theme="dark"] .mv-icon {
-  background-color: var(--bg-elevated) !important;
-  border-color: var(--border-color) !important;
+  background-color: rgba(184, 224, 0, 0.12) !important;
+  border-color: rgba(184, 224, 0, 0.3) !important;
+  color: var(--accent) !important;
+}
+
+:root[data-theme="dark"] .mv-icon svg {
+  stroke: var(--accent) !important;
+}
+
+:root[data-theme="dark"] .culture-principle-icon {
+  background-color: rgba(184, 224, 0, 0.15) !important;
+  color: var(--accent) !important;
+}
+
+:root[data-theme="dark"] .culture-principle-icon svg {
+  stroke: var(--accent) !important;
 }
 
 :root[data-theme="dark"] .about-timeline-track::before {
