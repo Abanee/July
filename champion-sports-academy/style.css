@@ -206,10 +206,58 @@ footer .flex.items-center.gap-3 a:hover svg,
 }
 .btn-lime svg,
 .btn-lime-sm svg,
-.bg-lime svg,
-[class*="bg-lime"] svg {
+.bg-lime:not([class*="/"]):not([class*="10"]):not([class*="15"]):not([class*="18"]):not([class*="20"]) svg {
   stroke: currentColor !important;
   color: #061A2E !important;
+}
+
+/* =======================================================
+   4-PILLAR METHODOLOGY CARDS HIGH CONTRAST
+   ======================================================= */
+.pillar-card {
+  transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+.pillar-card:hover {
+  transform: translateY(-4px);
+}
+.pillar-icon {
+  background: rgba(168, 214, 0, 0.16) !important;
+  color: #A8D600 !important;
+  border: 1px solid rgba(168, 214, 0, 0.35) !important;
+}
+.pillar-icon svg {
+  stroke: #A8D600 !important;
+  color: #A8D600 !important;
+}
+:root[data-theme="dark"] .pillar-icon {
+  background: rgba(184, 224, 0, 0.18) !important;
+  color: #B8E000 !important;
+  border: 1px solid rgba(184, 224, 0, 0.4) !important;
+}
+:root[data-theme="dark"] .pillar-icon svg {
+  stroke: #B8E000 !important;
+  color: #B8E000 !important;
+}
+:root[data-theme="light"] .pillar-icon {
+  background: rgba(77, 124, 15, 0.12) !important;
+  color: #4D7C0F !important;
+  border: 1px solid rgba(77, 124, 15, 0.25) !important;
+}
+:root[data-theme="light"] .pillar-icon svg {
+  stroke: #4D7C0F !important;
+  color: #4D7C0F !important;
+}
+
+.pillar-badge {
+  background: rgba(255, 255, 255, 0.08) !important;
+  color: #E2E8F0 !important;
+  border: 1px solid rgba(255, 255, 255, 0.16) !important;
+  letter-spacing: 0.06em;
+}
+:root[data-theme="light"] .pillar-badge {
+  background: #F1F4F1 !important;
+  color: #102033 !important;
+  border: 1px solid #DDE4E8 !important;
 }
 
 /* ===================== FOOTER RESPONSIVE FIXES (<=1024px) ===================== */
@@ -1028,6 +1076,11 @@ body[data-theme="dark"] {
 
 :root[data-theme="dark"] .benefit-card svg {
   stroke: var(--accent) !important;
+}
+
+:root[data-theme="dark"] .benefit-card .w-11 {
+  background-color: rgba(184, 224, 0, 0.18) !important;
+  border: 1px solid rgba(184, 224, 0, 0.35) !important;
 }
 
 :root[data-theme="dark"] .journey-card {

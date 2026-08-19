@@ -1096,13 +1096,18 @@ footer .flex.items-center.gap-3 a:hover svg,
 
 .spec-img-wrap {
   position: relative;
-  height: 180px;
+  width: 100%;
+  height: 200px;
+  aspect-ratio: 16 / 10;
   overflow: hidden;
+  background-color: #03111F;
 }
 .spec-img-wrap img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: center;
+  display: block;
   transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 }
 .spec-card:hover .spec-img-wrap img {
@@ -1112,7 +1117,8 @@ footer .flex.items-center.gap-3 a:hover svg,
 .spec-img-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg, rgba(6, 26, 46, 0.15) 0%, rgba(6, 26, 46, 0.75) 100%);
+  background: linear-gradient(180deg, rgba(6, 26, 46, 0.12) 0%, rgba(6, 26, 46, 0.72) 100%);
+  pointer-events: none;
 }
 
 .spec-tag {
