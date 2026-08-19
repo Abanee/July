@@ -290,7 +290,7 @@ document.addEventListener('DOMContentLoaded', () => {
             <div>
               <div class="flex items-center gap-2.5 mb-4">
                 <span class="w-8 h-8 rounded-lg bg-lime text-navy flex items-center justify-center font-display font-black text-xs shrink-0 shadow-sm">01</span>
-                <h4 class="font-display font-bold text-dark-text text-[15px]">Core Curriculum Pillars</h4>
+                <h4 class="font-display font-bold text-dark-text text-[15px]">Core Cur-riculum Pillars</h4>
               </div>
               <div class="space-y-3.5">
                 ${s.curriculum.map(c => `
