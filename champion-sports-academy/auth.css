@@ -60,7 +60,7 @@ button { cursor: pointer; font-family: inherit; }
 
 /* ─── Top Controls (Theme + RTL) ─── */
 .auth-top-controls {
-  position: fixed;
+  position: absolute;
   top: 22px;
   right: 28px;
   display: flex;

@@ -483,19 +483,25 @@ html.light .dash-hero-badge {
 .stat-grid-3 {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 16px;
+  gap: 20px;
+  margin-bottom: 26px;
 }
 .stat-clean-card {
   background: var(--bg-card);
   border: 1px solid var(--border-c);
   border-radius: 14px;
-  padding: 18px 20px;
+  padding: 20px 22px;
   box-shadow: var(--shadow-card);
-  transition: transform .2s ease, border-color .2s ease;
+  transition: transform .2s ease, border-color .2s ease, box-shadow .2s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 165px;
 }
 .stat-clean-card:hover {
   transform: translateY(-2px);
   border-color: rgba(184, 224, 0, 0.35);
+  box-shadow: 0 8px 24px -6px rgba(0, 0, 0, 0.12);
 }
 .stat-clean-header {
   display: flex;
@@ -504,9 +510,9 @@ html.light .dash-hero-badge {
   margin-bottom: 12px;
 }
 .stat-clean-icon {
-  width: 36px;
-  height: 36px;
-  border-radius: 9px;
+  width: 38px;
+  height: 38px;
+  border-radius: 10px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -518,26 +524,53 @@ html.light .dash-hero-badge {
   text-transform: uppercase;
   color: var(--text-muted);
   background: var(--bg-card-elevated);
-  padding: 3px 8px;
+  padding: 3px 9px;
   border-radius: 6px;
+}
+.stat-clean-main {
+  margin-bottom: 8px;
 }
 .stat-clean-value {
   font-family: 'Manrope', sans-serif;
   font-size: 26px;
   font-weight: 800;
   color: var(--text-main);
-  line-height: 1.1;
+  line-height: 1.15;
 }
 .stat-clean-title {
   font-size: 13px;
   font-weight: 600;
   color: var(--text-main);
-  margin-top: 4px;
+  margin-top: 3px;
+}
+.stat-bar-track {
+  width: 100%;
+  height: 6px;
+  background: rgba(0, 0, 0, 0.06);
+  border-radius: 999px;
+  overflow: hidden;
+  margin-bottom: 8px;
+}
+:root[data-theme="dark"] .stat-bar-track,
+html:not(.light) .stat-bar-track {
+  background: rgba(255, 255, 255, 0.08);
+}
+.stat-bar-fill {
+  height: 100%;
+  border-radius: 999px;
+  transition: width 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.stat-clean-footer {
+  margin-top: auto;
 }
 .stat-clean-sub {
   font-size: 11.5px;
   color: var(--text-muted);
-  margin: 3px 0 0;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
 }
 
 /* ===================== 2-COLUMN DASHBOARD LAYOUT ===================== */
@@ -545,6 +578,7 @@ html.light .dash-hero-badge {
   display: grid;
   grid-template-columns: 1.25fr 0.95fr;
   gap: 20px;
+  align-items: stretch;
 }
 
 .dash-card {
@@ -1008,24 +1042,45 @@ html.light .coach-fb-badge {
 
 /* ===================== EVENTS ===================== */
 .event-grid{
-  display:grid;grid-template-columns:repeat(3,1fr);gap:16px;
+  display:grid;grid-template-columns:repeat(3,1fr);gap:18px;
 }
 .event-card{
   background:var(--bg-card-elevated);
   border:1px solid var(--border-c);
   border-radius:14px;
   overflow:hidden;
-  transition:transform .25s ease, border-color .25s ease;
+  transition:transform .25s ease, border-color .25s ease, box-shadow .25s ease;
+  display:flex;
+  flex-direction:column;
 }
-.event-card:hover{transform:translateY(-3px);border-color:var(--accent);}
-.event-img{position:relative;height:130px;}
-.event-img img{width:100%;height:100%;object-fit:cover;}
+.event-card:hover{
+  transform:translateY(-3px);
+  border-color:var(--accent);
+  box-shadow: 0 8px 24px -6px rgba(0, 0, 0, 0.12);
+}
+.event-img{
+  position:relative;
+  height:145px;
+  overflow:hidden;
+  background:var(--bg-card);
+}
+.event-img img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  transition:transform 0.4s ease;
+}
+.event-card:hover .event-img img{
+  transform:scale(1.05);
+}
 .event-date{
   position:absolute;top:10px;left:10px;
   background:var(--bg-card);
   border-radius:8px;padding:5px 9px;
   display:flex;flex-direction:column;align-items:center;line-height:1.1;
   font-size:10px;color:var(--text-muted);font-weight:600;
+  box-shadow:0 2px 8px rgba(0,0,0,0.15);
+  backdrop-filter:blur(4px);
 }
 .event-date strong{font-size:13px;color:var(--text-main);font-weight:800;}
 .event-body{padding:14px;}

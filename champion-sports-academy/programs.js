@@ -282,36 +282,36 @@ document.addEventListener('DOMContentLoaded', () => {
           </div>
         </div>
 
-        <!-- 3-Column Bento Grid -->
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 pt-6 items-stretch">
+        <!-- 3-Column Bento Grid (1 Column on <= 1024px tablet/mobile) -->
+        <div class="bento-curriculum-grid grid grid-cols-1 xl:grid-cols-3 gap-5 lg:gap-6 pt-6 items-stretch">
           
           <!-- Bento 1: Core Methodology Pillars -->
-          <div class="bento-curriculum-col p-5 rounded-xl bg-soft border border-border flex flex-col justify-between">
+          <div class="bento-curriculum-col p-5 sm:p-6 rounded-xl bg-soft border border-border flex flex-col justify-between h-full">
             <div>
               <div class="flex items-center gap-2.5 mb-4">
                 <span class="w-8 h-8 rounded-lg bg-lime text-navy flex items-center justify-center font-display font-black text-xs shrink-0 shadow-sm">01</span>
-                <h4 class="font-display font-bold text-dark-text text-[15px]">Core Cur-riculum Pillars</h4>
+                <h4 class="font-display font-bold text-dark-text text-[15px]">Core Curriculum Pillars</h4>
               </div>
               <div class="space-y-3.5">
                 ${s.curriculum.map(c => `
                   <div class="text-left">
                     <p class="text-[13px] font-bold text-dark-text flex items-center gap-1.5">
                       <svg class="text-lime shrink-0" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-                      ${c.title}
+                      <span>${c.title}</span>
                     </p>
                     <p class="text-[12px] text-muted leading-relaxed pl-5 mt-0.5">${c.desc}</p>
                   </div>
                 `).join('')}
               </div>
             </div>
-            <div class="pt-4 mt-4 border-t border-border/80 flex items-center justify-between text-xs text-muted">
+            <div class="pt-4 mt-5 border-t border-border/80 flex items-center justify-between text-xs text-muted">
               <span>Sessions: 75–90 mins</span>
               <span class="font-semibold text-lime">Skill Evaluated</span>
             </div>
           </div>
 
           <!-- Bento 2: Progression Roadmaps -->
-          <div class="bento-curriculum-col p-5 rounded-xl bg-soft border border-border flex flex-col justify-between">
+          <div class="bento-curriculum-col p-5 sm:p-6 rounded-xl bg-soft border border-border flex flex-col justify-between h-full">
             <div>
               <div class="flex items-center gap-2.5 mb-4">
                 <span class="w-8 h-8 rounded-lg bg-lime text-navy flex items-center justify-center font-display font-black text-xs shrink-0 shadow-sm">02</span>
@@ -321,22 +321,22 @@ document.addEventListener('DOMContentLoaded', () => {
                 ${s.milestones.map(m => `
                   <div class="text-left">
                     <p class="text-[13px] font-bold text-dark-text flex items-center gap-1.5">
-                      <span class="w-1.5 h-1.5 rounded-full bg-lime shrink-0"></span>
-                      ${m.stage}
+                      <svg class="text-lime shrink-0" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="4" fill="currentColor"/></svg>
+                      <span>${m.stage}</span>
                     </p>
-                    <p class="text-[12px] text-muted leading-relaxed pl-3.5 mt-0.5">${m.desc}</p>
+                    <p class="text-[12px] text-muted leading-relaxed pl-5 mt-0.5">${m.desc}</p>
                   </div>
                 `).join('')}
               </div>
             </div>
-            <div class="pt-4 mt-4 border-t border-border/80 flex items-center justify-between text-xs text-muted">
+            <div class="pt-4 mt-5 border-t border-border/80 flex items-center justify-between text-xs text-muted">
               <span>All 4 Skill Levels</span>
               <span class="font-semibold text-lime">Quarterly Tests</span>
             </div>
           </div>
 
           <!-- Bento 3: Standards & Facility Specs -->
-          <div class="bento-curriculum-col p-5 rounded-xl bg-soft border border-border flex flex-col justify-between">
+          <div class="bento-curriculum-col p-5 sm:p-6 rounded-xl bg-soft border border-border flex flex-col justify-between h-full">
             <div>
               <div class="flex items-center gap-2.5 mb-4">
                 <span class="w-8 h-8 rounded-lg bg-lime text-navy flex items-center justify-center font-display font-black text-xs shrink-0 shadow-sm">03</span>
@@ -347,14 +347,14 @@ document.addEventListener('DOMContentLoaded', () => {
                   <div class="text-left">
                     <p class="text-[13px] font-bold text-dark-text flex items-center gap-1.5">
                       <svg class="text-lime shrink-0" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-                      ${std.label}
+                      <span>${std.label}</span>
                     </p>
                     <p class="text-[12px] text-muted leading-relaxed pl-5 mt-0.5">${std.desc}</p>
                   </div>
                 `).join('')}
               </div>
             </div>
-            <div class="pt-4 mt-4 border-t border-border/80 flex items-center justify-between text-xs text-muted">
+            <div class="pt-4 mt-5 border-t border-border/80 flex items-center justify-between text-xs text-muted">
               <span>Verified Safety</span>
               <span class="font-semibold text-lime">Certified Facilities</span>
             </div>
