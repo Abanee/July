@@ -450,17 +450,16 @@ footer .flex.items-center.gap-3 a:hover svg,
    8. EVENT FILTERS
    ============================================================ */
 .ev-filter-wrap {
-  overflow-x: auto;
-  -webkit-overflow-scrolling: touch;
-  scrollbar-width: none;
+  width: 100%;
+  overflow: visible;
 }
-.ev-filter-wrap::-webkit-scrollbar { display: none; }
 
 .ev-filters {
   display: flex;
-  gap: 8px;
-  width: max-content;
-  min-width: 100%;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px 10px;
+  width: 100%;
   padding-bottom: 2px;
 }
 .ev-filter-btn {

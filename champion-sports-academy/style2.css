@@ -1438,9 +1438,22 @@ a.btn-outline-lime:hover {
     border-left: none;
     padding: 0 10px;
   }
-  .join-steps { flex-direction: column; align-items: stretch; gap: 22px; }
-  .join-step { text-align: left; display: flex; gap: 16px; align-items: center; }
+  .join-steps { flex-direction: column; align-items: stretch; gap: 14px; }
+  .join-step {
+    text-align: left;
+    display: flex;
+    flex-direction: row;
+    gap: 16px;
+    align-items: center;
+    background: #FFFFFF;
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    padding: 16px 18px;
+    border-radius: 14px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+  }
   .join-num { margin-bottom: 0; flex-shrink: 0; }
+  .join-step h4 { margin-bottom: 2px; }
+  .join-step p { margin: 0; }
   .join-arrow { display: none; }
   
   /* 2-Column Centered Schedule Grid */
@@ -1605,6 +1618,17 @@ body[data-theme="dark"] {
 }
 
 :root[data-theme="dark"] .practical-item p {
+  color: var(--text-secondary) !important;
+}
+
+:root[data-theme="dark"] .join-step {
+  background-color: var(--bg-card) !important;
+  border-color: var(--border-color) !important;
+}
+:root[data-theme="dark"] .join-step h4 {
+  color: var(--text-primary) !important;
+}
+:root[data-theme="dark"] .join-step p {
   color: var(--text-secondary) !important;
 }
 

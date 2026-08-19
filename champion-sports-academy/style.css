@@ -594,12 +594,16 @@ a:focus-visible, button:focus-visible {
   color: #102033;
   font-family: 'Manrope', sans-serif;
 }
-.text-lime-dark { color: #6f9700; }
 .db-feedback {
   background: #F6F8F5;
   border: 1px solid #E5E9ED;
   border-radius: 8px;
   padding: 12px;
+}
+@media (max-width: 480px) {
+  .dashboard-main { padding: 16px 14px; }
+  .db-stat, .db-mini { padding: 9px 11px; }
+  .db-stat-value { font-size: 13px; }
 }
 
 /* ===================== FOOTER ===================== */

@@ -822,15 +822,12 @@ footer .flex.items-center.gap-3 a:hover svg,
    ============================================ */
 .filter-bar {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
-  gap: 8px;
+  gap: 8px 10px;
   margin-bottom: 48px;
-  overflow-x: auto;
-  -webkit-overflow-scrolling: touch;
-  scrollbar-width: none;
-  padding-bottom: 2px;
+  width: 100%;
 }
-.filter-bar::-webkit-scrollbar { display: none; }
 
 .filter-btn {
   display: inline-flex;
@@ -1015,18 +1012,22 @@ footer .flex.items-center.gap-3 a:hover svg,
 .coach-specs {
   display: flex;
   flex-wrap: wrap;
-  gap: 5px;
+  gap: 6px;
   margin-bottom: 16px;
   min-height: 28px;
 }
+.coach-specs .spec-tag,
 .spec-tag {
+  position: static;
   font-size: 11px;
   font-weight: 600;
   color: var(--text-muted);
   background: var(--bg-elevated);
   border: 1px solid var(--border-color);
   padding: 4px 9px;
-  border-radius: 5px;
+  border-radius: 6px;
+  display: inline-flex;
+  align-items: center;
 }
 
 /* View profile button */
@@ -1121,7 +1122,7 @@ footer .flex.items-center.gap-3 a:hover svg,
   pointer-events: none;
 }
 
-.spec-tag {
+.spec-item .spec-tag {
   position: absolute;
   top: 12px;
   left: 12px;
