@@ -2097,6 +2097,23 @@ html.light .legacy-quote { border-left-color: #4D7C0F; }
   .accred-grid, .ratios-grid { grid-template-columns: repeat(2, 1fr); }
   .legacy-grid { grid-template-columns: 1fr; }
 }
+
+@media (max-width: 640px) {
+  .accred-grid,
+  .ratios-grid {
+    grid-template-columns: 1fr !important;
+    max-width: 380px;
+    margin-left: auto;
+    margin-right: auto;
+    gap: 16px !important;
+  }
+  .ratio-card,
+  .accred-card {
+    padding: 22px 18px;
+    width: 100%;
+  }
+}
+
 @media (max-width: 380px) {
   .hero-heading { font-size: 26px; }
   .section-heading { font-size: 23px; }
@@ -2105,4 +2122,6 @@ html.light .legacy-quote { border-left-color: #4D7C0F; }
   .coach-name { font-size: 16px; }
   .impact-num { font-size: 34px; }
   .footer-grid { padding-top: 40px; padding-bottom: 32px; }
+  .ratio-card,
+  .accred-card { padding: 18px 14px; }
 }
