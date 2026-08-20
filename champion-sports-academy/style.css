@@ -895,14 +895,12 @@ a:focus-visible, button:focus-visible {
 }
 
 /* ---------- Coaching approach principles ---------- */
-.principle-item + .principle-item {
-  border-top: 1px solid rgba(255,255,255,0.1);
+.principle-card {
+  transition: all 0.25s ease;
 }
-@media (min-width: 1024px) {
-  .principle-item + .principle-item {
-    border-top: none;
-    border-left: 1px solid rgba(255,255,255,0.1);
-  }
+.principle-card:hover {
+  background: rgba(255, 255, 255, 0.08);
+  transform: translateY(-2px);
 }
 
 /* ---------- Who We Serve — stage rows ---------- */

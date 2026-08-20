@@ -5,8 +5,8 @@
      THEME & RTL
      ============================================================ */
   const root = document.documentElement;
-  const themeToggles = document.querySelectorAll('#theme-toggle, #sidebar-theme-toggle');
-  const rtlToggles   = document.querySelectorAll('#rtl-toggle, #sidebar-rtl-toggle');
+  const themeToggles = document.querySelectorAll('#theme-toggle, #sidebar-theme-toggle, #header-theme-toggle');
+  const rtlToggles   = document.querySelectorAll('#rtl-toggle, #sidebar-rtl-toggle, #header-rtl-toggle');
 
   function applyTheme(theme) {
     root.setAttribute('data-theme', theme);

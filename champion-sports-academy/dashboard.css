@@ -195,6 +195,40 @@ html.light .nav-item:hover{color:var(--accent-navy);}
   margin-top:auto;
 }
 
+.nav-item-logout {
+  color: #EF4444 !important;
+  background: rgba(239, 68, 68, 0.08);
+  border: 1px solid rgba(239, 68, 68, 0.2);
+  border-radius: 10px !important;
+  border-left: 1px solid rgba(239, 68, 68, 0.2) !important;
+  margin-top: 6px;
+  transition: all 0.2s ease;
+}
+.nav-item-logout .nav-icon {
+  color: #EF4444 !important;
+}
+.nav-item-logout:hover {
+  background: rgba(239, 68, 68, 0.16) !important;
+  border-color: rgba(239, 68, 68, 0.4) !important;
+  color: #DC2626 !important;
+}
+.nav-item-logout:hover .nav-icon {
+  color: #DC2626 !important;
+}
+html.light .nav-item-logout {
+  background: #FEF2F2;
+  color: #DC2626 !important;
+  border-color: #FECACA !important;
+}
+html.light .nav-item-logout .nav-icon {
+  color: #DC2626 !important;
+}
+html.light .nav-item-logout:hover {
+  background: #FEE2E2 !important;
+  border-color: #F87171 !important;
+  color: #B91C1C !important;
+}
+
 .sidebar-profile{
   display:flex;
   align-items:center;
