@@ -573,64 +573,61 @@
       <div class="rep-book-card" data-reveal>
         <div class="row align-items-center g-5">
           <div class="col-lg-5">
-            <div class="cm-eyebrow" style="background:rgba(255,255,255,.15);border-color:rgba(255,255,255,.3);color:#fff;">
-              <i class="bi bi-calendar-check-fill"></i> EXPRESS SERVICE
+            <div class="rep-lab-badge">
+              <span class="rep-lab-pulse"></span>
+              <span>DIAGNOSTIC BENCH ACTIVE &bull; 4 TECHNICIANS READY</span>
             </div>
-            <h2 class="text-white text-3xl md:text-4xl font-extrabold mb-3">Book Your Repair &amp; Skip the Wait Line</h2>
-            <p class="text-slate-200 text-base mb-4">
-              Select your smartphone model and required repair service. We will reserve your genuine OEM replacement part and assign a dedicated technician.
+            <h2 class="text-white text-3xl md:text-4xl font-extrabold mb-3">Precision Repair &amp; Same-Day Diagnostic</h2>
+            <p class="text-slate-300 text-base mb-4">
+              Reserve genuine OEM parts and schedule your live diagnostic slot. No waiting queues, fixed upfront quotes, and guaranteed device data protection.
             </p>
-
-            <div class="d-flex flex-column gap-3 text-white text-sm">
-              <div class="d-flex align-items-center gap-2"><i class="bi bi-check-circle-fill text-emerald-400"></i> Free 15-Minute Diagnostic Audit</div>
-              <div class="d-flex align-items-center gap-2"><i class="bi bi-check-circle-fill text-emerald-400"></i> No Charge If We Can't Fix It</div>
-              <div class="d-flex align-items-center gap-2"><i class="bi bi-check-circle-fill text-emerald-400"></i> 100% Data &amp; Photo Safety</div>
-            </div>
           </div>
 
           <div class="col-lg-7">
-            <form class="rep-book-form" id="repairBookingForm" onsubmit="event.preventDefault(); var name=document.getElementById('rbName').value; var ref='REP-'+Math.floor(100000+Math.random()*900000); alert('Thank you '+name+'! Repair Ticket #'+ref+' confirmed. Our technician will reserve your OEM parts.'); this.reset();">
-              <div class="row g-3">
-                <div class="col-md-6">
-                  <input type="text" id="rbName" placeholder="Your Name *" required class="cm-input">
+            <div class="rep-ticket-box">
+              <form class="rep-book-form" id="repairBookingForm" onsubmit="event.preventDefault(); var name=document.getElementById('rbName').value; var ref='REP-'+Math.floor(100000+Math.random()*900000); alert('Thank you '+name+'! Diagnostic Ticket #'+ref+' confirmed. Technician bench reserved.'); this.reset();">
+                <div class="row g-3">
+                  <div class="col-md-6">
+                    <input type="text" id="rbName" placeholder="Your Full Name *" required class="cm-input">
+                  </div>
+                  <div class="col-md-6">
+                    <input type="tel" id="rbPhone" placeholder="Phone Number *" required class="cm-input">
+                  </div>
+                  <div class="col-md-6">
+                    <select id="rbBrand" required class="cm-input">
+                      <option value="" disabled selected>Select Phone Brand *</option>
+                      <option value="Apple">Apple iPhone</option>
+                      <option value="Samsung">Samsung Galaxy</option>
+                      <option value="Google">Google Pixel</option>
+                      <option value="Xiaomi">Xiaomi / POCO</option>
+                      <option value="Vivo">iQOO / Vivo</option>
+                      <option value="OPPO">OPPO</option>
+                      <option value="Motorola">Motorola</option>
+                    </select>
+                  </div>
+                  <div class="col-md-6">
+                    <input type="text" id="rbModel" placeholder="Model (e.g. iPhone 15 Pro)" required class="cm-input">
+                  </div>
+                  <div class="col-12">
+                    <select id="rbIssue" required class="cm-input">
+                      <option value="" disabled selected>Select Primary Diagnostic Issue *</option>
+                      <option value="Screen Replacement">Screen / Cracked LTPO OLED Glass</option>
+                      <option value="Battery Replacement">Battery Drain / Degradation (Health &lt; 80%)</option>
+                      <option value="Charging Port Repair">USB-C / Lightning Port Fault &amp; No Charge</option>
+                      <option value="Water Damage">Liquid Ingress / Ultrasonic Board Recovery</option>
+                      <option value="Camera Repair">Camera Sensor / OIS Blur / Cracked Lens</option>
+                      <option value="Motherboard Repair">Micro-soldering / Short Circuit / No Power</option>
+                    </select>
+                  </div>
+                  <div class="col-12">
+                    <button type="submit" class="cm-btn cm-btn--white w-100 justify-content-center cm-btn--lg">
+                      <span>Generate Repair Ticket &amp; Reserve Bench</span>
+                      <i class="bi bi-arrow-right"></i>
+                    </button>
+                  </div>
                 </div>
-                <div class="col-md-6">
-                  <input type="tel" id="rbPhone" placeholder="Phone Number *" required class="cm-input">
-                </div>
-                <div class="col-md-6">
-                  <select id="rbBrand" required class="cm-input">
-                    <option value="" disabled selected>Select Phone Brand *</option>
-                    <option value="Apple">Apple iPhone</option>
-                    <option value="Samsung">Samsung Galaxy</option>
-                    <option value="Google">Google Pixel</option>
-                    <option value="Xiaomi">Xiaomi / POCO</option>
-                    <option value="Vivo">iQOO / Vivo</option>
-                    <option value="OPPO">OPPO</option>
-                    <option value="Motorola">Motorola</option>
-                  </select>
-                </div>
-                <div class="col-md-6">
-                  <input type="text" id="rbModel" placeholder="Exact Model (e.g. iPhone 15 Pro)" required class="cm-input">
-                </div>
-                <div class="col-12">
-                  <select id="rbIssue" required class="cm-input">
-                    <option value="" disabled selected>Select Primary Issue *</option>
-                    <option value="Screen Replacement">Screen / Cracked Glass Replacement</option>
-                    <option value="Battery Replacement">Battery Draining Fast / Swollen</option>
-                    <option value="Charging Port Repair">Charging Port / Loose Cable Connection</option>
-                    <option value="Water Damage">Water / Liquid Damage Recovery</option>
-                    <option value="Camera Repair">Camera Lens / Blurry Focus Fix</option>
-                    <option value="Motherboard Repair">Dead Phone / Micro-soldering</option>
-                  </select>
-                </div>
-                <div class="col-12">
-                  <button type="submit" class="cm-btn cm-btn--primary w-100 justify-content-center cm-btn--lg">
-                    <span>Confirm Express Repair Appointment</span>
-                    <i class="bi bi-arrow-right"></i>
-                  </button>
-                </div>
-              </div>
-            </form>
+              </form>
+            </div>
           </div>
         </div>
       </div>

@@ -629,53 +629,84 @@
   </section>
 
   <!-- ====================================================
-       SECTION 5 — QUICK ACCESSORY ENQUIRY FORM
+       SECTION 5 — QUICK ACCESSORY ENQUIRY & STORE PICKUP
   ===================================================== -->
   <section class="cm-section" id="enquire">
     <div class="cm-container">
       <div class="acc-enq-card" data-reveal>
         <div class="row align-items-center g-5">
           <div class="col-lg-6">
-            <div class="cm-eyebrow" style="background:rgba(255,255,255,.15);border-color:rgba(255,255,255,.3);color:#fff;">
-              <i class="bi bi-shop"></i> STORE STOCK CHECK
+            <div class="acc-store-badge">
+              <i class="bi bi-box-seam-fill"></i>
+              <span>LIVE STORE STOCK &bull; 15-MIN SAME-DAY DESK HOLD</span>
             </div>
-            <h2 class="text-white text-3xl md:text-4xl font-extrabold mb-3">Looking for a Specific Accessory?</h2>
+            <h2 class="text-white text-3xl md:text-4xl font-extrabold mb-3">Reserve In-Store Stock Before It Sells Out</h2>
             <p class="text-slate-200 text-base mb-4">
-              We keep a live inventory of original accessories for Apple, Samsung, Pixel, Xiaomi, POCO, iQOO, Vivo, OPPO, and Motorola. Reserve your product online for same-day store pickup.
+              Select your smartphone brand or accessory type below. We will hold the official item at our front desk for 24 hours so you can test compatibility live before payment.
             </p>
 
-            <div class="d-flex flex-column gap-3 text-white text-sm">
-              <div class="d-flex align-items-center gap-2"><i class="bi bi-check-circle-fill text-emerald-400"></i> Free Product Testing at Store Desk</div>
-              <div class="d-flex align-items-center gap-2"><i class="bi bi-check-circle-fill text-emerald-400"></i> 100% Genuine Compatibility Guarantee</div>
-              <div class="d-flex align-items-center gap-2"><i class="bi bi-check-circle-fill text-emerald-400"></i> 30-Day Hassle-Free Exchange Warranty</div>
+            <!-- Interactive Brand Quick-Selector Chips -->
+            <div class="acc-brand-chips" id="accBrandChips">
+              <span class="acc-brand-chip active" onclick="selectAccBrand(this, 'Apple')"><i class="bi bi-apple"></i> Apple</span>
+              <span class="acc-brand-chip" onclick="selectAccBrand(this, 'Samsung')"><i class="bi bi-phone"></i> Samsung</span>
+              <span class="acc-brand-chip" onclick="selectAccBrand(this, 'Google Pixel')"><i class="bi bi-google"></i> Pixel</span>
+              <span class="acc-brand-chip" onclick="selectAccBrand(this, 'OnePlus')"><i class="bi bi-lightning-charge-fill"></i> OnePlus</span>
+              <span class="acc-brand-chip" onclick="selectAccBrand(this, 'Xiaomi')"><i class="bi bi-cpu"></i> Xiaomi</span>
+              <span class="acc-brand-chip" onclick="selectAccBrand(this, 'Universal')"><i class="bi bi-grid-fill"></i> Universal</span>
             </div>
           </div>
 
           <div class="col-lg-6">
-            <form class="acc-enq-form" id="accStockForm" onsubmit="event.preventDefault(); var name=document.getElementById('accName').value; var item=document.getElementById('accItem').value; alert('Thank you '+name+'! Your enquiry for ['+item+'] has been submitted. Store staff will reserve your item.'); this.reset();">
-              <div class="row g-3">
-                <div class="col-md-6">
-                  <input type="text" id="accName" placeholder="Your Name *" required class="cm-input">
+            <div class="acc-retail-box">
+              <form class="acc-enq-form" id="accStockForm" onsubmit="event.preventDefault(); var name=document.getElementById('accName').value; var item=document.getElementById('accItem').value; var cat=document.getElementById('accCat').value; alert('Thank you '+name+'! We have placed a 24-hour stock hold on ['+cat+' - '+item+']. Pick up at our store counter anytime today.'); this.reset();">
+                <div class="row g-3">
+                  <div class="col-md-6">
+                    <input type="text" id="accName" placeholder="Your Name *" required class="cm-input">
+                  </div>
+                  <div class="col-md-6">
+                    <input type="tel" id="accPhone" placeholder="WhatsApp / Phone *" required class="cm-input">
+                  </div>
+                  <div class="col-12">
+                    <select id="accCat" required class="cm-input">
+                      <option value="" disabled selected>Select Accessory Category *</option>
+                      <option value="Fast Chargers & GaN Adapters">Official Fast Chargers &amp; GaN Power Bricks (30W-120W)</option>
+                      <option value="MagSafe & Qi2 Wireless Hubs">MagSafe &amp; Qi2 15W Magnetic Wireless Stations</option>
+                      <option value="Heavy-Duty Armor Cases">Military-Grade Drop Armor &amp; Slim MagSafe Cases</option>
+                      <option value="9H Sapphire Screen Shields">9H Sapphire Curved Tempered Glass &amp; Privacy Glass</option>
+                      <option value="Hi-Res ANC Audio & DACs">Hi-Res ANC Wireless Earbuds &amp; Type-C DAC Adapters</option>
+                      <option value="Braided Fast Cables">100W/240W E-Mark Braided Silicone Cables</option>
+                    </select>
+                  </div>
+                  <div class="col-12">
+                    <input type="text" id="accItem" placeholder="Target Phone Model (e.g. iPhone 15 Pro / Galaxy S24 Ultra)" required class="cm-input">
+                  </div>
+                  <div class="col-12">
+                    <button type="submit" class="cm-btn cm-btn--white w-100 justify-content-center cm-btn--lg">
+                      <span>Check Store Stock &amp; Hold Item</span>
+                      <i class="bi bi-bag-check-fill"></i>
+                    </button>
+                  </div>
                 </div>
-                <div class="col-md-6">
-                  <input type="tel" id="accPhone" placeholder="Phone / WhatsApp *" required class="cm-input">
-                </div>
-                <div class="col-12">
-                  <input type="text" id="accItem" placeholder="Accessory / Phone Model (e.g. Galaxy S24 Ultra 45W Charger)" required class="cm-input">
-                </div>
-                <div class="col-12">
-                  <button type="submit" class="cm-btn cm-btn--primary w-100 justify-content-center cm-btn--lg">
-                    <span>Check Store Stock Now</span>
-                    <i class="bi bi-arrow-right"></i>
-                  </button>
-                </div>
-              </div>
-            </form>
+              </form>
+            </div>
           </div>
         </div>
       </div>
     </div>
   </section>
+
+  <script>
+    function selectAccBrand(el, brand) {
+      document.querySelectorAll('#accBrandChips .acc-brand-chip').forEach(function(c) { c.classList.remove('active'); });
+      el.classList.add('active');
+      var itemInput = document.getElementById('accItem');
+      if (itemInput && brand !== 'Universal') {
+        itemInput.placeholder = 'Target ' + brand + ' Model (e.g. ' + brand + ' Flagship)';
+      } else if (itemInput) {
+        itemInput.placeholder = 'Target Phone / Accessory Model (e.g. Galaxy S24 / iPhone 15)';
+      }
+    }
+  </script>
 
 </main>
 
