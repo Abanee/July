@@ -861,7 +861,7 @@ body {
 
 .schedule-table {
   display: grid;
-  grid-template-columns: repeat(7, 1fr);
+  grid-template-columns: repeat(7, minmax(0, 1fr));
   border: 1px solid var(--bd);
   border-radius: 14px;
   overflow: hidden;
@@ -869,9 +869,10 @@ body {
   flex: 1;
   min-height: 310px;
   align-content: stretch;
+  width: 100%;
 }
 .sched-col {
-  padding: 14px 10px;
+  padding: 12px 6px;
   border-left: 1px solid var(--bd);
   display: flex;
   flex-direction: column;
@@ -880,6 +881,7 @@ body {
   min-width: 0;
   background: var(--bg-card);
   transition: background-color .2s ease;
+  overflow: hidden;
 }
 .sched-col:first-child { border-left: none; }
 
@@ -887,30 +889,33 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 4px;
-  margin-bottom: 8px;
+  gap: 2px;
+  margin-bottom: 6px;
+  flex-wrap: wrap;
 }
 .sched-day {
   font-family: 'Manrope', sans-serif;
-  font-size: 11.5px;
+  font-size: 11px;
   font-weight: 800;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.04em;
   color: var(--accent-text, #4D7C0F);
   text-transform: uppercase;
+  line-height: 1;
 }
 :root[data-theme="dark"] .sched-day {
   color: var(--accent);
 }
 .sched-pill {
-  font-size: 9px;
+  font-size: 8px;
   font-weight: 800;
-  letter-spacing: 0.03em;
+  letter-spacing: 0.02em;
   text-transform: uppercase;
-  padding: 2px 5px;
+  padding: 1.5px 3.5px;
   border-radius: 4px;
   background: rgba(168, 214, 0, 0.16);
   color: var(--accent-text, #4D7C0F);
   white-space: nowrap;
+  line-height: 1.1;
 }
 :root[data-theme="dark"] .sched-pill {
   background: rgba(184, 224, 0, 0.18);
@@ -922,34 +927,35 @@ body {
 }
 .sched-title {
   font-family: 'Manrope', sans-serif;
-  font-size: 12.5px;
+  font-size: 11px;
   font-weight: 800;
   color: var(--dark);
   line-height: 1.25;
-  margin-bottom: 10px;
-  min-height: 34px;
+  margin-bottom: 8px;
+  min-height: 32px;
   display: flex;
   align-items: flex-start;
-  word-break: normal;
-  hyphens: none;
+  word-break: break-word;
 }
 .sched-drills {
   list-style: none;
   padding: 0;
-  margin: 0 0 12px 0;
+  margin: 0 0 8px 0;
   display: flex;
   flex-direction: column;
-  gap: 6px;
+  gap: 4px;
   flex: 1;
+  min-height: 68px;
 }
 .sched-drills li {
   display: flex;
   align-items: flex-start;
-  gap: 5px;
-  font-size: 11px;
-  line-height: 1.35;
+  gap: 3px;
+  font-size: 10px;
+  line-height: 1.3;
   color: var(--muted);
-  min-height: 28px;
+  min-height: unset;
+  word-break: break-word;
 }
 :root[data-theme="dark"] .sched-drills li {
   color: rgba(255, 255, 255, 0.7);
@@ -957,7 +963,7 @@ body {
 .sched-dot {
   color: var(--accent-text, #4D7C0F);
   font-weight: 800;
-  font-size: 12px;
+  font-size: 11px;
   line-height: 1.2;
   flex-shrink: 0;
 }
@@ -969,22 +975,31 @@ body {
   display: flex;
   flex-direction: column;
   gap: 4px;
-  min-height: 48px;
+  min-height: 44px;
   justify-content: flex-end;
+  padding-top: 6px;
+  border-top: 1px dashed rgba(0, 0, 0, 0.06);
+}
+:root[data-theme="dark"] .sched-footer {
+  border-top-color: rgba(255, 255, 255, 0.08);
 }
 .sched-time-wrap {
   display: flex;
   align-items: center;
-  gap: 4px;
-  font-size: 10.5px;
+  justify-content: center;
+  gap: 3px;
+  font-size: 9.5px;
   font-weight: 700;
   color: var(--dark);
   background: var(--softbg, #F5F7F5);
   border: 1px solid var(--bd);
-  padding: 4px 6px;
+  padding: 4px 3px;
   border-radius: 6px;
-  white-space: nowrap;
-  overflow: hidden;
+  white-space: normal;
+  text-align: center;
+  line-height: 1.2;
+  width: 100%;
+  box-sizing: border-box;
 }
 :root[data-theme="dark"] .sched-time-wrap {
   background: rgba(255, 255, 255, 0.04);
@@ -992,17 +1007,21 @@ body {
   color: var(--text-primary);
 }
 .sched-time {
-  font-size: 10px;
+  font-size: 9.5px;
+  font-weight: 700;
   letter-spacing: -0.01em;
+  text-align: center;
+  line-height: 1.2;
 }
 .sched-batch {
-  font-size: 9.5px;
+  font-size: 9px;
   font-weight: 600;
   color: var(--muted);
-  padding-left: 2px;
+  text-align: center;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  display: block;
 }
 
 /* Dedicated Outline Lime Button */
@@ -1113,29 +1132,94 @@ a.btn-outline-lime:hover {
   color: var(--dark);
 }
 
-/* ---------- Section 06: How to Join ---------- */
+/* ---------- Section 06/07: How to Join ---------- */
 .join-steps {
   display: flex;
-  align-items: flex-start;
-  gap: 6px;
-  margin-bottom: 44px;
+  align-items: stretch;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 40px;
+  max-width: 1160px;
+  margin-left: auto;
+  margin-right: auto;
 }
-.join-step { flex: 1; text-align: center; padding: 0 6px; }
+.join-step {
+  flex: 1;
+  text-align: center;
+  padding: 24px 16px;
+  border: 1px solid var(--bd);
+  border-radius: 14px;
+  background: var(--bg-card, #FFFFFF);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: all 0.25s ease;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.02);
+}
+.join-step:hover {
+  border-color: var(--lime);
+  transform: translateY(-3px);
+  box-shadow: 0 10px 24px rgba(168, 214, 0, 0.12);
+}
+:root[data-theme="dark"] .join-step {
+  background: var(--bg-card) !important;
+  border-color: var(--border-color) !important;
+}
+:root[data-theme="dark"] .join-step:hover {
+  border-color: var(--accent) !important;
+}
 .join-num {
-  display: inline-flex; align-items: center; justify-content: center;
-  width: 44px; height: 44px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
   border-radius: 50%;
+  background: rgba(168, 214, 0, 0.14);
   border: 1.5px solid var(--lime);
-  color: var(--lime);
+  color: var(--accent-text, #4D7C0F);
   font-weight: 800;
   font-size: 15px;
-  margin-bottom: 16px;
+  margin-bottom: 14px;
+  transition: all 0.25s ease;
 }
-.join-step h4 { font-weight: 700; font-size: 15.5px; color: var(--dark); margin-bottom: 6px; }
-.join-step p { font-size: 13px; color: var(--muted); line-height: 1.5; }
-.join-arrow { flex-shrink: 0; display: flex; align-items: center; height: 44px; margin-top: 0; opacity: .8; }
+.join-step:hover .join-num {
+  background: var(--lime);
+  color: var(--navy);
+  transform: scale(1.06);
+}
+:root[data-theme="dark"] .join-num {
+  color: var(--accent);
+}
+.join-step h4 {
+  font-family: 'Manrope', sans-serif;
+  font-weight: 800;
+  font-size: 15.5px;
+  color: var(--dark);
+  margin-bottom: 6px;
+}
+.join-step p {
+  font-size: 13px;
+  color: var(--muted);
+  line-height: 1.5;
+  margin: 0;
+}
+.join-arrow {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-self: center;
+  opacity: 0.85;
+}
 
-.join-cta { display: flex; align-items: center; gap: 16px; flex-wrap: wrap; }
+.join-cta {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
 
 /* ---------- Section 08: FAQ ---------- */
 .faq-grid-2col {
@@ -1362,34 +1446,59 @@ a.btn-outline-lime:hover {
   }
   .level-line { display: none; }
   
-  /* Section 04: Modern Centered 4-and-3 Multi-Row Grid */
+  /* Section 04: Responsive Grid */
   .sport-schedule-showcase {
     grid-template-columns: 1fr;
     gap: 24px;
   }
   .schedule-table {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
     gap: 12px;
     border: none;
     background: transparent;
     overflow: visible;
   }
   .sched-col {
-    flex: 0 1 calc(25% - 12px);
-    width: calc(25% - 12px);
-    min-width: 170px;
-    max-width: 228px;
+    flex: unset;
+    width: 100%;
+    min-width: 0;
+    max-width: none;
     border: 1px solid var(--bd) !important;
     border-radius: 12px;
     background: var(--bg-card);
-    padding: 16px 14px;
+    padding: 14px 12px;
     min-height: 120px;
     box-shadow: 0 2px 8px rgba(6,26,46,0.03);
   }
+  .sched-col .sched-title {
+    font-size: 12px;
+    min-height: unset;
+  }
+  .sched-col .sched-drills li {
+    font-size: 11px;
+  }
+  .sched-col .sched-time-wrap {
+    font-size: 10.5px;
+    padding: 5px 6px;
+  }
+  .sched-col .sched-time {
+    font-size: 10px;
+  }
   .sched-col.is-rest {
     background: var(--bg-soft);
+  }
+
+  .join-steps {
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+  .join-step {
+    flex: 0 1 calc(50% - 16px);
+    min-width: 220px;
+  }
+  .join-arrow {
+    display: none;
   }
 }
 
@@ -1445,28 +1554,26 @@ a.btn-outline-lime:hover {
     flex-direction: row;
     gap: 16px;
     align-items: center;
-    background: #FFFFFF;
-    border: 1px solid rgba(0, 0, 0, 0.08);
     padding: 16px 18px;
     border-radius: 14px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
   }
   .join-num { margin-bottom: 0; flex-shrink: 0; }
   .join-step h4 { margin-bottom: 2px; }
   .join-step p { margin: 0; }
   .join-arrow { display: none; }
   
-  /* 2-Column Centered Schedule Grid */
+  /* 2-Column Responsive Schedule Grid */
   .schedule-table {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 12px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 10px;
   }
   .sched-col {
-    flex: 0 1 calc(50% - 12px);
-    min-width: 200px;
-    max-width: 280px;
+    flex: unset;
+    min-width: 0;
+    max-width: none;
+    width: 100%;
+    padding: 12px 10px;
   }
 }
 

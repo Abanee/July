@@ -569,25 +569,772 @@
       </div>
 
       <!-- 2-Column Sport Card + Weekly Timetable Showcase -->
-      <div class="sport-schedule-showcase grid grid-cols-1 xl:grid-cols-12 gap-6 items-stretch mt-6" id="sportShowcase">
-        <!-- Left: Dynamic Sport Image Card (4 cols) -->
-        <div class="xl:col-span-4" id="sportImageCard">
-          <!-- Populated dynamically by JS -->
-        </div>
+      <div class="sport-schedule-showcase-wrap mt-6">
 
-        <!-- Right: 7-Day Timetable Grid (8 cols) -->
-        <div class="xl:col-span-8 flex flex-col justify-between">
-          <div class="schedule-table" id="scheduleTable"></div>
-          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mt-6 pt-4 border-t border-bd">
-            <div class="schedule-note m-0 flex items-center gap-2 text-xs text-muted">
-              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 8v5M12 16h.01"/></svg>
-              <span>Actual timings may vary by age group and batch availability.</span>
+        <!-- Football Panel (Active) -->
+        <div class="sport-panel grid grid-cols-1 lg:grid-cols-12 gap-6 items-stretch" id="panel-football" data-sport-panel="football">
+          <!-- Left: Dynamic Sport Image Card -->
+          <div class="lg:col-span-4 2xl:col-span-3 flex flex-col">
+            <div class="sport-image-card bg-white border border-bd rounded-2xl overflow-hidden shadow-sm flex flex-col h-full hover:border-lime transition-all duration-300">
+              <div class="relative h-[190px] overflow-hidden group">
+                <img src="Assets/Home/home01.jpg" alt="Football Academy training at Champion Sports Academy" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy">
+                <div class="absolute inset-0 bg-gradient-to-t from-[#061A2E]/85 via-transparent to-transparent"></div>
+                <span class="absolute top-3 left-3 bg-[#A8D600] text-[#03111F] text-[11px] font-extrabold px-3 py-1 rounded-full uppercase tracking-wider shadow-sm">Active Cohorts</span>
+                <span class="absolute bottom-3 left-3 text-white font-display font-extrabold text-[17px] drop-shadow-md">Football Academy</span>
+              </div>
+              <div class="p-5 flex flex-col flex-1 justify-between gap-4">
+                <div>
+                  <p class="text-xs font-semibold text-lime-dark tracking-wide uppercase mb-1">Ages 5 – 18 &bull; 8:1 Athlete to Coach</p>
+                  <p class="text-muted text-[13px] leading-relaxed">High-Tempo Matchplay &amp; Skill Drills</p>
+                  <div class="flex flex-wrap gap-1.5 mt-3">
+                    <span class="text-[11px] font-semibold bg-softbg text-muted px-2.5 py-1 rounded-md border border-bd">Tactical IQ</span>
+                    <span class="text-[11px] font-semibold bg-softbg text-muted px-2.5 py-1 rounded-md border border-bd">Ball Mastery</span>
+                    <span class="text-[11px] font-semibold bg-softbg text-muted px-2.5 py-1 rounded-md border border-bd">Agility &amp; Speed</span>
+                  </div>
+                </div>
+                <div class="pt-3 border-t border-bd flex items-center justify-between">
+                  <span class="text-[12px] text-muted flex items-center gap-1.5">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#A8D600" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                    Full-Size FIFA Certified Turf
+                  </span>
+                  <a href="contact.html?sport=football" class="text-[12.5px] font-bold text-lime-dark hover:underline flex items-center gap-1">Book Trial &rarr;</a>
+                </div>
+              </div>
             </div>
-            <a href="#book-trial" class="btn-lime-sm whitespace-nowrap shrink-0">View All Batch Timings
-              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-            </a>
+          </div>
+
+          <!-- Right: 7-Day Timetable Grid -->
+          <div class="lg:col-span-8 2xl:col-span-9 flex flex-col justify-between">
+            <div class="schedule-table-wrapper w-full overflow-x-auto rounded-[14px]">
+              <div class="schedule-table">
+                <!-- MON -->
+                <div class="sched-col">
+                  <div class="sched-col-header">
+                    <span class="sched-day">MON</span>
+                    <span class="sched-pill">Technique</span>
+                  </div>
+                  <h4 class="sched-title">Ball Mastery &amp; Control</h4>
+                  <ul class="sched-drills">
+                    <li><span class="sched-dot">&bull;</span><span>1v1 Dribble Move-ments</span></li>
+                    <li><span class="sched-dot">&bull;</span><span>First-Touch Trapping</span></li>
+                    <li><span class="sched-dot">&bull;</span><span>Cone Passing Drills</span></li>
+                  </ul>
+                  <div class="sched-footer">
+                    <div class="sched-time-wrap">
+                      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" class="shrink-0"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                      <span class="sched-time">5:30 – 7:00 PM</span>
+                    </div>
+                    <span class="sched-batch">Turf A</span>
+                  </div>
+                </div>
+                <!-- TUE -->
+                <div class="sched-col">
+                  <div class="sched-col-header">
+                    <span class="sched-day">TUE</span>
+                    <span class="sched-pill">Fitness</span>
+                  </div>
+                  <h4 class="sched-title">Speed &amp; Agility Reposbilty</h4>
+                  <ul class="sched-drills">
+                    <li><span class="sched-dot">&bull;</span><span>Speed Ladder Drills</span></li>
+                    <li><span class="sched-dot">&bull;</span><span>Acceleration Sprints</span></li>
+                    <li><span class="sched-dot">&bull;</span><span>Core Stability Reps</span></li>
+                  </ul>
+                  <div class="sched-footer">
+                    <div class="sched-time-wrap">
+                      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" class="shrink-0"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                      <span class="sched-time">5:30 – 6:30 PM</span>
+                    </div>
+                    <span class="sched-batch">Fitness Zone</span>
+                  </div>
+                </div>
+                <!-- WED -->
+                <div class="sched-col">
+                  <div class="sched-col-header">
+                    <span class="sched-day">WED</span>
+                    <span class="sched-pill">Tactical</span>
+                  </div>
+                  <h4 class="sched-title">Passing &amp; Team Shape</h4>
+                  <ul class="sched-drills">
+                    <li><span class="sched-dot">&bull;</span><span>Positional Rondos tac</span></li>
+                    <li><span class="sched-dot">&bull;</span><span>Transition Triggers info</span></li>
+                    <li><span class="sched-dot">&bull;</span><span>Cross &amp; Finish</span></li>
+                  </ul>
+                  <div class="sched-footer">
+                    <div class="sched-time-wrap">
+                      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" class="shrink-0"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                      <span class="sched-time">5:30 – 7:00 PM</span>
+                    </div>
+                    <span class="sched-batch">Main Turf</span>
+                  </div>
+                </div>
+                <!-- THU -->
+                <div class="sched-col">
+                  <div class="sched-col-header">
+                    <span class="sched-day">THU</span>
+                    <span class="sched-pill">Recovery</span>
+                  </div>
+                  <h4 class="sched-title">Mobility &amp; Personal Work</h4>
+                  <ul class="sched-drills">
+                    <li><span class="sched-dot">&bull;</span><span>Foam Rolling Routine</span></li>
+                    <li><span class="sched-dot">&bull;</span><span>Joint Mobility Workouts</span></li>
+                    <li><span class="sched-dot">&bull;</span><span>Free-Kick Practice</span></li>
+                  </ul>
+                  <div class="sched-footer">
+                    <div class="sched-time-wrap">
+                      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" class="shrink-0"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                      <span class="sched-time">Flexible Slots</span>
+                    </div>
+                    <span class="sched-batch">Studio &amp; Turf</span>
+                  </div>
+                </div>
+                <!-- FRI -->
+                <div class="sched-col">
+                  <div class="sched-col-header">
+                    <span class="sched-day">FRI</span>
+                    <span class="sched-pill">Matchplay</span>
+                  </div>
+                  <h4 class="sched-title">Tactical Set Pieces</h4>
+                  <ul class="sched-drills">
+                    <li><span class="sched-dot">&bull;</span><span>Set- Piece's Set-Up's</span></li>
+                    <li><span class="sched-dot">&bull;</span><span>Pressing Triggers</span></li>
+                    <li><span class="sched-dot">&bull;</span><span>7v7 Small Sided Game</span></li>
+                  </ul>
+                  <div class="sched-footer">
+                    <div class="sched-time-wrap">
+                      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" class="shrink-0"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                      <span class="sched-time">5:30 – 7:00 PM</span>
+                    </div>
+                    <span class="sched-batch">Full Pitch</span>
+                  </div>
+                </div>
+                <!-- SAT -->
+                <div class="sched-col">
+                  <div class="sched-col-header">
+                    <span class="sched-day">SAT</span>
+                    <span class="sched-pill">League</span>
+                  </div>
+                  <h4 class="sched-title">Competitive Scrimmage</h4>
+                  <ul class="sched-drills">
+                    <li><span class="sched-dot">&bull;</span><span>11m vs 11m Match Format</span></li>
+                    <li><span class="sched-dot">&bull;</span><span>Referee Officiating</span></li>
+                    <li><span class="sched-dot">&bull;</span><span>Video Analysis Brief</span></li>
+                  </ul>
+                  <div class="sched-footer">
+                    <div class="sched-time-wrap">
+                      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" class="shrink-0"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                      <span class="sched-time">9:00 – 11:00 AM</span>
+                    </div>
+                    <span class="sched-batch">Stadium Arena</span>
+                  </div>
+                </div>
+                <!-- SUN -->
+                <div class="sched-col is-rest">
+                  <div class="sched-col-header">
+                    <span class="sched-day">SUN</span>
+                    <span class="sched-pill sched-pill-rest">Rest</span>
+                  </div>
+                  <h4 class="sched-title">Active Recovery Day</h4>
+                  <ul class="sched-drills">
+                    <li><span class="sched-dot">&bull;</span><span>Hydration Protocols</span></li>
+                    <li><span class="sched-dot">&bull;</span><span>Light Muscle Stretch</span></li>
+                    <li><span class="sched-dot">&bull;</span><span>Weekly Progress</span></li>
+                  </ul>
+                  <div class="sched-footer">
+                    <div class="sched-time-wrap">
+                      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" class="shrink-0"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                      <span class="sched-time">Rest Day</span>
+                    </div>
+                    <span class="sched-batch">All Cohorts</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mt-6 pt-4 border-t border-bd">
+              <div class="schedule-note m-0 flex items-center gap-2 text-xs text-muted">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 8v5M12 16h.01"/></svg>
+                <span>Actual timings may vary by age group and batch availability.</span>
+              </div>
+              <a href="#book-trial" class="btn-lime-sm whitespace-nowrap shrink-0">View All Batch Timings
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+              </a>
+            </div>
           </div>
         </div>
+
+        <!-- Basketball Panel (Hidden by default) -->
+        <div class="sport-panel grid grid-cols-1 lg:grid-cols-12 gap-6 items-stretch hidden" id="panel-basketball" data-sport-panel="basketball">
+          <!-- Left: Dynamic Sport Image Card -->
+          <div class="lg:col-span-4 2xl:col-span-3 flex flex-col">
+            <div class="sport-image-card bg-white border border-bd rounded-2xl overflow-hidden shadow-sm flex flex-col h-full hover:border-lime transition-all duration-300">
+              <div class="relative h-[190px] overflow-hidden group">
+                <img src="Assets/Home/home02.jpg" alt="Basketball Academy training at Champion Sports Academy" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy">
+                <div class="absolute inset-0 bg-gradient-to-t from-[#061A2E]/85 via-transparent to-transparent"></div>
+                <span class="absolute top-3 left-3 bg-[#A8D600] text-[#03111F] text-[11px] font-extrabold px-3 py-1 rounded-full uppercase tracking-wider shadow-sm">Open Enrollments</span>
+                <span class="absolute bottom-3 left-3 text-white font-display font-extrabold text-[17px] drop-shadow-md">Basketball Academy</span>
+              </div>
+              <div class="p-5 flex flex-col flex-1 justify-between gap-4">
+                <div>
+                  <p class="text-xs font-semibold text-lime-dark tracking-wide uppercase mb-1">Ages 7 – 18 &bull; 6:1 Athlete to Coach</p>
+                  <p class="text-muted text-[13px] leading-relaxed">Court Vision, Shooting &amp; Playmaking</p>
+                  <div class="flex flex-wrap gap-1.5 mt-3">
+                    <span class="text-[11px] font-semibold bg-softbg text-muted px-2.5 py-1 rounded-md border border-bd">Ball Handling</span>
+                    <span class="text-[11px] font-semibold bg-softbg text-muted px-2.5 py-1 rounded-md border border-bd">Shooting Form</span>
+                    <span class="text-[11px] font-semibold bg-softbg text-muted px-2.5 py-1 rounded-md border border-bd">Defensive Stance</span>
+                  </div>
+                </div>
+                <div class="pt-3 border-t border-bd flex items-center justify-between">
+                  <span class="text-[12px] text-muted flex items-center gap-1.5">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#A8D600" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                    Indoor Maple Wood Courts
+                  </span>
+                  <a href="contact.html?sport=basketball" class="text-[12.5px] font-bold text-lime-dark hover:underline flex items-center gap-1">Book Trial &rarr;</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right: 7-Day Timetable Grid -->
+          <div class="lg:col-span-8 2xl:col-span-9 flex flex-col justify-between">
+            <div class="schedule-table-wrapper w-full overflow-x-auto rounded-[14px]">
+              <div class="schedule-table">
+                <!-- MON -->
+                <div class="sched-col">
+                  <div class="sched-col-header">
+                    <span class="sched-day">MON</span>
+                    <span class="sched-pill">Handles</span>
+                  </div>
+                  <h4 class="sched-title">Dribbling &amp; Ball Control</h4>
+                  <ul class="sched-drills">
+                    <li><span class="sched-dot">&bull;</span><span>2-Ball Dribble Drills</span></li>
+                    <li><span class="sched-dot">&bull;</span><span>Crossover Footwork</span></li>
+                    <li><span class="sched-dot">&bull;</span><span>Pace &amp; Acceleration</span></li>
+                  </ul>
+                  <div class="sched-footer">
+                    <div class="sched-time-wrap">
+                      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" class="shrink-0"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                      <span class="sched-time">5:00 – 6:30 PM</span>
+                    </div>
+                    <span class="sched-batch">Court 1</span>
+                  </div>
+                </div>
+                <!-- TUE -->
+                <div class="sched-col">
+                  <div class="sched-col-header">
+                    <span class="sched-day">TUE</span>
+                    <span class="sched-pill">Shooting</span>
+                  </div>
+                  <h4 class="sched-title">Shooting Form &amp; Reps</h4>
+                  <ul class="sched-drills">
+                    <li><span class="sched-dot">&bull;</span><span>Catch &amp; Shoot Form</span></li>
+                    <li><span class="sched-dot">&bull;</span><span>Free Throw Routine</span></li>
+                    <li><span class="sched-dot">&bull;</span><span>Off-Dribble Pullups</span></li>
+                  </ul>
+                  <div class="sched-footer">
+                    <div class="sched-time-wrap">
+                      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" class="shrink-0"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                      <span class="sched-time">5:00 – 6:30 PM</span>
+                    </div>
+                    <span class="sched-batch">Court 2</span>
+                  </div>
+                </div>
+                <!-- WED -->
+                <div class="sched-col">
+                  <div class="sched-col-header">
+                    <span class="sched-day">WED</span>
+                    <span class="sched-pill">Tactics</span>
+                  </div>
+                  <h4 class="sched-title">Spacing &amp; Team Offense</h4>
+                  <ul class="sched-drills">
+                    <li><span class="sched-dot">&bull;</span><span>Pick &amp; Roll Reads</span></li>
+                    <li><span class="sched-dot">&bull;</span><span>Fastbreak Outlets</span></li>
+                    <li><span class="sched-dot">&bull;</span><span>Screening Angles</span></li>
+                  </ul>
+                  <div class="sched-footer">
+                    <div class="sched-time-wrap">
+                      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" class="shrink-0"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                      <span class="sched-time">5:00 – 6:30 PM</span>
+                    </div>
+                    <span class="sched-batch">Main Court</span>
+                  </div>
+                </div>
+                <!-- THU -->
+                <div class="sched-col">
+                  <div class="sched-col-header">
+                    <span class="sched-day">THU</span>
+                    <span class="sched-pill">Fitness</span>
+                  </div>
+                  <h4 class="sched-title">Vertical Jump &amp; Power</h4>
+                  <ul class="sched-drills">
+                    <li><span class="sched-dot">&bull;</span><span>Plyo Box Jumps</span></li>
+                    <li><span class="sched-dot">&bull;</span><span>Defensive Slide Reps</span></li>
+                    <li><span class="sched-dot">&bull;</span><span>Core Stability Work</span></li>
+                  </ul>
+                  <div class="sched-footer">
+                    <div class="sched-time-wrap">
+                      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" class="shrink-0"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                      <span class="sched-time">5:00 – 6:00 PM</span>
+                    </div>
+                    <span class="sched-batch">Gym / Court</span>
+                  </div>
+                </div>
+                <!-- FRI -->
+                <div class="sched-col">
+                  <div class="sched-col-header">
+                    <span class="sched-day">FRI</span>
+                    <span class="sched-pill">Defense</span>
+                  </div>
+                  <h4 class="sched-title">Lockdown Guarding Drills</h4>
+                  <ul class="sched-drills">
+                    <li><span class="sched-dot">&bull;</span><span>1v1 Containment</span></li>
+                    <li><span class="sched-dot">&bull;</span><span>Help &amp; Recover Shifts</span></li>
+                    <li><span class="sched-dot">&bull;</span><span>Rebound Boxing Out</span></li>
+                  </ul>
+                  <div class="sched-footer">
+                    <div class="sched-time-wrap">
+                      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" class="shrink-0"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                      <span class="sched-time">5:00 – 6:30 PM</span>
+                    </div>
+                    <span class="sched-batch">Main Court</span>
+                  </div>
+                </div>
+                <!-- SAT -->
+                <div class="sched-col">
+                  <div class="sched-col-header">
+                    <span class="sched-day">SAT</span>
+                    <span class="sched-pill">Matchplay</span>
+                  </div>
+                  <h4 class="sched-title">Full-Court 5v5 Scrimmage</h4>
+                  <ul class="sched-drills">
+                    <li><span class="sched-dot">&bull;</span><span>Live Game Scrimmage</span></li>
+                    <li><span class="sched-dot">&bull;</span><span>Shot Clock Training</span></li>
+                    <li><span class="sched-dot">&bull;</span><span>Box Score Review</span></li>
+                  </ul>
+                  <div class="sched-footer">
+                    <div class="sched-time-wrap">
+                      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" class="shrink-0"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                      <span class="sched-time">9:00 – 11:00 AM</span>
+                    </div>
+                    <span class="sched-batch">Arena Court</span>
+                  </div>
+                </div>
+                <!-- SUN -->
+                <div class="sched-col is-rest">
+                  <div class="sched-col-header">
+                    <span class="sched-day">SUN</span>
+                    <span class="sched-pill sched-pill-rest">Rest</span>
+                  </div>
+                  <h4 class="sched-title">Recovery &amp; Mobility Day</h4>
+                  <ul class="sched-drills">
+                    <li><span class="sched-dot">&bull;</span><span>Hydration Protocol</span></li>
+                    <li><span class="sched-dot">&bull;</span><span>Static Stretch Routine</span></li>
+                    <li><span class="sched-dot">&bull;</span><span>Injury Check-in</span></li>
+                  </ul>
+                  <div class="sched-footer">
+                    <div class="sched-time-wrap">
+                      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" class="shrink-0"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                      <span class="sched-time">Rest Day</span>
+                    </div>
+                    <span class="sched-batch">All Cohorts</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mt-6 pt-4 border-t border-bd">
+              <div class="schedule-note m-0 flex items-center gap-2 text-xs text-muted">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 8v5M12 16h.01"/></svg>
+                <span>Actual timings may vary by age group and batch availability.</span>
+              </div>
+              <a href="#book-trial" class="btn-lime-sm whitespace-nowrap shrink-0">View All Batch Timings
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Badminton Panel (Hidden by default) -->
+        <div class="sport-panel grid grid-cols-1 lg:grid-cols-12 gap-6 items-stretch hidden" id="panel-badminton" data-sport-panel="badminton">
+          <!-- Left: Dynamic Sport Image Card -->
+          <div class="lg:col-span-4 2xl:col-span-3 flex flex-col">
+            <div class="sport-image-card bg-white border border-bd rounded-2xl overflow-hidden shadow-sm flex flex-col h-full hover:border-lime transition-all duration-300">
+              <div class="relative h-[190px] overflow-hidden group">
+                <img src="Assets/Home/home03.jpg" alt="Badminton Academy training at Champion Sports Academy" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy">
+                <div class="absolute inset-0 bg-gradient-to-t from-[#061A2E]/85 via-transparent to-transparent"></div>
+                <span class="absolute top-3 left-3 bg-[#A8D600] text-[#03111F] text-[11px] font-extrabold px-3 py-1 rounded-full uppercase tracking-wider shadow-sm">Limited Slots</span>
+                <span class="absolute bottom-3 left-3 text-white font-display font-extrabold text-[17px] drop-shadow-md">Badminton Academy</span>
+              </div>
+              <div class="p-5 flex flex-col flex-1 justify-between gap-4">
+                <div>
+                  <p class="text-xs font-semibold text-lime-dark tracking-wide uppercase mb-1">Ages 6 – 17 &bull; 4:1 Athlete to Coach</p>
+                  <p class="text-muted text-[13px] leading-relaxed">Reflex Speed, Racket Precision &amp; Rallies</p>
+                  <div class="flex flex-wrap gap-1.5 mt-3">
+                    <span class="text-[11px] font-semibold bg-softbg text-muted px-2.5 py-1 rounded-md border border-bd">Footwork Agility</span>
+                    <span class="text-[11px] font-semibold bg-softbg text-muted px-2.5 py-1 rounded-md border border-bd">Smash Accuracy</span>
+                    <span class="text-[11px] font-semibold bg-softbg text-muted px-2.5 py-1 rounded-md border border-bd">Match Fitness</span>
+                  </div>
+                </div>
+                <div class="pt-3 border-t border-bd flex items-center justify-between">
+                  <span class="text-[12px] text-muted flex items-center gap-1.5">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#A8D600" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                    BWF Standard Synthetic Courts
+                  </span>
+                  <a href="contact.html?sport=badminton" class="text-[12.5px] font-bold text-lime-dark hover:underline flex items-center gap-1">Book Trial &rarr;</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right: 7-Day Timetable Grid -->
+          <div class="lg:col-span-8 2xl:col-span-9 flex flex-col justify-between">
+            <div class="schedule-table-wrapper w-full overflow-x-auto rounded-[14px]">
+              <div class="schedule-table">
+                <!-- MON -->
+                <div class="sched-col">
+                  <div class="sched-col-header">
+                    <span class="sched-day">MON</span>
+                    <span class="sched-pill">Footwork</span>
+                  </div>
+                  <h4 class="sched-title">6-Corner Court Agility</h4>
+                  <ul class="sched-drills">
+                    <li><span class="sched-dot">&bull;</span><span>Split-Step Rhythm</span></li>
+                    <li><span class="sched-dot">&bull;</span><span>Lunge Recovery Reps</span></li>
+                    <li><span class="sched-dot">&bull;</span><span>Rear Corner Retract</span></li>
+                  </ul>
+                  <div class="sched-footer">
+                    <div class="sched-time-wrap">
+                      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" class="shrink-0"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                      <span class="sched-time">4:30 – 6:00 PM</span>
+                    </div>
+                    <span class="sched-batch">Mats 1 &amp; 2</span>
+                  </div>
+                </div>
+                <!-- TUE -->
+                <div class="sched-col">
+                  <div class="sched-col-header">
+                    <span class="sched-day">TUE</span>
+                    <span class="sched-pill">Technique</span>
+                  </div>
+                  <h4 class="sched-title">Overhead &amp; Net Accuracy</h4>
+                  <ul class="sched-drills">
+                    <li><span class="sched-dot">&bull;</span><span>Forehand Clear Form</span></li>
+                    <li><span class="sched-dot">&bull;</span><span>Tight Hairpin Drops</span></li>
+                    <li><span class="sched-dot">&bull;</span><span>Deceptive Net Kills</span></li>
+                  </ul>
+                  <div class="sched-footer">
+                    <div class="sched-time-wrap">
+                      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" class="shrink-0"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                      <span class="sched-time">4:30 – 6:00 PM</span>
+                    </div>
+                    <span class="sched-batch">Mats 3 &amp; 4</span>
+                  </div>
+                </div>
+                <!-- WED -->
+                <div class="sched-col">
+                  <div class="sched-col-header">
+                    <span class="sched-day">WED</span>
+                    <span class="sched-pill">Stamina</span>
+                  </div>
+                  <h4 class="sched-title">High-Tempo Rally Sets</h4>
+                  <ul class="sched-drills">
+                    <li><span class="sched-dot">&bull;</span><span>Multi-Shuttle Feed</span></li>
+                    <li><span class="sched-dot">&bull;</span><span>40-Shot Rally Drills</span></li>
+                    <li><span class="sched-dot">&bull;</span><span>Fast Counter Attacks</span></li>
+                  </ul>
+                  <div class="sched-footer">
+                    <div class="sched-time-wrap">
+                      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" class="shrink-0"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                      <span class="sched-time">4:30 – 6:00 PM</span>
+                    </div>
+                    <span class="sched-batch">All Mats</span>
+                  </div>
+                </div>
+                <!-- THU -->
+                <div class="sched-col">
+                  <div class="sched-col-header">
+                    <span class="sched-day">THU</span>
+                    <span class="sched-pill">Recovery</span>
+                  </div>
+                  <h4 class="sched-title">Wrist &amp; Core Mobility</h4>
+                  <ul class="sched-drills">
+                    <li><span class="sched-dot">&bull;</span><span>Resistance Band Work</span></li>
+                    <li><span class="sched-dot">&bull;</span><span>Rotator Cuff Rehab</span></li>
+                    <li><span class="sched-dot">&bull;</span><span>Flexibility Stretches</span></li>
+                  </ul>
+                  <div class="sched-footer">
+                    <div class="sched-time-wrap">
+                      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" class="shrink-0"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                      <span class="sched-time">Flexible Slots</span>
+                    </div>
+                    <span class="sched-batch">Warm-up Zone</span>
+                  </div>
+                </div>
+                <!-- FRI -->
+                <div class="sched-col">
+                  <div class="sched-col-header">
+                    <span class="sched-day">FRI</span>
+                    <span class="sched-pill">Offense</span>
+                  </div>
+                  <h4 class="sched-title">Power Smash &amp; Intercept</h4>
+                  <ul class="sched-drills">
+                    <li><span class="sched-dot">&bull;</span><span>Jump Smash Angles</span></li>
+                    <li><span class="sched-dot">&bull;</span><span>Mid-Court Push Work</span></li>
+                    <li><span class="sched-dot">&bull;</span><span>Doubles Fast Rotations</span></li>
+                  </ul>
+                  <div class="sched-footer">
+                    <div class="sched-time-wrap">
+                      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" class="shrink-0"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                      <span class="sched-time">4:30 – 6:00 PM</span>
+                    </div>
+                    <span class="sched-batch">All Mats</span>
+                  </div>
+                </div>
+                <!-- SAT -->
+                <div class="sched-col">
+                  <div class="sched-col-header">
+                    <span class="sched-day">SAT</span>
+                    <span class="sched-pill">Matchplay</span>
+                  </div>
+                  <h4 class="sched-title">Ranked Sparring Rounds</h4>
+                  <ul class="sched-drills">
+                    <li><span class="sched-dot">&bull;</span><span>Singles Ladder Match</span></li>
+                    <li><span class="sched-dot">&bull;</span><span>Doubles Set Rounds</span></li>
+                    <li><span class="sched-dot">&bull;</span><span>Tactical Video Brief</span></li>
+                  </ul>
+                  <div class="sched-footer">
+                    <div class="sched-time-wrap">
+                      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" class="shrink-0"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                      <span class="sched-time">9:00 – 10:30 AM</span>
+                    </div>
+                    <span class="sched-batch">Championship Hall</span>
+                  </div>
+                </div>
+                <!-- SUN -->
+                <div class="sched-col is-rest">
+                  <div class="sched-col-header">
+                    <span class="sched-day">SUN</span>
+                    <span class="sched-pill sched-pill-rest">Rest</span>
+                  </div>
+                  <h4 class="sched-title">Joint Decompression Day</h4>
+                  <ul class="sched-drills">
+                    <li><span class="sched-dot">&bull;</span><span>Foam Roller Routine</span></li>
+                    <li><span class="sched-dot">&bull;</span><span>Electrolyte Replenish</span></li>
+                    <li><span class="sched-dot">&bull;</span><span>Weekly Performance Log</span></li>
+                  </ul>
+                  <div class="sched-footer">
+                    <div class="sched-time-wrap">
+                      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" class="shrink-0"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                      <span class="sched-time">Rest Day</span>
+                    </div>
+                    <span class="sched-batch">All Cohorts</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mt-6 pt-4 border-t border-bd">
+              <div class="schedule-note m-0 flex items-center gap-2 text-xs text-muted">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 8v5M12 16h.01"/></svg>
+                <span>Actual timings may vary by age group and batch availability.</span>
+              </div>
+              <a href="#book-trial" class="btn-lime-sm whitespace-nowrap shrink-0">View All Batch Timings
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Athletics Panel (Hidden by default) -->
+        <div class="sport-panel grid grid-cols-1 lg:grid-cols-12 gap-6 items-stretch hidden" id="panel-athletics" data-sport-panel="athletics">
+          <!-- Left: Dynamic Sport Image Card -->
+          <div class="lg:col-span-4 2xl:col-span-3 flex flex-col">
+            <div class="sport-image-card bg-white border border-bd rounded-2xl overflow-hidden shadow-sm flex flex-col h-full hover:border-lime transition-all duration-300">
+              <div class="relative h-[190px] overflow-hidden group">
+                <img src="Assets/Home/home04.jpg" alt="Athletics & Track training at Champion Sports Academy" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy">
+                <div class="absolute inset-0 bg-gradient-to-t from-[#061A2E]/85 via-transparent to-transparent"></div>
+                <span class="absolute top-3 left-3 bg-[#A8D600] text-[#03111F] text-[11px] font-extrabold px-3 py-1 rounded-full uppercase tracking-wider shadow-sm">New Season</span>
+                <span class="absolute bottom-3 left-3 text-white font-display font-extrabold text-[17px] drop-shadow-md">Athletics &amp; Track</span>
+              </div>
+              <div class="p-5 flex flex-col flex-1 justify-between gap-4">
+                <div>
+                  <p class="text-xs font-semibold text-lime-dark tracking-wide uppercase mb-1">Ages 8 – 18 &bull; 8:1 Athlete to Coach</p>
+                  <p class="text-muted text-[13px] leading-relaxed">Explosive Acceleration, Stamina &amp; Form</p>
+                  <div class="flex flex-wrap gap-1.5 mt-3">
+                    <span class="text-[11px] font-semibold bg-softbg text-muted px-2.5 py-1 rounded-md border border-bd">Sprint Mechanics</span>
+                    <span class="text-[11px] font-semibold bg-softbg text-muted px-2.5 py-1 rounded-md border border-bd">Laser Telemetry</span>
+                    <span class="text-[11px] font-semibold bg-softbg text-muted px-2.5 py-1 rounded-md border border-bd">Core Strength</span>
+                  </div>
+                </div>
+                <div class="pt-3 border-t border-bd flex items-center justify-between">
+                  <span class="text-[12px] text-muted flex items-center gap-1.5">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#A8D600" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                    8-Lane Synthetic Tartan Track
+                  </span>
+                  <a href="contact.html?sport=athletics" class="text-[12.5px] font-bold text-lime-dark hover:underline flex items-center gap-1">Book Trial &rarr;</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right: 7-Day Timetable Grid -->
+          <div class="lg:col-span-8 2xl:col-span-9 flex flex-col justify-between">
+            <div class="schedule-table-wrapper w-full overflow-x-auto rounded-[14px]">
+              <div class="schedule-table">
+                <!-- MON -->
+                <div class="sched-col">
+                  <div class="sched-col-header">
+                    <span class="sched-day">MON</span>
+                    <span class="sched-pill">Speed</span>
+                  </div>
+                  <h4 class="sched-title">Sprint Block Mechanics</h4>
+                  <ul class="sched-drills">
+                    <li><span class="sched-dot">&bull;</span><span>Block Start Angles</span></li>
+                    <li><span class="sched-dot">&bull;</span><span>Drive Phase Posture</span></li>
+                    <li><span class="sched-dot">&bull;</span><span>Arm Action Rhythm</span></li>
+                  </ul>
+                  <div class="sched-footer">
+                    <div class="sched-time-wrap">
+                      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" class="shrink-0"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                      <span class="sched-time">6:00 – 7:30 AM</span>
+                    </div>
+                    <span class="sched-batch">Track Lanes 1–4</span>
+                  </div>
+                </div>
+                <!-- TUE -->
+                <div class="sched-col">
+                  <div class="sched-col-header">
+                    <span class="sched-day">TUE</span>
+                    <span class="sched-pill">Strength</span>
+                  </div>
+                  <h4 class="sched-title">Explosive Power &amp; Plyo</h4>
+                  <ul class="sched-drills">
+                    <li><span class="sched-dot">&bull;</span><span>Hurdle Hop Reps</span></li>
+                    <li><span class="sched-dot">&bull;</span><span>Sled Push Intervals</span></li>
+                    <li><span class="sched-dot">&bull;</span><span>Core Stability Work</span></li>
+                  </ul>
+                  <div class="sched-footer">
+                    <div class="sched-time-wrap">
+                      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" class="shrink-0"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                      <span class="sched-time">6:00 – 7:00 AM</span>
+                    </div>
+                    <span class="sched-batch">Track Infield</span>
+                  </div>
+                </div>
+                <!-- WED -->
+                <div class="sched-col">
+                  <div class="sched-col-header">
+                    <span class="sched-day">WED</span>
+                    <span class="sched-pill">Endurance</span>
+                  </div>
+                  <h4 class="sched-title">Aerobic Interval Splits</h4>
+                  <ul class="sched-drills">
+                    <li><span class="sched-dot">&bull;</span><span>400m / 800m Pacing</span></li>
+                    <li><span class="sched-dot">&bull;</span><span>Lactate Threshold</span></li>
+                    <li><span class="sched-dot">&bull;</span><span>Recovery Jog Splits</span></li>
+                  </ul>
+                  <div class="sched-footer">
+                    <div class="sched-time-wrap">
+                      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" class="shrink-0"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                      <span class="sched-time">6:00 – 7:30 AM</span>
+                    </div>
+                    <span class="sched-batch">Full Track</span>
+                  </div>
+                </div>
+                <!-- THU -->
+                <div class="sched-col">
+                  <div class="sched-col-header">
+                    <span class="sched-day">THU</span>
+                    <span class="sched-pill">Mobility</span>
+                  </div>
+                  <h4 class="sched-title">Stride Efficiency Form</h4>
+                  <ul class="sched-drills">
+                    <li><span class="sched-dot">&bull;</span><span>Hip Mobility Drills</span></li>
+                    <li><span class="sched-dot">&bull;</span><span>A-Skip &amp; B-Skip Form</span></li>
+                    <li><span class="sched-dot">&bull;</span><span>Dynamic Flexibility</span></li>
+                  </ul>
+                  <div class="sched-footer">
+                    <div class="sched-time-wrap">
+                      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" class="shrink-0"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                      <span class="sched-time">Flexible Slots</span>
+                    </div>
+                    <span class="sched-batch">Warm-up Strip</span>
+                  </div>
+                </div>
+                <!-- FRI -->
+                <div class="sched-col">
+                  <div class="sched-col-header">
+                    <span class="sched-day">FRI</span>
+                    <span class="sched-pill">Track</span>
+                  </div>
+                  <h4 class="sched-title">Curve Running &amp; Relays</h4>
+                  <ul class="sched-drills">
+                    <li><span class="sched-dot">&bull;</span><span>Curve Lean Technique</span></li>
+                    <li><span class="sched-dot">&bull;</span><span>Baton Hand-off Drills</span></li>
+                    <li><span class="sched-dot">&bull;</span><span>Race Simulation Runs</span></li>
+                  </ul>
+                  <div class="sched-footer">
+                    <div class="sched-time-wrap">
+                      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" class="shrink-0"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                      <span class="sched-time">6:00 – 7:30 AM</span>
+                    </div>
+                    <span class="sched-batch">Full Track</span>
+                  </div>
+                </div>
+                <!-- SAT -->
+                <div class="sched-col">
+                  <div class="sched-col-header">
+                    <span class="sched-day">SAT</span>
+                    <span class="sched-pill">Trials</span>
+                  </div>
+                  <h4 class="sched-title">Laser Timed Sprint Tests</h4>
+                  <ul class="sched-drills">
+                    <li><span class="sched-dot">&bull;</span><span>60m / 100m Laser Gate</span></li>
+                    <li><span class="sched-dot">&bull;</span><span>Jump Distance Metric</span></li>
+                    <li><span class="sched-dot">&bull;</span><span>Coach Data Review</span></li>
+                  </ul>
+                  <div class="sched-footer">
+                    <div class="sched-time-wrap">
+                      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" class="shrink-0"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                      <span class="sched-time">7:00 – 9:00 AM</span>
+                    </div>
+                    <span class="sched-batch">Timing Gate</span>
+                  </div>
+                </div>
+                <!-- SUN -->
+                <div class="sched-col is-rest">
+                  <div class="sched-col-header">
+                    <span class="sched-day">SUN</span>
+                    <span class="sched-pill sched-pill-rest">Rest</span>
+                  </div>
+                  <h4 class="sched-title">Full Rest &amp; Recovery</h4>
+                  <ul class="sched-drills">
+                    <li><span class="sched-dot">&bull;</span><span>Contrast Bath Routine</span></li>
+                    <li><span class="sched-dot">&bull;</span><span>Sleep Optimization</span></li>
+                    <li><span class="sched-dot">&bull;</span><span>Training Log Entry</span></li>
+                  </ul>
+                  <div class="sched-footer">
+                    <div class="sched-time-wrap">
+                      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" class="shrink-0"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                      <span class="sched-time">Rest Day</span>
+                    </div>
+                    <span class="sched-batch">All Cohorts</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mt-6 pt-4 border-t border-bd">
+              <div class="schedule-note m-0 flex items-center gap-2 text-xs text-muted">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 8v5M12 16h.01"/></svg>
+                <span>Actual timings may vary by age group and batch availability.</span>
+              </div>
+              <a href="#book-trial" class="btn-lime-sm whitespace-nowrap shrink-0">View All Batch Timings
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+              </a>
+            </div>
+          </div>
+        </div>
+
       </div>
     </div>
   </div>
@@ -618,41 +1365,41 @@
             <span class="fd-num">02</span>
             <div>
               <h4>Meet Your Coach</h4>
-              <p>Meet your coach and training group.</p>
+              <p>Discuss your experience and goals.</p>
             </div>
           </div>
           <div class="fd-step">
             <span class="fd-num">03</span>
             <div>
-              <h4>Join The Session</h4>
-              <p>Take part in your introductory training.</p>
+              <h4>Warm-Up &amp; Assessment</h4>
+              <p>Join guided mobility and drills.</p>
             </div>
           </div>
           <div class="fd-step">
             <span class="fd-num">04</span>
             <div>
-              <h4>Discuss Your Next Step</h4>
-              <p>Understand your recommended level and batch.</p>
+              <h4>Training &amp; Debrief</h4>
+              <p>Participate in structured matchplay.</p>
             </div>
           </div>
         </div>
 
         <div class="practical-bar">
           <div class="pb-item">
-            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#A8D600" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
-            Arrive 10 mins early
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#A8D600" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+            <span>Arrive 15 min early</span>
           </div>
           <div class="pb-item">
-            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#A8D600" stroke-width="2"><path d="M12 2s6 6.5 6 11a6 6 0 01-12 0c0-4.5 6-11 6-11Z"/></svg>
-            Bring water-bag
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#A8D600" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+            <span>Bring water bottle</span>
           </div>
           <div class="pb-item">
-            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#A8D600" stroke-width="2"><path d="M6 4l3 2 3-2 3 2 3-2 2 3-2 2v11H4V9L2 7l2-3Z"/></svg>
-            Wear sports clothing
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#A8D600" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+            <span>Wear sports shoes</span>
           </div>
           <div class="pb-item">
-            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#A8D600" stroke-width="2"><rect x="3" y="8" width="18" height="10" rx="1.5"/><path d="M7 8V6a2 2 0 012-2h6a2 2 0 012 2v2"/></svg>
-            Bring equipment 
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#A8D600" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+            <span>Equipment provided</span>
           </div>
         </div>
       </div>
@@ -660,30 +1407,31 @@
   </div>
 </section>
 
-<!-- ============ 05.5 — ATHLETE DEVELOPMENT PATHWAYS ============ -->
-<section class="section-pad bg-softbg border-t border-bd">
+<!-- ============ 06 — TRAINING PATHWAY ============ -->
+<section class="section-pad bg-softbg">
   <div class="max-w-container mx-auto px-6 lg:px-10">
-    <div class="section-head reveal-on-scroll">
-      <p class="eyebrow-dark">06 &nbsp;&middot;&nbsp; Development Pathways</p>
-      <h2 class="section-heading">Age-Specific Training Roadmaps.</h2>
-      <p class="section-desc">Every athlete develops differently. Our structured age-graded pathway ensures progressive skill compounding from early childhood to competitive collegiate and pro levels.</p>
+    <div class="section-head text-center max-w-[640px] mx-auto mb-14 reveal-on-scroll">
+      <p class="eyebrow-dark">06 &nbsp;&middot;&nbsp; Athlete Pathway</p>
+      <h2 class="section-heading">From Fundamentals to Competition.</h2>
+      <p class="section-desc mx-auto">Every athlete enters at the right development stage and progresses with verified coaching milestones.</p>
     </div>
 
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 reveal-on-scroll items-stretch">
+    <!-- 4-Column Linear Pathway Cards Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6 reveal-on-scroll">
       
       <!-- Stage 1 -->
       <div class="bg-white border border-bd rounded-2xl p-6 flex flex-col h-full hover:border-lime transition-all">
         <div class="flex items-center justify-between mb-4">
-          <span class="inline-block bg-lime/15 text-lime-dark font-display font-extrabold text-[12px] px-3 py-1 rounded-full uppercase tracking-wider">Ages 6 – 9</span>
+          <span class="inline-block bg-lime/15 text-lime-dark font-display font-extrabold text-[12px] px-3 py-1 rounded-full uppercase tracking-wider">Ages 5–8</span>
           <span class="text-muted text-[12px] font-semibold">STAGE 01</span>
         </div>
-        <h3 class="font-display font-bold text-[18px] text-dark mb-2">Grassroots Academy</h3>
-        <p class="text-muted text-[13px] leading-relaxed mb-5 flex-1 min-h-[76px]">Building foundational movement literacy, balance, hand-eye coordination, and an enduring passion for sports through drills.</p>
+        <h3 class="font-display font-bold text-[18px] text-dark mb-2">Foundation &amp; Motor Skills</h3>
+        <p class="text-muted text-[13px] leading-relaxed mb-5 flex-1 min-h-[76px]">Agility, hand-eye coordination, balance, listening skills, and building enjoyment through sport.</p>
         
         <ul class="space-y-2.5 text-[12.5px] text-muted border-t border-bd pt-4 mb-5">
           <li class="flex items-center gap-2">
             <svg class="shrink-0" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#A8D600" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-            <span><strong>Ratio:</strong> 8:1 Athlete to Coach</span>
+            <span><strong>Ratio:</strong> 6:1 Athlete to Coach</span>
           </li>
           <li class="flex items-center gap-2">
             <svg class="shrink-0" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#A8D600" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
@@ -693,23 +1441,23 @@
         
         <div class="bg-softbg px-3.5 py-2.5 rounded-lg text-[12px] text-muted flex items-center justify-between font-medium mt-auto">
           <span>Milestone Focus</span>
-          <span class="text-lime-dark font-bold">Motor Agility</span>
+          <span class="text-lime-dark font-bold">Movement Competency</span>
         </div>
       </div>
 
       <!-- Stage 2 -->
       <div class="bg-white border border-bd rounded-2xl p-6 flex flex-col h-full hover:border-lime transition-all">
         <div class="flex items-center justify-between mb-4">
-          <span class="inline-block bg-lime/15 text-lime-dark font-display font-extrabold text-[12px] px-3 py-1 rounded-full uppercase tracking-wider">Ages 10 – 13</span>
+          <span class="inline-block bg-lime/15 text-lime-dark font-display font-extrabold text-[12px] px-3 py-1 rounded-full uppercase tracking-wider">Ages 9–12</span>
           <span class="text-muted text-[12px] font-semibold">STAGE 02</span>
         </div>
-        <h3 class="font-display font-bold text-[18px] text-dark mb-2">Foundation Development</h3>
-        <p class="text-muted text-[13px] leading-relaxed mb-5 flex-1 min-h-[76px]">Refining core sports techniques, positional awareness, defensive concepts, team communication, and introductory conditioning.</p>
+        <h3 class="font-display font-bold text-[18px] text-dark mb-2">Technical Foundations</h3>
+        <p class="text-muted text-[13px] leading-relaxed mb-5 flex-1 min-h-[76px]">Position-specific ball mastery, footwork mechanics, reaction speed, and introductory tactical awareness.</p>
         
         <ul class="space-y-2.5 text-[12.5px] text-muted border-t border-bd pt-4 mb-5">
           <li class="flex items-center gap-2">
             <svg class="shrink-0" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#A8D600" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-            <span><strong>Ratio:</strong> 10:1 Athlete to Coach</span>
+            <span><strong>Ratio:</strong> 8:1 Athlete to Coach</span>
           </li>
           <li class="flex items-center gap-2">
             <svg class="shrink-0" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#A8D600" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
@@ -724,18 +1472,18 @@
       </div>
 
       <!-- Stage 3 -->
-      <div class="bg-white border border-bd rounded-2xl p-6 flex flex-col h-full hover:border-lime transition-all">
+      <div class="bg-white border border-bd rounded-2xl p-6 flex flex-col h-full border-lime shadow-md relative">
         <div class="flex items-center justify-between mb-4">
-          <span class="inline-block bg-lime/15 text-lime-dark font-display font-extrabold text-[12px] px-3 py-1 rounded-full uppercase tracking-wider">Ages 14 – 17</span>
+          <span class="inline-block bg-lime text-navy font-display font-extrabold text-[12px] px-3 py-1 rounded-full uppercase tracking-wider">Ages 13–17</span>
           <span class="text-muted text-[12px] font-semibold">STAGE 03</span>
         </div>
-        <h3 class="font-display font-bold text-[18px] text-dark mb-2">Competitive Squads</h3>
-        <p class="text-muted text-[13px] leading-relaxed mb-5 flex-1 min-h-[76px]">High-tempo matchplay drills, tactical adjustments, strength & endurance periodization, and competitive regional tournament preparation.</p>
+        <h3 class="font-display font-bold text-[18px] text-dark mb-2">Development &amp; Tactics</h3>
+        <p class="text-muted text-[13px] leading-relaxed mb-5 flex-1 min-h-[76px]">Game scenarios, structured strength conditioning, mental pressure handling, and inter-academy leagues.</p>
         
         <ul class="space-y-2.5 text-[12.5px] text-muted border-t border-bd pt-4 mb-5">
           <li class="flex items-center gap-2">
             <svg class="shrink-0" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#A8D600" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-            <span><strong>Ratio:</strong> 12:1 Athlete to Coach</span>
+            <span><strong>Ratio:</strong> 8:1 Athlete to Coach</span>
           </li>
           <li class="flex items-center gap-2">
             <svg class="shrink-0" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#A8D600" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
@@ -745,7 +1493,7 @@
         
         <div class="bg-softbg px-3.5 py-2.5 rounded-lg text-[12px] text-muted flex items-center justify-between font-medium mt-auto">
           <span>Milestone Focus</span>
-          <span class="text-lime-dark font-bold">Match Readiness</span>
+          <span class="text-lime-dark font-bold">Competitive Readiness</span>
         </div>
       </div>
 
@@ -755,8 +1503,8 @@
           <span class="inline-block bg-lime/15 text-lime-dark font-display font-extrabold text-[12px] px-3 py-1 rounded-full uppercase tracking-wider">Ages 18+</span>
           <span class="text-muted text-[12px] font-semibold">STAGE 04</span>
         </div>
-        <h3 class="font-display font-bold text-[18px] text-dark mb-2">Elite Per-formance's</h3>
-        <p class="text-muted text-[13px] leading-relaxed mb-5 flex-1 min-h-[76px]">Video analytics review, individualized conditioning regimens, mental fortitude workshops, and collegiate or professional atheltic sports.</p>
+        <h3 class="font-display font-bold text-[18px] text-dark mb-2">Elite Performance</h3>
+        <p class="text-muted text-[13px] leading-relaxed mb-5 flex-1 min-h-[76px]">Video analytics review, individualized conditioning regimens, mental fortitude workshops, and collegiate/pro transition.</p>
         
         <ul class="space-y-2.5 text-[12.5px] text-muted border-t border-bd pt-4 mb-5">
           <li class="flex items-center gap-2">
@@ -782,10 +1530,10 @@
 <!-- ============ 07 — HOW TO JOIN ============ -->
 <section class="section-pad bg-white">
   <div class="max-w-container mx-auto px-6 lg:px-10">
-    <div class="section-head reveal-on-scroll">
+    <div class="section-head text-center max-w-[680px] mx-auto mb-14 reveal-on-scroll">
       <p class="eyebrow-dark">07 &nbsp;&middot;&nbsp; Get Started</p>
       <h2 class="section-heading">Joining the Academy Is Simple.</h2>
-      <p class="section-desc">Start with a sport, experience a trial session and choose the batch that works for you.</p>
+      <p class="section-desc mx-auto">Start with a sport, experience a trial session and choose the batch that works for you.</p>
     </div>
 
     <div class="join-steps reveal-on-scroll">
@@ -828,7 +1576,7 @@
       </div>
     </div>
 
-    <div class="join-cta reveal-on-scroll">
+    <div class="join-cta justify-center mt-12 reveal-on-scroll">
       <a href="#book-trial" class="btn-lime">Book a Trial
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
       </a>
@@ -845,15 +1593,15 @@
     <div class="section-head text-center max-w-[680px] mx-auto mb-12 reveal-on-scroll">
       <p class="eyebrow-dark">08 &nbsp;&middot;&nbsp; Good to Know</p>
       <h2 class="section-heading">Questions Before You Join?</h2>
-      <p class="section-desc">Here are the questions students and parents ask before starting at Champion Sports Academy.</p>
+      <p class="section-desc mx-auto">Here are the questions students and parents ask before starting at Champion Sports Academy.</p>
     </div>
 
     <!-- 3x2 (6 items) Balanced 2-Column Grid -->
     <div class="faq-grid-2col reveal-on-scroll" id="faqList">
       
       <!-- FAQ 1 -->
-      <div class="faq-item is-open">
-        <button class="faq-q" aria-expanded="true">
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
           <span>Can beginners join?</span>
           <span class="faq-toggle">+</span>
         </button>
