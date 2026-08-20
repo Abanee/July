@@ -176,8 +176,7 @@ footer .bg-lime,
 /* Footer Social Icon Buttons */
 .footer-social-btn,
 footer .footer-socials a,
-footer .flex.items-center.gap-3 a,
-.bg-deep-navy .flex.items-center.gap-3 a {
+.footer-socials a {
   background-color: rgba(255, 255, 255, 0.12) !important;
   border: 1px solid rgba(255, 255, 255, 0.25) !important;
   color: #FFFFFF !important;
@@ -188,15 +187,13 @@ footer .flex.items-center.gap-3 a,
 }
 .footer-social-btn svg,
 footer .footer-socials a svg,
-footer .flex.items-center.gap-3 a svg,
-.bg-deep-navy .flex.items-center.gap-3 a svg {
+.footer-socials a svg {
   color: #FFFFFF !important;
   opacity: 1 !important;
 }
 .footer-social-btn:hover,
 footer .footer-socials a:hover,
-footer .flex.items-center.gap-3 a:hover,
-.bg-deep-navy .flex.items-center.gap-3 a:hover {
+.footer-socials a:hover {
   background-color: #A8D600 !important;
   border-color: #A8D600 !important;
   color: #03111F !important;
@@ -204,8 +201,7 @@ footer .flex.items-center.gap-3 a:hover,
 }
 .footer-social-btn:hover svg,
 footer .footer-socials a:hover svg,
-footer .flex.items-center.gap-3 a:hover svg,
-.bg-deep-navy .flex.items-center.gap-3 a:hover svg {
+.footer-socials a:hover svg {
   color: #03111F !important;
 }
 
