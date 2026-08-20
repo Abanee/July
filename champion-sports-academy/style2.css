@@ -866,13 +866,11 @@ body {
   border-radius: 14px;
   overflow: hidden;
   background: var(--bg-card);
-  flex: 1;
-  min-height: 310px;
-  align-content: stretch;
   width: 100%;
+  height: 100%;
 }
 .sched-col {
-  padding: 12px 6px;
+  padding: 8px 5px;
   border-left: 1px solid var(--bd);
   display: flex;
   flex-direction: column;
@@ -890,12 +888,12 @@ body {
   align-items: center;
   justify-content: space-between;
   gap: 2px;
-  margin-bottom: 6px;
+  margin-bottom: 4px;
   flex-wrap: wrap;
 }
 .sched-day {
   font-family: 'Manrope', sans-serif;
-  font-size: 11px;
+  font-size: 10.5px;
   font-weight: 800;
   letter-spacing: 0.04em;
   color: var(--accent-text, #4D7C0F);
@@ -906,12 +904,12 @@ body {
   color: var(--accent);
 }
 .sched-pill {
-  font-size: 8px;
+  font-size: 7.5px;
   font-weight: 800;
   letter-spacing: 0.02em;
   text-transform: uppercase;
-  padding: 1.5px 3.5px;
-  border-radius: 4px;
+  padding: 1px 3px;
+  border-radius: 3px;
   background: rgba(168, 214, 0, 0.16);
   color: var(--accent-text, #4D7C0F);
   white-space: nowrap;
@@ -927,12 +925,12 @@ body {
 }
 .sched-title {
   font-family: 'Manrope', sans-serif;
-  font-size: 11px;
+  font-size: 10.5px;
   font-weight: 800;
   color: var(--dark);
-  line-height: 1.25;
-  margin-bottom: 8px;
-  min-height: 32px;
+  line-height: 1.2;
+  margin-bottom: 4px;
+  min-height: 24px;
   display: flex;
   align-items: flex-start;
   word-break: break-word;
@@ -940,19 +938,18 @@ body {
 .sched-drills {
   list-style: none;
   padding: 0;
-  margin: 0 0 8px 0;
+  margin: 0 0 6px 0;
   display: flex;
   flex-direction: column;
-  gap: 4px;
+  gap: 2.5px;
   flex: 1;
-  min-height: 68px;
 }
 .sched-drills li {
   display: flex;
   align-items: flex-start;
-  gap: 3px;
-  font-size: 10px;
-  line-height: 1.3;
+  gap: 2.5px;
+  font-size: 9.5px;
+  line-height: 1.25;
   color: var(--muted);
   min-height: unset;
   word-break: break-word;
@@ -963,8 +960,8 @@ body {
 .sched-dot {
   color: var(--accent-text, #4D7C0F);
   font-weight: 800;
-  font-size: 11px;
-  line-height: 1.2;
+  font-size: 10px;
+  line-height: 1.1;
   flex-shrink: 0;
 }
 :root[data-theme="dark"] .sched-dot {
@@ -974,10 +971,9 @@ body {
   margin-top: auto;
   display: flex;
   flex-direction: column;
-  gap: 4px;
-  min-height: 44px;
+  gap: 2px;
   justify-content: flex-end;
-  padding-top: 6px;
+  padding-top: 4px;
   border-top: 1px dashed rgba(0, 0, 0, 0.06);
 }
 :root[data-theme="dark"] .sched-footer {
@@ -987,17 +983,17 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 3px;
-  font-size: 9.5px;
+  gap: 2.5px;
+  font-size: 9px;
   font-weight: 700;
   color: var(--dark);
   background: var(--softbg, #F5F7F5);
   border: 1px solid var(--bd);
-  padding: 4px 3px;
-  border-radius: 6px;
+  padding: 2.5px 2px;
+  border-radius: 5px;
   white-space: normal;
   text-align: center;
-  line-height: 1.2;
+  line-height: 1.15;
   width: 100%;
   box-sizing: border-box;
 }
@@ -1007,14 +1003,14 @@ body {
   color: var(--text-primary);
 }
 .sched-time {
-  font-size: 9.5px;
+  font-size: 9px;
   font-weight: 700;
   letter-spacing: -0.01em;
   text-align: center;
-  line-height: 1.2;
+  line-height: 1.15;
 }
 .sched-batch {
-  font-size: 9px;
+  font-size: 8.5px;
   font-weight: 600;
   color: var(--muted);
   text-align: center;
