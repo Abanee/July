@@ -142,9 +142,14 @@
           <button id="menu-btn" class="menu-btn" aria-label="Open menu" aria-expanded="false">
             <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
           </button>
-          <div class="header-logo-mobile md:hidden">
-            <img src="Assets/logo.png" alt="Champion Sports Academy" class="w-8 h-8 object-contain">
-          </div>
+          <!-- Responsive Logo (Visible when sidebar is collapsed on tablets and mobile) -->
+          <a href="index.html" class="header-logo-mobile logo-link" title="Champion Sports Academy Home">
+            <img src="Assets/logo.png" alt="Champion Sports Academy Logo" class="w-8 h-8 object-contain">
+            <div class="leading-tight hidden sm:block">
+              <span class="block text-main font-display font-extrabold text-[13px] tracking-wide">CHAMPION</span>
+              <span class="block text-lime text-[8px] tracking-[0.18em] font-extrabold uppercase">Sports Academy</span>
+            </div>
+          </a>
           <div class="header-title-block">
             <h1 id="page-title" class="page-title">Overview</h1>
             <p id="page-subtitle" class="page-subtitle">Good morning, Alex! Here's your training overview for this week.</p>
