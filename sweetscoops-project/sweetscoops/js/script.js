@@ -575,13 +575,24 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  /* ---------- Celebrations page — package CTA pre-fills Preferred Package ---------- */
-  const packageBtns = document.querySelectorAll('.package-choose-btn[data-package]');
+  /* ---------- Celebrations page — package & occasion CTA pre-fills ---------- */
+  const packageBtns = document.querySelectorAll('.package-choose-btn');
   const preferredPackageField = document.getElementById('preferredPackage');
-  if (packageBtns.length && preferredPackageField) {
+  const enquiryTypeField = document.getElementById('enquiryType');
+  if (packageBtns.length) {
     packageBtns.forEach(btn => {
       btn.addEventListener('click', () => {
-        preferredPackageField.value = btn.dataset.package;
+        if (btn.dataset.package && preferredPackageField) {
+          const match = Array.from(preferredPackageField.options).find(opt => 
+            opt.value.toLowerCase() === btn.dataset.package.toLowerCase() ||
+            opt.text.toLowerCase().includes(btn.dataset.package.toLowerCase()) ||
+            btn.dataset.package.toLowerCase().includes(opt.value.toLowerCase())
+          );
+          if (match) preferredPackageField.value = match.value;
+        }
+        if (btn.dataset.occasion && enquiryTypeField) {
+          enquiryTypeField.value = btn.dataset.occasion;
+        }
       });
     });
   }
