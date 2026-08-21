@@ -2292,8 +2292,14 @@ html.dark .c-stat-box {
 .bulk-card h4{font-size:1.02rem; font-weight:600;}
 .bulk-min{font-size:.72rem; font-weight:700; text-transform:uppercase; letter-spacing:.03em; color:var(--strawberry);}
 .bulk-card p{font-size:.83rem; opacity:.7; line-height:1.5; flex:1;}
-.bulk-enquire{font-size:.85rem; font-weight:700; color:var(--strawberry); display:inline-flex; align-items:center; gap:4px; transition:transform .2s var(--ease);}
-.bulk-enquire:hover{transform:translateX(3px);}
+.bulk-enquire{font-size:.86rem; font-weight:700; color:var(--strawberry); background:color-mix(in srgb, var(--strawberry) 14%, var(--bg-primary)); border:1.5px solid color-mix(in srgb, var(--strawberry) 30%, transparent); border-radius:12px; padding:10px 16px; display:inline-flex; align-items:center; justify-content:center; width:100%; text-decoration:none !important; transition:all .25s var(--ease); margin-top:6px; box-shadow:0 2px 8px rgba(255,111,145,.08);}
+.bulk-enquire:hover, .bulk-enquire:focus{background:var(--strawberry); color:#fff !important; border-color:var(--strawberry); transform:translateY(-2px); box-shadow:0 6px 16px rgba(255,111,145,.35); text-decoration:none !important;}
+.bulk-card.bulk-mango .bulk-enquire{color:#c98a00; background:color-mix(in srgb, var(--mango) 22%, var(--bg-primary)); border-color:color-mix(in srgb, var(--mango) 40%, transparent); box-shadow:0 2px 8px rgba(255,200,87,.12);}
+.bulk-card.bulk-mango .bulk-enquire:hover, .bulk-card.bulk-mango .bulk-enquire:focus{background:var(--mango); color:var(--ink-on-accent) !important; border-color:var(--mango); box-shadow:0 6px 16px rgba(255,200,87,.4);}
+.bulk-card.bulk-mint .bulk-enquire{color:#2f8a5f; background:color-mix(in srgb, var(--mint) 22%, var(--bg-primary)); border-color:color-mix(in srgb, var(--mint) 40%, transparent); box-shadow:0 2px 8px rgba(126,214,178,.12);}
+.bulk-card.bulk-mint .bulk-enquire:hover, .bulk-card.bulk-mint .bulk-enquire:focus{background:var(--mint); color:#154430 !important; border-color:var(--mint); box-shadow:0 6px 16px rgba(126,214,178,.4);}
+.bulk-card.bulk-purple .bulk-enquire{color:var(--berry); background:color-mix(in srgb, var(--berry) 16%, var(--bg-primary)); border-color:color-mix(in srgb, var(--berry) 35%, transparent); box-shadow:0 2px 8px rgba(116,86,200,.12);}
+.bulk-card.bulk-purple .bulk-enquire:hover, .bulk-card.bulk-purple .bulk-enquire:focus{background:var(--berry); color:#fff !important; border-color:var(--berry); box-shadow:0 6px 16px rgba(116,86,200,.35);}
 
 /* ---------- how it works: numbered journey ---------- */
 .journey-row{position:relative; display:grid; grid-template-columns:repeat(4,1fr); gap:24px;}
