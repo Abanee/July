@@ -2416,7 +2416,17 @@ html.dark .celeb-cta-floating-badge{background:rgba(30,22,20,.88); border-color:
   .builder-mini-grid{grid-template-columns:1fr 1fr;}
   .bulk-grid{grid-template-columns:1fr 1fr;}
   .journey-row{grid-template-columns:1fr;}
+  .enquiry-grid{gap:20px;}
+  .enquiry-info, .enquiry-form{padding:24px 18px; border-radius:22px;}
+  .enquiry-contact-row{font-size:.84rem; padding:10px 12px; gap:10px; word-break:break-word;}
+  .enquiry-contact-row span{word-break:break-word; overflow-wrap:anywhere;}
   .form-row{grid-template-columns:1fr;}
+  .form-field input, .form-field select, .form-field textarea{width:100%; max-width:100%; font-size:.86rem;}
+  .celeb-cta-card{padding:28px 20px; border-radius:24px;}
+  .celeb-cta-perks{grid-template-columns:1fr; gap:8px;}
+  .celeb-cta-perk{font-size:.82rem; padding:8px 10px;}
+  .celeb-cta-actions{flex-direction:column; width:100%;}
+  .celeb-cta-actions .btn{width:100%; justify-content:center; text-align:center;}
   .collage-grid{grid-template-columns:repeat(2,1fr); grid-auto-rows:130px;}
   .collage-1, .collage-2, .collage-3, .collage-4, .collage-5, .collage-6{grid-column:span 1; grid-row:span 2;}
   .footer-grid-6{grid-template-columns:1fr 1fr;}
@@ -2426,6 +2436,16 @@ html.dark .celeb-cta-floating-badge{background:rgba(30,22,20,.88); border-color:
   .celeb-type-grid{grid-template-columns:1fr 1fr;}
   .builder-mini-grid{grid-template-columns:1fr;}
   .bulk-grid{grid-template-columns:1fr;}
+  .enquiry-info, .enquiry-form{padding:20px 14px; border-radius:18px;}
+  .enquiry-info h2{font-size:1.55rem;}
+  .enquiry-info>p{font-size:.88rem;}
+  .enquiry-contact{gap:8px;}
+  .enquiry-contact-row{font-size:.78rem; padding:8px 10px; border-radius:10px;}
+  .enquiry-img{min-height:170px; max-height:210px;}
+  .celeb-cta-card{padding:22px 14px; border-radius:20px;}
+  .celeb-cta-badge{font-size:.72rem; padding:5px 10px;}
+  .celeb-cta-title{font-size:1.45rem;}
+  .celeb-cta-sub{font-size:.88rem;}
   .collage-grid{grid-template-columns:1fr 1fr;}
   .footer-grid-6{grid-template-columns:1fr;}
 }
