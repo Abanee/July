@@ -572,8 +572,8 @@ html[data-theme="dark"] .ab-brand-card img[src*="nothing"] {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  padding: 12px 24px;
-  border-radius: 999px;
+  padding: 12px 22px;
+  border-radius: var(--btn-radius, 12px);
   font-weight: 600;
   transition: all 0.3s ease;
 }
