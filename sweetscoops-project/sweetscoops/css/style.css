@@ -2321,16 +2321,19 @@ html.dark .c-stat-box {
 .collage-cta{text-align:center; margin-top:32px;}
 
 /* ---------- celebration enquiry ---------- */
-.enquiry-grid{display:grid; grid-template-columns:.85fr 1.15fr; gap:52px; align-items:start;}
-.enquiry-info h2{font-size:clamp(1.9rem,3vw,2.4rem); font-weight:600; line-height:1.1; margin-bottom:12px;}
-.enquiry-info>p{opacity:.75; line-height:1.6; margin-bottom:26px; max-width:400px;}
-.enquiry-contact{display:flex; flex-direction:column; gap:14px; margin-bottom:26px;}
-.enquiry-contact-row{display:flex; align-items:center; gap:12px; font-size:.9rem; font-weight:600;}
+.enquiry-grid{display:grid; grid-template-columns:1fr 1.15fr; gap:36px; align-items:stretch;}
+.enquiry-info{background:var(--bg-secondary); border-radius:28px; padding:32px; box-shadow:var(--shadow); display:flex; flex-direction:column; height:100%;}
+.enquiry-info h2{font-size:clamp(1.8rem,2.8vw,2.3rem); font-weight:600; line-height:1.15; margin-bottom:12px;}
+.enquiry-info>p{opacity:.8; line-height:1.6; margin-bottom:20px; font-size:.95rem;}
+.enquiry-contact{display:flex; flex-direction:column; gap:10px; margin-bottom:20px;}
+.enquiry-contact-row{display:flex; align-items:center; gap:12px; font-size:.88rem; font-weight:600; padding:10px 14px; background:var(--bg-primary); border-radius:14px; border:1px solid var(--border); color:var(--text-primary); text-decoration:none; transition:transform .2s var(--ease), border-color .2s var(--ease), box-shadow .2s var(--ease);}
+.enquiry-contact-row:hover{border-color:var(--strawberry); transform:translateX(3px); box-shadow:0 4px 12px rgba(255,111,145,.12);}
 .enquiry-contact-row svg{flex-shrink:0; color:var(--strawberry);}
-.enquiry-img{border-radius:24px; overflow:hidden; aspect-ratio:5/4; box-shadow:var(--shadow);}
-.enquiry-img img{width:100%; height:100%; object-fit:cover;}
+.enquiry-img{flex:1; min-height:190px; max-height:260px; border-radius:18px; overflow:hidden; box-shadow:0 6px 18px rgba(0,0,0,.06); position:relative;}
+.enquiry-img img{width:100%; height:100%; object-fit:cover; display:block;}
 
-.enquiry-form{background:var(--bg-secondary); border-radius:28px; padding:32px; box-shadow:var(--shadow);}
+.enquiry-form-wrap{height:100%; display:flex; flex-direction:column;}
+.enquiry-form{background:var(--bg-secondary); border-radius:28px; padding:32px; box-shadow:var(--shadow); height:100%; display:flex; flex-direction:column; justify-content:space-between; flex:1;}
 .form-row{display:grid; grid-template-columns:1fr 1fr; gap:16px;}
 .form-field{display:flex; flex-direction:column; gap:6px; margin-bottom:16px;}
 .form-field label{font-size:.8rem; font-weight:700; opacity:.75;}
@@ -2354,6 +2357,27 @@ html.dark .c-stat-box {
 .faq-answer{max-height:0; overflow:hidden; transition:max-height .35s var(--ease);}
 .faq-answer-inner{padding:0 20px 18px; font-size:.86rem; opacity:.75; line-height:1.6;}
 
+/* ---------- CELEBRATION CTA BANNER ---------- */
+.celeb-cta-section{padding:50px 0 70px;}
+.celeb-cta-card{background:linear-gradient(135deg, var(--bg-secondary) 0%, color-mix(in srgb, var(--strawberry) 8%, var(--bg-secondary)) 100%); border:1.5px solid color-mix(in srgb, var(--strawberry) 20%, var(--border)); border-radius:32px; padding:44px; display:grid; grid-template-columns:1.2fr .8fr; gap:40px; align-items:center; position:relative; overflow:hidden; box-shadow:var(--shadow-lg);}
+.celeb-cta-card::before{content:""; position:absolute; top:-50px; right:-50px; width:220px; height:220px; border-radius:50%; background:radial-gradient(circle, rgba(255,111,145,.15) 0%, transparent 70%); pointer-events:none;}
+.celeb-cta-content{position:relative; z-index:2;}
+.celeb-cta-badge{display:inline-flex; align-items:center; gap:8px; font-size:.78rem; font-weight:700; text-transform:uppercase; letter-spacing:.06em; color:var(--strawberry); background:color-mix(in srgb, var(--strawberry) 12%, var(--bg-primary)); padding:6px 14px; border-radius:999px; margin-bottom:14px; border:1px solid color-mix(in srgb, var(--strawberry) 25%, transparent);}
+.celeb-cta-title{font-size:clamp(1.9rem,3.2vw,2.5rem); font-weight:700; line-height:1.2; margin-bottom:14px; font-family:'Fredoka',sans-serif; color:var(--text-primary);}
+.celeb-cta-sub{font-size:1rem; line-height:1.6; opacity:.82; margin-bottom:22px; max-width:540px;}
+.celeb-cta-perks{display:grid; grid-template-columns:repeat(2, 1fr); gap:10px; margin-bottom:26px;}
+.celeb-cta-perk{display:inline-flex; align-items:center; gap:8px; font-size:.85rem; font-weight:600; color:var(--text-primary); background:var(--bg-primary); padding:8px 12px; border-radius:12px; border:1px solid var(--border);}
+.celeb-cta-perk svg{color:var(--strawberry); flex-shrink:0;}
+.celeb-cta-actions{display:flex; align-items:center; gap:14px; flex-wrap:wrap;}
+.celeb-call-btn{display:inline-flex; align-items:center; gap:8px;}
+.celeb-cta-visual{position:relative; z-index:2; border-radius:24px; overflow:hidden; aspect-ratio:4/3; box-shadow:var(--shadow); transition:transform .35s var(--ease);}
+.celeb-cta-card:hover .celeb-cta-visual{transform:scale(1.02);}
+.celeb-cta-visual img{width:100%; height:100%; object-fit:cover; display:block;}
+.celeb-cta-floating-badge{position:absolute; bottom:14px; left:14px; background:rgba(255,255,255,.92); backdrop-filter:blur(8px); -webkit-backdrop-filter:blur(8px); padding:8px 14px; border-radius:14px; box-shadow:0 6px 18px rgba(0,0,0,.15); display:flex; flex-direction:column; border:1px solid rgba(255,255,255,.6);}
+html.dark .celeb-cta-floating-badge{background:rgba(30,22,20,.88); border-color:rgba(255,255,255,.1); box-shadow:0 6px 18px rgba(0,0,0,.4);}
+.celeb-cta-floating-badge .badge-star{font-size:.84rem; font-weight:800; color:var(--strawberry);}
+.celeb-cta-floating-badge .badge-sub{font-size:.72rem; font-weight:600; opacity:.75; color:var(--text-primary);}
+
 /* ---------- footer 6-column variant (celebrations page) ---------- */
 .footer-grid-6{grid-template-columns:1.15fr 1fr 1fr 1fr .8fr 1.25fr;}
 
@@ -2369,8 +2393,12 @@ html.dark .c-stat-box {
   .bulk-grid{grid-template-columns:1fr 1fr;}
   .journey-row{grid-template-columns:1fr 1fr; row-gap:36px;}
   .journey-row::before{display:none;}
-  .enquiry-grid{grid-template-columns:1fr;}
-  .enquiry-img{max-width:420px;}
+  .enquiry-grid{grid-template-columns:1fr; gap:28px;}
+  .enquiry-info, .enquiry-form{height:auto;}
+  .enquiry-img{min-height:220px; max-height:280px;}
+  .celeb-cta-card{grid-template-columns:1fr; padding:32px;}
+  .celeb-cta-actions{justify-content:center;}
+  .celeb-cta-visual{max-width:480px; margin:0 auto; width:100%;}
   .collage-grid{grid-template-columns:repeat(4,1fr); grid-auto-rows:110px;}
   .collage-1{grid-column:span 2; grid-row:span 2;}
   .collage-6{grid-column:span 2; grid-row:span 2;}
