@@ -3711,12 +3711,41 @@ html[data-theme="dark"] .cm-hero-image-img--dark {
 }
 .rep-meta-info { display: flex; flex-direction: column; gap: 2px; font-size: 12px; font-weight: 700; color: var(--text); }
 .rep-meta-info i { color: var(--primary); margin-right: 4px; }
-.rep-card-btn {
-  padding: 6px 16px; border-radius: 999px; background: var(--primary); color: #fff;
-  font-size: 12.5px; font-weight: 700; display: inline-flex; align-items: center; gap: 6px;
-  transition: all .25s ease; box-shadow: 0 4px 12px -2px rgba(var(--primary-rgb),.4);
+.rep-card-btn,
+.acc-enquire-btn {
+  padding: 8px 18px;
+  border-radius: 10px;
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  color: #ffffff !important;
+  font-size: 13px;
+  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  text-decoration: none;
+  border: 1px solid transparent;
+  cursor: pointer;
+  box-shadow: 0 4px 14px -3px rgba(var(--primary-rgb), 0.45);
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  white-space: nowrap;
 }
-.rep-card-btn:hover { background: var(--secondary); color: #fff; transform: translateX(2px); }
+.rep-card-btn i,
+.acc-enquire-btn i {
+  font-size: 13px;
+  transition: transform 0.25s ease;
+}
+.rep-card-btn:hover,
+.acc-enquire-btn:hover {
+  background: linear-gradient(135deg, var(--secondary), var(--primary));
+  color: #ffffff !important;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px -4px rgba(var(--primary-rgb), 0.6);
+}
+.rep-card-btn:hover i,
+.acc-enquire-btn:hover i {
+  transform: translateX(3px);
+}
 
 
 /* OEM vs Counterfeit Table */
@@ -3802,11 +3831,6 @@ html[data-theme="dark"] .cm-hero-image-img--dark {
 .acc-prd-foot { display: flex; align-items: center; justify-content: space-between; padding-top: 12px; border-top: 1px solid var(--border); }
 .acc-prd-price { font-family: var(--font-display); font-size: 18px; font-weight: 800; color: var(--text); }
 
-.acc-enquire-btn {
-  padding: 6px 14px; border-radius: 999px; border: 1px solid var(--primary);
-  background: transparent; color: var(--primary); font-size: 12px; font-weight: 700; transition: all .2s ease; cursor: pointer;
-}
-.acc-enquire-btn:hover { background: var(--primary); color: #fff; }
 
 /* Custom Input & Select styling */
 .cm-input {
@@ -5203,6 +5227,96 @@ html[data-theme="dark"] .ab-brand-card span,
 html[data-theme="dark"] .ab-brands__note {
   color: #CBD5E1 !important;
 }
+
+/* ==========================================================================
+   Section — Boxed CTA Section with Background Image & Glassmorphic Container
+   ========================================================================== */
+.cm-cta-box-section,
+.ab-cta {
+  position: relative;
+  padding: 90px 20px;
+  overflow: hidden;
+  background: url('Asset/accessories_hero_banner.png') no-repeat center center / cover;
+  border-radius: 28px;
+  margin: 60px auto 40px;
+  max-width: 1320px;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.25);
+}
+
+.cm-cta-box__overlay,
+.ab-cta__overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background: linear-gradient(135deg, rgba(15, 23, 42, 0.88), rgba(30, 41, 59, 0.92));
+}
+
+.cm-cta-box__inner,
+.ab-cta__inner {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  max-width: 780px;
+  margin-inline: auto;
+  padding: 44px 28px;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 24px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.35);
+}
+
+.cm-cta-box-section h2,
+.ab-cta h2 {
+  color: #ffffff !important;
+  font-size: clamp(28px, 4vw, 40px);
+  font-weight: 800;
+  margin-top: 14px;
+  margin-bottom: 16px;
+  line-height: 1.25;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+}
+
+.cm-cta-box-section p,
+.ab-cta p {
+  color: rgba(255, 255, 255, 0.92) !important;
+  font-size: 16px;
+  margin-bottom: 30px;
+  line-height: 1.6;
+}
+
+.cm-cta-box__actions,
+.ab-cta__actions {
+  display: flex;
+  justify-content: center;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 768px) {
+  .cm-cta-box-section,
+  .ab-cta {
+    padding: 60px 16px;
+    border-radius: 20px;
+    margin: 40px 16px;
+  }
+  .cm-cta-box__inner,
+  .ab-cta__inner {
+    padding: 32px 20px;
+    border-radius: 18px;
+  }
+  .cm-cta-box__actions,
+  .ab-cta__actions {
+    flex-direction: column;
+  }
+  .cm-cta-box__actions .cm-btn,
+  .ab-cta__actions .cm-btn {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
 
 
 
