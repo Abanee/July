@@ -191,7 +191,7 @@ button { cursor: pointer; font-family: inherit; }
 .auth-form-title {
   font-family: 'Manrope', sans-serif;
   font-size: 22px;
-  font-weight: 700;
+  font-weight: 600;
   color: var(--text-primary);
   margin: 0 0 6px;
 }

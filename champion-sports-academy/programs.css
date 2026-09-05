@@ -299,6 +299,7 @@ footer .footer-socials a:hover svg,
    HEADER
    ============================================ */
 .site-header {
+  height: 66px;
   background: var(--navy);
   border-bottom: 1px solid rgba(255,255,255,0.06);
   transition: background-color .25s ease, box-shadow .25s ease;
